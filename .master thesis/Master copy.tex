@@ -1,5 +1,5 @@
-% Dokumentenklasse scrreprt                             %
 \documentclass[11pt, rgb]{scrreprt}
+% Dokumentenklasse scrreprt
 \RequirePackage{etex} % is required to prevent stuff
 \usepackage{csquotes} % Bibtex and language stuff
 
@@ -112,7 +112,7 @@
 
 \pagenumbering{Roman}
 
-\include{Abstract}
+% \include{Abstract}
 
 % inspirational quote
 \newpage\null\vfill\begin{center}
@@ -134,12 +134,12 @@ Sich aber nicht\\formen lassen\\und auf keinen Fall\\erhärten.\\
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Body of Document                                      %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\include{introduction}
-\include{theory/theory}
-\include{setup/setup}
-\include{analysis/technical_findings}
-\include{analysis/physical_findings}
-\include{conclusion}
+% \include{introduction}
+% \include{theory/theory}
+% \include{setup/setup}
+% \include{analysis/technical_findings}
+% \include{analysis/physical_findings}
+% \include{conclusion}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Ending of Document                                    %
@@ -147,7 +147,7 @@ Sich aber nicht\\formen lassen\\und auf keinen Fall\\erhärten.\\
 \clearpage
 \pagenumbering{roman}
 
-\include{Appendix}
+% \include{Appendix}
 % \include{appendix_unused}
 
 \addcontentsline{toc}{chapter}{List of Figures}
@@ -163,7 +163,7 @@ Sich aber nicht\\formen lassen\\und auf keinen Fall\\erhärten.\\
 \addcontentsline{toc}{chapter}{References}
 \printbibliography[title={References}]
 
-\include{Acknowledgments}
+% \include{Acknowledgments}
 
 \end{document}
 

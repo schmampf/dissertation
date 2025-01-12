@@ -91,7 +91,7 @@
 
 % Pakete für die Anpassung der Kapitel und Abschnittsüberschriften
 \usepackage{fancyhdr}
-\usepackage[explicit]{titlesec}
+% \usepackage[explicit]{titlesec}
 
 % Farben Definition des CD der Uni Konstanz mit dem HSB Modell
 % Dadurch direkte Repraesentation der Saettigung
@@ -300,13 +300,14 @@
 %
 %     http://www.ctex.org/documents/packages/layout/titlesec.pdf
 
-\titleformat{\chapter}% command
-{\selectfontsize{16pt}\sffamily\gdef\chapterlabel{}}% format (Definitionen, Schriftgroesse, ...)
-{\gdef\chapterlabel{\thechapter}}% label (Label erhalten; hier: \thechapter)
-{0pt}% sep
-{%
-\ifx\chapterlabel\empty\seeblauunderline{\textbf{#1}}\else\seeblauunderline{\textbf{\chapterlabel~#1}}\fi%
-}% before
+% TODO 
+% \titleformat{\chapter}% command
+% {\selectfontsize{16pt}\sffamily\gdef\chapterlabel{}}% format (Definitionen, Schriftgroesse, ...)
+% {\gdef\chapterlabel{\thechapter}}% label (Label erhalten; hier: \thechapter)
+% {0pt}% sep
+% {%
+% \ifx\chapterlabel\empty\seeblauunderline{\textbf{#1}}\else\seeblauunderline{\textbf{\chapterlabel~#1}}\fi%
+% }% before
 
 % titlespacing ist aus dem gleichen Paket. Hier wird der Abstand nach links, 
 % oben, unten und rechts festgelegt.

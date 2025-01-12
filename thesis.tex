@@ -1,0 +1,42 @@
+%%% Begin Document %%%
+\documentclass[11pt]{scrreport} % document class scrreprt
+\input{header.tex} % import all packages and pre-definitions
+\begin{document}
+
+%%% title page %%%
+
+    \include{title}
+
+%%% begin document %%%
+\clearpage 
+\pagenumbering{Roman}
+
+    % \include{abstract}
+    \include{inspirational}
+    \tableofcontents
+
+%%% main body %%%
+\clearpage 
+\pagenumbering{arabic}
+
+    % \include{introduction}
+    \include{theory}
+    % \include{methods}
+    % \include{results}
+    % \include{conclusion}
+
+%%% appendix %%%
+\clearpage
+\pagenumbering{roman}
+
+    \include{appendix}
+
+%%% bibliography %%%
+\newpage
+\addcontentsline{toc}{chapter}{References}
+\printbibliography[title={References}]
+
+    \include{acknowledgement}
+
+%%% End Document %%%
+\end{document}
