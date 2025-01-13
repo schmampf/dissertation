@@ -2,7 +2,9 @@
 *.bbl
 *.blc
 *.blg
+*.lof
 *.log
+*.lot
 *.run.xml
 *.synctex.gz
 *.toc
