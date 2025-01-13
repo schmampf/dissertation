@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.3.16)  13 JAN 2025 10:44
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.3.16)  13 JAN 2025 10:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -592,7 +592,7 @@ Package: import 2020/04/01  v 6.2
 ))
 \@quotelevel=\count404
 \@quotereset=\count405
- (auxiliary/thesis.aux (auxiliary/title.aux) (auxiliary/inspirational.aux) (auxiliary/theory.aux) (auxiliary/appendix.aux) (auxiliary/acknowledgement.aux))
+ (.auxiliary/thesis.aux (.auxiliary/title.aux) (.auxiliary/inspirational.aux) (.auxiliary/theory.aux) (.auxiliary/appendix.aux) (.auxiliary/acknowledgement.aux))
 \openout1 = `thesis.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
@@ -639,7 +639,7 @@ Package biblatex Info: Automatic encoding selection.
 
 Package biblatex Info: Trying to load bibliographic data...
 Package biblatex Info: ... file 'thesis.bbl' found.
- (auxiliary/thesis.bbl)
+ (.auxiliary/thesis.bbl)
 Package biblatex Info: Reference section=0 on input line 4.
 Package biblatex Info: Reference segment=0 on input line 4.
 \openout2 = `title.aux'.
@@ -691,7 +691,7 @@ LaTeX Font Info:    External font `lmex10' loaded for size
 
 
 
-] (auxiliary/thesis.toc)
+] (.auxiliary/thesis.toc)
 \tf@toc=\write5
 \openout5 = `thesis.toc'.
 
@@ -733,7 +733,7 @@ chapter 2.
 
  (./acknowledgement.tex) [3
 
-] (auxiliary/thesis.aux (auxiliary/title.aux) (auxiliary/inspirational.aux) (auxiliary/theory.aux) (auxiliary/appendix.aux) (auxiliary/acknowledgement.aux))
+] (.auxiliary/thesis.aux (.auxiliary/title.aux) (.auxiliary/inspirational.aux) (.auxiliary/theory.aux) (.auxiliary/appendix.aux) (.auxiliary/acknowledgement.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-02-20>
@@ -744,11 +744,11 @@ Package logreq Info: Writing requests to 'thesis.run.xml'.
  ) 
 Here is how much of TeX's memory you used:
  20459 strings out of 474773
- 428032 string characters out of 5757724
+ 428063 string characters out of 5757724
  1923839 words of memory out of 5000000
  42266 multiletter control sequences out of 15000+600000
  587203 words of font info for 75 fonts, out of 8000000 for 9000
  1348 hyphenation exceptions out of 8191
  122i,11n,121p,10967b,4740s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on auxiliary/thesis.pdf (8 pages).
+Output written on .auxiliary/thesis.pdf (8 pages).
