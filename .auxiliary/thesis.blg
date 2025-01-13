@@ -1,15 +1,15 @@
 [0] Config.pm:307> INFO - This is Biber 2.19
 [0] Config.pm:310> INFO - Logfile is '.auxiliary/thesis.blg'
-[34] biber-darwin:340> INFO - === Mon Jan 13, 2025, 11:13:02
-[42] Biber.pm:419> INFO - Reading '.auxiliary/thesis.bcf'
-[86] Biber.pm:979> INFO - Found 1 citekeys in bib section 0
-[93] Biber.pm:4419> INFO - Processing section 0
-[97] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
-[98] bibtex.pm:1713> INFO - LaTeX decoding ...
-[99] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
-[117] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
-[117] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[117] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
-[118] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
-[120] bbl.pm:660> INFO - Writing '.auxiliary/thesis.bbl' with encoding 'UTF-8'
-[120] bbl.pm:763> INFO - Output to .auxiliary/thesis.bbl
+[33] biber-darwin:340> INFO - === Mon Jan 13, 2025, 11:15:34
+[40] Biber.pm:419> INFO - Reading '.auxiliary/thesis.bcf'
+[81] Biber.pm:979> INFO - Found 1 citekeys in bib section 0
+[88] Biber.pm:4419> INFO - Processing section 0
+[93] Biber.pm:4610> INFO - Looking for bibtex file 'bibliography.bib' for section 0
+[93] bibtex.pm:1713> INFO - LaTeX decoding ...
+[95] bibtex.pm:1519> INFO - Found BibTeX data source 'bibliography.bib'
+[113] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[113] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[113] Biber.pm:4239> INFO - Sorting list 'none/global//global/global' of type 'entry' with template 'none' and locale 'en-US'
+[113] Biber.pm:4245> INFO - No sort tailoring available for locale 'en-US'
+[115] bbl.pm:660> INFO - Writing '.auxiliary/thesis.bbl' with encoding 'UTF-8'
+[116] bbl.pm:763> INFO - Output to .auxiliary/thesis.bbl
