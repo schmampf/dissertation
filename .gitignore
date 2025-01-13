@@ -8,6 +8,7 @@
 *.lot
 *.out
 *.run.xml
+*.synctex(busy)
 *.synctex.gz
 *.toc
 
