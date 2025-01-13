@@ -3,18 +3,18 @@
 
 !/.gitignore  # except `gitignore` :)
 
-*.aux
-*.bbl
-*.bcf
-*.blc
-*.blg
-*.lof
-*.log
-*.lot
-*.out
-*.run.xml
-*.synctex(busy)
-*.synctex.gz
-*.toc
+/**/*.aux
+/**/*.bbl
+/**/*.bcf
+/**/*.blc
+/**/*.blg
+/**/*.lof
+/**/*.log
+/**/*.lot
+/**/*.out
+/**/*.run.xml
+/**/*.synctex(busy)
+/**/*.synctex.gz
+/**/*.toc
 
-.DS_Store
+/**/.DS_Store
