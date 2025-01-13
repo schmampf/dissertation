@@ -12,11 +12,6 @@
 # .synctex.gz
 # .toc
 
-# .DS_Store
+.DS_Store
 
-# .auxiliary/**
-
-/*
-!*.tex
-!*.bib
-!*.pdf
+.auxiliary/**
