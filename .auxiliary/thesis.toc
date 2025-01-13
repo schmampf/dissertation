@@ -1,6 +1,0 @@
-\contentsline {chapter}{\numberline {1}Here happens shit!}{1}{}%
-\contentsline {section}{\numberline {1.1}blabla}{1}{}%
-\contentsline {chapter}{\numberline {2}Here happens shit! 2}{i}{}%
-\contentsline {section}{\numberline {2.1}blabla 2}{i}{}%
-\contentsline {chapter}{References}{ii}{}%
-\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
