@@ -13,3 +13,5 @@
 .toc
 
 .DS_Store
+
+.auxiliary/**
