@@ -21,6 +21,13 @@
 					".auxiliary/%DOCFILE%"
 				]
 			},
+			{
+				"name": "copy pdf",
+				"command": "cp",
+				"args": [
+					"%OUTDIR%/%DOCFILE%.pdf", "%DIR%/"
+				]
+			}
 		],
 	"latex-workshop.latex.recipes": 
 		[
@@ -30,7 +37,8 @@
 					"xelatex",
 					"biber",
 					"biber",
-					"xelatex"
+					"xelatex",
+					"copy pdf"
 				]
 			},
 		],
