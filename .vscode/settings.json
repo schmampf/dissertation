@@ -1,5 +1,5 @@
 {
-	"latex-workshop.latex.outDir": "%DIR%/.auxiliary",   // Definig the variable
+	"latex-workshop.latex.outDir": "%DIR%/auxiliary",   // Definig the variable
 	"latex-workshop.latex.tools": 
 		[
 			{
@@ -18,7 +18,7 @@
 				"name": "biber",
 				"command": "biber",
 				"args": [
-					".auxiliary/%DOCFILE%"
+					"auxiliary/%DOCFILE%"
 				]
 			},
 		],
