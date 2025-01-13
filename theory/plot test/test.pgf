@@ -21,11 +21,19 @@
 %% Matplotlib used the following preamble
 %%   \def\mathdefault#1{#1}
 %%   \everymath=\expandafter{\the\everymath\displaystyle}
+%%   \IfFileExists{scrextend.sty}{
+%%     \usepackage[fontsize=10.000000pt]{scrextend}
+%%   }{
+%%     \renewcommand{\normalsize}{\fontsize{10.000000}{12.000000}\selectfont}
+%%     \normalsize
+%%   }
 %%   
-%%   \usepackage{fontspec}
-%%   \setmainfont{DejaVuSerif.ttf}[Path=\detokenize{/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/matplotlib/mpl-data/fonts/ttf/}]
-%%   \setsansfont{DejaVuSans.ttf}[Path=\detokenize{/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/matplotlib/mpl-data/fonts/ttf/}]
-%%   \setmonofont{DejaVuSansMono.ttf}[Path=\detokenize{/Library/Frameworks/Python.framework/Versions/3.11/lib/python3.11/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%   \ifdefined\pdftexversion\else  % non-pdftex case.
+%%     \usepackage{fontspec}
+%%     \setmainfont{DejaVuSerif.ttf}[Path=\detokenize{/Users/oliver/Documents/Doctoral-Thesis/.venv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%     \setsansfont{DejaVuSans.ttf}[Path=\detokenize{/Users/oliver/Documents/Doctoral-Thesis/.venv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%     \setmonofont{DejaVuSansMono.ttf}[Path=\detokenize{/Users/oliver/Documents/Doctoral-Thesis/.venv/lib/python3.12/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%   \fi
 %%   \makeatletter\@ifpackageloaded{underscore}{}{\usepackage[strings]{underscore}}\makeatother
 %%
 \begingroup%
@@ -405,6 +413,50 @@
 \pgfpathmoveto{\pgfqpoint{1.025455in}{0.696000in}}%
 \pgfpathlineto{\pgfqpoint{5.534545in}{4.056000in}}%
 \pgfpathlineto{\pgfqpoint{5.534545in}{4.056000in}}%
+\pgfusepath{stroke}%
+\end{pgfscope}%
+\begin{pgfscope}%
+\pgfpathrectangle{\pgfqpoint{0.800000in}{0.528000in}}{\pgfqpoint{4.960000in}{3.696000in}}%
+\pgfusepath{clip}%
+\pgfsetrectcap%
+\pgfsetroundjoin%
+\pgfsetlinewidth{1.505625pt}%
+\definecolor{currentstroke}{rgb}{1.000000,0.498039,0.054902}%
+\pgfsetstrokecolor{currentstroke}%
+\pgfsetdash{}{0pt}%
+\pgfpathmoveto{\pgfqpoint{1.025455in}{0.696000in}}%
+\pgfpathlineto{\pgfqpoint{1.169745in}{0.697147in}}%
+\pgfpathlineto{\pgfqpoint{1.314036in}{0.700588in}}%
+\pgfpathlineto{\pgfqpoint{1.458327in}{0.706322in}}%
+\pgfpathlineto{\pgfqpoint{1.602618in}{0.714350in}}%
+\pgfpathlineto{\pgfqpoint{1.746909in}{0.724672in}}%
+\pgfpathlineto{\pgfqpoint{1.891200in}{0.737288in}}%
+\pgfpathlineto{\pgfqpoint{2.035491in}{0.752197in}}%
+\pgfpathlineto{\pgfqpoint{2.179782in}{0.769400in}}%
+\pgfpathlineto{\pgfqpoint{2.324073in}{0.788897in}}%
+\pgfpathlineto{\pgfqpoint{2.468364in}{0.810688in}}%
+\pgfpathlineto{\pgfqpoint{2.612655in}{0.834772in}}%
+\pgfpathlineto{\pgfqpoint{2.756945in}{0.861151in}}%
+\pgfpathlineto{\pgfqpoint{2.901236in}{0.889823in}}%
+\pgfpathlineto{\pgfqpoint{3.045527in}{0.920788in}}%
+\pgfpathlineto{\pgfqpoint{3.189818in}{0.954048in}}%
+\pgfpathlineto{\pgfqpoint{3.334109in}{0.989601in}}%
+\pgfpathlineto{\pgfqpoint{3.478400in}{1.027448in}}%
+\pgfpathlineto{\pgfqpoint{3.622691in}{1.067589in}}%
+\pgfpathlineto{\pgfqpoint{3.766982in}{1.110024in}}%
+\pgfpathlineto{\pgfqpoint{3.911273in}{1.154752in}}%
+\pgfpathlineto{\pgfqpoint{4.055564in}{1.201774in}}%
+\pgfpathlineto{\pgfqpoint{4.199855in}{1.251090in}}%
+\pgfpathlineto{\pgfqpoint{4.344145in}{1.302700in}}%
+\pgfpathlineto{\pgfqpoint{4.492945in}{1.358324in}}%
+\pgfpathlineto{\pgfqpoint{4.641745in}{1.416388in}}%
+\pgfpathlineto{\pgfqpoint{4.790545in}{1.476892in}}%
+\pgfpathlineto{\pgfqpoint{4.939345in}{1.539835in}}%
+\pgfpathlineto{\pgfqpoint{5.088145in}{1.605217in}}%
+\pgfpathlineto{\pgfqpoint{5.236945in}{1.673039in}}%
+\pgfpathlineto{\pgfqpoint{5.385745in}{1.743300in}}%
+\pgfpathlineto{\pgfqpoint{5.534545in}{1.816000in}}%
+\pgfpathlineto{\pgfqpoint{5.534545in}{1.816000in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%

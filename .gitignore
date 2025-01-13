@@ -1,3 +1,14 @@
+.auxiliary/
+.master thesis/
+.venv/
+.DS_Store
+
+# incase ignored files get still tracked.
+# git rm -r --cached . && git add . && git commit -am "Remove ignored files"
+# https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore
+
+
+# Decrapted
 # *.aux
 # *.bbl
 # *.bcf
@@ -11,11 +22,3 @@
 # *.synctex(busy)
 # *.synctex.gz
 # *.toc
-
-.auxiliary/
-
-.DS_Store
-
-# incase ignored files get still tracked.
-# git rm -r --cached . && git add . && git commit -am "Remove ignored files"
-# https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore
