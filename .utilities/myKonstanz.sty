@@ -1,0 +1,101 @@
+
+%%% A5 %%%
+
+% \thistitlepage
+\newkeycommand{\thesistitlepageafive}[language=english][1]{
+
+	\def\lanUser{
+		\commandkey{language}
+		}%	
+	% Verwende Serifenlose Schrift auf der Titelseite
+    \begin{sffamily}%
+        % Dokumenten Titel
+        \begin{textblock*}{\textwidth}(0.5\footspace, 4cm)%
+            \selectfontsize{16pt}%
+            \centering%
+            \textbf{Charge Fluctuations in Superconducting Mesoscopic Contacts}%
+        \end{textblock*}%
+
+        % Art der Arbeit, z.b. Bachelorarbeit, Masterarbeit, ...
+        \begin{textblock*}{\textwidth}(0.5\footspace, 7cm)%
+            \selectfontsize{12pt}%
+            \centering%
+            \textbf{Doctor's Thesis}\\%
+            \vskip 2pt%
+            by\\%
+            \vskip 2pt%
+            \textbf{Oliver Irtenkauf}\\%
+            \vskip 2pt%
+            at the%
+        \end{textblock*}%
+
+        % % Autor (Deutsch, English)
+        % \begin{textblock*}{\textwidth}(0.5\footspace, 6cm)%
+        %     \selectfontsize{12pt}%
+        %     \centering%
+        %     by\\%
+        %     \vskip 2pt%
+        %     \textbf{Oliver Irtenkauf}%
+        % \end{textblock*}%
+
+        % % at the / an der
+        % \begin{textblock*}{\textwidth}(0.5\footspace, 7.5cm)%
+        %     \selectfontsize{12pt}%
+        %     \centering%
+        %     at the%
+        % \end{textblock*}%
+        
+        % Unversität Konstanz Logo
+        \begin{textblock*}{\textwidth}(0.5\footspace, 9.5cm)%
+            \centering\includegraphics[width=0.75\textwidth]{.utilities/uni logo/UniKonstanz_Logo_Optimum.pdf}%
+        \end{textblock*}%
+
+        % Uni-Sektion und Fachebereich
+        \begin{textblock*}{\textwidth}(0.5\footspace, 14cm)%
+            \selectfontsize{12pt}%
+            \centering%
+            Faculty of Science\\%
+            \vskip 2pt%
+            Department of Physics%
+        \end{textblock*}%
+
+        % Gutachter (Deutsch, English)
+        \begin{textblock*}{\textwidth}(0.5\footspace, 16cm)%
+            \selectfontsize{12pt}%
+            \centering%
+            \begin{tabular}{ll}%
+                1. Reviewer: & Prof. Dr. Elke Scheer\\[2pt]%
+                2. Reviewer: & Prof. Dr. Juan Carlos Cuevas%
+            \end{tabular}%
+        \end{textblock*}%
+
+        % Konstanz, Jahr (Deutsch, English)
+        \begin{textblock*}{\textwidth}(0.5\footspace, 18cm)%
+            \selectfontsize{12pt}%
+            \centering%
+            Konstanz, 2025%
+        \end{textblock*}%
+
+        % \newpage%
+        % \thispagestyle{empty}%
+        % \newpage%
+    \end{sffamily}%	
+    % \newpage%
+    \thispagestyle{empty} $ $%
+    \newpage%
+}%
+
+
+
+
+%%% Colors %%%
+\xdefinecolor{magenta100}{RGB}{209,0, 154}
+\xdefinecolor{magenta65}{RGB}{220,89, 182}
+\xdefinecolor{magenta35}{RGB}{230,160, 211}
+\xdefinecolor{magenta20}{RGB}{239,200, 229}
+
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}

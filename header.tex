@@ -1,19 +1,70 @@
+%%% corporate design %%%
+    \RequirePackage{etex}
+    \usepackage{csquotes} % Bibtex and language stuff
+    % weniger Farbe dann Addons
+    % \usepackage{corporatedesign/themeKonstanzXelatexAddOn} % XeLaTeX mit Schriftart Arial, VOR dem Standardpaket importieren
+    \usepackage{.utilities/themeKonstanz} % Muss immer verwendet werden (Standardpaket)
+    % \usepackage{corporatedesign/themeKonstanzStyleAddOn} % Style Add-On für andere Überschriften, NACH dem Standardpaket importieren
+    \usepackage{.utilities/myKonstanz}
+
+%%% Basic Settings %%%
+    % \setstocksize{297mm}{210mm} % or format a4
+    \format{a5} %A4, vllt. A5?
+
 %%% bibliography %%%
-\usepackage[backend=biber, sorting=none, maxbibnames=99]{biblatex}
-\addbibresource{bibliography.bib}
+    \usepackage[backend=biber, sorting=none, maxbibnames=99]{biblatex}
+    \addbibresource{bibliography.bib}
 
 %%% python plots %%%
+    % Creator: Matplotlib, PGF backend
+    % To include the figure in your LaTeX document, write
+    % \input{<filename>.pgf}
+    % Make sure the required packages are loaded in your preamble
+    \usepackage{pgf}
+    % Also ensure that all the required font packages are loaded; for instance, the lmodern package is sometimes necessary when using math font.
+    \usepackage{lmodern}
+    % Figures using additional raster images can only be included by \input if they are in the same directory as the main LaTeX file. For loading figures from other directories you can use the `import` package
+    \usepackage{import}
+    % and then include the figures with
+    % \import{<path to file>}{<filename>.pgf}
+    
+    % => Either import or input works. Don't know the difference yet.
 
-% Creator: Matplotlib, PGF backend
-% To include the figure in your LaTeX document, write
-% \input{<filename>.pgf}
-% Make sure the required packages are loaded in your preamble
-\usepackage{pgf}
-% Also ensure that all the required font packages are loaded; for instance, the lmodern package is sometimes necessary when using math font.
-\usepackage{lmodern}
-% Figures using additional raster images can only be included by \input if they are in the same directory as the main LaTeX file. For loading figures from other directories you can use the `import` package
-\usepackage{import}
-% and then include the figures with
-% \import{<path to file>}{<filename>.pgf}
 
-% Either import or input works. Don't know the difference yet.
+%%% Python-Code %%%
+    % for python code
+    \usepackage{listings}
+    \lstdefinestyle{mystyle}{
+        backgroundcolor=\color{backcolour},   
+        commentstyle=\color{seeblau100},
+        keywordstyle=\color{magenta100},
+        numberstyle=\tiny\color{codegray},
+        stringstyle=\color{seeblau65},
+        basicstyle=\ttfamily\tiny,
+        breakatwhitespace=false,         
+        breaklines=true,                 
+        captionpos=b,                    
+        keepspaces=true,                 
+        numbers=left,                    
+        numbersep=5pt,                  
+        showspaces=false,                
+        showstringspaces=false,
+        showtabs=false,                  
+        tabsize=2
+    }
+    \lstset{style=mystyle}
+
+    % for program environment, like figure
+    \usepackage{float}
+    \floatstyle{plaintop} % caption is above for program
+    \newfloat{program}{tbp}{lop} % name, positioning, aux file
+    \floatname{program}{Program} % name, Name in pdf
+
+%%% Hyphenations %%%
+\hyphenation{Bei-spiel}
+
+
+% for formular
+\usepackage{amsmath}
+
+\usepackage{layouts}
