@@ -1,34 +1,297 @@
 \chapter{Methods}
-    \the\textwidth
-    \printinunitsof{in}\prntlen{\textwidth}
-    \printinunitsof{in}\prntlen{\linewidth}
+    In this Chapter I want to explain the used experimental methods. 
+    
+    First I want to talk about the Sample Preparation. Even though the fabrication of break junction is well established in the group, major changes to the design has been done, and a new protocol improved the overall quality and stability of the sample.
 
-\section{Sample Design}
-general idea
-    \subsection{Sample Design}
-    \subsection{shadow evaporation}
+    In the second section the physical setup is explained. A lot of time is spent to make modifications, routine maintenance and fixing of aging components. Especially the cabling for DC and AC measurements did undergo some major modifications.
 
-\section{Setup}
-    \subsection{cryostat and thermometer}
-    \subsection{MCBJ}
-
-    \subsection{DC Cabling}
-        \subsubsection{copper powder filter}
-        \subsubsection{steel capillary cable}
-        \subsubsection{comercial silver epoxy filter}
+    Third, I will tell you about the used electronics. I will talk about the general concept but also a lot about the newly implemented measurement program. Detailed information about the implementation in \texttt{pyhton} can be found in the appendix. Following I will present the used measurement and evaluation protocol, including the data processing.  
 
 
+    \section{Sample Preparation} \label{sec:sample preparation}
+        Single-Electron transistors (SET) consists out of two junctions forming a small island. This island is capacitively coupled to a DC gate electrode. Usually this is done via two oxide barriers in a lead, fabricated by shadow evaporation (cite: some SETs). 
+        However, our SET exchanges one oxide barrier with a mechanically controlled break junction (MCBJ). Aluminum is used as material as it also gets superconducting at low temperatures (cite: thomas susi laura).
+        In addition, an AC gate or stripline is added for good and controlled coupling of microwave Fields.
+        This section describes work done together with Patrick Raif for his project practical (fußnote: project practical part of a master curriculum, done within a semester.) (cite: Patrick PP). 
 
-    \subsection{AC cabling}
-        \subsubsection{Antenna}
-        \subsubsection{stripline}
+        In the following subsections, I explain the sample preparation process from different angles. Firstly conceptually, then I will go into more detail about the design and the decisions regarding the processes. In the end, I present the individual steps, tips and problems as I experienced them in the laboratory.
 
-\section{Data Aqucition}
-    \subsection{Measurement Concept}
-    \subsection{Measurement Software}
+        \subsection{Concept} \label{subsec:concept}
+            In this subsection, I explain the general concept and link sample preparation to the underlying physics.
 
-\section{Data Threadment}
-    \subsection{data filtering}
+            A MCBJ is realized by a freestanding bridge like structure on top of a bendable substrate. Figure \ref{fig:methods:mcbj} shows a sketch of the used MCBJ. The sample gets bend by either pushing the stamp from below or pushing the counter rods from above. By bending the substrate the freestanding bridge gets elongated and therefore works as intended. The physical setup of the MCBJ is discussed in Section (ref).
+
+            \begin{figure}
+                \includegraphics{methods/mcbj/image.png}
+                \caption{Here comes some text}
+                \label{fig:methods:mcbj}
+            \end{figure}
+
+            A polyimid (PI) layer insulates the substrate from the structures produced in the next step. More prominently the PI serves as sacrificial layer. Later it becomes partly etched, and therefore the structure can become freestanding.
+
+            Afterwards two layers of positive electron sensitive resists are applied. Electron beam lithography (EBL) is used for a precise exposure. After development, the exposed resist is dissolved.
+
+            For a single electron transistor (SET) a second weak-link is formed by an oxide barrier. A convenient method for this is shadow evaporation, also called Dylan technique (Patrick PP). Here, two steps of evaporation are performed under different incident angles, So the exact same structure slightly shifted is reproduced. In between a controlled oxidation step, without breaking the vacuum can be performed. By this, overlapping areas can be formed with cross-sections of metal-oxide-metal, as shown in Figure \ref{fig:methods:sem}.
+
+            \begin{figure}
+                \includegraphics[width=0.4\textwidth]{methods/stamps/image.png}
+                \includegraphics[width=0.4\textwidth]{methods/sem picture/image.png}
+                \caption{Here comes some text}
+                \label{fig:methods:sem}
+            \end{figure}
+            
+            Since a superconducting SET (SSET) is planned, aluminum (Al) is chosen for both evaporation steps. Resulting in an Al BJ and an Al-Al$_2$O$_3$-Al oxide barrier, as in References (ref: thomas, susi). The second material can even be a different material, for example Al-Al$_2$O$_3$-Cu as realized by Laura Sobral-Rey (ref: laura).
+
+            As a last step, approximately 500\,nm PI are etched with an oxygen plasma. The homogeneous etching results in a considerable undercut, as shown in Figure \ref{fig:methods:sem}. With the last step the BJ becomes freestanding and therefore functional.
+
+            \begin{figure}
+                \includegraphics[width=0.9\textwidth]{methods/flowchart/image.png}
+                \caption{Here comes some text}
+                \label{fig:methods:flow}
+            \end{figure}
+
+        \subsection{Design} \label{subsec:design}
+            This Subsection explains sample preparation in terms of design decisions. There is not always just a single path to the finished sample, but many with different effects in detail. Here I take you through the decision-making process of the individual steps.
+
+            Bronze is used as substrate for many generations of doctor students in this group. For once, the force required to bend the substrate should be considerably low. But also it should not deform permanently, as we want to change the configuration of MCBJ forth and back. Other materials such as copper, doesn't bend that homogeneous and just bend right in the middle, right below the stamp. So a much higher change in angle is connected to worse elastic behavior. Especially for copper a non-monotone bending is observed, so changing the configuration just slightly in the atomic contact regime is not possible. In contrast, polyimid (footnote: also called Kapton) as substrate bends over the whole length and does not reach enough bending for MCBJ to work properly. Other materials such as copper-berillium are toxic and therefore unusable. Finally, a non-magnetic material with as few magnetic impurities as possible is also a prerequisite. Under all these conditions, bronze has established itself as the substrate for MCBJ over the years. (ref: Christian Schirm)
+            
+            A polyamide layer is applied by spin-coating on top of a whole bronze wafer. After a hard baking process the polyamide is turned to polyimide (PI). On top two layers of resist are applied. The thin top layer is suitable for high resolution lithography and will result in sharp and straight edges of the structure. The thick bottom layer is for elevating the top layer, as well as sacrificial layer, that forms an undercut, when developed. Here two independent mechanism are observed. For once, the bottom layer is more exposed, since the electrons move diffusive through the resist, but also back reflected electrons increase the exposure in the bottom layer. As well as an increased time in isopropyl alcohol (IPA) after development with diluted methyl isobutyl ketone (MIBK), further increases the undercut. 
+
+            For EBL the Crossbeam from Zeiss is used. It is modified such, that the beam blanker works way faster. It's controlled along with the beam deflection, so it is possible to expose any given structure in the given field. Commonly a 100\,\textmu m field is used for small structures and a 1000\,\textmu m field is used for rough structures. For even bigger structures, the sample stage can be moved and therefore multiple fields next to each other are possible. In this case, I planned with an overlap of the different fields, for some stitching. 
+
+            By the time I started, from the two available EBL programs, just \texttt{Raith} was usable and proper supported. So I had to implement the new sample design from scratch. The BJ and gate have dimensions, like shown in Figure \ref{fig:methods:ebeam} and implemented before by References (cite: Thomas? Susi? Laura). In contrast, the design of the finger, forming the oxide barrier is made thicker towards the lower part. By this, the freestanding length of the evaporation mask gets shorter, and therefore more stable. Unfortunately, older resist tends to sink in during evaporation, so the finger does not reach the island reliable in the second evaporation step.
+            
+            \begin{figure}
+                \centering
+                \import{methods/ebeamdesign}{test.pdf_tex}
+                \caption{blablabla.}
+                \label{fig:methods:ebeam}
+            \end{figure}
+
+            The bigger leads and pads are arranged and optimized for easy contacting. An AC gate or strip line is added in 8\,\textmu m distance for maximum microwave irradiation. It is opted to be as long as possible, in a reasonable writing time. % The resonance frequency is about 10 GHz.
+            In addition, a shortage is included in the design. It protects the sensible tunnel barrier from static discharge. The central vertical lead is thicker, for more visible contrast, this helps to align the BJ with the stamp in the setup.
+
+            The used evaporator, has a long distance between evaporation source and sample. Therefore, the aluminum gets evaporated very directional, but unfortunately also the effective cross-section is way smaller. The used evaporator offers two options for evaporation of aluminum. Thermal evaporation, where a large current is applied and heats a small crucible. Electron beam evaporation, where an electron beam is directed on an aluminum crucible and locally heated. The crucible, for thermal evaporation is rather sensible and must be loaded and run empty during each evaporation, in order to prevent crack formation. This is rather tedious, prone to mistakes and does not offer any noticeable advantage over electron beam evaporation. So in contrast to References (cite: thomas, susi, laura), I used electron beam evaporation.
+
+            The oxidation in between the two evaporation steps is performed in the load lock of the evaporator at low oxygen pressures of about 3.0(2)\,mbar for 3\,min (cite: Laura). In the past, this step was not reproducible for quite some time and is now under close observation (cite: thomas, susi, susi2, teo).
+
+            For reactive ion etching (RIE) the 'PlasmaPro 80 ICP RIE' from Oxford is used. This machine is not designed originally for homogeneous etching. However, driven at low table RF, high ICP RF and high pressure, the etching is homogeneous enough. A heated table further increases the homogeneity, of the etching. The etched depth is monitored by laser interferometry. 
+
+            As last step, the sample gets contacted. Wedge bonding is not suitable since, the wire presses through the pad into the soft PI. Therefore, thin copper wires, get glued with conductive silver paste on top of the pads. 
+
+
+        \subsection{Realization} \label{subsec:realization}
+            This subsection can be seen as a guide and highlights the small, subtle steps that are important for successful sample preparation.
+
+            You start of, with a 300\,\mum  thick bronze wafer. Usually it is covered by a protection foil. Cooling down the wafer in liquid nitrogen, and peel of the shards is a non-destructive and easy method, to remove the foil. We are interested in polish the wafer before further processing. Mount the polish head made from sewn cotton cloth in the drill. Aluminum Oxide particles in form of a white compound block are used as abrasive. The polishing head should be decent wet up to soaked with a solvent. Alcohol or IPA has proven itself. The wafer should be glued with a double-sided adhesive tape 'Tesa Universal' to a milled smooth steel block. Pay attention that the tape does not protrude from under the wafer. Start the polishing, by moving the head from top to bottom. This will prevent the dirt that is created during polishing from permanently getting onto the sample, and you need to polish it off again. The block can be turned, as it is easier to polish the lower end, than the upper end. When you can mirror yourself comfortable in the whole wafer, it is enough polishing. In order to remove the wafer from the steel block, you can cool it down in liquid nitrogen once again. For cleaning, rinse the wafer, with acetone and IPA in this order, blow the wafer dry with pressured dry nitrogen before the IPA is evaporated by its own. This way you avoid residues.
+            % (cite: Oberg, Erik; Jones, Franklin D.; Horton, Holbrook L.; Ryffel, Henry H. (2000), Machinery's Handbook (26th ed.), New York: Industrial Press Inc., ISBN 0-8311-2635-3) page 1439-1440
+
+            Another option for polishing is to use sandpapers, with increasing grit, on a glass slide, as described by Patrick Raif (cite). This variation has been omitted, since it is way more time intense, even though long range variations are avoided way better.
+
+            Next you want to prepare the spin coater, polyamide and the vacuum oven. Get a small portion in a crimp-seal vial of the polyamide out of the freezer. This is done in small, portion, since the polyamide collects moisture and gets bad. So small portions warm up way quicker, but also ensures good quality polyamide. Let the polyamide warm up to room temperature, as you heat up the convection oven to 135\,$^\circ$C. Next, cover the inside of the spin coater with aluminum foil. Make sure the vacuum oven is proper working condition and the chamber is open.
+
+            In order to remove any water adsorbed by the wafer, put it for at least one minute at 100\,$^\circ$C on the hot plate. For proper adhesion of the wafer to the '1\,inch' chuck, use a layer of parafilm that seals the top of the chuck. Make sure it is bent around the swell of the chuck. Next I would create five small holes with a syringe, one in the center, and close to the edge, one in each direction. Make sure the wafer cooled down to room temperature before you put it on top of the parafilm. When the wafer is centered as good as possible, you can turn on vacuum pump. Before applying the polyamide, it is a good test to run the spin coating program once, to ensure proper adhesion. This is kind of critical, since not many other users use such big wafer. And if there are problems with adhesion for big wafer, it might be unknown for quite some time.
+
+            Make sure to blow once again with nitrogen, to remove any dust. Now the polyamide can be poured. Make sure it covers about 90\% of the wafer and there are no air bubbles. If so, you can either pop them or move them, by a syringe. Be careful not to scratch the wafer. Start spread cycle with 300\,rpm for 30\,s and finally spin at 5000\,rpm for 90\,s. Move the wafer directly into the convection oven and soft bake for 5\,min at 135\,$^\circ$C. For hard baking, utilize the vacuum oven, the stored program ramps up to 400\,$^\circ$C, hold it for 30\,min, and cools down to room temperature over several hours. A detailed manual for the vacuum oven and the temperature profile, can be found in Reference (cite: Patrick raif). It has been shown that baking immediately after spin coating is beneficial.
+
+            The two resists A4 and EL11 are applied similarly. Except, there is no need of aluminum foil, since the resists, can be easily wiped with acetone. Make sure, that the two resists are not expired for several years. Details can be found in the Appendix in Table (ref:table sample preparation). 
+
+            The wafer can now be cut to smaller pieces of 3$\,\times\,$8\,mm. Therefore, a custom-made shear sheet cutter is used with spacers of 3 and 18\,mm. Make sure to clean the edge with IPA before using. Samples from the edge of the wafer are more likely to have a different profile in polyamide and resists. For serious sample fabrication, it's better to use samples from the middle of the wafer, since the resists get thicker towards the edge. This might affect the required dose. Then, put the samples in a chip tray by Entegris.
+            
+            Next step is EBL with the crossbeam. Therefore, use the jug with a Faraday cup. You can use a position list in the Zeiss software, for finding the Faraday cup as fast as possible. However, you should have a working distance as close as possible to 5\,mm. The beam current is not stable at the beginning, so make sure to wait some time, or come back later. Next we want to align the sample horizontal. The focused ion beam (FIB) tool box offers some tools, like an alignment tool. Zoom out as far as possible and use the upper right corner of the sample and part of the edge, as far left as possible for alignment. It turns out, that is enough for angle alignment. For sure, you can further improve the alignment with features in Elphy, but I'm sure you can't improve the angle alignment in the cryostat later. Next we want to focus the beam as good as possible in the upper right corner. Start with the wobbling tool, to position the beam in the middle of the aperture. Next reduce astigmatism with the stigmator in $x$ and $y$. Now is good time to check the beam current at the Faraday cup. Usually it is enough to check the beam current for the 30\,\mum aperture in high current mode. It should be in the order of 0.5\,nA. The 100\,\mum aperture is way less crucial, since the big leads are more robust to under-exposure. In fact, to safe writing time, it is beneficial to under-expose the bigger writing fields on purpose. However, the beam current in high current mode for the 100\,\mum aperture should be in the order of 5\,nA.
+
+            A final focussing is happening at the upper edge at a central position. Look for some dirt particle on the resist and use it for focus. Make sure the working distance is 5.00(1)\,mm. At this point you should also check, that the beam shift is zero. Before starting, you can note the current time. In the written design a date and time is implemented, so you can make the connection between your notes and the physical sample. As a final step, make sure to recalculate the settling time in the 100\,\mum field, if the measured beam current deviates, from the one before. The position list can be started and finds the position of the writing fields and set up the respective settings. Repeat writing samples until you get a batch size of 4-5 samples.
+
+            In case you didn't write samples for several weeks, you might want to check the alignment between 100\,\mum and 1000\,\mum field, before your first written sample. The easiest check is to write the 100\,\mum field and the just one following 1000\,\mum field, in the upper right corner. Since the resist already changes it properties when exposed, you can distinguish written areas from the background quite easily. Be cautious, the longer you look, the more the resist gets exposed as well and the contrast gets worse. However, when you are fast you get a decent picture of how bad the miss alignment is and if you need to correct it. Repeat, this step if you changed the alignment values. If the 100\,\mum field is shifted to the left, change $U$ by $-\Delta X$ or to the top change $V$ by $-\Delta Y$.
+
+            After EBL, you want to develop the sample. Therefore, fill one crimp-seal vial with one part MIBK and three parts IPA and as many crimp-seal vials with IPA as many samples you want to develop. Now, put the sample for 25\,s in the MIBK solution and swivel. As soon as the time is up, put it in a vial with IPA and swivel. The MIBK solution can be used for all samples of a batch. After 60\,s remove the sample from the vial and blow dry with nitrogen. Usually, I'm holding the sample all the time with a pair of tweezers and not letting it go during waiting times. You can check under the light microscope, if the samples are still fine.
+
+            For shadow evaporation, put the sample holder for a few minutes on the hot plate at 100C. This is to remove any adsorbed water and improves the quality of the vacuum quite a lot. Check for orientation, so the shadow evaporation works in the correct direction. In the best case, load the sample now and let it in the load lock overnight or longer. This helps improving the vacuum again. Next you load the holder in the main chamber, and you can evaporate the first 60nm of aluminum under 4deg by electron beam evaporation. Make sure to take your time to heat up the aluminum slowly, somewhere 5-10min. Also make sure that the crucible is filled properly. I usually filled up one to three pellets each evaporation. After the first evaporation go back to the load lock and close the pumping line. Now you can fill the load lock with 3.0(2)mbar of pure oxygen and wait for 3min. To stop the oxidation, open the pumping line. In order to achieve a sufficient vacuum of 10E-6mbar in the load lock, you need to pump out the oxygen feeding line. When the vacuum is good again, you can move the sample back to the main chamber and start the second evaporation of 100nm aluminum at an angle of 34deg. 
+
+            In order to achieve a well oxidized layer of Al2O3, it is crucial to achieve a smooth aluminum surface. However, I ended up with a lot of dimples. I tried different things, in order to avoid dimples. But no clear conclusion could be made. It seems, that rates higher than 4AA/s more often but insignificantly end up without dimples. In contradiction, to the tips before, a not so deep vacuum or a short amount of time between last vacuum break and evapoartion seems to favor less dimples. Now you could ask why do i spent so much time with a good vacuum in the load lock? The working theory is, that the sample shouldn't evaporate water or other dirt itself while getting evaporated with aluminum. The bad vacuum general helps with nucleationon around dirt and helps with a smooth surface general. But as told before, the numbers are not significant and further investigation werent conducted.
+
+            The Lift-off is done by putting the sample in crimp-seal vial filled with pure acetone. Put the vial for 1-3h on a hot plate at about 60C. Afterwards, use a pipette to blow some acetone, inside the vial. Make sure all metal flakes get removed, rinse with IPA and blow dry with acetone.
+
+            As a last step the samples has to be etched. The PlasmaPro 80 ICP RIE by Oxford is used, although it's not intended to etch homogeneous. In order to work at low table RF and high pressures, an ignition step is implemented. It helps to ignite and stabilize the plasma, before going in a way less stable condition, that favors homogeneous etching. The temperature porves to be crucial to the undercut reached. 100\,$^\circ$C has proven to yield a sufficient undercut and the process is slow enough to control the etching depth. A laser interferometer is used to monitor the depth. You want to find a spot on the sample but not metal structure, where the reflected intensity is as high as possible, but on the same hand the intensity is not saturated. While etching the Intensity follows a quite bad but recognizable cosine. The number of periods $m$ you have to wait, depend on the laser wavelength $\lambda$, the desired depth $d$ and the refractive index $n$ (ref: manual). We end up with 
+
+            \begin{align}
+                \textit{m} = \frac{\text{2} \cdot \textit{n} \cdot \textit{d}}{\lambda} = \frac{2 \cdot 1.81 \cdot 500\,\mathrm{nm}}{632.8\,nm} = 2.86
+            \end{align}
+            periods. Since the etching speed is widespread and individual for each sample, I recommend to etch each sample seperately.
+
+            Now the sample has to be contacted. For me, it was extremely difficult in the beginning and I had to gather all the tips of all available, current and former users. In the end I realized, my hand was way too shaky. Shaky hands might be caused by caffein, coffein deprivation, lack of sleep, stress and bad eyesight. First, I had to stop drinking any coffee, I guess I'm kind of sensible to that. In order to avoid stress, I never contacted more than one sample on a day. I took my time, and if I didn't feel like it, I postponed to the next day. After so many production steps, you'll lose way more time, by loosing samples, than by postponing the contacting. Finally, takling bad eyesight, I learned I'm short eyed, what's good, but on top I also have quite some astigmatism, whats super bad. Even more impact on the bad eyesight for me was bad lighting. Try to find the brightest spot. The workbench in the middle of P5 offers two advantages over other places. You have multiple options for extra lighting, but also the table is quite high. So with a low chair you can get in still a comfy position while being super close to the sample, since the table is relatively high.
+            With TESA stipes you can fixate you sample on a copper plate. So you can still move it, but it also is kind of fixated. Next you want to prepare some insulated copper wires soldered to some post connector. Scratch of the insulation at the tips. The bias lines may be even twisted. try to avoid long cables, 4-5cm is enough. Don't forget to insulate the rear part of the post connector with some G varnish. Now position the wire tips with the help of some play dough, such that the wire tips touches the pads of the sample. Now you can drop some silver paste with the help of some sharpened tooth pick on the wire and pad. Use one silver paste for contacting and nothing else, the viscosity is crucial, it's meant to wet the sample such, that more or less just the pad is connected. If the viscosity is too low, you might shortcut you sample. It is too high, the wire sticks to the tooth pick instead of the pad. In order to just cover the tip of the tooth pick use the silver paste in the lid after shaking the silver paste bottle.
+            At last, you want to use two component epoxy to strain relief the wires. Again, the viscosity is crucial. If you use the epoxy to fast after mixing, it will keep flowing, and touch everything. It's not clear how the epoxy and the silver paste interact, so avoid mixing them. Usually I make continous test dots of epoxy to wait for the right timing. Each side is glued separatly, since the given time frame is super narrow.
+
+            After loading the sample in the cryostat, as a last step, the shortage get scratched with an engraving tool. Make sure that during scratching and closing the radiation shields, that you are properly grounded by the bracelet. Consider doing this bare foot and raise the humidity with an air humidifier.
+
+
+    \section{Parameter for Sample Preparation}
+    \begin{table}
+        \centering
+        \caption{here goes some text.}
+        \label{tab:appendix:sample_parameter}
+        \begin{tabular}{ll}
+            \hline
+            Sacrificial layer   & Durimide 115A\\
+            Spinning            & spread cycle: 300\,rpm for 30\,s\\
+                                & spin cycle: 5000\,rpm for 90\,s\\
+                                & ramps for 3\,s, \texttt{Program 3}\\
+            Soft baking         & 135\,$^\circ$C for 5\,min in convection oven\\
+            Hard baking         & 400\,$^\circ$C for 30\,min in vacuum oven\\
+
+            \hline
+            Spacing layer       & MMA(8.5)MAA EL11\\
+            Spinning            & spread cycle: 500\,rpm for 5\,s\\
+                                & spin cycle: 2500\,rpm for 90\,s\\
+                                & ramps for 3\,s, \texttt{Program 1}\\
+            Soft baking         & 150\,$^\circ$C for 1\,min on hot plate\\
+
+            \hline
+            Electron resist     & 950 PMMA A4\\
+            Spinning            & spread cycle: 500\,rpm for 5\,s\\
+                                & spin cycle: 5000\,rpm for 60\,s\\
+                                & ramps for 3\,s, \texttt{Program 2}\\
+            Hard baking         & 170\,$^\circ$C for 30\,min in convection oven\\
+
+            \hline
+            Exposure            & Crossbeam by Zeiss, Elphy Plus by Raith\\
+            Settings            & 10\,kV acceleration, 5\,mm working distance,\\ 
+            Aperture            & 30\,\mum and 100\,\mum aperture, high current,\\
+                                & 155\,\textmu C$/$cm$^\text{2}$ area dose\\
+            Development         & 25\,s in 1 MIBK + 3 iso-p\\
+                                & 60\, in iso-p\\
+            
+            \hline
+            Shadow Evaporation  & First layer: 60\,nm Al at -4\,$^\circ$\\
+                                & Oxidation: 3\,mbar of O$_\text{2}$ for 3\,min\\
+                                & Second layer: 100\,nm Al at 34\,$^\circ$\\
+            Lift-off            & 1\,h in acetone at 60\,$^\circ$C\\
+
+            \hline
+            Reactive Ion Etching & PlasmaPro 80 ICP RIE by Oxford\\
+                                & \texttt{MCBJ SSET v5 @ 100C}, see Table (ref)\\
+            \hline
+            
+        \end{tabular}
+    \end{table}
+
+    \begin{table}
+        \centering
+        \caption{here goes some text.}
+        \label{tab:appendix:rie_parameter}
+        \begin{tabular}{llll}
+            Parameter       & Stabilization         & Ignition      & Process       \\
+            \\\hline
+            process time    & 5\,min                & 5\,s          & 30\,min       \\
+            table heater    & 100\,$^\circ$C   & -             & -             \\
+            oxygen flow     & 50\,sccm           & -             & -             \\
+
+            pressure        & 100\,mTorr & ramp & 250\,mTorr \\       
+
+            \\\hline
+            Table RF &&&\\
+            Power Demand            & - & 20(5)\,W              & 3(5)\,W \\
+            Max Reflected Power     & - & 5\,W                  & 2\,W \\
+            Tolerance Time          & - & 7\,s                  & - \\
+            Min DC Bias             & - & 1\,V                  & - \\
+            AMU (C1, C2)            & - & (41\,\%, 23\,\%)      & - \\
+
+            \\\hline
+            ICP RF &&&\\
+            Power Demand            & - & 400(50)\,W            & - \\
+            Max Reflected Power     & - & 100\,W                & - \\
+            Tolerance Time          & - & 10\,s                 & - \\
+            AMU (C1, C2)            & - & (64\,\%, 39\,\%)      & - \\
+            
+        \end{tabular}
+    \end{table}
+
+
+            
+            % After loading the sample in the cryostat, as a last step, the shortage get scratched with an engraving tool.
+            % 100\,$^\circ$C has proven to yield a sufficient undercut and the process is slow enough to control the etching depth.
+            % A single  
+
+            % \begin{align}
+            %     \textit{m} = \frac{\text{2} \cdot \textit{n} \cdot \textit{d}}{\lambda} = \frac{2 \cdot 1.81 \cdot 500\,\mathrm{nm}}{632.8\,nm} = 2.86
+            % \end{align}
+
+            % refractive index = 1.81 (cite: manual)
+
+        % \subsection{substrate}
+        %     Warum Bronze? Warum? Christian Schirm hat nur echt viele substrate getestet. Aber auch nicht erzählt warum genau diese? copper-berilium is poisonous. 
+        %     % https://www.jlab.org/sites/default/files/magnet-group/materials/low_temperature_materials_properties.pdf
+
+        %     polieren, plus dann poliamid
+
+
+        %     Wichtig: SE funktioniert besser mit neuerem Wafer
+
+        % \subsection{Sample Design}
+        %     Insel übernommen von vorgängern. (thomas Susi laura) Dabei wurde optimiert dass die Insel klein genug ist für coulomb blockade effect und groß genug um nicht abzureißen. ebenso gate mit 300nm abstand scheint gut zu passen. 
+
+        %     Neu im Game ist stripline. auch wenn nicht 50 Ohms matched so ist die Idee, dass der geringe abstand zu insel der dominierende eingestrahlte teil der strahlung ist.
+        %     Lange länge um möglichst teiffrequente resonanz zu bekommen und bei höheren frequenzen besser einzustrahlen.
+
+        %     Problematic mit pads, da vier und dann noch kurzschluss um tunnelbarriere möglichst lange zu schützen.
+
+        % \subsection{Elektron Beam Lithography}
+        %     Warum Raith? 
+        %     Electron Beam Lithography alignment und stiching. Möglicht wenige polygone. positionlist.
+        %     verzicht auf contamination dots, durch high-current und 30mu blende und damit hohe rückwärtige aperture. -> höhere tiefenschärfe. Nachteil ist, das nicht wirlich niedrigere dosen verwendet werden können.
+
+    %     \subsection{shadow evaporation}
+    %     \subsection{Reactive Ion Etching}
+    %     \subsection{contact}
+
+    % \section{Setup}
+    %     \subsection{cryostat and thermometer}
+    %     \subsection{MCBJ}
+    %         Danke Martin!
+
+    %     \subsection{DC Cabling}
+    %         \subsubsection{copper powder filter}
+    %         \subsubsection{steel capillary cable}
+    %         \subsubsection{silver epoxy filter}
+
+    %     \subsection{AC cabling}
+    %         - {Atenuators}
+    %         - {Antenna}
+    %         - {stripline}
+
+    % \section{Data Aqucition}
+    %     \subsection{DC Measurement Concept}
+    %         - {layout}
+    %         - {AD converter}
+    %         - {Pre Amplifier}
+        
+    %     \subsection{Measurement Software}
+    %         - P5 control
+    %         - devices in appendix
+
+    %     \subsection{Measurement Script}
+    %         - explain iv\_script\_v2.py
+    %         - test
+
+    %     \subsection{Evaluation Script}
+    %         - binning
+    %         - data threadment
+
+    %     \section{Drivers}
+    %         into the appendix
+    %         \subsection{p5 control}
+    %         \subsection{GUI}
+    %         \subsection{Femtos}
+    %         \subsection{ADwin}
+    %         \subsection{Bluefors Software}
+    %         \subsection{Magnet}
+    %         \subsection{Motor}
+    %         \subsection{VNA}
+    %         \subsection{Yoko}
+    %         \subsection{Keysight}
+        
+        
 
 
 
