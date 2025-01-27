@@ -1,3 +1,7 @@
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+
 %%% corporate design %%%
     \RequirePackage{etex}
     \usepackage{csquotes} % Bibtex and language stuff
@@ -5,15 +9,56 @@
     % \usepackage{corporatedesign/themeKonstanzXelatexAddOn} % XeLaTeX mit Schriftart Arial, VOR dem Standardpaket importieren
     \usepackage{.utilities/themeKonstanz} % Muss immer verwendet werden (Standardpaket)
     % \usepackage{corporatedesign/themeKonstanzStyleAddOn} % Style Add-On für andere Überschriften, NACH dem Standardpaket importieren
+
+    % usepackage that contains my modification to themeKonstanz
     \usepackage{.utilities/myKonstanz}
 
-%%% Basic Settings %%%
-    % \setstocksize{297mm}{210mm} % or format a4
-    \format{a5} %A4, vllt. A5?
 
 %%% bibliography %%%
     \usepackage[backend=biber, sorting=none, maxbibnames=99]{biblatex}
     \addbibresource{bibliography.bib}
+    \usepackage{csquotes} % Bibtex and language stuff
+
+%%% basic settings %%%
+
+    % Kopf und Fusszeile  
+    % nr. 9 original         
+    % uneven means in header
+    % \headFoot{9} % for analog version
+    \headFoot{11} % for digital version
+
+    % For blank page
+        \usepackage{afterpage}
+        \newcommand\blankpage{
+            \null
+            \thispagestyle{empty}
+            \addtocounter{page}{-1}
+            \newpage
+            }
+
+    % desgin developement
+        % for \printinunitsof{in}\prntlen{\textwidth}
+        \usepackage{layouts} 
+        \setlayoutscale{1.0}
+        \usepackage{showframe}
+        % \usepackage{blindtext}
+
+
+    % \usepackage{graphicx}
+    % \usepackage{caption}
+    % \usepackage{subcaption}
+    % \usepackage{import}
+    % \usepackage{multicol}
+    % \setlength{\columnsep}{30pt}
+    % \usepackage{pdflscape}
+    % \interfootnotelinepenalty=10000
+
+%%% math stuff %%%
+    \usepackage{amsmath}
+    \usepackage{textcomp}  %\textmu
+    \newcommand{\mum}{\textmu m}
+    \renewcommand{\vec}[1]{\mathbf{#1}} %\vec{}
+    \newcommand{\ima}[0]{\overset{\hspace{0.9mm}\text{\scalebox{0.7}{$\circ$}}}{\imath}} % complex number i with °
 
 %%% python plots %%%
     % Creator: Matplotlib, PGF backend
@@ -61,16 +106,4 @@
     \floatname{program}{Program} % name, Name in pdf
 
 %%% Hyphenations %%%
-\hyphenation{Bei-spiel}
-
-
-% for formular
-\usepackage{amsmath}
-\usepackage{textcomp}  %\textmu
-\newcommand{\mum}{\textmu m }
-
-\usepackage{layouts}
-
-\usepackage{graphicx}
-\usepackage{caption}
-\usepackage{subcaption}
+    \hyphenation{Bei-spiel}

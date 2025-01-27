@@ -1,2 +1,6 @@
 coater
 mTorr
+capacitively
+stripline
+parafilm
+cryostat

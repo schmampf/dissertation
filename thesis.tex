@@ -1,44 +1,53 @@
 %%% begin document %%%
-\documentclass[9pt, rgb]{scrreport} % document class scrreprt % 11pt for dinA4
-\input{header.tex} % import all packages and pre-definitions
+    \documentclass[9pt, rgb]{scrreport} % document class scrreprt % 11pt for dinA4
+    \input{header.tex} % import all packages and pre-definitions
+    
 \begin{document}
 
-%%% title page %%%
+    %%% title page %%%
+        \include{title}
 
-    \include{title}
+    %%% abstract %%%
+        \clearpage 
+        \pagenumbering{Roman}
 
-\clearpage 
-\pagenumbering{Roman}
+        \include{abstract}
+        \include{inspirational}
+        \tableofcontents
 
-%%% abstract %%%
-    \include{abstract}
-    \include{inspirational}
-    \tableofcontents
+    %%% main body %%%
+        \clearpage 
+        \pagenumbering{arabic}
 
-%%% main body %%%
-\clearpage 
-\pagenumbering{arabic}
+        % \include{introduction}
+        \include{theory}
+        \include{methods}
+        \include{atomic contacs}
+        \include{asymmetries}
+        % \include{single electron transistor}
+        % \include{conclusion}
 
-    % \include{introduction}
-    \include{theory}
-    \include{methods}
-    \include{atomic contacs}
-    \include{asymmetries}
-    % \include{single electron transistor}
-    % \include{conclusion}
+    %%% appendix %%%
+        \clearpage
+        \pagenumbering{roman}
 
-%%% appendix %%%
-\clearpage
-\pagenumbering{roman}
+        \include{appendix}
 
-    \include{appendix}
+    %%% List of tables and figures
+        % \addcontentsline{toc}{chapter}{List of Figures}
+        % \listoffigures
 
-%%% bibliography %%%
-\newpage
-\addcontentsline{toc}{chapter}{References}
-\printbibliography[title={References}]
+        % \begingroup
+        % \let\clearpage\relax
+        % \listoftables
+        % \addcontentsline{toc}{chapter}{List of Tables}
+        % \endgroup
 
-    \include{acknowledgement}
+    %%% bibliography %%%
+        % \newpage
+        \addcontentsline{toc}{chapter}{References}
+        \printbibliography[title={References}]
 
-%%% End Document %%%
+        \include{acknowledgement}
+
 \end{document}

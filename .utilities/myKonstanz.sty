@@ -1,7 +1,75 @@
+%%% Colors %%%
+\usepackage{xcolor}
 
-%%% A5 %%%
+\xdefinecolor{seeblau100}{RGB}{0, 154, 209}
+\xdefinecolor{seeblau65}{RGB}{89, 182, 220}
+\xdefinecolor{seeblau35}{RGB}{160, 211, 230}
+\xdefinecolor{seeblau20}{RGB}{200, 229, 239}
+\xdefinecolor{schwarz60}{RGB}{0.0, 0.0, 0.4}
+\xdefinecolor{schwarz40}{RGB}{0.0, 0.0, 0.6}
+\xdefinecolor{schwarz20}{RGB}{0.0, 0.0, 0.8}
+\xdefinecolor{schwarz10}{RGB}{0.0, 0.0, 0.9}
 
-% \thistitlepage
+\xdefinecolor{magenta100}{RGB}{209,0, 154}
+\xdefinecolor{magenta65}{RGB}{220,89, 182}
+\xdefinecolor{magenta35}{RGB}{230,160, 211}
+\xdefinecolor{magenta20}{RGB}{239,200, 229}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.95}
+
+% Replace "english" with the language you use
+\addto\captionsenglish{
+  \renewcommand{\contentsname}%
+    {Table of Contents}%
+}
+
+% Anpasung der Farbe der Fußnotenzeile bei Verwendung einer Fußnote
+\renewcommand\footnoterule{{\color{seeblau100}\kern-3pt \hrule width 2in \kern 2.6pt}}
+
+%%% A5 Format %%%
+\format{a5}
+\geometry{paperheight=21.0cm, paperwidth=14.8cm, left=2cm, right=2cm, bottom=1.6cm, top=2cm, headheight=12pt, headsep=0.5cm, footskip=22pt}%
+\setlength{\logoheight}{15mm}
+\setlength{\boxlinewidth}{1pt}
+
+
+% define new chapter
+\titleformat{\chapter}%
+{\selectfontsize{16pt}\sffamily\gdef\chapterlabel{}} 
+{\gdef\chapterlabel{}}
+{0pt}
+{
+	\ifx\chapterlabel\empty\seeblauunderline{\textbf{#1}}\else\seeblauunderline{\textbf{\chapterlabel~{#1}}}\fi%
+} % before
+\titlespacing*{\chapter}{0pt}{28pt}{42pt}%
+
+% define new section
+\titleformat{\section}%
+{\selectfontsize{14pt}\sffamily\gdef\chapterlabel{}}%
+{\gdef\chapterlabel{\thesection}}
+{0pt}%
+{%
+    \ifx\chapterlabel\empty\seeblauunderline{\textbf{#1}}\else\seeblauunderline{\textbf{\chapterlabel~#1}}\fi%
+}
+\titlespacing*{\section}{0pt}{25pt}{12.5pt}
+
+% define new subsection
+\titleformat{\subsection}
+{\selectfontsize{12pt}\sffamily\gdef\chapterlabel{}}
+{\gdef\chapterlabel{\thesubsection}}
+{0pt}
+{%
+\ifx\chapterlabel\empty\seeblauunderline{\textbf{#1}}\else\seeblauunderline{\textbf{\chapterlabel~#1}}\fi%
+}
+% \titlespacing*{\subsection}{0pt}{24pt}{12pt}
+\titlespacing*{\subsection}{0pt}{20pt}{10pt}
+
+
+%%% A5 Title Page %%%
+
 \newkeycommand{\thesistitlepageafive}[language=english][1]{
 
 	\def\lanUser{
@@ -84,18 +152,3 @@
     \thispagestyle{empty} $ $%
     \newpage%
 }%
-
-
-
-
-%%% Colors %%%
-\xdefinecolor{magenta100}{RGB}{209,0, 154}
-\xdefinecolor{magenta65}{RGB}{220,89, 182}
-\xdefinecolor{magenta35}{RGB}{230,160, 211}
-\xdefinecolor{magenta20}{RGB}{239,200, 229}
-
-
-\definecolor{codegreen}{rgb}{0,0.6,0}
-\definecolor{codegray}{rgb}{0.5,0.5,0.5}
-\definecolor{codepurple}{rgb}{0.58,0,0.82}
-\definecolor{backcolour}{rgb}{0.95,0.95,0.95}

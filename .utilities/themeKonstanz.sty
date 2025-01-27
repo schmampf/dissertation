@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %                                                     %
 % ThemeKonstanz für die Verwendung beim Erstellen von %
-% PDF-Dokumenten und Abschlussarbeiten mit dem        % 
+% PDF-Dokumenten und Abschlussarbeiten mit dem        %
 % Corporate Design der Universität Konstanz           %
 %                                                     %
 % Stand: 14.09.2016 - Michael Brendle (Version 0.4)   %
@@ -15,11 +15,10 @@
 \usepackage{geometry}
 % DinA4 Initialisierung
 % Benutzer kann es mittels \format aendern (siehe unten)
-\geometry{paperheight=29.7cm, paperwidth=21.0cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
+\geometry{paperheight=29.7cm, paperwidth=21.0cm, left=3cm, right=3cm, bottom=3.5cm, top=3cm, headheight=12pt, headsep=0.8cm, footskip=42pt}%
 
 % Codierung
-%\usepackage[utf8]{inputenc}
-\usepackage{fontspec} % removes inputec utf8 encoding warning
+\usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
 \usepackage[T1]{fontenc}
 
@@ -31,9 +30,15 @@
 
 % Fuer das Merken und Markieren Element, sowie Überschriften
 \usepackage{tikz}
-\usetikzlibrary{calc}
-\usetikzlibrary{arrows.meta}
-\usetikzlibrary{backgrounds,matrix,fadings,calc,positioning,decorations.pathreplacing,arrows.meta,shapes,shapes.multipart}
+\usetikzlibrary{backgrounds,matrix,fadings,calc,positioning,decorations.pathreplacing,arrows,arrows.meta,shapes,shapes.multipart,snakes}
+
+% Math tools
+\usepackage{amsmath}
+\usepackage{bm} % bold math
+\usepackage{mathtools} % text over arrows
+
+% Url
+\usepackage{url}
 
 % Fuer If-Then-Else
 \usepackage{ifthen}
@@ -64,8 +69,19 @@
 \usepackage{calc}
 \usepackage{float}
 
+% theorem
+\usepackage{amsthm}
+\theoremstyle{remark}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+
+% definition
+\usepackage{thmbox}
+\newtheorem[M, bodystyle=\noindent, vskip=0.6em]{definition}{Definition}
+
 % Schriften
 \usepackage{cmbright}
+%\usepackage{accents} % true costs and cardinality
 
 % Paket für Unter- und Überschrift für Abbildungen und Tabellen
 % Möchte man eine andere Unter- und / oder Überschrift können hier
@@ -74,45 +90,39 @@
 %     http://ftp.gwdg.de/pub/ctan/macros/latex/contrib/caption/caption-eng.pdf
 %
 \usepackage[format=hang, justification=justified, labelfont=bf, font=small, labelsep=space]{caption}
-
-% Nummerrierung von Abbilungen und Tabelle fortlaufend
-\usepackage{chngcntr}
-\counterwithout{figure}{chapter}
-\counterwithout{table}{chapter}
+\usepackage{subfigure}
 
 % Paket für Tabellen im Corporate Design der Universität Konstanz
 \usepackage{tabu}
+\usepackage{booktabs} % for \toprule, \midrule, \bottomrule
+\usepackage{multirow} % \multirow macro
 
 % Referenzierung
-\usepackage{hyperref}
+\usepackage[hidelinks]{hyperref}
 
 % LaTeX Fixes - ab Version 2015 nicht mehr notwendig
-% \usepackage{fixltx2e} 
+\usepackage{fixltx2e}
 
 % Pakete für die Anpassung der Kapitel und Abschnittsüberschriften
 \usepackage{fancyhdr}
-\usepackage[explicit]{titlesec} 
+\usepackage[explicit]{titlesec}
 
 % Farben Definition des CD der Uni Konstanz mit dem HSB Modell
 % Dadurch direkte Repraesentation der Saettigung
-% \xdefinecolor{seeblau100}{hsb}{0.5409, 1, 0.8784}
-% \xdefinecolor{seeblau65}{hsb}{0.5409, 0.65, 0.8784}
-% \xdefinecolor{seeblau35}{hsb}{0.5409, 0.35, 0.8784}
-% \xdefinecolor{seeblau20}{hsb}{0.5409, 0.2, 0.8784}
-% \xdefinecolor{schwarz60}{hsb}{0.0, 0.0, 0.4}
-% \xdefinecolor{schwarz40}{hsb}{0.0, 0.0, 0.6}
-% \xdefinecolor{schwarz20}{hsb}{0.0, 0.0, 0.8}
-% \xdefinecolor{schwarz10}{hsb}{0.0, 0.0, 0.9}
+\xdefinecolor{seeblau100}{hsb}{0.5409, 1, 0.8784}
+\xdefinecolor{seeblau65}{hsb}{0.5409, 0.65, 0.8784}
+\xdefinecolor{seeblau35}{hsb}{0.5409, 0.35, 0.8784}
+\xdefinecolor{seeblau20}{hsb}{0.5409, 0.2, 0.8784}
+\xdefinecolor{schwarz60}{hsb}{0.0, 0.0, 0.4}
+\xdefinecolor{schwarz40}{hsb}{0.0, 0.0, 0.6}
+\xdefinecolor{schwarz20}{hsb}{0.0, 0.0, 0.8}
+\xdefinecolor{schwarz10}{hsb}{0.0, 0.0, 0.9}
 
 % rgb - Nur im Notfall verwenden
-\xdefinecolor{seeblau100}{RGB}{0, 154, 209}
-\xdefinecolor{seeblau65}{RGB}{89, 182, 220}
-\xdefinecolor{seeblau35}{RGB}{160, 211, 230}
-\xdefinecolor{seeblau20}{RGB}{200, 229, 239}
-\xdefinecolor{schwarz60}{RGB}{0.0, 0.0, 0.4}
-\xdefinecolor{schwarz40}{RGB}{0.0, 0.0, 0.6}
-\xdefinecolor{schwarz20}{RGB}{0.0, 0.0, 0.8}
-\xdefinecolor{schwarz10}{RGB}{0.0, 0.0, 0.9}
+%\xdefinecolor{seeblau100rgb}{RGB}{0, 154, 209}
+%\xdefinecolor{seeblau65rgb}{RGB}{89, 182, 220}
+%\xdefinecolor{seeblau35rgb}{RGB}{160, 211, 230}
+%\xdefinecolor{seeblau20rgb}{RGB}{200, 229, 239}
 
 % Laengendefinitionen
 \newlength{\mylengthwidth}%
@@ -210,6 +220,18 @@
 \def\unimidrule{\tabucline[0.1ex seeblau100 on 4pt off 3.5pt]}
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Counter                      %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Nummerrierung von Abbilungen und Tabelle fortlaufend
+\usepackage{chngcntr}
+\counterwithout{figure}{chapter}
+\counterwithout{table}{chapter}
+\counterwithout{equation}{chapter}
+\counterwithout{theorem}{chapter}
+\counterwithout{definition}{chapter}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Seitenformat / Foliengroesse %
@@ -254,7 +276,7 @@
 		\setlength{\boxlinewidth}{1pt}
 	\else%
 	\ifx\dinformat\dinavier%
-		\geometry{paperheight=29.7cm, paperwidth=21.0cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=13.7pt, headsep=0.8cm, footskip=22pt}%
+		\geometry{paperheight=29.7cm, paperwidth=21.0cm, left=3cm, right=3cm, bottom=3cm, top=3cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
 		\setlength{\logoheight}{20mm}
 		\setlength{\boxlinewidth}{1pt}
 	\else%
@@ -262,7 +284,7 @@
 		\geometry{paperheight=21.0cm, paperwidth=29.7cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
 		\setlength{\logoheight}{20mm}
 		\setlength{\boxlinewidth}{1pt}
-	\else%	
+	\else%
 	\ifx\dinformat\dinadrei%
 		\geometry{paperheight=42.0cm, paperwidth=29.7cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
 		\setlength{\logoheight}{30mm}
@@ -296,48 +318,21 @@
 %
 %     http://www.ctex.org/documents/packages/layout/titlesec.pdf
 
-% TODO 
-\titleformat{
-		name=\chapter
-	} % command
-	{
-		\selectfontsize{16pt}\sffamily\gdef\chapterlabel{}
-	} % format (Definitionen, Schriftgroesse, ...)
-	{
-		\gdef\chapterlabel{\thechapter}
-	} % label (Label erhalten; hier: \thechapter)
-	{
-		0pt
-	} % sep
-	{
-		\ifx\chapterlabel\empty\seeblauunderline{\textbf{#1}}\else\seeblauunderline{\textbf{\chapterlabel~{#1}}}\fi%
-	} % before
+\titleformat{\chapter}% command
+{\selectfontsize{16pt}\sffamily\gdef\chapterlabel{}}% format (Definitionen, Schriftgroesse, ...)
+{\gdef\chapterlabel{\thechapter}}% label (Label erhalten; hier: \thechapter)
+{0pt}% sep
+{%
+\ifx\chapterlabel\empty\seeblauunderline{\textbf{#1}}\else\seeblauunderline{\textbf{\chapterlabel~#1}}\fi%
+}% before
 
-
-\titleformat{
-	name=\chapter, numberless
-} % command
-{
-	\selectfontsize{16pt}\sffamily\gdef\chapterlabel{}
-} % format (Definitionen, Schriftgroesse, ...)
-{
-	\gdef\chapterlabel{}
-} % label (Label erhalten; hier: \thechapter)
-{
-	0pt
-} % sep
-{
-	\ifx\chapterlabel\empty\seeblauunderline{\textbf{#1}}\else\seeblauunderline{\textbf{\chapterlabel~{#1}}}\fi%
-} % before
-
-% titlespacing ist aus dem gleichen Paket. Hier wird der Abstand nach links, 
+% titlespacing ist aus dem gleichen Paket. Hier wird der Abstand nach links,
 % oben, unten und rechts festgelegt.
 %
 %   \titlespacing*{command}{left}{beforesep}{aftersep}[right]
 %
 
-% \titlespacing*{\chapter}{0pt}{32pt}{48pt}%
-\titlespacing*{\chapter}{0pt}{28pt}{42pt}%
+\titlespacing*{\chapter}{0pt}{32pt}{48pt}%
 
 
 
@@ -354,8 +349,7 @@
 {%
 \ifx\chapterlabel\empty\seeblauunderline{\textbf{#1}}\else\seeblauunderline{\textbf{\chapterlabel~#1}}\fi%
 }
-% \titlespacing*{\section}{0pt}{28pt}{14pt}
-\titlespacing*{\section}{0pt}{25pt}{12.5pt}
+\titlespacing*{\section}{0pt}{28pt}{14pt}
 
 
 
@@ -372,8 +366,7 @@
 {%
 \ifx\chapterlabel\empty\seeblauunderline{\textbf{#1}}\else\seeblauunderline{\textbf{\chapterlabel~#1}}\fi%
 }
-% \titlespacing*{\subsection}{0pt}{24pt}{12pt}
-\titlespacing*{\subsection}{0pt}{20pt}{10pt}
+\titlespacing*{\subsection}{0pt}{24pt}{12pt}
 
 
 
@@ -390,8 +383,7 @@
 {%
 \ifx\chapterlabel\empty\textbf{#1}\else\textbf{\chapterlabel~#1}\fi%
 }
-% \titlespacing*{\subsubsection}{0pt}{24pt}{12pt}
-\titlespacing*{\subsubsection}{0pt}{20pt}{10pt}
+\titlespacing*{\subsubsection}{0pt}{24pt}{12pt}
 
 
 
@@ -482,7 +474,7 @@
 %                 Wird dieses optionale Argument weggelassen, so wird
 %                 an dieser Stelle natürlich kein Logo präsentiert.
 %
-%    unilogo      Standardmäßig wird in der rechten oberen Ecke auf 
+%    unilogo      Standardmäßig wird in der rechten oberen Ecke auf
 %                 der Titelseite das Unilogo platziert.
 %
 %                 Möchte man an dieser Stelle ein anderes Logo, so muss
@@ -499,12 +491,12 @@
 %                 standardmäßig das Uni-Logo in der rechten oberen
 %                 Ecke präsentiert.
 
-\newkeycommand{\unititlepage}[unilogo=.utilities/uni logo/UniKonstanz, partnerlogo=, graphic=][0]{%
+\newkeycommand{\unititlepage}[unilogo=fig/logo/UniKonstanz, partnerlogo=, graphic=][0]{%
 \thispagestyle{empty}%
 \begin{sffamily}%
 % Setze das Uni Logo nach oben rechts auf der Titelseite
 \begin{textblock*}{\paperwidth}(0pt, 0pt)%
-\hfill \includegraphics[height=\logoheight * 9/4]{\commandkey{unilogo}}%
+\hfill\includegraphics[height=\logoheight * 9/4]{\commandkey{unilogo}}%
 \end{textblock*}%
 %
 \def\keynone{}%
@@ -527,185 +519,33 @@
 	\end{textblock*}%
 }%
 {%
-	\begin{textblock*}{\paperwidth}(-0.5cm, \paperheight * 1/8 + 1cm)%
+	\begin{textblock*}{\paperwidth}(-0.5cm, \paperheight * 1/4 + 0.6cm)%
 	\includegraphics[width=\paperwidth - 2.5cm]{\commandkey{graphic}}\hfill%
 	\end{textblock*}%
 }%
 % Ertelle das Merken Objekt über der Grafik enstprechend in der
 % CD Richtlinien.
-\begin{textblock*}{\paperwidth}(2cm, 2.5cm)%
-\selectfontsize{18pt}%
-\merken{\paperheight * 1/5}{\selectfontsize{12pt}Konstanz, \jahr}{\docTitle}%
+\begin{textblock*}{\paperwidth}(2cm, \paperheight * 1/5)%
+\selectfontsize{25pt}%
+\merken{\paperheight * 1/4}{\selectfontsize{16pt}\datum}{\docTitle}%
 \end{textblock*}%
 % Erstelle ein Textfeld mit dem Autor des Dokumentes unterhalb der Grafik
-\begin{textblock*}{\paperwidth}(2cm, 21.5cm)%
+\begin{textblock*}{\paperwidth}(2cm, \paperheight - 3.2cm)%
 \selectfontsize{16pt}%
 \seeblauunderline{\textbf{\autor}}%
 \end{textblock*}%
 % Erstelle ein Textfeld mit dem Untertitel des Dokumentes unterhalb
 % des Autors.
-\begin{textblock*}{\paperwidth}(2cm, 21.9cm)%
+\begin{textblock*}{\paperwidth}(2cm, \paperheight - 2.8cm)%
 \selectfontsize{16pt}%
 \docSubtitle%
 \end{textblock*}%
-
-% Uni-Sektion und Fachebereich
-\begin{textblock*}{\textwidth}(0.5\footspace, 23cm)%
-\selectfontsize{14pt}\centering%
-at the
-Universität Konstanz\\
-\vskip 2pt
-\docUnisection\\%
-\vskip 2pt%
-\docDepartment%
-\end{textblock*}%
-% Gutachter (Deutsch, English)
-\begin{textblock*}{\textwidth}(0.5\footspace, 25.5cm)%
-\selectfontsize{14pt}\centering%
-\begin{tabular}{ll}%
-1. Reviewer: & \docSupervisorOne\\[2pt]%
-2. Reviewer: & \docSupervisorTwo%
-\end{tabular}%
-\end{textblock*}%
-
 \newpage%
 \thispagestyle{empty} $ $%
 \newpage%
 \end{sffamily}
 }%
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Uni-Titelseite               %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Mit Hilfe des Makros
-%
-%    \unititlepage
-%
-% kann die Titleseite des Dokumentes im Corporate Design der
-% Universität Konstanz erstellt werden.
-%
-% Das Makro besitzt drei optionale Argumente, die mit
-% Key-Value-Pairs eingesetzt werden können:
-%
-%    \unititlepage[Optionen mit Key-Value-Pairs]
-%
-% Dabei stehen folgende Optionen zur Verfügung:
-%
-%    graphic      Möchte man ein Bild, Grafik, o.ä. auf der
-%                 Titelseite platzieren, so muss nur der Pfad
-%                 dieser Grafik eingesetzt werden (Beispiel siehe
-%                 unten).
-%
-%                 Wird kein Grafikpfad angegeben oder wird dieses
-%                 optionale Argument weggelassen, so wird ein
-%                 leeres graues Rechteck entsprechend CD-Richtlinien
-%                 erstellt.
-%
-%    partnerlogo  Möchte man ein Partner- bzw. Zweitlogo auf der
-%                 Titelseite platzieren, so muss auch hier der
-%                 Pfad angegeben werden, und es wird in der linken
-%                 oberen Ecke platziert (Beispiel siehe unten).
-%
-%                 Wird dieses optionale Argument weggelassen, so wird
-%                 an dieser Stelle natürlich kein Logo präsentiert.
-%
-%    unilogo      Standardmäßig wird in der rechten oberen Ecke auf 
-%                 der Titelseite das Unilogo platziert.
-%
-%                 Möchte man an dieser Stelle ein anderes Logo, so muss
-%                 auch hier der Pfad angegeben werden. Dies sollte jedoch
-%                 nur in besonderen Fällen erfolgen, da das Uni-Logo nach
-%                 CD Richtlinien i.d.R. in der oberen rechten Ecke
-%                 platziert werden sollte.
-%
-%                 Wird das optionale Argument verwendet, jedoch kein Pfad
-%                 angegeben, so wird auch kein Logo in der rechten oberen
-%                 Ecke angezeigt.
-%
-%                 Wird das optionale Argument weggelassen, so wird
-%                 standardmäßig das Uni-Logo in der rechten oberen
-%                 Ecke präsentiert.
-
-\newkeycommand{\unititlepagey}[unilogo=.utilities/uni logo/UniKonstanz, partnerlogo=, graphic=][0]{%
-\thispagestyle{empty}%
-\begin{sffamily}%
-% Setze das Uni Logo nach oben rechts auf der Titelseite
-\begin{textblock*}{\paperwidth}(0pt, 0pt)%
-\hfill \includegraphics[height=\logoheight * 9/4]{\commandkey{unilogo}}%
-\end{textblock*}%
-%
-\def\keynone{}%
-\def\partner{\commandkey{partnerlogo}}%
-\def\titlegraphic{\commandkey{graphic}}%
-% Setze das Partnerlogo oben links, falls es einen Pfad gibt.
-\ifthenelse{\equal{\keynone}{\partner}}%
-{}{%
-	\begin{textblock*}{\paperwidth}(0.75\logoheight, 0.5\logoheight)%
-	\includegraphics[height=\logoheight]{\commandkey{partnerlogo}}\hfill%
-	\end{textblock*}%
-}% Setze die Tielgrafik an die entsprechende Position, falls es einen Pfad gibt.
-% Ansonsten wird ein grauer Platzhalter platziert.
-\ifthenelse{\equal{\keynone}{\titlegraphic}}%
-{%
-	\begin{textblock*}{\paperwidth}(-0.5cm, \paperheight * 1/4 + 0.6cm)%
-	\begin{tikzpicture}%
-	\draw [schwarz10, fill=schwarz10, line width=0mm] (0,0) -- (\paperwidth-2.5cm,0) -- (\paperwidth-2.5cm,\paperheight - 12.2cm) -- (0,\paperheight - 12.2cm) -- (0,0);%
-	\end{tikzpicture}%
-	\end{textblock*}%
-}%
-{%
-	\begin{textblock*}{\paperwidth}(\paperwidth/3, \paperheight * 2/8 + 1cm)%
-	\includegraphics[width=\paperwidth*2/3]{\commandkey{graphic}}\hfill%
-	\end{textblock*}%
-}%
-% Ertelle das Merken Objekt über der Grafik enstprechend in der
-% CD Richtlinien.
-\begin{textblock*}{\paperwidth}(1cm, 5.0cm)%
-\selectfontsize{35pt}%
-\markieren{\textbf{Electronic transport in}}{\textbf{superconducting ferromagnetic}}{\textbf{nano hetero-structures}}{\textbf{under microwave irradiation}}
-%\merken{\paperheight * 1/5}{\selectfontsize{12pt}Konstanz, \jahr}{\docTitle}%
-\end{textblock*}%
-% Erstelle ein Textfeld mit dem Autor des Dokumentes unterhalb der Grafik
-\begin{textblock*}{\paperwidth}(2cm, 21.5cm)%
-\selectfontsize{16pt}%
-\seeblauunderline{\textbf{\autor}}%
-\end{textblock*}%
-% Erstelle ein Textfeld mit dem Untertitel des Dokumentes unterhalb
-% des Autors.
-\begin{textblock*}{\paperwidth}(2cm, 21.9cm)%
-\selectfontsize{16pt}%
-\docSubtitle%
-\end{textblock*}%
-\begin{textblock*}{\paperwidth}(2cm, 2cm)%
-\selectfontsize{16pt}%
-Konstanz, \jahr
-\end{textblock*}%
-
-% Uni-Sektion und Fachebereich
-\begin{textblock*}{\textwidth}(0.5\footspace, 23cm)%
-\selectfontsize{14pt}\centering%
-at the
-Universität Konstanz\\
-\vskip 2pt
-\docUnisection\\%
-\vskip 2pt%
-\docDepartment%
-\end{textblock*}%
-% Gutachter (Deutsch, English)
-\begin{textblock*}{\textwidth}(0.5\footspace, 25.5cm)%
-\selectfontsize{14pt}\centering%
-\begin{tabular}{ll}%
-1. Reviewer: & \docSupervisorOne\\[2pt]%
-2. Reviewer: & \docSupervisorTwo%
-\end{tabular}%
-\end{textblock*}%
-
-\newpage%
-\thispagestyle{empty} $ $%
-\newpage%
-\end{sffamily}
-}%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -716,7 +556,7 @@ Universität Konstanz\\
 %
 %    \thesistitlepage
 %
-% kann die Titleseite des Dokumentes an die Vorgaben 
+% kann die Titleseite des Dokumentes an die Vorgaben
 % einer Arbeit (Bachelorarbeit, Masterarbeit, ... ) des
 % Fachbereichs Informatik und Informationswissenschaft
 % angepasst werden.
@@ -729,7 +569,7 @@ Universität Konstanz\\
 %
 %    language        Mit diesem Optionalen Argument kann die
 %                    Sprache der Titelseite angepasst werden.
-%       
+%
 %                    Mögliche Werte sind
 %
 %                        german
@@ -750,7 +590,6 @@ Universität Konstanz\\
 %
 % Diese Thesis-Titelseite ist auf DinA4 optimiert!
 
-
 \newkeycommand{\thesistitlepage}[language=german][1]{%
 % Definiere Deutsch, English und Benutzereingabe
 \def\lanGerman{german}%
@@ -759,12 +598,12 @@ Universität Konstanz\\
 % Verwende Serifenlose Schrift auf der Titelseite
 \begin{sffamily}%
 % Dokumenten Titel
-\begin{textblock*}{\textwidth}(0.5\footspace, 4cm)%
+\begin{textblock*}{1.15\textwidth}(0.33\footspace, 4cm)%
 \selectfontsize{18pt}\centering\textbf{\docTitle}%
 \end{textblock*}%
 % Art der Arbeit, z.b. Bachelorarbeit, Masterarbeit, ...
-\begin{textblock*}{\textwidth}(0.5\footspace, 8cm)%
-\selectfontsize{18pt}\centering\textbf{#1}%
+\begin{textblock*}{\textwidth}(0.5\footspace, 7cm)%
+\selectfontsize{18pt}\centering\textbf{#1}\\\selectfontsize{14pt}presented%
 \end{textblock*}%
 % Autor (Deutsch, English)
 \ifthenelse{\equal{\lanUser}{\lanEnglish}}%
@@ -800,7 +639,7 @@ an der%
 }%
 % Unversität Konstanz Logo
 \begin{textblock*}{\textwidth}(0.5\footspace, 13.25cm)%
-\centering\includegraphics[width=0.75\textwidth]{.utilities/uni logo/UniKonstanz_Logo_Optimum.pdf}
+\centering\includegraphics[width=0.75\textwidth]{fig/logo/UniKonstanz_Logo_Optimum.pdf}
 \end{textblock*}%
 % Uni-Sektion und Fachebereich
 \begin{textblock*}{\textwidth}(0.5\footspace, 19.5cm)%
@@ -814,9 +653,9 @@ an der%
 {%
 \begin{textblock*}{\textwidth}(0.5\footspace, 22.5cm)%
 \selectfontsize{14pt}\centering%
-\begin{tabular}{ll}%
-1. Reviewer: & \docSupervisorOne\\[2pt]%
-2. Reviewer: & \docSupervisorTwo%
+\begin{tabular}{lL{0.5cm}l}%
+1. Evaluated by & & \docSupervisorOne\\[2pt]%
+2. Evaluated by & & \docSupervisorTwo%
 \end{tabular}%
 \end{textblock*}%
 }%
@@ -848,6 +687,7 @@ Konstanz, \jahr%
 \newpage%
 \end{sffamily}%
 }%
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -884,14 +724,14 @@ Konstanz, \jahr%
 %
 %   align                Hier kann angegeben werden, ob das komplette Objekt
 %                        links- oder rechtsbündig angeordent werden soll.
-%                      
+%
 %                        Der Standardwert ist "left" und somit linksbündig.
 %
 %                        Für eine rechtsbündige Anordnung muss hier der Wert "right" hinterlegt werden.
 %
 %   vertical             Hier wird angegeben, ob der Inhalt der Zeilen zentriert werden soll oder
 %                        überall an der gleichen Baseline ausgerichtet werden soll.
-%                       
+%
 %                        Dies kann mittels der Wörter "center" und "base" eingestellt werden.
 %                        Dabei ist "center" als Standardwert festgelegt.
 %
@@ -909,9 +749,9 @@ Konstanz, \jahr%
 \newcommand{\headline}[6]{%
 \def\markierenalign{#1}%
 \def\markierenanchor{#2}%
-%%%%% Laenge von l bestimmen, für links und rechts vom Text nach Benutzerhandbuch	
+%%%%% Laenge von l bestimmen, für links und rechts vom Text nach Benutzerhandbuch
 	\settowidth{\mylengthwidthl}{l}%
-%%%%% Da das l noch links und rechts etwas "Platz" hat wird es auf die Haelfte begrenzt	
+%%%%% Da das l noch links und rechts etwas "Platz" hat wird es auf die Haelfte begrenzt
 	\setlength{\mylengthwidthl}{0.5\mylengthwidthl}%
 %%%%% Die Hoehe von l wird benoetigt, da die Gesamthoehe 1.5 * l nach CD betragen soll
 	\settoheight{\mylengthheigthl}{l}%
@@ -938,7 +778,7 @@ Konstanz, \jahr%
       \ifx &#3&%
 	  \else%
         \draw [seeblau100, fill=seeblau100] (0,0) -- (-1 * \lengthfirst - 2 * \mylengthwidthl,0) -- (-1 * \lengthfirst - 2 * \mylengthwidthl, 1.5\mylengthheigthl) -- (0, 1.5\mylengthheigthl) -- (0,0);
-		\node [nodestylerightbase] at (-1 * \mylengthwidthl,0.37\mylengthheigthl) {#3};	
+		\node [nodestylerightbase] at (-1 * \mylengthwidthl,0.37\mylengthheigthl) {#3};
 	  \fi%
 	\else%
         \draw [seeblau100, fill=seeblau100, line width=0mm] (0,0) -- (-1 * \lengthsecond - 2 * \mylengthwidthl,0) -- (-1 * \lengthsecond - 2 * \mylengthwidthl, 1.5\mylengthheigthl) -- (0, 1.5\mylengthheigthl) -- (0,0);
@@ -971,7 +811,7 @@ Konstanz, \jahr%
       \ifx &#3&%
 	  \else%
         \draw [seeblau100, fill=seeblau100, line width=0mm] (0,0) -- (\lengthfirst + 2 * \mylengthwidthl,0) -- (\lengthfirst + 2 * \mylengthwidthl, 1.5\mylengthheigthl) -- (0, 1.5\mylengthheigthl) -- (0,0);
-		\node [nodestylenormalbase] at (\mylengthwidthl,0.37\mylengthheigthl) {#3};	
+		\node [nodestylenormalbase] at (\mylengthwidthl,0.37\mylengthheigthl) {#3};
 	  \fi%
 	\else%
         \draw [seeblau100, fill=seeblau100, line width=0mm] (0,0) -- (\lengthsecond + 2 * \mylengthwidthl,0) -- (\lengthsecond + 2 * \mylengthwidthl, 1.5\mylengthheigthl) -- (0, 1.5\mylengthheigthl) -- (0,0);
@@ -1005,7 +845,7 @@ Konstanz, \jahr%
       \ifx &#3&%
 	  \else%
         \draw [seeblau100, fill=seeblau100] (0,0) -- (-1 * \lengthfirst - 2 * \mylengthwidthl,0) -- (-1 * \lengthfirst - 2 * \mylengthwidthl, 1.5\mylengthheigthl) -- (0, 1.5\mylengthheigthl) -- (0,0);
-		\node [nodestyleright] at (-1 * \mylengthwidthl,0.75\mylengthheigthl) {#3};	
+		\node [nodestyleright] at (-1 * \mylengthwidthl,0.75\mylengthheigthl) {#3};
 	  \fi%
 	\else%
         \draw [seeblau100, fill=seeblau100, line width=0mm] (0,0) -- (-1 * \lengthsecond - 2 * \mylengthwidthl,0) -- (-1 * \lengthsecond - 2 * \mylengthwidthl, 1.5\mylengthheigthl) -- (0, 1.5\mylengthheigthl) -- (0,0);
@@ -1038,7 +878,7 @@ Konstanz, \jahr%
       \ifx &#3&%
 	  \else%
         \draw [seeblau100, fill=seeblau100, line width=0mm] (0,0) -- (\lengthfirst + 2 * \mylengthwidthl,0) -- (\lengthfirst + 2 * \mylengthwidthl, 1.5\mylengthheigthl) -- (0, 1.5\mylengthheigthl) -- (0,0);
-		\node [nodestylenormal] at (\mylengthwidthl,0.75\mylengthheigthl) {#3};	
+		\node [nodestylenormal] at (\mylengthwidthl,0.75\mylengthheigthl) {#3};
 	  \fi%
 	\else%
         \draw [seeblau100, fill=seeblau100, line width=0mm] (0,0) -- (\lengthsecond + 2 * \mylengthwidthl,0) -- (\lengthsecond + 2 * \mylengthwidthl, 1.5\mylengthheigthl) -- (0, 1.5\mylengthheigthl) -- (0,0);
@@ -1073,7 +913,7 @@ Konstanz, \jahr%
 % CD Element: Unterstreichung %
 %%%%%%%%%%%%%%%%%&%%%%%%%%%%%%%
 
-% Spezielle Unterstreichung bei Überschriften, da diese vom soul Paket 
+% Spezielle Unterstreichung bei Überschriften, da diese vom soul Paket
 % nicht unterstützt werden, sofern der Text nicht unmittelbar übergeben
 % wird.
 %
@@ -1081,10 +921,17 @@ Konstanz, \jahr%
 
 \newcommand{\seeblauunderline}[1]{%
 \settowidth{\bluelinewidth}{#1}%
+\ifdim\bluelinewidth<\textwidth%
 \begin{tikzpicture}[remember picture,overlay]%
 \draw [seeblau100, fill=seeblau100, line width=0.10\currentfontsize] (0,-0.62ex) -- (\bluelinewidth,-0.62ex);%
 \node [anchor=base west] at (-0.8ex,0) {#1};%
 \end{tikzpicture}%
+\else%
+\begin{tikzpicture}[remember picture,overlay]%
+\node [anchor=south west, text width=\textwidth] at (-0.8ex,0) {#1};%
+\draw [seeblau100, fill=seeblau100, line width=0.10\currentfontsize] (0,0.16ex) -- (\textwidth,0.16ex);%
+\end{tikzpicture}%
+\fi%
 }%
 
 
@@ -1100,7 +947,7 @@ Konstanz, \jahr%
 %     \underline{1. Argument}
 %
 % Das Argument hat folgende Bedeutung:
-% 
+%
 %   1. Argument: Hier wird der zu unterstreichende Text hinterlegt.
 %
 % Wichtig ist noch zu wissen, dass auch Textbrüche ohne Probleme durchgeführt werden können.
@@ -1115,7 +962,7 @@ Konstanz, \jahr%
 \renewcommand{\underline}[1]{%
 \setulcolor{seeblau100}%
 \setlength{\currentfontsize}{\f@size pt}%
-% Hier wird die Tiefe und Dicke der Unterstreichung anhand der 
+% Hier wird die Tiefe und Dicke der Unterstreichung anhand der
 % aktuellen Schriftgröße ausgewählt
 \setul{0.62ex}{0.08\currentfontsize}%
 \ul{#1}%
@@ -1139,7 +986,7 @@ Konstanz, \jahr%
 %     \merken{1. Argument}{2. Argument}{3. Argument}
 %
 % Die Argumente haben dabei folgende Bedeutung:
-% 
+%
 %   1. Argument: Hier wird die Breite des kompletten Objektes angegeben. Da das
 %                Merken Objekt quadratisch ist, wird hier sowohl die Breite als auch
 %                die Höhe angegeben.
@@ -1154,7 +1001,7 @@ Konstanz, \jahr%
 %
 % Hier folgt noch eine grafische Darstellung der Argumente:
 %
-%    |<------- 1. Argument ------->|    
+%    |<------- 1. Argument ------->|
 %
 %    -------------------------------    -
 %    |                           X |    ^
@@ -1174,7 +1021,7 @@ Konstanz, \jahr%
 %    -------------------------------    -
 %
 % Wichtig ist noch zu wissen, dass die Linienstärke und die Größe des X in der rechten oberen Ecke an die
-% Höhe / Breite des Merken Elements dynamisch angepasst ist. 
+% Höhe / Breite des Merken Elements dynamisch angepasst ist.
 
 \newcommand{\merken}[3]{%
 \setlength{\merkenlength}{#1}%
@@ -1199,7 +1046,7 @@ Konstanz, \jahr%
 %
 % können Block-Elemente für z.B. wisschenschaftliche Inhalte erstellt werden.
 %
-% Dieses Makro besitzt 9 erforderliche Elemente, die bei jedem Aufruf angegeben werden müssen. Dabei 
+% Dieses Makro besitzt 9 erforderliche Elemente, die bei jedem Aufruf angegeben werden müssen. Dabei
 % ist es natürlich mögliche Argumente leer zu lassen, falls man diese nicht benötigt. Dies hat jedoch
 % keinen Einfluss auf die Anzahl an Spalten. Diese müssen separat im Optionenargument angegeben werden
 % mittels des Schlüssels columnnum (siehe weiter unten).
@@ -1303,7 +1150,7 @@ Konstanz, \jahr%
 %     arrowtop4left  Standardwert: 0
 %     arrowtop4right Sollte der linke Wert nicht kleiner als der rechte Wert sein, so werden keine Pfeile gezeichnet. Das gleiche
 %                    gilt für Werte, die außerhalb des Bereichs liegen.
-% 
+%
 %
 % Wichtig ist noch zu wissen, wie die Breite letztendlich berechnet wird:
 % Da es auch links und rechts der Spalten Trennlinien oder Pfeile geben kann, ist links der 1. und rechts der
@@ -1833,7 +1680,7 @@ Konstanz, \jahr%
 %     \selectfontsize[<Key Value Pairs>]{<Schriftgröße>}
 %
 % Das Argument hat dabei folgende Bedeutung:
-% 
+%
 %   1. Argument:         Hier wird die neue Schriftgröße angegeben, die verwendet werden
 %                        soll.
 % Die weiteren Formatierungsoptionen werden alle innerhalb des optionalen Argumentes mittels
@@ -1843,14 +1690,14 @@ Konstanz, \jahr%
 %
 %     baselineskip    Hier wird der baselineskip angegeben, welcher verwendet werden soll
 %                     Mögliche Werte:
-%                         0      Ist dieser 0, dann wird der baselinefaktor verwendet  
+%                         0      Ist dieser 0, dann wird der baselinefaktor verwendet
 %                         sonst
 %                    Standardwert: 0
 %
 %     baselinefaktor Hier wird der Faktor angegeben, der verwendet wird, um den neuen
 %                    baselineskip zu berechnen.
 %                    Dieser wird nur benutzt, falls der baselineskip 0 beträgt.
-%                    
+%
 %                        baselineskip = baselinefaktor * #1
 %
 %                    Standardwert: 12/10
@@ -1889,7 +1736,7 @@ Konstanz, \jahr%
 % Innerhalb der Umgebung kann dann der Inhalt des Textfeldes hinterlegt werden.
 %
 % Die Argumente haben dabei folgende Bedeutung:
-% 
+%
 %   Optionales Argument: Hier wird die Breite des Textfeldes festgelegt.
 %                        Wird dies Weggelassen wird einfach die Papierbreite
 %                        als Breite des Textfeldes angegeben. Dies kann nützlich sein
@@ -1938,7 +1785,7 @@ Konstanz, \jahr%
 %   - Mittles \paperwidth und \paperheight können auch Koordinaten angegeben werden,
 %     die relativ zum Papierformat sind. Durch das calc Paket ist es zudem möglich
 %     Rechnungen innerhalb der Argumente vorzunehmen.
-%     
+%
 %     Möchte man beispielsweise fünf Zentimeter sowohl vom linken als auch unteren Ende
 %     ein Textfeld beginnen, so würde der Befehl wie folgt aussehen:
 %
@@ -1965,34 +1812,32 @@ Konstanz, \jahr%
 \pagestyle{empty}%
 
 % Aufzählungen, Listen, etc.
-\renewcommand*\labelitemi{\textcolor{seeblau100}{-}}
-\renewcommand*\labelitemii{\textcolor{seeblau100}{-}}
-\renewcommand*\labelitemiii{\textcolor{seeblau100}{-}}
+%\renewcommand*\labelitemi{\textcolor{seeblau100}{-}}
+%\renewcommand*\labelitemii{\textcolor{seeblau100}{-}}
+%\renewcommand*\labelitemiii{\textcolor{seeblau100}{-}}
+%
+%\setlength\leftmargini{2.5em}
+%\setlength\leftmarginii{3.8em}
+%\setlength\leftmarginiii{5.1em}
+%\setlength\labelsep{1em}
+%\setlength\labelwidth{3em}
+%
+%
+%\def\@listi{\leftmargin\leftmargini
+%            \topsep 0\p@
+%            \parsep 3\p@
+%            \itemsep 0\p@
+%            }
+%\let\@listI\@listi
+%\def\@listii{\leftmargin\leftmarginii
+%              \topsep    0\p@
+%              \parsep    3\p@
+%              \itemsep   0\p@}
+%\def\@listiii{\leftmargin\leftmarginiii
+%              \topsep    0\p@
+%              \parsep    3\p@
+%              \itemsep   0\p@}
 
-\setlength\leftmargini{2.5em}
-\setlength\leftmarginii{3.8em}
-\setlength\leftmarginiii{5.1em}
-\setlength\labelsep{1em}
-\setlength\labelwidth{3em}
-
-
-\def\@listi{\leftmargin\leftmargini
-            \topsep 0\p@ 
-            \parsep 3\p@
-            \itemsep 0\p@
-            }
-\let\@listI\@listi
-\def\@listii{\leftmargin\leftmarginii
-              \topsep    0\p@
-              \parsep    3\p@
-              \itemsep   0\p@}
-\def\@listiii{\leftmargin\leftmarginiii
-              \topsep    0\p@
-              \parsep    3\p@
-              \itemsep   0\p@}
-
-
-% \bibliographystyle{alphabetic}
 
 
 
@@ -2002,7 +1847,7 @@ Konstanz, \jahr%
 
 % Anpasung der Farbe der Fußnotenzeile bei Verwendung einer Fußnote
 
-\renewcommand\footnoterule{{\color{seeblau100}\kern-3pt \hrule width 2in \kern 2.6pt}}
+\renewcommand\footnoterule{{\kern-3pt \hrule width 2in \kern 2.6pt}}
 
 
 
@@ -2022,10 +1867,10 @@ Konstanz, \jahr%
 %
 %    \headFoot{<ID>}
 %
-% Bei den IDs 1, 2, 5, 6, 9, 10, 13, 14, 17 und 18 
+% Bei den IDs 1, 2, 5, 6, 9, 10, 13, 14, 17 und 18
 % mit | wird auf ungerade und gerade Seite geachtet.
 %
-% Bei den restlichen IDs ist die Kopf- und Fusszeile auf 
+% Bei den restlichen IDs ist die Kopf- und Fusszeile auf
 % ungeraden und geraden Seiten gleich.
 %
 %
@@ -2034,37 +1879,37 @@ Konstanz, \jahr%
 %   1     Kopfzeile: Seite --- Kapitel --- Autor | Autor --- Kapitel --- Seite
 %         Fusszeile:
 %
-%   2     Kopfzeile: 
+%   2     Kopfzeile:
 %         Fusszeile: Seite --- Kapitel --- Autor | Autor --- Kapitel --- Seite
 %
 %   3     Kopfzeile: Autor --- Kapitel --- Seite
 %         Fusszeile:
 %
-%   4     Kopfzeile: 
+%   4     Kopfzeile:
 %         Fusszeile: Autor --- Kapitel --- Seite
 %
 %   5     Kopfzeile: Seite --- Autor --- Kapitel | Kapitel --- Autor --- Seite
 %         Fusszeile:
 %
-%   6     Kopfzeile: 
+%   6     Kopfzeile:
 %         Fusszeile: Seite --- Autor --- Kapitel | Kapitel --- Autor --- Seite
 %
 %   7     Kopfzeile: Kapitel --- Autor --- Seite
 %         Fusszeile:
 %
-%   8     Kopfzeile: 
+%   8     Kopfzeile:
 %         Fusszeile: Kapitel --- Autor --- Seite
 %
 %   9     Kopfzeile: Seite --- --- Kapitel | Name --- --- Seite
 %         Fusszeile:
 %
-%   10    Kopfzeile: 
+%   10    Kopfzeile:
 %         Fusszeile: Seite --- --- Kapitel | Name --- --- Seite
 %
 %   11    Kopfzeile: Kapitel --- --- Seite
 %         Fusszeile:
 %
-%   12    Kopfzeile: 
+%   12    Kopfzeile:
 %         Fusszeile: Kapitel --- --- Seite
 %
 %   13    Kopfzeile: Seite --- --- Autor | Kapitel --- --- Seite
@@ -2082,13 +1927,13 @@ Konstanz, \jahr%
 %   17    Kopfzeile: Seite --- --- | --- --- Seite
 %         Fusszeile:
 %
-%   18    Kopfzeile: 
+%   18    Kopfzeile:
 %         Fusszeile: Seite --- --- | --- --- Seite
 %
 %   19    Kopfzeile: --- --- Seite
 %         Fusszeile:
 %
-%   20    Kopfzeile: 
+%   20    Kopfzeile:
 %         Fusszeile: --- --- Seite
 
 
@@ -2111,7 +1956,7 @@ Konstanz, \jahr%
 }{}%
 %
 % Variante 2:
-%    Kopfzeile: 
+%    Kopfzeile:
 %    Fusszeile: Seite --- Kapitel --- Autor | Autor --- Kapitel --- Seite
 %
 \ifthenelse{\equal{#1}{2}}{%
@@ -2128,7 +1973,7 @@ Konstanz, \jahr%
 }{}%
 %
 % Variante 4:
-%    Kopfzeile: 
+%    Kopfzeile:
 %    Fusszeile: Autor --- Kapitel --- Seite
 %
 \ifthenelse{\equal{#1}{4}}{%
@@ -2145,7 +1990,7 @@ Konstanz, \jahr%
 }{}%
 %
 % Variante 6:
-%    Kopfzeile: 
+%    Kopfzeile:
 %    Fusszeile: Seite --- Autor --- Kapitel | Kapitel --- Autor --- Seite
 %
 \ifthenelse{\equal{#1}{6}}{%
@@ -2162,7 +2007,7 @@ Konstanz, \jahr%
 }{}%
 %
 % Variante 8:
-%    Kopfzeile: 
+%    Kopfzeile:
 %    Fusszeile: Kapitel --- Autor --- Seite
 %
 \ifthenelse{\equal{#1}{8}}{%
@@ -2179,7 +2024,7 @@ Konstanz, \jahr%
 }{}%
 %
 % Variante 10:
-%    Kopfzeile: 
+%    Kopfzeile:
 %    Fusszeile: Seite --- --- Kapitel | Name --- --- Seite
 %
 \ifthenelse{\equal{#1}{10}}{%
@@ -2196,7 +2041,7 @@ Konstanz, \jahr%
 }{}%
 %
 % Variante 12:
-%    Kopfzeile: 
+%    Kopfzeile:
 %    Fusszeile: Kapitel --- --- Seite
 %
 \ifthenelse{\equal{#1}{12}}{%
@@ -2247,7 +2092,7 @@ Konstanz, \jahr%
 }{}%
 %
 % Variante 18:
-%    Kopfzeile: 
+%    Kopfzeile:
 %    Fusszeile: Seite --- --- | --- --- Seite
 %
 \ifthenelse{\equal{#1}{18}}{%
@@ -2264,7 +2109,7 @@ Konstanz, \jahr%
 }{}%
 %
 % Variante 20:
-%    Kopfzeile: 
+%    Kopfzeile:
 %    Fusszeile: --- --- Seite
 %
 \ifthenelse{\equal{#1}{20}}{%
