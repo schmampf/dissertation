@@ -11,12 +11,6 @@
 % Farben
 \usepackage{xcolor}
 
-% Seiten-Einrichtung
-\usepackage{geometry}
-% DinA4 Initialisierung
-% Benutzer kann es mittels \format aendern (siehe unten)
-\geometry{paperheight=29.7cm, paperwidth=21.0cm, left=3cm, right=3cm, bottom=3.5cm, top=3cm, headheight=12pt, headsep=0.8cm, footskip=42pt}%
-
 % Codierung
 \usepackage[utf8]{inputenc}
 \usepackage[english]{babel}
@@ -233,74 +227,82 @@
 \counterwithout{definition}{chapter}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Seitenformat / Foliengroesse %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% % Seitenformat / Foliengroesse %
+% %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\def\dinafuenf{a5}
-\def\dinavier{a4}
-\def\dinadrei{a3}
-\def\dinafuenfquer{a5quer}
-\def\dinavierquer{a4quer}
-\def\dinadreiquer{a3quer}
 
-% Anpassung des Papierformates:
-% Zur Auswahl stehen:
-%
-%   Schlüssel  Beschreibung      Höhe      Breite
-%   -----------------------------------------------
-%   a3         DinA3 Hochformat  42.0  cm  29.7  cm
-%   a3quer     DinA3 Querformat  29.7  cm  42.0  cm
-%   a4         DinA4 Hochformat  29.7  cm  21.0  cm
-%   a4quer     DinA4 Querformat  21.0  cm  29.7  cm
-%   a5         DinA5 Hochformat  21.0  cm  14.8  cm
-%   a5quer     DinA5 Querformat  14.8  cm  21.0  cm
-%
-%
-% Falls keiner der unterstützten Schlüssel übergeben wird,
-% ist DinA4 Hochformat der Standard.
+% % Seiten-Einrichtung
+% \usepackage{geometry}
+% % DinA4 Initialisierung
+% % Benutzer kann es mittels \format aendern (siehe unten)
+% \geometry{paperheight=29.7cm, paperwidth=21.0cm, left=3cm, right=3cm, bottom=3.5cm, top=3cm, headheight=12pt, headsep=0.8cm, footskip=42pt}%
 
-% Zusätzlich wird auch gleich die Höhe des Logos anhand
-% des Corporate Design definiert.
 
-\newcommand{\format}[1]{%
- 	\def\dinformat{#1}%
-	\ifx\dinformat\dinafuenf%
-		\geometry{paperheight=21.0cm, paperwidth=14.8cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
-		\setlength{\logoheight}{15mm}
-		\setlength{\boxlinewidth}{1pt}
-	\else%
-	\ifx\dinformat\dinafuenfquer%
-		\geometry{paperheight=14.8cm, paperwidth=21.0cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
-		\setlength{\logoheight}{15mm}
-		\setlength{\boxlinewidth}{1pt}
-	\else%
-	\ifx\dinformat\dinavier%
-		\geometry{paperheight=29.7cm, paperwidth=21.0cm, left=3cm, right=3cm, bottom=3cm, top=3cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
-		\setlength{\logoheight}{20mm}
-		\setlength{\boxlinewidth}{1pt}
-	\else%
-	\ifx\dinformat\dinavierquer%
-		\geometry{paperheight=21.0cm, paperwidth=29.7cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
-		\setlength{\logoheight}{20mm}
-		\setlength{\boxlinewidth}{1pt}
-	\else%
-	\ifx\dinformat\dinadrei%
-		\geometry{paperheight=42.0cm, paperwidth=29.7cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
-		\setlength{\logoheight}{30mm}
-		\setlength{\boxlinewidth}{1.5pt}
-	\else%
-	\ifx\dinformat\dinadreiquer%
-		\geometry{paperheight=29.7cm, paperwidth=42.0cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
-		\setlength{\logoheight}{30mm}
-		\setlength{\boxlinewidth}{1.5pt}
-	\fi%
-	\fi%
-	\fi%
-	\fi%
-	\fi%
-	\fi%
-}%
+% \def\dinafuenf{a5}
+% \def\dinavier{a4}
+% \def\dinadrei{a3}
+% \def\dinafuenfquer{a5quer}
+% \def\dinavierquer{a4quer}
+% \def\dinadreiquer{a3quer}
+
+% % Anpassung des Papierformates:
+% % Zur Auswahl stehen:
+% %
+% %   Schlüssel  Beschreibung      Höhe      Breite
+% %   -----------------------------------------------
+% %   a3         DinA3 Hochformat  42.0  cm  29.7  cm
+% %   a3quer     DinA3 Querformat  29.7  cm  42.0  cm
+% %   a4         DinA4 Hochformat  29.7  cm  21.0  cm
+% %   a4quer     DinA4 Querformat  21.0  cm  29.7  cm
+% %   a5         DinA5 Hochformat  21.0  cm  14.8  cm
+% %   a5quer     DinA5 Querformat  14.8  cm  21.0  cm
+% %
+% %
+% % Falls keiner der unterstützten Schlüssel übergeben wird,
+% % ist DinA4 Hochformat der Standard.
+
+% % Zusätzlich wird auch gleich die Höhe des Logos anhand
+% % des Corporate Design definiert.
+
+% \newcommand{\format}[1]{%
+%  	\def\dinformat{#1}%
+% 	\ifx\dinformat\dinafuenf%
+% 		\geometry{paperheight=21.0cm, paperwidth=14.8cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
+% 		\setlength{\logoheight}{15mm}
+% 		\setlength{\boxlinewidth}{1pt}
+% 	\else%
+% 	\ifx\dinformat\dinafuenfquer%
+% 		\geometry{paperheight=14.8cm, paperwidth=21.0cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
+% 		\setlength{\logoheight}{15mm}
+% 		\setlength{\boxlinewidth}{1pt}
+% 	\else%
+% 	\ifx\dinformat\dinavier%
+% 		\geometry{paperheight=29.7cm, paperwidth=21.0cm, left=3cm, right=3cm, bottom=3cm, top=3cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
+% 		\setlength{\logoheight}{20mm}
+% 		\setlength{\boxlinewidth}{1pt}
+% 	\else%
+% 	\ifx\dinformat\dinavierquer%
+% 		\geometry{paperheight=21.0cm, paperwidth=29.7cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
+% 		\setlength{\logoheight}{20mm}
+% 		\setlength{\boxlinewidth}{1pt}
+% 	\else%
+% 	\ifx\dinformat\dinadrei%
+% 		\geometry{paperheight=42.0cm, paperwidth=29.7cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
+% 		\setlength{\logoheight}{30mm}
+% 		\setlength{\boxlinewidth}{1.5pt}
+% 	\else%
+% 	\ifx\dinformat\dinadreiquer%
+% 		\geometry{paperheight=29.7cm, paperwidth=42.0cm, left=2.5cm, right=2.5cm, bottom=2cm, top=2.5cm, headheight=12pt, headsep=0.8cm, footskip=22pt}%
+% 		\setlength{\logoheight}{30mm}
+% 		\setlength{\boxlinewidth}{1.5pt}
+% 	\fi%
+% 	\fi%
+% 	\fi%
+% 	\fi%
+% 	\fi%
+% 	\fi%
+% }%
 
 
 

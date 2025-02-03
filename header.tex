@@ -2,13 +2,36 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
+
+%%% A5 Format %%%
+    \usepackage{geometry} % A5
+    % \usepackage[mag=1414]{geometry} % A5+ = A4
+
+    \geometry{
+        paperheight=21.0cm, 
+        paperwidth=14.8cm, 
+        left=2cm, 
+        right=2cm, 
+        bottom=1.6cm, 
+        top=2cm, 
+        headheight=12pt, 
+        headsep=0.5cm, 
+        footskip=22pt,
+        }%
+
 %%% corporate design %%%
     \RequirePackage{etex}
     \usepackage{csquotes} % Bibtex and language stuff
-    % weniger Farbe dann Addons
-    % \usepackage{corporatedesign/themeKonstanzXelatexAddOn} % XeLaTeX mit Schriftart Arial, VOR dem Standardpaket importieren
+
+    \usepackage{.utilities/themeKonstanzXelatexAddOn}
+    % XeLaTeX mit Schriftart Arial, VOR dem Standardpaket importieren
+
     \usepackage{.utilities/themeKonstanz} % Muss immer verwendet werden (Standardpaket)
-    % \usepackage{corporatedesign/themeKonstanzStyleAddOn} % Style Add-On für andere Überschriften, NACH dem Standardpaket importieren
+    % modified so no geometry is used
+
+    % \usepackage{.utilities/themeKonstanzStyleAddOn}
+    % Style Add-On für andere Überschriften, NACH dem Standardpaket importieren
+    % doesnt show any difference
 
     % usepackage that contains my modification to themeKonstanz
     \usepackage{.utilities/myKonstanz}
@@ -56,7 +79,7 @@
 %%% math stuff %%%
     \usepackage{amsmath}
     \usepackage{textcomp}  %\textmu
-    \newcommand{\mum}{\textmu m}
+    \newcommand{\mum}{\textmu m~}
     \renewcommand{\vec}[1]{\mathbf{#1}} %\vec{}
     \newcommand{\ima}[0]{\overset{\hspace{0.9mm}\text{\scalebox{0.7}{$\circ$}}}{\imath}} % complex number i with °
 
