@@ -2,7 +2,7 @@
 .master thesis/
 .venv/
 .DS_Store
-sources/
+# sources/
 
 # incase ignored files get still tracked.
 # git rm -r --cached . && git add . && git commit -am "Remove ignored files"
