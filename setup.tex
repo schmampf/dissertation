@@ -17,10 +17,16 @@
             \subsubsection*{stripline}
 
     \section{Data Acquisition}
-        In this section i want to fucus on the used electronics. I scheme the measurement principle and the work on grounding. I'll also talk about the self-developed measurement program and go through the written drivers. A great deal of developing is done by Florian Kayatz, within his Hiwi. (cite: Flo) Finally I will also talk about the data treatment and processing.
+        In this section i want to fucus on the used electronics. I scheme the measurement principle and the work on grounding. I'll also talk about the self-developed measurement program and go through the written drivers. A great deal of developing is done by Florian Kayatz, within his Hiwi (cite: Flo). Finally I will also talk about the data treatment and processing.
 
         \subsection{DC Measurement Concept}
-            As mentioned in Subsection \ref{subsec:dc cabling} a 4-point measurement principle is used. Given, by the former described setup, voltages down to roughly 1\,\textmu V should be measureable.
+            As mentioned in Subsection \ref{subsec:dc cabling} a 4-point measurement principle is used. Given, by the former described setup, tiny voltages should be measurable. Instead an analog to digital converter ADwin Gold 2, in combination with two femto preamplifier, is used. 
+            
+            Previosly for SSET experiments at the Scheer2 cryostat a combintation of NF, SRT and a similar ADC (by NI) was used by References \cite{Lorenz2018,Sprenger2019,SobralRey2022}. On the Bluefors a combination of Femto amplifier and keysight multimeter was used by Reference \cite{Prestel2020}.
+
+            All combinations of DAC Keysight1, Keysight2 and Adwin Gold 2 with Preamplifiers Femto, NF und SRT has been tested, regarding the electrical noise. I found, that the combination of ADwin Gold 2 and Femto preamplifier provided the lowest noise floor. This combination offers some further advantages. The Femto pre-amplifiers has a high bandwidth and still works analog opposite to SRT pre-amplifier. Also, it can be remote controlled, what is super beneficial, when operating with a script or not on-sight for different amplification settings. The Femto amplifier can be operated with 4 different amplifications: 10, 100, 1000, 10000. The DAC measures continously, with high bandwidth and on two channels simultaniously in opposition of the Keysight multimeters. All this, helps to correlate the two measured channels with each other in order to reliably measure I-V curves.
+
+            As a source, the function generator, used by References \cite{Lorenz2018,Sprenger2019,SobralRey2022}, KeysightB, used by \cite{Prestel2020} and the DAC of the already used ADwin. Again, the usage of ADwin was best for the lowest noise floor. However, to enhance the resolution, part of the 
             - {layout}
             - {AD converter}
             - {Pre Amplifier}
