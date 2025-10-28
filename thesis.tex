@@ -1,11 +1,12 @@
 %%% begin document %%%
-    \documentclass[9pt, rgb]{scrreport} % document class scrreprt % 11pt for dinA4
-    \input{header.tex} % import all packages and pre-definitions
+\documentclass[fontsize=9pt, rgb]{scrreport} % document class scrreprt % 11pt for dinA4
+\input{header.tex} % import all packages and pre-definitions
     
 \begin{document}
 
     %%% title page %%%
-        \include{title}
+        % change details in MyKonstanz.sty
+        \thesistitlepageafive{} %A5
 
     %%% abstract %%%
         \clearpage 
@@ -45,7 +46,7 @@
         % \endgroup
 
     %%% bibliography %%%
-        % \newpage
+        \newpage
         \addcontentsline{toc}{chapter}{References}
         \printbibliography[title={References}]
 
