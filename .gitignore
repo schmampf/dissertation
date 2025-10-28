@@ -2,7 +2,12 @@
 .master thesis/
 .venv/
 .DS_Store
-sources/Irtenkauf2017.pdf
+
+# zu große files
+sources/configuration_ultra.png
+sources/MCBJ_seeblau_ultra.png
+
+thesis.pdf
 
 # incase ignored files get still tracked.
 # git rm -r --cached . && git add . && git commit -am "Remove ignored files"
