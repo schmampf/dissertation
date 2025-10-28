@@ -4,8 +4,8 @@
 .DS_Store
 
 # zu große files
-sources/configuration_ultra.png
-sources/MCBJ_seeblau_ultra.png
+.sources/configuration_ultra.png
+.sources/MCBJ_seeblau_ultra.png
 
 thesis.pdf
 
