@@ -7,6 +7,8 @@
 .utilities/configuration_ultra.png
 .utilities/MCBJ_seeblau_ultra.png
 
+thesis.pdf
+
 # incase ignored files get still tracked.
 # git rm -r --cached . && git add . && git commit -am "Remove ignored files"
 # https://stackoverflow.com/questions/1274057/how-do-i-make-git-forget-about-a-file-that-was-tracked-but-is-now-in-gitignore
