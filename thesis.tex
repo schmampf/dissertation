@@ -12,8 +12,8 @@
         \clearpage 
         \pagenumbering{Roman}
 
-        \include{abstract}
-        \include{inspirational}
+        % \include{abstract}
+        % \include{inspirational}
         \tableofcontents
 
     %%% main body %%%
@@ -22,10 +22,10 @@
 
         % \include{introduction}
         \include{theory}
-        \include{samples}
-        \include{setup}
-        \include{atomic contacs}
-        \include{asymmetries}
+        % \include{samples}
+        % \include{setup}
+        % \include{atomic contacs}
+        % \include{asymmetries}
         % \include{single electron transistor}
         % \include{conclusion}
 
@@ -33,7 +33,18 @@
         \clearpage
         \pagenumbering{roman}
 
-        \include{appendix}
+        % \include{appendix}
+
+    %%% bibliography %%%
+        \newpage
+        \addcontentsline{toc}{chapter}{References}
+        \printbibliography[title={References}]
+
+        % \include{acknowledgement}
+
+\end{document}
+
+
 
     %%% List of tables and figures
         % \addcontentsline{toc}{chapter}{List of Figures}
@@ -44,12 +55,3 @@
         % \listoftables
         % \addcontentsline{toc}{chapter}{List of Tables}
         % \endgroup
-
-    %%% bibliography %%%
-        \newpage
-        \addcontentsline{toc}{chapter}{References}
-        \printbibliography[title={References}]
-
-        \include{acknowledgement}
-
-\end{document}
