@@ -1,12 +1,11 @@
 .auxiliary/
-.master thesis/
+.old/
 .venv/
 .DS_Store
 
 # zu große files
 .utilities/configuration_ultra.png
 .utilities/MCBJ_seeblau_ultra.png
-.old/
 
 thesis.pdf
 
