@@ -2,6 +2,9 @@
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 
+\usepackage[english,ngerman]{babel}  % Add both English and German support
+
+
 %%% A5 Format %%%
     \usepackage{geometry} % A5
     % \usepackage[mag=1414]{geometry} % A5+ = A4
@@ -20,7 +23,6 @@
 
 %%% corporate design %%%
     \RequirePackage{etex}
-    \usepackage{csquotes} % Bibtex and language stuff
 
     \usepackage{.utilities/themeKonstanzXelatexAddOn}
     % XeLaTeX mit Schriftart Arial, VOR dem Standardpaket importieren
@@ -30,7 +32,7 @@
 
     % \usepackage{.utilities/themeKonstanzStyleAddOn}
     % Style Add-On für andere Überschriften, NACH dem Standardpaket importieren
-    % doesnt show any difference
+    % doesn't show any difference
 
     % usepackage that contains my modification to themeKonstanz
     \usepackage{.utilities/myKonstanz}
@@ -39,6 +41,7 @@
 
 
 %%% bibliography %%%
+    \RequirePackage{etex}
     \usepackage[backend=biber, sorting=none, maxbibnames=99]{biblatex}
     \addbibresource{zotero.bib}
     \usepackage{csquotes} % Bibtex and language stuff
@@ -60,17 +63,18 @@
             \newpage
             }
 
-    % desgin developement
+    % desgin development
         % for \printinunitsof{in}\prntlen{\textwidth}
         \usepackage{layouts} 
-        \setlayoutscale{1.0}
+        % \setlayoutscale{1.0} % uncommented
         % \usepackage{blindtext}
 
     % uncomment for frames around boxes.
         \usepackage{showframe} 
 
+    % for includegraphics
+    \usepackage{graphicx}
 
-    % \usepackage{graphicx}
     % \usepackage{caption}
     % \usepackage{subcaption}
     % \usepackage{import}

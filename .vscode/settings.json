@@ -32,7 +32,7 @@
 	"latex-workshop.latex.recipes": 
 		[
 			{
-				"name": "xelatex -> biber -> biber -> xelatex",
+				"name": "xelatex -> biber -> biber -> xelatex -> copy",
 				"tools": [
 					"xelatex",
 					"biber",
@@ -42,10 +42,37 @@
 				]
 			},
 		],
-		"grammarly.selectors": [
+		"cSpell.language": "en-US, de-DE",
+		"cSpell.dictionaries": ["my_dictionary-de", "german", "latex"],
+		"cSpell.enabled": true,
+		"cSpell.allowCompoundWords": true,
+		"cSpell.diagnosticLevel": "Hint",
+		"cSpell.dictionaryDefinitions": [
 			{
-				"language": "latex",
-				"scheme": "file"
+				"name": "my_dictionary",
+				"path": "./.vscode/dictionary.txt",
+				"addWords": true
 			}
 		],
+		"cSpell.ignoreRegExpList": [
+			"\\\\[a-zA-Z]+",
+			"\\{[^}]*\\}"
+		],
+		
+		"ltex.enabled": ["bibtex", "context", "context.tex", "html", "latex", "markdown", "org", "restructuredtext", "rsweave"],
+		"ltex.language": "en-US",
+		"ltex.dictionary": {"en-US": [":/.vscode/dictionary.txt"]},
+		"ltex.hiddenFalsePositives": {"en-US": [":/.vscode/ltex.hiddenFalsePositives.txt"]},
+		"ltex.checkFrequency": "edit",
+		"ltex.additionalRules.enablePickyRules": true,
+		"ltex.ltex-ls.logLevel": "info",
+		"ltex.diagnosticSeverity": "hint",
+		"ltex.completionEnabled": true,
+		"ltex.latex.commands": {
+			"\\cite{}": "ignore",
+			"\\ref{}": "ignore",
+			"\\label{}": "ignore",
+			"\\documentclass[]{}": "ignore",
+		},
+		"ltex.trace.server": "verbose",
 }

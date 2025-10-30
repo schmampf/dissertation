@@ -1,0 +1,6 @@
+{"rule":"WHITESPACE_RULE","sentence":"^\\QYou start of, with a 300  thick bronze wafer.\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QStabilization Ignition Process process time 5 min 5 s 30 min table heater 100 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\QC\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QStabilization Ignition Process process time 5 min 5 s 30 min table heater 100 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\QC oxygen flow 50 sccm table RF 20.0 W Power Demand 5.0 W Max Reflected Power 5 s Tolerance Time 1 V Min DC Bias AMU: C1 41.0 %, C2 23.0 %\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QStabilization Ignition Process process time 5 min 5 s 30 min table heater 100(2.5) \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\QC - - oxygen flow 50(5) sccm - -\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QParameter Stabilization Ignition Process process time 5 min 5 s 30 min table heater 100(2.5) \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\QC - - oxygen flow 50(5) sccm - -\\E$"}
+{"rule":"ENGLISH_WORD_REPEAT_RULE","sentence":"^\\QParameter Stabilization Ignition Process process time 5 min 5 s 30 min table heater 100 \\E(?:Dummy|Ina|Jimmy-)[0-9]+\\QC - - oxygen flow 50 sccm - -\\E$"}
