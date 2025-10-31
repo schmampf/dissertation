@@ -1,0 +1,143 @@
+% !TEX root = ../thesis.tex
+
+\section{Microscopic Description}
+\label{sec:bcs}
+
+    The microscopic description of superconductivity is provided by the Bardeen-Cooper-Schrieffer (BCS) theory, which assumes that electrons near the Fermi surface form bound pairs of opposite momentum and spin \cite{bardeen_microscopic_1957}.
+
+    At its heart, this pairing mechanism reflects a subtle interplay between electrons and phonons. When an electron moves through the metal, it slightly displaces the positively charged ions, creating a momentary region of excess positive charge. A second electron passing nearby can be attracted to this distortion, leading to an effective-though very weak-attraction between the two. Below the critical temperature $T_\mathrm{C}$, these paired electrons form a collective quantum state known as the Cooper-pair condensate, where all pairs share a common phase. 
+
+    The emergence of the superconducting gap $\Delta_0$ can be understood as the energy required to break a Cooper pair and excite its electrons back into normal quasiparticle states. 
+
+    \subsection{Superconducting gap}
+    \label{subsec:bcs:sc-gap}
+        For conventional superconductors such as aluminum, the superconducting gap is very small compared to the Fermi energy. This regime is known as the weak-coupling limit. It implies that only a thin shell of electronic states around the Fermi surface participates in pairing, allowing the normal-state density of states $N_0$ to be treated as constant. Although the interaction is weak, the collective nature of the pairing amplifies its effect, transforming a small microscopic attraction into a macroscopic quantum order parameter. In this thesis, aluminum is well described within this weak-coupling framework, which relates $\Delta_0$ at zero temperature to $T_\mathrm{C}$ by
+
+        \begin{equation}
+            \Delta_0 \approx 1.764\, k_\mathrm{B} T_\mathrm{C}\,.
+            \label{eq:Delta0}
+        \end{equation}
+
+        The superconducting gap does not remain constant with temperature. At absolute zero, all available electrons near the Fermi surface form Cooper pairs, and the condensate is perfectly ordered. As the temperature rises, thermal excitations begin to break some of these pairs, leaving fewer electrons bound in the superconducting state. With fewer pairs contributing to the collective order, the overall pairing strength weakens, and the energy required to break a pair the gap $\Delta(T)$ gradually decreases.
+
+        This reduction continues smoothly until the critical temperature $T_\mathrm{C}$ is reached. At that point, thermal energy becomes strong enough to completely disrupt the pairing correlations, and the superconducting state collapses, leading to $\Delta(T_\mathrm{C}) = 0$. The temperature dependence of the gap is a direct reflection of this balance between thermal disorder and the pairing interaction. 
+
+        In the BCS framework, $\Delta(T)$ follows a universal curve that results from solving the self-consistent gap equation, meaning the same functional form applies to all weak-coupling superconductors. Solving the underlying integrals over the Fermi distribution in the microscopic theory numerically, results in the approximation
+        \begin{equation}
+            \Delta(T) \approx \Delta_0 \tanh\left(1.74\,\sqrt{\frac{T_\mathrm{C}}{T}-1}\right)\,.
+            \label{eq:DeltaT}
+        \end{equation}
+
+        However, the relation is shown in Figure \ref{fig:bcs:gap_suppression}.
+        \begin{figure}
+        \centering
+        \includegraphics[width=0.85\linewidth]{theory/gap-suppression/gap_suppression.pdf}
+        \caption{Schematic suppression of the superconducting energy gap $\Delta$ with temperature $T$.}
+        \label{fig:bcs:gap_suppression}
+        \end{figure}
+
+    \subsection{Density of States}
+    \label{subsec:bcs:dos}
+
+        In a normal metal, the density of states (DOS) can be approximated as constant near the Fermi level. Although the DOS of a free-electron gas increases as $\sqrt{E}$, this variation is negligible over the tiny energy range relevant to superconductivity (a few meV compared to $E_\mathrm{F}$ of several eV). We therefore treat it as a constant 
+        \begin{equation}
+            N_0 \equiv  N_\mathrm{N}(E_\mathrm{F}) = \frac{1}{2\pi^2} \left( \frac{2m}{\hbar^2}\right)^{3/2} \sqrt{E_\mathrm{F}}\,,
+        \end{equation}
+        representing the normal-state DOS per spin at the Fermi energy. 
+
+        When superconductivity sets in, pairing correlations reorganize this otherwise flat spectrum. A gap of width $2\Delta$ opens around $E_\mathrm{F}$ where single-particle excitations are absent in the ideal BCS limit, and the missing spectral weight is redistributed to the gap edges. These edges appear as sharp coherence peaks in the superconducting DOS, reflecting the high density of available quasiparticle states at the threshold for pair breaking. The resulting expression reads
+        \begin{equation}
+            N_\mathrm{S}(E) = N_0 \frac{|E|}{\sqrt{E^2-\Delta^2}}\,,
+            \label{eq:DOS-BCS}
+        \end{equation}
+        which vanishes for $|E|<\Delta$ and diverges at $E=\pm\Delta$. At finite temperature, the gap magnitude $\Delta(T)$ decreases and the corresponding features of $N_\mathrm{S}(E)$ shift inward, as discussed previously.
+
+        However, real spectra are never perfectly sharp. A simple and very effective phenomenology is the Dynes broadening, implemented by the substitution $E\to E+i\Gamma$, while just considering the real part of the whole expression
+        \begin{equation}
+            N_\mathrm{S}(E) = N_0 \Re\!\left(\frac{E+i\Gamma}{\sqrt{(E+i\Gamma)^2-\Delta^2}}\right)\,.
+            \label{eq:DOS-Dynes}
+        \end{equation}
+        Such broadening arises from finite quasiparticle lifetimes due to inelastic scattering, spatial inhomogeneity, pair breaking by magnetic impurities, or non-equilibrium effects, all of which smear the ideal BCS singularities.
+        
+        % up to here, we are fine.
+    
+%     \subsection{Tunnel Current}
+%     \label{subsec:bcs:tunnel-current}
+
+
+%     Tunneling provides a clean way to probe the superconducting excitation spectrum. A thin, high barrier suppresses momentum selection, so the current is set primarily by two ingredients: (i) 
+%     which states exist on either side at the relevant energies (the densities of states), and (ii) which of those states are filled on one side and empty on the other (occupations). In the tunneling Hamiltonian picture, the current results from elastic transfer of quasiparticles between energy levels that differ by $eV$. At the level of a working rule, the differential conductance of a tunnel junction is proportional to a DOS ``overlap'' evaluated at shifted energies.
+
+% For the purposes of this section we focus on the \emph{zero-temperature} limit to make the essential structure transparent: the Fermi edges are sharp step functions and no thermal excitations are present. Generalizations to finite temperature and lifetime effects are deferred to the following sections.
+
+% \subsubsection{SIN Tunnel Current}
+% Consider a normal metal (N) tunnel-coupled to a superconductor (S). In the tunneling limit the normal electrode has an energy-independent DOS near the Fermi level, while the superconducting electrode exhibits the gapped BCS DOS. At zero temperature, electrons can only tunnel if there are occupied states in N and available states in S at energies that differ by $eV$. This leads to two central results:
+% \begin{itemize}
+%     \item \textbf{Threshold:} No quasiparticle current flows for $|eV|<\Delta$ because the superconducting side has no single-particle states within the gap.
+%     \item \textbf{Spectroscopy:} The differential conductance directly traces the superconducting DOS,
+%     \begin{equation}
+%         \frac{dI}{dV}(V) \propto N_\mathrm{S}(eV),
+%         \label{eq:SIN_dIdV}
+%     \end{equation}
+%     so a SIN junction acts as a spectrometer for the superconducting DOS. In particular, coherence peaks in $N_\mathrm{S}$ appear as peaks of $dI/dV$ at $|eV|=\Delta$.
+% \end{itemize}
+% Far from the gap edge ($|eV|\gg\Delta$) the conductance approaches a constant, set by the junction resistance in the normal state.
+
+% \subsubsection{SIS Tunnel Current}
+% For two superconductors separated by a tunnel barrier (SIS), both electrodes contribute gapped densities of states. At zero temperature this yields an even stronger suppression of current around zero bias and a sharp onset when the gap edges overlap. The key features are:
+% \begin{itemize}
+%     \item \textbf{Threshold:} No quasiparticle current for $|eV|<2\Delta$.
+%     \item \textbf{Onset and coherence peaks:} A steep rise of current and pronounced peaks in $dI/dV$ at $|eV|=2\Delta$, originating from the overlap of the coherence peaks of both electrodes.
+%     \item \textbf{Asymptotic behavior:} For $|eV|\gg 2\Delta$ the $I$--$V$ curve tends toward an Ohmic line with slope given by the normal-state conductance.
+% \end{itemize}
+% A compact working expression capturing these statements is the convolution form
+% \begin{equation}
+%     I(V) \propto \int_{-\infty}^{+\infty}
+%     N_\mathrm{S}(E)\, N_\mathrm{S}(E+eV)\, [\theta(-E)-\theta(-(E+eV))]\, dE,
+%     \label{eq:SIS_convolution_T0}
+% \end{equation}
+% where $\theta$ is the step function that encodes the zero-temperature occupations. This representation makes the threshold at $2\Delta/e$ and the coherence-peak enhancement at the onset immediately evident.
+
+
+
+    % Conceptually, the Dynes parameter broadens the states themselves, while temperature broadens the occupations via the Fermi Dirac Distribution.
+    % \begin{equation}
+    %     f(E, T) = \frac{1}{1+\exp({E/k_\mathrm{B}T})}\,,
+    % \end{equation} 
+
+    % While the density of states describes where electronic states exist, the Fermi--Dirac distribution determines which of them are occupied at a given temperature. It thus provides the crucial bridge between the microscopic quasiparticle spectrum and the measurable tunneling current. In a tunneling experiment, current can only flow if occupied states on one side of the junction overlap with empty states on the other. This overlap is quantified by the difference in occupation probabilities, $f(E)-f(E+eV)$, weighted by the respective densities of states of both electrodes. In essence, $N_S(E)$ sets the landscape of available states, and $f(E,T)$ decides how electrons populate that landscape. Together they define the tunneling current, establishing the natural link between the microscopic DOS and the macroscopic $I$--$V$ characteristic discussed in the following section.
+
+    % These effect the tunnelcurrent differently, producing subtly different fingerprints, like shown in Figure \ref{fig:bcs:dos}. In practice, this lets us disentangle an effective electronic temperature from genuine lifetime effects.
+
+    % \begin{figure}
+    % \centering
+    % \includegraphics[width=0.75\linewidth]{theory/dynes-dos/dynes-dos.pdf}% adjust path as needed
+    % \caption{Superconducting density of states $N_S(E)$ with Dynes broadening for $\Gamma/\Delta\in\{0.00,0.02,0.05,0.10\}$.}
+    % \label{fig:bcs:dos}
+    % \end{figure}
+
+
+% \subsection{Tunnel Current in an SIS Junction}
+
+% In the tunneling limit (opaque barrier, incoherent single-particle transport), the current through a symmetric S--I--S junction is given by the convolution of the electrode DOS weighted by Fermi functions,
+% \begin{equation}
+%     I(V) = \frac{1}{e R_N} \int_{-\infty}^{+\infty}
+%     N_\mathrm{S}(E;\Delta,\Gamma)\, N_\mathrm{S}(E+eV;\Delta,\Gamma)\,
+%     \big[f(E,T)-f(E+eV,T)\big]\; dE,
+%     \label{eq:SIS_current}
+% \end{equation}
+% where $R_N$ is the normal-state resistance measured at $|eV|\gg 2\Delta$, $N_\mathrm{S}$ is the \emph{normalized} superconducting DOS [Eqs.~\eqref{eq:BCS_DOS} or \eqref{eq:Dynes_DOS}], and $f$ is the Fermi--Dirac distribution. Equation~\eqref{eq:SIS_current} captures the central experimental signatures:
+% (i) an exponentially small current for $|eV|<2\Delta$ at low $T$ (ideal case zero),
+% (ii) a sharp onset of conductance at $|eV|\approx 2\Delta$ due to overlap of coherence peaks,
+% and (iii) an approach to Ohmic behavior for $|eV|\gg 2\Delta$.
+
+% At finite temperature and/or finite Dynes parameter $\Gamma$, subgap conductance appears because thermally excited quasiparticles and lifetime broadening provide states within the gap. In the analysis chapters, Eq.~\eqref{eq:SIS_current} is evaluated numerically to fit $I$--$V$ and $dI/dV$ data, with $(\Delta,\Gamma,T,R_N)$ serving as fit parameters or constraints tied by the Ambegaokar--Baratoff relation for consistency checks.
+
+% For differential conductance spectroscopy we evaluate
+% \begin{equation}
+%     \frac{dI}{dV}(V) = \frac{1}{e R_N} \int_{-\infty}^{+\infty}
+%     N_\mathrm{S}(E)\, N_\mathrm{S}(E+eV)\,
+%     \left(-\frac{\partial f(E+eV,T)}{\partial (eV)}\right) dE,
+%     \label{eq:SIS_dIdV}
+% \end{equation}
+% which emphasizes how thermal broadening and Dynes lifetime effects shape the measured $dI/dV$ near $\pm 2\Delta/e$.
