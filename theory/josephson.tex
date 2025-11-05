@@ -1,7 +1,49 @@
 % !TEX root = ../thesis.tex
 
-\section{Josephson}
 
-% \subsection{NS}
-% \subsection{SS}
-% \subsection{Landauer}
+\section{Josephson Effect}
+\label{sec:josephson}
+
+    The Josephson effect arises naturally from the macroscopic phase coherence of the superconducting condensate, a concept formalized in the Ginzburg-Landau (GL) theory. In this phenomenological framework, the superconducting state is described by a complex order parameter 
+    \begin{equation}
+        \Psi(\mathbf{r}) = |\Psi(\mathbf{r})| e^{i\phi(\mathbf{r})}\,,
+        \label{eq:josephson:GL}
+    \end{equation}
+    whose magnitude represents the local condensate density and whose phase $\phi$ encodes the long-range coherence of the Cooper-pair wavefunction. The GL theory captures the essential energetic balance between condensation, kinetic, and electromagnetic contributions, allowing the supercurrent density to be expressed as
+    \begin{equation}
+        \mathbf{j}_s = (2e\hbar/m^*)|\Psi|^2(\nabla \phi - 2e\mathbf{A}/\hbar)\,,
+        \label{eq:josephson:GL-js}
+    \end{equation}
+    where $\mathbf{A}$ is the vector potential. This relation establishes a direct link between the supercurrent and the spatial gradient of the superconducting phase, forming the conceptual foundation for the Josephson effect described in the following subsections.
+
+    When two superconductors are weakly coupled through a thin insulating barrier, constriction, or metallic link, their macroscopic wavefunctions can overlap across the junction. In this situation, the phase difference $\phi = \phi_1 - \phi_2$ between the two condensates governs the supercurrent flowing through the weak link. Brian Josephson first predicted that this coupling gives rise to a dissipationless current even in the absence of an applied voltage, and that the current-phase relation follows a sinusoidal dependence. 
+    
+    The first fundamental Josephson relations,
+    \begin{equation}
+        I_\mathrm{S} = I_\mathrm{C}\sin\phi
+    \end{equation}
+    expresses the \emph{dc Josephson effect}. It states that a stationary supercurrent can flow through the weak link even in the absence of an applied voltage, solely driven by the phase difference $\phi$ between the two superconducting condensates. The quantity $I_\mathrm{C}$ denotes the critical current—the maximum supercurrent sustainable without generating a voltage across the junction. This purely phase-dependent current is a direct manifestation of macroscopic quantum coherence and forms the basis for most applications of Josephson junctions.
+
+    The second relation,
+    \begin{equation}
+        \frac{\mathrm{d}(\phi)}{\mathrm{d}t} = \frac{2eV}{\hbar}
+    \end{equation}
+    describes the \emph{ac Josephson effect}. It links the temporal evolution of the phase difference to the voltage $V$ across the junction. A constant voltage causes the phase to evolve linearly in time, $\phi(t) = \phi_0 + (2eV/\hbar)t$, resulting in an oscillating supercurrent with frequency $\nu = 2eV/h$. This relation establishes a direct connection between electrical voltage and frequency, which is exploited in precision metrology and forms the conceptual bridge to Shapiro physics discussed in the following section.
+    
+    Together, these two equations form the fundamental Josephson relations, capturing both the static and dynamic properties of weakly coupled superconductors. They describe how the supercurrent and phase evolve coherently under different boundary conditions and provide the foundation for the diverse phenomena discussed in the following subsections.
+
+    \subsection{Shapiro Physics}
+    \label{subsec:josephson:shapiro}
+
+    \subsection{Incoherent Tunneling of Cooper Pairs}
+    \label{subsec:josephson:itcp}
+
+
+
+    % \newpage
+    % \subsection*{TODO}
+    % \textbf{
+    %     \begin{itemize}
+    %         \item Josephson IV
+    %     \end{itemize}}
+    % \newpage
