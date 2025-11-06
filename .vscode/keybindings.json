@@ -1,0 +1,13 @@
+[
+	{
+		"key": "cmd+alt+b",
+		"command": "-latex-workshop.build",
+		"when": "editorTextFocus && editorLangId =~ /latex|tex/"
+	},
+	{
+		"key": "cmd+alt+b",
+		"command": "latex-workshop.recipes",
+		"args": "xelatex -> biber -> biber -> xelatex -> copy",
+		"when": "editorTextFocus && editorLangId =~ /latex|tex/"
+	}
+]
