@@ -3,34 +3,55 @@
 \chapter{Superconducting Transport}
 \label{ch:superconducting-transport}
 %=========================================================
-% This chapter introduces the theoretical and conceptual background
-% shared across all experiments. It defines the terminology and key
-% models used throughout the thesis.
 
-Heike Onnes did discover superconductivity. Ginzburg landau theory in phenomenological. 
+    Superconductivity was first discovered by Heike Kamerlingh Onnes in 1911, when he observed that the electrical resistance of mercury dropped abruptly to zero upon cooling below $4.2\,$K. This remarkable phenomenon revealed a new quantum state of matter, characterized by the complete absence of electrical resistance and the expulsion of magnetic fields, known as the Meissner effect. These two defining properties—perfect conductivity and perfect diamagnetism—set superconductors apart from ordinary metals and established a foundation for both fundamental research and technological applications.
 
-cite: onnes, ginzburg-landau, tinkham, hunklinger
+    At its core, superconductivity arises from the collective behavior of electrons, which form bound pairs and condense into a macroscopic quantum state described by a single coherent wavefunction. The subsequent sections build a comprehensive theoretical picture of this phenomenon from complementary perspectives.
 
-\input{theory/bcs.tex}
-\input{theory/mar.tex}
-\input{theory/josephson.tex}
+    The first section, \textbf{Microscopic Description}, introduces the Bardeen-Cooper-Schrieffer (BCS) theory, which explains how electrons near the Fermi surface pair via phonon-mediated attraction and how this pairing gives rise to an energy gap and a characteristic quasiparticle density of states. This microscopic framework establishes the foundation for understanding tunneling spectroscopy and photon-assisted transport.
+
+    The second section, \textbf{Macroscopic Description}, develops the Josephson picture, where the collective phase of the superconducting condensate determines the behavior of weak links. Here, phase coherence manifests in phenomena such as the DC and AC Josephson effects, Shapiro steps, and the influence of dissipation and capacitance captured by the RCSJ model.
+
+    Finally, the \textbf{Mesoscopic Description} section bridges microscopic and macroscopic transport through the theory of Andreev and multiple Andreev reflections (MAR). These processes describe how charge is transferred through highly transparent superconducting contacts and how the resulting $I(V)$ characteristics encode the microscopic transmission properties of the junction, forming the quantitative link between experiment and theory.
+
+    \newpage
+
+    \input{theory/micro.tex}
+    \newpage
+
+    \input{theory/macro.tex}
+    \newpage
+
+    \input{theory/meso.tex}
+    \newpage
 
 
-%=========================================================
-% End of Chapter 2
-%=========================================================
+    \section*{TODO}
+    \subsection*{BCS}
+    \begin{itemize}
+        \item schemata tunneling, nin, nis, sis
+        \item $I(V, T, Gamma)$
+        \item schemata pat nin, nis, sis
+        \item $I(V, A, \nu)$
+        \item reference the figures
+        \item do the citations
+    \end{itemize}
 
+    \subsection*{Josephson}
+    \begin{itemize}
+        \item Josephson IV
+        \item shapiro IV
+        \item rscj shaltplan
+        \item rcsj washboard potential
+    \end{itemize}
 
-%---------------------------------------------------------
-% Figure Plan:
-% 1. Superconducting DOS with Dynes broadening
-% 2. Temperature/magnetic-field dependence schematic (gap closing)
-% 3. Andreev reflection diagram
-% 4. Multiple Andreev reflection schematic I-V curve
-% 5. Landauer picture / channel conductance sketch
-% 6. Josephson effect schematic (DC & AC, phase evolution)
-% 7. Shapiro step illustration
-% 8. Tien-Gordon energy sideband diagram
-% 9. MCBJ experimental schematic
-% 10. Microwave coupling schematic (setup block diagram)
-%---------------------------------------------------------
+    \subsection*{MAR}
+    \begin{itemize}
+        \item AR NS Schaubild
+        \item AR NS I(V)
+        \item MAR SS I(V)
+        \item do citations
+        \item Photon-Assisted MAR (PAMAR)
+    \end{itemize}
+
+    \newpage
