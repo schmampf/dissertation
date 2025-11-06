@@ -1,0 +1,84 @@
+% !TEX root = ../thesis.tex
+
+% \section{(Multiple) Andreev Reflection}
+% \label{sec:mar}
+
+%     Building on the tunneling framework established in the previous section, where charge transport was described by independent quasi-particle tunneling events, we now turn to the regime of highly transparent superconducting contacts. In this case, single-particle tunneling no longer dominates. Instead, charge transfer is governed by the coherent conversion between electrons and holes at the interface—known as Andreev reflection. When both electrodes are superconducting, these conversions can occur repeatedly, giving rise to multiple Andreev reflection (MAR). The following sections provide a microscopic description of Andreev reflection at N-S interfaces, its extension to MAR in S-S junctions, and the resulting dependence of the $I(V)$ characteristics on the transmission probabilities that define the contact's microscopic configuration.
+
+\section{Mesoscopic Description}
+\label{sec:meso}
+
+    Building upon the macroscopic Josephson description of phase-coherent tunneling, we now return to a microscopic perspective on charge transport through superconducting contacts. In contrast to the Josephson regime, where current is carried coherently by Cooper pairs across a weak link, highly transparent junctions exhibit significant quasiparticle contributions within the superconducting gap. Here, charge transfer is governed by the coherent conversion between electrons and holes at the interface—known as Andreev reflection. When both electrodes are superconducting, these conversions can occur repeatedly, giving rise to multiple Andreev reflection (MAR). 
+
+    The following sections provide a microscopic description of Andreev reflection at N-S interfaces, its extension to MAR in S-S junctions, and the resulting dependence of the $I(V)$ characteristics on the transmission probabilities that define the contact's microscopic configuration.
+
+    \subsection{Andreev Reflection (AR)}
+    \label{subsec:meso:ar}
+
+        At the interface between a normal metal (N) and a superconductor (S), the continuity of the electron wavefunction imposes a unique boundary condition on charge transport. When an electron in a normal metal approaches the interface with an energy smaller than the superconducting energy gap ($|E| < \Delta$), it cannot enter the superconductor as a single quasi-particle because no available states exist within the gap. Instead, the electron is reflected as a hole with opposite momentum and spin, while a Cooper pair carrying charge $2e$ is transmitted into the superconductor. This process, known as Andreev reflection (AR), ensures charge and momentum conservation across the interface.
+        
+        Equivalently, Andreev reflection can be viewed as the transmission of two electrons from the normal metal into the superconducting condensate, where they form a Cooper pair. Historically, AR is often described in terms of hole reflection. However, I will use the convention of two electrons are transmitted, since it is more intuitive.
+
+        In the simplest picture, the two incident electrons are phase-correlated; they form the two components of a time-reversed pair. The amplitude of Andreev reflection depends on the transparency of the interface and is maximal for a perfectly clean contact. For a barrier of finite strength, normal reflection competes with Andreev reflection, reducing the probability of Cooper-pair transfer.
+
+        Analytical descriptions of the $I(V)$ characteristics based on the Blonder--Tinkham--Klapwijk (BTK) model provide quantitative solutions for the Andreev reflection probabilities, but since these details are not essential for this thesis, they are not treated here.
+
+        The Andreev reflection picture is valid under several key assumptions regarding the materials and interface. This description assumes that both materials are well described by the mean-field BCS theory, that the Fermi energies in N and S are much larger than the excitation energies ($E, \Delta \ll E_\mathrm{F}$), and that the interface can be treated within the Andreev approximation, where the momenta of the two electrons forming a Cooper pair differ only slightly from the Fermi momentum.
+
+        This gives rise to a finite conductance at subgap voltages, even when quasi-particle tunneling is forbidden. The probability of Andreev reflection can be derived from the Bogoliubov--de Gennes equations and depends on both the voltage bias $eV$ and the interface transparency $\tau$. Andreev reflection is thus the fundamental process linking normal-metal transport to superconducting correlations.
+
+        While Andreev reflection is most easily visualized at an N-S interface, it also governs charge transfer between two superconductors. In this case, repeated Andreev processes on both sides of the junction lead to multiple Andreev reflection, discribed in the following.
+
+    \subsection{Multiple Andreev Reflection (MAR)}
+    \label{subsec:meso:mar}
+
+        When two superconductors are connected through a constriction of atomic dimensions, the quasi-particle transport at subgap voltages is governed by multiple Andreev reflection (MAR). In this regime, a quasi-particle incident on the interface cannot tunnel directly through the gap but undergoes successive Andreev reflections between the two superconducting electrodes. Each reflection converts an electron into a hole (or vice versa) while transferring a Cooper pair to the condensate, effectively advancing the quasiparticle energy by $eV$ with every traversal of the junction.
+
+        After $m$ such reflections, the quasiparticle gains an energy of $meV$ and can finally escape into the continuum when $meV = 2\Delta$, thus defining the characteristic subharmonic structure in the $I(V)$ curve. Distinct features appearing at
+        \begin{equation}
+            eV_m=\frac{2\Delta}{m}\,,\quad(m\in\mathbb{N}^+)\,.
+        \end{equation}
+        These structures are a hallmark of coherent superconducting transport and provide direct insight into the transparency of the contact.
+
+        For low-transmission junctions ($\tau \ll 1$), the subgap current is weak and dominated by quasi-particle tunneling ($m=1$). As the transmission increases, higher-order MAR processes become more pronounced, producing a series of steps or peaks in the differential conductance at voltages $2\Delta/m$. In the fully transparent limit ($\tau \approx 1$), these discrete features merge into a smooth subgap current approaching the Andreev limit, where transport becomes dominated by successive pair transfers rather than discrete tunneling events.
+
+        In contrast, multiple Andreev reflection cannot occur at a single N-S interface, since the normal electrode provides no second superconducting condensate to sustain repeated electron-hole conversions. After a single Andreev reflection, the reflected hole simply escapes into the normal reservoir instead of being reflected back toward the interface, limiting the process to one conversion event per incident quasiparticle.
+
+        % Figure~\ref{fig:mar_iv} shows a schematic current–voltage characteristic highlighting the typical subharmonic gap structure resulting from multiple Andreev reflection. The evolution and relative strength of these features as a function of channel transmission form an important diagnostic tool for determining the microscopic properties of superconducting point contacts.
+
+        % \begin{figure}[h]
+        % \centering
+        % \includegraphics[width=0.75\linewidth]{theory/mar-iv/mar-iv.pdf}
+        % \caption{Schematic current–voltage characteristics of a superconducting point contact showing 
+        % multiple Andreev reflection (MAR). Subharmonic features appear at voltages $eV = 2\Delta/n$, 
+        % corresponding to processes involving $n$ successive Andreev reflections.}
+        % \label{fig:mar_iv}
+        % \end{figure}
+
+    \subsection{Transmission Channels and Process Probabilities}
+    \label{subsec:meso:landauer}
+
+        The Landauer picture provides a simple yet powerful framework for describing quantum transport through mesoscopic conductors. In this view, electrical conduction is not determined by bulk properties such as resistivity, but by the number and quality of available transport channels that connect the two electrodes. Each channel is characterized by a transmission probability $\tau_i \in [0,1]$, representing the likelihood that an electron entering from one side is transmitted to the other without reflection.
+
+        For a normal conductor, the total conductance is obtained by summing over all channels,
+        \begin{equation}
+            G_N = G_0 \sum_i \tau_i\,,
+        \end{equation}
+        where $G_0 = 2e/h^2$ is the conductance quantum accounting for the spin degeneracy of the electrons. A perfectly transmitting single channel yields a conductance quantum $G_0$, while partially transmitting channels contribute proportionally less. This concept naturally explains the appearance of conductance quantization in atomic-sized contacts and quantum point contacts.
+
+        In superconducting contacts, the same set of transmission probabilities $\{\tau_i\}$ governs all transport processes, but the current now involves both electron and hole excitations due to Andreev reflection. The transparency of each channel determines the strength and hierarchy of multiple Andreev reflection features. Each process of order $m$—that is, involving the transfer of $m$ effective charges across the junction—is weighted by a probability proportional to $\tau^m$, reflecting that a sequence of $m$ successive Andreev reflections requires $m$ successful transmissions through the interface. As a consequence, the resulting $I(V)$ characteristic has a distinct and non-linear shape for each transmission value $\tau$. 
+
+        The $I(V)$ and $\mathrm{d}I/\mathrm{d}V$ characteristics shown in Figure~\ref{fig:meso:mar-iv} were calculated following the microscopic approach developed by Cuevas et al.~\cite{cuevas_hamiltonian_1996}. In this method, the current through a superconducting point contact is obtained from a time-dependent Hamiltonian that includes all orders of multiple Andreev reflections. The applied bias introduces a time-periodic phase difference $\phi(t) = \phi_0 + 2eVt/\hbar$, allowing the current to be evaluated in the stationary regime using a Floquet expansion of the nonequilibrium Green's functions. An efficient recursive algorithm then computes the dc component of the current for arbitrary transmission $\tau$, effectively summing all MAR trajectories to infinite order. This approach yields the full $I(V)$ and $\mathrm{d}I/\mathrm{d}V$ characteristics and accurately reproduces the subharmonic gap structure observed experimentally.
+        \begin{figure}
+            \centering
+            \import{theory/meso/}{mar-iv.pgf}
+            \caption{Schematic current-voltage characteristics of a superconducting point contact showing 
+                multiple Andreev reflection (MAR). Subharmonic features appear at voltages $eV = 2\Delta/m$, 
+                corresponding to processes involving $m$ successive Andreev reflections. $T=0$ \cite{cuevas_hamiltonian_1996}}
+            \label{fig:meso:mar-iv}
+        \end{figure}
+        
+        In contacts with several transport channels, the total current is the sum over all individual channel contributions, and the specific combination of $\{\tau_i\}$ gives rise to a unique $I(V)$ fingerprint. For this reason, the complete set of transmission coefficients $\{\tau_i\}$ is often referred to as the \emph{pincode} of a contact, as it uniquely determines its microscopic configuration and superconducting transport properties. By fitting a measured $I(V)$ one can obtain this pincode. This method has been demonstrated by Scheer et al.~\cite{scheer_conduction_1997,scheer_signature_1998}.
+
+        In the limit of many weakly transmitting channels, the summed contribution of all processes approaches the tunneling regime, where the $I(V)$ characteristic reproduces the quasiparticle tunneling behavior described in Section~\ref{sec:micro}.
+        
