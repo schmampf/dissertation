@@ -4,15 +4,20 @@
 \label{ch:superconducting-transport}
 %=========================================================
 
-    Superconductivity was first discovered by Heike Kamerlingh Onnes in 1911, when he observed that the electrical resistance of mercury dropped abruptly to zero upon cooling below $4.2\,$K. This remarkable phenomenon revealed a new quantum state of matter, characterized by the complete absence of electrical resistance and the expulsion of magnetic fields, known as the Meissner effect. These two defining properties—perfect conductivity and perfect diamagnetism—set superconductors apart from ordinary metals and established a foundation for both fundamental research and technological applications.
+    Superconductivity was first discovered by Heike Kamerlingh Onnes in 1911, when he observed that the electrical resistance of mercury dropped abruptly to zero upon cooling below 4.2\,K. This remarkable phenomenon revealed a new quantum state of matter, characterized by the complete absence of electrical resistance and the expulsion of magnetic fields, known as the Meissner effect. These two defining properties, perfect conductivity and perfect diamagnetism, set superconductors apart from ordinary metals and established a foundation for both fundamental research and technological applications.
 
-    At its core, superconductivity arises from the collective behavior of electrons, which form bound pairs and condense into a macroscopic quantum state described by a single coherent wavefunction. The subsequent sections build a comprehensive theoretical picture of this phenomenon from complementary perspectives.
+    At its core, superconductivity arises from the collective behavior of electrons, which form bound pairs and condense into a macroscopic quantum state described by a single coherent wavefunction.
+    
+    The subsequent sections build a comprehensive theoretical picture of this phenomenon from complementary perspectives.
 
-    The first section, \textbf{Microscopic Description}, introduces the Bardeen-Cooper-Schrieffer (BCS) theory, which explains how electrons near the Fermi surface pair via phonon-mediated attraction and how this pairing gives rise to an energy gap and a characteristic quasiparticle density of states. This microscopic framework establishes the foundation for understanding tunneling spectroscopy and photon-assisted transport.
+    The first section introduces the microscopic Bardeen-Cooper-Schrieffer theory. This theory explains how electrons near the Fermi surface pair via phonon mediated attraction and how this pairing gives rise to an energy gap and a characteristic quasi-particle density of states. This microscopic framework establishes the foundation for understanding tunneling spectroscopy and photon-assisted transport.
 
-    The second section, \textbf{Macroscopic Description}, develops the Josephson picture, where the collective phase of the superconducting condensate determines the behavior of weak links. Here, phase coherence manifests in phenomena such as the DC and AC Josephson effects, Shapiro steps, and the influence of dissipation and capacitance captured by the RCSJ model.
+    Followed by the second section introducing the macroscopic Ginzburg-Landau theory. The collective phase of the superconducting condensate determines the behavior of weak links. Here, phase coherence manifests in phenomena such as the DC and AC Josephson effects, Shapiro steps, and the influence of dissipation and capacitance captured by the RCSJ model.
 
-    Finally, the \textbf{Mesoscopic Description} section bridges microscopic and macroscopic transport through the theory of Andreev and multiple Andreev reflections (MAR). These processes describe how charge is transferred through highly transparent superconducting contacts and how the resulting $I(V)$ characteristics encode the microscopic transmission properties of the junction, forming the quantitative link between experiment and theory.
+    % proper segway, when mar is fertig.
+    Finally, the mesoscopic description section bridges microscopic and macroscopic transport through the theory of Andreev and multiple Andreev reflections. These processes describe how charge is transferred through highly transparent superconducting contacts and how the resulting \textit{I-V} characteristics encode the microscopic transmission properties of the junction, forming the quantitative link between experiment and theory.
+
+    % platform under investigation ???
 
     \newpage
 
@@ -27,11 +32,27 @@
 
 
     \section*{TODO}
+
+    \begin{itemize}
+        \item do citations in theory introduction
+        \item check consistency:
+        \begin{itemize}
+            \item quasi-particle
+            \item Cooper-pair
+            \item aluminum
+            \item weak-coupling
+            \item normal state
+            \item - or --
+            \item -- bei Modell namen (Tien--Gordon, Ginzburg--Landau)
+        \end{itemize}
+        \item check consistency seeblau100
+    \end{itemize}
+
     \subsection*{BCS}
     \begin{itemize}
         \item schemata tunneling, nin, nis, sis
-        \item $I(V, T, Gamma)$
-        \item schemata pat nin, nis, sis
+        \item $I(V, T, Gamma)$ (nin, nis, sis)
+        \item schemata pat nis, sis
         \item $I(V, A, \nu)$
         \item reference the figures
         \item do the citations
@@ -43,6 +64,7 @@
         \item shapiro IV
         \item rscj shaltplan
         \item rcsj washboard potential
+        \item do the citations
     \end{itemize}
 
     \subsection*{MAR}
@@ -52,6 +74,28 @@
         \item MAR SS I(V)
         \item do citations
         \item Photon-Assisted MAR (PAMAR)
+        \item do the citations
     \end{itemize}
 
     \newpage
+
+
+        % % new stuff
+        % When the junction capacitance becomes very small, the electrostatic charging energy $E_\mathrm{C} = e^2/2C$ can exceed the Josephson coupling energy $E_\mathrm{J}$. In this regime, the transfer of individual Cooper pairs is suppressed at low bias, giving rise to the Coulomb blockade of Cooper-pair tunneling. The continuous phase description of the RCSJ model then breaks down, and transport becomes dominated by discrete charge states on the junction island. Such small-capacitance junctions mark the crossover to the regime of single-Cooper-pair tunneling and form the conceptual link to the incoherent tunneling picture discussed in Section~\ref{sec:incoherent-cooper-pair-tunneling}.
+
+
+
+        % # washboard potential analogy
+        % This expression can be interpreted as the equation of motion of a fictitious particle with an effective mass $m_\mathrm{eff} = \hbar C / 2e$, moving in a tilted washboard potential
+        % \begin{equation}
+        %     U(\phi) = -E_\mathrm{J}\left(\cos\phi + \frac{I}{I_\mathrm{C}}\phi\right)\,,
+        %     \label{eq:macro:washboard}
+        % \end{equation}
+        % where $E_\mathrm{J} = \hbar I_\mathrm{C} / 2e$ is the Josephson coupling energy. In this analogy:
+        % \begin{itemize}
+        %     \item the particle position corresponds to the phase $\phi$,
+        %     \item its velocity $\dot{\phi}$ corresponds to the voltage across the junction,
+        %     \item the damping term $\hbar/2eR$ corresponds to viscous friction,
+        %     \item and the tilt of the potential is controlled by the bias current $I$.
+        % \end{itemize}
+        % For $I < I_\mathrm{C}$, the particle is trapped in one of the potential wells, corresponding to the zero-voltage (superconducting) state. When $I > I_\mathrm{C}$, the potential minima disappear, the phase starts to run, and a finite voltage develops.
