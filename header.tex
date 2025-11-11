@@ -90,9 +90,10 @@
 %%% math stuff %%%
     \usepackage{amsmath}
     \usepackage{amsfonts} % für N, Z, Q und so \mathbb{Z}
-    \usepackage{amssymb}  % extra math symbols (e.g. \lessapprox)
-    \usepackage{physics}   % For \hbar and other physics notation
-    \usepackage{accents}   % Custom math accents (for small arrows)
+    \usepackage{amssymb} % extra math symbols (e.g. \lessapprox)
+    \usepackage{physics} % For \hbar and other physics notation
+    \usepackage{siunitx} % For SI units
+    \usepackage{accents} % Custom math accents (for small arrows)
     % xunicode maps \hbar to a text symbol; restore the math variant and keep the text one if ever needed.
     \DeclareRobustCommand{\mathhbar}{\ensuremath{{\mathchar'26\mkern-9muh}}}
     \let\texthbar\hbar
