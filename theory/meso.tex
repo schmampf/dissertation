@@ -100,106 +100,126 @@
         
         Within this picture, each MAR trajectory corresponds to the coherent transfer of a well-defined multiple of the electron charge, and the weight of each process is determined by its transmission dependent amplitude. This approach, pioneered by Belzig, Nazarov, and others, reveals that the subgap current in superconducting contacts is not continuous but built from discrete charge-transfer events whose effective charge increases as the bias is reduced. It thereby extends the Cuevas theory beyond the average current, offering a comprehensive, charge-resolved description of Andreev transport.
 
-        \begin{figure}
+        \begin{figure}[t]
             \centering
             \import{theory/meso}{mar-iv.pgf}
             \caption{
                 Numerical \textit{I-V} and \textit{dI-dV} characteristic calculated with the HA model by Cuevas ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\Gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).}
             \label{fig:meso:mar-iv}
         \end{figure}
-        
-    \subsection{Coherent Photon-Assisted Tunneling}
-    \label{subsec:meso:cpat}
-
-    
-    \subsection{Incoherent Tunneling of Cooper-Pairs}
-    \label{subsec:meso:icpt}
 
 
-    % \subsection{The mesoscopic pincode}
-    % \label{subsec:meso:pincode}
+    \subsection{Photon-Assisted Multiple Andreev Reflection}
+    \label{subsec:meso:pamar}
 
-        % The Landauer picture provides a simple yet powerful framework for describing quantum transport through mesoscopic conductors. In this view, electrical conduction is not determined by bulk properties such as resistivity, but by the number and quality of available transport channels that connect the two electrodes. Each channel is characterized by a transmission probability $\tau_i \in [0,1]$, representing the likelihood that an electron entering from one side is transmitted to the other without reflection.
+        Before discussing the effect of microwaves on multiple Andreev reflection (MAR),
+        it is helpful to restate the two key mechanisms on which PAMAR is built.
+        Photon-assisted tunneling (PAT), introduced in Section~\ref{subsec:micro:pat},
+        arises whenever the applied voltage contains an AC component,
+        \begin{equation}
+            V(t) = V_{\mathrm{dc}} + A \sin(2\pi\nu t),
+            \label{eq:meso:pamar-driving}
+        \end{equation}
+        which modulates the tunneling phase and generates a ladder of sidebands spaced
+        by the photon energy $h\nu$. \cite{tien_multiphoton_1963}   
+        In contrast, MAR (Section~\ref{subsec:meso:mar}) describes the coherent motion of
+        a quasiparticle that undergoes $m$ Andreev reflections between two superconductors,
+        gaining energy $eV$ on each traversal until $meV = 2\Delta$.\cite{Cuevas1996,Cuevas1998}
+        Each MAR trajectory corresponds to the transfer of an effective charge
+        \begin{equation}
+            q_m = me,
+        \end{equation}
+        and the subgap current is a weighted sum of these elementary charge-transfer
+        processes.
 
-        % For a normal conductor, the total conductance is obtained by summing over all channels,
-        % \begin{equation}
-        %     G_N = G_0 \sum_i \tau_i\,,
-        % \end{equation}
-        % where $G_0 = 2e/h^2$ is the conductance quantum accounting for the spin degeneracy of the electrons. A perfectly transmitting single channel yields a conductance quantum $G_0$, while partially transmitting channels contribute proportionally less. This concept naturally explains the appearance of conductance quantization in atomic-sized contacts and quantum point contacts.
+        When an AC voltage is applied, the coherent MAR trajectories remain operative,
+        but the time dependence of Eq.~\eqref{eq:meso:pamar-driving} introduces an
+        oscillatory phase into each order-$m$ process.  
+        For a MAR trajectory transferring the charge $q_m$, the superconducting phase
+        difference becomes
+        \begin{equation}
+            \phi_m(t)
+            = \phi_0 + \frac{q_m V_{\mathrm{dc}}}{\hbar}\, t
+            - \alpha_m \cos(2\pi\nu t),
+            \qquad
+            \alpha_m = \frac{q_m A}{h\nu}.
+            \label{eq:meso:pamar-phase}
+        \end{equation}
+        The modulation amplitude $\alpha_m$ increases linearly with the effective
+        charge $q_m$, implying that higher-order MAR processes couple more strongly to
+        microwave irradiation.  
+        This reflects that MAR transfers multiple electron charges in a single coherent
+        sequence; the entire string of reflections is phase-modulated as a whole.
 
-        % In superconducting contacts, the same set of transmission probabilities $\{\tau_i\}$ governs all transport processes, but the current now involves both electron and hole excitations due to Andreev reflection. The transparency of each channel determines the strength and hierarchy of multiple Andreev reflection features. Each process of order $m$—that is, involving the transfer of $m$ effective charges across the junction—is weighted by a probability proportional to $\tau^m$, reflecting that a sequence of $m$ successive Andreev reflections requires $m$ successful transmissions through the interface. As a consequence, the resulting $I(V)$ characteristic has a distinct and non-linear shape for each transmission value $\tau$. 
+        The time-periodic phase renders the Hamiltonian a Floquet problem, as already
+        discussed in the microscopic MAR theory of
+        Cuevas~\textit{et al.}\cite{Cuevas1996,Cuevas1998}
+        Expanding $e^{i\phi_m(t)}$ into its Fourier components gives
+        \begin{equation}
+            e^{i\phi_m(t)}
+            = \sum_{n=-\infty}^{\infty}
+                J_n(\alpha_m)
+                \exp\!\left[
+                    i\left(
+                        \frac{q_m V_{\mathrm{dc}}}{\hbar}
+                        + n 2\pi\nu
+                    \right)t
+                \right],
+            \label{eq:meso:pamar-floquet}
+        \end{equation}
+        revealing that each MAR trajectory generates a ladder of photon-dressed sidebands.
+        The Bessel function $J_n(\alpha_m)$ is the amplitude to absorb or emit $n$
+        photons, and the observable current depends on the probability $J_n^2(\alpha_m)$
+        of occupying the corresponding Floquet mode. \cite{tien_multiphoton_1963, kot}  
+        This mechanism is identical to PAT but extended to charge-transfer processes of
+        arbitrary order $m$.
 
-        % The $I(V)$ and $\mathrm{d}I/\mathrm{d}V$ characteristics shown in Figure~\ref{fig:meso:mar-iv} were calculated following the microscopic approach developed by Cuevas et al.~\cite{cuevas_hamiltonian_1996}. In this method, the current through a superconducting point contact is obtained from a time-dependent Hamiltonian that includes all orders of multiple Andreev reflections. The applied bias introduces a time-periodic phase difference $\phi(t) = \phi_0 + 2eVt/\hbar$, allowing the current to be evaluated in the stationary regime using a Floquet expansion of the nonequilibrium Green's functions. An efficient recursive algorithm then computes the dc component of the current for arbitrary transmission $\tau$, effectively summing all MAR trajectories to infinite order. This approach yields the full $I(V)$ and $\mathrm{d}I/\mathrm{d}V$ characteristics and accurately reproduces the subharmonic gap structure observed experimentally.
-        % \begin{figure}
-        %     \centering
-        %     \import{theory/meso/}{mar-iv.pgf}
-        %     \caption{Schematic current-voltage characteristics of a superconducting point contact showing 
-        %         multiple Andreev reflection (MAR). Subharmonic features appear at voltages $eV = 2\Delta/m$, 
-        %         corresponding to processes involving $m$ successive Andreev reflections. $T=0$ \cite{cuevas_hamiltonian_1996}}
-        %     \label{fig:meso:mar-iv}
-        % \end{figure}
-        
-        % In contacts with several transport channels, the total current is the sum over all individual channel contributions, and the specific combination of $\{\tau_i\}$ gives rise to a unique $I(V)$ fingerprint. For this reason, the complete set of transmission coefficients $\{\tau_i\}$ is often referred to as the \emph{pincode} of a contact, as it uniquely determines its microscopic configuration and superconducting transport properties. By fitting a measured $I(V)$ one can obtain this pincode. This method has been demonstrated by Scheer et al.~\cite{scheer_conduction_1997,scheer_signature_1998}.
+        Averaging the microscopic current operator over one period of the drive yields
+        a charge-resolved generalization of the Tien--Gordon expression,
+        \begin{equation}
+            I(V_{\mathrm{dc}},A)
+            = \sum_{m=1}^{\infty}
+                \sum_{n=-\infty}^{\infty}
+                    J_n^2(\alpha_m)\,
+                    I_m\!\left(
+                        V_{\mathrm{dc}}
+                        - \frac{n h\nu}{q_m}
+                    \right),
+            \label{eq:meso:pamar-unified}
+        \end{equation}
+        where $I_m(V)$ denotes the DC MAR contribution of order $m$ in the absence of
+        irradiation.
+        Equation~\eqref{eq:meso:pamar-unified} is the \emph{unified, charge-resolved
+        Tien--Gordon formula} for superconducting point contacts.  
+        It shows that microwaves do not alter the internal structure of MAR---as
+        captured by $I_m(V)$---but merely generate shifted replicas of each MAR
+        trajectory spaced by $\pm n h\nu/q_m$.  
+        The strength of each replica is determined by $\alpha_m$ and thus grows with the
+        MAR order.
 
-        % In the limit of many weakly transmitting channels, the summed contribution of all processes approaches the tunneling regime, where the $I(V)$ characteristic reproduces the quasiparticle tunneling behavior described in Section~\ref{sec:micro}.
-        
+        The resulting \textit{I--V} characteristics display a hierarchy of
+        photon-assisted features at
+        \begin{equation}
+            eV_{m,n}
+            = \frac{2\Delta}{m}
+                \pm \frac{n h\nu}{m},
+        \end{equation}
+        corresponding to the intersections of the MAR thresholds with the photon
+        sidebands.
+        Changing the microwave frequency controls the spacing of these replicas,
+        while changing the amplitude redistributes spectral weight among them.
+        All structures occur at finite bias and arise from quasiparticle dynamics,
+        distinguishing PAMAR from the Shapiro effect (Section~\ref{subsec:macro:shapiro}),
+        which originates from phase locking in the zero-bias Josephson regime and
+        follows a different (non-Tien--Gordon) mechanism.
 
-    % \subsection{Incoherent Tunneling of Cooper-Pairs}
-    % \label{subsec:macro:incoherent-cooper-pair-tunnneling}
-    
-    %     When the Josephson coupling between two superconductors becomes weak or the phase coherence is strongly disturbed by thermal or environmental fluctuations, the tunneling of Cooper-pairs can no longer be treated as a coherent, collective process. Instead, tunneling events occur stochastically and are referred to as \textit{incoherent Cooper-pair tunneling}. In this regime, the phase difference across the junction fluctuates rapidly, and successive tunneling events are uncorrelated in phase and time. The Josephson relations no longer describe a deterministic oscillation but an ensemble-averaged, diffusive process.
-
-    %     Microscopically, the tunneling still involves pairs of electrons with charge $2e$, but the phase correlation between the superconductors decays due to coupling to an electromagnetic environment or thermal noise. The loss of coherence can be described in terms of the correlation function of the phase,
-    %     \begin{equation}
-    %         \left\langle e^{i[\phi(t)-\phi(0)]} \right\rangle = e^{-J(t)}\,,
-    %     \end{equation}
-    %     where $J(t)$ quantifies the influence of environmental fluctuations. The probability that the environment exchanges an energy $E$ with the tunneling Cooper-pair is given by the function $P(E)$, which satisfies
-    %     \begin{equation}
-    %         P(E) = \frac{1}{2\pi\hbar} \int_{-\infty}^{\infty} \mathrm{d}t \, e^{J(t) + iEt/\hbar}\,.
-    %     \end{equation}
-    %     The resulting current can then be expressed as
-    %     \begin{equation}
-    %         I(V) = \frac{\pi e E_\mathrm{J}^2}{\hbar} [P(2eV) - P(-2eV)]\,,
-    %     \end{equation}
-    %     which describes sequential pair tunneling events assisted by energy exchange with the environment. This framework is known as the \textit{P(E)-theory} of incoherent Cooper-pair tunneling.
-
-    %     The incoherent regime is realized when the Josephson coupling energy is small compared to either the charging or thermal energy,
-    %     \begin{equation}
-    %         E_\mathrm{J} \ll \mathrm{max}(E_\mathrm{C}, E_\mathrm{T})\,,
-    %     \end{equation}
-    %     where $E_\mathrm{C} = e^2/2C$ denotes the charging energy and $E_\mathrm{T} = k_\mathrm{B}T$ the thermal energy. Under these conditions, the phase is no longer a well-defined variable but a fluctuating quantity governed by the impedance $Z(\omega)$ of the environment. The tunneling process thus becomes probabilistic and dissipative, dominated by energy exchange with the surroundings rather than coherent phase evolution.
-
-    %     Incoherent Cooper-pair tunneling differs fundamentally from the coherent phenomena described by the Shapiro effect. In the coherent case, a well-defined phase relationship allows phase locking between the intrinsic Josephson oscillation and an external microwave field, giving rise to quantized voltage plateaus. In contrast, incoherent tunneling lacks such phase locking, leading instead to smooth, non-quantized $I(V)$ characteristics that reflect the spectral properties of the electromagnetic environment. While the Shapiro effect requires $E_\mathrm{J} \gg E_\mathrm{T}$ and a stable phase, incoherent tunneling dominates for $E_\mathrm{J} \ll E_\mathrm{T}$ or in high-impedance environments where phase diffusion destroys coherence.
-
-    %     The crossover between coherent and incoherent regimes represents a transition from collective to stochastic dynamics of the superconducting phase. It is particularly relevant in small-capacitance or highly resistive junctions, where environmental fluctuations strongly influence the tunneling process. In such systems, the current–voltage characteristics provide valuable information about the interaction between the junction and its electromagnetic environment.
-
-    %     The stochastic picture of incoherent Cooper-pair tunneling, in which the environment randomly provides or absorbs discrete quanta of energy, connects naturally to the coherent case of photon-assisted tunneling. When the energy exchange is no longer driven by thermal or environmental fluctuations but by a controlled oscillating potential, the corresponding current-voltage relation can be described by the Tien–Gordon model. In this limit, the exchange of photons with a monochromatic field replaces the probabilistic $P(E)$ spectrum with a set of discrete sidebands weighted by Bessel functions, analogous to the formulation used for Shapiro steps in Section~\ref{subsec:macro:shapiro}. The Tien-Gordon model thus represents the coherent extension of the $P(E)$-framework and provides the quantitative basis for describing photon-assisted tunneling in superconducting junctions.
-
-    %     The corresponding $I(V)$ relation can be expressed in analogy to the Tien–Gordon model, with the elementary charge $e$ replaced by $2e$ to account for the tunneling of Cooper-pairs:
-    %     \begin{equation}
-    %         I(V) = \sum_{n=-\infty}^{\infty} J_n^2\!\left(\frac{2eA}{h\nu}\right) \cdot I_0\!\left(V - \frac{n h\nu}{2e}\right)\,,
-    %         \label{eq:macro:tien-gordon}
-    %     \end{equation}
-    %     where $I_0(V)$ denotes the static $I(V)$ characteristic in the absence of oscillating drive. Each term in the sum represents a tunneling process accompanied by the absorption or emission of $n$ photons of energy $h\nu$, and the corresponding weights $J_n^2$ describe the probability of these photon-assisted transitions.
-
-
-    %     \subsection{Incoherent Tunneling of Cooper Pairs}
-    %     \label{subsec:macro:ictp}
-
-    %         When the electrostatic charging energy $E_\mathrm{C} = e^2/2C$ becomes comparable to or larger than the Josephson coupling energy $E_\mathrm{J} = \hbar I_\mathrm{C}/2e$, quantum fluctuations of the superconducting phase destroy long-range coherence across the junction. In this regime, Cooper-pair tunneling no longer proceeds coherently as a supercurrent, but instead occurs as discrete, temporally uncorrelated tunneling events—an effect known as \textit{incoherent Cooper-pair tunneling}. The continuous phase description of the RCSJ model therefore breaks down, and the junction dynamics must be treated in terms of probabilistic charge transfer rather than deterministic phase evolution.
-
-    %         The microscopic origin of this incoherence lies in the strong coupling of the junction to its electromagnetic environment. Voltage fluctuations across the junction randomize the phase difference $\phi(t)$, while the environment absorbs or emits photons that exchange energy with the tunneling Cooper pairs. The corresponding tunneling rate can be described within the $P(E)$-theory, which expresses the probability that the environment provides (or absorbs) an energy $E$ during a tunneling event. The current through the junction is then given by
-    %         \begin{equation}
-    %             I(V) = \frac{\pi e E_\mathrm{J}^2}{\hbar} [ P(2eV) - P(-2eV) ]\,,
-    %             \label{eq:macro:ictp-current}
-    %         \end{equation}
-    %         where $P(E)$ is the environmental probability density determined by the impedance $Z(\omega)$ seen by the junction. This framework naturally describes the crossover from coherent Josephson transport to Coulomb blockade as environmental dissipation or capacitance is varied.
-
-    %         When a microwave field of frequency $\nu$ is applied, the energy exchange between Cooper pairs and photons leads to \textit{photon-assisted incoherent tunneling}. In analogy to the Tien–Gordon mechanism, the environmental probability function becomes modulated by Bessel-weighted sidebands corresponding to the absorption or emission of $n$ photons:
-    %         \begin{equation}
-    %             P(E) \;\rightarrow\; \sum_{n=-\infty}^{\infty} J_n^2\!\left(\frac{2eA}{h\nu}\right) P(E - n h\nu)\,.
-    %             \label{eq:macro:ictp-pe}
-    %         \end{equation}
-    %         The resulting current–voltage characteristic consists of a series of replicas of the zero-field $I(V)$ curve, shifted by integer multiples of the photon energy $h\nu$, reflecting the discrete nature of photon-assisted Cooper-pair tunneling. This description captures the experimentally observed sidebands in the Coulomb blockade regime and represents the incoherent counterpart of the Shapiro-step phenomenon discussed in Section~\ref{subsec:macro:shapiro}.
-
-    %         In summary, the incoherent tunneling of Cooper pairs provides a unified picture of Josephson transport in the limit of strong quantum fluctuations. It bridges the macroscopic Josephson effect and the mesoscopic single-Cooper-pair tunneling regime, where the electromagnetic environment governs both the dynamics and the energy exchange processes of the superconducting junction.
+        This framework naturally unifies photon-assisted transport across normal,
+        N--S, and S--S junctions.
+        PAT corresponds to the $m=1$ single-electron process ($q_1=e$).
+        PAAR at an N--S interface arises from the $m=1$ and $m=2$ channels  
+        ($q_1=e$, $q_2=2e$).
+        PAMAR includes the entire hierarchy $q_m=me$ associated with MAR.
+        Thus, the charge-resolved Tien--Gordon formalism provides a single,
+        conceptually transparent mechanism describing PAT, PAAR, and PAMAR within the
+        same theoretical structure, differing only by the effective charge transferred
+        in the underlying microscopic process.
