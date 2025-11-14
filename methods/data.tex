@@ -1,0 +1,263 @@
+
+    \section{Data Acquisition}
+        In this section i want to fucus on the used electronics. I scheme the measurement principle and the work on grounding. I'll also talk about the self-developed measurement program and go through the written drivers. A great deal of developing is done by Florian Kayatz, within his Hiwi (cite: Flo). Finally I will also talk about the data treatment and processing.
+
+        \subsection{DC Measurement Concept}
+            As mentioned in Subsection \ref{subsec:dc cabling} a 4-point measurement principle is used. Given, by the former described setup, tiny voltages should be measurable. Instead an analog to digital converter ADwin Gold 2, in combination with two femto preamplifier, is used. 
+            
+            Previosly for SSET experiments at the Scheer2 cryostat a combintation of NF, SRT and a similar ADC (by NI) was used by References \cite{lorenz_wechselspiel_2018, sprenger_interplay_2019,sobral-rey_interplay_2022}. On the Bluefors a combination of Femto amplifier and keysight multimeter was used by Reference \cite{prestel_magnetic_2020}.
+
+            All combinations of DAC Keysight1, Keysight2 and Adwin Gold 2 with Preamplifiers Femto, NF und SRT has been tested, regarding the electrical noise. I found, that the combination of ADwin Gold 2 and Femto preamplifier provided the lowest noise floor. This combination offers some further advantages. The Femto pre-amplifiers has a high bandwidth and still works analog opposite to SRT pre-amplifier. Also, it can be remote controlled, what is super beneficial, when operating with a script or not on-sight for different amplification settings. The Femto amplifier can be operated with 4 different amplifications: 10, 100, 1000, 10000. The DAC measures continously, with high bandwidth and on two channels simultaniously in opposition of the Keysight multimeters. All this, helps to correlate the two measured channels with each other in order to reliably measure I-V curves.
+
+            As a source, the function generator, used by References \cite{lorenz_wechselspiel_2018, sprenger_interplay_2019,sobral-rey_interplay_2022}, KeysightB, used by \cite{prestel_magnetic_2020} and the DAC of the already used ADwin. Again, the usage of ADwin was best for the lowest noise floor. However, to enhance the resolution, part of the 
+            - {layout}
+            - {AD converter}
+            - {Pre Amplifier}
+
+        \subsection{Measurement Software}
+        \label{subsec:measurement_software}
+
+            A central component of the experimental workflow is the self–developed
+            measurement framework \texttt{p5control}, which provides a unified 
+            interface for device communication, data acquisition and automated 
+            measurement routines. The framework was originally created by 
+            Florian Kayatz during his HiWi work in the Scheer group and has since
+            been substantially extended and adapted for the requirements of
+            superconducting transport experiments on the Bluefors dilution
+            refrigerator. In the following, the conceptual architecture of 
+            \texttt{p5control} is outlined, followed by a description of the 
+            drivers and graphical user interfaces implemented in the context of 
+            this thesis.
+
+            \subsubsection*{Concept of \texttt{p5control}.}
+            The design of \texttt{p5control} follows a modular and device-oriented 
+            philosophy. Each instrument (voltage source, preamplifier, lock-in 
+            amplifier, multimeter, temperature controller, etc.) is represented 
+            as a Python class encapsulating:
+            \begin{itemize}
+                \item the low-level communication (SCPI, serial, socket, custom protocols),
+                \item an internal state representation,
+                \item device-specific safety checks and limits,
+                \item and high-level convenience methods for experimental control.
+            \end{itemize}
+
+            Devices can be instantiated independently or registered in a 
+            \textit{session}, which provides synchronized access, logging, and
+            coordinated shutdown procedures. By decoupling communication,
+            configuration and measurement logic, \texttt{p5control} enables:
+            \begin{itemize}
+                \item reproducible experiment scripts,
+                \item simple substitution of hardware components,
+                \item multi-threaded polling of device data,
+                \item and integration of automated feedback routines.
+            \end{itemize}
+
+            Measurement routines are written as independent Python scripts making
+            use of these device abstractions. This avoids monolithic measurement
+            programs and enables a clean separation between data acquisition, 
+            hardware control, analysis and plotting. The underlying philosophy is 
+            that a measurement should be fully reproducible and executable 
+            non-interactively, while still providing interactive GUI control for
+            debugging, alignment and sample conditioning.
+
+            \subsubsection*{Implemented drivers and GUI extensions.}
+            For the experiments in this thesis, \texttt{p5control} was extended by
+            several device drivers and graphical interfaces tailored to the Bluefors
+            setup. The most relevant components are:
+            \begin{itemize}
+                \item \textbf{Femto preamplifier driver:}  
+                Remote adjustment of gain (10–10000), reading of amplifier state, 
+                overload detection and integration into automated measurement runs.
+                Useful for switching gain dynamically in high-bias ranges.
+
+                \item \textbf{ADwin Gold~2 driver:}  
+                Controls the DAC outputs, configures ADC sampling, synchronizes 
+                two-channel voltage acquisition and provides ring-buffer data 
+                retrieval for high-bandwidth I--V measurements.
+
+                \item \textbf{Keysight/NI multimeter drivers:}  
+                Implement basic SCPI routines for slow, high-accuracy voltage 
+                readout, used primarily for cross-checks and calibration.
+
+                \item \textbf{SRT and NF preamplifier integration:}  
+                Implemented for legacy compatibility (Scheer2 cryostat) and used
+                for noise-comparison measurements.
+
+                \item \textbf{Bluefors temperature controller driver:}  
+                Provides read/write access to PID settings, heater power, and
+                thermometry channels on the BF-FL DC board as well as the Lakeshore 
+                372 for sample-stage temperature readout.
+
+                \item \textbf{MW setup and antenna control:}  
+                Drivers for the microwave source, attenuator settings and switch
+                boxes used in photon-assisted measurements.
+
+                \item \textbf{GUI widgets:}  
+                A collection of PyQt widgets was created to allow:
+                \begin{itemize}
+                    \item live plotting of I--V curves,
+                    \item real-time monitoring of ADwin channels,
+                    \item gain switching on the Femto amplifier,
+                    \item microwave power and frequency control,
+                    \item and temperature monitoring.
+                \end{itemize}
+                The GUI is optional but extremely useful for debugging and aligning
+                the junction prior to automated measurements.
+            \end{itemize}
+
+            The resulting software environment allows reproducible control over 
+            all instruments required for the acquisition of high-quality I--V curves,
+            MAR traces, Shapiro maps, and temperature-dependent measurements.
+            Together with the evaluation scripts described in the following subsection,
+            this framework forms the backbone of the data pipeline used throughout 
+            this thesis.
+        
+
+        \subsection{Measurement Script}
+            The automated acquisition of \textit{I--V} characteristics, MAR traces and
+            photon-assisted transport maps is performed using the dedicated measurement
+            script \texttt{iv\_script\_v2.py}. This script builds directly on the device
+            abstractions provided by \texttt{p5control} (see
+            Subsection~\ref{subsec:measurement_software}) and implements a fully
+            reproducible pipeline for bias sweeps, synchronized data collection and
+            metadata logging.
+
+                    \subsubsection*{Structure and workflow.}
+        The script follows a linear but modular workflow:
+        \begin{enumerate}
+            \item \textbf{Session initialization:}  
+            All instruments required for a measurement (ADwin, Femto preamplifiers,
+            microwave source, and optional temperature controller) are instantiated
+            and registered in a common \texttt{p5.Session}. This ensures globally
+            synchronized access, automatic shutdown behaviour and uniform logging.            \item \textbf{Bias sweep definition:}  
+            The voltage sweep is generated on the ADwin DAC using user-defined
+            parameters such as start and stop voltage, step size, dwell time and
+            optional overshoot or pre-biasing routines used to condition the
+            junction. Additional features include symmetric sweeps, repeated sweeps
+            for averaging, and embedded stabilization periods.         
+            \item \textbf{Data acquisition:}  
+            During the sweep the ADwin records voltages on both ADC channels at a
+            high sampling rate. The Femto preamplifier outputs (amplified sample
+            current) are digitized simultaneously, which allows point-wise
+            correlation of the two channels and reliable reconstruction of
+            \textit{I--V} curves. Optional gain switching routines can be activated
+            when entering high-bias regimes.
+                        \item \textbf{Metadata tracking:}  
+            Every measurement run is stored together with temperature readings,
+            amplifier gain, bias history, filter configuration, microwave settings,
+            timestamp and device states. The script automatically generates a
+            metadata dictionary that is saved alongside the numerical data.
+                        \item \textbf{Saving and integrity checks:}  
+            After each sweep, data is written to disk in a structured file format,
+            including an internal hash for integrity control. Additional quick-look
+            plots can be generated for immediate visual inspection.
+        \end{enumerate}
+                \subsubsection*{Advanced features.}
+        The script also provides:
+        \begin{itemize}
+            \item \textbf{Microwave control:}  
+            Automated stepping of frequency and power for Shapiro maps and
+            photon-assisted MAR measurements.
+                        \item \textbf{Stability checks:}  
+            Monitoring of amplifier overload, noise bursts or sudden mechanical
+            instabilities of the junction. Measurements are paused or repeated if
+            thresholds are exceeded.           
+             \item \textbf{Automated segmentation:}  
+            Large sweeps can be segmented into blocks to avoid ADwin buffer
+            overflows and to allow real-time analysis.
+                        \item \textbf{Automated segmentation:}  
+            Large sweeps can be segmented into blocks to avoid ADwin buffer
+            overflows and to allow real-time analysis.           
+             \item \textbf{Reproducibility mode:}  
+            Using the metadata and device-state logs, any measurement can be
+            reproduced exactly, including DAC timing, gain settings and MW
+            configuration.
+        \end{itemize}
+                    
+            
+        \subsubsection*{Purpose within the experimental workflow.}
+            The measurement script acts as the operational layer between the modular
+            device drivers of \texttt{p5control} and the later evaluation routines
+            described in the next subsection. Its design ensures that complex
+            measurement sequences remain reproducible, transparent and robust against
+            hardware-specific subtleties, forming an essential part of the data
+            pipeline used in this thesis.
+
+    \subsection{Evaluation Script}
+        The raw data acquired with \texttt{iv\_script\_v2.py} is processed using a
+        dedicated evaluation script that reconstructs calibrated \textit{I--V} curves,
+        extracts subgap features and prepares the data for MAR and PAMAR analysis.  
+        Each measurement is stored together with a complete metadata dictionary,  
+        which allows the evaluation pipeline to treat every dataset in a fully  
+        reproducible and hardware–independent manner.
+        
+        \subsubsection*{Data loading and metadata handling.}
+        The evaluation script begins by parsing the numerical data and its associated
+        metadata. All quantities relevant to reconstruction—Femto gain, ADC range,
+        temperature, sweep direction, overshoot history, microwave settings and  
+        timestamp—are automatically extracted. This ensures that the evaluation  
+        procedure does not rely on implicit experimental knowledge but remains  
+        entirely self–contained.
+        
+                \subsubsection*{Binning and resampling.}
+        The ADwin records data at a fixed sampling rate that is independent of the
+        actual DAC stepping speed. As a consequence, the voltage points of each sweep
+        are not evenly spaced. To obtain smooth and differentiable \textit{I--V}
+        curves, the script performs:
+        \begin{itemize}
+            \item \textbf{voltage binning:} grouping samples into narrow voltage
+            intervals,
+            \item \textbf{median or mean aggregation:} suppressing noise bursts or
+            occasional digitizer outliers,
+            \item \textbf{optional symmetric averaging:} combining forward and
+            backward sweeps.
+        \end{itemize}
+        This procedure yields robust, reproducible voltage–current pairs that are
+        suitable for MAR indexing and further quantitative analysis.
+
+        \subsubsection*{Calibration and current reconstruction.}
+        Because the ADwin measures voltage drops across the Femto preamplifier,
+        the current is reconstructed using the amplifier gain stored in metadata.
+        The script applies:
+        \begin{itemize}
+            \item gain calibration,
+            \item sign correction (depending on wiring orientation),
+            \item conversion to absolute current,
+            \item and optional offset removal.
+        \end{itemize}
+        The resulting \textit{I--V} curve is then interpolated onto a uniform voltage
+        grid for plotting and further processing.
+
+                \subsubsection*{Filtering and data treatment.}
+        The script implements several cleaning operations:
+        \begin{itemize}
+            \item removal of discontinuities associated with mechanical switching
+            events in the MCBJ,
+            \item spike filtering using rolling quantiles,
+            \item low-pass smoothing for visualization (never applied to raw data),
+            \item normalization routines for temperature or gain comparisons.
+        \end{itemize}
+
+                \subsubsection*{Extraction of MAR and photon-assisted features.}
+        For MAR and PAMAR analysis, the script annotates:
+        \begin{itemize}
+            \item subharmonic gap features at $2\Delta/me$,
+            \item photon-assisted replicas at shifted voltages
+            $n h\nu / (me)$,
+            \item and differential-conductance extrema used for comparison with
+            simulations.
+        \end{itemize}
+        These annotations allow automated alignment of experimental data with the
+        theoretical MAR and PAMAR frameworks described in 
+        Chapter~\ref{sec:mesoscopic_theory}.
+                \subsubsection*{Output and reproducibility.}
+        The final processed dataset contains:
+        \begin{itemize}
+                    \item the cleaned and binned \textit{I--V} curve,
+            \item the original raw trace,
+            \item the metadata dictionary,
+            \item and diagnostic quantities such as sweep speed, stability flags and
+            amplifier states.
+        \end{itemize}
+                All processed data is written with a versioned filename, enabling complete
+        reproducibility of any figure or analysis presented in this thesis.
