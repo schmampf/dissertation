@@ -46,7 +46,7 @@
             \label{fig:micro:gap_suppression}
         \end{wrapfigure} 
         In the BCS framework, $\Delta(T)$ follows a universal curve that results from solving the self-consistent gap equation, meaning the same functional form applies to all weak-coupling superconductors. 
-        Solving the underlying integrals over the Fermi distribution in the microscopic theory numerically, results in the following Equation \ref{eq:DeltaT} or shown in Figure \ref{fig:micro:gap_suppression}.
+        Solving the underlying integrals over the Fermi distribution in the microscopic theory numerically, results in the following Equation \ref{eq:micro:DeltaT} or shown in Figure \ref{fig:micro:gap_suppression}.
         \begin{equation}
             \frac{\Delta(T)}{\Delta_0} \approx \tanh\left(1.74\,\sqrt{\frac{T_\mathrm{C}}{T}-1}\right)
             \label{eq:micro:DeltaT}
@@ -149,6 +149,20 @@
         \end{equation}
         showing that the measured \textit{dI-dV} corresponds to the superconducting density of states thermally broadened by the derivative of the Fermi function. This derivative is a symmetric, bell-shaped function whose width scales with temperature. As $T \to 0$, it approaches a delta function, and the convolution becomes negligible. At finite temperature, however, the \textit{dI-dV} smeares out, by the convolution. The energy resolution is then limited by thermal broadening, given approximately by $\Delta E_\text{th} \approx 3.5\,k_\mathrm{B}T$, which sets the smallest energy scale over which spectral features can be resolved.
 
+        Figure \ref{fig:micro:tunnel-current} displays the effect of temperature and quasi-particle lifetimes on the tunnel current. One can easily observe, that even really small temperatures smears out the coherence peaks drastically. Same holds true for smearing due to quasi-particle lifetimes. However, both parameter affect the tunnel current in distinct ways.
+        \begin{figure}
+            \centering
+            \import{theory/micro}{tunnel-current.pgf}
+            \caption{
+                Calculated tunnel currents and differential conductances for NS (grey) and SS (blue) junctions within the microscopic tunneling model. Parameters correspond to aluminum with $\Delta_0 = 180\,$\textmu eV and $T_\mathrm{C} = 1.18\,\mathrm{K}$.
+                The upper two panels show the effect of temperature $T/T_\mathrm{C}$ at fixed Dynes parameter $\Gamma = 0$. 
+                The lower two panels show the influence of Dynes broadening $\Gamma/\Delta_0$ at $T=0$. 
+                % Increasing temperature smooths the current onset at $eV = \Delta_0$ in NS junctions, while in SS junctions coherence peaks decreases as the gap closes and at zero voltage a finite differential conductance appears.
+                % A finite $\Gamma$ introduces lifetime broadening into the superconducting density of states, rounding off the coherence peaks and generating subgap conductance. In contrast to thermal effects, Dynes broadening modifies the DOS directly and therefore affects NS and SS spectra in a quantitatively different manner.
+                }
+            \label{fig:micro:tunnel-current}
+        \end{figure}
+
         The expressions derived above not only describe the origin of tunneling currents but also provide a direct link to experimental observables. In scanning tunneling microscopy (STM), for example, a normal-metal tip above a superconducting surface forms an NIS junction. Measuring the \textit{I-V} or \textit{dI-dV} characteristics at sufficiently low temperature thus enables a direct mapping of the energy-resolved quasi-particle spectrum of the superconductor. 
 
         In case of all superconducting tunnel barrier, both electrodes contribute gapped densities of states. Their convolution, together with thermal and lifetime broadening, determines the observed shape of the \textit{I-V} and \textit{dI-dV} curves. 
@@ -156,16 +170,11 @@
             I_\mathrm{SS}(V) = \frac{G_\mathrm{N}}{e}\int_{-\infty}^{\infty} \frac{N_\mathrm{S}(E)}{N_0} \cdot \frac{N_\mathrm{S}(E+eV)}{N_0} \cdot \left[f(E) - f(E + eV)\right] \mathrm{d}E
             \label{eq:micro:tunnel-ss}
         \end{equation}
-        Importantly, temperature $T$ and Dynes broadening $\Gamma$ influence the spectra in distinct ways. Finite temperature broadens the Fermi edges via the Fermi--Dirac distribution, while $\Gamma$ introduces intrinsic smearing of the quasi-particle DOS itself. By fitting measured \textit{I-V} or \textit{dI-dV} data, with both parameters as variables, one can disentangle thermal effects from genuine lifetime or inelastic processes.
+        Importantly, temperature $T$ and Dynes broadening $\Gamma$ influence the spectra in distinct ways. Finite temperature broadens the Fermi edges via the Fermi--Dirac distribution, while $\Gamma$ introduces intrinsic smearing of the quasi-particle DOS itself. 
 
-        These interpretations form the foundation of tunneling spectroscopy as a quantitative probe of superconductivity, allowing the extraction of $\Delta_0$, $T$, and $\Gamma$ from experimental data with high accuracy.
-
-        \begin{figure}
-            \centering
-            \import{theory/micro}{tunnel-current.pgf}
-            \caption{Tunnel current, smearing, dos, fermidirac}
-            \label{fig:micro:tunnel-current}
-        \end{figure}
+        Again, Figure \ref{fig:micro:tunnel-current} displays the effect of temperature and Dynes paramter on the tunnel current. In contrast to an NS junction, the SS junction is way more robust to temperature rounding. Instead of smearing, a finite conductance at zero voltage appears, while the height of the coherence peaks decrease as the gap closes. However, the Dynes broadening affects the tunnel current way more than in the NS case.
+        
+        By fitting measured \textit{I-V} or \textit{dI-dV} data, with both parameters as variables, one can disentangle thermal effects from genuine lifetime or inelastic processes. These interpretations form the foundation of tunneling spectroscopy as a quantitative probe of superconductivity, allowing the extraction of $\Delta_0$, $T$, and $\Gamma$ from experimental data with high accuracy.
 
         \textbf{cite: Giaever}
 
@@ -223,7 +232,7 @@
             N_\mathrm{PAT}(E) = \sum_{n=-\infty}^{\infty} J_n^2(\alpha)\, N(E + n h\nu)\,,
             \label{eq:micro:pat-dos}
         \end{equation}
-        which replaces $N(E)$ in the tunneling expression. The PAT-modified current therefore becomes a weighted sum of shifted copies of the static \textit{I-V} curve.
+        which replaces $N_2(E)$ in the tunneling expression. The PAT-modified current therefore becomes a weighted sum of shifted copies of the static \textit{I-V} curve.
 
         Putting these contributions together leads to the Tien--Gordon formula,
         \begin{equation}
@@ -232,8 +241,23 @@
         \end{equation}
         which expresses the total current as the incoherent sum of all photon-assisted tunneling channels.  Each channel contributes a copy of the static \textit{I-V} curve shifted by $n h\nu/e$ and weighted by the probability $J_n^2(\alpha)$ for absorbing or emitting $n$ photons, producing the characteristic sideband structure observed in experiment.
 
-        The same relation also holds for the differential conductance, meaning that the photon-assisted replicas $\mathrm{d}I_0(V_0)/\mathrm{d}V$ appear identically as in the current, providing a direct experimental link to the superconducting density of states.
+        It is important to emphasize that the Tien--Gordon mechanism itself is universal and does not distinguish between NS and SS junctions. The AC drive simply produces photon-shifted replicas of the underlying static $I_0(V_0)$ curve, weighted by the Bessel probabilities $J_n^2(\alpha)$. The qualitative differences observed between NS and SS under microwave irradiation arise solely from the different static spectra: in NS junctions only a single gapped DOS contributes, whereas SS junctions involve the convolution of two superconducting DOS. Thus, the Tien--Gordon dressing is identical in both cases, while the resulting sideband structures differ because their static \textit{I-V} characteristics differ.
 
-        In practice, the amplitude $A$ can be determined experimentally by comparing the relative heights of the sidebands with the expected Bessel function weights. The spacing $h\nu$ between sidebands provides a direct and robust calibration of the frequency. Photon-assisted tunneling thus offers a straightforward semiclassical description of how an oscillating field modifies quasi-particle transport, serving as a bridge between static tunneling spectroscopy and driven quantum dynamics.
+        Figure \ref{fig:micro:pat} shows \text{I-V} and \text{dI-dV} characteristic of a NS and SS junction which is irradiated. 
+        \begin{figure}[t]
+            \centering
+            \import{theory/micro}{pat.pgf}
+            \caption{
+                Calculated tunnel currents and differential conductances for NS (grey) and SS (blue) junctions under microwave irradiation with different amplitudes $eA/\Delta_0$. 
+                Photon absorption and emission create replicas of the coherence peaks spaced by $h\nu$, weighted by the Bessel factors $J_n^2(eA/h\nu)$ according to the Tien--Gordon model. 
+                Parameters correspond to aluminum with $\Delta_0 = 180\,$\textmu eV, $T = 0\,$K, $\Gamma = 0\,$\textmu eV and $\nu = 5.0\,$GHz.  
+                }
+            \label{fig:micro:pat}
+        \end{figure}
+        In both NS and SS junctions, microwave irradiation leads to photon-assisted replicas of the superconducting coherence peaks.  
+        In NS junctions, these sidebands appear as shifted copies of the superconducting DOS, because only a single gapped electrode contributes to the spectrum.  
+        In contrast, SS junctions produce sharper and more symmetric replicas, since both electrodes provide gapped DOS that are jointly shifted by the absorbed or emitted photon energy.
+
+        In practice, the microwave amplitude $eA$ can be determined experimentally by comparing the relative heights of the sidebands with the expected Bessel function weights. The spacing $h\nu$ between sidebands provides a direct and robust calibration of the frequency. Photon-assisted tunneling thus offers a straightforward semiclassical description of how an oscillating field modifies quasi-particle transport, serving as a bridge between static tunneling spectroscopy and driven quantum dynamics.
 
         
