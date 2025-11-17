@@ -174,6 +174,8 @@
 
         While the previous section described static tunneling, the application of a time-dependent voltage enables quasi-particles to exchange discrete energy quanta with an external electromagnetic field, giving rise to photon-assisted tunneling (PAT).
 
+        In contrast to the macroscopic description of phase-coherent Cooper-pair dynamics discussed later in Section~\ref{subsec:macro:shapiro}, the microscopic PAT picture describes incoherent quasi-particle tunneling modified by an external time-dependent voltage.
+
         In practice, this effect is typically studied using electromagnetic radiation in the microwave range, since photon energies $h\nu$ in this regime are comparable to the superconducting energy gap $\Delta_0$ and can therefore induce measurable sidebands without breaking the Cooper pairs.
 
         Possible energies are given by
@@ -204,6 +206,7 @@
         This equantion is further solved by the Jacobi--Anger identity,
         \begin{equation}
             \exp\left(i\alpha \sin(2\pi\nu t)\right) = \sum_{n=-\infty}^{\infty} J_n(\alpha)\, \exp\left(i n 2\pi\nu t\right)\,,
+            \label{eq:micro:pat-jacobi}
         \end{equation}
         where $\alpha = eA/h\nu$ denotes the dimensionless modulation strength and $J_n(\alpha)$ is the $n$-th Bessel function of first kind.
 
