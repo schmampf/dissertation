@@ -77,13 +77,14 @@
             \phi(t) = \phi_0 + \nu_0t + (2eA/h\nu) \sin(2\pi\nu t)\,.
             \label{eq:macro:shapiro-phase}
         \end{equation}
-        Here $\nu_0$ is the Josephson frequency, $\nu$ and $A$ are the frequency and amplitude of the applied voltage. Inserting this in the DC Josephson Equation (Eq.~\ref{eq:macro:dc}) and usage of the Jacobi-Anger identity\footnote{Jacobi-Anger identity: $\exp(i x \sin(\theta)) = \Sigma_{n=-\infty}^{\infty} J_n(x) \exp(i n \theta)$}, leads to 
+        Here $\nu_0$ is the Josephson frequency, $\nu$ and $A$ are the frequency and amplitude of the applied voltage. Inserting this in the DC Josephson Equation (Eq.~\ref{eq:macro:dc}) and usage of the Jacobi-Anger identity (Eq. \ref{eq:micro:pat-jacobi}), leads to 
         \begin{equation}
             I_\mathrm{S}(V_0) = \sum_{n=-\infty}^{\infty} (-1)^n J_n\!\left( \frac{2eA}{h\nu}\right) \cdot I_\mathrm{C} \sin(\phi_0 + 2\pi(\nu_0t-n\nu t))\,.
             \label{eq:macro:shapiro-current}
         \end{equation}
-        %\footnote{Bessel function symmetry: $J_{-n}(x) = (-1)^nJ_n(x)$}
-        Each term in the sum corresponds to a tunneling process in which $n$ photons are absorbed ($n>0$) or emitted ($n<0$). Whenever the resonance condition $\nu_0 = n\nu$ is fulfilled, the corresponding term becomes stationary and yields a DC contribution to the time-averaged current. The resulting voltage plateaus occur at discrete voltages
+        The factor $(-1)^n$ arises solely from the symmetry relation $J_{-n}(x)=(-1)^n J_n(x)$ used when rewriting the Jacobi--Anger expansion and has no physical impact on the time-averaged current or the resulting Shapiro-step structure.
+        Each harmonic corresponds to an $n$-th Fourier component of the phase modulation, becoming stationary when the resonance condition $\nu_0 = n\nu$ is fulfilled.
+        The resulting voltage plateaus occur at discrete voltages
         \begin{equation}
             V_n = \frac{nh\nu}{2e}\,,
             \label{eq:macro:shapiro-steps}
