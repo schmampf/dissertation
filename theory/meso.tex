@@ -3,9 +3,9 @@
 \section{Mesoscopic Description}
 \label{sec:meso}
 
-    The mesoscopic description of superconducting transport bridges the gap between microscopic quasi-particle tunneling and macroscopic Josephson dynamics. In this regime, electrical conduction is no longer determined by bulk properties but by a finite set of quantum channels that connect the two electrodes. According to the Landauer picture, each channel is characterized by a transmission probability $\tau_i \in [0,1]$, which quantifies the likelihood that an electron incident from one electrode is transmitted to the other. The total conductance of a contact is then the sum over all available channels, 
+    The mesoscopic description of superconducting transport bridges the gap between microscopic quasi-particle tunneling and macroscopic Josephson dynamics. In this regime, electrical conduction is no longer determined by bulk properties but by a finite set of quantum channels that connect the two electrodes. According to the Landauer picture, each channel is characterized by a transmission probability $\tau_i$, which quantifies the likelihood that an electron incident from one electrode is transmitted to the other. The total conductance of a contact is then the sum over all available channels, 
     \begin{equation}
-        G_N = G_0 \Sigma_i \tau_i\,,
+        G_\mathrm{N} = G_0 \sum_{i=1}^N \tau_i\,, \quad (\tau_i \in [0,1])\,,
         \label{eq:meso:landauer}
     \end{equation}
     where $G_0 = 2e^2/h$ is the conductance quantum accounting for spin degeneracy. This framework captures the essence of quantum transport in nanostructures and naturally explains phenomena such as conductance quantization in atomic contacts.
@@ -72,6 +72,43 @@
         While Andreev reflection is most easily visualized at an N-S interface, it also governs charge transfer between two superconductors. In this case, repeated Andreev processes on both sides of the junction lead to multiple Andreev reflection, discribed in the following.
 
 
+    \subsection{Andreev Bound States}
+    \label{subsec:meso:abs}
+
+        When two superconductors are connected through a short, phase-coherent constriction, the subgap spectrum is no longer continuous. Instead, coherent electron-hole trajectories become confined between successive Andreev reflections at the two superconducting interfaces. The resulting standing waves form discrete energy levels within the superconducting gap, known as Andreev bound states (ABS). These states constitute the fundamental microscopic origin of both the DC Josephson effect and the non-linear subgap transport observed at finite bias.
+
+        The physical mechanism underlying ABS formation can be understood from the Andreev reflection process introduced in Section~\ref{subsec:meso:ar}. An electron entering the weak link from the left superconductor is retroreflected as a hole at the right interface, transferring a Cooper pair into the right condensate. The hole then propagates back toward the left interface, where it undergoes a second Andreev reflection, converting back into an electron and transferring a second Cooper pair to the left condensate. After these two reflections the system has returned to its original quasiparticle character, but the wavefunction has accumulated a phase. If the total phase gained over this round-trip is an integer multiple of $2\pi$, the cycle interferes constructively, yielding a stationary, bound quasiparticle mode.
+
+        This quantization condition contains two contributions: (i) the Andreev reflection phase $\arccos(E/\Delta)$ acquired at each interface and (ii) the superconducting phase difference $\phi = \varphi_\mathrm{L} - \varphi_\mathrm{R}$ between the two electrodes. Solving the resulting phase-quantization condition leads to the characteristic energy--phase relation of a single transport channel with transmission $\tau$,
+        \begin{equation}
+            E_\pm(\phi)
+            = \pm \Delta \sqrt{\,1 - \tau \sin^2\!\left(\frac{\phi}{2}\right)}\,.
+            \label{eq:meso:abs-dispersion}
+        \end{equation}
+        Each channel supports a pair of particle-hole symmetric ABS, labeled by the signs $\pm$. The transmission $\tau$ governs the curvature of these levels: in the tunneling limit ($\tau \ll 1$), the energies remain close to the gap edges ($E \approx \pm \Delta$), whereas for highly transparent channels ($\tau \approx 1$), the lower branch approaches zero energy at $\phi = \pi$. This dispersion encapsulates the essential physics of ballistic superconducting point contacts.
+
+        The bound states directly determine the phase-dependent supercurrent. At zero temperature, the negative branch $E_-(\phi)$ is occupied, and differentiation with respect to the phase yields
+        \begin{equation}
+            I(\phi)
+            = \frac{2e}{\hbar}\,
+            \frac{\partial E_-(\phi)}{\partial \phi}
+            = \frac{e\Delta}{\hbar}\,
+            \frac{\tau \sin\phi}{\sqrt{1 - \tau \sin^2(\phi/2)}}\,,
+            \label{eq:meso:abs-current}
+        \end{equation}
+        which is the current-phase relation (CPR) of a short Josephson junction with a single transport channel. For $\tau \ll 1$, this expression reduces to the sinusoidal CPR known from tunnel junctions. For $\tau \approx 1$, the CPR becomes strongly forward-skewed, reflecting the enhanced susceptibility of the ABS to changes in the superconducting phase.
+
+        Andreev bound states are not only responsible for the equilibrium supercurrent but also govern non-equilibrium transport at finite bias. When a DC voltage is applied across the junction, the superconducting phase evolves according to the Josephson relation,
+        \begin{equation}
+            \dot{\phi}(t) = \frac{2eV}{\hbar},
+        \end{equation}
+        rendering the ABS energies time-dependent. The bound states periodically traverse the superconducting gap, repeatedly crossing the continuum edges and allowing quasiparticles to enter or leave the ABS branches. This periodic population transfer gives rise to the highly non-linear subgap current known as multiple Andreev reflection (MAR), which is discussed in Section~\ref{subsec:meso:mar}. In this sense, MAR can be interpreted as the dynamical evolution of the ABS spectrum under a linearly time-varying superconducting phase.
+
+        Finally, ABS play an increasingly important role in spectroscopic experiments on atomic contacts, proximitized nanowires, and Josephson quantum circuits. In these systems, ABS can be probed through microwave spectroscopy, quasiparticle injection, or gate-tunable transparency, and may serve as building blocks for novel qubit architectures. Their sensitivity to both phase and transmission makes them a uniquely versatile probe of mesoscopic superconductivity, bridging microscopic Bogoliubov quasiparticles and macroscopic Josephson dynamics within a single, unified framework.
+
+        \subsubsection*{fractional Shapiro Steps}
+
+
     \subsection{Multiple Andreev Reflection}
     \label{subsec:meso:mar}
 
@@ -107,6 +144,7 @@
                 Numerical \textit{I-V} and \textit{dI-dV} characteristic calculated with the HA model by Cuevas ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\Gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).}
             \label{fig:meso:mar-iv}
         \end{figure}
+
 
 
     \subsection{Photon-Assisted Multiple Andreev Reflection}
