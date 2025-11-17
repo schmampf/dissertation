@@ -176,7 +176,7 @@
 
         In practice, this effect is typically studied using electromagnetic radiation in the microwave range, since photon energies $h\nu$ in this regime are comparable to the superconducting energy gap $\Delta_0$ and can therefore induce measurable sidebands without breaking the Cooper pairs.
 
-        Photon-assisted tunneling describes the exchange of photon energies between tunneling charges, such as quasi-particles and the microwave field. Possible energies are given by
+        Possible energies are given by
         \begin{equation}
             E_n = n h\nu\quad (n \in \mathbb{Z})\,,
             \label{eq:micro:pat-En}
@@ -188,18 +188,49 @@
             V(t) = V_0 + A \cos (2\pi\,\nu t)\,.
             \label{eq:micro:pat-V(t)}
         \end{equation}
-        Here $V_0$ is the applied voltage bias, $A$ the amplitude, and $\nu$ the frequency of the microwave field across the junction. The field is assumed to remain unaltered by the tunneling current, meaning no cavity or backaction effects, and the drive is weak enough not to heat the electrodes, allowing both to stay in thermal equilibrium. The voltage couples linearly with the electrostatic potential by $-eV(t)$ and introduces a time-dependent phase to the tunneling amplitude. The model therefore applies to incoherent quasi-particle tunneling and excludes phase-coherent phenomena such as the Josephson supercurrent, which are treated separately in Section~\ref{sec:macro}.
+        Here $V_0$ is the applied voltage bias, $A$ the amplitude, and $\nu$ the frequency of the microwave field across the junction. The field is assumed to remain unaltered by the tunneling current, meaning no cavity or backaction effects, and the drive is weak enough not to heat the electrodes, allowing both to stay in thermal equilibrium.
 
-        However, this periodic modulation generates a series of harmonic components in the tunneling amplitude, corresponding to processes in which charges exchange discrete quanta of energy with the oscillating field. When averaged over many cycles, these contributions combine into a stationary current that can be written as a weighted sum of shifted copies of the static \textit{I-V} curve, with each shift by $V_n$ corresponding to the net energy exchange $E_n$. The resulting formula is given by
+        In a gauge where the entire voltage drop appears as a scalar potential, a tunneling electron acquires a time-dependent factor in its wavefunction,
+        \begin{equation}
+            \psi(t) \propto \exp\!\left(-\frac{i}{\hbar}\int_0^t e V(t')\, dt' \right)\,.
+            \label{eq:micro:pat-wf0}
+        \end{equation}
+
+        For the harmonic drive of Eq.~\eqref{eq:micro:pat-V(t)}, the integral can be solved by
+        \begin{equation}
+            \int_0^t e V(t')\, dt' = eV_0 t + \frac{eA}{2\pi\nu}\sin(2\pi\nu t)\,.
+            \label{eq:micro:pat-int}
+        \end{equation}
+        This equantion is further solved by the Jacobi--Anger identity,
+        \begin{equation}
+            \exp\left(i\alpha \sin(2\pi\nu t)\right) = \sum_{n=-\infty}^{\infty} J_n(\alpha)\, \exp\left(i n 2\pi\nu t\right)\,,
+        \end{equation}
+        where $\alpha = eA/h\nu$ denotes the dimensionless modulation strength and $J_n(\alpha)$ is the $n$-th Bessel function of first kind.
+
+        The wavefunction becomes then
+        \begin{equation}
+            \psi(t) \propto \sum_{n=-\infty}^{\infty} J_n(\alpha)\, \exp\!\left( -\frac{i}{\hbar}(eV_0 - n h\nu)\, t  \right)\,,
+            \label{eq:micro:pat-wf}
+        \end{equation}
+        revealing that an electronic state subjected to an AC voltage becomes a superposition of components at energies shifted by $n h\nu$. Each component corresponds to the absorption ($n>0$) or emission ($n<0$)
+        of $|n|$ photons. Because tunneling probabilities are proportional to the squared amplitude, these channels carry weights $J_n^2(\alpha)$.
+
+        This perspective permits a particularly transparent interpretation in terms of an effective, photon-dressed density of states. Each shifted wavefunction component contributes a copy of the local DOS displaced by $n h\nu$. The resulting effective DOS is
+        \begin{equation}
+            N_\mathrm{PAT}(E) = \sum_{n=-\infty}^{\infty} J_n^2(\alpha)\, N(E + n h\nu)\,,
+            \label{eq:micro:pat-dos}
+        \end{equation}
+        which replaces $N(E)$ in the tunneling expression. The PAT-modified current therefore becomes a weighted sum of shifted copies of the static \textit{I-V} curve.
+
+        Putting these contributions together leads to the Tien--Gordon formula,
         \begin{equation}
             I(V_0) = \sum_{n=-\infty}^{\infty} J_n^2\!\left( \frac{eA}{h\nu}\right) \cdot I_0\!\left(V_0 - \frac{n h\nu}{e}\right)\,.
             \label{eq:micro:pat-tien-gordon}
         \end{equation}
+        which expresses the total current as the incoherent sum of all photon-assisted tunneling channels.  Each channel contributes a copy of the static \textit{I-V} curve shifted by $n h\nu/e$ and weighted by the probability $J_n^2(\alpha)$ for absorbing or emitting $n$ photons, producing the characteristic sideband structure observed in experiment.
 
-        The Bessel functions of the first kind $J_n$ arise from the periodic phase modulation induced by the oscillating potential and quantify the probability for an electron to absorb or emit $n$ photons. Each term in the sum corresponds to a replica of the static $I_0(V_0)$ curve, shifted in voltage by $V_n$ and weighted by $J_n^2(eA/h\nu)$. The resulting current therefore reflects the superposition of all photon-assisted tunneling processes, which manifest as evenly spaced sidebands of the superconducting features in the measured $I(V_0)$.
+        The same relation also holds for the differential conductance, meaning that the photon-assisted replicas $\mathrm{d}I_0(V_0)/\mathrm{d}V$ appear identically as in the current, providing a direct experimental link to the superconducting density of states.
 
-        The same relation also holds for the differential conductance $\mathrm{d}I/\mathrm{d}V(V_0)$, meaning that the photon-assisted replicas $\mathrm{d}I_0/\mathrm{d}V(V_0)$ appear identically as in the current, providing a direct experimental link to the superconducting density of states.
-
-        In practice, the amplitude $A$ can be determined experimentally by comparing the relative heights of the sidebands with the expected Bessel function weights $J_n^2(eA/h\nu)$. The spacing $h\nu$ between sidebands provides a direct and robust calibration of the frequency. Photon-assisted tunneling thus offers a straightforward semiclassical description of how an oscillating field modifies quasi-particle transport, serving as a bridge between static tunneling spectroscopy and driven quantum dynamics.
+        In practice, the amplitude $A$ can be determined experimentally by comparing the relative heights of the sidebands with the expected Bessel function weights. The spacing $h\nu$ between sidebands provides a direct and robust calibration of the frequency. Photon-assisted tunneling thus offers a straightforward semiclassical description of how an oscillating field modifies quasi-particle transport, serving as a bridge between static tunneling spectroscopy and driven quantum dynamics.
 
         
