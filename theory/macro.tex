@@ -1,6 +1,5 @@
 % !TEX root = ../thesis.tex
 
-
 \section{Macroscopic Description}
 \label{sec:macro}
 
@@ -29,6 +28,13 @@
 
         When two superconductors are weakly coupled through a thin insulating barrier, constriction, or metallic link, their macroscopic wavefunctions overlap across the junction. In the tunneling limit, where the coupling between the superconductors is weak, the amplitude of the order parameter can be regarded as constant across the junction, and only its phase varies. This simplification highlights that the Josephson effect fundamentally arises from the coherent phase dynamics of the condensate, rather than from changes in its magnitude. The phase difference $\phi = \phi_1 - \phi_2$ between the two condensates then governs the supercurrent flowing through the weak link. The maximum magnitude of this supercurrent is characterized by the critical current $I_\mathrm{C}$, which depends on the coupling strength of the weak link and serves as a key parameter in the following discussion.
 
+        \begin{figure}
+            \centering
+            \includegraphics[width=\textwidth]{theory/macro/wavefunction.png}
+            \caption{just b and in nice. without any proximity effect in this section}
+            \label{fig:macro:wave-function}
+        \end{figure}
+
         These relations are obtained within the tunneling limit, where the coupling between the superconductors is weak. In this regime, the amplitude of the order parameter can be regarded as constant across the junction, and only its phase varies. This simplification highlights that the Josephson effect fundamentally arises from the coherent phase dynamics of the condensate, rather than from changes in its magnitude.
 
         The phenomenology of this coupling is captured by two fundamental relations, known as the Josephson equations.
@@ -39,6 +45,13 @@
             \label{eq:macro:dc}
         \end{equation}
         where $I_\mathrm{C}$ denotes the critical current. It states that a stationary supercurrent, with a maximum value $I_\mathrm{C}$, can flow through the weak link even in the absence of an applied voltage, driven solely by the phase difference between the two superconductors. This purely phase-dependent current is a direct manifestation of macroscopic quantum coherence and forms the basis for most applications of Josephson junctions.
+        \begin{figure}
+            \centering
+            \includegraphics[width=.3\textwidth]{theory/macro/I_low_high_mixed_t.png}
+            \includegraphics[width=.3\textwidth]{theory/macro/dIdV_mixed.png}
+            \caption{without any tau mentioning. just show qp iv + sc}
+            \label{fig:macro:josephsondc}
+        \end{figure}
 
         The second equation, describing the AC Josephson effect, links the temporal evolution of the phase to the voltage $V_0$ across the junction,
         \begin{equation}
