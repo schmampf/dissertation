@@ -42,6 +42,12 @@
             \end{array}
             \label{eq:meso:btk-paramter}
         \end{equation}
+        \begin{figure}[t]
+            \centering
+            \import{theory/meso}{btk-dos.pgf}
+            \caption{platzhalter}
+            \label{fig:meso:btk-dos}
+        \end{figure}
 
         The normalized superconducting density of states can be expressed in terms of these coherence factors as
         \begin{equation}
@@ -61,9 +67,9 @@
         This formulation smoothly connects the tunneling and Andreev limits and reproduces the Dynes-broadened density of states for small transmissions ($\tau \ll 1$). 
 
         Figure~\ref{fig:meso:ar-iv} illustrates the resulting \textit{I-V} and \textit{dI-dV} characteristics obtained from the analytical BTK formulation, showing how the subgap conductance and coherence peaks evolves with interface transparency.
-        \begin{figure}
+        \begin{figure}[t]
             \centering
-            \import{theory/meso}{ar-iv.pgf}
+            \import{theory/meso}{btk-current.pgf}
             \caption{
                 Analytical \textit{I-V} and \textit{dI-dV} characteristic calculated within the BTK model ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\Gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).  Subgap conductance increases with transparency due to the growing probability of two-particle Andreev processes, while the height of the coherence peaks at $eV = \pm \Delta_0$ decreases.}
             \label{fig:meso:ar-iv}
@@ -130,21 +136,28 @@
         Obtaining the \textit{I-V} characteristics of multiple Andreev reflection (MAR) for arbitrary transmission represents a nontrivial problem, since the transport involves an infinite hierarchy of correlated two-particle processes occurring under nonequilibrium conditions. The first phenomenological descriptions were provided by BTK in 1982 and subsequently by Octavio et al. in 1983. These approaches treated MAR as a sequence of independent Andreev reflections within a semiclassical framework, successfully explaining the appearance of the subharmonic gap structure in the tunneling and weak-coupling limits. However, they relied on rate-equation or transmission-probability arguments and could not describe the full quantum coherence between successive reflections, nor the smooth crossover to the ballistic regime.
 
         A major theoretical step forward was achieved by Cuevas, Martín-Rodero, and Levy Yeyati (1996, 1998), who developed a fully microscopic theory of MAR based on the nonequilibrium Keldysh Green's-function formalism. Their Hamiltonian approach (HA) treated the applied voltage self-consistently as a time-dependent phase $\phi(t) = \phi_0 + 2eVt/\hbar$, rendering the system periodic in time. By solving this Floquet problem recursively, they obtained stationary solutions for the dc current that naturally include all orders of multiple Andreev reflections and remain valid for any channel transmission. 
+        \begin{figure}[t]
+            \centering
+            \import{theory/meso}{ha-current.pgf}
+            \caption{
+                Numerical \textit{I-V} and \textit{dI-dV} characteristic calculated with the HA model by Cuevas ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\Gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).}
+            \label{fig:meso:mar-ha}
+        \end{figure}
         
         This formulation provides a continuous description linking the tunneling limit, where transport reduces to single-particle tunneling and reproduces the BCS density of states, with the fully transparent case, where coherent two-particle Andreev reflection dominates and yields a nearly linear subgap current. Intermediate transparencies show the gradual redistribution of spectral weight from the coherence peaks at the gap edge into the subgap region as successive Andreev processes become increasingly likely. This microscopic framework thus unifies the different transport regimes of superconducting point contacts within a single, quantitative model.
 
         A further conceptual development was introduced through the framework of full counting statistics (FCS), which extends the microscopic MAR theory to include the entire probability distribution of transmitted charge. Instead of describing only the mean current, FCS characterizes the stochastic sequence of charge transfer events by introducing a counting field that tracks the passage of discrete charge quanta during a measurement interval. The resulting cumulant generating function allows the evaluation of all current moments and cumulants, providing access to both the noise spectrum and higher-order correlations. 
-        
-        Within this picture, each MAR trajectory corresponds to the coherent transfer of a well-defined multiple of the electron charge, and the weight of each process is determined by its transmission dependent amplitude. This approach, pioneered by Belzig, Nazarov, and others, reveals that the subgap current in superconducting contacts is not continuous but built from discrete charge-transfer events whose effective charge increases as the bias is reduced. It thereby extends the Cuevas theory beyond the average current, offering a comprehensive, charge-resolved description of Andreev transport.
-
-        \begin{figure}[t]
+        \begin{figure}
             \centering
-            \import{theory/meso}{mar-iv.pgf}
-            \caption{
-                Numerical \textit{I-V} and \textit{dI-dV} characteristic calculated with the HA model by Cuevas ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\Gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).}
-            \label{fig:meso:mar-iv}
+            \subfigure[$\tau = 0.8$]{\import{theory/meso}{fcs-08.pgf}}
+            \subfigure[$\tau = 0.5$]{\import{theory/meso}{fcs-05.pgf}}
+            \subfigure[$\tau = 0.3$]{\import{theory/meso}{fcs-03.pgf}}
+            \caption{Gesamtbeschriftung der Figur.}
+            \label{fig:meso:fcs}
         \end{figure}
 
+        
+        Within this picture, each MAR trajectory corresponds to the coherent transfer of a well-defined multiple of the electron charge, and the weight of each process is determined by its transmission dependent amplitude. This approach, pioneered by Belzig, Nazarov, and others, reveals that the subgap current in superconducting contacts is not continuous but built from discrete charge-transfer events whose effective charge increases as the bias is reduced. It thereby extends the Cuevas theory beyond the average current, offering a comprehensive, charge-resolved description of Andreev transport.
 
 
     \subsection{Photon-Assisted Multiple Andreev Reflection}
