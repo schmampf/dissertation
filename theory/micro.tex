@@ -86,9 +86,9 @@
         \end{equation}        
         Thus, in the ideal BCS limit the quasi-particle DOS is strictly zero within the energy gap and diverges at its edges. The divergence at the gap edges originates from the flattening of the Bogoliubov quasiparticle dispersion, which enhances the density of available states. Temperature affects only the occupation factor, i.e., the Fermi--Dirac distribution, and does not smear the DOS itself.
 
-        However, real spectra are never perfectly sharp. A simple and very effective phenomenology is the broadening by Dynes parameter. It is implemented by the substitution $E\to E+\ima\Gamma$, while just considering the real part
+        However, real spectra are never perfectly sharp. A simple and very effective phenomenology is the broadening by Dynes parameter. It is implemented by the substitution $E\to E+\ima\gamma$, while just considering the real part
         \begin{equation}
-            \frac{N_\mathrm{S}(E)}{N_0} = \Re\!\left(\frac{E+\ima\Gamma}{\sqrt{(E+\ima\Gamma)^2-\Delta^2}}\right) \quad (|E| \ge \Delta)\,.
+            \frac{N_\mathrm{S}(E)}{N_0} = \Re\!\left(\frac{E+\ima\gamma}{\sqrt{(E+\ima\gamma)^2-\Delta^2}}\right) \quad (|E| \ge \Delta)\,.
             \label{eq:micro:DOS-Dynes}
         \end{equation}
         Such broadening arises from finite quasi-particle lifetimes due to inelastic scattering, spatial inhomogeneity, pair breaking by magnetic impurities, or non-equilibrium effects, all of which smear the ideal BCS singularities. 
@@ -106,7 +106,7 @@
         \begin{figure}[t]
             \centering
             \import{theory/micro}{dos-fermi.pgf}
-            \caption{Superconducting quasi-particle density of states $N_\mathrm{S}(E)$ and Fermi--Dirac distribution $f(E)$ for different Dynes parameters $\Gamma/\Delta_0$ and temperatures $T/T_\mathrm{C}$. Increasing $\Gamma$ broadens the coherence peaks of $N_\mathrm{S}(E)$, while increasing temperature smooths the Fermi edge. Parameters correspond to aluminum with $\Delta_0 = 180\,$\textmu eV and $T_\mathrm{C} = 1.18\,\mathrm{K}$, representative of a weak-coupling BCS superconductor.}
+            \caption{Superconducting quasi-particle density of states $N_\mathrm{S}(E)$ and Fermi--Dirac distribution $f(E)$ for different Dynes parameters $\gamma/\Delta_0$ and temperatures $T/T_\mathrm{C}$. Increasing $\gamma$ broadens the coherence peaks of $N_\mathrm{S}(E)$, while increasing temperature smooths the Fermi edge. Parameters correspond to aluminum with $\Delta_0 = 180\,$\textmu eV and $T_\mathrm{C} = 1.18\,\mathrm{K}$, representative of a weak-coupling BCS superconductor.}
             \label{fig:micro:dos-fermi}
         \end{figure}
 
@@ -166,8 +166,8 @@
             \import{theory/micro}{tunnel-current.pgf}
             \caption{
                 Calculated tunnel currents and differential conductances for NS (grey) and SS (blue) junctions within the microscopic tunneling model. Parameters correspond to aluminum with $\Delta_0 = 180\,$\textmu eV and $T_\mathrm{C} = 1.18\,\mathrm{K}$.
-                The upper two panels show the effect of temperature $T/T_\mathrm{C}$ at fixed Dynes parameter $\Gamma = 0$. 
-                The lower two panels show the influence of Dynes broadening $\Gamma/\Delta_0$ at $T=0$. 
+                The upper two panels show the effect of temperature $T/T_\mathrm{C}$ at fixed Dynes parameter $\gamma = 0$. 
+                The lower two panels show the influence of Dynes broadening $\gamma/\Delta_0$ at $T=0$. 
                 }
             \label{fig:micro:tunnel-current}
         \end{figure}
@@ -179,11 +179,11 @@
             I_\mathrm{SS}(V) = \frac{G_\mathrm{N}}{e}\int_{-\infty}^{\infty} \frac{N_\mathrm{S}(E)}{N_0} \cdot \frac{N_\mathrm{S}(E+eV)}{N_0} \cdot \left[f(E) - f(E + eV)\right] \mathrm{d}E
             \label{eq:micro:tunnel-ss}
         \end{equation}
-        Importantly, temperature $T$ and Dynes broadening $\Gamma$ influence the spectra in distinct ways. Finite temperature broadens the Fermi edges via the Fermi--Dirac distribution, while $\Gamma$ introduces intrinsic smearing of the quasi-particle DOS itself. 
+        Importantly, temperature $T$ and Dynes broadening $\gamma$ influence the spectra in distinct ways. Finite temperature broadens the Fermi edges via the Fermi--Dirac distribution, while $\gamma$ introduces intrinsic smearing of the quasi-particle DOS itself. 
 
         In contrast to an NS junction, the SS junction is way more robust to temperature rounding. Instead of smearing, a finite conductance at zero voltage appears, while the height of the coherence peaks decrease as the gap closes. However, the Dynes broadening affects the tunnel current way more than in the NS case.
         
-        By fitting measured \textit{I-V} or \textit{dI-dV} data, with both parameters as variables, one can disentangle thermal effects from genuine lifetime or inelastic processes. These interpretations form the foundation of tunneling spectroscopy as a quantitative probe of superconductivity, allowing the extraction of $\Delta_0$, $T$, and $\Gamma$ from experimental data with high accuracy.
+        By fitting measured \textit{I-V} or \textit{dI-dV} data, with both parameters as variables, one can disentangle thermal effects from genuine lifetime or inelastic processes. These interpretations form the foundation of tunneling spectroscopy as a quantitative probe of superconductivity, allowing the extraction of $\Delta_0$, $T$, and $\gamma$ from experimental data with high accuracy.
 
         \cite{bardeen_tunnelling_1961,giaever_electron_1960,giaever_study_1961}
 
@@ -258,7 +258,7 @@
             \caption{
                 Calculated tunnel currents and differential conductances for NS (grey) and SS (blue) junctions under microwave irradiation with different amplitudes $eA/\Delta_0$. 
                 Photon absorption and emission create replicas of the coherence peaks spaced by $h\nu$, weighted by the Bessel factors $J_n^2(eA/h\nu)$ according to the Tien--Gordon model. 
-                Parameters correspond to aluminum with $\Delta_0 = 180\,$\textmu eV, $T = 0\,$K, $\Gamma = 0\,$\textmu eV and $\nu = 5.0\,$GHz.  
+                Parameters correspond to aluminum with $\Delta_0 = 180\,$\textmu eV, $T = 0\,$K, $\gamma = 0\,$\textmu eV and $\nu = 5.0\,$GHz.  
                 }
             \label{fig:micro:pat}
         \end{figure}

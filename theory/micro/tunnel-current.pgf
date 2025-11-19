@@ -1871,7 +1871,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.681052in,y=2.479467in,left,base]{\color{textcolor}{\sffamily\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\Gamma/\Delta_0 = $}}%
+\pgftext[x=0.683228in,y=2.479467in,left,base]{\color{textcolor}{\sffamily\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\gamma/\Delta_0 = $}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%

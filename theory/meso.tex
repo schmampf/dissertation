@@ -28,10 +28,10 @@
 
         This gives rise to a finite conductance at subgap voltages, even when quasi-particle tunneling is forbidden. The probability of Andreev reflection can be derived from the Bogoliubov--de Gennes equations and depends on both the voltage bias $eV$ and the interface transparency $\tau$. Andreev reflection is thus the fundamental process linking normal-metal transport to superconducting correlations.
 
-        Analytical descriptions of the \textit{I-V} characteristics based on the Blonder--Tinkham--Klapwijk (BTK) model provide a quantitative framework for calculating the Andreev reflection probabilities. In its modified form proposed by Pleceník et al., finite quasi-particle lifetimes are included phenomenologically by introducing a complex quasi-particle energy $E \rightarrow |E| + \mathrm{i}\Gamma$. The dimensionless barrier strength $Z$ related to the transmission $\tau$ is used. The resulting coherence factors $u_0^2$ and $v_0^2$ are given in the following,
+        Analytical descriptions of the \textit{I-V} characteristics based on the Blonder--Tinkham--Klapwijk (BTK) model provide a quantitative framework for calculating the Andreev reflection probabilities. In its modified form proposed by Pleceník et al., finite quasi-particle lifetimes are included phenomenologically by introducing a complex quasi-particle energy $E \rightarrow |E| + \mathrm{i}\gamma$. The dimensionless barrier strength $Z$ related to the transmission $\tau$ is used. The resulting coherence factors $u_0^2$ and $v_0^2$ are given in the following,
         \begin{equation}
             \begin{array}{ll}
-                u_0^2 = \frac{1}{2} \left( 1 + \frac{\sqrt{(|E|+\ima\Gamma)^2-\Delta^2}}{|E|+\ima\Gamma}\right)\,,&
+                u_0^2 = \frac{1}{2} \left( 1 + \frac{\sqrt{(|E|+\ima\gamma)^2-\Delta^2}}{|E|+\ima\gamma}\right)\,,&
                 v_0^2 = 1 - u_0^2\,\\
                 \gamma = u^2_0+(u^2_0-v^2_0)Z^2\,,& 
                 Z = \sqrt{1/\tau - 1}\,,\\
@@ -71,7 +71,7 @@
             \centering
             \import{theory/meso}{btk-current.pgf}
             \caption{
-                Analytical \textit{I-V} and \textit{dI-dV} characteristic calculated within the BTK model ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\Gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).  Subgap conductance increases with transparency due to the growing probability of two-particle Andreev processes, while the height of the coherence peaks at $eV = \pm \Delta_0$ decreases.}
+                Analytical \textit{I-V} and \textit{dI-dV} characteristic calculated within the BTK model ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).  Subgap conductance increases with transparency due to the growing probability of two-particle Andreev processes, while the height of the coherence peaks at $eV = \pm \Delta_0$ decreases.}
             \label{fig:meso:ar-iv}
         \end{figure}
 
@@ -140,7 +140,7 @@
             \centering
             \import{theory/meso}{ha-current.pgf}
             \caption{
-                Numerical \textit{I-V} and \textit{dI-dV} characteristic calculated with the HA model by Cuevas ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\Gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).}
+                Numerical \textit{I-V} and \textit{dI-dV} characteristic calculated with the HA model by Cuevas ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).}
             \label{fig:meso:mar-ha}
         \end{figure}
         
