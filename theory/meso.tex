@@ -8,7 +8,7 @@
         G_\mathrm{N} = G_0 \sum_{i=1}^N \tau_i\,, \quad (\tau_i \in [0,1])\,,
         \label{eq:meso:landauer}
     \end{equation}
-    where $G_0 = 2e^2/h$ is the conductance quantum accounting for spin degeneracy. This framework captures the essence of quantum transport in nanostructures and naturally explains phenomena such as conductance quantization in atomic contacts.
+    where $G_0$ is the conductance quantum accounting for spin degeneracy\footnote{Throughout this thesis the conductance quantum is defined as $G_0 = 2e^2/h = 77.48\,\mu\mathrm{S}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = 12.9\,\mathrm{k\Omega}$.}. This framework captures the essence of quantum transport in nanostructures and naturally explains phenomena such as conductance quantization in atomic contacts.
 
     When such mesoscopic conductors are made superconducting, the same transmission channels govern not only single quasi-particle motion but also correlated two quasi-particle transfer through Andreev reflection. The transparency $\tau_i$ of each channel determines the probability of this process and thus directly shapes the subgap current. In junctions where both electrodes are superconducting, successive Andreev reflections on both sides lead to multiple Andreev reflection, producing the characteristic subharmonic structure in the \textit{I-V} characteristics.
 
@@ -80,6 +80,20 @@
 
     \subsection{Andreev Bound States}
     \label{subsec:meso:abs}
+    
+
+    \textbf{Ambegaokar--Baratoff, Kulik--Omelyanchuk}
+
+    \begin{align}        
+    I_\mathrm{C} &= \frac{\pi \Delta}{2e} \, G_\mathrm{N}.\\
+    I_\mathrm{C} R_\mathrm{N} &= \frac{\pi \Delta}{2e}.\\
+    I_\mathrm{C}(T) R_\mathrm{N}
+&= \frac{\pi \Delta(T)}{2e} \tanh\!\left(\frac{\Delta(T)}{2 k_\mathrm{B} T}\right).\\
+I(\varphi) &= \frac{e\Delta}{\hbar}
+\frac{\tau \sin\varphi}{\sqrt{1 - \tau \sin^2(\varphi/2)}}
+\tanh\!\left(\frac{\Delta}{2k_\mathrm{B}T}
+\sqrt{1 - \tau \sin^2(\varphi/2)}\right). \quad \tau \approx 1
+    \end{align}
 
         When two superconductors are connected through a short, phase-coherent constriction, the subgap spectrum is no longer continuous. Instead, coherent electron-hole trajectories become confined between successive Andreev reflections at the two superconducting interfaces. The resulting standing waves form discrete energy levels within the superconducting gap, known as Andreev bound states (ABS). These states constitute the fundamental microscopic origin of both the DC Josephson effect and the non-linear subgap transport observed at finite bias.
 
