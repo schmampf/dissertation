@@ -12,11 +12,54 @@
 
     Followed by the second section introducing the macroscopic Ginzburg--Landau theory from 1950. The collective phase of the superconducting condensate determines the behavior of weak links. Here, phase coherence manifests in phenomena such as the DC and AC Josephson effects, Shapiro steps, and the influence of dissipation and capacitance captured by the RCSJ model. 
 
-    % proper segway, when mar is fertig.
-    % Finally, the mesoscopic description section bridges microscopic and macroscopic transport through the theory of Andreev and multiple Andreev reflections. These processes describe how charge is transferred through highly transparent superconducting contacts and how the resulting \textit{I-V} characteristics encode the microscopic transmission properties of the junction, forming the quantitative link between experiment and theory.
+    Next, the mesoscopic description section bridges microscopic and macroscopic transport through the theory of Andreev and multiple Andreev reflections. These processes describe how charge is transferred through highly transparent superconducting contacts and how the resulting \textit{I-V} characteristics encode the microscopic transmission properties of the junction, forming the quantitative link between experiment and theory.
 
-    % platform under investigation ???
+    Penultimately, the stochastic description considers phase fluctuations in dissipative environments. Fundamentally using P(E)-Theory.
 
+    
+
+    \newpage
+    % --- Material Platform and Microwave Drive (global assumptions) ---
+    
+    \subsubsection*{Aluminum as a Model BCS Superconductor}
+
+        Throughout this chapter, aluminum serves as the representative weak-coupling BCS superconductor. It possesses a nearly free-electron-like band structure, an isotropic s-wave energy gap, and a well-understood phonon-mediated pairing mechanism. The zero-temperature gap and critical temperature are to good approximation
+        \begin{equation}
+            \Delta_0 \approx 180\,\mu\mathrm{eV}\,,\qquad
+            T_\mathrm{C} \approx 1.2\,\mathrm{K}\,.
+            \label{eq:aluminum}
+        \end{equation}
+        Its long coherence length of order 1-2\,\textmu m, high electronic purity, and weak spin--orbit scattering make aluminum ideally suited for tunneling spectroscopy and mesoscopic superconducting transport. The comparatively small gap places typical microwave frequencies well below the pair-breaking threshold, enabling controlled photon-assisted processes without degrading superconductivity\footnote{The pair-breaking frequency of aluminium is given by $\nu\mathrm{pb}=2\Delta_0/h\approx 100\,\mathrm{GHz}$.}. Moreover, aluminum naturally forms reproducible aluminum-oxide tunnel barriers and reliably yields stable atomic contacts. It therefore provides a consistent and unified material platform for all transport phenomena discussed in this chapter.
+        
+    \newpage
+    \subsubsection*{Global Microwave Drive Model}
+    
+        Many of the transport phenomena discussed in this chapter involve the presence of a time-dependent electromagnetic drive. To avoid repeated introductions of the same setup, we summarize here the general assumptions that apply to all subsequent descriptions. The drive is treated as a classical, externally imposed field. No cavity modes or backaction of the junction onto the field are considered. The entire voltage drop is assumed to occur across the junction, a convenient gauge choice. In consequence, the electromagnetic field enters only through the scalar potential in the tunneling Hamiltonian or via the Josephson phase evolution. The drive amplitude is taken to be small enough not to heat the electrodes, allowing both to remain in local thermal equilibrium with Fermi--Dirac distributions. Finally, the drive frequencies are chosen such that photon energy is way smaller than the pair-breaking energy, ensuring that Cooper pairs remain intact while the phase dynamics are driven coherently. In practice, frequencies in the microwave range up to about 20\,GHz are used.
+
+        The spatially uniform microwave field is then given by 
+        \begin{equation}
+            V(t) = V_0 + A \cos (2\pi\nu t)\,,
+            \label{eq:microwave}
+        \end{equation}
+        with a static component $V_0$, drive amplitude $A$, and frequency $\nu$. 
+        
+        The charge relevant for the electromagnetic phase is $q = m e$ with $m\in\{1,\,2,\,3,\,\dots\}$. For quasi-particles $m=1$, for Cooper-pair and single Andreev processes $m=2$, and for higher-order multiple Andreev reflections the effective transferred charge is $m>2$. However, the accumulated potential, determines the relevant electromagnetic phase factor
+        \begin{align}
+            \exp\!\left(-\ima\phi(t)\right) &= \exp\!\left( - \frac{\ima}{\hbar} \int_0^t q V(t')\, dt' \right) \\
+            &= \!\exp\left(-\ima \phi_0(t)\right)\exp\!\left(\ima \alpha \sin(2\pi\nu t) \right)\,.
+        \end{align}
+        where $\alpha=qA/h\nu$ denotes the dimensionless modulation strength and $\phi_0(t) = q V_0 t / \hbar$ is the phase difference generated by the static drive.
+
+        The phase factor is conveniently expanded using the Jacobi--Anger identity,
+        \begin{equation}
+            \exp\!\left(\ima\alpha \sin(2\pi\nu t)\right) = \sum_{n=-\infty}^{\infty} J_n(\alpha)\,
+            \exp\!\left(\ima n\ 2\pi\nu t\right)\,
+            \label{eq:microwave:jacobi-anger}
+        \end{equation}
+        where $J_n(\alpha)$ is the $n$-th Bessel function of the first kind. This harmonic decomposition will be used repeatedly in this chapter.
+
+
+        
     \newpage
 
     \input{theory/micro.tex}
@@ -89,9 +132,4 @@
     \end{itemize}
 
     \newpage
-
-
-        % % new stuff
-        % When the junction capacitance becomes very small, the electrostatic charging energy $E_\mathrm{C} = e^2/2C$ can exceed the Josephson coupling energy $E_\mathrm{J}$. In this regime, the transfer of individual Cooper pairs is suppressed at low bias, giving rise to the Coulomb blockade of Cooper-pair tunneling. The continuous phase description of the RCSJ model then breaks down, and transport becomes dominated by discrete charge states on the junction island. Such small-capacitance junctions mark the crossover to the regime of single-Cooper-pair tunneling and form the conceptual link to the incoherent tunneling picture discussed in Section~\ref{sec:incoherent-cooper-pair-tunneling}.
-
 
