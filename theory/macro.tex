@@ -15,9 +15,8 @@
     \end{equation}
     Here $\vec{A}$ is the electromagnetic vector potential, related to the magnetic field by $\vec{B} = \nabla \times \vec{A}$, and $m^* = 2m_\mathrm{e}$ denotes the effective mass of a Cooper-pair. The term in parentheses represents the effective phase gradient of the condensate, which determines the supercurrent and incorporates the influence of the electromagnetic field. The Ginzburg--Landau equations arise from minimizing the corresponding free-energy functional with respect to $\Psi$ and $\vec{A}$, linking the phase gradient to the supercurrent as the equilibrium condition of the condensate. Although the GL theory is phenomenological, it accurately captures the essential electrodynamics of superconductivity and provides the conceptual foundation for the Josephson effect, where the phase difference between two superconductors directly determines the supercurrent through a weak link.
 
-    The Ginzburg--Landau theory thus provides a macroscopic, phenomenological framework that links the superconducting order parameter to observable quantities such as current and magnetic response. It captures how phase coherence gives rise to dissipationless transport and forms the basis for understanding all macroscopic manifestations of superconductivity. Building upon this foundation, the following sections elaborate on the distinct phenomena that emerge from phase dynamics in superconducting weak links.
+    The GL theory thus provides a macroscopic, phenomenological framework that links the superconducting order parameter to observable quantities such as current and magnetic response. GL provides the macroscopic phase variable whose spatial variation carries current. In Josephson junctions this phase difference becomes the central dynamical variable.
 
-    The following sections elaborate on the different manifestations of these macroscopic phase dynamics in superconducting weak links. 
     Section~\ref{subsec:macro:josephson} introduces the fundamental Josephson relations that describe the static and dynamic coupling of superconducting condensates.
     Section~\ref{subsec:macro:shapiro} extends this framework to include the interaction with oscillating electromagnetic fields, giving rise to quantized voltage plateaus known as Shapiro steps.
     Finally, Section~\ref{subsec:macro:rcsj} presents the resistively and capacitively shunted junction (RCSJ) model, which provides a classical circuit description that unifies coherent and dissipative effects in Josephson junction dynamics.
@@ -26,34 +25,47 @@
     \subsection{Josephson Effect}
     \label{subsec:macro:josephson}
 
-        When two superconductors are weakly coupled through a thin insulating barrier, constriction, or metallic link, their macroscopic wavefunctions overlap across the junction. In the tunneling limit, where the coupling between the superconductors is weak, the amplitude of the order parameter can be regarded as constant across the junction, and only its phase varies. This simplification highlights that the Josephson effect fundamentally arises from the coherent phase dynamics of the condensate, rather than from changes in its magnitude. The phase difference $\phi = \phi_1 - \phi_2$ between the two condensates then governs the supercurrent flowing through the weak link. The maximum magnitude of this supercurrent is characterized by the critical current $I_\mathrm{C}$, which depends on the coupling strength of the weak link and serves as a key parameter in the following discussion.
-
-        \begin{figure}
+        \begin{wrapfigure}[13]{r}{0.4\textwidth}
+            \captionsetup{format=plain}%
             \centering
-            \includegraphics[width=\textwidth]{theory/macro/wavefunction.png}
-            \caption{just b and in nice. without any proximity effect in this section}
+            \vspace{-1em} % fine-tune vertical position
+            \includegraphics[width=.35\textwidth]{theory/macro/wavefunction.png}
+            \caption{\textbf{in Progress...\\
+            vielleicht eine figure mit actually wellen drin? deren amplitude nicht schon exponentiell abfällt? vielleicht den abfall ein wenig andeuten.}}
             \label{fig:macro:wave-function}
-        \end{figure}
-
-        These relations are obtained within the tunneling limit, where the coupling between the superconductors is weak. In this regime, the amplitude of the order parameter can be regarded as constant across the junction, and only its phase varies. This simplification highlights that the Josephson effect fundamentally arises from the coherent phase dynamics of the condensate, rather than from changes in its magnitude.
+        \end{wrapfigure} 
+        When two superconductors are weakly coupled through a thin insulating barrier, constriction, or metallic link, their macroscopic wavefunctions overlap across the junction. So their amplitude of the order parameter can be regarded as constant across the junction, and only its phase varies. Figure~\ref{fig:macro:I_C-suppression} shows a schematic illustration of this situation.
+        
+        This simplification highlights that the Josephson effect fundamentally arises from the coherent phase dynamics of the condensate, rather than from changes in its magnitude. The phase difference $\phi = \phi_1 - \phi_2$ between the two condensates then governs the supercurrent flowing through the weak link. The maximum magnitude of this supercurrent is characterized by the critical current $I_\mathrm{C}$, which depends on the coupling strength and serves as a key parameter in the following discussion.
 
         The phenomenology of this coupling is captured by two fundamental relations, known as the Josephson equations.
 
-        The first equation, describing the DC Josephson effect, is given by
+        \begin{wrapfigure}[11]{r}{0.4\textwidth}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-1em} % fine-tune vertical position
+            \import{theory/macro}{josephson-iphi.pgf}
+            \caption{Current Phase Relation}
+            \label{fig:macro:josephson-iphi}
+        \end{wrapfigure} 
+        The first equation, describing the DC~Josephson effect, shown in Figure~\ref{fig:macro:josephson-iphi} is given by
         \begin{equation}
-            I_\mathrm{S} = I_\mathrm{C}\sin\phi\,,
+            I_\mathrm{J} = I_\mathrm{C}\sin\phi\,,
             \label{eq:macro:dc}
         \end{equation}
-        where $I_\mathrm{C}$ denotes the critical current. It states that a stationary supercurrent, with a maximum value $I_\mathrm{C}$, can flow through the weak link even in the absence of an applied voltage, driven solely by the phase difference between the two superconductors. This purely phase-dependent current is a direct manifestation of macroscopic quantum coherence and forms the basis for most applications of Josephson junctions.
-        \begin{figure}
+        where $I_C$ is the critical current of the weak link. For a tunnel junction the critical current is given microscopically by the Ambegaokar--Baratoff relation below in Eq.~\ref{eq:macro:critical-current}. It states that a stationary supercurrent, with a maximum value $I_\mathrm{C}$, can flow through the weak link even in the absence of an applied voltage, driven solely by the phase difference between the two superconductors. This purely phase-dependent current is a direct manifestation of macroscopic quantum coherence and forms the basis for most applications of Josephson junctions. 
+        
+        \begin{wrapfigure}[13]{r}{0.4\textwidth}
+            \captionsetup{format=plain}%
             \centering
-            \includegraphics[width=.3\textwidth]{theory/macro/I_low_high_mixed_t.png}
-            \includegraphics[width=.3\textwidth]{theory/macro/dIdV_mixed.png}
-            \caption{without any tau mentioning. just show qp iv + sc}
-            \label{fig:macro:josephsondc}
-        \end{figure}
+            \vspace{-1em} % fine-tune vertical position
+            \import{theory/macro}{josephson-iv.pgf}
+            \caption{Josephson supercurrent and quasi-particle tunneling at $\phi=\pi/9$.}
+            \label{fig:macro:josephson-iv}
+        \end{wrapfigure} 
+        Including quasiparticle tunneling in parallel to the supercurrent produces the characteristic \textit{I--V} curve shown in Figure~\ref{fig:macro:josephson-iv}, with a zero-voltage supercurrent branch and a dissipative branch above the gap.
 
-        The second equation, describing the AC Josephson effect, links the temporal evolution of the phase to the voltage $V_0$ across the junction,
+        The second equation, describing the AC~Josephson effect, links the temporal evolution of the phase to the voltage $V_0$ across the junction,
         \begin{equation}
             \frac{\mathrm{d}\phi}{\mathrm{d}t} = \frac{2e}{\hbar}\,V\,,
             \label{eq:macro:ac}
@@ -70,9 +82,30 @@
         \end{equation}
         This relation establishes a direct connection between voltage and frequency. For typical voltages in the microvolt range, the corresponding Josephson frequency lies in the microwave domain.
 
-        The behavior of a Josephson junction can be characterized by three fundamental energy scales. The Josephson coupling energy $E_\mathrm{J} = \hbar I_\mathrm{C}/2e$ quantifies the stiffness of the superconducting phase and the strength of coherent Cooper-pair tunneling. Thermal fluctuations are described by the thermal energy $E_\mathrm{T} = k_\mathrm{B}T$, which tends to randomize the phase and suppress the supercurrent when $E_\mathrm{J} \lesssim E_\mathrm{T}$. The electrostatic charging energy $E_\mathrm{C} = e^2/2C$ reflects the discrete nature of charge transfer across the junction capacitance $C$ and introduces quantum fluctuations of the phase via the uncertainty relation $\Delta N\,\Delta\phi \geq 1$. The relative magnitudes of $E_\mathrm{J}$, $E_\mathrm{T}$, and $E_\mathrm{C}$ determine whether the junction behaves classically or quantum mechanically: for $E_\mathrm{J} \gg \{E_\mathrm{T}, E_\mathrm{C}\}$, the phase is well-defined and the Josephson relations hold in their coherent form, whereas for comparable or smaller $E_\mathrm{J}$, thermal or quantum fluctuations dominate, leading to phase diffusion and Coulomb blockade effects.
+        The strength of the phase coupling in a Josephson junction is quantified by the Josephson energy,
+        \begin{equation}
+            E_\mathrm{J}=\frac{\hbar I_\mathrm{C}}{2e}\,,
+        \end{equation}
+        which measures the energetic stiffness of the phase and thus the robustness of coherent Cooper-pair tunneling. 
         
-        Together, these two relations constitute the fundamental Josephson equations, describing the static and dynamic behavior of phase-coherent weak links. The DC Josephson effect reflects the existence of a stationary supercurrent determined solely by the phase difference, while the AC effect reveals the time evolution of this phase in response to a finite voltage. Their interplay also forms the basis of the inverse AC Josephson effect, where an external microwave field couples to the junction and produces quantized voltage plateaus known as Shapiro steps.
+        \begin{wrapfigure}[13]{r}{0.4\textwidth}
+            \captionsetup{format=plain}%
+            \centering
+            % \vspace{-1em} % fine-tune vertical position
+            \import{theory/macro}{I_C-suppression.pgf}
+            \caption{Temperature dependence of the critical current $I_\mathrm{C}(T)$.}
+            \label{fig:macro:I_C-suppression}
+        \end{wrapfigure} 
+        For a tunnel junction, the critical current is determined microscopically by the Ambegaokar--Baratoff (AB) relation,
+        \begin{equation}
+            I_\mathrm{C}(T)  = \frac{\pi }{2}\ \frac{G_\mathrm{N}\Delta(T)}{e}\ \tanh\!\left(\frac{\Delta(T)}{2 k_\mathrm{B} T}\right)\,
+            \label{eq:macro:critical-current}
+        \end{equation}
+        shown in Figure~\ref{fig:macro:I_C-suppression}. It reflects both the BCS temperature dependence of the gap (Eq.~\ref{eq:micro:DeltaT}) and the thermal population of quasi-particles. At zero temperature, the AB relation reduces to $I_\mathrm{C} = \pi/2\cdot G_\mathrm{N}\Delta_0/e$.
+        
+        Together with the thermal energy $E_\mathrm{T}=k_\mathrm{B}T$ and the charging energy $E_\mathrm{C}=e^2/2C$, the Josephson energy determines whether the phase behaves classically or undergoes significant thermal or quantum fluctuations. In the regime $E_\mathrm{J}\gg\{E_\mathrm{T},E_\mathrm{C}\}$, the Josephson relations hold in their coherent form, and the junction supports a well-defined supercurrent. In practice, finite temperature and environmental fluctuations lead to thermally activated phase slips, which smear the ideal vertical switching of the Josephson \textit{I--V} characteristic. This rounding is captured in the RCSJ/phase-diffusion framework discussed in Section~\ref{subsec:macro:rcsj}, but does not alter the fundamental Josephson relations introduced here.
+
+        Having established the phase dynamics in static conditions, we now turn to the interplay between the intrinsic Josephson oscillation and external microwave fields.
 
 
     \subsection{Shapiro Steps}
@@ -92,7 +125,7 @@
         \end{equation}
         Here $\nu_0$ is the Josephson frequency, $\nu$ and $A$ are the frequency and amplitude of the applied voltage. Inserting this in the DC Josephson Equation (Eq.~\ref{eq:macro:dc}) and usage of the Jacobi-Anger identity (Eq. \ref{eq:micro:pat-jacobi}), leads to 
         \begin{equation}
-            I_\mathrm{S}(V_0) = \sum_{n=-\infty}^{\infty} (-1)^n J_n\!\left( \frac{2eA}{h\nu}\right) \cdot I_\mathrm{C} \sin(\phi_0 + 2\pi(\nu_0t-n\nu t))\,.
+            I_\mathrm{J}(V_0) = \sum_{n=-\infty}^{\infty} (-1)^n J_n\!\left( \frac{2eA}{h\nu}\right) \cdot I_\mathrm{C} \sin(\phi_0 + 2\pi(\nu_0t-n\nu t))\,.
             \label{eq:macro:shapiro-current}
         \end{equation}
         The factor $(-1)^n$ arises solely from the symmetry relation $J_{-n}(x)=(-1)^n J_n(x)$ used when rewriting the Jacobi--Anger expansion and has no physical impact on the time-averaged current or the resulting Shapiro-step structure.
@@ -106,7 +139,7 @@
 
         The time-averaged \textit{I-V} relation can be expressed in a compact form analogous to the Tien--Gordon model of photon-assisted tunneling
         \begin{equation}
-            I_\mathrm{S}(V_0) = \sum_{n=-\infty}^{\infty} J_n\!\left( \frac{2eA}{h\nu}\right) \cdot I_0\!\left(V_0 - \frac{n h\nu}{2e}\right)\,.
+            I_\mathrm{J}(V_0) = \sum_{n=-\infty}^{\infty} J_n\!\left( \frac{2eA}{h\nu}\right) \cdot I_0\!\left(V_0 - \frac{n h\nu}{2e}\right)\,.
             \label{eq:macro:shapiro-iv}
         \end{equation}
         Here $I_0(V_0)$ denotes the static \textit{I-V} characteristic in the absence of microwave radiation. In difference to the Tien--Gordon Model described in Section~\ref{subsec:micro:pat}, the Bessel function is not square and the charge $e$ is substituted by $2e$, according to the charge of a Cooper-pair. 
@@ -115,31 +148,31 @@
     \subsection{RCSJ Model}
     \label{subsec:macro:rcsj}
 
-        The resistively and capacitively shunted junction (RCSJ) model provides a classical description of the dynamics of a Josephson junction biased by an external current. It extends the ideal Josephson relations by incorporating both dissipative and inertial effects through a shunt resistance and capacitance. This model is of central relevance because it captures the transition between purely superconducting and resistive behavior and correctly describes experimentally observed phenomena such as hysteresis and Shapiro steps.
+    %     The resistively and capacitively shunted junction (RCSJ) model provides a classical description of the dynamics of a Josephson junction biased by an external current. It extends the ideal Josephson relations by incorporating both dissipative and inertial effects through a shunt resistance and capacitance. This model is of central relevance because it captures the transition between purely superconducting and resistive behavior and correctly describes experimentally observed phenomena such as hysteresis and Shapiro steps.
 
-        The equivalent circuit of the RCSJ model consists of three parallel branches: the ideal Josephson element carrying the supercurrent $I_\mathrm{S}$, a normal resistance $R$ that accounts for quasi-particle tunneling and dissipation, and a capacitance $C$ representing the electrostatic energy stored across the junction barrier. 
+    %     The equivalent circuit of the RCSJ model consists of three parallel branches: the ideal Josephson element carrying the supercurrent $I_\mathrm{J}$, a normal resistance $R$ that accounts for quasi-particle tunneling and dissipation, and a capacitance $C$ representing the electrostatic energy stored across the junction barrier. 
         
-        The resistor $R$ thereby models a parallel quasi-particle channel that allows dissipative single-particle tunneling in addition to the coherent Cooper-pair supercurrent, ensuring that both coherent and incoherent transport processes are accounted for in the model. 
+    %     The resistor $R$ thereby models a parallel quasi-particle channel that allows dissipative single-particle tunneling in addition to the coherent Cooper-pair supercurrent, ensuring that both coherent and incoherent transport processes are accounted for in the model. 
 
-        The capacitance $C$ can be understood as the geometric capacitance of the junction electrodes separated by the insulating barrier. It stores electrostatic energy and acts as an effective inertia for the phase, smoothing or attenuating fast oscillations of the voltage such that a large $C$ effectively reduces the oscillating component of the voltage seen by the Josephson element.
+    %     The capacitance $C$ can be understood as the geometric capacitance of the junction electrodes separated by the insulating barrier. It stores electrostatic energy and acts as an effective inertia for the phase, smoothing or attenuating fast oscillations of the voltage such that a large $C$ effectively reduces the oscillating component of the voltage seen by the Josephson element.
         
-        The total current through the junction is then given by
-        \begin{equation}
-            I = I_\mathrm{C}\sin\phi + \frac{V}{R} + C\frac{\mathrm{d}V}{\mathrm{d}t}\,,
-            \label{eq:macro:rcsj-current}
-        \end{equation}
-        where $V$ is the instantaneous voltage across the junction. Using the AC Josephson relation, this equation can be rewritten as a second-order differential equation for the phase,
-        \begin{equation}
-            \frac{\hbar C}{2e}\frac{\mathrm{d}^2\phi}{\mathrm{d}t^2} + \frac{\hbar}{2eR}\frac{\mathrm{d}\phi}{\mathrm{d}t} + I_\mathrm{C}\sin\phi = I\,.
-            \label{eq:macro:rcsj-phase}
-        \end{equation}
+    %     The total current through the junction is then given by
+    %     \begin{equation}
+    %         I = I_\mathrm{C}\sin\phi + \frac{V}{R} + C\frac{\mathrm{d}V}{\mathrm{d}t}\,,
+    %         \label{eq:macro:rcsj-current}
+    %     \end{equation}
+    %     where $V$ is the instantaneous voltage across the junction. Using the AC Josephson relation, this equation can be rewritten as a second-order differential equation for the phase,
+    %     \begin{equation}
+    %         \frac{\hbar C}{2e}\frac{\mathrm{d}^2\phi}{\mathrm{d}t^2} + \frac{\hbar}{2eR}\frac{\mathrm{d}\phi}{\mathrm{d}t} + I_\mathrm{C}\sin\phi = I\,.
+    %         \label{eq:macro:rcsj-phase}
+    %     \end{equation}
 
-        In order to distinguish between different characteristics, the quality factor $Q$ is introduced by
-        \begin{equation}
-            Q = \sqrt{\frac{2e I_\mathrm{C} R^2 C}{\hbar}}\,.
-            \label{eq:macro:quality-factor}
-        \end{equation}
+    %     In order to distinguish between different characteristics, the quality factor $Q$ is introduced by
+    %     \begin{equation}
+    %         Q = \sqrt{\frac{2e I_\mathrm{C} R^2 C}{\hbar}}\,.
+    %         \label{eq:macro:quality-factor}
+    %     \end{equation}
 
-        The dynamical behavior of a Josephson junction is governed by the relative strength of damping and inertia, which depends on the product of its resistance, capacitance, and critical current. When damping dominates ($Q\ll 1$), the phase follows the potential tilt smoothly, resulting in an overdamped, non-hysteretic \textit{I-V} characteristic typical of a low-$Q$ system. If inertia prevails ($Q\gg 1$), the phase can oscillate within the potential wells, leading to an underdamped, hysteretic response with resonant behavior corresponding to a high-$Q$ system. Between these limits lies an intermediate regime ($Q\approx 1$), where both capacitance and resistance shape the phase dynamics and weak hysteresis may occur.
+    %     The dynamical behavior of a Josephson junction is governed by the relative strength of damping and inertia, which depends on the product of its resistance, capacitance, and critical current. When damping dominates ($Q\ll 1$), the phase follows the potential tilt smoothly, resulting in an overdamped, non-hysteretic \textit{I-V} characteristic typical of a low-$Q$ system. If inertia prevails ($Q\gg 1$), the phase can oscillate within the potential wells, leading to an underdamped, hysteretic response with resonant behavior corresponding to a high-$Q$ system. Between these limits lies an intermediate regime ($Q\approx 1$), where both capacitance and resistance shape the phase dynamics and weak hysteresis may occur.
 
-        The damping regime has a direct impact on the visibility and stability of Shapiro steps. In underdamped junctions, residual oscillations of the phase can lead to hysteresis and distort the step structure. In contrast, in overdamped junctions, the strong damping stabilizes the phase-locking process, resulting in clean and well-defined Shapiro steps. This makes overdamped Josephson junctions particularly suitable for quantitative analysis of microwave-driven transport phenomena.
+    %     The damping regime has a direct impact on the visibility and stability of Shapiro steps. In underdamped junctions, residual oscillations of the phase can lead to hysteresis and distort the step structure. In contrast, in overdamped junctions, the strong damping stabilizes the phase-locking process, resulting in clean and well-defined Shapiro steps. This makes overdamped Josephson junctions particularly suitable for quantitative analysis of microwave-driven transport phenomena.
