@@ -633,7 +633,7 @@
 \pgfpathlineto{\pgfqpoint{1.410208in}{0.586772in}}%
 \pgfpathlineto{\pgfqpoint{1.434107in}{0.608239in}}%
 \pgfpathlineto{\pgfqpoint{1.450039in}{0.612124in}}%
-\pgfpathlineto{\pgfqpoint{1.513768in}{0.620587in}}%
+\pgfpathlineto{\pgfqpoint{1.513768in}{0.620586in}}%
 \pgfpathlineto{\pgfqpoint{1.601396in}{0.633061in}}%
 \pgfpathlineto{\pgfqpoint{1.689024in}{0.647627in}}%
 \pgfpathlineto{\pgfqpoint{1.768685in}{0.662989in}}%
