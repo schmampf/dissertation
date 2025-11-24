@@ -1,0 +1,131 @@
+
+    \subsection{Incoherent Cooper-Pair Tunneling}
+
+        Incoherent Cooper-pair tunneling arises when phase coherence across a Josephson junction is destroyed by strong environmental fluctuations. In this regime a Cooper-pair no longer crosses the junction as a coherent process driven by a well-defined superconducting phase. Instead, each transfer occurs as an inelastic and stochastic event whose rate is set by the energy exchange between the junction and its environment. The environment couples to the charge $(2e)$, so that the relevant energy scale is $(2e)V$. The resulting current follows from a Golden-rule expression with a $P(E)$ kernel evaluated at this doubled energy. This marks the incoherent counterpart of the Josephson effect and forms the foundation for photon-assisted ICPT discussed below.
+
+        In this regime the Josephson coupling energy $E_\mathrm{J} = \hbar I_\mathrm{C}/(2e)$ does not produce a coherent supercurrent. Instead it enters the tunneling rate in second order and sets the scale of the incoherent charge-transfer probability. The Golden-rule expression for the Cooper-pair tunneling rate reads
+        \begin{align}
+            \Gamma_{2e}(V) &= \frac{\pi E_\mathrm{J}^2}{2\hbar}\,\big( P(2eV) - P(-2eV) \big)\\
+            &= \frac{\pi E_\mathrm{J}^2}{2\hbar} \left(1 - \exp\left(-\frac{2eV}{k_\mathrm{B}T}\right) \right)\,P(2eV)\,,
+            \label{eq:stochastic:icpt-rate}
+        \end{align}
+        which directly reflects energy conservation for the transfer of a charge $(2e)$ across a voltage bias $V$. The difference of the two terms follows from detailed balance and ensures that the net current vanishes in thermal equilibrium. The incoherent Cooper-pair current is then obtained as
+        \begin{equation}
+            I(V) = 2\,\Gamma_{2e}(V) = \frac{\pi E_\mathrm{J}^2}{2\hbar} \left(1 - \exp\left(-\frac{2eV}{k_\mathrm{B}T}\right) \right)\,P(2eV)\,.
+            \label{eq:stochastic:icpt-current}
+        \end{equation}
+
+        The shape of the current is therefore set entirely by the $P(E)$ kernel evaluated at twice the electronic energy. Whenever the environment provides dissipation at low frequencies the function $P(E)$ is suppressed near $E=0$, and the incoherent Cooper-pair current vanishes at small bias. This suppression removes the DC Josephson effect and replaces it with an inelastic threshold determined by the environmental spectrum. The position and height of possible peaks in the \textit{I-V} characteristic are direct fingerprints of the energy modes contained in $Z(\omega)$, since each mode opens a discrete channel for exchanging quanta of energy with the tunneling Cooper pair.
+
+        In the simplest case of an Ohmic environment the low-voltage behavior of the incoherent Cooper-pair current follows a universal power law. Combining Eq.~\eqref{eq:stochastic:icpt-current} with the Ohmic form of $P(E)$ yields
+        \begin{equation}
+            I(V) \propto V^{2R/R_\mathrm{Q} - 1} \qquad (2eV \ll \hbar\omega_\mathrm{c})\,,
+            \label{eq:stochastic:icpt-powerlaw}
+        \end{equation}
+        which mirrors the dynamical Coulomb blockade of single-electron tunneling but with the relevant charge doubled. The exponent is therefore identical to the one appearing in Eq.~\eqref{eq:stochastic:dcb-powerlaw}. The only difference is the energy scale: the environment now couples to the doubled charge $(2e)$ and therefore to the doubled voltage $(2e)V$ in the argument of $P(E)$.
+
+        Environmental resonances imprint additional structure onto the incoherent Cooper-pair current in the same way as for DCB. A discrete mode at frequency $\omega_0$ produces sidebands in $P(E)$ at energies $n\hbar\omega_0$, which generate corresponding features in the current at voltages $V_n = n\hbar\omega_0/(2e)$. These resonances arise solely from the electromagnetic environment and do not require any coherent phase dynamics in the junction. The incoherent Cooper-pair current therefore provides a sensitive probe of the low-frequency impedance of the circuit, extending the DCB phenomenology to the $(2e)$ sector.
+
+        \subsubsection*{Photon-Assisted Incoherent Cooper-Pair Tunneling}
+
+            In the incoherent regime a Cooper pair tunnels as a stochastic $(2e)$ charge-transfer event whose energy exchange is described by the $P(E)$ kernel. 
+            When a microwave drive is applied, the junction voltage becomes
+            \begin{equation}
+                V(t) = V_0 + A\cos(2\pi\nu t)\,,
+            \end{equation}
+            but the phase of the junction remains fully randomized by the environment. 
+            In contrast to the coherent Josephson effect, the AC drive does not create a well-defined phase modulation and therefore no Shapiro steps appear. 
+            Instead, the microwave field simply provides additional inelastic channels: during a tunneling event the environment and the microwave field may exchange an energy $n h\nu$.
+
+            This situation is completely analogous to photon-assisted DCB, with the only difference that the transferred charge is $(2e)$ instead of $e$. 
+            The probability for exchanging energy with both environment and microwave field becomes
+            \begin{equation}
+                P(E) = \sum_{n=-\infty}^{\infty}
+                J_n^2\!\left(\frac{2eA}{h\nu}\right)
+                P_0(E - n h\nu)\,,
+                \label{eq:stochastic:pe-paicpt}
+            \end{equation}
+            where $P_0(E)$ is the undriven environmental kernel. 
+            Each term represents the absorption ($n>0$) or emission ($n<0$) of $|n|$ photons during a single, incoherent Cooper-pair tunneling event.
+
+            Inserting this expression into the ICPT rate yields the photon-assisted incoherent Cooper-pair current,
+            \begin{equation}
+                I(V_0)
+                = \sum_{n=-\infty}^{\infty}
+                J_n^2\!\left(\frac{2eA}{h\nu}\right)\,
+                I_0\!\left(V_0 - \frac{n h\nu}{2e}\right),
+                \label{eq:stochastic:icpt-paicpt}
+            \end{equation}
+            which has the same structure as photon-assisted DCB, but with voltage shifts of
+            $n h\nu / (2e)$.
+
+            PA--ICPT is therefore fully incoherent, meaning microwaves redistribute weight among the inelastic tunneling channels but do not impose a phase relation across the junction. 
+            As a result, no Shapiro-like steps appear and no phase-coherent sideband mixing occurs. 
+            Instead, the \textit{I--V} curve shows microwave-induced replicas of the ICPT characteristic, exactly analogous to PADCB but with the energy scale set by the Cooper-pair charge.
+
+    \subsection{Incoherent Andreev Reflection}
+
+        At a normal-superconductor (NS) interface, subgap transport is governed by Andreev reflection. An incoming electron from the normal metal is retroreflected as a hole, while a Cooper pair of charge $(2e)$ is transferred into the superconductor. In the coherent regime this process is described by the BTK theory as an elastic, phase-coherent scattering event with a well-defined Andreev reflection probability $A(E)$. The electron and hole amplitudes maintain a fixed phase relation, and Andreev reflection forms the microscopic building block of coherent subgap transport.
+
+        When strong environmental fluctuations destroy the phase coherence of the superconducting order parameter, this picture breaks down. The deterministic phase relation between electron and hole amplitudes is washed out and coherent multiple-Andreev-reflection trajectories cannot form. Nevertheless, a single Andreev event remains possible because the local conversion of an electron into a hole at an NS interface is dictated by charge conservation and the absence of quasiparticle states inside the superconducting gap. The essential difference is that each event becomes stochastic and inelastic: during an Andreev process the junction must exchange an energy of order $(2e)V$ with the electromagnetic environment. This regime is referred to as incoherent Andreev reflection (IAR).
+
+        In the stochastic description, IAR is treated as a two-electron tunneling process dressed by the $P(E)$ kernel in complete analogy to single-electron DCB and incoherent Cooper-pair tunneling. For an NS junction in the tunneling limit, the electronic part of the Andreev process reduces to a second-order tunneling amplitude with an effective Andreev resistance $R_\mathrm{A}$. The corresponding Golden-rule rate can be written as
+        \begin{equation}
+            \Gamma_\mathrm{AR}(V)
+            = \frac{1}{e^2 R_\mathrm{A}}
+              \int_{-\infty}^\infty
+              P(E)\,
+              \bigl[f(E - eV) - f(E + eV)\bigr]\,
+              \mathrm{d}E\,,
+            \label{eq:stochastic:iar-rate}
+        \end{equation}
+        where $f(E)$ is the Fermi function and $R_\mathrm{A}$ collects the interface-specific microscopic details of the Andreev process.\footnote{In the BTK tunneling limit Andreev reflection is a second-order process in the single-electron tunneling amplitude, so that $R_\mathrm{A}$ scales as $R_\mathrm{A}\propto R_T^2$, where $R_T$ is the normal-state tunneling resistance of the junction. The exact prefactor depends on the barrier strength and interface geometry, but in the stochastic regime only the overall scale $1/R_\mathrm{A}$ enters.} The environment couples to the transferred charge $(2e)$ through the energy-exchange probability $P(E)$, so that small-bias transport is suppressed whenever $P(E\!\approx\!0)$ is small.
+
+        The incoherent Andreev current is obtained by multiplying the net rate by the transferred charge $(2e)$,
+        \begin{equation}
+            I_\mathrm{AR}(V)
+            = (2e)\,\Gamma_\mathrm{AR}(V)
+            = \frac{2}{e R_\mathrm{A}}
+              \int_{-\infty}^\infty
+              P(E)\,
+              \bigl[f(E - eV) - f(E + eV)\bigr]\,
+              \mathrm{d}E\,.
+            \label{eq:stochastic:iar-current}
+        \end{equation}
+        This expression depends only on quantities introduced previously in the stochastic framework: the $P(E)$ function of the environment, the Fermi functions that describe the normal metal, the effective Andreev resistance $R_\mathrm{A}$, and the applied bias $V$. The microscopic structure of coherent BTK Andreev reflection is fully absorbed into the single parameter $R_\mathrm{A}$, so that incoherent Andreev reflection appears as the P(E)-dressed, inelastic analogue of BTK Andreev reflection.
+
+        For an Ohmic environment with $\mathrm{Re}\,Z(\omega)=R$ at low frequency, the low-energy part of $P(E)$ exhibits the universal power law of Eq.~\eqref{eq:stochastic:pe-ohmic}. Since the environment couples to the charge $(2e)$ transferred in an Andreev event, the low-bias behavior of $I_\mathrm{AR}(V)$ is suppressed by the same mechanism as incoherent Cooper-pair tunneling: $P(E\to 0)\to 0$ makes subgap IAR current exponentially or algebraically small, depending on the value of $R/R_\mathrm{Q}$. The detailed voltage dependence is set by the Fermi factors in Eq.~\eqref{eq:stochastic:iar-current}, while the overall magnitude is controlled by $1/R_\mathrm{A}$.
+
+        It is important to emphasize that incoherent Andreev reflection in this sense is well defined only for junctions that contain exactly one normal electrode. The normal side provides a continuum of electron and hole states at all energies, which makes the local electron-hole conversion at the NS interface meaningful even when phase coherence is lost. In such NS or NIS junctions, IAR is the fundamental subgap two-electron process that survives once coherent Josephson and multiple-Andreev-reflection contributions are suppressed by the environment.
+
+        In contrast, a purely superconducting SS junction does not support a separate incoherent-Andreev-reflection channel. Both electrodes possess gapped BCS densities of states, so there is no normal-metal continuum that could act as a reservoir for electron and hole states inside the gap. Any subgap process that transfers charge $(2e)$ must therefore connect the superconducting condensates on both sides. The corresponding matrix element is the Josephson coupling, and in the stochastic regime the resulting transport is described by incoherent Cooper-pair tunneling as given in Eq.~\eqref{eq:stochastic:icpt-rate}. At higher transparency, coherent multiple Andreev reflections provide subgap current in SS junctions, but these processes require long-range phase coherence and are fully suppressed when strong environmental fluctuations are present. In the incoherent regime, the subgap current of an SS junction is therefore entirely captured by incoherent Cooper-pair tunneling, and no distinct incoherent-Andreev-reflection contribution occurs.
+
+
+        \subsubsection*{Photon-Assisted Incoherent Andreev Reflection}
+
+            When an NS junction in the incoherent regime is irradiated with microwaves, each incoherent Andreev event can additionally absorb or emit integer multiples of the photon energy $h\nu$. As in photon-assisted dynamical Coulomb blockade and photon-assisted incoherent Cooper-pair tunneling, the microwave field is treated as a classical, deterministic voltage modulation that is superposed on the stochastic environmental fluctuations,
+            \begin{equation}
+                V(t) = V_0 + A\cos(2\pi\nu t)\,,
+            \end{equation}
+            without generating a well-defined phase relation across the junction. The drive therefore does not lead to Shapiro steps or other phase-coherent interference effects. Instead, it opens additional inelastic channels in the $P(E)$ kernel.
+
+            In this classical-drive limit the probability for exchanging energy with both the environment and the microwave field is obtained by dressing the undriven $P(E)$ function with Bessel weights. For incoherent Andreev reflection, where the transferred charge is $(2e)$, one obtains
+            \begin{equation}
+                P(E) = \sum_{n=-\infty}^{\infty}
+                J_n^2\!\left(\frac{2eA}{h\nu}\right)\,
+                P_0(E - n h\nu)\,,
+                \label{eq:stochastic:pe-paiar}
+            \end{equation}
+            where $P_0(E)$ denotes the environmental kernel in the absence of microwaves. The term with index $n$ describes an incoherent Andreev event that absorbs ($n>0$) or emits ($n<0$) $|n|$ photons during a single, stochastic tunneling process. The argument $(2e)A/h\nu$ reflects the coupling of the drive to the Andreev charge $(2e)$.
+
+            Inserting Eq.~\eqref{eq:stochastic:pe-paiar} into the rate expression \eqref{eq:stochastic:iar-rate} yields a photon-assisted incoherent Andreev current of the form
+            \begin{equation}
+                I_\mathrm{AR}(V_0)
+                = \sum_{n=-\infty}^{\infty}
+                J_n^2\!\left(\frac{2eA}{h\nu}\right)\,
+                I_{\mathrm{AR},0}\!\left(V_0 - \frac{n h\nu}{2e}\right),
+                \label{eq:stochastic:iar-pa}
+            \end{equation}
+            where $I_{\mathrm{AR},0}(V)$ denotes the incoherent Andreev current in the absence of microwaves, given by Eq.~\eqref{eq:stochastic:iar-current}. This expression has the same structure as photon-assisted DCB [Eq.~\eqref{eq:stochastic:padcb}] and photon-assisted incoherent Cooper-pair tunneling [Eq.~\eqref{eq:stochastic:icpt-paicpt}], but it is specific to NS junctions and involves the Andreev electronic factor encoded in $R_\mathrm{A}$. The microwave field generates replicas of the IAR characteristic at voltages shifted by $n h\nu/(2e)$, with weights set by the squared Bessel functions, while the low-bias suppression of each replica remains controlled by the underlying $P(E)$ kernel.
+
+            In purely superconducting SS junctions, where subgap transport in the incoherent regime is described exclusively by incoherent Cooper-pair tunneling, photon-assisted processes are correspondingly captured by the photon-assisted ICPT expression. There is no separate photon-assisted incoherent-Andreev-reflection contribution in SS junctions.
