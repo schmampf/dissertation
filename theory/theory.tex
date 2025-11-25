@@ -4,22 +4,21 @@
 \label{ch:superconducting-transport}
 %=========================================================
 
-    Superconductivity was first discovered by Heike Kamerlingh Onnes in 1911, when he observed that the electrical resistance of mercury dropped abruptly to zero upon cooling below 4.2\,K. This remarkable phenomenon revealed a new quantum state of matter, characterized by the complete absence of electrical resistance and the expulsion of magnetic fields, known as the Meissner--Ochsenfeld effect, discovered in 1933. These two defining properties, perfect conductivity and perfect diamagnetism, set superconductors apart from ordinary metals and established a foundation for both fundamental research and technological applications. \cite{onnes_further_1991, meissner_neuer_1933}
+    Superconductivity was first observed by Heike Kamerlingh Onnes in 1911, when the electrical resistance of mercury vanished abruptly upon cooling below 4.2\,K. Shortly thereafter, the Meissner--Ochsenfeld effect revealed that superconductors also expel magnetic fields, establishing the two defining macroscopic properties of this quantum state of matter: perfect conductivity and perfect diamagnetism. \cite{onnes_further_1991, meissner_neuer_1933}
 
-    At its core, superconductivity arises from the collective behavior of electrons, which form bound pairs and condense into a macroscopic quantum state described by a single coherent wavefunction. The subsequent sections build a comprehensive theoretical picture of this phenomenon from complementary perspectives.
+    At its core, superconductivity originates from an effective attraction between electrons near the Fermi surface. When an electron moves through the metal, it slightly distorts the ion lattice, creating a transient region of enhanced positive charge. A second electron can be attracted to this distortion, resulting in a very weak but cooperative pairing mechanism mediated by lattice vibrations (phonons). Despite the underlying Coulomb repulsion, this mechanism allows pairs of electrons with opposite momentum and spin to form Cooper-pairs. When many such pairs form simultaneously, they condense into a coherent macroscopic quantum state capable of carrying electrical current without resistance.
 
-    The first section introduces the microscopic Bardeen--Cooper--Schrieffer theory from 1957. This theory explains how electrons near the Fermi surface pair via phonon mediated attraction and how this pairing gives rise to an energy gap and a characteristic quasi-particle density of states. This microscopic framework establishes the foundation for understanding tunneling spectroscopy and photon-assisted transport. 
+    The remainder of this chapter develops a comprehensive theoretical framework for superconducting transport from four complementary viewpoints. These perspectives differ in the degrees of freedom they emphasize quasi-particles, phase dynamics, transparency channels, and environmental fluctuations. Together form a consistent and unified picture of the phenomena observed in experiment.
 
-    Followed by the second section introducing the macroscopic Ginzburg--Landau theory from 1950. The collective phase of the superconducting condensate determines the behavior of weak links. Here, phase coherence manifests in phenomena such as the DC and AC Josephson effects, Shapiro steps, and the influence of dissipation and capacitance captured by the RCSJ model. 
+    The first part introduces the microscopic Bardeen--Cooper--Schrieffer theory. It describes how electrons near the Fermi surface pair in the weak-coupling limit, how this pairing leads to an energy gap and a characteristic quasi-particle density of states, and how these quantities manifest in tunneling spectroscopy and photon-assisted transport.
 
-    Next, the mesoscopic description section bridges microscopic and macroscopic transport through the theory of Andreev and multiple Andreev reflections. These processes describe how charge is transferred through highly transparent superconducting contacts and how the resulting \textit{I-V} characteristics encode the microscopic transmission properties of the junction, forming the quantitative link between experiment and theory.
+    The second part presents the macroscopic Ginzburg--Landau description, where the superconducting condensate is represented by a complex order parameter with a well-defined phase. Spatial variations of this phase control the behavior of weak links and give rise to the Josephson effects, Shapiro steps, and the influence of dissipation and capacitance captured by the RCSJ model.
 
-    Penultimately, the stochastic description considers phase fluctuations in dissipative environments. Fundamentally using P(E)-Theory.
+    The third part provides the mesoscopic description, which connects microscopic quasi-particle physics with macroscopic phase coherence. Here, Andreev reflection and multiple Andreev reflections govern charge transport in highly transparent contacts, and the resulting \textit{I--V} characteristics encode the microscopic transmission properties of the junction.
 
-    
+    Finally, the stochastic description accounts for phase fluctuations in dissipative electromagnetic environments through \textit{P(E)}-theory. This framework captures how the impedance of the surrounding circuitry affects phase coherence, energy exchange, and the overall \textit{I--V} characteristics.
 
-    \newpage
-    % --- Material Platform and Microwave Drive (global assumptions) ---
+    Before turning to the detailed microscopic, macroscopic, mesoscopic, and stochastic descriptions, the following two subsections introduce the global definitions used throughout this chapter: the material platform (aluminum) and the general microwave drive model applied in all driven-transport scenarios.
     
     \subsubsection*{Aluminum as a Model BCS Superconductor}
 
@@ -31,8 +30,7 @@
         \end{equation}
         Its long coherence length of order 1-2\,\textmu m, high electronic purity, and weak spin--orbit scattering make aluminum ideally suited for tunneling spectroscopy and mesoscopic superconducting transport. The comparatively small gap places typical microwave frequencies well below the pair-breaking threshold, enabling controlled photon-assisted processes without degrading superconductivity\footnote{The pair-breaking frequency of aluminium is given by $\nu\mathrm{pb}=2\Delta_0/h\approx 100\,\mathrm{GHz}$.}. Moreover, aluminum naturally forms reproducible aluminum-oxide tunnel barriers and reliably yields stable atomic contacts. It therefore provides a consistent and unified material platform for all transport phenomena discussed in this chapter.
         
-    \newpage
-    \subsubsection*{Global Microwave Drive Model}
+    \subsubsection*{Microwave Drive Model}
     
         Many of the transport phenomena discussed in this chapter involve the presence of a time-dependent electromagnetic drive. To avoid repeated introductions of the same setup, we summarize here the general assumptions that apply to all subsequent descriptions. The drive is treated as a classical, externally imposed field. No cavity modes or backaction of the junction onto the field are considered. The entire voltage drop is assumed to occur across the junction, a convenient gauge choice. In consequence, the electromagnetic field enters only through the scalar potential in the tunneling Hamiltonian or via the Josephson phase evolution. The drive amplitude is taken to be small enough not to heat the electrodes, allowing both to remain in local thermal equilibrium with Fermi--Dirac distributions. Finally, the drive frequencies are chosen such that photon energy is way smaller than the pair-breaking energy, ensuring that Cooper pairs remain intact while the phase dynamics are driven coherently. In practice, frequencies in the microwave range up to about 20\,GHz are used.
 
@@ -47,6 +45,7 @@
         \begin{align}
             \exp\!\left(-\ima\phi(t)\right) &= \exp\!\left( - \frac{\ima}{\hbar} \int_0^t q V(t')\, dt' \right) \\
             &= \!\exp\left(-\ima \phi_0(t)\right)\exp\!\left(\ima \alpha \sin(2\pi\nu t) \right)\,.
+            \label{eq:microwave:phase-factor}
         \end{align}
         where $\alpha=qA/h\nu$ denotes the dimensionless modulation strength and $\phi_0(t) = q V_0 t / \hbar$ is the phase difference generated by the static drive.
 
@@ -92,12 +91,6 @@
             \item -- bei Modell namen (Tien--Gordon, Ginzburg--Landau)
         \end{itemize}
         \item check consistency seeblau100
-    \end{itemize}
-
-    \subsection*{theroy introduction}
-    \begin{itemize}
-        \item zusammenfassung meso
-        \item zusammenfassung stochastic
     \end{itemize}
 
     \subsection*{macro}
