@@ -1,79 +1,76 @@
 % !TEX root = ../thesis.tex
 
+%=========================================================
 \section{Microscopic Description}
 \label{sec:micro}
+%=========================================================
 
-    The microscopic\footnote{quasi-particle tunneling (no phase coherence)} description of superconductivity is provided by the Bardeen--Cooper--Schrieffer (BCS) theory, which assumes that electrons near the Fermi surface form bound pairs of opposite momentum and spin, so called Cooper-pairs.
-    
-    At its heart, this pairing mechanism reflects a subtle interplay between electrons and phonons. When an electron moves through the metal, it slightly displaces the positively charged ions, creating a momentary region of excess positive charge. A second electron passing nearby can be attracted to this distortion, leading to an effective, though very weak attraction between the two. 
-    
-    This describes how electrons in a metal, which normally repel each other due to their negative charge, can nevertheless form bound pairs, known as Cooper-pairs, through an effective attraction mediated by vibrations of the crystal lattice. When many such pairs form simultaneously, they condense into a collective quantum state that carries electrical current without resistance.
+    The microscopic description of superconductivity used here begins with the Bardeen--Cooper--Schrieffer (BCS) theory. In this framework, an effective phonon mediated attraction allows electrons near the Fermi surface to form bound pairs of opposite momentum and spin, so called Cooper pairs. The resulting condensate is characterized by a complex pairing order parameter whose magnitude determines the gap in the quasi-particle spectrum. In the microscopic tunneling regime considered here, only the quasi-particle spectrum and the magnitude of the gap enter. Phase coherence becomes relevant for transport only when the phase difference between two superconductors matters, as discussed in later sections. \cite{cooper_bound_1956,bardeen_microscopic_1957}
 
-    A key assumption of the BCS framework is that this effective interaction is weak compared to the electronic energy scales of the metal. This situation is referred to as the weak-coupling limit. In this regime, the attractive interaction acts only within a narrow energy shell around the Fermi surface, typically a few meV compared to Fermi energies of several eV. As a result, only a small fraction of electrons near the Fermi level participate in pairing, while the rest of the electronic structure remains essentially unaffected. Because the coupling is weak, the resulting energy gap and the critical temperature are small but can be predicted with high accuracy from the microscopic parameters.
-
-    Among all known superconductors, aluminum is one of the best realizations of this weak-coupling scenario. Its superconducting transition temperature and energy gap are small, the electron-phonon interaction is weak and well understood, and its electronic structure is simple and free from strong correlations or magnetic effects. These features make aluminum behave almost exactly as predicted by the original BCS theory, allowing quantitative agreement between experiment and theory without the need for corrections or more advanced models.
+    A key assumption of the BCS framework is that this effective interaction is weak compared to the electronic energy scales of the metal. This situation is referred to as the weak-coupling limit. In this regime, the attractive interaction acts only within a narrow energy shell around the Fermi surface, typically a few meV compared to Fermi energies of several eV. As a result, only a small fraction of electrons near the Fermi level participate in pairing, while the rest of the electronic structure remains essentially unaffected. Because the coupling is weak, the resulting energy gap and the critical temperature are small but can be predicted with high accuracy from the microscopic parameters. For all numerical examples and illustrations in this chapter, aluminum is used as a representative weak-coupling BCS superconductor (Eq.~\ref{eq:aluminum}).
 
     The superconducting order parameter is the complex pairing amplitude 
     \begin{equation}
-        \Delta = |\Delta| e^{\ima\phi}\,,
+        \Delta = \left|\Delta\right| \exp\!\left(\ima\phi\right)\,,
         \label{eq:micro:complex-delta}
     \end{equation}
-    whose magnitude represents the pairing strength and whose phase encodes global coherence. In the following, we treat $\Delta$ as a scalar quantity, i.e., we consider only its magnitude and assume a uniform, spatially constant phase, since tunneling spectroscopy in the weak-coupling limit is sensitive solely to the energy gap $|\Delta|$ and not to spatial or vectorial structure of the order parameter.
+    whose magnitude represents the pairing strength and whose phase encodes macroscopic phase coherence. For the purposes of tunneling spectroscopy, only the magnitude $|\Delta|$ is experimentally relevant. In consequence, we treat $\Delta$ as a scalar quantity, i.e., we consider only its magnitude and assume a uniform, spatially constant phase, since tunneling spectroscopy in the weak-coupling limit is sensitive solely to the energy gap $|\Delta|$ and not to spatial or vectorial structure of the order parameter.
 
-    In summary, the weak-coupling limit describes a situation where the effective electron-phonon attraction is small compared to the Fermi energy, leading to a narrow pairing region and universal relationships between microscopic and macroscopic quantities. Aluminum exemplifies this regime and therefore serves as an archetype of a conventional BCS superconductor.
+    The following subsections introduce the key elements of this microscopic picture. First, the temperature dependence of the superconducting gap is discussed. Second, the superconducting DOS and introduce realistic broadening are derived. Third, these quantities are connected to tunneling spectroscopy through the microscopic expressions for the tunnel current. Finally, photon-assisted tunneling extends this static picture to driven transport in the presence of an oscillating electromagnetic field.
 
-    The following subsections outline the key aspects of this microscopic picture. 
-    First, the superconducting gap and its temperature dependency is introduced. This shows how the collective pairing strength evolves with thermal excitation. 
-    Second, the electronic density of states is derived. The phenomenological Dynes parameter as measure of quasi-particle lifetime is introduced. The Fermi-Dirac distribution function and its temperature dependency is introduced as well.
-    Third, the microscopic expressions for tunneling current are discussed, establishing the direct connection between these theoretical quantities and experimentally measurable \textit{I-V} and \textit{dI-dV} characteristics. 
-
-    Finally, the extension to photon-assisted tunneling is presented, where an oscillating electromagnetic field enables quasi-particles to exchange discrete energy quanta during tunneling, thereby extending the static tunneling picture to the regime of externally driven superconducting transport.
-
-    \cite{cooper_bound_1956, bardeen_microscopic_1957}
-
+    %=========================================================
     \subsection{Superconducting Gap}
     \label{subsec:micro:sc-gap}
+    %=========================================================
 
-        The weak-coupling approximation simplifies the theoretical treatment significantly. The normal-state density of states can be treated as constant, and the pairing interaction can be approximated as uniform within the relevant energy range. Many observable quantities therefore become universal, such as the ratio between the zero-temperature gap and the critical temperature, 
+        In the weak-coupling limit, the theoretical treatment of superconductivity simplifies considerably. The normal-state density of states can be taken as constant in the narrow energy shell relevant for pairing, and the attractive interaction may be approximated as uniform across this shell. As a consequence, many observable quantities assume universal forms, most notably the ratio between the zero-temperature gap and the critical temperature,
         \begin{equation}
-            \Delta_0 \approx 1.764\, k_\mathrm{B} T_\mathrm{C}\,.
+            \Delta_0 \approx 1.764\, k_\mathrm{B} T_\mathrm{C}\,,
             \label{eq:micro:Delta0}
         \end{equation}
+        which holds for all weak-coupling BCS superconductors.
 
-        The superconducting gap does not remain constant with temperature. At absolute zero, all available electrons near the Fermi surface form Cooper-pairs, and the condensate is characterized by a well-defined order parameter. As the temperature rises, thermal excitations begin to break some of these pairs, leaving fewer electrons bound in the superconducting state. With fewer pairs contributing to the collective order, the overall pairing strength weakens, and the energy required to break a pair the gap $\Delta(T)$ gradually decreases. 
+        The superconducting gap, however, is not constant with temperature. At $T=0$, electrons within the pairing shell around the Fermi energy form a condensate characterized by a well-defined order parameter. With increasing temperature, thermal excitations break an increasing fraction of Cooper pairs, reducing the number of electrons bound in the superconducting state. As fewer pairs contribute to the condensate, the magnitude of the order parameter decreases, and the energy required to break a pair, $\Delta(T)$, is gradually reduced.
 
-        \begin{wrapfigure}[11]{r}{0.4\textwidth}
+        \begin{wrapfigure}[13]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
-            \vspace{-1em} % fine-tune vertical position
+            \vspace{-1em}
             \import{theory/micro}{gap-suppression.pgf}
-            \caption{Temperature dependence of the superconducting gap $\Delta(T)$.}
+            \caption{Temperature dependence of the superconducting gap $\Delta(T)$ in the weak-coupling limit.}
             \label{fig:micro:gap_suppression}
-        \end{wrapfigure} 
-        This reduction continues smoothly until the critical temperature $T_\mathrm{C}$ is reached. At that point, thermal energy becomes strong enough to completely disrupt the pairing correlations, and the superconducting state collapses, leading to $\Delta(T_\mathrm{C}) = 0$. The temperature dependence of the gap is a direct reflection of this balance between thermal disorder and the pairing interaction. The universal temperature dependence of the gap is shown in Figure~\ref{fig:micro:gap_suppression}.
+        \end{wrapfigure}
+        This reduction proceeds smoothly until the critical temperature $T_\mathrm{C}$ is reached. At $T=T_\mathrm{C}$, thermal fluctuations fully disrupt the pairing correlations, the order parameter vanishes continuously, and superconductivity is lost. The temperature dependence of the gap reflects the balance between the condensation energy gained by pairing and the entropy associated with thermal excitations. The universal weak-coupling curve is shown in Fig.~\ref{fig:micro:gap_suppression}.
 
-        In the BCS framework, $\Delta(T)$ follows a universal curve that results from solving the self-consistent gap equation, meaning the same functional form applies to all weak-coupling superconductors. However, solving the underlying integrals over the Fermi distribution in the microscopic theory numerically, results in
+        In the BCS framework, the functional form of $\Delta(T)$ is obtained from the self-consistent gap equation. Its numerical solution yields a universal curve valid for all weak-coupling superconductors. A commonly used approximation to this solution is
         \begin{equation}
-            \frac{\Delta(T)}{\Delta_0} \approx \tanh\left(1.74\,\sqrt{\frac{T_\mathrm{C}}{T}-1}\right)\,.
+            \frac{\Delta(T)}{\Delta_0}
+                \approx \tanh\!\left(
+                    1.74\,\sqrt{\frac{T_\mathrm{C}}{T} - 1}
+                \right),
             \label{eq:micro:DeltaT}
         \end{equation}
+        which reproduces the numerical result with high accuracy throughout the full temperature range. \cite{muhlschlegel_thermodynamischen_1959}
 
-        \cite{bardeen_microscopic_1957, muhlschlegel_thermodynamischen_1959}
 
-
+    %=========================================================
     \subsection{Density of States}
     \label{subsec:micro:dos}
+    %=========================================================
 
-        In the following, all energies are expressed relative to the Fermi energy $E_\mathrm{F}$, such that $E=0$ corresponds to the Fermi level around which superconducting correlations develop.
-        
-        In the normal state, the density of states (DOS) near the Fermi level varies only weakly with energy. Over the narrow range relevant to superconductivity this variation can be neglected, and the DOS can be treated as constant. The corresponding value at the Fermi energy is denoted
+        Throughout this section, energies are measured relative to the chemical potential, which for conventional metals coincides with the Fermi energy to very good approximation. Thus $E=0$ corresponds to the Fermi level around which superconducting correlations form.
+
+        In the normal state, the electronic density of states (DOS) varies only weakly with energy near the Fermi level. Over the narrow pairing shell relevant to weak-coupling superconductivity, this variation can be neglected and the DOS may be taken as constant. The corresponding value at the Fermi level is
         \begin{equation}
-            N_0 \equiv N_\mathrm{N}(E_\mathrm{F}) = \frac{1}{2\pi^2} \left(\frac{2m}{\hbar^2}\right)^{3/2} \sqrt{E_\mathrm{F}}\,,
+            N_0 \equiv
+                 \frac{1}{2\pi^2}\!
+                \left(\frac{2m}{\hbar^2}\right)^{3/2}
+                \sqrt{E_\mathrm{F}}\,,
             \label{eq:micro:DOS-N0}
         \end{equation}
-        representing the normal state DOS per spin at the Fermi level. This expression assumes a free-electron parabolic dispersion. For aluminum, whose Fermi energy is large and whose band structure is close to a free-electron gas, this approximation is highly accurate.
+        which follows from a free-electron parabolic dispersion and is an excellent approximation for aluminum.
 
-        When superconductivity sets in, pairing correlations reorganize this otherwise flat spectrum. A gap of width $2\Delta$ opens around $E_\mathrm{F}$ where single-particle excitations are absent in the ideal BCS limit, and the missing spectral weight is redistributed to the gap edges. These edges appear as sharp coherence peaks in the superconducting DOS, reflecting the high density of available quasi-particle states at the threshold for pair breaking. The resulting expression reads
+        When superconductivity sets in, pairing correlations reorganize this otherwise flat spectrum. A gap of width $2\Delta$ opens around the Fermi level where single-particle excitations are absent in the ideal BCS limit. The spectral weight removed from the gap interior is redistributed to the gap edges, producing the characteristic coherence peaks. The resulting normalized DOS is
         \begin{equation}
             \frac{N_\mathrm{S}(E)}{N_0} = 
                 \left\{
@@ -83,191 +80,175 @@
                 \end{array}
                 \right.\,.
             \label{eq:micro:DOS-BCS}
-        \end{equation}        
-        Thus, in the ideal BCS limit the quasi-particle DOS is strictly zero within the energy gap and diverges at its edges. The divergence at the gap edges originates from the flattening of the Bogoliubov quasiparticle dispersion, which enhances the density of available states. Temperature affects only the occupation factor, i.e., the Fermi--Dirac distribution, and does not smear the DOS itself.
+        \end{equation}       
+        which diverges at the gap edges due to the flattening of the Bogoliubov quasi-particle dispersion. Within mean-field BCS theory this DOS is strictly sharp. Temperature affects only the occupation of the states through the Fermi--Dirac distribution and does not broaden the DOS itself.
 
-        However, real spectra are never perfectly sharp. A simple and very effective phenomenology is the broadening by Dynes parameter\footnote{Throughout this work we distinguish between the Dynes broadening parameter $\gamma$, which enters the quasi-particle density of states in the microscopic tunneling description, and the tunneling rates $\Gamma$ that appear in the stochastic description of incoherent charge transfer. The two quantities are unrelated and refer to different physical mechanisms.}. It is implemented by the substitution $E\to E+\ima\gamma$, while just considering the real part
+        Real superconductors, however, never exhibit perfectly sharp coherence peaks. A widely used and remarkably successful phenomenology is the Dynes broadening, which models finite quasi-particle lifetimes by the substitution $E \rightarrow E + \ima\gamma$
         \begin{equation}
-            \frac{N_\mathrm{S}(E)}{N_0} = \Re\!\left(\frac{E+\ima\gamma}{\sqrt{(E+\ima\gamma)^2-\Delta^2}}\right) \quad (|E| \ge \Delta)\,.
+            \frac{N_\mathrm{S}(E)}{N_0}
+                = \Re\!\left(
+                    \frac{E+\ima\gamma}{
+                    \sqrt{(E+\ima\gamma)^{2}-\Delta^{2}}}
+                \right).
             \label{eq:micro:DOS-Dynes}
         \end{equation}
-        Such broadening arises from finite quasi-particle lifetimes due to inelastic scattering, spatial inhomogeneity, pair breaking by magnetic impurities, or non-equilibrium effects, all of which smear the ideal BCS singularities. 
+        The Dynes parameter\footnote{Throughout this work we distinguish between the Dynes broadening parameter $\gamma$, which enters the quasi-particle DOS in the microscopic tunneling description, and the tunneling rates $\Gamma$ that appear in the stochastic description of incoherent charge transfer. These quantities refer to different physical mechanisms and should not be confused.} $\gamma$ accounts for inelastic scattering, spatial inhomogeneity, pair breaking by magnetic impurities, or non-equilibrium effects, all of which smear the ideal BCS singularities. \cite{dynes_direct_1978}
 
-        Whereas the DOS specifies where states exist, the Fermi--Dirac distribution encodes how single-particle states are occupied at a given temperature and chemical potential. In the context of metals and conventional superconductors treated in this thesis, the chemical potential can be identified with the Fermi energy to very good approximation, $\mu\approx E_\mathrm{F}$, because thermal corrections are small on the scale of eV. So the energy scale is still relative to the Fermi energy, as before.
-
-        In equilibrium the occupation probability of a state at energy $E$ is given by        
+        The DOS specifies the available single-particle states, whereas the Fermi--Dirac distribution determines their occupation at a given temperature. For conventional metals $\mu \approx E_\mathrm{F}$, so the energy scale remains consistent with the above convention. The equilibrium occupation is
         \begin{equation}
-            f(E) = \frac{1}{1+\exp\left(\frac{E}{k_\mathrm{B}T}\right)}\,.
+            f(E) = \frac{1}{1+\exp\!\left(\frac{E}{k_\mathrm{B}T}\right)},
             \label{eq:micro:fermidirac}
-        \end{equation}        
-        At zero temperature the distribution reduces to a sharp step $ \theta(E)$.
-        
-        Figure~\ref{fig:micro:dos-fermi} illustrates the broadening of DOS by quasi-particle lifetimes and the temperature-broadened Fermi function.
+        \end{equation}
+        which reduces to the step function $\theta(E)$ as $T\to 0$.
+
+        Figure~\ref{fig:micro:dos-fermi} illustrates how Dynes broadening smooths the coherence peaks of $N_\mathrm{S}(E)$, while finite temperature smears the Fermi edge on an energy scale of order $k_\mathrm{B}T$.
         \begin{figure}[t]
             \centering
             \import{theory/micro}{dos-fermi.pgf}
-            \caption{Superconducting quasi-particle density of states $N_\mathrm{S}(E)$ and Fermi--Dirac distribution $f(E)$ for different Dynes parameters $\gamma/\Delta_0$ and temperatures $T/T_\mathrm{C}$. Increasing $\gamma$ broadens the coherence peaks of $N_\mathrm{S}(E)$, while increasing temperature smooths the Fermi edge. Parameters correspond to aluminum with $\Delta_0 = 180\,$\textmu eV and $T_\mathrm{C} = 1.18\,\mathrm{K}$, representative of a weak-coupling BCS superconductor.}
+            \caption{
+                Superconducting quasi-particle density of states $N_\mathrm{S}(E)$ and Fermi--Dirac distribution $f(E)$ for different Dynes parameters $\gamma/\Delta_0$ and temperatures $T/T_\mathrm{C}$. Increasing $\gamma$ broadens the coherence peaks of $N_\mathrm{S}(E)$, while increasing temperature smooths the Fermi edge. Parameters correspond to aluminum (Eq.~\ref{eq:aluminum}).
+            }
             \label{fig:micro:dos-fermi}
         \end{figure}
 
-        At finite temperature the step is thermally broadened over an energy scale of order $k_\mathrm{B}T$, as shown in Figure~\ref{fig:micro:dos-fermi}. 
-
-        \cite{dynes_direct_1978}
     
+    %=========================================================
     \subsection{Tunnel Current}
     \label{subsec:micro:tunnel-current}
+    %=========================================================
 
-        Tunneling spectroscopy offers a powerful means to probe the quasi-particle spectrum of superconductors in a controlled and conceptually simple way. The key idea is that if two electrodes are separated by a sufficiently thin insulating barrier, quasi-particles can quantum-mechanically tunnel between them, even though classically forbidden. 
+        Tunneling spectroscopy provides a direct and conceptually transparent probe of the quasi-particle excitation spectrum. When two electrodes are separated by a sufficiently thin insulating barrier, electrons may tunnel quantum-mechanically between them even though the process is classically forbidden. In the tunneling limit, the barrier is high and wide enough that phase coherence between the electrodes is lost and momentum conservation across the junction no longer applies. In this regime, tunneling reduces to an incoherent single-particle transfer process governed solely by the available electronic states and their occupation. \cite{bardeen_tunnelling_1961,giaever_electron_1960,giaever_study_1961}
         
-        In the tunneling limit, the barrier is high and wide enough that the process is incoherent and each quasi-particle tunnels independently, so momentum conservation is effectively relaxed. 
-        
-        Under these conditions, the tunnel current from material $1$ to $2$ is given by
+        % tunneling I/V
+        Under these conditions, the microscopic current flowing from electrode $1$ to electrode $2$ is proportional to the number of occupied states at energy $E$ in electrode $1$ and the number of empty states at energy $E+eV$ in electrode $2$
         \begin{equation}
-            I_{1\to2}(V) \propto \int_{-\infty}^\infty \left(\frac{N_1(E)}{N_0} f_1(E) \right)\cdot \left(\frac{N_2(E+eV)}{N_0} \left(1-f_2(E+eV)\right)\right)\mathrm{d}E\,,
+            I_{1\to2}(V) \propto \int_{-\infty}^\infty \left(N_1(E) f_1(E) \right)\cdot \left(N_2(E+eV)\left(1-f_2(E+eV)\right)\right)\mathrm{d}E\,,
             \label{eq:micro:tunnel-1to2}
-        \end{equation}
-        where $eV$ is an externally applied voltage bias. The first part in Equation~\ref{eq:micro:tunnel-1to2}, is given by the occupied states in material 1, the second part is given by the unoccupied states in material 2. However, in order to get the total tunnel current, one has to substract the tunnel current from material 2 to 1, resulting in
+        \end{equation}        
+        where $V$ is the externally applied bias voltage. The reverse process $2\to1$ is described by an analogous expression. Subtracting the two contributions yields the measurable tunnel current
         \begin{equation}
-            I(V) \propto \int_{-\infty}^\infty \frac{N_1(E)}{N_0} \frac{N_2(E+eV)}{N_0} \left(f_1(E)-f_2(E+eV)\right)\mathrm{d}E\,.
+            I(V) \propto \int_{-\infty}^\infty N_1(E)\, N_2(E+eV)\, \left(f_1(E)-f_2(E+eV)\right)\mathrm{d}E\,.
             \label{eq:micro:tunnel}
         \end{equation}
         
-        The difference $f_1(E)-f_2(E+eV)$ accounts for the imbalance in occupation between the two electrodes induced by the applied bias voltage $eV$, ensuring that current flows only when filled states on one side overlap with empty states on the other. In this picture, the densities of states $N_1(E)$ and $N_2(E)$ define where electrons can tunnel, while the Fermi--Dirac distributions define which of those states are populated. The convolution of these terms thus directly connects the microscopic electronic structure to the measurable \textit{I-V} characteristics.
+        This equation highlights the two microscopic ingredients of tunneling. The densities of states $N_1(E)$ and $N_2(E)$, specifying where electrons may tunnel, and the Fermi--Dirac distributions, specifying which of those states are occupied. The factor $f_1(E) - f_2(E+eV)$ encodes the occupation imbalance created by the applied bias and ensures that current flows only when filled states in one electrode overlap with empty states in the other. The tunnel current therefore represents a convolution of the electronic structure of the two electrodes with their occupation functions, directly linking microscopic quasi-particle physics to the measurable \textit{I--V} characteristics.
 
-        In the case of an all normal conducting tunnel barrier, the current is given by
+        % dI/dV
+        For many experimental applications, the differential conductance is more informative than the current itself. Differentiating Eq.~\ref{eq:micro:tunnel} with respect to the bias voltage shows that the measured \textit{dI--dV} corresponds to the product of the densities of states convoluted with the thermal broadening kernel\footnote{Using the chain rule one obtains $\mathrm{d}/\mathrm{d}V \left(f(E)-f(E+eV)\right) = -\,e\,\partial/\partial E \left(f(E+eV)\right)$.}, evaluated at the shifted energy $E=eV$,
         \begin{equation}
-            I_\mathrm{NN}(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^{\infty}f(E) - f(E + eV)\mathrm{d}E\,.
+            \frac{\mathrm{d}I(V)}{\mathrm{d}V} \propto \left[\left( N_1 \cdot N_2 \right)(E) \otimes \left(-\frac{\partial f(E)}{\partial E}\right)\right]_{E=eV}.
+        \end{equation}
+
+        In this representation, every spectral feature of the underlying DOS is broadened by the derivative of the Fermi function, which acts as a symmetric, temperature dependent weighting kernel. This convolution sets the fundamental energy resolution of tunneling spectroscopy.\footnote{A commonly used estimate is $\delta E \approx 3.5\,k_\mathrm{B}T$. At 30\,mK (typical for a dilution refrigerator), this corresponds to about 10\,\textmu eV, whereas at 300\,mK (He$_\text{3}$ cryostat) the resolution is limited to about 100\,\textmu eV. The relevant temperature is the electronic temperature, which can exceed the cryostat base temperature due to imperfect filtering, finite electron-phonon coupling, or microwave leakage.}
+        
+        % NN case
+        In the case of a fully normal-conducting tunnel junction, both electrodes provide a flat density of states near the Fermi level. The microscopic expression for the current therefore reduces to
+        \begin{equation}
+            I_\mathrm{NN}(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^{\infty}f(E) - f(E + eV)\mathrm{d}E\,,
             \label{eq:micro:tunnel-nn}
         \end{equation}
-        All geometric and matrix-element factors, along with $N_0$ are collapsing into the normal conductance $G_\mathrm{N}$. 
-        Given the two electrodes are in thermal equilibrium, effectively collapses the equation to Ohm's law
+        where all geometric and matrix-element factors, as well as the constant DOS $N_0$, are absorbed into the normal-state conductance $G_\mathrm{N}$. 
+        If both electrodes share the same temperature, the difference of Fermi functions integrates to the applied energy shift $eV$. The microscopic expression thus reproduces Ohm's law,
         \begin{equation}
-            I_\mathrm{NN}(V) =  G_\mathrm{N}V\,.
+            I_\mathrm{NN}(V) =  G_\mathrm{N}V\,,
             \label{eq:micro:ohms-law}
         \end{equation}
+        showing that an NN junction exhibits purely ohmic behaviour in the tunneling limit.
 
-        In the case of a junction between a normal metal and a superconductor, the tunneling current is given by
+        % NS case
+        In a junction between a normal metal and a superconductor, the tunneling current becomes sensitive to the superconducting quasi-particle spectrum. Since the normal electrode provides a flat DOS, only the superconducting DOS enters the microscopic expression,
         \begin{equation}
-            I_\mathrm{NS}(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^{\infty} \frac{N_\mathrm{S}(E)}{N_0} \left[f(E) - f(E + eV)\right] \mathrm{d}E\,,
+            I_\mathrm{NS}(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^{\infty} N_\mathrm{S}(E) \left(f(E) - f(E + eV)\right) \mathrm{d}E\,.
             \label{eq:micro:tunnel-ns}
         \end{equation}
-        where $N_\mathrm{S}(E)$ denotes the superconducting quasi-particle density of states and $f(E)$ the Fermi--Dirac distribution. The resulting \textit{I-V} and \textit{dI-dV} curves are shown in Figure~\ref{fig:micro:tunnel-current}. 
         
-        The differential conductance then follows as
+        The differential conductance follows directly as
         \begin{equation}
-            \frac{\mathrm{d}I_\mathrm{NS}(V)}{\mathrm{d}V} = G_\mathrm{N} \left[ \frac{N_\mathrm{S}(E)}{N_0} \otimes -\frac{\partial f(E)}{\partial E}\right]_{E=eV}\,,
+            \frac{\mathrm{d}I_\mathrm{NS}(V)}{\mathrm{d}V} = G_\mathrm{N} \left[ N_\mathrm{S}(E) \otimes \left(-\frac{\partial f(E)}{\partial E}\right)\right]_{E=eV}\,,
             \label{eq:micro:tunnel-ns-didv}
         \end{equation}
-        showing that the measured \textit{dI-dV} corresponds to the superconducting density of states thermally broadened by the derivative of the Fermi function. This derivative is a symmetric, bell-shaped function whose width scales with temperature. As $T \to 0$, it approaches a delta function, and the convolution becomes negligible. At finite temperature, however, the \textit{dI-dV} smears out, by the convolution. The energy resolution is then limited by thermal broadening, which sets the smallest energy scale over which spectral features can be resolved\footnote{This energy resolution can be approximated as $\mathrm{d} E \approx 3.5\,k_\mathrm{B}T$. In a dilution fridge, one can reach 30\,mK which results in a energy resolution of about 10\,\textmu eV. In a He$_\text{3}$ stick, 300\,mK can be reached, what limits the resolution to about 100\,\textmu eV. Here the temperature refers to the electronic temperature, which may differ from the cryostat base temperature depending on filtering, electron-phonon coupling, and microwave leakage.}.
+        so that the measured \textit{dI--dV} reflects a thermally broadened version of the superconducting DOS. At sufficiently low temperature, the broadening becomes negligible and the \textit{dI--dV} characteristic approaches the ideal quasi-particle spectrum of the superconductor.
 
-        Figure~\ref{fig:micro:tunnel-current} displays the effect of temperature and quasi-particle lifetimes on the tunnel current. One can easily observe, that even really small temperatures smears out the coherence peaks drastically. Same holds true for smearing due to quasi-particle lifetimes. However, both parameter affect the tunnel current in distinct ways.
+        The expressions above not only establish the microscopic origin of tunneling currents but also connect directly to experimental observables. In scanning tunneling microscopy (STM), a normal-metal tip positioned above a superconducting surface forms an NIS junction. Recording the \textit{I--V} or \textit{dI--dV} characteristics at sufficiently low temperature therefore provides a direct, local probe of the energy-resolved quasi-particle spectrum of the superconductor.
+
+        % SS case
+        In a junction where both electrodes are superconducting, the tunnel current reflects the convolution of two gapped densities of states. The microscopic expression now reads
+        \begin{equation}
+            I_\mathrm{SS}(V)
+                = \frac{G_\mathrm{N}}{e}
+                  \int_{-\infty}^{\infty}
+                      N_\mathrm{S}(E)\,
+                      N_\mathrm{S}(E+eV)\,
+                      \left(f(E) - f(E+eV)\right)
+                  \mathrm{d}E\,.
+            \label{eq:micro:tunnel-ss}
+        \end{equation} 
+
+        % ref figures
+        Figure~\ref{fig:micro:tunnel-current} summarizes these effects and makes the contrasting roles of temperature and Dynes broadening in NS and SS junctions explicit.  
         \begin{figure}
             \centering
             \import{theory/micro}{tunnel-current.pgf}
             \caption{
-                Calculated tunnel currents and differential conductances for NS (grey) and SS (blue) junctions within the microscopic tunneling model. Parameters correspond to aluminum with $\Delta_0 = 180\,$\textmu eV and $T_\mathrm{C} = 1.18\,\mathrm{K}$.
+                Calculated tunnel currents and differential conductances for NS (grey) and SS (blue) junctions within the microscopic tunneling model. Parameters correspond to aluminum (Eq.~\ref{eq:aluminum}).
                 The upper two panels show the effect of temperature $T/T_\mathrm{C}$ at fixed Dynes parameter $\gamma = 0$. 
                 The lower two panels show the influence of Dynes broadening $\gamma/\Delta_0$ at $T=0$. 
                 }
             \label{fig:micro:tunnel-current}
         \end{figure}
 
-        The expressions derived above not only describe the origin of tunneling currents but also provide a direct link to experimental observables. In scanning tunneling microscopy (STM), for example, a normal-metal tip above a superconducting surface forms an NIS junction. Measuring the \textit{I-V} or \textit{dI-dV} characteristics at sufficiently low temperature thus enables a direct mapping of the energy-resolved quasi-particle spectrum of the superconductor. 
+        In NS junctions, temperature primarily broadens the occupation factor and therefore rounds the coherence peak and smooths the gap edge, while Dynes broadening directly reduces the sharpness of the superconducting DOS itself.  
 
-        In case of all superconducting tunnel barrier, both electrodes contribute gapped densities of states. Their convolution, together with thermal and lifetime broadening, determines the observed shape of the \textit{I-V} and \textit{dI-dV} curves. 
-        \begin{equation}
-            I_\mathrm{SS}(V) = \frac{G_\mathrm{N}}{e}\int_{-\infty}^{\infty} \frac{N_\mathrm{S}(E)}{N_0} \cdot \frac{N_\mathrm{S}(E+eV)}{N_0} \cdot \left[f(E) - f(E + eV)\right] \mathrm{d}E
-            \label{eq:micro:tunnel-ss}
-        \end{equation}
-        Importantly, temperature $T$ and Dynes broadening $\gamma$ influence the spectra in distinct ways. Finite temperature broadens the Fermi edges via the Fermi--Dirac distribution, while $\gamma$ introduces intrinsic smearing of the quasi-particle DOS itself. 
-
-        In contrast to an NS junction, the SS junction is way more robust to temperature rounding. Instead of smearing, a finite conductance at zero voltage appears, while the height of the coherence peaks decrease as the gap closes. However, the Dynes broadening affects the tunnel current way more than in the NS case.
+        In SS junctions, the impact of both mechanisms is amplified by the multiplicative appearance of the DOS from each electrode. Temperature generates a noticeable subgap conductance and diminishes the peak height as it approaches the critical temperature. Whereas Dynes broadening suppresses the spectral features far more strongly than in the NS case due to its action on both electrodes simultaneously.
         
-        By fitting measured \textit{I-V} or \textit{dI-dV} data, with both parameters as variables, one can disentangle thermal effects from genuine lifetime or inelastic processes. These interpretations form the foundation of tunneling spectroscopy as a quantitative probe of superconductivity, allowing the extraction of $\Delta_0$, $T$, and $\gamma$ from experimental data with high accuracy.
+        By fitting measured \textit{I-V} or \textit{dI-dV} data, with $\Delta_0$, $T$, and $\gamma$ as variables, one can disentangle thermal effects from genuine lifetime or inelastic processes. These interpretations form the foundation of tunneling spectroscopy as a quantitative probe of superconductivity, allowing the extraction of these parameter from experimental data with high accuracy.
 
-        \cite{bardeen_tunnelling_1961,giaever_electron_1960,giaever_study_1961}
-
+    %=========================================================
     \subsection{Photon-Assisted Tunneling}
     \label{subsec:micro:pat}
+    %=========================================================
 
-        While the previous expressions describe static tunneling, they implicitly assume a time-independent Hamiltonian. Introducing a time-dependent voltage adds a periodic phase to the tunneling matrix element, which is the microscopic origin of photon-assisted tunneling (PAT).
+        In the static tunneling expressions above, the Hamiltonian is time-independent and the Bardeen tunneling matrix element carries only its intrinsic phase. Once a microwave drive is applied, as introduced in the introduction of this chapter, this matrix element acquires the time-dependent phase factor of Eq.~\ref{eq:microwave:phase-factor}. Here the relevant charge for quasi-particle tunneling is $q=e$. The drive thus modulates the single-electron tunneling phase, not the macroscopic superconducting phase, and this modulation is the microscopic origin of photon-assisted tunneling (PAT).
 
-        In contrast to the macroscopic description of phase-coherent Cooper-pair dynamics discussed later in Section~\ref{subsec:macro:shapiro}, the microscopic PAT picture describes incoherent quasi-particle tunneling modified by an external time-dependent voltage. Even in the SS case, PAT remains an incoherent single-particle process.
+        PAT remains an incoherent quasi-particle process. The AC drive mixes electronic energies separated by integer multiples of $h\nu$, but it does not induce any phase-coherent Cooper-pair dynamics. This sharply distinguishes PAT from the Josephson phase dynamics responsible for Shapiro steps (Sec.~\ref{subsec:macro:shapiro}).
 
-        In practice, this effect is typically studied using electromagnetic radiation in the microwave range, since photon energies $h\nu$ in this regime are comparable to the superconducting energy gap $\Delta_0$ and can therefore induce measurable sidebands without breaking the Cooper-pairs.
-
-        Possible energies are given by
+        The periodic phase modulation shifts the quasi-particle energy by discrete amounts. Let $E_0$ denote the unmodulated quasi-particle energy appearing in the static tunneling integral. Absorption or emission of $|n|$ photons then produces photon-shifted energies
         \begin{equation}
-            E_n = n h\nu\quad (n \in \mathbb{Z})\,,
+            E_n = E_0 + n h\nu \qquad (n\in\mathbb{Z})\,,
             \label{eq:micro:pat-En}
         \end{equation}
-        where each photon carries an energy $h\nu$ and $n$ is the number of photons absorbed ($n>0$) or emitted ($n<0$). As a result, additional tunneling channels open at these energies, producing characteristic replicas of the coherence peaks in \textit{dI-dV}.
-
-        The Tien--Gordon model provides a simple and intuitive framework to describe this effect. It applies to incoherent single-particle tunneling and does not describe coherent Cooper-pair dynamics such as Josephson (Section~\ref{sec:macro})or MAR (Section~\ref{sec:meso}) processes. It assumes that the junction operates in the tunneling limit, as described before in Section~\ref{subsec:micro:tunnel-current}. The electromagnetic field is treated classically and is represented by a spatially uniform, time-dependent voltage across the junction,
+        where $n>0$ corresponds to absorption and $n<0$ to emission. Using the Jacobi--Anger expansion of the global phase factor, the static quasi-particle DOS is replaced by the photon-dressed DOS
         \begin{equation}
-            V(t) = V_0 + A \cos (2\pi\,\nu t)\,.
-            \label{eq:micro:pat-V(t)}
-        \end{equation}
-        Here $V_0$ is the applied voltage bias, $A$ the amplitude, and $\nu$ the frequency of the microwave field across the junction. The field is assumed to remain unaltered by the tunneling current, meaning no cavity or backaction effects, and the drive is weak enough not to heat the electrodes, allowing both to stay in thermal equilibrium.
-
-        In a gauge where the entire voltage drop appears as a scalar potential, a tunneling electron acquires a time-dependent factor in its wavefunction,
-        \begin{equation}
-            \psi(t) \propto \exp\!\left(-\frac{\ima}{\hbar}\int_0^t e V(t')\, dt' \right)\,.
-            \label{eq:micro:pat-wf0}
-        \end{equation}
-
-        For the harmonic drive of Eq.~\eqref{eq:micro:pat-V(t)}, the integral can be solved by
-        \begin{equation}
-            \int_0^t e V(t')\, dt' = eV_0 t + \frac{eA}{2\pi\nu}\sin(2\pi\nu t)\,.
-            \label{eq:micro:pat-int}
-        \end{equation}
-        This equation is further solved by the Jacobi--Anger identity,
-        \begin{equation}
-            \exp\left(\ima\alpha \sin(2\pi\nu t)\right) = \sum_{n=-\infty}^{\infty} J_n(\alpha)\, \exp\left(\ima n 2\pi\nu t\right)\,,
-            \label{eq:micro:pat-jacobi}
-        \end{equation}
-        where $\alpha = eA/h\nu$ denotes the dimensionless modulation strength and $J_n(\alpha)$ is the $n$-th Bessel function of first kind.
-
-        The wavefunction becomes then
-        \begin{equation}
-            \psi(t) \propto \sum_{n=-\infty}^{\infty} J_n(\alpha)\, \exp\!\left( -\frac{\ima}{\hbar}(eV_0 - n h\nu)\, t  \right)\,,
-            \label{eq:micro:pat-wf}
-        \end{equation}
-        revealing that an electronic state subjected to an AC voltage becomes a superposition of components at energies shifted by $n h\nu$. Because tunneling probabilities are proportional to the squared amplitude, these channels carry weights $J_n^2(\alpha)$.
-
-        This perspective permits a particularly transparent interpretation in terms of an effective, photon-dressed density of states
-        \begin{equation}
-            N_\mathrm{PAT}(E) = \sum_{n=-\infty}^{\infty} J_n^2(\alpha)\, N(E + n h\nu)\,.
+            N(E_0)
+                = \sum_{n=-\infty}^{\infty}
+                    J_n^2(\alpha)\, N(E_0 + n h\nu)\,,
             \label{eq:micro:pat-dos}
         \end{equation}
-        This DOS replaces $N_2(E)$ in the tunnel current expression. The PAT-modified current therefore becomes a weighted sum of shifted copies of the static \textit{I-V} curve.
+        where $\alpha = eA/h\nu$ is the single-electron drive strength.
 
-        Putting these contributions together leads to the Tien--Gordon formula,
+        Analogously, the tunnel current becomes a weighted sum of shifted copies of the static characteristic,
         \begin{equation}
-            I(V_0) = \sum_{n=-\infty}^{\infty} J_n^2\!\left( \frac{eA}{h\nu}\right) \cdot I_0\!\left(V_0 - \frac{n h\nu}{e}\right)\,.
-            \label{eq:micro:pat-tien-gordon}
+            I(V_0)
+                = \sum_{n=-\infty}^{\infty}
+                    J_n^2\!\left(\frac{eA}{h\nu}\right)
+                    I_0\!\left(V_0 - \frac{n h\nu}{e}\right),
+            \label{eq:micro:pat-iv}
         \end{equation}
-        which expresses the total current as the incoherent sum of all photon-assisted tunneling channels.  Each channel contributes a copy of the static \textit{I-V} curve shifted by $n h\nu/e$ and weighted by the probability $J_n^2(\alpha)$ for absorbing or emitting $n$ photons, producing the characteristic sideband structure observed in experiment.
+        which is the Tien--Gordon result. Each term contributes a replica of $I_0(V_0)$ shifted by $n h\nu/e$ and weighted by the probability $J_n^2(\alpha)$ of absorbing or emitting $|n|$ photons. \cite{tien_multiphoton_1963}
 
-        It is important to emphasize that the Tien--Gordon mechanism itself is universal and does not distinguish between NS and SS junctions. The AC drive simply produces photon-shifted replicas of the underlying static $I_0(V_0)$ curve, weighted by the Bessel probabilities $J_n^2(\alpha)$. The qualitative differences observed between NS and SS under microwave irradiation arise solely from the different static spectra: in NS junctions only a single gapped DOS contributes, whereas SS junctions involve the convolution of two superconducting DOS. Thus, PAT provides a universal modification of quasiparticle tunneling, independent of the detailed structure of the electrodes. The differences between NS and SS junctions reflect only the underlying static \textit{I-V} curves, not the photon-dressing mechanism itself.
+        PAT therefore provides a universal semiclassical modification of quasi-particle tunneling. All differences between NS and SS junctions under microwave irradiation arise solely from their static DOS and not from the PAT mechanism itself.
 
-        Figure~\ref{fig:micro:pat} shows \textit{I-V} and \textit{dI-dV} characteristic of a NS and SS junction which is irradiated. 
+        Figure~\ref{fig:micro:pat} illustrates this behaviour for NS (grey) and SS (blue) junctions.
         \begin{figure}[t]
             \centering
             \import{theory/micro}{pat.pgf}
             \caption{
                 Calculated tunnel currents and differential conductances for NS (grey) and SS (blue) junctions under microwave irradiation with different amplitudes $eA/\Delta_0$. 
                 Photon absorption and emission create replicas of the coherence peaks spaced by $h\nu$, weighted by the Bessel factors $J_n^2(eA/h\nu)$ according to the Tien--Gordon model. 
-                Parameters correspond to aluminum with $\Delta_0 = 180\,$\textmu eV, $T = 0\,$K, $\gamma = 0\,$\textmu eV and $\nu = 5.0\,$GHz.  
-                }
+                Parameters correspond to aluminum with $\Delta_0 = 180\,\mu eV$, $T = 0\,\mathrm{K}$, $\gamma = 0\,\mu eV$ and $\nu = 5.0\,\mathrm{GHz}$.
+            }
             \label{fig:micro:pat}
         \end{figure}
-        In both NS and SS junctions, microwave irradiation leads to photon-assisted replicas of the superconducting coherence peaks.  
-        In NS junctions, these sidebands appear as shifted copies of the superconducting DOS, because only a single gapped electrode contributes to the spectrum.  
-        In contrast, SS junctions produce sharper and more symmetric replicas, since both electrodes provide gapped DOS that are jointly shifted by the absorbed or emitted photon energy.
+        In NS junctions, only one gapped DOS contributes, so the sidebands appear as shifted copies of the coherence peak. In SS junctions, both electrodes provide gapped DOS, producing sharper and more symmetric replicas due to the convolution of two superconducting spectra.
 
-        In practice, the microwave amplitude $eA$ can be determined experimentally by comparing the relative heights of the sidebands with the expected Bessel function weights. The spacing $h\nu$ between sidebands provides a direct and robust calibration of the frequency. Photon-assisted tunneling thus offers a straightforward semiclassical description of how an oscillating field modifies quasi-particle transport, serving as a bridge between static tunneling spectroscopy and driven quantum dynamics.
-
-        The microscopic picture developed here describes incoherent single-particle tunneling.In the next sections, we move beyond this regime: first to macroscopic phase-coherent Cooper-pair dynamics (Josephson effect), and then to mesoscopic coherent quasi-particle processes such as Andreev reflection, ABS formation, and MAR.
-
-        \cite{tien_multiphoton_1963}
+        Experimentally, the drive amplitude $A$ can be extracted from the relative sideband heights through the Bessel weights $J_n^2(\alpha)$, while the spacing $h\nu$ between replicas provides a robust calibration of the microwave frequency. Photon-assisted tunneling thereby bridges static tunneling spectroscopy and driven superconducting transport in a fully microscopic and conceptually transparent way.
