@@ -5,40 +5,40 @@
 \begin{document}
 
     %%% title page %%%
-        % change details in MyKonstanz.sty
-        \thesistitlepageafive{} %A5
+    %     % change details in MyKonstanz.sty
+    %     \thesistitlepageafive{} %A5
 
-    %%% abstract %%%
-        \clearpage 
-        \pagenumbering{Roman}
+    % %%% abstract %%%
+    %     \clearpage 
+    %     \pagenumbering{Roman}
 
-        \include{miscellaneous/abstract}
-        \include{miscellaneous/inspirational}
+    %     \include{miscellaneous/abstract}
+    %     \include{miscellaneous/inspirational}
         \tableofcontents
 
     %%% main body %%%
         \clearpage 
         \pagenumbering{arabic}
 
-        \include{miscellaneous/introduction}
+        % \include{miscellaneous/introduction}
         \include{theory/theory}
 
-        \include{results/results}
+    %     \include{results/results}
 
-        \include{methods/methods}
-        \include{miscellaneous/conclusion}
+    %     \include{methods/methods}
+    %     \include{miscellaneous/conclusion}
 
-    %%% appendix %%%
-        \clearpage
-        \pagenumbering{roman}
+    % %%% appendix %%%
+    %     \clearpage
+    %     \pagenumbering{roman}
 
-        \include{miscellaneous/appendix}
+    %     \include{miscellaneous/appendix}
 
     %%% bibliography %%%
         \newpage
         \addcontentsline{toc}{chapter}{References}
         \printbibliography[title={References}]
 
-        \include{miscellaneous/acknowledgement}
+        % \include{miscellaneous/acknowledgement}
 
 \end{document}
