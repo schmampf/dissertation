@@ -1,47 +1,63 @@
 % !TEX root = ../thesis.tex
 
+%=========================================================
 \section{Mesoscopic Description}
 \label{sec:meso}
+%=========================================================
 
-    The mesoscopic description of superconducting transport bridges the gap between microscopic quasi-particle tunneling and macroscopic Josephson dynamics. In this regime, electrical conduction is no longer determined by bulk properties but by a finite set of quantum channels that connect the two electrodes. According to the Landauer picture, each channel is characterized by a transmission probability $\tau_i$, which quantifies the likelihood that an electron incident from one electrode is transmitted to the other. The total conductance of a contact is then the sum over all available channels, 
+    In the mesoscopic regime, the electrodes are connected by a small number of quantum channels whose transmission probabilities $\tau_i$ determine the transport properties. This picture departs from both the microscopic description of quasi-particle tunneling and the macroscopic Josephson dynamics of weakly coupled junctions. Conduction is no longer a bulk property, but is governed by the discrete transmission eigenvalues of the available channels.
+
+    The natural starting point is the Landauer approach, originally formulated for phase coherent normal conductors. Each channel is characterized by a transmission probability $\tau_i$, and the normal-state conductance reads
     \begin{equation}
-        G_\mathrm{N} = G_0 \sum_{i=1}^N \tau_i\,, \quad (\tau_i \in [0,1])\,,
+        G_\mathrm{N} = G_0 \sum_{i=1}^N \tau_i\,, \qquad \tau_i \in [0,1]\,,
         \label{eq:meso:landauer}
     \end{equation}
-    where $G_0$ is the conductance quantum accounting for spin degeneracy\footnote{Throughout this thesis the conductance quantum is defined as $G_0 = 2e^2/h = 77.48\,\mu\mathrm{S}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = 12.9\,\mathrm{k\Omega}$.}. This framework captures the essence of quantum transport in nanostructures and naturally explains phenomena such as conductance quantization in atomic contacts.
+    where $G_0$ is the conductance quantum accounting for spin degeneracy\footnote{Throughout this thesis the conductance quantum is defined as $G_0 = 2e^2/h = 77.48\,\mu\mathrm{S}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = 12.9\,\mathrm{k\Omega}$.}.
 
-    When such mesoscopic conductors are made superconducting, the same transmission channels govern not only single quasi-particle motion but also correlated two quasi-particle transfer through Andreev reflection. The transparency $\tau_i$ of each channel determines the probability of this process and thus directly shapes the subgap current. In junctions where both electrodes are superconducting, successive Andreev reflections on both sides lead to multiple Andreev reflection, producing the characteristic subharmonic structure in the \textit{I-V} characteristics.
+    Although the Landauer formula applies strictly to the normal state, the transmission eigenvalues remain well defined in superconducting contacts. For short, coherent junctions, the $\tau_i$ are set by the underlying scattering matrix and are essentially temperature independent.
 
-    The following sections develop this mesoscopic picture in detail. We begin with Andreev reflection at an N-S interface and extend it to multiple Andreev reflection in S-S contacts, linking these coherent processes to the microscopic transmission probabilities that define the contact's configuration. Finally, we discuss how environmental coupling and charging effects lead to the breakdown of phase coherence, resulting in incoherent Cooper-pair tunneling, thus completing the connection between the macroscopic Josephson regime and the fully mesoscopic quantum limit.
+    These same transmission probabilities govern the amplitude of Andreev reflection, the energies of Andreev bound states, and the entire hierarchy of multiple Andreev reflection processes. The Landauer picture therefore provides the microscopic foundation of mesoscopic superconducting transport.
 
-
+    %=========================================================
     \subsection{Andreev Reflection}
     \label{subsec:meso:ar}
+    %=========================================================
 
-        At the interface between a normal metal (N) and a superconductor (S), the continuity of the electron wavefunction imposes a unique boundary condition on charge transport. When an electron in a normal metal approaches the interface with an energy smaller than the superconducting energy gap ($|E| < \Delta$), it cannot enter the superconductor as a single quasi-particle because no available states exist within the gap. Instead, the electron is reflected as a hole with opposite momentum and spin, while a Cooper-pair carrying charge $2e$ is transmitted into the superconductor. This process, known as Andreev reflection (AR), ensures charge and momentum conservation across the interface.
-        
-        Equivalently, Andreev reflection can be viewed as the transmission of two electrons from the normal metal into the superconducting condensate, where they form a Cooper-pair. Historically, AR is often described in terms of hole reflection. However, I will use the convention of two electrons are transmitted, since it is more intuitive.
+        At a normal-superconductor (N-S) interface, quasi-particles with energies $|E| < \Delta$ cannot enter the superconductor as single electrons because no states exist within the superconducting gap. Instead, an incident electron is retro reflected as a hole, while a Cooper pair carrying charge $2e$ is added to the condensate. This process, known as Andreev reflection (AR), preserves both charge and parallel momentum at the interface and provides the fundamental link between normal-state transport and superconducting correlations.
 
-        In the simplest picture, the two incident electrons are phase-correlated; they form the two components of a time-reversed pair. The amplitude of Andreev reflection depends on the transparency of the interface and is maximal for a perfectly clean contact. For a barrier of finite strength, normal reflection competes with Andreev reflection, reducing the probability of Cooper-pair transfer.
+        Andreev reflection can equivalently be viewed as the coherent transfer of two electrons into the superconductor, where they combine to form a Cooper pair. The probability of AR depends on the interface transparency. It reaches unity for a perfectly transparent contact and decreases when a potential barrier introduces normal reflection. The Andreev approximation applies when the Fermi energies of both materials far exceed the relevant excitation energies ($E, \Delta \ll E_\mathrm{F}$), ensuring that the electron and reflected hole have nearly equal momenta.
 
-        The Andreev reflection picture is valid under several key assumptions regarding the materials and interface. This description assumes that both materials are well described by the mean-field BCS theory, that the Fermi energies in N and S are much larger than the excitation energies ($E, \Delta \ll E_\mathrm{F}$), and that the interface can be treated within the Andreev approximation, where the momenta of the two electrons forming a Cooper-pair differ only slightly from the Fermi momentum.
+        AR is responsible for the finite subgap conductance in N-S junctions and forms the microscopic basis for all superconducting transport in mesoscopic contacts. At a single interface, it transfers one Cooper pair per reflection. When two superconductors are connected, successive Andreev processes give rise to discrete Andreev bound states in equilibrium and to multiple Andreev reflection under finite bias. The following sections build directly on this Andreev-based picture, developing ABS and MAR from the same underlying mechanism.
 
-        This gives rise to a finite conductance at subgap voltages, even when quasi-particle tunneling is forbidden. The probability of Andreev reflection can be derived from the Bogoliubov--de Gennes equations and depends on both the voltage bias $eV$ and the interface transparency $\tau$. Andreev reflection is thus the fundamental process linking normal-metal transport to superconducting correlations.
+        To make this qualitative picture quantitative and to calculate the corresponding \textit{I--V} characteristics, we now turn to the Blonder--Tinkham--Klapwijk (BTK) model.
 
-        Analytical descriptions of the \textit{I-V} characteristics based on the Blonder--Tinkham--Klapwijk (BTK) model provide a quantitative framework for calculating the Andreev reflection probabilities. In its modified form proposed by Pleceník et al., finite quasi-particle lifetimes are included phenomenologically by introducing a complex quasi-particle energy $E \rightarrow |E| + \mathrm{i}\gamma$. The dimensionless barrier strength $Z$ related to the transmission $\tau$ is used. The resulting coherence factors $u_0^2$ and $v_0^2$ are given in the following,
+        %=========================================================
+        \subsubsection*{Blonder--Tinkham--Klapwijk Model}
+
+        To quantify the Andreev reflection processes introduced above, we employ the Blonder--Tinkham--Klapwijk (BTK) model. BTK provides a scattering description of an N--S interface with arbitrary transparency and allows calculating the energy-resolved probabilities for normal reflection, Andreev reflection, and transmission into the superconductor.
+
+        To account for finite quasi-particle lifetimes, we use the phenomenological modification introduced by Pleceník et al., replacing the quasi-particle energy by a complex quantity $E \rightarrow |E| + \ima\gamma$. The resulting coherence factors ($u_0$, $v_0$), normalisation factor ($d$), the dimensionless barrier strength ($Z$), the Andreev ($A$) and normal reflection probability ($B$), are given by
         \begin{equation}
             \begin{array}{ll}
                 u_0^2 = \frac{1}{2} \left( 1 + \frac{\sqrt{(|E|+\ima\gamma)^2-\Delta^2}}{|E|+\ima\gamma}\right)\,,&
                 v_0^2 = 1 - u_0^2\,\\
-                \gamma = u^2_0+(u^2_0-v^2_0)Z^2\,,& 
+                d = u^2_0+(u^2_0-v^2_0)Z^2\,,& 
                 Z = \sqrt{1/\tau - 1}\,,\\
-                a= u_0v_0/\gamma\,,&
+                a= u_0v_0/d\,,&
                 A(E) = aa^*\,,\\
-                b= -(u_0^2-v_0^2)(Z^2+\ima Z)/\gamma\,,&
+                b= -(u_0^2-v_0^2)(Z^2+\ima Z)/d\,,&
                 B(E) = bb^*\,.
             \end{array}
             \label{eq:meso:btk-paramter}
         \end{equation}
+
+        For subgap energies the transmission into the superconductor vanishes, and the probabilities satisfy $A(E) + B(E) = 1$. It is therefore convenient to define the energy-resolved spectral weights of the single-particle (1e) and two-particle (2e)     processes,
+        \begin{equation}
+            \rho_\mathrm{1e}(E) = 1 - A(E) - B(E)\,, \quad
+            \rho_\mathrm{2e}(E) = 2 \cdot A(E) \,,
+            \label{eq:meso:btk-dos}
+        \end{equation}
+        which determine the relative contributions of normal and Andreev processes to charge transport, as shown in Figure~\ref{fig:meso:btk-dos}. Although these functions resemble densities of states, they should not be interpreted as the physical BCS DOS. Instead, they are the BTK spectral kernels that enter the current formula. 
         \begin{figure}[t]
             \centering
             \import{theory/meso}{btk-dos.pgf}
@@ -49,37 +65,68 @@
             \label{fig:meso:btk-dos}
         \end{figure}
 
-        The normalized superconducting density of states can be expressed in terms of these coherence factors as
+        The current through an N-S interface follows directly from the BTK kernel,
         \begin{equation}
-            N_\mathrm{S}(E) = \Re\!\left((u_0^2-v_0^2)^{-1}\right)\,.
-            \label{eq:meso:ar-dos}
+            I_\mathrm{NS}(V) = \frac{G_0}{e} \int_{-\infty}^{\infty} \left( \rho_\mathrm{1e}(E) + \rho_\mathrm{2e}(E) \right) \left(f(E) - f(E + eV)\right) \mathrm{d}E\,.
+            \label{eq:meso:btk-iv}
         \end{equation}
-        
-        With these quantities, the total current through an NS contact decomposes into single-particle and Andreev contributions,
-        \begin{align}
-            I_\mathrm{1e}(V) &= \frac{G_0}{e} \int_{-\infty}^{\infty} \left( 1 - A(E) - B(E) \right) \left[f(E) - f(E + eV)\right] \mathrm{d}E\,,
-            \label{eq:meso:ar-1e}\\
-            I_\mathrm{2e}(V) &= \frac{G_0}{e} \int_{-\infty}^{\infty} 2 A(E) \left[f(E) - f(E + eV)\right] \mathrm{d}E\,,
-            \label{eq:meso:ar-2e}\\
-            I_\mathrm{NS}(V) &= I_\mathrm{1e}(V) + I_\mathrm{2e}(V)\,.
-            \label{eq:meso:ar-IV}
-        \end{align}
-        This formulation smoothly connects the tunneling and Andreev limits and reproduces the Dynes-broadened density of states for small transmissions ($\tau \ll 1$). 
-
-        Figure~\ref{fig:meso:ar-iv} illustrates the resulting \textit{I-V} and \textit{dI-dV} characteristics obtained from the analytical BTK formulation, showing how the subgap conductance and coherence peaks evolves with interface transparency.
+        and yields the characteristic \textit{I--V} and \textit{dI--dV} curves shown in Fig.~\ref{fig:meso:btk-iv}. As the transparency increases, the Andreev contribution grows, enhancing the subgap conductance and reducing the height of the coherence peaks. In the tunneling limit ($\tau\ll1$), the expression reduces to the usual quasi-particle tunneling formula, while for $\tau\approx1$ it approaches the Andreev limit where charge is transferred predominantly in units of $2e$.
         \begin{figure}[t]
             \centering
             \import{theory/meso}{btk-current.pgf}
             \caption{
                 Analytical \textit{I-V} and \textit{dI-dV} characteristic calculated within the BTK model ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).  Subgap conductance increases with transparency due to the growing probability of two-particle Andreev processes, while the height of the coherence peaks at $eV = \pm \Delta_0$ decreases.}
-            \label{fig:meso:ar-iv}
+            \label{fig:meso:btk-iv}
         \end{figure}
 
-        While Andreev reflection is most easily visualized at an N-S interface, it also governs charge transfer between two superconductors. In this case, repeated Andreev processes on both sides of the junction lead to multiple Andreev reflection, discribed in the following.
+        % Analytical descriptions of the \textit{I-V} characteristics based on the Blonder--Tinkham--Klapwijk (BTK) model provide a quantitative framework for calculating the Andreev reflection probabilities. In its modified form proposed by Pleceník et al., finite quasi-particle lifetimes $\gamma$ are included phenomenologically by introducing a complex quasi-particle energy $E \rightarrow |E| + \mathrm{i}\gamma$. The dimensionless barrier strength $Z$ related to the transmission $\tau$ is used. The resulting coherence factors $u_0^2$ and $v_0^2$ are given in the following,
+        % \begin{equation}
+        %     \begin{array}{ll}
+        %         u_0^2 = \frac{1}{2} \left( 1 + \frac{\sqrt{(|E|+\ima\gamma)^2-\Delta^2}}{|E|+\ima\gamma}\right)\,,&
+        %         v_0^2 = 1 - u_0^2\,\\
+        %         d = u^2_0+(u^2_0-v^2_0)Z^2\,,& 
+        %         Z = \sqrt{1/\tau - 1}\,,\\
+        %         a= u_0v_0/d\,,&
+        %         A(E) = aa^*\,,\\
+        %         b= -(u_0^2-v_0^2)(Z^2+\ima Z)d\,,&
+        %         B(E) = bb^*\,.
+        %     \end{array}
+        %     \label{eq:meso:btk-paramter}
+        % \end{equation}
+        
+        % With these quantities the spectral weight $\rho$ of the 1e and 2e process can be expressed as
+        % \begin{equation}
+        %     \rho_\mathrm{1e}(E) = 1 - A(E) - B(E)\,, \quad
+        %     \rho_\mathrm{2e}(V) = 2 \cdot A(E) \,,
+        %     \label{eq:meso:btk-dos}
+        % \end{equation}
+        % and are shown in Figure~\ref{fig:meso:btk-dos}. Normalized by the transmission those can be threaded as effective DOS.
+        % \begin{figure}[t]
+        %     \centering
+        %     \import{theory/meso}{btk-dos.pgf}
+        %     \caption{platzhalter}
+        %     \label{fig:meso:btk-dos}
+        % \end{figure}
 
+        % The total current through an NS contact, is given by
+        % \begin{equation}
+        %     I_\mathrm{NS}(V) = \frac{G_0}{e} \int_{-\infty}^{\infty} \left( \rho_\mathrm{1e}(V) + \rho_\mathrm{2e}(V) \right) \left(f(E) - f(E + eV)\right) \mathrm{d}E\,.
+        %     \label{eq:meso:btk-iv}
+        % \end{equation}
+        % Figure~\ref{fig:meso:btk-iv} illustrates the resulting \textit{I-V} and \textit{dI-dV} characteristics obtained from the analytical BTK formulation, showing how the subgap conductance and coherence peaks evolves with interface transparency.
+        % \begin{figure}[t]
+        %     \centering
+        %     \import{theory/meso}{btk-current.pgf}
+        %     \caption{
+        %         Analytical \textit{I-V} and \textit{dI-dV} characteristic calculated within the BTK model ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).  Subgap conductance increases with transparency due to the growing probability of two-particle Andreev processes, while the height of the coherence peaks at $eV = \pm \Delta_0$ decreases.}
+        %     \label{fig:meso:btk-iv}
+        % \end{figure}
 
+        
+    %=========================================================
     \subsection{Andreev Bound States}
     \label{subsec:meso:abs}
+    %=========================================================
     
 
     \textbf{Ambegaokar--Baratoff, Kulik--Omelyanchuk}
