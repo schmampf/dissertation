@@ -34,93 +34,61 @@
         %=========================================================
         \subsubsection*{Blonder--Tinkham--Klapwijk Model}
 
-        To quantify the Andreev reflection processes introduced above, we employ the Blonder--Tinkham--Klapwijk (BTK) model. BTK provides a scattering description of an N--S interface with arbitrary transparency and allows calculating the energy-resolved probabilities for normal reflection, Andreev reflection, and transmission into the superconductor.
+        Building on the qualitative picture of Andreev reflection introduced above, the Blonder--Tinkham--Klapwijk (BTK) model provides a quantitative scattering description of an N--S interface with arbitrary transparency. It yields the energy-resolved  probabilities for Andreev reflection ($A$), normal reflection ($B$), and transmission into the superconductor ($C$). The interface is represented by the dimensionless barrier strength $Z$, related to the normal-state transmission by
+        \begin{equation}
+            Z = \sqrt{1/\tau - 1}\,.
+        \end{equation}
+        To incorporate finite quasiparticle lifetimes, we use the phenomenological broadening introduced by Pleceník \textit{et al.}, replacing the quasiparticle energy by $E \rightarrow |E| + \ima\gamma$. This yields the modified coherence factors
+        \begin{equation}
+            u_0^2 = \frac{1}{2} \left( 1 + \frac{\sqrt{(|E|+\ima\gamma)^2-\Delta^2}}{|E|+\ima\gamma}\right)\,,\quad v_0^2 = 1 - u_0^2\,.
+        \end{equation}
 
-        To account for finite quasi-particle lifetimes, we use the phenomenological modification introduced by Pleceník et al., replacing the quasi-particle energy by a complex quantity $E \rightarrow |E| + \ima\gamma$. The resulting coherence factors ($u_0$, $v_0$), normalisation factor ($d$), the dimensionless barrier strength ($Z$), the Andreev ($A$) and normal reflection probability ($B$), are given by
+        Using the normalization factor $d$, the Andreev and normal reflection amplitudes ($a$, $b$) acquire the compact form,
         \begin{equation}
             \begin{array}{ll}
-                u_0^2 = \frac{1}{2} \left( 1 + \frac{\sqrt{(|E|+\ima\gamma)^2-\Delta^2}}{|E|+\ima\gamma}\right)\,,&
-                v_0^2 = 1 - u_0^2\,\\
-                d = u^2_0+(u^2_0-v^2_0)Z^2\,,& 
-                Z = \sqrt{1/\tau - 1}\,,\\
-                a= u_0v_0/d\,,&
-                A(E) = aa^*\,,\\
-                b= -(u_0^2-v_0^2)(Z^2+\ima Z)/d\,,&
-                B(E) = bb^*\,.
+                A(E) = aa^*\,,&
+                a= u_0v_0/d\,,\quad
+                d = u^2_0+(u^2_0-v^2_0)Z^2\,,\\
+                B(E) = bb^*\,,&
+                b= -(u_0^2-v_0^2)(Z^2+\ima Z)/d\,.
             \end{array}
             \label{eq:meso:btk-paramter}
         \end{equation}
 
-        For subgap energies the transmission into the superconductor vanishes, and the probabilities satisfy $A(E) + B(E) = 1$. It is therefore convenient to define the energy-resolved spectral weights of the single-particle (1e) and two-particle (2e)     processes,
-        \begin{equation}
-            \rho_\mathrm{1e}(E) = 1 - A(E) - B(E)\,, \quad
-            \rho_\mathrm{2e}(E) = 2 \cdot A(E) \,,
+        For subgap energies, transmission into the quasi-particle continuum vanishes ($C\to0$), so $A(E) + B(E) = 1$. It is therefore convenient to define the energy-resolved spectral weights $\rho$ of the single-particle (1e) and two-particle (2e) processes,
+        \begin{align}
+            \begin{array}{ll}
+            &\rho_\mathrm{1e}(E) = 1 - A(E) - B(E)\,,\\
+            &\rho_\mathrm{2e}(E) = 2 \cdot A(E) \,,
+            \end{array}
             \label{eq:meso:btk-dos}
-        \end{equation}
-        which determine the relative contributions of normal and Andreev processes to charge transport, as shown in Figure~\ref{fig:meso:btk-dos}. Although these functions resemble densities of states, they should not be interpreted as the physical BCS DOS. Instead, they are the BTK spectral kernels that enter the current formula. 
+        \end{align}
+        which quantify the relative importance of normal and Andreev processes. Although these functions resemble densities of states, they should not be interpreted as the physical BCS DOS. Instead, they represent the BTK spectral kernels entering the current integral, shown in Fig.~\ref{fig:meso:btk-dos}.
         \begin{figure}[t]
             \centering
             \import{theory/meso}{btk-dos.pgf}
-            \caption{platzhalter}
+            \caption{
+                BTK spectral weights for the single-particle (1e) and two-particle (2e) channels as a function of energy. The curves illustrate how the interface transparency $\tau$ redistributes spectral weight from normal reflection into Andreev reflection: for low $\tau$, the 1e contribution dominates and the subgap region remains nearly gapped, whereas increasing $\tau$ enhances the 2e channel and fills the subgap region through Andreev processes. These spectral kernels enter directly into the BTK current integral and determine the shape of the resulting \textit{I--V} characteristics.
+                \\\textbf{figure in progress...}
+                }
             \label{fig:meso:btk-dos}
         \end{figure}
 
-        The current through an N-S interface follows directly from the BTK kernel,
+        The current through an N-S junction then follows from the BTK kernel,
         \begin{equation}
             I_\mathrm{NS}(V) = \frac{G_0}{e} \int_{-\infty}^{\infty} \left( \rho_\mathrm{1e}(E) + \rho_\mathrm{2e}(E) \right) \left(f(E) - f(E + eV)\right) \mathrm{d}E\,.
             \label{eq:meso:btk-iv}
         \end{equation}
-        and yields the characteristic \textit{I--V} and \textit{dI--dV} curves shown in Fig.~\ref{fig:meso:btk-iv}. As the transparency increases, the Andreev contribution grows, enhancing the subgap conductance and reducing the height of the coherence peaks. In the tunneling limit ($\tau\ll1$), the expression reduces to the usual quasi-particle tunneling formula, while for $\tau\approx1$ it approaches the Andreev limit where charge is transferred predominantly in units of $2e$.
+        yielding the \textit{I--V} and \textit{dI--dV} characteristics in Fig.~\ref{fig:meso:btk-iv}. Increasing the transparency enhances the weight of Andreev processes, leading to a pronounced subgap conductance and a gradual reduction of the coherence-peak height. In the tunneling limit ($\tau \ll 1$), Eq.~\eqref{eq:meso:btk-iv} reduces to the conventional quasiparticle-tunneling expression, while for $\tau \approx 1$ the transport approaches the Andreev limit, where charge is transferred predominantly in units of $2e$.
         \begin{figure}[t]
             \centering
             \import{theory/meso}{btk-current.pgf}
             \caption{
-                Analytical \textit{I-V} and \textit{dI-dV} characteristic calculated within the BTK model ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).  Subgap conductance increases with transparency due to the growing probability of two-particle Andreev processes, while the height of the coherence peaks at $eV = \pm \Delta_0$ decreases.}
+                Analytical \textit{I--V} and \textit{dI--dV} characteristics obtained from the BTK model for various channel transparencies $\tau$. The curves show the continuous evolution from the tunneling regime ($\tau\!\ll\!1$), characterized by sharp coherence peaks and strongly suppressed subgap current, to the high-transparency Andreev limit ($\tau\!\approx\!1$), where pronounced subgap conductance and reduced coherence-peak contrast emerge. Parameters correspond to aluminum (Eq.~\ref{eq:aluminum}), with $T = 0$, and $\gamma = 0$.
+                \\\textbf{figure in progress...}
+                }
             \label{fig:meso:btk-iv}
         \end{figure}
-
-        % Analytical descriptions of the \textit{I-V} characteristics based on the Blonder--Tinkham--Klapwijk (BTK) model provide a quantitative framework for calculating the Andreev reflection probabilities. In its modified form proposed by Pleceník et al., finite quasi-particle lifetimes $\gamma$ are included phenomenologically by introducing a complex quasi-particle energy $E \rightarrow |E| + \mathrm{i}\gamma$. The dimensionless barrier strength $Z$ related to the transmission $\tau$ is used. The resulting coherence factors $u_0^2$ and $v_0^2$ are given in the following,
-        % \begin{equation}
-        %     \begin{array}{ll}
-        %         u_0^2 = \frac{1}{2} \left( 1 + \frac{\sqrt{(|E|+\ima\gamma)^2-\Delta^2}}{|E|+\ima\gamma}\right)\,,&
-        %         v_0^2 = 1 - u_0^2\,\\
-        %         d = u^2_0+(u^2_0-v^2_0)Z^2\,,& 
-        %         Z = \sqrt{1/\tau - 1}\,,\\
-        %         a= u_0v_0/d\,,&
-        %         A(E) = aa^*\,,\\
-        %         b= -(u_0^2-v_0^2)(Z^2+\ima Z)d\,,&
-        %         B(E) = bb^*\,.
-        %     \end{array}
-        %     \label{eq:meso:btk-paramter}
-        % \end{equation}
-        
-        % With these quantities the spectral weight $\rho$ of the 1e and 2e process can be expressed as
-        % \begin{equation}
-        %     \rho_\mathrm{1e}(E) = 1 - A(E) - B(E)\,, \quad
-        %     \rho_\mathrm{2e}(V) = 2 \cdot A(E) \,,
-        %     \label{eq:meso:btk-dos}
-        % \end{equation}
-        % and are shown in Figure~\ref{fig:meso:btk-dos}. Normalized by the transmission those can be threaded as effective DOS.
-        % \begin{figure}[t]
-        %     \centering
-        %     \import{theory/meso}{btk-dos.pgf}
-        %     \caption{platzhalter}
-        %     \label{fig:meso:btk-dos}
-        % \end{figure}
-
-        % The total current through an NS contact, is given by
-        % \begin{equation}
-        %     I_\mathrm{NS}(V) = \frac{G_0}{e} \int_{-\infty}^{\infty} \left( \rho_\mathrm{1e}(V) + \rho_\mathrm{2e}(V) \right) \left(f(E) - f(E + eV)\right) \mathrm{d}E\,.
-        %     \label{eq:meso:btk-iv}
-        % \end{equation}
-        % Figure~\ref{fig:meso:btk-iv} illustrates the resulting \textit{I-V} and \textit{dI-dV} characteristics obtained from the analytical BTK formulation, showing how the subgap conductance and coherence peaks evolves with interface transparency.
-        % \begin{figure}[t]
-        %     \centering
-        %     \import{theory/meso}{btk-current.pgf}
-        %     \caption{
-        %         Analytical \textit{I-V} and \textit{dI-dV} characteristic calculated within the BTK model ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).  Subgap conductance increases with transparency due to the growing probability of two-particle Andreev processes, while the height of the coherence peaks at $eV = \pm \Delta_0$ decreases.}
-        %     \label{fig:meso:btk-iv}
-        % \end{figure}
 
         
     %=========================================================
