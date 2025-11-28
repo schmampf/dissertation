@@ -63,31 +63,26 @@
             \end{array}
             \label{eq:meso:btk-dos}
         \end{align}
-        which quantify the relative importance of normal and Andreev processes. Although these functions resemble densities of states, they should not be interpreted as the physical BCS DOS. Instead, they represent the BTK spectral kernels entering the current integral, shown in Fig.~\ref{fig:meso:btk-dos}.
-        \begin{figure}[t]
-            \centering
-            \import{theory/meso}{btk-dos.pgf}
-            \caption{
-                BTK spectral weights for the single-particle (1e) and two-particle (2e) channels as a function of energy. The curves illustrate how the interface transparency $\tau$ redistributes spectral weight from normal reflection into Andreev reflection: for low $\tau$, the 1e contribution dominates and the subgap region remains nearly gapped, whereas increasing $\tau$ enhances the 2e channel and fills the subgap region through Andreev processes. These spectral kernels enter directly into the BTK current integral and determine the shape of the resulting \textit{I--V} characteristics.
-                \\\textbf{figure in progress...}
-                }
-            \label{fig:meso:btk-dos}
-        \end{figure}
+        which quantify the relative importance of normal and Andreev processes. Although these functions resemble densities of states, they should not be interpreted as the physical BCS DOS. Instead, they represent the BTK spectral kernels entering the current integral, shown in Fig.~\ref{fig:meso:btk}.
 
         The current through an N-S junction then follows from the BTK kernel,
         \begin{equation}
             I_\mathrm{NS}(V) = \frac{G_0}{e} \int_{-\infty}^{\infty} \left( \rho_\mathrm{1e}(E) + \rho_\mathrm{2e}(E) \right) \left(f(E) - f(E + eV)\right) \mathrm{d}E\,.
             \label{eq:meso:btk-iv}
         \end{equation}
-        yielding the \textit{I--V} and \textit{dI--dV} characteristics in Fig.~\ref{fig:meso:btk-iv}. Increasing the transparency enhances the weight of Andreev processes, leading to a pronounced subgap conductance and a gradual reduction of the coherence-peak height. In the tunneling limit ($\tau \ll 1$), Eq.~\eqref{eq:meso:btk-iv} reduces to the conventional quasiparticle-tunneling expression, while for $\tau \approx 1$ the transport approaches the Andreev limit, where charge is transferred predominantly in units of $2e$.
+        yielding the \textit{I--V} and \textit{dI--dV} characteristics in Fig.~\ref{fig:meso:btk}. Increasing the transparency enhances the weight of Andreev processes, leading to a pronounced subgap conductance and a gradual reduction of the coherence-peak height. In the tunneling limit ($\tau \ll 1$), Eq.~\eqref{eq:meso:btk-iv} reduces to the conventional quasiparticle-tunneling expression, while for $\tau \approx 1$ the transport approaches the Andreev limit, where charge is transferred predominantly in units of $2e$.
         \begin{figure}[t]
             \centering
-            \import{theory/meso}{btk-current.pgf}
+            \subfigure[Spectral weight of single-particle process]{\import{theory/meso}{btk-1e-dos.pgf}}
+            \hspace{3mm}
+            \subfigure[Spectral weight of two-particle process]{\import{theory/meso}{btk-2e-dos.pgf}}
+            \subfigure[\textit{I--V} characteristic]{\import{theory/meso}{btk-iv.pgf}}
+            \hspace{3mm}
+            \subfigure[\textit{dI--dV} characteristics]{\import{theory/meso}{btk-didv.pgf}}
             \caption{
-                Analytical \textit{I--V} and \textit{dI--dV} characteristics obtained from the BTK model for various channel transparencies $\tau$. The curves show the continuous evolution from the tunneling regime ($\tau\!\ll\!1$), characterized by sharp coherence peaks and strongly suppressed subgap current, to the high-transparency Andreev limit ($\tau\!\approx\!1$), where pronounced subgap conductance and reduced coherence-peak contrast emerge. Parameters correspond to aluminum (Eq.~\ref{eq:aluminum}), with $T = 0$, and $\gamma = 0$.
-                \\\textbf{figure in progress...}
+                BTK spectral weights of the single-particle (1e) and two-particle (2e) channels and the corresponding \textit{I--V} and \textit{dI--dV} characteristics for various channel transparencies $\tau$. Increasing $\tau$ shifts spectral weight from normal to Andreev processes, leading to enhanced subgap conductance and reduced coherence-peak height. Parameters correspond to aluminum (Eq.~\ref{eq:aluminum}), with $T=0$ and $\gamma = 0$.
                 }
-            \label{fig:meso:btk-iv}
+            \label{fig:meso:btk}
         \end{figure}
 
         
