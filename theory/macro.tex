@@ -38,13 +38,15 @@
         This perspective emphasizes that the Josephson effect arises from coherent phase coupling between the two superconductors, not from changes in the order-parameter amplitude. The resulting phase-driven transport is captured by two fundamental relations, known as the Josephson equations.
 
         % DC Josephson
-        \begin{wrapfigure}[12]{r}{0.4\textwidth}
+        
+        \begin{wrapfigure}{R}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
             \import{theory/macro}{josephson-iphi.pgf}
-            \caption{CPR of a weakly coupled Josephson junction (Eq.~\ref{eq:macro:dc}).}
+            \captionof{figure}{CPR of a weakly coupled Josephson junction (Eq.~\ref{eq:macro:dc}).}
             \label{fig:macro:josephson-iphi}
         \end{wrapfigure}
+
         The DC Josephson effect is described by the current-phase relation (CPR)
         \begin{equation}
             I_\mathrm{J} = I_\mathrm{C}\sin\phi\,,
@@ -60,14 +62,14 @@
         \end{equation}
         implying that a constant voltage causes the phase difference to increase uniformly in time.
 
-        % I(t) josephson
-        \begin{wrapfigure}[15]{r}{0.4\textwidth}
+        \begin{wrapfigure}{R}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
             \import{theory/macro}{josephson-it.pgf}
             \caption{Time-dependent Josephson current for a constant voltage $V_0$. The period $\Delta t$ of the oscillation is set by the Josephson frequency $\nu_0$.}
             \label{fig:macro:josephson-it}
         \end{wrapfigure}
+
         Consequently, the phase evolves linearly,
         \begin{equation}
             \phi(t) = \phi_0 + 2\pi \nu_0t\,,\quad
@@ -77,23 +79,26 @@
         which results in an oscillating supercurrent with frequency $/nu_0$. This is illustrated in Fig.~\ref{fig:macro:josephson-it}, where the time-dependent current $I(t)$ is shown together with the corresponding time scale $\Delta t = 1/\nu_0$ set by the Josephson frequency.
         
         % IV Josephson
-        \begin{wrapfigure}[18]{r}{0.4\textwidth}
+        \begin{wrapfigure}{R}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
             \import{theory/macro}{josephson-iv.pgf}
-            \caption{Combined supercurrent and quasiparticle contribution to the \textit{I--V} characteristic for a fixed phase $\phi=\pi/9$.}
+            \caption{Combined supercurrent and quasiparticle contribution to the \textit{I--V} characteristic.}
             \label{fig:macro:josephson-iv}
         \end{wrapfigure}
+
         In a real junction, quasiparticle tunneling appears in parallel to the phase-driven supercurrent. The resulting \textit{I--V} characteristic, shown in Fig.~\ref{fig:macro:josephson-iv}, features a dissipationless supercurrent branch at zero voltage and a dissipative quasi-particle branch that onsets above the gap. This combined response forms the characteristic transport signature of a weakly coupled Josephson junction.
         
         % Ambegaokar–Baratoff I_\mathrm{C}
-        \begin{wrapfigure}[13]{r}{0.4\textwidth}
+        
+        \begin{wrapfigure}{R}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
-            \import{theory/macro}{I_C-suppression.pgf}
+            \import{theory/macro}{critical-current.pgf}
             \caption{Temperature dependence of the critical current $I_\mathrm{C}(T)$ according to Ambegaokar--Baratoff.}
             \label{fig:macro:I_C-suppression}
         \end{wrapfigure}
+
         For a tunnel junction, the critical current is set microscopically by the Ambegaokar--Baratoff (AB) relation,
         \begin{equation}
             I_\mathrm{C}(T) = \frac{\pi}{2}\,\frac{G_\mathrm{N}\Delta(T)}{e}\,
