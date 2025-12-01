@@ -9,8 +9,8 @@
     In this section we collect the basic microscopic and mesoscopic concepts that underlie all transport phenomena discussed in this thesis. We start from a many-electron Hamiltonian in a crystalline solid and show how its low-energy excitations can be described in terms of quasiparticles with effective mass, lifetime, and mean free path, leading to the Drude picture of diffusive transport. On this basis we introduce the mesoscopic transport regimes, where the finite size of the conductor and phase coherence across it become essential and transport is most naturally formulated in terms of transmission channels and their eigenvalues. We then specialize to aluminum, which serves as the central material platform of this work, and summarize the normal-state, superconducting, and oxide properties that make it ideally suited for atomic-scale contacts and tunnel junctions. Finally, we outline the generic microwave drive model used throughout the thesis and the associated electromagnetic phase factors that give rise to photon-assisted tunnelling and driven Josephson dynamics.
 
     %=========================================================
-    \subsection{Microscopic Description of Quasi-Particles}
-    \label{subsec:basics:quasiparticles}
+    \subsection{Microscopic Quasiparticles}
+    \label{subsec:basics:micro}
     %=========================================================
 
         We consider a many-electron system in a crystalline solid and show how its low-energy excitations can be described in terms of quasiparticles. The full Hamiltonian (first quantization) for $N$ electrons and fixed ionic cores at positions $\{\vec{R}_\alpha\}$ is
@@ -176,8 +176,8 @@
         These quantities $\sigma$, $\ell$, and $D$ summarize the influence of microscopic scattering on transport in the macroscopic, diffusive limit and will be the natural reference point for the mesoscopic regimes discussed in the following subsection.
                 
     %=========================================================
-    \subsection{Mesoscopic Transport of Quasiparticles}
-    \label{subsec:basics:mesoscopic}
+    \subsection{Mesoscopic Quasiparticles}
+    \label{subsec:basics:meso}
     %=========================================================
 
         An additional important length scale is the phase-coherence length $L_\phi$. It is set by inelastic and dephasing processes such as electron--electron and electron--phonon scattering and measures how far a quasiparticle can propagate while retaining a well-defined quantum phase. In a diffusive conductor one may write $L_\phi = \sqrt{D\tau_\phi}$ in terms of the diffusion constant $D$ and the dephasing time $\tau_\phi$, whereas in the ballistic limit $L_\phi \approx v_\mathrm{F}\tau_\phi$. For $L \lesssim L_\phi$ quantum interference between different scattering paths is observable and leads to mesoscopic phenomena such as weak localization and universal conductance fluctuations, while for $L \gg L_\phi$ these effects are averaged out and transport reduces to the classical Drude description.
@@ -217,7 +217,7 @@
         For comparison, quantum point contacts in high-mobility two-dimensional electron gases realize a similar ballistic, phase-coherent constriction, but with many channels whose number can be tuned electrostatically. There, the same Landauer formula yields the well-known quantized conductance staircase $G \approx N G_0$ when each occupied mode is almost perfectly transmitted, $\tau_i \simeq 1$. While such semiconductor QPCs provide a clean didactic example of channel quantization, the focus of this work lies on metallic atomic contacts, where the number and transparency of channels are dictated by atomic-scale structure and chemistry rather than by lithographic geometry.
 
     %=========================================================
-    \subsection{Aluminum}
+    \subsection{Aluminum as Material Platform}
     \label{subsec:basics:aluminum}
     %=========================================================
 
@@ -255,7 +255,7 @@
         A key practical advantage of aluminum is its native oxide. When exposed to oxygen, aluminum rapidly forms a thin insulating layer of aluminum oxide (AlO$_x$) on its surface. This layer is chemically stable and strongly bound to the underlying metal. Under ambient conditions the native oxide thickness is on the nanometre scale; by controlled oxidation in vacuum one can reproducibly tune the oxide thickness and thereby the normal-state tunnel resistance over several orders of magnitude. The resulting Al--AlO$_x$--Al junctions exhibit large barrier heights, low defect densities, and excellent reproducibility, making aluminum oxide the standard tunnel barrier material in superconducting electronics. In the context of this thesis, the native and artificially grown aluminum oxide layers define the tunnel barriers in our SIS junctions and provide mechanical stability for the atomic contacts formed in aluminum break junctions.
         
     %=========================================================
-    \subsection{Microwave Drive Model}
+    \subsection{Microwave Drive and Electromagnetic Phase}
     \label{subsec:basics:micro-wave}
     %=========================================================
     
