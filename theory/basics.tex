@@ -198,9 +198,13 @@
 
         In the linear-response regime at low temperature the conductance of such a phase-coherent contact is given by the Landauer formula
         \begin{equation}
-            G = G_0 \sum_i \tau_i, \qquad G_0 = \frac{2e^2}{h}\,,
+            G = G_0 \sum_{i=1}^N \tau_i\,, \qquad \tau_i \in [0,1]\,,
+            \label{eq:basics:landauer}
         \end{equation}
-        where $\tau_i$ are the transmission eigenvalues at the Fermi energy. Each channel contributes a fraction $\tau_i$ of the conductance quantum $G_0$. The full information about normal-state transport through the contact is thus encoded in the set of transmission eigenvalues $\{\tau_i\}$, often referred to as the \emph{pin code} of the contact.
+        where $\tau_i$ are the transmission eigenvalues at the Fermi energy and $G_0$ the conductance quantum\footnote{
+            Throughout this thesis the conductance quantum is defined as $G_0 = 2e^2/h = 77.48\,\mu\mathrm{S}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = 12.9\,\mathrm{k\Omega}$.
+        }. 
+        The full information about normal-state transport through the contact is thus encoded in the set of transmission eigenvalues $\{\tau_i\}$, often referred to as the \emph{pin code} of the contact.
 
         %=========================================================
         \subsubsection*{Atomic-Scale Contacts}
