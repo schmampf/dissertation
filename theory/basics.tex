@@ -101,8 +101,7 @@
                 \frac{\mathrm{d}\vec{r}}{\mathrm{d}t} = \frac{1}{\hbar}\,\nabla_{\vec{k}} E_n(\vec{k})\,,
                 \label{eq:micro:semiclassical}
             \end{equation}
-            \cite{ashcroft}
-            where $\mathrm{d}\vec{r}/\mathrm{d}t$ is the group velocity, given by the gradient of the band energy, and $\vec{E}$, $\vec{B}$ are external electric and magnetic fields.
+            where $\mathrm{d}\vec{r}/\mathrm{d}t$ is the group velocity, given by the gradient of the band energy, and $\vec{E}$, $\vec{B}$ are external electric and magnetic fields. \cite{ashcroft_solid_2012}
 
             In a perfect, infinite crystal without interactions, Bloch electrons would evolve according to Eq.~\eqref{eq:micro:semiclassical} and, for a uniform electric field, undergo Bloch oscillations rather than exhibit steady Ohmic transport. Real materials contain impurities, lattice defects, and phonons, and residual electron-electron interactions. These processes scatter carriers between Bloch states and thereby relax the current. \cite{bloch_uber_1929,zener_theory_1934}
 
@@ -200,6 +199,13 @@
 
         For macroscopic conductors, $L \gg \ell_\mathrm{qp}$ and $L \gg \ell_\phi$, quasiparticles undergo many scattering events and lose phase coherence long before traversing the sample. Transport is then well described by the bulk Drude picture. In contrast, when $L \lesssim \ell_\phi$ phase coherence extends across the conductor and quantum interference between different scattering paths becomes observable. Whether this coherent regime is ballistic or diffusive is then decided by $\ell_\mathrm{qp}$. For $L \ll \ell_\mathrm{qp}$ transport is ballistic and naturally described in terms of transmission channels. Whereas for $\ell_\mathrm{qp} \ll L \lesssim \ell_\phi$ motion is diffusive but phase coherent and exhibits mesoscopic corrections to the Drude conductance. \cite{ashcroft_solid_2012, gross_festkorperphysik_2014}
 
+        \begin{figure}
+            \centering
+            \includegraphics[width=.9\textwidth]{theory/basics/meso.jpg}
+            \caption{contacts, including L, ell phi, ell qp in (a) incoherent/ drude, (b) diffucive, (c) ballistic}
+            \label{fig:basics:meso}
+        \end{figure}
+
         %=========================================================
         \subsubsection*{Diffusive Mesoscopic Transport}
         %=========================================================
@@ -217,7 +223,7 @@
             such that phase-coherent effects are most pronounced when $L \lesssim \min(\ell_\phi,\,\ell_T)$.
 
             On average, transport still follows the classical drift-diffusion picture with conductance and diffusion constant as introduced in the Drude model above. Quantum mechanically, however, the coherent superposition of scattering amplitudes produces characteristic corrections to the Drude conductance, most prominently weak localization and universal conductance fluctuations. In low-dimensional or strongly disordered systems these interference effects can become strong and may ultimately lead to Anderson localization.
-            \cite{schertel_magnetic-field_2019, anderson1958}
+            \cite{bergmann_weak_1984, lee_universal_1985, lee_disordered_1985, anderson_absence_1958, schertel_magnetic-field_2019}
 
             In the present work we only use the diffusive mesoscopic regime as a reference point for the ballistic limit realized in atomic-scale contacts. 
 
@@ -248,8 +254,8 @@
             \end{equation}
             where $\tau_i \equiv \tau_i(E_\mathrm{F})$ are the transmission eigenvalues at the Fermi energy and $G_0$ is the conductance quantum\footnote{
                 Throughout this thesis the conductance quantum is defined as $G_0 \equiv 2e^2/h = 77.48\,\mu\mathrm{S}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = 12.9\,\mathrm{k\Omega}$.
-            }. \cite{landauer1970,buttiker_four-terminal_1986}
-            The full information about normal-state transport through the contact is thus encoded in the set of transmission eigenvalues $\{\tau_i\}$, often referred to as the mesoscopic \emph{pin code} of the contact.
+            }.
+            The full information about normal-state transport through the contact is thus encoded in the set of transmission eigenvalues $\{\tau_i\}$, often referred to as the mesoscopic \emph{pin code} of the contact. \cite{landauer_electrical_1970,buttiker_four-terminal_1986, beenakker_random-matrix_1997}
 
         %=========================================================
         \subsubsection*{Atomic-Scale Contacts}
@@ -261,7 +267,14 @@
 
             Experimentally, the set of transmission probabilities $\{\tau_i\}$ can be extracted from superconducting transport measurements using multiple Andreev reflection and related techniques. Throughout this thesis we therefore characterize each atomic contact by its transmission eigenvalues (its mesoscopic \emph{pin code}), which serve as input for the microscopic description of superconducting transport phenomena in the following chapters.
 
-            For comparison, quantum point contacts in high-mobility two-dimensional electron gases realize a similar ballistic, phase-coherent constriction, but with many channels whose number can be tuned electrostatically. There, the Landauer formula yields the well-known quantized conductance staircase $G \approx N G_0$ when each occupied mode is almost perfectly transmitted, $\tau_i \simeq 1$. While such semiconductor QPCs provide a clean didactic example of channel quantization, the focus of this work lies on metallic atomic contacts, where the number and transparency of channels are dictated by atomic-scale structure and chemistry rather than by lithographic geometry.
+            For comparison, quantum point contacts in high-mobility two-dimensional electron gases realize a similar ballistic, phase-coherent constriction, but with many channels whose number can be tuned electrostatically. There, the Landauer formula yields the well-known quantized conductance staircase $G \approx N G_0$ when each occupied mode is almost perfectly transmitted, $\tau_i \simeq 1$. While such semiconductor QPCs provide a clean didactic example of channel quantization, the focus of this work lies on metallic atomic contacts, where the number and transparency of channels are dictated by atomic-scale structure and chemistry rather than by lithographic geometry. \cite{scheer_conduction_1997,scheer_signature_1998, agrait_quantum_2025}
+
+            \begin{figure}
+                \centering
+                \includegraphics[width=.9\textwidth]{theory/basics/atomic-contact.jpg}
+                \caption{vgl. (a) qpc G over $V_G$, (b) opening trace aluminum G over Delta x, (c) histogram P(G) over G of aluminum (Yanson ruitenbeck)}
+                \label{fig:basics:atomic-contact}
+            \end{figure}
 
     %=========================================================
     \subsection{Aluminum as Material Platform}
@@ -270,9 +283,9 @@
 
         Aluminum serves as the central material platform of this thesis. It provides both the normal-state metallic electrodes and the weak-coupling BCS superconductor in all transport experiments discussed in the following.
 
-        Aluminum is a simple $sp$ metal with three valence electrons per atom and an fcc crystal structure. In the effective single-band picture introduced above, its low-energy normal-state properties can be summarized by the same quasiparticle parameters $m^\ast$, $v_\mathrm{F}$, $N_0$, and $t_\mathrm{qp}$. Bulk aluminum is nearly free-electron-like, such that $m^\ast \simeq m$ is often a good approximation and the electronic energy scales are set by a large Fermi energy in the eV range. Correspondingly, the Fermi wavelength is on the sub-nanometer scale and the Fermi velocity is of order $10^6\,\mathrm{m/s}$. In thin films, the elastic mean free path can reach tens of nanometers in high-purity samples, but its precise value depends sensitively on disorder, thickness, and microstructure.
+        Aluminum is a simple $sp$ metal with three valence electrons per atom and an fcc crystal structure. In the effective single-band picture introduced above, its low-energy normal-state properties can be summarized by the same quasiparticle parameters $m^\ast$, $v_\mathrm{F}$, $N_0$, and $t_\mathrm{qp}$. Bulk aluminum is nearly free-electron-like, such that $m^\ast \simeq m$ is often a good approximation and the electronic energy scales are set by a large Fermi energy in the eV range. Correspondingly, the Fermi wavelength is on the sub-nanometer scale and the Fermi velocity is of order $10^6\,\mathrm{m/s}$. In thin films, the elastic mean free path $\ell_\mathrm{qp}$ can reach tens of nanometers in high-purity samples, but its precise value depends sensitively on disorder, thickness, and microstructure. \cite{ashcroft_solid_2012,gross_festkorperphysik_2014}
 
-        For mesoscopic aluminum structures the phase-coherence length $\ell_\phi$ is not a fixed material constant but depends on temperature, disorder, and geometry. At sub-kelvin temperatures it is commonly of order micrometers, which justifies treating transport through atomic-scale contacts as fully phase coherent and ballistic, $L \ll \ell_\mathrm{qp},\,\ell_\phi$. At the atomic scale, the conduction channels in an aluminum contact reflect the symmetry of the valence orbitals and their hybridization with the electrodes, typically resulting in one predominantly $sp_z$-like channel and two transverse $p$-like channels. These channel transparencies provide the central microscopic input for the superconducting transport models used throughout this thesis.
+        For mesoscopic aluminum structures the phase-coherence length $\ell_\phi$ is not a fixed material constant but depends on temperature, disorder, and geometry. At sub-kelvin temperatures it is commonly of order micrometers, which justifies treating transport through atomic-scale contacts as fully phase coherent and ballistic, $L \ll \ell_\mathrm{qp},\,\ell_\phi$. At the atomic scale, the conduction channels in an aluminum contact reflect the symmetry of the valence orbitals and their hybridization with the electrodes, typically resulting in one predominantly $sp_z$-like channel and two transverse $p$-like channels. These channel transparencies provide the central microscopic input for the superconducting transport models used throughout this thesis. \cite{steinberg_quasi-particle_2008}
 
         %=========================================================
         \subsubsection*{Aluminum as Superconductor}
@@ -290,9 +303,9 @@
                 \label{eq:basics:aluminum}
             \end{equation}
             The comparatively small gap places typical microwave frequencies well below the pair-breaking threshold\footnote{
-                The pair-breaking frequency of aluminum is given by $\nu_\mathrm{pb}=2\Delta_0/h\approx 87\,\mathrm{GHz}$.
+                The pair-breaking frequency of aluminum is given by $\nu_\mathrm{pb}=2\Delta_0/h\approx 87\,\mathrm{GHz}$. For further information see Section \ref{subsec:macro:josephson}.
                 },
-            enabling controlled photon-assisted processes without degrading superconductivity.
+            enabling controlled photon-assisted processes without degrading superconductivity. \cite{tinkham_introduction_2004, murray_material_2021,steinberg_quasi-particle_2008}
 
             The BCS coherence length in the clean limit is given by, 
             \begin{equation}
@@ -303,7 +316,7 @@
                 \xi \simeq 0.85\,\sqrt{\xi_0\,\ell_\mathrm{qp}}\,\simeq\,\sqrt{\frac{\hbar D}{2\pi k_\mathrm{B}T_\mathrm{C}}}\,.
             \end{equation}
             For typical evaporated aluminum films with $\ell_\mathrm{qp}$ in the range of a few tens of nanometers this gives $\xi$ on the order of $100$--$300\,\mathrm{nm}$.
-            Together with its weak spin--orbit scattering and the availability of reproducible tunnel barriers (discussed below), these properties make aluminum ideally suited for tunneling spectroscopy and mesoscopic superconducting transport.
+            Together with its weak spin--orbit scattering and the availability of reproducible tunnel barriers (discussed below), these properties make aluminum ideally suited for tunneling spectroscopy and mesoscopic superconducting transport. \cite{tinkham_introduction_2004, murray_material_2021,steinberg_quasi-particle_2008}
 
         %=========================================================
         \subsubsection*{Aluminum Oxide as Insulator}
@@ -311,14 +324,14 @@
 
             A key practical advantage of aluminum is its native oxide. Upon exposure to oxygen, aluminum rapidly forms a thin insulating AlO$_x$ layer on its surface that passivates the metal and is strongly bound to the underlying film. Under ambient conditions this native oxide is typically only a few nanometers thick and self-limiting. By controlled oxidation in vacuum one can reproducibly tune the barrier properties and thereby the normal-state tunnel resistance over several orders of magnitude. The resulting Al--AlO$_x$--Al junctions are a standard workhorse of superconducting electronics and, when well fabricated, provide stable tunnel barriers with low subgap leakage.
 
-            In the context of this thesis, native and artificially grown aluminum oxide layers define the tunnel barriers in our SIS junctions and contribute to the mechanical stability of atomic contacts formed in aluminum break junctions.
+            In the context of this thesis, native and artificially grown aluminum oxide layers define the tunnel barriers in our SIS junctions and contribute to the mechanical stability of atomic contacts formed in aluminum break junctions. \cite{murray_material_2021,steinberg_quasi-particle_2008,saif_effect_2002}
         
     %=========================================================
     \subsection{Microwave Drive and Electromagnetic Phase}
     \label{subsec:basics:micro-wave}
     %=========================================================
     
-        Many of the transport phenomena discussed in this chapter involve the presence of a time-dependent electromagnetic drive. To avoid repeated introductions of the same setup, we summarize here the general assumptions that apply to all subsequent descriptions. The drive is treated as a classical, externally imposed field. No cavity modes or backaction of the junction onto the field are considered. The entire voltage drop is assumed to occur across the junction, a convenient gauge choice. In consequence, the electromagnetic field enters only through the scalar potential in the tunneling Hamiltonian or via the Josephson phase evolution. The drive amplitude is taken to be small enough not to heat the electrodes, allowing both to remain in local thermal equilibrium with Fermi--Dirac distributions. Finally, the drive frequencies are chosen such that photon energy is way smaller than the pair-breaking energy, ensuring that Cooper pairs remain intact while the phase dynamics are driven coherently. In practice, frequencies in the microwave range up to about 20\,GHz are used.
+        Many of the transport phenomena discussed in this chapter involve the presence of a time-dependent electromagnetic drive. To avoid repeated introductions of the same setup, we summarize here the general assumptions that apply to all subsequent descriptions. The drive is treated as a classical, externally imposed field. No cavity modes or backaction of the junction onto the field are considered. The entire voltage drop is assumed to occur across the junction, a convenient gauge choice. In consequence, the electromagnetic field enters only through the scalar potential in the tunneling Hamiltonian or via the Josephson phase evolution. The drive amplitude is taken to be small enough not to heat the electrodes, allowing both to remain in local thermal equilibrium with Fermi--Dirac distributions. Finally, the drive frequencies are chosen such that photon energy is way smaller than the pair-breaking energy, ensuring that Cooper pairs remain intact while the phase dynamics are driven coherently. In practice, frequencies in the microwave range up to about 20\,GHz are used. \cite{josephson_possible_1962, shapiro_josephson_1963,tien_multiphoton_1963,werthamer_temperature_1966}
 
         The spatially uniform microwave field is then given by 
         \begin{equation}
@@ -331,34 +344,34 @@
         \subsubsection*{Electromagnetic Phase}
         %=========================================================
         
-        A time-dependent voltage does not only change the electrochemical potential of the electrodes but also imprints a time-dependent phase on any charged excitation that tunnels across the junction. In the gauge used here, the entire drive enters through the scalar potential $V(t)$ and appears as a phase factor multiplying the tunneling amplitude. The relevant quantity is the charge $q$ carried by the process under consideration. For single-quasiparticle tunneling one has $q = e$, for Cooper-pair tunneling and single Andreev reflection processes $q = 2e$, and for higher-order multiple Andreev reflections the effective transferred charge is an integer multiple $q = m e$ with $m>2$.
+            A time-dependent voltage does not only change the electrochemical potential of the electrodes but also imprints a time-dependent phase on any charged excitation that tunnels across the junction. In the gauge used here, the entire drive enters through the scalar potential $V(t)$ and appears as a phase factor multiplying the tunneling amplitude. The relevant quantity is the charge $q$ carried by the process under consideration. For single-quasiparticle tunneling one has $q = e$, for Cooper-pair tunneling and single Andreev reflection processes $q = 2e$, and for higher-order multiple Andreev reflections the effective transferred charge is an integer multiple $q = m e$ with $m>2$.
 
-        In general, the accumulated electromagnetic phase between time $0$ and $t$ is given by
-        \begin{equation}
-            \phi(t) = \frac{1}{\hbar} \int_0^t q V(t')\, dt'\,,
-        \end{equation}
-        and enters the tunneling matrix element as a phase factor.
+            In general, the accumulated electromagnetic phase between time $0$ and $t$ is given by
+            \begin{equation}
+                \phi(t) = \frac{1}{\hbar} \int_0^t q V(t')\, dt'\,,
+            \end{equation}
+            and enters the tunneling matrix element as a phase factor.
 
-        Inserting the harmonic drive from Eq.~\eqref{eq:microwave}, and performing the time integration separates the phase into a static and an oscillatory contribution,
-        \begin{align}
-            \exp\!\left(-\ima\phi(t)\right)
-            &= \exp\!\left(-\ima \phi_0(t)\right)\,
-               \exp\!\left(\ima \alpha \sin(2\pi\nu t) \right)\,,
-            \label{eq:microwave:phase-factor}
-        \end{align}
-        where
-        \begin{equation}
-            \phi_0(t) = \frac{q V_0 t}{\hbar}
-            \qquad\text{and}\qquad
-            \alpha = \frac{q A}{h\nu}
-        \end{equation}
-        denote the phase accumulated from the static bias and the dimensionless modulation strength, respectively. Both depend linearly on the transferred charge $q$ and therefore distinguish quasiparticle, Cooper-pair, and higher-order Andreev processes within the same formalism.
+            Inserting the harmonic drive from Eq.~\eqref{eq:microwave}, and performing the time integration separates the phase into a static and an oscillatory contribution,
+            \begin{align}
+                \exp\!\left(-\ima\phi(t)\right)
+                &= \exp\!\left(-\ima \phi_0(t)\right)\,
+                \exp\!\left(\ima \alpha \sin(2\pi\nu t) \right)\,,
+                \label{eq:microwave:phase-factor}
+            \end{align}
+            where
+            \begin{equation}
+                \phi_0(t) = \frac{q V_0 t}{\hbar}
+                \qquad\text{and}\qquad
+                \alpha = \frac{q A}{h\nu}
+            \end{equation}
+            denote the phase accumulated from the static bias and the dimensionless modulation strength, respectively. Both depend linearly on the transferred charge $q$ and therefore distinguish quasiparticle, Cooper-pair, and higher-order Andreev processes within the same formalism.
 
-        The oscillatory phase factor is conveniently expanded using the Jacobi--Anger identity,
-        \begin{equation}
-            \exp\!\left(\ima\alpha \sin(2\pi\nu t)\right)
-            = \sum_{n=-\infty}^{\infty} J_n(\alpha)\,
-              \exp\!\left(\ima n\, 2\pi\nu t\right)\,,
-            \label{eq:microwave:jacobi-anger}
-        \end{equation}
-        where $J_n(\alpha)$ is the $n$-th Bessel function of the first kind. This harmonic decomposition will be used repeatedly in this chapter to describe photon-assisted tunneling processes for different effective charges $q = m e$.
+            The oscillatory phase factor is conveniently expanded using the Jacobi--Anger identity,
+            \begin{equation}
+                \exp\!\left(\ima\alpha \sin(2\pi\nu t)\right)
+                = \sum_{n=-\infty}^{\infty} J_n(\alpha)\,
+                \exp\!\left(\ima n\, 2\pi\nu t\right)\,,
+                \label{eq:microwave:jacobi-anger}
+            \end{equation}
+            where $J_n(\alpha)$ is the $n$-th Bessel function of the first kind. This harmonic decomposition will be used repeatedly in this chapter to describe photon-assisted tunneling processes for different effective charges $q = m e$. 
