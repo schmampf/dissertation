@@ -1,19 +1,126 @@
 %%% Colors %%%
     \usepackage{xcolor}
 
-    \xdefinecolor{seeblau100}{RGB}{0, 154, 209}
-    \xdefinecolor{seeblau65}{RGB}{89, 182, 220}
-    \xdefinecolor{seeblau35}{RGB}{160, 211, 230}
-    \xdefinecolor{seeblau20}{RGB}{200, 229, 239}
-    \xdefinecolor{schwarz60}{RGB}{0.0, 0.0, 0.4}
-    \xdefinecolor{schwarz40}{RGB}{0.0, 0.0, 0.6}
-    \xdefinecolor{schwarz20}{RGB}{0.0, 0.0, 0.8}
-    \xdefinecolor{schwarz10}{RGB}{0.0, 0.0, 0.9}
+    % seeblau
+    \xdefinecolor{seeblau120}{RGB}{0, 142, 206}
+    \xdefinecolor{seeblau100}{RGB}{0, 169, 224}
+    \xdefinecolor{seeblau80}{RGB}{46, 185, 230}
+    \xdefinecolor{seeblau65}{RGB}{89, 199, 235}
+    \xdefinecolor{seeblau35}{RGB}{166, 225, 244}
+    \xdefinecolor{seeblau20}{RGB}{204, 238, 249}
 
-    \xdefinecolor{magenta100}{RGB}{209,0, 154}
-    \xdefinecolor{magenta65}{RGB}{220,89, 182}
-    \xdefinecolor{magenta35}{RGB}{230,160, 211}
-    \xdefinecolor{magenta20}{RGB}{239,200, 229}
+    % peach
+    \xdefinecolor{peach100}{RGB}{255, 142, 123}
+    \xdefinecolor{peach80}{RGB}{254, 160, 144}
+    \xdefinecolor{peach65}{RGB}{255, 184, 172}
+    \xdefinecolor{peach35}{RGB}{254, 207, 199}
+    \xdefinecolor{peach20}{RGB}{254, 226, 221}
+
+    % seegrau (aliases: grau*)
+    \xdefinecolor{seegrau100}{RGB}{77, 80, 84}
+    \xdefinecolor{seegrau80}{RGB}{115, 120, 126}
+    \xdefinecolor{seegrau65}{RGB}{154, 160, 167}
+    \xdefinecolor{seegrau35}{RGB}{184, 188, 193}
+    \xdefinecolor{seegrau20}{RGB}{225, 226, 229}
+
+    \xdefinecolor{grau100}{RGB}{77, 80, 84}
+    \xdefinecolor{grau80}{RGB}{115, 120, 126}
+    \xdefinecolor{grau65}{RGB}{154, 160, 167}
+    \xdefinecolor{grau35}{RGB}{184, 188, 193}
+    \xdefinecolor{grau20}{RGB}{225, 226, 229}
+
+    % petrol
+    \xdefinecolor{petrol100}{RGB}{3, 95, 114}
+    \xdefinecolor{petrol80}{RGB}{7, 113, 135}
+    \xdefinecolor{petrol65}{RGB}{57, 141, 159}
+    \xdefinecolor{petrol35}{RGB}{106, 170, 183}
+    \xdefinecolor{petrol20}{RGB}{156, 198, 207}
+
+    % seegrün
+    \xdefinecolor{seegruen100}{RGB}{6, 126, 121}
+    \xdefinecolor{seegruen80}{RGB}{10, 144, 134}
+    \xdefinecolor{seegruen65}{RGB}{10, 163, 152}
+    \xdefinecolor{seegruen35}{RGB}{84, 191, 183}
+    \xdefinecolor{seegruen20}{RGB}{113, 209, 204}
+
+    % karpfenblau
+    \xdefinecolor{karpfenblau100}{RGB}{50, 67, 118}
+    \xdefinecolor{karpfenblau80}{RGB}{62, 84, 150}
+    \xdefinecolor{karpfenblau65}{RGB}{88, 107, 164}
+    \xdefinecolor{karpfenblau35}{RGB}{130, 144, 187}
+    \xdefinecolor{karpfenblau20}{RGB}{180, 188, 214}
+
+    % pinky
+    \xdefinecolor{pinky100}{RGB}{202, 74, 104}
+    \xdefinecolor{pinky80}{RGB}{224, 96, 126}
+    \xdefinecolor{pinky65}{RGB}{230, 128, 152}
+    \xdefinecolor{pinky35}{RGB}{236, 160, 178}
+    \xdefinecolor{pinky20}{RGB}{243, 191, 203}
+
+    % bordeaux
+    \xdefinecolor{bordeaux100}{RGB}{119, 20, 52}
+    \xdefinecolor{bordeaux80}{RGB}{142, 32, 67}
+    \xdefinecolor{bordeaux65}{RGB}{165, 77, 105}
+    \xdefinecolor{bordeaux35}{RGB}{188, 122, 143}
+    \xdefinecolor{bordeaux20}{RGB}{210, 166, 180}
+
+    % sonstige
+    \xdefinecolor{schwarz}{RGB}{0, 0, 0}
+    \xdefinecolor{weiss}{RGB}{255, 255, 255}
+    \xdefinecolor{gruen}{RGB}{124, 202, 137}
+    \xdefinecolor{gelb}{RGB}{239, 220, 96}
+    \xdefinecolor{rot}{RGB}{208, 21, 86}
+
+    
+    %%% Derived palettes from seeblau (channel permutations; consistent with cpd5.py PERMUTATIONS) %%%
+
+    % mint = (R, B, G)
+    \xdefinecolor{mint120}{RGB}{0, 206, 142}
+    \xdefinecolor{mint100}{RGB}{0, 224, 169}
+    \xdefinecolor{mint80}{RGB}{46, 230, 185}
+    \xdefinecolor{mint65}{RGB}{89, 235, 199}
+    \xdefinecolor{mint35}{RGB}{166, 244, 225}
+    \xdefinecolor{mint20}{RGB}{204, 249, 238}
+
+    % lila = (G, R, B)
+    \xdefinecolor{lila120}{RGB}{142, 0, 206}
+    \xdefinecolor{lila100}{RGB}{169, 0, 224}
+    \xdefinecolor{lila80}{RGB}{185, 46, 230}
+    \xdefinecolor{lila65}{RGB}{199, 89, 235}
+    \xdefinecolor{lila35}{RGB}{225, 166, 244}
+    \xdefinecolor{lila20}{RGB}{238, 204, 249}
+
+    % lime = (G, B, R)
+    \xdefinecolor{lime120}{RGB}{142, 206, 0}
+    \xdefinecolor{lime100}{RGB}{169, 224, 0}
+    \xdefinecolor{lime80}{RGB}{185, 230, 46}
+    \xdefinecolor{lime65}{RGB}{199, 235, 89}
+    \xdefinecolor{lime35}{RGB}{225, 244, 166}
+    \xdefinecolor{lime20}{RGB}{238, 249, 204}
+
+    % magenta = (B, R, G)
+    \xdefinecolor{magenta120}{RGB}{206, 0, 142}
+    \xdefinecolor{magenta100}{RGB}{224, 0, 169}
+    \xdefinecolor{magenta80}{RGB}{230, 46, 185}
+    \xdefinecolor{magenta65}{RGB}{235, 89, 199}
+    \xdefinecolor{magenta35}{RGB}{244, 166, 225}
+    \xdefinecolor{magenta20}{RGB}{249, 204, 238}
+
+    % amber = (B, G, R)
+    \xdefinecolor{amber120}{RGB}{206, 142, 0}
+    \xdefinecolor{amber100}{RGB}{224, 169, 0}
+    \xdefinecolor{amber80}{RGB}{230, 185, 46}
+    \xdefinecolor{amber65}{RGB}{235, 199, 89}
+    \xdefinecolor{amber35}{RGB}{244, 225, 166}
+    \xdefinecolor{amber20}{RGB}{249, 238, 204}
+
+
+    %%% Additional useful colors %%%
+
+    \xdefinecolor{schwarz60}{RGB}{102, 102, 102}
+    \xdefinecolor{schwarz40}{RGB}{153, 153, 153}
+    \xdefinecolor{schwarz20}{RGB}{204, 204, 204}
+    \xdefinecolor{schwarz10}{RGB}{230, 230, 230}
 
     \definecolor{codegreen}{rgb}{0,0.6,0}
     \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -106,22 +213,6 @@
                 \vskip 2pt%
                 at the%
             \end{textblock*}%
-
-            % % Autor (Deutsch, English)
-            % \begin{textblock*}{\textwidth}(0.5\footspace, 6cm)%
-            %     \selectfontsize{12pt}%
-            %     \centering%
-            %     by\\%
-            %     \vskip 2pt%
-            %     \textbf{Oliver Irtenkauf}%
-            % \end{textblock*}%
-
-            % % at the / an der
-            % \begin{textblock*}{\textwidth}(0.5\footspace, 7.5cm)%
-            %     \selectfontsize{12pt}%
-            %     \centering%
-            %     at the%
-            % \end{textblock*}%
             
             % Unversität Konstanz Logo
             \begin{textblock*}{\textwidth}(2cm, 9.5cm)%
