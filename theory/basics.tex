@@ -197,12 +197,24 @@
 
         Mesoscopic transport refers to the regime in which the conductor size $L$ becomes comparable to one or more microscopic length scales. The relevant hierarchy is set by the elastic mean free path $\ell_\mathrm{qp}$, which distinguishes ballistic from diffusive motion, and the phase-coherence length $\ell_\phi$, which distinguishes coherent from incoherent transport.
 
-        For macroscopic conductors, $L \gg \ell_\mathrm{qp}$ and $L \gg \ell_\phi$, quasiparticles undergo many scattering events and lose phase coherence long before traversing the sample. Transport is then well described by the bulk Drude picture. In contrast, when $L \lesssim \ell_\phi$ phase coherence extends across the conductor and quantum interference between different scattering paths becomes observable. Whether this coherent regime is ballistic or diffusive is then decided by $\ell_\mathrm{qp}$. For $L \ll \ell_\mathrm{qp}$ transport is ballistic and naturally described in terms of transmission channels. Whereas for $\ell_\mathrm{qp} \ll L \lesssim \ell_\phi$ motion is diffusive but phase coherent and exhibits mesoscopic corrections to the Drude conductance. \cite{ashcroft_solid_2012, gross_festkorperphysik_2014}
+        For macroscopic conductors, $L \gg \ell_\mathrm{qp}$ and $L \gg \ell_\phi$, quasiparticles undergo many scattering events and lose phase coherence long before traversing the sample. Transport is then well described by the bulk Drude picture. In contrast, when $L \lesssim \ell_\phi$ phase coherence extends across the conductor and quantum interference between different scattering paths becomes observable. Whether this coherent regime is ballistic or diffusive is then decided by $\ell_\mathrm{qp}$. For $L \ll \ell_\mathrm{qp}$ transport is ballistic and naturally described in terms of transmission channels. Whereas for $\ell_\mathrm{qp} \ll L \lesssim \ell_\phi$ motion is diffusive but phase coherent and exhibits mesoscopic corrections to the Drude conductance. Figure~\ref{fig:basics:meso} illustrates the relevant transport regimes. \cite{ashcroft_solid_2012, gross_festkorperphysik_2014}
 
         \begin{figure}
             \centering
-            \includegraphics[width=.9\textwidth]{theory/basics/meso.jpg}
-            \caption{contacts, including L, ell phi, ell qp in (a) incoherent/ drude, (b) diffucive, (c) ballistic}
+            \subfigure[
+                Classic Regime
+                ]{\import{theory/basics}{classic.pdf_tex}}
+            \hspace{3mm}
+            \subfigure[
+                Diffusive Regime
+                ]{\import{theory/basics}{diffusive.pdf_tex}}
+            \hspace{3mm}
+            \subfigure[
+                Ballistic Regime
+                ]{\import{theory/basics}{ballistic.pdf_tex}}
+            \caption{
+            Schematic transport regimes set by the conductor length $L$, the elastic mean free path $\ell_{\mathrm{qp}}$, and the phase-coherence length $\ell_{\phi}$: (a) classical ($L \gg \ell_{\phi},\, \ell_{\mathrm{qp}}$), (b) phase-coherent diffusive ($\ell_{\mathrm{qp}} \ll L \lesssim \ell_{\phi}$), and (c) ballistic ($L \ll \ell_{\mathrm{qp}}, L \lesssim \ell_{\phi}$). The constriction (\legend{seegrau100}) defines the scattering region of length $L$. Grey dots (\legend{seegrau80}) indicate scattering centers, whose density sets $\ell_{\mathrm{qp}}$. A representative quasiparticle trajectory is shown, phase-coherent segments in blue (\legend{seeblau65}) and phase-randomized segments in grey (\legend{seegrau65}). The phase-coherence length is visualized by a disk of radius $\ell_{\phi}$ (\legend{seeblau20}).
+            }
             \label{fig:basics:meso}
         \end{figure}
 
