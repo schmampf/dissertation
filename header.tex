@@ -5,6 +5,16 @@
 
 \usepackage[ngerman, english]{babel}  % Add both English and German support
 
+%%% Legend %%%
+% \legend{seeblau}                 % 1.5mm x 1.5mm
+% \legend[2mm]{seeblau}            % 2mm x 1.5mm
+% \legend[2mm][1mm]{seeblau}       % 2mm x 1mm
+
+\usepackage{xparse}
+\NewDocumentCommand{\legend}{O{1.5mm} O{1.5mm} m}{%
+  \textcolor{#3}{\rule{#1}{#2}}%
+}
+
 
 %%% A5 Format %%%
     \usepackage{geometry} % A5
