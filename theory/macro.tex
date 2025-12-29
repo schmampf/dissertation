@@ -5,24 +5,24 @@
 \label{sec:macro}
 %=========================================================
 
-        \begin{wrapfigure}[20]{r}{0.4\textwidth}
-            \captionsetup{format=plain}%
-            \centering
-            \vspace{-1em} % fine-tune vertical position
-            \includegraphics[width=.35\textwidth]{theory/macro/wavefunction.png}
-            \caption{\textbf{in Progress... (die figure ist auf alle fälle falsch und macht was mit mir)\\}
-            Schematic illustration of two superconductors weakly coupled by a tunnel barrier. The order parameter amplitude remains essentially constant across the junction, while the phase changes from $\phi_1$ to $\phi_2$, giving a well-defined phase difference $\phi = \phi_1 - \phi_2$ that controls the Josephson supercurrent.
+    \begin{wrapfigure}[13]{r}{0.4\textwidth}
+        \captionsetup{format=plain}%
+        \centering
+        \vspace{-1.5em}
+        \import{theory/macro}{delta-r.pgf}
+        \caption{
+            Spatial profile of $\Delta_1(r)$ (\legend{seeblau100}) and $\Delta_2(r)$ (\legend{seegrau80}) across a tunnel junction (\legend{seegrau65}). Their respective magnitude $|\Delta|$ (shaded) varies only weakly accross the barrier. Coherent coupling is governed by the macroscopic phase difference $\phi$.
             }
-            \label{fig:macro:wave-function}
-        \end{wrapfigure}
+        \label{fig:macro:delta-r}
+    \end{wrapfigure}
     While the previous section described dissipative transport in terms of single-particle tunneling, the complementary low-energy limit is governed by coherent Cooper-pair tunneling.  In this regime, the quasiparticle spectrum plays no direct role. Instead, transport is determined solely by the phase of the superconducting gap introduced in Eq.~\ref{eq:micro:complex-delta}. Because the magnitude $|\Delta|$ varies only weakly across a weak link, the relevant dynamical variable is the phase difference
     \begin{equation}
         \phi = \phi_1 - \phi_2\,,
         \label{eq:macro:phase-difference}
     \end{equation}
     which fully determines the supercurrent.
-    The Josephson effect discussed here is treated in the weak-coupling (tunneling) limit, analogous to the quasi-particle tunneling regime introduced in the previous section.
-    Figure~\ref{fig:macro:wave-function} shows a schematic illustration of this situation.
+    The Josephson effect discussed here is treated in the weak-coupling (tunneling) limit, analogous to the quasiparticle tunneling regime introduced in the previous section.
+    Figure~\ref{fig:macro:delta-r} shows a schematic illustration of this situation.
  
     A weak link, such as an insulating barrier, a metallic constriction, or a short normal region, allows the pairing potentials of the two superconductors to overlap. Since their amplitudes remain essentially constant on the junction scale, the coupling depends only on the relative phase. This phase difference is the essential quantity governing coherent Cooper-pair tunneling and forms the basis of the Josephson effect.
 
@@ -87,7 +87,7 @@
             \label{fig:macro:josephson-iv}
         \end{wrapfigure}
 
-        In a real junction, quasiparticle tunneling appears in parallel to the phase-driven supercurrent. The resulting \textit{I--V} characteristic, shown in Fig.~\ref{fig:macro:josephson-iv}, features a dissipationless supercurrent branch at zero voltage and a dissipative quasi-particle branch that onsets above the gap. This combined response forms the characteristic transport signature of a weakly coupled Josephson junction.
+        In a real junction, quasiparticle tunneling appears in parallel to the phase-driven supercurrent. The resulting \textit{I--V} characteristic, shown in Fig.~\ref{fig:macro:josephson-iv}, features a dissipationless supercurrent branch at zero voltage and a dissipative quasiparticle branch that onsets above the gap. This combined response forms the characteristic transport signature of a weakly coupled Josephson junction.
         
         % Ambegaokar–Baratoff I_\mathrm{C}
         
@@ -139,7 +139,7 @@
         \end{equation}
         known as Shapiro steps.
 
-        The amplitude of each step is governed by the Bessel weight $J_n(\alpha)$, which reflects the strength of phase modulation by the microwave field. In contrast to the Tien--Gordon description of quasi-particle tunneling, the Bessel functions appear here without being squared because the Josephson current depends linearly on the phase modulation rather than on squared transition probabilities. Consequently, the step amplitudes scale as $J_n(\alpha)$ instead of $J_n^2(\alpha)$. The time-averaged \textit{I--V} characteristic can therefore be written in direct analogy to the Tien--Gordon description,
+        The amplitude of each step is governed by the Bessel weight $J_n(\alpha)$, which reflects the strength of phase modulation by the microwave field. In contrast to the Tien--Gordon description of quasiparticle tunneling, the Bessel functions appear here without being squared because the Josephson current depends linearly on the phase modulation rather than on squared transition probabilities. Consequently, the step amplitudes scale as $J_n(\alpha)$ instead of $J_n^2(\alpha)$. The time-averaged \textit{I--V} characteristic can therefore be written in direct analogy to the Tien--Gordon description,
         \begin{equation}
             I(V_0)
                 = \sum_{n=-\infty}^{\infty}
@@ -153,12 +153,7 @@
         As illustrated in Fig.~\ref{fig:macro:shaprio-iv}, the interplay of phase locking and photon-assisted tunneling produces a rich structure in both the \textit{I--V} and differential conductance characteristics.
         \begin{figure}[t]
             \centering
-            \subfigure[
-                Calculated \textit{I--V} characteristics for different drive amplitudes $eA/\Delta_0$, showing the emergence of Shapiro steps at voltages $V_n = nh\nu/2e$ together with photon-assisted quasiparticle features.
-                ]{\import{theory/macro}{shapiro-iv.pgf}}
-            \subfigure[
-                Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, highlighting sideband replicas of the coherence peaks weighted by $J_n^2(eA/h\nu)$.
-                ]{\import{theory/macro}{shapiro-didv.pgf}}
+            \import{theory/macro}{shapiro-iv.pgf}
             \caption{
                 Microwave-driven transport in a weakly coupled Josephson junction. Parameters correspond to aluminum (Sec.~\ref{subsec:basics:aluminum}), with $T=0$, $\gamma=0$, and $\nu=5.0\,\mathrm{GHz}$.
                 }
@@ -181,16 +176,16 @@
         % \subsubsection*{Schaltplan}
         %=========================================================
 
-            \begin{wrapfigure}[13]{r}{0.3\textwidth}
+            \begin{wrapfigure}[12]{r}{35mm}
                 \captionsetup{format=plain}%
                 \centering
-                \includegraphics[width=.2\textwidth]{theory/macro/RCSJ.png}
+                \import{theory/macro}{rcsj-model.pdf_tex}
                 \caption{
-                    RCSJ model of a real Josephson junction.\\\textbf{in progress..}
+                    RCSJ model of a real Josephson junction.
                 }
                 \label{fig:macro:rcsj}
             \end{wrapfigure}
-            The resistively and capacitively shunted junction (RCSJ) model provides the minimal dynamical description of a real Josephson junction. It augments the ideal Josephson element by a normal resistance representing quasi-particle tunneling and a capacitance associated with the junction electrodes, as sketched in Fig.~\ref{fig:macro:rcsj}. These additions capture the essential dissipative and inertial mechanisms that govern the phase dynamics.
+            The resistively and capacitively shunted junction (RCSJ) model provides the minimal dynamical description of a real Josephson junction. It augments the ideal Josephson element by a normal resistance representing quasiparticle tunneling and a capacitance associated with the junction electrodes, as sketched in Fig.~\ref{fig:macro:rcsj}. These additions capture the essential dissipative and inertial mechanisms that govern the phase dynamics.
 
             The damping regime encoded in the quality factor $Q$ strongly affects the visibility and stability of microwave-driven features such as Shapiro steps. Overdamped junctions exhibit clean, well-defined plateaus, whereas underdamped junctions show hysteresis and residual phase oscillations that distort the step structure.
 
@@ -342,7 +337,7 @@
             \begin{equation}
                 u(\phi)
                 = -\cos\phi \;-\; i\,\phi - a\,\phi\sin(2\pi\nu' t')\,.
-                \label{eq:macro:washboard-potential}
+                \label{eq:macro:rcsj-washboard-potential}
             \end{equation}
             
 
