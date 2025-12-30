@@ -7,9 +7,16 @@ from matplotlib.pyplot import Figure, Axes
 
 def get_figure(
     figsize=(1.7, 0.85),
+    facecolor=None,
 ):
-    fig, ax = plt.subplots(figsize=figsize)
-    ax.tick_params(axis="both", direction="out", length=3, labelsize=8, pad=1.5)
+    fig, ax = plt.subplots(figsize=figsize, facecolor=facecolor)
+    ax.tick_params(
+        axis="both",
+        direction="out",
+        length=3,
+        labelsize=8,
+        pad=1.5,
+    )
 
     # Remove frame
     for spine in ["top", "right"]:
@@ -33,7 +40,7 @@ def theory_layout(
     title: Optional[str] = None,
     xlabel: str = "$x$",
     ylabel: str = "$y$",
-    padding: tuple[float, float] = (0.35, 0.15),
+    padding: tuple[float, float] = (0.3, 0.15),
     base_padding: tuple[float, float] = (0.08, 0.08),
 ):
 
@@ -47,32 +54,41 @@ def theory_layout(
 
     # get config stuff
     w0, h0 = fig.get_size_inches()
-    bpx, bpy = base_padding
     px, py = padding
+    bpx, bpy = base_padding
+    w1 = w0 - (px + 2 * bpx)
+    h1 = h0 - (py + 2 * bpy)
+    dx = np.abs(x1 - x0)
+    dy = np.abs(y1 - y0)
 
     # make layout
     ax.set_position(
         (
             (bpx + px) / w0,
             (bpy + py) / h0,
-            (w0 - 2 * bpx - px) / w0,
-            (h0 - 2 * bpy - py) / h0,
+            w1 / w0,
+            h1 / h0,
         ),
     )
 
     # labels
     ax.text(
-        x1 + bpx / (w0 - (px + 2 * bpx)) * np.abs(x1 - x0),
-        y0 - (py + bpy) / (h0 - (py + 2 * bpy)) * np.abs(y1 - y0),
+        x1 + bpx / w1 * dx,
+        y0 - (py + bpy) / h1 * dy,
         xlabel,
         ha="right",
         va="bottom",
         fontsize=8,
     )
-    ax.set_ylabel(ylabel)
-    ax.yaxis.set_label_coords(
-        (-px * 0.5) / (w0 - (px + 2 * bpx)), 0.5
-    )  # fixed relative to axes box
+    ax.text(
+        x0 - (bpx + px) / w1 * dx,
+        y0 + dy / 2,
+        ylabel,
+        rotation=90,
+        ha="left",
+        va="center",
+        fontsize=8,
+    )
 
     # set limits
     ax.set_xlim((x0, x1))
