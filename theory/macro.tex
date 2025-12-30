@@ -238,15 +238,6 @@
         %=========================================================
 
             The normalized RCSJ equation~\ref{eq:macro:rcsj-cpr-norm}, admits a mechanical interpretation that provides an intuitive picture of the phase dynamics. The equation is mathematically equivalent to the motion of a particle of unit mass in a tilted, periodic potential subject to viscous damping. 
-            
-            \begin{figure}[t]
-                \centering
-                \import{theory/macro}{u-phi.pgf}
-                \caption{
-                $U(\phi)$ for $i = 0, 1/2, 1$.\\\textbf{in progress.. incl. ball?}
-                }
-                \label{fig:macro:rcsj-u-phi}
-            \end{figure}
 
             The normalized potential is obtained by identifying the restoring force with
             \begin{equation}
@@ -261,6 +252,15 @@
                 \label{eq:macro:washboard-potential}
             \end{equation}
             In the untilted case ($i=0$) the barrier height is given by $\Delta U = 2E_\mathrm{J}$. This ''tilted washboard potential'' consists of a cosine landscape whose overall slope is controlled by the normalized bias current $i$, as shown in Figure~\ref{fig:macro:rcsj-u-phi}.
+            
+            \begin{figure}[t]
+                \centering
+                \import{theory/macro}{u-phi.pgf}
+                \caption{
+                    Tilted washboard potential of the RCSJ model (Eq.~\ref{eq:macro:washboard-potential}) for increasing normalized bias current $i$. For $i=0$ (\legend{seeblau100}) the phase is trapped in a stable minimum. At intermediate tilt, $0<i<1$ (\legend{seeblau65}), the reduced barrier enables thermally activated or noise-driven phase slips (\legend{seegrau35}) between adjacent minima. At $i=1$ (\legend{seeblau35}) the barriers vanish and the phase runs downhill, corresponding to the finite-voltage state.
+                    }
+                \label{fig:macro:rcsj-u-phi}
+            \end{figure}
 
             For small bias, $i<1$, the potential exhibits a series of metastable minima. In this regime, the phase can remain localized in one of these wells, corresponding to the zero-voltage superconducting branch of the \textit{I--V} characteristic. Small oscillations of the phase around the minimum occur at the plasma frequency defined in Eq.~\ref{eq:macro:rcsj-plasma-frequency}, but the average voltage remains zero.
 
@@ -274,14 +274,6 @@
         \subsubsection*{Switching Dynamics and Phase Diffusion}
         %=========================================================
 
-            The switching current $I_\mathrm{SW}$ is the experimentally observed current at which a Josephson junction leaves the zero-voltage state and enters the resistive, running-phase regime. Unlike the intrinsic critical current $I_\mathrm{C}$, which is a microscopic parameter set by the Josephson coupling energy, the switching current is a stochastic quantity. Its value is determined by the competition between the decreasing barrier height of the tilted washboard potential and fluctuations that drive premature escape. Thermal activation, current noise from the electromagnetic environment, and the rate at which the bias current is ramped all increase the likelihood of early escape and thus reduce ths switching current below the critical current. Only in the ideal, noise-free limit does the switching current approach the intrinsic critical current.
-
-            In real Josephson junctions the supercurrent branch acquires a finite slope due to thermal and noise-induced fluctuations of the phase. Even for currents below the intrinsic critical value, stochastic forces drive small excursions of the phase within the tilted washboard potential, leading to a finite average phase velocity and hence a small, non-zero voltage. In the RCSJ model this effect is enhanced by the resistive branch in parallel with the Josephson element, which provides a dissipative path whenever the phase is not perfectly static. As a result, the ideal vertical supercurrent step is replaced by a broadened zero-voltage region whose slope grows with temperature, current noise and environmental damping.
-
-        %========================================================= 
-        \subsubsection*{Retrapping Dynamics}
-        %=========================================================
-
             \begin{wrapfigure}[19]{r}{0.4\textwidth}
                 \captionsetup{format=plain}%
                 \centering
@@ -292,6 +284,14 @@
                 }
                 \label{fig:macro:rcsj-iv}
             \end{wrapfigure}
+            The switching current $I_\mathrm{SW}$ is the experimentally observed current at which a Josephson junction leaves the zero-voltage state and enters the resistive, running-phase regime. Unlike the intrinsic critical current $I_\mathrm{C}$, which is a microscopic parameter set by the Josephson coupling energy, the switching current is a stochastic quantity. Its value is determined by the competition between the decreasing barrier height of the tilted washboard potential and fluctuations that drive premature escape. Thermal activation, current noise from the electromagnetic environment, and the rate at which the bias current is ramped all increase the likelihood of early escape and thus reduce ths switching current below the critical current. Only in the ideal, noise-free limit does the switching current approach the intrinsic critical current.
+
+            In real Josephson junctions the supercurrent branch acquires a finite slope due to thermal and noise-induced fluctuations of the phase. Even for currents below the intrinsic critical value, stochastic forces drive small excursions of the phase within the tilted washboard potential, leading to a finite average phase velocity and hence a small, non-zero voltage. In the RCSJ model this effect is enhanced by the resistive branch in parallel with the Josephson element, which provides a dissipative path whenever the phase is not perfectly static. As a result, the ideal vertical supercurrent step is replaced by a broadened zero-voltage region whose slope grows with temperature, current noise and environmental damping.
+
+        %========================================================= 
+        \subsubsection*{Retrapping Dynamics}
+        %=========================================================
+
             After the phase has escaped into the running state, the junction develops a finite average voltage and the phase accelerates down the tilted washboard potential. When the bias current is reduced again, the junction does not immediately return to the zero-voltage state. Instead, the phase continues to move until sufficient kinetic energy has been dissipated for it to fall back into a metastable minimum. The current at which this return to the superconducting branch occurs is the retrapping current $I_\mathrm{R}$.
 
             In contrast to the switching current, set by escape from a minimum, the retrapping current reflects how efficiently damping removes the kinetic energy accumulated during the running state. Thermal and current noise smooth this transition, producing a broadened return to the superconducting branch rather than a sharp jump.
