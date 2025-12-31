@@ -383,17 +383,17 @@
 \begin{pgfscope}%
 \pgfsetbuttcap%
 \pgfsetroundjoin%
-\definecolor{currentfill}{rgb}{0.721569,0.737255,0.756863}%
+\definecolor{currentfill}{rgb}{0.349020,0.780392,0.921569}%
 \pgfsetfillcolor{currentfill}%
 \pgfsetlinewidth{1.003750pt}%
-\definecolor{currentstroke}{rgb}{0.721569,0.737255,0.756863}%
+\definecolor{currentstroke}{rgb}{0.349020,0.780392,0.921569}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfsys@defobject{currentmarker}{\pgfqpoint{-0.052974in}{-0.021817in}}{\pgfqpoint{0.031158in}{0.052974in}}{%
-\pgfpathmoveto{\pgfqpoint{0.031158in}{-0.021817in}}%
-\pgfpathlineto{\pgfqpoint{-0.009341in}{0.052974in}}%
-\pgfpathlineto{\pgfqpoint{-0.052974in}{-0.009341in}}%
-\pgfpathlineto{\pgfqpoint{0.031158in}{-0.021817in}}%
+\pgfsys@defobject{currentmarker}{\pgfqpoint{-0.043253in}{-0.017813in}}{\pgfqpoint{0.025440in}{0.043253in}}{%
+\pgfpathmoveto{\pgfqpoint{0.025440in}{-0.017813in}}%
+\pgfpathlineto{\pgfqpoint{-0.007627in}{0.043253in}}%
+\pgfpathlineto{\pgfqpoint{-0.043253in}{-0.007627in}}%
+\pgfpathlineto{\pgfqpoint{0.025440in}{-0.017813in}}%
 \pgfpathclose%
 \pgfusepath{stroke,fill}%
 }%
@@ -899,7 +899,7 @@
 \pgfsetrectcap%
 \pgfsetroundjoin%
 \pgfsetlinewidth{1.505625pt}%
-\definecolor{currentstroke}{rgb}{0.721569,0.737255,0.756863}%
+\definecolor{currentstroke}{rgb}{0.349020,0.780392,0.921569}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{1.352457in}{1.218184in}}%
@@ -1140,7 +1140,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=3.182410in,y=1.615934in,left,base]{\color{textcolor}{\sffamily\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$0<i<1$}}%
+\pgftext[x=3.182410in,y=1.615934in,left,base]{\color{textcolor}{\sffamily\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$0 < i < 1$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
