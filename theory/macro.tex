@@ -114,7 +114,7 @@
     %=========================================================
         \begin{figure}[t]
             \centering
-            \import{theory/macro}{shapiro-iv.pgf}
+            \import{theory/macro}{shapiro-ideal.pgf}
             \caption{
                 Microwave-driven transport in a weakly coupled Josephson junction. Parameters correspond to aluminum (Sec.~\ref{subsec:basics:aluminum}), with $T=0$, $\gamma=0$, and $\nu=10.0\,\mathrm{GHz}$.
                 }
@@ -167,6 +167,7 @@
             \begin{wrapfigure}[12]{r}{35mm}
                 \captionsetup{format=plain}%
                 \centering
+                \vspace{-.5em}
                 \import{theory/macro}{rcsj-model.pdf_tex}
                 \caption{
                     RCSJ model of a real Josephson junction.
@@ -327,19 +328,22 @@
                 \label{eq:macro:rcsj-washboard-potential}
             \end{equation}
             
-
             Weak damping makes the junction sensitive to residual oscillations, which can distort Shapiro steps and reduce their visibility under microwave irradiation.
             
             In the overdamped regime, damping suppresses inertial phase oscillations and stabilizes the frequency-locked state, yielding clean, well-defined Shapiro steps. Thermal fluctuations broaden the step edges but do not compromise their visibility. This regime most closely reflects the behavior of the atomic aluminum contact studied in this work.
 
-            Figure~\ref{fig:macro:rcsj-shapiro-iv} shows the resulting \textit{I--V} characteristics in the overdamped limit. The phase locks robustly to the external drive, producing a sequence of Shapiro plateaus.
-            \begin{figure}[h]
+            Figure~\ref{fig:macro:rcsj-shapiro-iv} shows the resulting \textit{I--V} characteristics in the under- and overdamped limit. The phase locks robustly to the external drive, producing a sequence of Shapiro plateaus.
+            \begin{figure}
                 \centering
-                \includegraphics[width=.45\textwidth]{theory/macro/rcsj-shapiro-iv.png}
+                \subfigure[
+                    Overdamped junction ($Q\ll 1$), switching current parameter $I_\mathrm{SW}=0.5\,I_\mathrm{C}$.
+                    ]{\import{theory/macro/}{shapiro-under.pgf}}
+                \subfigure[
+                    Underdamped junction ($Q\gg 1$), switching current parameter $I_\mathrm{SW}=0.2\,I_\mathrm{C}$.
+                    ]{\import{theory/macro/}{shapiro-over.pgf}}
                 \caption{
-                    \textbf{in progress.. über dies caption muss auch nochmal der refiner drüber}\\
-                    Shapiro steps in the overdamped regime ($Q\ll 1$). Strong damping suppresses residual oscillations of the phase, stabilizing clean voltage plateaus at $V_n = nh\nu/2e$. Only the overdamped case is shown, reflecting the parameter regime relevant for the aluminum tunnel junctions investigated in this work.
-                }
+                    Microwave-driven dc transport of a Josephson junction within the RCSJ model for (a) overdamped and (b) underdamped phase dynamics. Shown is the normalized bias current $I_\mathrm{bias}/(G_\mathrm{N}\Delta_0/e)$ versus the normalized voltage $eV/\Delta_0$ for drive amplitudes $eA/\Delta_0\in\{0,0.3,0.6\}$ at $\nu=10\,\mathrm{GHz}$. Parameters correspond to aluminum (Sec.~\ref{subsec:basics:aluminum}) with $T=0$ and $\gamma=0$.
+                    }
                 \label{fig:macro:rcsj-shapiro-iv}
             \end{figure}
 
