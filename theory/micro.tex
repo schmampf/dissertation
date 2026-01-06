@@ -219,17 +219,19 @@
 
         % ref figures
         Figure~\ref{fig:micro:tunnel-iv-didv} summarizes these effects and makes the contrasting roles of temperature and Dynes broadening in NS and SS junctions explicit.  
-        \begin{figure}
+        \begin{figure}[ht]
             \centering
             \subfigure[
                 Calculated \textit{I--V} characteristics for different temperatures $T/T_\mathrm{C}$ at vanishing Dynes broadening ($\gamma = 0$). Increasing temperature rounds the coherence peaks and gradually fills the subgap region. 
                 ]{\import{theory/micro}{tunnel-iv-T.pgf}}
+            \hfill
             \subfigure[
                 Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, showing the thermally induced suppression and broadening of the coherence peaks.
                 ]{\import{theory/micro}{tunnel-didv-T.pgf}}
             \subfigure[
                 Calculated \textit{I--V} characteristics for different Dynes parameters $\gamma/\Delta_0$ at $T=0$. Lifetime broadening smooths the onset of quasi-particle tunneling and produces finite subgap conductance.
                 ]{\import{theory/micro}{tunnel-iv-gamma.pgf}}
+            \hfill
             \subfigure[
                 Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, illustrating the strong suppression and smearing of the coherence peaks due to lifetime broadening. 
                 ]{\import{theory/micro}{tunnel-didv-gamma.pgf}}
@@ -249,6 +251,19 @@
     \subsection{Photon-Assisted Tunneling}
     \label{subsec:micro:pat}
     %=========================================================
+        \begin{figure}[ht]
+            \centering
+            \subfigure[
+                Calculated \textit{I--V} characteristics for NS (grey) and SS (blue) junctions under microwave irradiation for different drive amplitudes $eA/\Delta_0$. Increasing amplitude generates additional photon-assisted tunneling channels at voltages shifted by $\pm n h\nu/e$.
+                ]{\import{theory/micro}{pat-iv.pgf}}
+            \subfigure[
+                Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, showing photon-assisted replicas of the coherence peaks, weighted by $J_n^2(eA/h\nu)$. 
+                ]{\import{theory/micro}{pat-didv.pgf}}
+            \caption{
+                Photon-assisted tunneling in NS (grey) and SS (blue) junctions. The microwave drive couples electronic states differing in energy by $h\nu$, producing sideband replicas of the static \textit{I--V} and \textit{dI--dV} characteristics. Parameters correspond to aluminum (Sec.~\ref{subsec:basics:aluminum}), with $T = 0$, $\gamma = 0$, and $\nu = 10.0\,\mathrm{GHz}$.
+                }
+            \label{fig:micro:pat}
+        \end{figure}
 
         In the static tunneling expressions above, the Hamiltonian is time-independent and the Bardeen tunneling matrix element carries only its intrinsic phase. Once a microwave drive is applied, as introduced in Section~\ref{subsec:basics:micro-wave}, this matrix element acquires the time-dependent phase factor of Eq.~\ref{eq:microwave:phase-factor}. Here the relevant charge for quasi-particle tunneling is $q=e$. The drive thus modulates the single-electron tunneling phase, not the macroscopic superconducting phase, and this modulation is the microscopic origin of photon-assisted tunneling (PAT).
 
@@ -279,18 +294,5 @@
         which is the Tien--Gordon result. Each term contributes a replica of $I_0(V_0)$ shifted by $n h\nu/e$ and weighted by the probability $J_n^2(\alpha)$ of absorbing or emitting $|n|$ photons. \cite{tien_multiphoton_1963}
 
         PAT therefore provides a universal semiclassical modification of quasi-particle tunneling. All differences between NS and SS junctions under microwave irradiation arise solely from their static DOS and not from the PAT mechanism itself. Figure~\ref{fig:micro:pat} illustrates this behaviour for NS (grey) and SS (blue) junctions.
-        \begin{figure}
-            \centering
-            \subfigure[
-                Calculated \textit{I--V} characteristics for NS (grey) and SS (blue) junctions under microwave irradiation for different drive amplitudes $eA/\Delta_0$. Increasing amplitude generates additional photon-assisted tunneling channels at voltages shifted by $\pm n h\nu/e$.
-                ]{\import{theory/micro}{pat-iv.pgf}}
-            \subfigure[
-                Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, showing photon-assisted replicas of the coherence peaks, weighted by $J_n^2(eA/h\nu)$. 
-                ]{\import{theory/micro}{pat-didv.pgf}}
-            \caption{
-                Photon-assisted tunneling in NS (grey) and SS (blue) junctions. The microwave drive couples electronic states differing in energy by $h\nu$, producing sideband replicas of the static \textit{I--V} and \textit{dI--dV} characteristics. Parameters correspond to aluminum (Sec.~\ref{subsec:basics:aluminum}), with $T = 0$, $\gamma = 0$, and $\nu = 5.0\,\mathrm{GHz}$.
-                }
-            \label{fig:micro:pat}
-        \end{figure}
 
         Experimentally, the drive amplitude $A$ can be extracted from the relative sideband heights through the Bessel weights, while the spacing $h\nu$ between replicas provides a robust calibration of the microwave frequency. Photon-assisted tunneling thereby bridges static tunneling spectroscopy and driven superconducting transport in a fully microscopic and conceptually transparent way.
