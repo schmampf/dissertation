@@ -59,7 +59,7 @@ def theory_layout(
         ylabel = "$y$"
 
     if padding is None:
-        padding = (0.3, 0.2)
+        padding = (0.2, 0.2)
 
     if base_padding is None:
         base_padding = (0.08, 0.08)
