@@ -240,23 +240,53 @@
             In the present work we only use the diffusive mesoscopic regime as a reference point for the ballistic limit realized in atomic-scale contacts. 
 
         %=========================================================
-        \subsubsection*{Ballistic Transport and Transmission Channels}
+        \subsubsection*{Ballistic Transport and Scattering Fromalism}
         %=========================================================
-
+            
+            \begin{wrapfigure}[15]{r}{0.4\textwidth}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-1em} % fine-tune vertical position
+                \import{theory/basics}{ballistic.pdf_tex}
+                \\\textbf{This is a placeholder!}
+                \caption{
+                    Sketch of a two-terminal scatterer connecting ideal leads. Incoming and outgoing mode amplitudes are related by the scattering matrix $S$.
+                }
+                \label{fig:basic:scatter}
+            \end{wrapfigure}
             In the ballistic regime the length of the constriction is shorter than the elastic mean free path, $L \ll \ell_\mathrm{qp}$, such that quasiparticles traverse the contact without momentum-randomizing scattering. If, in addition, the contact is shorter than the phase-coherence length, $L \lesssim \ell_\phi$, transport is phase coherent across the entire constriction. In the ballistic limit one may express the phase-coherence length in terms of the Fermi velocity and a dephasing time $t_\phi$,
             \begin{equation}
                 \ell_\phi = v_\mathrm{F} t_\phi\,.
             \end{equation}
 
-            In this regime resistance can no longer be attributed to dissipative processes distributed along the conductor. Instead, the constriction acts as an essentially elastic scatterer: partial reflection at the contact region limits the transmitted current, while the associated energy is ultimately dissipated in the reservoirs where quasiparticles relax.
+            Ballistic transport is most naturally formulated as an elastic scattering problem. A finite region connects ideal leads in which the electronic modes propagate without dissipation. We denote the complex incoming mode amplitudes in the left and right lead by $A_1$ and $A_2$, and the corresponding outgoing amplitudes by $B_1$ and $B_2$, as shown in Figure~\ref{fig:basic:scatter}. 
+            
+            Linear scattering then implies a matrix relation which we write explicitly as
+            \begin{equation}
+                \begin{pmatrix} B_1 \\ B_2 \end{pmatrix} = \mat{S}\,\begin{pmatrix} A_1 \\ A_2 \end{pmatrix}\,.
+                \label{eq:basic:scatter-1}
+            \end{equation}
 
-            In the ballistic, phase-coherent limit the normal-state conductance $G_\mathrm{N}$ is most naturally obtained from the scattering approach discussed in the mesoscopic chapter (see Sec.~\ref{subsec:meso:scattering}). In linear response at low temperature it is given by the Landauer formula
+            In the general multi-mode case, $A_{1,2}$ and $B_{1,2}$ become vectors collecting all propagating modes in the corresponding lead, and the scattering matrix decomposes into reflection and transmission subblocks. For purely elastic scattering in the normal state, the scattering matrix is unitary, reflecting current conservation. In many situations of interest, additional symmetries reduce the structure of the scattering matrix. For example, for a symmetric two-terminal scatterer one may parameterize it in terms of reflection and transmission blocks $\mat{r}$ and $\mat{t}$, 
+            \begin{equation}
+                \mat{S}
+                = \begin{pmatrix} - \ima \mat{r} & \mat{t} \\ \mat{t} & - \ima \mat{r} \end{pmatrix}\,.
+                \label{eq:basic:scatter-2}
+            \end{equation}
+            
+            The central quantities governing transport are then the transmission eigenvalues
+            \begin{equation}
+                \{\tau_i\} = \operatorname{eig}\!\left(\mat{t}^\dagger\,\mat{t}\right)\,,\quad 
+                \tau_i\in[0,1]\,.
+                \label{eq:basic:tau_i}
+            \end{equation}
+            Choosing a basis of transmission eigenchannels diagonalizes $\mat{t}^\dagger\mat{t}$; this basis is unique up to unitary rotations within degenerate subspaces.
+
+            In linear response, the normal-state conductance is then given by the Landauer formula,
             \begin{equation}
                 G_\mathrm{N} = G_0 \sum_{i=1}^N \tau_i\,,
                 \quad
                 G_0 = \frac{2e^2}{h}\,,
-                \quad
-                \tau_i \in [0\,,1]\,,
                 \label{eq:basics:landauer}
             \end{equation}
             where $\tau_i$ are the transmission eigenvalues and $G_0$ is the conductance quantum\footnote{
