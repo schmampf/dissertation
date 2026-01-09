@@ -250,23 +250,19 @@
 
             In this regime resistance can no longer be attributed to dissipative processes distributed along the conductor. Instead, the constriction acts as an essentially elastic scatterer: partial reflection at the contact region limits the transmitted current, while the associated energy is ultimately dissipated in the reservoirs where quasiparticles relax.
 
-            A convenient description is provided by the scattering matrix of the contact. At a given energy $E$ the leads support a finite number of transverse modes, and the transmission properties are encoded in the transmission matrix $t(E)$. Its eigenvalues define transmission eigenchannels with probabilities
+            In the ballistic, phase-coherent limit the normal-state conductance $G_\mathrm{N}$ is most naturally obtained from the scattering approach discussed in the mesoscopic chapter (see Sec.~\ref{subsec:meso:scattering}). In linear response at low temperature it is given by the Landauer formula
             \begin{equation}
-                \{\tau_i(E)\} = \operatorname{eig}\!\left(t^\dagger(E)\,t(E)\right)\,,\qquad \tau_i(E)\in[0,1]\,.
-            \end{equation}
-
-            In the linear-response regime at low temperature the conductance of such a phase-coherent contact is given by the Landauer formula
-            \begin{equation}
-                G = G_0 \sum_{i=1}^N \tau_i\,,
-                \qquad
+                G_\mathrm{N} = G_0 \sum_{i=1}^N \tau_i\,,
+                \quad
                 G_0 = \frac{2e^2}{h}\,,
-                % \qquad
-                % \tau_i \in [0\,,1]\,,
+                \quad
+                \tau_i \in [0\,,1]\,,
                 \label{eq:basics:landauer}
             \end{equation}
-            where $\tau_i \equiv \tau_i(E_\mathrm{F})$ are the transmission eigenvalues at the Fermi energy and $G_0$ is the conductance quantum\footnote{
+            where $\tau_i$ are the transmission eigenvalues and $G_0$ is the conductance quantum\footnote{
                 Throughout this thesis the conductance quantum is defined as $G_0 \equiv 2e^2/h = 77.48\,\mu\mathrm{S}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = 12.9\,\mathrm{k\Omega}$.
             }.
+
             The full information about normal-state transport through the contact is thus encoded in the set of transmission eigenvalues $\{\tau_i\}$, often referred to as the mesoscopic pin code of the contact. \cite{landauer_electrical_1970,buttiker_four-terminal_1986, beenakker_random-matrix_1997}
 
         %=========================================================
@@ -322,6 +318,8 @@
         Aluminum is a simple $sp$ metal with three valence electrons per atom and an fcc crystal structure. In the effective single-band picture introduced above, its low-energy normal-state properties can be summarized by the same quasiparticle parameters $m^\ast$, $v_\mathrm{F}$, $N_0$, and $t_\mathrm{qp}$. Bulk aluminum is nearly free-electron-like, such that $m^\ast \simeq m$ is often a good approximation and the electronic energy scales are set by a large Fermi energy in the eV range. Correspondingly, the Fermi wavelength is on the sub-nanometer scale and the Fermi velocity is of order $10^6\,\mathrm{m/s}$. In thin films, the elastic mean free path $\ell_\mathrm{qp}$ can reach tens of nanometers in high-purity samples, but its precise value depends sensitively on disorder, thickness, and microstructure. \cite{ashcroft_solid_2012,gross_festkorperphysik_2014}
 
         For mesoscopic aluminum structures the phase-coherence length $\ell_\phi$ is not a fixed material constant but depends on temperature, disorder, and geometry. At sub-kelvin temperatures it is commonly of order micrometers, which justifies treating transport through atomic-scale contacts as fully phase coherent and ballistic, $L \ll \ell_\mathrm{qp},\,\ell_\phi$. At the atomic scale, the conduction channels in an aluminum contact reflect the symmetry of the valence orbitals and their hybridization with the electrodes, typically resulting in one predominantly $sp_z$-like channel and two transverse $p$-like channels. These channel transparencies provide the central microscopic input for the superconducting transport models used throughout this thesis. \cite{steinberg_quasi-particle_2008}
+
+        $E_F=11.7eV$ \cite{chauvin}
 
         %=========================================================
         \subsubsection*{Aluminum as Superconductor}
