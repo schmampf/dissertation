@@ -1,32 +1,11 @@
 % !TEX root = ../thesis.tex
 
+%=========================================================
 \chapter{Appendix}
 \label{chapter:appendix}
+%=========================================================
 
-
-    \section{washboard potential analogy ???}
-        This expression can be interpreted as the equation of motion of a fictitious particle with an effective mass $m_\mathrm{eff} = \hbar C / 2e$, moving in a tilted washboard potential
-        \begin{equation}
-            U(\phi) = -E_\mathrm{J}\left(\cos\phi + \frac{I}{I_\mathrm{C}}\phi\right)\,,
-            \label{eq:macro:washboard}
-        \end{equation}
-        where $E_\mathrm{J} = \hbar I_\mathrm{C} / 2e$ is the Josephson coupling energy. In this analogy:
-        \begin{itemize}
-            \item the particle position corresponds to the phase $\phi$,
-            \item its velocity $\dot{\phi}$ corresponds to the voltage across the junction,
-            \item the damping term $\hbar/2eR$ corresponds to viscous friction,
-            \item and the tilt of the potential is controlled by the bias current $I$.
-        \end{itemize}
-        For $I < I_\mathrm{C}$, the particle is trapped in one of the potential wells, corresponding to the zero-voltage (superconducting) state. When $I > I_\mathrm{C}$, the potential minima disappear, the phase starts to run, and a finite voltage develops.
-
-\input{methods/appendix.tex}
-
-
-
-
-\section{Test}
-    Reference \cite{schertel_magnetic-field_2019}
-
+    Here goes some outlook.
 
     \the\textwidth
     \printinunitsof{in}\prntlen{\textwidth}
@@ -37,91 +16,10 @@
     \printinunitsof{in}\prntlen{\textheight}
     \printinunitsof{mm}\prntlen{\textheight}
 
-    \begin{figure}
-        \centering
-        \import{theory/stuff/plot test}{test.pgf}
-        \caption{Complex susceptibility}
-        \label{fig:test_plot}
-    \end{figure}
+    \newpage
 
-    Figure \ref{fig:test_plot}
+    %=========================================================
+    \input{methods/appendix.tex}
+    %=========================================================
+    \newpage
 
-
-    \begin{figure}
-        \centering
-        \import{theory/stuff/inkscape test}{test.pdf_tex}
-        \caption{blablabla.}
-        \label{fig:test_inkscape}
-    \end{figure}
-
-    Figure \ref{fig:test_inkscape}
-
-
-    \begin{program}
-        \caption{Listing Caption is above.}
-        \label{program:test}
-        \lstinputlisting[language=Python]{appendix/test.py}
-    \end{program}
-
-    Program \ref{program:test}
-
-        
-Option 1 — No explicit “Miscellaneous” chapter
-
-This is the cleanest for most theses.
-You integrate every bit of content under one of the main scientific chapters or the appendices.
-Use appendices for anything that is:
-	•	technical but not central (calibration curves, fitting scripts, additional I–V traces),
-	•	background or validation measurements (e.g., temperature calibration, microwave attenuation tests).
-
-Then the main text stays focused and logical.
-
-⸻
-
-🔹 Option 2 — A short “Miscellaneous Results” chapter
-
-If you have several small, independent results that don’t warrant full chapters — for example:
-	•	supplementary microwave experiments (different frequencies, powers),
-	•	tests on non-Al samples,
-	•	noise measurements,
-	•	comparisons between fitting methods,
-
-— then you can group them as a compact “Additional Experiments and Analysis” or “Miscellaneous” chapter near the end.
-
-Suggested layout:
-
-Chapter 6 — Additional Experiments and Analyses
-
-6.1 Temperature and Magnetic-Field Dependence
-Briefly show confirmation that the devices behave as expected (e.g. gap suppression).
-
-6.2 Frequency-Dependent Effects
-Show the asymmetric I–V features and discuss possible causes (resonances, heating, impedance mismatch).
-
-6.3 Auxiliary Measurements and Calibrations
-Include details such as microwave coupling, line attenuation, or base-temperature determination.
-
-Keep this concise — it shouldn’t look like an afterthought but rather a supporting evidence collection.
-
-⸻
-
-🔹 Option 3 — Miscellaneous Appendices
-
-If your “miscellaneous” content is highly technical or data-heavy:
-	•	Appendix A: Detailed fitting procedure for Tien–Gordon model
-	•	Appendix B: Raw I–V data and error estimation
-	•	Appendix C: Microwave calibration
-	•	Appendix D: Temperature extraction via Dynes fits
-
-That keeps your main story crisp but documents everything transparently.
-
-⸻
-
-🔹 Recommendation for you
-
-Given your description so far, I’d suggest:
-	•	No “Miscellaneous” chapter in the main thesis body.
-	•	Instead, include a short “Additional Experiments” section at the end of your High-Transmission chapter (for asymmetric I–Vs etc.),
-	•	and move purely technical or validation content to appendices.
-
-That way, everything still feels intentional and thematically grouped.
