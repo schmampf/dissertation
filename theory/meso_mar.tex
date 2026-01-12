@@ -1,0 +1,240 @@
+
+    %=========================================================
+    \subsection{Multiple Andreev Reflection}
+    \label{subsec:meso:mar}
+    %=========================================================
+
+        When two superconductors are connected through a constriction of atomic dimensions, the quasi-particle transport at subgap voltages is governed by multiple Andreev reflection (MAR). In this regime, a quasi-particle incident on the interface cannot tunnel directly through the gap but undergoes successive Andreev reflections between the two superconducting electrodes. Each reflection converts an electron into a hole (or vice versa) while transferring a Cooper-pair to the condensate, effectively advancing the quasi-particle energy by $eV$ with every traversal of the junction.
+
+        After $m$ such reflections, the quasi-particle gains an energy of $E_m=meV$ and can finally escape into the continuum when $E_m = 2\Delta$, thus defining the characteristic subharmonic structure in the \textit{I-V} curve. Distinct features appearing at
+        \begin{equation}
+            eV_m=\frac{2\Delta}{m}\,,\quad(m\in\mathbb{N}^+)\,.
+            \label{eq:meso:mar-voltage-onset}
+        \end{equation}
+        The process probability is given by
+        \begin{equation}
+            P_m \propto \tau^m\,,
+        \end{equation}
+        what implies a unique \textit{I-V} characteristics for each transmission. In the tunneling limit ($\tau \ll 1$), the subgap current is weak and dominated by single quasi-particle tunneling ($m=1$). As the transmission increases, higher-order MAR processes become more pronounced, producing a series of peaks in the differential conductance. In the fully transparent limit ($\tau \approx 1$), these discrete features merge into a smooth subgap current approaching the Andreev limit, where transport becomes dominated by successive pair transfers rather than discrete tunneling events.
+
+        In contrast, multiple Andreev reflection cannot occur at a single N-S interface, since the normal electrode provides no second superconducting condensate to sustain repeated electron-hole conversions. After a single Andreev reflection, the reflected hole simply escapes into the normal reservoir instead of being reflected back toward the interface, limiting the process to one conversion event per incident quasi-particle.
+
+        Obtaining the \textit{I-V} characteristics of multiple Andreev reflection (MAR) for arbitrary transmission represents a nontrivial problem, since the transport involves an infinite hierarchy of correlated two-particle processes occurring under nonequilibrium conditions. The first phenomenological descriptions were provided by BTK in 1982 and subsequently by Octavio et al. in 1983. These approaches treated MAR as a sequence of independent Andreev reflections within a semiclassical framework, successfully explaining the appearance of the subharmonic gap structure in the tunneling and weak-coupling limits. However, they relied on rate-equation or transmission-probability arguments and could not describe the full quantum coherence between successive reflections, nor the smooth crossover to the ballistic regime.
+
+        %=========================================================
+        \subsubsection*{Hamiltonian Approach}
+        \label{subsec:meso:mar:ha}
+        %=========================================================
+            A major theoretical step forward was achieved by Cuevas, Martín-Rodero, and Levy Yeyati (1996, 1998), who developed a fully microscopic theory of MAR based on the nonequilibrium Keldysh Green's-function formalism. Their Hamiltonian approach (HA) treated the applied voltage self-consistently as a time-dependent phase $\phi(t) = \phi_0 + 2eVt/\hbar$, rendering the system periodic in time. By solving this Floquet problem recursively, they obtained stationary solutions for the dc current that naturally include all orders of multiple Andreev reflections and remain valid for any channel transmission. 
+            \begin{figure}[t]
+                \centering
+                \subfigure[
+                    I--V
+                ]{\import{theory/meso}{ha-iv.pgf}}
+                \hfill
+                \subfigure[
+                    I--V
+                ]{\import{theory/meso}{ha-didv.pgf}}
+                \hfill
+                \subfigure[
+                    I--V
+                ]{\import{theory/meso}{ha-didv-inv.pgf}}
+                \caption{
+                    Numerical \textit{I-V} and \textit{dI-dV} characteristic calculated with the HA model by Cuevas ($\Delta_0 = 180\,\mu e\mathrm{V}$, $T=0\,\mathrm{K}$, $\gamma = 0$). The curves illustrate the smooth crossover between the tunneling regime ($\tau\ll 1$) and the Andreev limit ($\tau\approx 1$).}
+                \label{fig:meso:mar-ha}
+            \end{figure}
+
+            This formulation provides a continuous description linking the tunneling limit, where transport reduces to single-particle tunneling and reproduces the BCS density of states, with the fully transparent case, where coherent two-particle Andreev reflection dominates and yields a nearly linear subgap current. Intermediate transparencies show the gradual redistribution of spectral weight from the coherence peaks at the gap edge into the subgap region as successive Andreev processes become increasingly likely. This microscopic framework thus unifies the different transport regimes of superconducting point contacts within a single, quantitative model.
+        
+        %=========================================================
+        \subsubsection*{Full Counting Statistics}
+        \label{subsec:meso:mar:fcs}
+        %=========================================================
+
+            A further conceptual development was introduced through the framework of full counting statistics (FCS), which extends the microscopic MAR theory to include the entire probability distribution of transmitted charge. Instead of describing only the mean current, FCS characterizes the stochastic sequence of charge transfer events by introducing a counting field that tracks the passage of discrete charge quanta during a measurement interval. The resulting cumulant generating function allows the evaluation of all current moments and cumulants, providing access to both the noise spectrum and higher-order correlations. 
+
+            Within this picture, each MAR trajectory corresponds to the coherent transfer of a well-defined multiple of the electron charge, and the weight of each process is determined by its transmission dependent amplitude. This approach, pioneered by Belzig, Nazarov, and others, reveals that the subgap current in superconducting contacts is not continuous but built from discrete charge-transfer events whose effective charge increases as the bias is reduced. It thereby extends the Cuevas theory beyond the average current, offering a comprehensive, charge-resolved description of Andreev transport.
+
+            \begin{figure}
+                \centering
+                \subfigure[
+                    $\tau = 0.90$
+                    ]{\import{theory/meso}{fcs-090.pgf}}
+                \hfill
+                \subfigure[
+                    $\tau = 0.66$
+                    ]{\import{theory/meso}{fcs-066.pgf}}
+                \subfigure[
+                    $\tau = 0.33$
+                    ]{\import{theory/meso}{fcs-033.pgf}}
+                \hfill
+                \subfigure[
+                    $\tau = 0.10$
+                    ]{\import{theory/meso}{fcs-010.pgf}}
+                \caption{Gesamtbeschriftung der Figur.}
+                \label{fig:meso:fcs-tau}
+            \end{figure}
+
+            \begin{figure}
+                \centering
+                \subfigure[
+                    $m = 1$
+                    ]{\import{theory/meso}{fcs-m1.pgf}}
+                \hfill
+                \subfigure[
+                    $m = 2$
+                    ]{\import{theory/meso}{fcs-m2.pgf}}
+                \subfigure[
+                    $m = 3$
+                    ]{\import{theory/meso}{fcs-m3.pgf}}
+                \hfill
+                \subfigure[
+                    $m = 4$
+                    ]{\import{theory/meso}{fcs-m4.pgf}}
+                \hfill
+                \subfigure[
+                    $m = 5$
+                    ]{\import{theory/meso}{fcs-m5.pgf}}
+                \caption{Gesamtbeschriftung der Figur.}
+                \label{fig:meso:fcs-m}
+            \end{figure}
+
+        %=========================================================
+        \subsection*{Photon-Assisted Multiple Andreev Reflection}
+        \label{subsec:meso:mar:pamar}
+        %=========================================================
+
+            Before discussing the effect of microwaves on multiple Andreev reflection (MAR), it is helpful to restate the two key mechanisms on which PAMAR is built. Photon-assisted tunneling (PAT), introduced in Section~\ref{subsec:micro:pat}, arises whenever the applied voltage contains an AC component,
+            \begin{equation}
+                V(t) = V_{\mathrm{dc}} + A \sin(2\pi\nu t),
+                \label{eq:meso:pamar-driving}
+            \end{equation}
+            which modulates the tunneling phase and generates a ladder of sidebands spaced by the photon energy $h\nu$. \cite{tien_multiphoton_1963}   
+            In contrast, MAR (Section~\ref{subsec:meso:mar}) describes the coherent motion of
+            a quasiparticle that undergoes $m$ Andreev reflections between two superconductors,
+            gaining energy $eV$ on each traversal until $meV = 2\Delta$.\cite{Cuevas1996,Cuevas1998}
+            Each MAR trajectory corresponds to the transfer of an effective charge
+            \begin{equation}
+                q_m = me,
+            \end{equation}
+            and the subgap current is a weighted sum of these elementary charge-transfer
+            processes.
+
+            When an AC voltage is applied, the coherent MAR trajectories remain operative,
+            but the time dependence of Eq.~\eqref{eq:meso:pamar-driving} introduces an
+            oscillatory phase into each order-$m$ process.  
+            For a MAR trajectory transferring the charge $q_m$, the superconducting phase
+            difference becomes
+            \begin{equation}
+                \phi_m(t)
+                = \phi_0 + \frac{q_m V_{\mathrm{dc}}}{\hbar}\, t
+                - \alpha_m \cos(2\pi\nu t),
+                \qquad
+                \alpha_m = \frac{q_m A}{h\nu}.
+                \label{eq:meso:pamar-phase}
+            \end{equation}
+            The modulation amplitude $\alpha_m$ increases linearly with the effective
+            charge $q_m$, implying that higher-order MAR processes couple more strongly to
+            microwave irradiation.  
+            This reflects that MAR transfers multiple electron charges in a single coherent
+            sequence; the entire string of reflections is phase-modulated as a whole.
+
+            The time-periodic phase renders the Hamiltonian a Floquet problem, as already
+            discussed in the microscopic MAR theory of
+            Cuevas~\textit{et al.}\cite{Cuevas1996,Cuevas1998}
+            Expanding $e^{i\phi_m(t)}$ into its Fourier components gives
+            \begin{equation}
+                e^{i\phi_m(t)}
+                = \sum_{n=-\infty}^{\infty}
+                    J_n(\alpha_m)
+                    \exp\!\left[
+                        i\left(
+                            \frac{q_m V_{\mathrm{dc}}}{\hbar}
+                            + n 2\pi\nu
+                        \right)t
+                    \right],
+                \label{eq:meso:pamar-floquet}
+            \end{equation}
+            revealing that each MAR trajectory generates a ladder of photon-dressed sidebands.
+            The Bessel function $J_n(\alpha_m)$ is the amplitude to absorb or emit $n$
+            photons, and the observable current depends on the probability $J_n^2(\alpha_m)$
+            of occupying the corresponding Floquet mode. \cite{tien_multiphoton_1963, kot}  
+            This mechanism is identical to PAT but extended to charge-transfer processes of
+            arbitrary order $m$.
+
+            Averaging the microscopic current operator over one period of the drive yields
+            a charge-resolved generalization of the Tien--Gordon expression,
+            \begin{equation}
+                I(V_{\mathrm{dc}},A)
+                = \sum_{m=1}^{\infty}
+                    \sum_{n=-\infty}^{\infty}
+                        J_n^2(\alpha_m)\,
+                        I_m\!\left(
+                            V_{\mathrm{dc}}
+                            - \frac{n h\nu}{q_m}
+                        \right),
+                \label{eq:meso:pamar-unified}
+            \end{equation}
+            where $I_m(V)$ denotes the DC MAR contribution of order $m$ in the absence of
+            irradiation.
+            Equation~\eqref{eq:meso:pamar-unified} is the \emph{unified, charge-resolved
+            Tien--Gordon formula} for superconducting point contacts.  
+            It shows that microwaves do not alter the internal structure of MAR---as
+            captured by $I_m(V)$---but merely generate shifted replicas of each MAR
+            trajectory spaced by $\pm n h\nu/q_m$.  
+            The strength of each replica is determined by $\alpha_m$ and thus grows with the
+            MAR order.
+
+            The resulting \textit{I--V} characteristics display a hierarchy of
+            photon-assisted features at
+            \begin{equation}
+                eV_{m,n}
+                = \frac{2\Delta}{m}
+                    \pm \frac{n h\nu}{m},
+            \end{equation}
+            corresponding to the intersections of the MAR thresholds with the photon
+            sidebands.
+            Changing the microwave frequency controls the spacing of these replicas,
+            while changing the amplitude redistributes spectral weight among them.
+            All structures occur at finite bias and arise from quasiparticle dynamics,
+            distinguishing PAMAR from the Shapiro effect (Section~\ref{subsec:macro:shapiro}),
+            which originates from phase locking in the zero-bias Josephson regime and
+            follows a different (non-Tien--Gordon) mechanism.
+
+            This framework naturally unifies photon-assisted transport across normal,
+            N--S, and S--S junctions.
+            PAT corresponds to the $m=1$ single-electron process ($q_1=e$).
+            PAAR at an N--S interface arises from the $m=1$ and $m=2$ channels  
+            ($q_1=e$, $q_2=2e$).
+            PAMAR includes the entire hierarchy $q_m=me$ associated with MAR.
+            Thus, the charge-resolved Tien--Gordon formalism provides a single,
+            conceptually transparent mechanism describing PAT, PAAR, and PAMAR within the
+            same theoretical structure, differing only by the effective charge transferred
+            in the underlying microscopic process.
+
+
+        % \begin{equation}
+        %     \hat{H}_\mathrm{BCS}
+        %     = \sum_{k,\sigma}\, 
+        %     \xi_k  c_{k\sigma}^\dagger c_{k\sigma}
+        %     + \sum_k\!\left(\Delta\, c_{k\uparrow}^\dagger c_{-k\downarrow}^\dagger + \Delta^\ast\, c_{-k\downarrow} c_{k\uparrow}\right)\,.
+        %     \label{eq:meso:h-bcs}
+        % \end{equation}
+
+
+
+        % %=========================================================
+        % \subsubsection*{Photon-Assisted Andreev Reflection (PAAR)}
+        % %=========================================================
+
+        %     Under microwave irradiation, the time-dependent phase factor introduced in Sec.~\ref{subsec:basics:micro-wave} modulates the N--S scattering amplitudes and renders Andreev conversion inelastic. In direct analogy to photon-assisted tunneling, the BTK spectral kernels are redistributed into sidebands corresponding to the absorption or emission of $n$ photons of energy $h\nu$ for charge $q=me$. The photon dressing acts differently on the single-particle (1e) and Andreev (2e) contributions, as made explicit by decomposing the current accordingly,
+        %     \begin{equation}
+        %         I_\mathrm{NS}(V_0,A) = 
+        %         \sum_{m=1}^{2} \, \sum_{n=-\infty}^{\infty} J_n^2\left(\frac{meA}{h\nu}\right)\, I_{m}\!\left(V_0 + \frac{n h\nu}{me}\right)\,,
+        %         \label{eq:meso:btk-pa}
+        %     \end{equation}
+        %     where $I_{m}$ is given by $I_\mathrm{1e}$ and $I_\mathrm{2e}$.
+            
+        %     In the tunneling regime the photon sidebands are therefore spaced by $h\nu/e$, whereas for subgap transport dominated by Andreev conversion the relevant scale is $h\nu/2e$. \cite{di_marco_effect_2015, gonzalez_photon-assisted_2020}
+            
+        %     In the following we reserve the term photon-assisted multiple Andreev reflection (PAMAR) for the corresponding photon-dressed finite-bias ladder processes in S--S weak links.
