@@ -258,10 +258,62 @@
     \label{subsec:meso:abs}
     %=========================================================
     
-        Andreev reflection becomes phase-coherent and spectrally quantized when two superconductors are connected by a mesoscopic weak link. In an S--N--S geometry, a subgap quasiparticle ($|E|<|\Delta|$) cannot escape into the superconducting continua and instead undergoes successive Andreev conversions at both interfaces, alternating between electron- and hole-like character while acquiring the superconducting phase difference $\varphi=\phi_\mathrm{R}-\phi_\mathrm{L}$. The resulting constructive-interference condition quantizes the motion into discrete subgap eigenstates localized around the junction, known as Andreev bound states (ABS) \cite{andreev_thermal_1964,kulik_effect_1969,ishii_josephson_1970}. These ABS form the microscopic origin of the dc Josephson effect in short and mesoscopic junctions: their phase-dependent energies $E_n(\varphi)$ determine the equilibrium supercurrent via their occupation \cite{beenakker_josephson_1991, beenakker_quantum_1992}.
+        Andreev reflection becomes phase-coherent and spectrally quantized when two superconductors are connected by a mesoscopic weak link. In an S--N--S geometry, a subgap quasiparticle ($|E|<|\Delta|$) cannot escape into the superconducting continua and instead undergoes successive Andreev conversions at both interfaces, alternating between electron- and hole-like character while acquiring the superconducting phase difference $\phi=\phi_\mathrm{R}-\phi_\mathrm{L}$. The resulting constructive-interference condition quantizes the motion into discrete subgap eigenstates localized around the junction, known as Andreev bound states (ABS) \cite{andreev_thermal_1964,kulik_effect_1969,ishii_josephson_1970}. 
+        
+        These ABS form the microscopic origin of the dc Josephson effect in short and mesoscopic junctions and their phase-dependent energies $E_n(\phi)$ determine the equilibrium supercurrent via their occupation \cite{beenakker_josephson_1991, beenakker_quantum_1992}.
 
+        %=========================================================
         \subsubsection*{ABS Spectra}
-        \subsubsection*{CPR}
+        %=========================================================
+
+            A transparent route from BdG to ABS is to treat Andreev reflection as an energy-dependent boundary condition at the superconducting leads, while representing the weak link by its normal-state scattering properties. In an S--N--S junction with phase difference $\phi=\phi_\mathrm{R}-\phi_\mathrm{L}$, a subgap quasiparticle ($|E|<|\Delta|$) cannot propagate in the superconducting electrodes and is therefore confined to the weak link by successive Andreev conversions at both interfaces.
+
+            In the Andreev approximation, an electron incident on a clean N--S interface is reflected as a hole with amplitude (Eq.~\eqref{eq:meso:andreev-amplitude})
+            \begin{equation}
+                r_\mathrm{A}^{(\alpha)}(E)=e^{-\ima\vartheta(E)}\,e^{-\ima\phi_{\alpha}}\,,\qquad
+                % \vartheta(E)=\arccos\!\left(E/|\Delta|\right)\,,\qquad 
+                \alpha\in\{\mathrm{L},\mathrm{R}\}\,.
+                \label{eq:meso:andreev-leads}
+            \end{equation}
+            A complete Andreev cycle through the junction converts an electron into a hole at one interface and back into an electron at the other. A bound state forms when this closed electron--hole trajectory reproduces itself, i.e. when the total phase accumulated in one round trip is an integer multiple of $2\pi$.
+
+            In the short-junction limit, the dwell time through the normal region is much shorter than $\hbar/|\Delta|$. The energy dependence of the normal-region scattering can then be neglected for quasiparticle energies $|E|\lesssim|\Delta|$, and the weak link is fully characterized by the transmission eigenvalues $\tau_i$ of its normal-state scattering matrix.
+            For a single channel of transmission $\tau$, the constructive-interference condition reduces to the compact form
+            \begin{equation}
+                \sin^2\!\vartheta(E) = \tau\,\sin^2\!\left(\phi/2\right)\,,
+                \label{eq:meso:abs-quantization}
+            \end{equation}
+            which directly yields the familiar Andreev bound-state spectrum 
+            \begin{equation}
+                E_{\pm}(\tau, \phi)=\pm|\Delta|\sqrt{1-\tau\sin^2\!\left(\phi/2\right)}\,.
+                \label{eq:meso:abs-spectrum}
+            \end{equation}
+            In a multichannel contact, each transmission eigenvalue $\tau_i$ supports a pair of ABS branches $E_{i,\pm}(\tau_i, \phi)$.
+
+            % This ABS spectrum provide the central link between the BdG/Andreev picture and the mesoscopic channel description used throughout this thesis: in the short-junction limit, all microscopic details of the weak link enter only through the normal-state transmissions $\{\tau_i\}$.
+
+        %=========================================================
+        \subsubsection*{Current Phase Relation}
+        %=========================================================
+
+            The phase dependence of the ABS spectrum implies that these states carry a nondissipative supercurrent. In equilibrium, the current follows from the derivative of the junction free energy with respect to the superconducting phase difference.
+            Equivalently, one may express the contribution of each ABS branch through its occupation, which yields the standard relation
+            \begin{equation}
+                I(\phi)=\frac{2e}{\hbar}\sum_i \frac{\partial E_i(\phi)}{\partial \phi}\,\tanh\!\left(\frac{E_i(\phi)}{2k_\mathrm{B}T}\right)\,.
+                \label{eq:meso:cpr-general}
+            \end{equation}
+            Here $E_i(\phi)$ denotes the positive-energy ABS of channel $i$ (Eq.~\eqref{eq:meso:abs-spectrum}), and the hyperbolic tangent accounts for thermal occupation of the two branches $\pm E_i$.
+
+            For a single channel with transmission $\tau$, inserting Eq.~\eqref{eq:meso:abs-spectrum} yields
+            \begin{equation}
+                I(\tau,\phi)=\frac{e|\Delta|}{2\hbar}\,
+                \frac{\tau\sin\phi}{\sqrt{1-\tau\sin^2\!\left(\phi/2\right)}}\,
+                \tanh\!\left(\frac{|\Delta|\sqrt{1-\tau\sin^2\!\left(\phi/2\right)}}{2k_\mathrm{B}T}\right)\,.
+                \label{eq:meso:cpr-single}
+            \end{equation}
+            In the zero-temperature limit, $\tanh\!\left(E/2k_\mathrm{B}T\right)\to 1$ and the current is set solely by the phase dispersion of the bound state. For a multichannel contact, the total supercurrent is obtained by summing Eq.~\eqref{eq:meso:cpr-single} over all transmission eigenvalues $\tau_i$.
+
+
         \subsubsection*{ballistic limit}
         \subsubsection*{arbitrary transmission}
         \subsubsection*{Fractional Shapiro Steps}
