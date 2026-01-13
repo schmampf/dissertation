@@ -278,7 +278,7 @@
             Here $\phi_\mathrm{A}(E)$ is the energy-dependent Andreev phase, while $\phi$ denotes the condensate phase of the superconducting electrode. For nonideal interfaces, finite backscattering reintroduces normal reflection and reduces the Andreev amplitude below unit.
 
         %=========================================================
-        \subsubsection*{Energy Spectra}
+        \subsubsection*{Energy Spectra and Current Phase Relation}
         %=========================================================
             A complete Andreev cycle through the junction converts an electron into a hole at one interface and back into an electron at the other. A bound state forms when this closed electron--hole trajectory reproduces itself, i.e. when the total phase accumulated in one round trip is an integer multiple of $2\pi$.
 
@@ -291,34 +291,27 @@
             \end{equation}
             which directly yields the familiar Andreev bound-state spectrum 
             \begin{equation}
-                E_{\pm}(\tau, \phi)=\pm|\Delta|\sqrt{1-\tau\sin^2\!\left(\phi/2\right)}\,.
+                E_{\pm}(\phi)=\pm|\Delta|\sqrt{1-\tau\sin^2\!\left(\phi/2\right)}\,.
                 \label{eq:meso:abs-spectrum}
             \end{equation}
-            In a multichannel contact, each transmission eigenvalue $\tau_i$ supports a pair of ABS branches $E_{i,\pm}(\tau_i, \phi)$.
-
-        %=========================================================
-        \subsubsection*{Current Phase Relation}
-        %=========================================================
 
             The phase dependence of the ABS spectrum implies that these states carry a nondissipative supercurrent. In equilibrium, the current follows from the derivative of the junction free energy with respect to the superconducting phase difference.
 
             Equivalently, one may express the contribution of each ABS branch through its occupation, which yields the standard relation
             \begin{equation}
-                I(\tau, \phi)=\frac{2e}{\hbar} \frac{\partial E(\tau, \phi)}{\partial \phi}\,\tanh\!\left(\frac{E(\tau, \phi)}{2k_\mathrm{B}T}\right)\,.
+                I(\phi)=\frac{2e}{\hbar} \frac{\partial E(\phi)}{\partial \phi}\,\tanh\!\left(\frac{E(\phi)}{2k_\mathrm{B}T}\right)\,.
                 \label{eq:meso:cpr-general}
             \end{equation}
-            Here $E(\tau, \phi)$ denotes the positive-energy ABS spectrum, and the hyperbolic tangent accounts for thermal occupation of the two branches $\pm E_i$.
+            Here $E(\phi)$ denotes the positive-energy ABS spectrum, and the hyperbolic tangent accounts for thermal occupation.
 
             Inserting Eq.~\eqref{eq:meso:abs-spectrum} yields
             \begin{equation}
-                I(\tau,\phi)=\frac{e|\Delta|}{2\hbar}\,
+                I(\phi)=\frac{e|\Delta|}{2\hbar}\,
                 \frac{\tau\sin\phi}{\sqrt{1-\tau\sin^2\!\left(\phi/2\right)}}\,
                 \tanh\!\left(\frac{|\Delta|\sqrt{1-\tau\sin^2\!\left(\phi/2\right)}}{2k_\mathrm{B}T}\right)\,.
                 \label{eq:meso:cpr-single}
             \end{equation}
             In the zero-temperature limit, $\tanh\!\left(E/2k_\mathrm{B}T\right)\to 1$ and the current is set solely by the phase dispersion of the bound state. 
-            
-            For a multichannel contact, the total supercurrent is obtained by summing Eq.~\eqref{eq:meso:cpr-single} over all transmission eigenvalues $\tau_i$.
 
         %=========================================================
         \subsubsection*{Transmission dependence and limiting cases}
