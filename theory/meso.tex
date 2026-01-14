@@ -280,6 +280,24 @@
         %=========================================================
         \subsubsection*{Energy Spectra and Current Phase Relation}
         %=========================================================
+
+            \begin{figure}[t]
+                \centering
+                \subfigure[
+                    Energy Spectra
+                    ]{\import{theory/meso}{abs-Ephi.pgf}}
+                \hfill
+                \subfigure[
+                    Current Phase Relation
+                    ]{\import{theory/meso}{abs-Iphi.pgf}}
+                \caption{
+                    Andreev bound states and equilibrium current--phase relation of a short single-channel contact for several transparencies $\tau$ (light: tunnel-like, dark: near ballistic) at $T=0$. 
+                    (a) Phase dispersion of the Andreev levels $E_\pm(\phi)$. With increasing $\tau$, the levels acquire a stronger phase dependence and the minimal splitting at $\phi=\pi$ decreases, approaching a level crossing in the ballistic limit.
+                    (b) Corresponding equilibrium supercurrent $I(\phi)$ obtained from the occupied branch via Eq.~\eqref{eq:meso:cpr-single}. Increasing $\tau$ drives the current--phase relation away from the sinusoidal tunnel limit towards a strongly skewed, cusp-like form near $\phi=\pi$, reflecting the increasingly sharp phase dispersion of the bound state.
+                }
+                \label{fig:meso:abs}
+            \end{figure}
+
             A complete Andreev cycle through the junction converts an electron into a hole at one interface and back into an electron at the other. A bound state forms when this closed electron--hole trajectory reproduces itself, i.e. when the total phase accumulated in one round trip is an integer multiple of $2\pi$.
 
             In the short-junction limit, the dwell time through the normal region is much shorter than $\hbar/|\Delta|$. The energy dependence of the normal-region scattering can then be neglected for quasiparticle energies $|E|\lesssim|\Delta|$, and the weak link is fully characterized by the transmission eigenvalues $\tau_i$ of its normal-state scattering matrix.
@@ -294,94 +312,95 @@
                 E_{\pm}(\phi)=\pm|\Delta|\sqrt{1-\tau\sin^2\!\left(\phi/2\right)}\,.
                 \label{eq:meso:abs-spectrum}
             \end{equation}
+            Figure~\ref{fig:meso:abs}(a) shows the spectura for different transmissions.
 
             The phase dependence of the ABS spectrum implies that these states carry a nondissipative supercurrent. In equilibrium, the current follows from the derivative of the junction free energy with respect to the superconducting phase difference.
 
             Equivalently, one may express the contribution of each ABS branch through its occupation, which yields the standard relation
             \begin{equation}
-                I(\phi)=\frac{2e}{\hbar} \frac{\partial E(\phi)}{\partial \phi}\,\tanh\!\left(\frac{E(\phi)}{2k_\mathrm{B}T}\right)\,.
+                I(\phi)=-2\pi \frac{G_0}{e} \frac{\partial E(\phi)}{\partial \phi}\,\tanh\!\left(\frac{E(\phi)}{2k_\mathrm{B}T}\right)\,.
                 \label{eq:meso:cpr-general}
             \end{equation}
             Here $E(\phi)$ denotes the positive-energy ABS spectrum, and the hyperbolic tangent accounts for thermal occupation.
 
             Inserting Eq.~\eqref{eq:meso:abs-spectrum} yields
             \begin{equation}
-                I(\phi)=\frac{e|\Delta|}{2\hbar}\,
+                I(\phi)=\frac{\pi}{2}\frac{G_0}{e}|\Delta|\,
                 \frac{\tau\sin\phi}{\sqrt{1-\tau\sin^2\!\left(\phi/2\right)}}\,
                 \tanh\!\left(\frac{|\Delta|\sqrt{1-\tau\sin^2\!\left(\phi/2\right)}}{2k_\mathrm{B}T}\right)\,.
                 \label{eq:meso:cpr-single}
             \end{equation}
-            In the zero-temperature limit, $\tanh\!\left(E/2k_\mathrm{B}T\right)\to 1$ and the current is set solely by the phase dispersion of the bound state. 
+            In the zero-temperature limit, $\tanh\!\left(E/2k_\mathrm{B}T\right)\to 1$ and the current is set solely by the phase dispersion of the bound state, as shown in Fig.~\ref{fig:meso:abs}(b).
 
-        %=========================================================
-        \subsubsection*{Transmission dependence and limiting cases}
-        %=========================================================
+            In the tunneling limit ($\tau\ll 1$), the current--phase relation becomes sinusoidal and thus reduces to the standard Josephson form discussed in Sec.~\ref{sec:macro}. In the same limit, the corresponding critical current is consistent with the Ambegaokar--Baratoff result when expressed in terms of the normal-state resistance.
 
-            Equations~\eqref{eq:meso:abs-spectrum} and \eqref{eq:meso:cpr-single} show that, in the short-junction limit, the phase dispersion of the Andreev bound state and the resulting current--phase relation are controlled by the normal-state transmission $\tau$. Rather than introducing new physics, the limits $\tau\ll 1$ and $\tau\to 1$ provide a useful interpretation framework. They connect the mesoscopic channel picture to the weak-coupling Josephson description and to the ballistic regime of atomic contacts.
-
-            In the tunneling regime $\tau\ll 1$, Eq.~\eqref{eq:meso:cpr-single} reduces to a nearly sinusoidal current--phase relation, recovering the weak-coupling Josephson result
-            \begin{equation}
-                I(\phi)\approx I_\mathrm{C}\sin\phi\,,
-                \label{eq:meso:dc}
-            \end{equation}
-            discussed in Sec.~\ref{sec:macro} (Eq.~\eqref{eq:macro:dc}). Using the normal-state conductance of a single spin-degenerate channel, $G_\mathrm{N}=G_0\,\tau$, the leading-order critical current is consistent with the Ambegaokar--Baratoff relation in Eq.~\eqref{eq:macro:critical-current}.
-
-            In the opposite ballistic limit $\tau\to 1$, the bound-state spectrum becomes particularly simple,
+            In the opposite ballistic limit ($\tau\to 1$), the bound-state spectrum becomes particularly simple,
             \begin{equation}
                 E_{\pm}(\phi)=\pm|\Delta|\,\left|\cos\!\left(\phi/2\right)\right|\,.
                 \label{eq:meso:abs-ballistic}
             \end{equation}
-            The corresponding current follows from Eq.~\eqref{eq:meso:cpr-single},
+            The corresponding current at $T=0$ follows from Eq.~\eqref{eq:meso:cpr-single},
             \begin{equation}
-                I(\phi)={e|\Delta|}/{\hbar}\,\sin\!\left(\phi/2\right)\,\mathrm{sgn}\!\left(\cos\!\left(\phi/2\right)\right)
-                \tanh\!\left({|\Delta|\,\left|\cos(\phi/2)\right|}/{2k_\mathrm{B}T}\right)\,.
+                I(\phi)=\tfrac{\pi}{2}\tfrac{G_0}{e}|\Delta|\,\sin\!\left(\phi/2\right)\,\mathrm{sgn}\!\left(\cos\!\left(\phi/2\right)\right)\,.
                 \label{eq:meso:cpr-ballistic}
             \end{equation}
-            At $T\to 0$ the current exhibits a cusp at $\phi=\pi$ originating from the crossing of the ABS branches. Any deviation from perfect transmission ($\tau<1$) opens a finite minimum gap $E_\mathrm{min}=|\Delta|\sqrt{1-\tau}$ at $\phi=\pi$ and smooths this feature, while finite temperature further rounds it through the occupation factor.
-
-            The progressive skewing of the current--phase relation with increasing $\tau$ can equivalently be expressed as an enhanced higher-harmonic content in a Fourier expansion $I(\phi)=\sum_{n\ge 1} I_n\sin(n\phi)$. This harmonic content will be central when discussing microwave-driven phase dynamics and fractional Shapiro steps below.
+            Here, the current exhibits a cusp at $\phi=\pi$ originating from the crossing of the ABS branches. Any deviation from perfect transmission opens a finite minimum gap $E_\mathrm{min}=|\Delta|\sqrt{1-\tau}$ at $\phi=\pi$ and smooths this feature, while finite temperature further rounds it through the occupation factor.
 
         %=========================================================
         \subsubsection*{Multi-Channel Contacts}
         %=========================================================
-        
-        % Real atomic contacts generally support several conduction channels. In the short-junction limit, each channel $i$ is characterized by a normal-state transmission eigenvalue $\tau_i$ and supports a pair of Andreev branches $E_{i,\pm}(\tau_i,\phi)$ given by Eq.~\eqref{eq:meso:abs-spectrum}. The equilibrium supercurrent follows by summing the single-channel contribution (Eq.~\eqref{eq:meso:cpr-single}) over all channels,
-        % \begin{equation}
-        %     I(\phi)=\sum_i I(\tau_i,\phi)\,.
-        %     \label{eq:meso:cpr-multichannel}
-        % \end{equation}
-        % The same transmission eigenvalues determine the normal-state conductance via the Landauer formula,
-        % \begin{equation}
-        %     G_\mathrm{N}=G_0\sum_i \tau_i\,,
-        %     \label{eq:meso:landauer-gn}
-        % \end{equation}
-        % making $\{\tau_i\}$ the central mesoscopic parameters connecting normal-state transport, ABS spectra, and the Josephson response \cite{beenakker_josephson_1991,beenakker_quantum_1992}.
 
-        % Two practically important limits can be distinguished. First, for few-mode quantum point contacts and atomic-scale junctions, a small set of channels with widely distributed transparencies dominates the current. This situation is typical for mechanically controlled break junctions and scanning probes, where the set $\{\tau_i\}$ can be extracted from MAR subgap structure and then used to predict the equilibrium current--phase relation.
+            Real atomic contacts generally support several conduction channels. In the short-junction limit, each channel $i$ is characterized by a transmission eigenvalue $\tau_i$ and supports a pair of Andreev branches $E_{i,\pm}(\tau_i,\phi)$ given by Eq.~\eqref{eq:meso:abs-spectrum}. The equilibrium supercurrent follows by summing the single-channel contribution (Eq.~\eqref{eq:meso:cpr-single}) over all channels,
+            \begin{equation}
+                I(\phi,T)=\sum_i I(\tau_i,\phi,T)\,.
+                \label{eq:meso:cpr-multichannel}
+            \end{equation}
+            In the many-mode limit, it is often convenient to replace the discrete set $\{\tau_i\}$ by a statistical distribution $\rho(\tau)$ and approximate the channel sum by an average,
+            \begin{equation}
+                I(\phi,T)\simeq \int_0^1 \rho(\tau)\, I(\tau,\phi,T)\,\mathrm d\tau\,.
+                \label{eq:meso:cpr-multichannel-rho}
+            \end{equation}
+            In this representation, $\rho(\tau)$ is normalized such that $G_\mathrm N=G_0\int_0^1 \rho(\tau)\,\tau\,\mathrm d\tau$ \cite{beenakker_josephson_1991,beenakker_quantum_1992}.
 
-        % Second, for a short diffusive weak link, the number of channels is large and their transmissions follow a universal distribution. In the quasi-one-dimensional diffusive limit this distribution is given by the Dorokhov form
-        % \begin{equation}
-        %     \rho(\tau)=\frac{G_\mathrm{N}}{G_0}\,\frac{1}{2\,\tau\sqrt{1-\tau}}\,,\qquad 0<\tau<1\,,
-        %     \label{eq:meso:dorokhov}
-        % \end{equation}
-        % so that sums over channels may be replaced by integrals, $\sum_i f(\tau_i)\to\int_0^1\rho(\tau)f(\tau)\,\mathrm d\tau$ \cite{dorokhov_transmission_1982,beenakker_quantum_1992}.
-        % Inserting Eq.~\eqref{eq:meso:cpr-single} at $T=0$ and performing the Dorokhov average yields the Kulik--Omelyanchuk current--phase relation (dirty limit),
-        % \begin{equation}
-        %     I(\phi)=\frac{\pi|\Delta|}{eR_\mathrm{N}}\,\cos\!\left(\phi/2\right)\,\operatorname{artanh}\!\left[\sin\!\left(\phi/2\right)\right]\,.
-        %     \label{eq:meso:ko}
-        % \end{equation}
-        % Compared to the tunnel-junction CPR, Eq.~\eqref{eq:meso:ko} is strongly anharmonic and provides a widely used reference for diffusive superconducting weak links \cite{kulik_properties_1975,golubov_current-phase_2004}.
+            In the dirty short-contact limit, the transmission eigenvalues of a quasi-one-dimensional diffusive wire follow the Dorokhov--Mello--Pereyra--Kumar (DMPK) distribution \cite{dorokhov_transmission_1982},
+            \begin{equation}
+                \rho(\tau) = \frac{G_\mathrm{N}}{G_0} \frac{1}{2\tau \sqrt{1-\tau}}\,,\qquad 0<\tau<1\,.
+                \label{eq:meso:dmpk}
+            \end{equation}
+            The density is bimodal, with integrable divergences at $\tau\to 0$ and $\tau\to 1$, as shown in Fig.~\ref{fig:meso:abs-rhotau}. This indicates that a diffusive conductor can be viewed statistically as a mixture of many almost-closed and a few almost-open channels.
+            \begin{figure}[ht]
+                \centering
+                \includegraphics[width=.42\textwidth]{theory/meso/abs-rhotau.png}
+                \caption{DMPK distribution $\rho(\tau)$ of transmission eigenvalues for a short diffusive wire. The distribution is bimodal with integrable divergences at $\tau\to 0$ and $\tau\to 1$, and is normalized such that $G_\mathrm N=G_0\int_0^1 \rho(\tau)\,\tau\,\mathrm d\tau$.}
+                \label{fig:meso:abs-rhotau}
+            \end{figure}
+                        
+            Averaging the short-junction single-channel result over Eq.~\eqref{eq:meso:dmpk} yields the first Kulik--Omel'yanchuk (KO--1) current--phase relation in the dirty (diffusive) limit. At $T=0$, it reduces to the closed form
+            \begin{equation}
+                I_\mathrm{KO1}(\phi) = \tfrac{\pi}{2} \tfrac{G_\mathrm{N}}{e}|\Delta|\,\cos\!\left(\phi/2\right)\,\operatorname{artanh}\!\left(\sin\!\left(\phi/2\right)\right)\,.
+                \label{eq:meso:ko-1}
+            \end{equation}
+            Although $\operatorname{artanh}[\sin(\phi/2)]$ diverges as $\phi\to\pi$, the prefactor $\cos(\phi/2)$ vanishes such that the product, and therefore the supercurrent, remains finite.
+
+            In the complementary clean short-contact limit, transport is dominated by (nearly) open channels and the current--phase relation (KO--2) takes the compact finite-temperature form
+            \begin{equation}
+                I_\mathrm{KO2}(\phi, T) = \pi\,\frac{G_\mathrm{N}}{e}\,\Delta(T)\,\sin\!\left(\frac{\phi}{2}\right)\,
+                    \tanh\!\left(\frac{\Delta(T)\cos\!\left(\phi/2\right)}{2k_\mathrm{B}T}\right)\,.
+                \label{eq:meso:ko-2}
+            \end{equation}
+            Both limits provide widely used reference models for short superconducting weak links \cite{kulik_contribution_1975,golubov_current-phase_2004}.
+
+            Figure~\ref{fig:meso:abs-ko} compares the temperature dependence of the critical current obtained from the Ambegaokar--Baratoff result and from the KO--1/KO--2 current--phase relations by applying $I_\mathrm{C}(T)=\max_{\phi\in[0,2\pi]} I(\phi,T)$ with a BCS-like gap $\Delta(T)$.
+            \begin{figure}[ht]
+                \centering
+                \includegraphics[width=.55\textwidth]{theory/meso/abs-ko.png}
+                \caption{Temperature dependence of the critical current $I_\mathrm{C}(T)$ for three canonical short-junction limits: Ambegaokar--Baratoff (tunnel junction), KO--1 (diffusive short contact), and KO--2 (clean short contact). The critical current is obtained by maximizing the corresponding current--phase relation with respect to $\phi$ using a BCS-like gap $\Delta(T)$.}
+                \label{fig:meso:abs-ko}
+            \end{figure}
 
 
-        % In the complementary clean (ballistic) limit, elastic scattering inside the constriction is negligible on the scale of the weak link, and transport is dominated by (nearly) open channels with $\tau_i\simeq 1$. In this case the normal-state conductance approaches the Sharvin value, $G_\mathrm{N}\simeq G_0 N$, where $N$ is the number of transverse modes. Summing the single-channel result Eq.~\eqref{eq:meso:cpr-single} for $\tau\to 1$ over these open modes yields the Kulik--Omelyanchuk current--phase relation in the clean limit (often denoted KO--2),
-        % \begin{equation}
-        %     I(\phi)=\frac{\pi|\Delta|}{eR_\mathrm{N}}\,\sin\!\left(\phi/2\right)
-        %     \,\tanh\!\left(\frac{|\Delta|\,\cos\!\left(\phi/2\right)}{2k_\mathrm{B}T}\right)\,.
-        %     \label{eq:meso:ko-clean}
-        % \end{equation}
-        % At $T\to 0$ this expression approaches a sawtooth-like CPR with a discontinuity at $\phi=\pi$, reflecting the cusp structure already apparent in the single-channel ballistic limit. In practice, any finite backscattering (channels with $\tau_i<1$) and finite temperature round this discontinuity \cite{kulik_properties_1975,golubov_current-phase_2004}.
+        % %=========================================================
+        % \subsubsection*{Fractional Shapiro Steps}
+        % %=========================================================
 
-
-        %=========================================================
-        \subsubsection*{Fractional Shapiro Steps}
-        %=========================================================
+            % For intermediate and increasing transmission ($0<\tau<=1$), the progressive skewing of the current--phase relation, can equivalently be expressed as an enhanced higher-harmonic content in a Fourier expansion $I(\phi)=\sum_{n\ge 1} I_n\sin(n\phi)$. This harmonic content will be central when discussing microwave-driven phase dynamics and fractional Shapiro steps below.
