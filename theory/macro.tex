@@ -86,7 +86,7 @@
         % IV Josephson
         In a real junction, quasiparticle tunneling appears in parallel to the phase-driven supercurrent. The resulting \textit{I--V} characteristic, shown in Fig.~\ref{fig:macro:josephson} (c), features a dissipationless supercurrent branch at zero voltage and a dissipative quasiparticle branch that onsets above the gap. This combined response forms the characteristic transport signature of a weakly coupled Josephson junction. \cite{tinkham_introduction_2004,wolf_principles_2012}
         
-        % Ambegaokar–Baratoff
+        % Ambegaokar-Baratoff
         The critical current is set microscopically by the Ambegaokar--Baratoff (AB) relation,
         \begin{equation}
             I_\mathrm{C}(T) = \frac{\pi}{2}\,\frac{G_\mathrm{N}\Delta(T)}{e}\,
@@ -193,6 +193,15 @@
                     + C\frac{\mathrm{d}V}{\mathrm{d}t}\,.
                 \label{eq:macro:rcsj-ibias}
             \end{equation}
+            
+            In the tunneling limit, the resistive branch can be modeled more realistically by the microscopic quasiparticle current $I_\mathrm{qp}(V)$ discussed in Sec.~\ref{sec:micro}. In this more general ``nonlinear shunt'' form, the current balance reads
+            \begin{equation}
+                I_\mathrm{bias}(t) = I_\mathrm{C}\sin\phi(t)
+                    + I_\mathrm{qp}\!\big(V(t)\big)
+                    + C\,\frac{\mathrm{d}V}{\mathrm{d}t}\,.
+                \label{eq:macro:rcsj-ibias-nonlinear}
+            \end{equation}
+            Together with the Josephson relation $V(t)=(\hbar/2e)\,\mathrm{d}\phi/\mathrm{d}t$, this yields a phase-dynamics equation with the same structure as Eq.~\eqref{eq:macro:rcsj-cpr}, but with a generally nonlinear damping term. For the remainder of this section we employ the standard linear approximation $I_\mathrm{qp}(V)\approx V/R$ to keep the discussion transparent.
             We use $I_\mathrm{bias}$ to denote the externally applied current, distinguishing it from the Josephson supercurrent $I_\mathrm{J}$, the resistive current, and the capacitive displacement current that appear in parallel in the RCSJ model.
 
             Using the AC~Josephson voltage-phase relation, this expression can be written entirely in terms of the phase,
