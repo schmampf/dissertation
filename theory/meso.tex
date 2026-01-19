@@ -15,7 +15,6 @@
     To describe superconductivity in mesoscopic and spatially inhomogeneous structures, we employ the Bogoliubov--de~Gennes (BdG) formalism, i.e. the real-space mean-field formulation of BCS theory. Starting from the BCS pairing Hamiltonian \cite{bardeen_microscopic_1957} and applying the canonical Bogoliubov transformation \cite{bogoljubov_new_1958} in the electron--hole (Nambu) representation \cite{nambu_quasi-particles_1960}, one obtains a quadratic quasiparticle Hamiltonian and an effective eigenvalue problem for the two-component Nambu spinor, as presented systematically by de~Gennes \cite{de_gennes_superconductivity_1966}. 
     
     The BdG framework provides a microscopic description of electron--hole conversion at normal--superconductor interfaces (Andreev reflection) \cite{andreev_thermal_1964} and underlies scattering approaches to transport in hybrid junctions, including the BTK model and its extensions \cite{blonder_transition_1982,beenakker_quantum_1992}.
-
     
         %=========================================================
         \subsubsection*{Single Particle Hamiltonian}
@@ -161,6 +160,7 @@
 
         The absence of propagating subgap quasiparticles in a homogeneous superconductor is the microscopic origin of Andreev conversion at an N--S interface. In particular, the spectrum $E^2=\xi^2+|\Delta|^2$ implies the familiar BCS density of states, Equation~\eqref{eq:micro:dos-bcs}, while for $|E|<|\Delta|$ one must describe transport in terms of coherent electron--hole conversion processes.
     
+
     %=========================================================
     \subsection{Andreev Reflection}
     \label{subsec:meso:ar}
@@ -175,6 +175,20 @@
         %=========================================================
         \subsubsection*{Blonder--Tinkham--Klapwijk Model}
         %=========================================================
+        
+            \begin{figure}[t]
+                \centering
+                \subfigure[Spectral weight of single-particle process]{\import{theory/meso}{btk-1e-dos.pgf}}
+                \hfill
+                \subfigure[Spectral weight of two-particle process]{\import{theory/meso}{btk-2e-dos.pgf}}
+                \subfigure[\textit{I--V} characteristic]{\import{theory/meso}{btk-iv.pgf}}
+                \hfill
+                \subfigure[\textit{dI--dV} characteristics]{\import{theory/meso}{btk-didv.pgf}}
+                \caption{
+                    BTK spectral weights of the single-particle (1e) and two-particle (2e) channels and the corresponding \textit{I--V} and \textit{dI--dV} characteristics for various channel transparencies $\tau$. Increasing $\tau$ shifts spectral weight from normal to Andreev processes, leading to enhanced subgap conductance and reduced coherence-peak height. Parameters correspond to aluminum (Sec.~\ref{subsec:basics:aluminum}), with $T=0$ and $\gamma = 0$.
+                    }
+                \label{fig:meso:btk}
+            \end{figure}
 
             Building on the qualitative picture of Andreev reflection introduced above, the Blonder--Tinkham--Klapwijk (BTK) model provides a quantitative scattering description of an N--S interface with arbitrary transparency $\tau$. It yields the energy-resolved  probabilities for Andreev reflection ($A$), normal reflection ($B$), and transmission into the superconductor ($C$). To incorporate finite quasiparticle lifetimes, we use the phenomenological broadening introduced by Pleceník \textit{et al.}, replacing the quasiparticle energy by $E \rightarrow |E| + \ima\gamma$ \cite{plecenik_finite-quasiparticle-lifetime_1994}. 
 
@@ -212,21 +226,8 @@
             \end{equation}
             Increasing the transparency enhances the weight of Andreev processes, leading to a pronounced subgap conductance and a gradual reduction of the coherence-peak height. In the tunneling limit ($\tau \ll 1$), Eq.~\eqref{eq:meso:btk-iv} reduces to the conventional quasiparticle-tunneling expression, while for $\tau \approx 1$ the transport approaches the Andreev limit, where charge is transferred predominantly in units of $2e$.
 
-            \begin{figure}[t]
-                \centering
-                \subfigure[Spectral weight of single-particle process]{\import{theory/meso}{btk-1e-dos.pgf}}
-                \hfill
-                \subfigure[Spectral weight of two-particle process]{\import{theory/meso}{btk-2e-dos.pgf}}
-                \subfigure[\textit{I--V} characteristic]{\import{theory/meso}{btk-iv.pgf}}
-                \hfill
-                \subfigure[\textit{dI--dV} characteristics]{\import{theory/meso}{btk-didv.pgf}}
-                \caption{
-                    BTK spectral weights of the single-particle (1e) and two-particle (2e) channels and the corresponding \textit{I--V} and \textit{dI--dV} characteristics for various channel transparencies $\tau$. Increasing $\tau$ shifts spectral weight from normal to Andreev processes, leading to enhanced subgap conductance and reduced coherence-peak height. Parameters correspond to aluminum (Sec.~\ref{subsec:basics:aluminum}), with $T=0$ and $\gamma = 0$.
-                    }
-                \label{fig:meso:btk}
-            \end{figure}
-
             Figure~\ref{fig:meso:btk} summarizes the BTK description of an N--S interface across the full transparency range. Panels (a) and (b) show the energy-resolved spectral weights $\rho_{\mathrm{1e}}(E)$ and $\rho_{\mathrm{2e}}(E)$ (Eq.~\eqref{eq:meso:btk-dos}), which enter the current integral in Eq.~\eqref{eq:meso:btk-iv}. In the tunneling regime ($\tau\ll 1$), the response is dominated by the single-particle channel and exhibits pronounced coherence peaks at $|E|\approx\Delta$. With increasing transparency, spectral weight is transferred to the Andreev channel, yielding enhanced subgap conductance and a reduced peak height, as reflected in the corresponding $I$--$V$ and $\mathrm{d}I/\mathrm{d}V$ curves in panels (c) and (d).
+
 
     %=========================================================
     \subsection{Andreev Bound States}
@@ -350,6 +351,19 @@
         \subsubsection*{Multi-Channel Contacts}
         %=========================================================
 
+            \begin{figure}[t]
+                \centering
+                \subfigure[
+                    Current Phase Relation $I(\phi)$
+                    ]{\import{theory/meso}{ko-cpr.pgf}}
+                \hfill
+                \subfigure[
+                    Critical Current $I_\mathrm{C}(T)$
+                    ]{\import{theory/meso}{ko-ic.pgf}}
+                \caption{Current Phase Relation $I(\phi)$ and temperature dependence of the critical current $I_\mathrm{C}(T)$ for three canonical short-junction limits: Ambegaokar--Baratoff (tunnel junction), KO--1 (diffusive short contact), and KO--2 (clean short contact). The critical current is obtained by maximizing the corresponding current--phase relation with respect to $\phi$ using a BCS-like gap $\Delta(T)$.}
+                \label{fig:meso:abs-ko}
+            \end{figure}
+
             Real atomic contacts generally support several conduction channels. In the short-junction limit, each channel $i$ is characterized by a transmission eigenvalue $\tau_i$ and supports a pair of Andreev branches $E_{i,\pm}(\tau_i,\phi)$ given by Eq.~\eqref{eq:meso:abs-spectrum}. The equilibrium supercurrent follows by summing the single-channel contribution (Eq.~\eqref{eq:meso:cpr-single}) over all channels,
             \begin{equation}
                 I(\phi,T)=\sum_i I(\tau_i,\phi,T)\,.
@@ -362,18 +376,22 @@
             \end{equation}
             In this representation, $\rho(\tau)$ is normalized such that $G_\mathrm N=G_0\int_0^1 \rho(\tau)\,\tau\,\mathrm d\tau$ \cite{beenakker_josephson_1991,beenakker_quantum_1992}.
 
+            \begin{wrapfigure}[12]{r}{1.3in}
+                \captionsetup{format=plain}%
+                \centering
+                % \vspace{-0.5em}
+                \import{theory/meso}{ko-rho.pgf}
+                \caption{
+                    DMPK distribution $\rho(\tau)$ of transmission eigenvalues for a short diffusive wire. 
+                    }
+                \label{fig:meso:ko-rho}
+            \end{wrapfigure}
             In the dirty short-contact limit, the transmission eigenvalues of a quasi-one-dimensional diffusive wire follow the Dorokhov--Mello--Pereyra--Kumar (DMPK) distribution \cite{dorokhov_transmission_1982},
             \begin{equation}
-                \rho(\tau) = \frac{G_\mathrm{N}}{G_0} \frac{1}{2\tau \sqrt{1-\tau}}\,,\qquad 0<\tau<1\,.
+                \rho(\tau) = \frac{G_\mathrm{N}}{G_0} \frac{1}{2\tau \sqrt{1-\tau}}\,,\quad 0<\tau<1\,,
                 \label{eq:meso:dmpk}
             \end{equation}
-            The density is bimodal, with integrable divergences at $\tau\to 0$ and $\tau\to 1$, as shown in Fig.~\ref{fig:meso:abs-rhotau}. This indicates that a diffusive conductor can be viewed statistically as a mixture of many almost-closed and a few almost-open channels.
-            \begin{figure}[ht]
-                \centering
-                \includegraphics[width=.42\textwidth]{theory/meso/abs-rhotau.png}
-                \caption{DMPK distribution $\rho(\tau)$ of transmission eigenvalues for a short diffusive wire. The distribution is bimodal with integrable divergences at $\tau\to 0$ and $\tau\to 1$, and is normalized such that $G_\mathrm N=G_0\int_0^1 \rho(\tau)\,\tau\,\mathrm d\tau$.}
-                \label{fig:meso:abs-rhotau}
-            \end{figure}
+            as shown in Fig.~\ref{fig:meso:ko-rho}. The distribution is bimodal with integrable divergences at $\tau\to 0$ and $\tau\to 1$, and is normalized such that $G_\mathrm N=G_0\int_0^1 \rho(\tau)\,\tau\,\mathrm d\tau$.  This indicates that a diffusive conductor can be viewed statistically as a mixture of many almost-closed and a few almost-open channels. 
                         
             Averaging the short-junction single-channel result over Eq.~\eqref{eq:meso:dmpk} yields the first Kulik--Omel'yanchuk (KO--1) current--phase relation in the dirty (diffusive) limit. At $T=0$, it reduces to the closed form
             \begin{equation}
@@ -390,17 +408,219 @@
             \end{equation}
             Both limits provide widely used reference models for short superconducting weak links \cite{kulik_contribution_1975,golubov_current-phase_2004}.
 
-            Figure~\ref{fig:meso:abs-ko} compares the temperature dependence of the critical current obtained from the Ambegaokar--Baratoff result and from the KO--1/KO--2 current--phase relations by applying $I_\mathrm{C}(T)=\max_{\phi\in[0,2\pi]} I(\phi,T)$ with a BCS-like gap $\Delta(T)$.
-            \begin{figure}[ht]
+            Figure~\ref{fig:meso:abs-ko} compares CPR and the temperature dependence of the critical current obtained from the Ambegaokar--Baratoff result and from the KO--1/KO--2 current--phase relations by applying $I_\mathrm{C}(T)=\max_{\phi\in[0,2\pi]} I(\phi,T)$ with a BCS-like gap $\Delta(T)$.
+            
+    %=========================================================
+    \subsection{Multiple Andreev Reflection}
+    \label{subsec:meso:mar}
+    %=========================================================
+
+        Multiple Andreev reflection (MAR) provides the microscopic mechanism of subgap transport in voltage-biased S--N--S weak links or short superconducting point contacts. For $|eV|<2\Delta$, quasiparticles cannot directly enter the quasiparticle continua of the superconducting leads. Instead, transport proceeds through successive Andreev conversions at the two S interfaces, alternating between electron- and hole-like character. Each traversal across the junction shifts the quasiparticle energy by $\pm eV$, producing an ``energy ladder'' that must bridge the gap $2|\Delta|$ before escape into the continuum becomes possible. In the trajectory picture of Klapwijk, Blonder, and Tinkham (KBT) \cite{klapwijk_explanation_1982}, MAR cycles involving $m$ such subgap energy increments turn on at
+        \begin{equation}
+            eV_m=\frac{2|\Delta|}{m}\,,\qquad m=1,2,3,\dots\,.
+            \label{eq:meso:mar-sgs}
+        \end{equation}
+
+        We use the index $m$ because, in this idealized ladder picture, the same integer that counts the required number of traversals also sets the characteristic charge-transfer scale associated with the corresponding MAR cycle. Strictly speaking, $m$ here counts the number of Andreev-assisted energy increments needed to reach the quasiparticle continua. The full charge-transfer statistics contains contributions from several $q=ke$ and becomes particularly transparent in a full-counting-statistics formulation.
+
+        Historically, the first widely used quantitative treatment is the incoherent semiclassical OTBK model \cite{octavio_subharmonic_1983}, which evolves energy- and direction-resolved quasiparticle occupation probabilities within a Boltzmann-type scheme. For short, ballistic few-channel contacts, however, transport is phase coherent and naturally parameterized by the transmission eigenvalues $\{\tau_i\}$. We therefore use OTBK mainly as a qualitative reference and turn to the fully coherent, channel-resolved Hamiltonian/scattering approach of Cuevas \textit{et al.} for quantitative modeling across the full transparency range.
+
+        In the high-transparency limit, it is often useful to connect this MAR picture back to the Andreev bound states: under a dc bias the phase evolves in time, and the system is repeatedly swept through the avoided crossing of the ABS branches near $\phi\approx\pi$ (opened by finite normal reflection, $1-\tau$). Nonadiabatic Landau--Zener transitions at this avoided crossing provide an intuitive two-level viewpoint on how a running phase generates dissipation and populates the quasiparticle continuum. We mention this perspective only as physical intuition; for quantitative $I$--$V$ characteristics at arbitrary $\tau$ we rely on the Hamiltonian/Keldysh treatments discussed below.
+
+        %=========================================================
+        \subsubsection*{Hamiltonian Approach}
+        %=========================================================
+
+            \begin{figure}[t]
                 \centering
-                \includegraphics[width=.55\textwidth]{theory/meso/abs-ko.png}
-                \caption{Temperature dependence of the critical current $I_\mathrm{C}(T)$ for three canonical short-junction limits: Ambegaokar--Baratoff (tunnel junction), KO--1 (diffusive short contact), and KO--2 (clean short contact). The critical current is obtained by maximizing the corresponding current--phase relation with respect to $\phi$ using a BCS-like gap $\Delta(T)$.}
-                \label{fig:meso:abs-ko}
+                \import{theory/meso}{ha-iv.pgf}
+                \caption{
+                    $I$--$V$ characteristics of Hamiltonian-approach (HA) for a short single-channel contact at $T=0$ and $\gamma=0$ for selected transparencies. 
+                    }
+                \label{fig:meso:mar-ha}
             \end{figure}
 
+            Following Cuevas \textit{et al.} \cite{cuevas_hamiltonian_1996}, we model a short superconducting point contact by two bulk BCS reservoirs coupled by a local link. This is the same microscopic starting point used throughout this chapter: in equilibrium ($V=0$) it yields Andreev bound states (Sec.~\ref{subsec:meso:abs}), while under finite voltage bias it generates coherent multiple Andreev reflection (MAR) and the corresponding subharmonic-gap structure in the dc $I$--$V$ characteristics. The various MAR formalisms (Hamiltonian approach, and its full-counting-statistics extension) differ primarily in the solution method and in the observables extracted, not in the underlying Hamiltonian.
 
-        % %=========================================================
-        % \subsubsection*{Fractional Shapiro Steps}
-        % %=========================================================
+            The junction Hamiltonian is written as
+            \begin{align}
+                \hat{H} &= \hat{H}_L + \hat{H}_R + \hat{H}_T(t)\,,\\
+                \hat{H}_T(t) &= \sum_\sigma \left( t\,e^{+\ima \phi(t)/2}\,\hat{c}^\dagger_{L\sigma}\hat{c}_{R\sigma}
+                + t\,e^{-\ima \phi(t)/2}\,\hat{c}^\dagger_{R\sigma}\hat{c}_{L\sigma}\right)\,.
+                \label{eq:ha:ht}
+            \end{align}
 
-            % For intermediate and increasing transmission ($0<\tau<=1$), the progressive skewing of the current--phase relation, can equivalently be expressed as an enhanced higher-harmonic content in a Fourier expansion $I(\phi)=\sum_{n\ge 1} I_n\sin(n\phi)$. This harmonic content will be central when discussing microwave-driven phase dynamics and fractional Shapiro steps below.
+            The dc voltage bias is incorporated through the time-dependent phase difference $\phi(t)$ (chosen here to reside in the coupling term), which makes the problem explicitly time periodic and requires a nonequilibrium treatment. In the Hamiltonian approach this is handled with Keldysh Green functions in Nambu space and a Floquet (sideband) representation in energy, yielding the dc current $I(V)$ for arbitrary transparency $\tau$. Finite temperature enters through the reservoir occupations and, if desired, a phenomenological broadening $\gamma$ can be used to regularize the low-bias limit.
+
+            Figure~\ref{fig:meso:mar-ha} illustrates the characteristic evolution of MAR transport with transparency. For small $\tau$ the subgap current is dominated by higher-order MAR cycles and therefore exhibits distinct onsets at the KBT voltages $V_m$. As $\tau$ increases, Andreev conversion becomes more probable at each interface, so that the subgap current rises strongly and the SGS contrast is reduced. In the ballistic limit ($\tau\approx 1$), transport approaches an almost continuous MAR ladder with a large subgap current and a sizable excess current above the gap.
+
+        %=========================================================
+        \subsubsection*{Full Counting Statistics}
+        %=========================================================
+
+            \begin{figure}[t]
+                \centering
+                \subfigure[
+                    $\tau = 0.90$
+                    ]{\import{theory/meso}{fcs-090.pgf}}
+                \hfill
+                \subfigure[
+                    $\tau = 0.66$
+                    ]{\import{theory/meso}{fcs-066.pgf}}
+                \subfigure[
+                    $\tau = 0.33$
+                    ]{\import{theory/meso}{fcs-033.pgf}}
+                \hfill
+                \subfigure[
+                    $\tau = 0.10$
+                    ]{\import{theory/meso}{fcs-010.pgf}}
+                \caption{Charge-resolved MAR current from a full-counting-statistics (FCS) decomposition. Each panel shows the set of contributions $\{I_m(V)\}$ (Eq.~\eqref{eq:meso:fcs-decomposition}) for a fixed channel transmission $\tau$ as a function of dc bias. The index $m$ labels the effective charge transfer $q=me$ associated with a given MAR cycle. At low bias (large $m\simeq 2\Delta/eV$) higher-order processes dominate, while near the gap edge ($eV\lesssim 2\Delta$) the weight shifts to smaller $m$; increasing transparency redistributes weight towards lower orders and enhances the overall subgap current.}
+                \label{fig:meso:fcs}
+            \end{figure}
+
+            \begin{figure}[t]
+                \centering
+                \import{theory/meso}{fcs-m-inv.pgf}
+                \caption{Same charge-resolved FCS data as in Fig.~\ref{fig:meso:fcs}, replotted on an inverse-voltage scale to emphasize the subharmonic-gap structure. The vertical markers correspond to the KBT voltages $eV_m=2\Delta/m$ (Eq.~\eqref{eq:meso:mar-sgs}), highlighting how contributions of order $m$ become relevant as the bias enters the corresponding MAR window.}
+                \label{fig:meso:fcs-m-inv}
+            \end{figure}
+
+            Full counting statistics (FCS) provides a process-resolved description of nonequilibrium charge transfer by characterizing the full probability distribution of transferred charge, rather than only its mean. This is particularly natural for MAR in superconducting point contacts: under dc voltage bias, subgap transport proceeds through sequences of Andreev conversions, so that an individual transport cycle can transfer an effective charge $q=me$ with $m\ge 1$. While the Hamiltonian approach yields the total dc current $I(V)$, FCS makes explicit which effective-charge processes dominate at a given bias.
+
+            In practice, FCS is implemented by introducing a counting field $\chi$ that ``tags'' charge transfer across the contact (a phase twist of the coupling term on the Keldysh contour). The resulting cumulant generating function $\mathcal S(\chi)$ encodes all charge-transfer cumulants; in particular, the dc current and current noise follow from derivatives at $\chi=0$. For the present thesis, we do not require the full distribution $P(Q)$, but only the physically transparent decomposition of the dc MAR current into contributions associated with $q=me$ transfer processes,
+            \begin{equation}
+                I(V)=\sum_{m=1}^{\infty} I_m(V)\,.
+                \label{eq:meso:fcs-decomposition}
+            \end{equation}
+            Here $I_m(V)$ quantifies the weight of MAR cycles of order $m$. In the tunneling regime the distribution is strongly peaked at small $m$ (rare higher-order processes), whereas for high transparency several orders contribute simultaneously and the subgap current approaches an almost continuous MAR ladder.
+
+            Figures~\ref{fig:meso:fcs} and \ref{fig:meso:fcs-m-inv} provide an intuitive visualization of this charge-resolved picture for selected transparencies. For each bias point, the total dc current is decomposed into the contributions $I_m(V)$ associated with processes transferring an effective charge $q=me$.
+
+            This decomposition is particularly useful for microwave irradiation. Once the dc weights $I_m(V)$ are known, photon-assisted MAR can be constructed efficiently by dressing each effective-charge contribution $q=me$ with photon sidebands, avoiding a full two-frequency Floquet--Keldysh treatment for dense parameter scans. In the following section we exploit this idea to obtain a practical PAMAR description in terms of the microscopic $I_m(V)$.
+
+    %=========================================================
+    \subsection{Microwave-Driven Mesoscopic Weak Links}
+    %=========================================================
+
+        Microwave irradiation is modeled throughout this thesis by the generic harmonic drive introduced in Sec.~\ref{subsec:basics:micro-wave}. In the perfect voltage-bias limit, the applied rf voltage modulates the superconducting phase difference $\phi(t)$ and thus dresses tunneling and scattering amplitudes by the gauge factors $e^{\pm \ima\phi(t)/2}$, generating photon sidebands with Bessel weights. In the mesoscopic context discussed here, this has two complementary consequences: (i) for the equilibrium supercurrent, higher harmonics of the current--phase relation enable phase locking at rational voltages (fractional Shapiro structure), and (ii) for nonequilibrium subgap transport, MAR cycles acquire photon-assisted replicas (PAMAR).
+
+        An explicit ac extension of this Hamiltonian/Floquet framework to microwave-irradiated point contacts was developed by Cuevas \textit{et al.} \cite{cuevas_subharmonic_2002}. In addition to the Josephson periodicity at $\nu_J=2eV/h$, the rf drive at $\nu$ introduces a second time scale, so that the Green functions acquire a double Floquet (sideband) structure. Compared to the dc case, the ac theory predicts additional photon-assisted MAR features---replicas and splittings of the SGS peaks in $\mathrm dI/\mathrm dV$ at voltages $eV\approx 2\Delta/m \pm ph\nu/m$---and, in current-biased configurations, subharmonic Shapiro structure; the fully microscopic treatment is therefore considerably more costly for dense parameter scans.
+
+        %=========================================================
+        \subsubsection*{Fractional Shapiro Steps}
+        %=========================================================
+
+            For highly transparent short weak links, the equilibrium current--phase relation (CPR) deviates markedly from a pure sinusoid and can be expanded in harmonics,
+            \begin{equation}
+                I(\phi)=\sum_{p = 1}^\infty I_p\sin(p\phi)\,.
+                \label{eq:meso:cpr-harmonics}
+            \end{equation}
+            Here $p$ labels the harmonic order. When the junction is irradiated at frequency $\nu$, the driven phase dynamics can lock to the external drive, producing Shapiro plateaus. For an anharmonic CPR, each harmonic contributes current components oscillating at multiples of the Josephson frequency and thereby enables additional locking conditions. 
+            
+            Consequently, voltage plateaus may occur at rational fractions of the fundamental step voltage,
+            \begin{equation}
+                V_{n/m}=\frac{n}{m}\,\frac{hf}{2e}\,,\qquad n\in\mathbb{Z},\; p\ge 1\,.
+                \label{eq:meso:shapiro-fractional}
+            \end{equation}
+            The most prominent fractional steps are typically the half-integer steps, which become visible when the second harmonic $I_2$ is appreciable.
+
+            In the overdamped RSJ limit and for a sinusoidal drive, the step amplitudes inherit the same Bessel-function structure as the conventional integer Shapiro steps, but weighted by the corresponding harmonic coefficient. A useful rule of thumb for the current width of the $(n/p)$ plateau is
+            \begin{equation}
+                \Delta I_{n/p}\;\propto\;2\,|I_p|\,\big|J_n(p a)\big|\,,\qquad a\equiv\frac{2eV_\mathrm{ac}}{\hbar\omega}\,,
+                \label{eq:meso:shapiro-bessel}
+            \end{equation}
+            where $J_n$ denotes the Bessel function of the first kind and $V_\mathrm{ac}$ the rf voltage amplitude across the junction.
+
+            Importantly, fractional Shapiro steps do not by themselves imply a $4\pi$-periodic Josephson effect: they arise naturally in conventional short junctions whenever the CPR contains higher harmonics. In the following (Sec.~\ref{sec:macro}), we model the microwave-driven phase dynamics within an RCSJ-type description that allows for an anharmonic CPR, and use the appearance and relative strength of fractional steps as an empirical indicator of higher-harmonic content.
+            
+            \begin{align}                
+                \phi(t)=\phi_0+\omega_J t + a\sin(\omega t),\qquad
+                \omega_J=\frac{2eV_\mathrm{dc}}{\hbar},\quad a=\frac{2eV_\mathrm{ac}}{\hbar\omega}.\\
+                I(t)=\sum_{p\ge 1}\sum_{n=-\infty}^{\infty} I_p\,J_n(pa)\,
+                \sin\!\Big(p\phi_0+(p\omega_J+n\omega)t\Big).
+            \end{align}
+
+            This is non-RCSJ in the sense that it is purely kinematic: it is just the driven phase inserted into the CPR (or, microscopically, the Jacobi--Anger expansion of the gauge factor). It predicts the full harmonic content and the Bessel weights $J_n(pa)$. What it does not give you is a dc-voltage plateau under current bias—because you have fixed V(t) rather than solving for $\phi(t)$.
+
+            \begin{equation}
+            I_{\mathrm dc}(V_{\mathrm dc})
+            =\sum_{p\ge1}\sum_{n\in\mathbb Z}
+            I_p\,J_n(pa)\,\sin(p\phi_0)\,
+            \delta\!\left(V_{\mathrm dc}-\frac{n}{p}\frac{h\nu}{2e}\right).
+            \label{eq:meso:voltagebiased-dc-comb}
+            \end{equation}
+
+            \begin{equation}
+            |I_{\mathrm dc}(V_{\mathrm dc})|_{\max}
+            =\sum_{p\ge1}\sum_{n\in\mathbb Z}
+            |I_p|\,|J_n(pa)|\,
+            \delta\!\left(V_{\mathrm dc}-\frac{n}{p}\frac{h\nu}{2e}\right),
+            \label{eq:meso:voltagebiased-dc-envelope}
+            \end{equation}
+
+            % -------------------------------------------------------------------------
+            % Note to self (biasing + interpretation of 'fractional Shapiro step height')
+            %
+            % In the coherent regime the *rational positions* follow from the same
+            % commensurability condition as in RSJ/RCSJ, but what you observe depends on
+            % the bias mode.
+            %
+            % (i) Current bias (RSJ/RCSJ): true Shapiro steps = plateaus in dc voltage
+            %     while sweeping I_dc. Fractional steps appear when the CPR contains
+            %     higher harmonics, I(φ)=∑_{p≥1} I_p sin(pφ), because the phase dynamics
+            %     can lock via the p-th harmonic.
+            %
+            % (ii) Ideal voltage bias: there are no 'steps' (V is imposed), but at
+            %     special dc voltages the *time-averaged supercurrent* becomes nonzero.
+            %     This is the voltage-biased analogue of a step 'height'.
+            %
+            % Assume V(t)=V_dc + V_ac cos(2πν t) (ω=2πν). Then
+            %   φ(t)=φ_0 + ω_J t + a sin(ω t),
+            %   ω_J = 2e V_dc / ħ,
+            %   a   = 2e V_ac / (ħ ω) = 2e V_ac / (h ν).
+            %
+            % Insert into the harmonic CPR and use Jacobi-Anger:
+            %   I(t)=∑_{p≥1} ∑_{n∈ℤ} I_p J_n(p a) sin[pφ_0 + (pω_J + nω)t].
+            %
+            % The dc component ⟨I⟩ is nonzero only if one sideband is stationary:
+            %   pω_J + nω = 0  ⇒  V_dc = (n/p) (hν/2e).
+            % Hence the *fractional positions* are at V=(n/p)(hν/2e).
+            %
+            % At such a commensurate bias, and if the p-th harmonic dominates, the dc
+            % supercurrent takes the form
+            %   I_dc^{(n/p)}(φ_0) = I_p J_n(p a) sin(pφ_0),
+            % so the maximal possible dc component (varying the phase offset φ_0) is
+            %   |I_dc^{(n/p)}|_max ≈ |I_p| |J_n(p a)|.
+            %
+            % In current bias, this same quantity sets the *locking range* (plateau width)
+            % in dc current (up to model-dependent prefactors), giving the familiar rule:
+            %   ΔI_{n/p} ∝ 2 |I_p| |J_n(p a)|.
+            %
+            % Important: the maximization here is over the phase offset φ_0 (relative phase
+            % between drive and Josephson oscillation), not over the static CPR maximum
+            % max_φ I(φ). Under voltage bias you get dc-current features at rational V;
+            % under current bias you get voltage plateaus (Shapiro steps).
+            % -------------------------------------------------------------------------
+
+
+        %=========================================================
+        \subsubsection*{Photon-Assisted Multiple Andreev Refelction}
+        %=========================================================
+
+            \begin{equation}
+                eV_{m,n}
+                = \frac{2\Delta}{m}
+                    \pm \frac{n h\nu}{m},
+            \end{equation}
+
+        \begin{equation}
+                I(V_{\mathrm{dc}},A)
+                = \sum_{m=1}^{\infty}
+                    \sum_{n=-\infty}^{\infty}
+                        J_n^2(\alpha_m)\,
+                        I_m\!\left(
+                            V_{\mathrm{dc}}
+                            - \frac{n h\nu}{q_m}
+                        \right),
+                \label{eq:meso:pamar-unified}
+            \end{equation}
