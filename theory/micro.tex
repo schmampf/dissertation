@@ -27,14 +27,14 @@
 
         In the weak-coupling limit, the theoretical treatment of superconductivity simplifies considerably. The normal-state density of states can be taken as constant in the narrow energy shell relevant for pairing, and the attractive interaction may be approximated as uniform across this shell. As a consequence, many observable quantities assume universal forms, most notably the ratio between the zero-temperature gap and the critical temperature,
         \begin{equation}
-            \Delta_0 \approx 1.764\, k_\mathrm{B} T_\mathrm{C}\,,
+            \Delta_0 \approx 1.764\, k_\mathrm{B} T_\mathrm{c}\,,
             \label{eq:micro:Delta0}
         \end{equation}
         which holds for all weak-coupling BCS superconductors.
 
         The superconducting gap, however, is not constant with temperature. At $T=0$, electrons within the pairing shell around the Fermi energy form a condensate characterized by a well-defined order parameter. With increasing temperature, thermal excitations break an increasing fraction of Cooper pairs, reducing the number of electrons bound in the superconducting state. As fewer pairs contribute to the condensate, the magnitude of the order parameter decreases, and the energy required to break a pair, $\Delta(T)$, is gradually reduced.
 
-        This reduction proceeds smoothly until the critical temperature $T_\mathrm{C}$ is reached. At $T=T_\mathrm{C}$, thermal fluctuations fully disrupt the pairing correlations, the order parameter vanishes continuously, and superconductivity is lost. The temperature dependence of the gap reflects the balance between the condensation energy gained by pairing and the entropy associated with thermal excitations. The universal weak-coupling curve is shown in Fig.~\ref{fig:micro:gap}.
+        This reduction proceeds smoothly until the critical temperature $T_\mathrm{c}$ is reached. At $T=T_\mathrm{c}$, thermal fluctuations fully disrupt the pairing correlations, the order parameter vanishes continuously, and superconductivity is lost. The temperature dependence of the gap reflects the balance between the condensation energy gained by pairing and the entropy associated with thermal excitations. The universal weak-coupling curve is shown in Fig.~\ref{fig:micro:gap}.
 
         \begin{wrapfigure}[13]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
@@ -48,7 +48,7 @@
         \begin{equation}
             \frac{\Delta(T)}{\Delta_0}
                 \approx \tanh\!\left(
-                    1.74\,\sqrt{\frac{T_\mathrm{C}}{T} - 1}
+                    1.74\,\sqrt{\frac{T_\mathrm{c}}{T} - 1}
                 \right),
             \label{eq:micro:DeltaT}
         \end{equation}
@@ -65,8 +65,8 @@
         In the normal state, the electronic density of states (DOS) varies only weakly with energy near the Fermi level. Over the narrow pairing shell relevant to weak-coupling superconductivity, this variation can be neglected and the DOS may be taken as constant. The corresponding value at the Fermi level is
         \begin{equation}
             N_0 \equiv
-                 \frac{1}{2\pi^2}\!
-                \left(\frac{2m}{\hbar^2}\right)^{3/2}
+                 \tfrac{1}{2\pi^2}\!
+                \left(\tfrac{2m}{\hbar^2}\right)^{3/2}
                 \sqrt{E_\mathrm{F}}\,,
             \label{eq:micro:DOS-N0}
         \end{equation}
@@ -117,11 +117,11 @@
                 Dynes-broadened superconducting DOS $N_\mathrm{S}(E)/N_0$ for several values of $\gamma/\Delta_0$, showing how finite quasi-particle lifetimes smooth the coherence peaks and introduce subgap spectral weight. 
                 ]{\import{theory/micro}{dos.pgf}}
             \subfigure[
-                Fermi--Dirac distributions at different temperatures $T/T_\mathrm{C}$ illustrating thermal occupation smearing.
+                Fermi--Dirac distributions at different temperatures $T/T_\mathrm{c}$ illustrating thermal occupation smearing.
                 ]{\import{theory/micro}{fermi.pgf}}
             \hspace{.2in}
             \subfigure[
-                Thermal broadening kernel at different temperatures $T/T_\mathrm{C}$.
+                Thermal broadening kernel at different temperatures $T/T_\mathrm{c}$.
                 ]{\import{theory/micro}{fermi-kernel.pgf}}
             \caption{
                 Together, these three ingredients determine the qualitative shape and resolution of the microscopic \textit{I--V} and \textit{dI--dV} characteristics. Parameters correspond to aluminum (Sec.~\ref{subsec:basics:aluminum}).
@@ -224,7 +224,7 @@
         \begin{figure}[ht]
             \centering
             \subfigure[
-                Calculated \textit{I--V} characteristics for different temperatures $T/T_\mathrm{C}$ at vanishing Dynes broadening ($\gamma = 0$). Increasing temperature rounds the coherence peaks and gradually fills the subgap region. 
+                Calculated \textit{I--V} characteristics for different temperatures $T/T_\mathrm{c}$ at vanishing Dynes broadening ($\gamma = 0$). Increasing temperature rounds the coherence peaks and gradually fills the subgap region. 
                 ]{\import{theory/micro}{tunnel-iv-T.pgf}}
             \hfill
             \subfigure[

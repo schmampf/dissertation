@@ -358,9 +358,9 @@
                     ]{\import{theory/meso}{ko-cpr.pgf}}
                 \hfill
                 \subfigure[
-                    Critical Current $I_\mathrm{C}(T)$
+                    Critical Current $I_\mathrm{c}(T)$
                     ]{\import{theory/meso}{ko-ic.pgf}}
-                \caption{Current Phase Relation $I(\phi)$ and temperature dependence of the critical current $I_\mathrm{C}(T)$ for three canonical short-junction limits: Ambegaokar--Baratoff (tunnel junction), KO--1 (diffusive short contact), and KO--2 (clean short contact). The critical current is obtained by maximizing the corresponding current--phase relation with respect to $\phi$ using a BCS-like gap $\Delta(T)$.}
+                \caption{Current Phase Relation $I(\phi)$ and temperature dependence of the critical current $I_\mathrm{c}(T)$ for three canonical short-junction limits: Ambegaokar--Baratoff (tunnel junction), KO--1 (diffusive short contact), and KO--2 (clean short contact). The critical current is obtained by maximizing the corresponding current--phase relation with respect to $\phi$ using a BCS-like gap $\Delta(T)$.}
                 \label{fig:meso:abs-ko}
             \end{figure}
 
@@ -408,7 +408,7 @@
             \end{equation}
             Both limits provide widely used reference models for short superconducting weak links \cite{kulik_contribution_1975,golubov_current-phase_2004}.
 
-            Figure~\ref{fig:meso:abs-ko} compares CPR and the temperature dependence of the critical current obtained from the Ambegaokar--Baratoff result and from the KO--1/KO--2 current--phase relations by applying $I_\mathrm{C}(T)=\max_{\phi\in[0,2\pi]} I(\phi,T)$ with a BCS-like gap $\Delta(T)$.
+            Figure~\ref{fig:meso:abs-ko} compares CPR and the temperature dependence of the critical current obtained from the Ambegaokar--Baratoff result and from the KO--1/KO--2 current--phase relations by applying $I_\mathrm{c}(T)=\max_{\phi\in[0,2\pi]} I(\phi,T)$ with a BCS-like gap $\Delta(T)$.
             
     %=========================================================
     \subsection{Multiple Andreev Reflection}
@@ -433,9 +433,15 @@
 
             \begin{figure}[t]
                 \centering
-                \import{theory/meso}{ha-iv.pgf}
+                \subfigure[
+                    \text{I--V} characteristic
+                    ]{\import{theory/meso}{ha-iv.pgf}}
+                \hfill
+                \subfigure[
+                    \text{dI--dV} characteristic
+                    ]{\import{theory/meso}{ha-didv.pgf}}
                 \caption{
-                    $I$--$V$ characteristics of Hamiltonian-approach (HA) for a short single-channel contact at $T=0$ and $\gamma=0$ for selected transparencies. 
+                    \text{I--V}  and \text{dI--dV} characteristic of Hamiltonian-approach (HA) for a short single-channel contact at $T=0$ and $\gamma=0$ for selected transparencies. 
                     }
                 \label{fig:meso:mar-ha}
             \end{figure}
@@ -480,8 +486,14 @@
 
             \begin{figure}[t]
                 \centering
-                \import{theory/meso}{fcs-m-inv.pgf}
-                \caption{Same charge-resolved FCS data as in Fig.~\ref{fig:meso:fcs}, replotted on an inverse-voltage scale to emphasize the subharmonic-gap structure. The vertical markers correspond to the KBT voltages $eV_m=2\Delta/m$ (Eq.~\eqref{eq:meso:mar-sgs}), highlighting how contributions of order $m$ become relevant as the bias enters the corresponding MAR window.}
+                \subfigure[
+                    \text{I--V} characteristic
+                    ]{\import{theory/meso}{fcs-iv-m-inv.pgf}}
+                \hfill
+                \subfigure[
+                    \text{dI--dV} characteristic
+                    ]{\import{theory/meso}{fcs-didv-m-inv.pgf}}
+                \caption{Charge-resolved FCS \text{I--V} and \text{dI--dV}, replotted on an inverse-voltage scale to emphasize the subharmonic-gap structure. The vertical markers correspond to the KBT voltages $eV_m=2\Delta/m$ (Eq.~\eqref{eq:meso:mar-sgs}), highlighting how contributions of order $m$ become relevant as the bias enters the corresponding MAR window.}
                 \label{fig:meso:fcs-m-inv}
             \end{figure}
 
