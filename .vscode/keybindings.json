@@ -1,9 +1,9 @@
 [
-	{
-		"key": "cmd+alt+b",
-		"command": "-latex-workshop.build",
-		"when": "editorTextFocus && editorLangId =~ /latex|tex/"
-	},
+	// {
+	// 	"key": "cmd+alt+b",
+	// 	"command": "-latex-workshop.build",
+	// 	"when": "editorTextFocus && editorLangId =~ /latex|tex/"
+	// },
 	{
 		"key": "cmd+alt+b",
 		"command": "latex-workshop.recipes",
