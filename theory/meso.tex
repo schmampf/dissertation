@@ -488,8 +488,14 @@
                 \centering
                 \subfigure[
                     \text{I--V} characteristic
+                    ]{\import{theory/meso}{ha-iv-inv.pgf}}
+                \hspace{.1in}
+                \subfigure[
+                    \text{dI--dV} characteristic
+                    ]{\import{theory/meso}{ha-didv-inv.pgf}}
+                \subfigure[
+                    \text{I--V} characteristic
                     ]{\import{theory/meso}{fcs-iv-m-inv.pgf}}
-                \hfill
                 \subfigure[
                     \text{dI--dV} characteristic
                     ]{\import{theory/meso}{fcs-didv-m-inv.pgf}}
@@ -509,130 +515,3 @@
             Figures~\ref{fig:meso:fcs} and \ref{fig:meso:fcs-m-inv} provide an intuitive visualization of this charge-resolved picture for selected transparencies. For each bias point, the total dc current is decomposed into the contributions $I_m(V)$ associated with processes transferring an effective charge $q=me$.
 
             This decomposition is particularly useful for microwave irradiation. Once the dc weights $I_m(V)$ are known, photon-assisted MAR can be constructed efficiently by dressing each effective-charge contribution $q=me$ with photon sidebands, avoiding a full two-frequency Floquet--Keldysh treatment for dense parameter scans. In the following section we exploit this idea to obtain a practical PAMAR description in terms of the microscopic $I_m(V)$.
-
-    %=========================================================
-    \subsection{Microwave-Driven Mesoscopic Weak Links}
-    %=========================================================
-
-        Microwave irradiation is modeled throughout this thesis by the generic harmonic drive introduced in Sec.~\ref{subsec:basics:micro-wave}. In the perfect voltage-bias limit, the applied rf voltage modulates the superconducting phase difference $\phi(t)$ and thus dresses tunneling and scattering amplitudes by the gauge factors $e^{\pm \ima\phi(t)/2}$, generating photon sidebands with Bessel weights. In the mesoscopic context discussed here, this has two complementary consequences: (i) for the equilibrium supercurrent, higher harmonics of the current--phase relation enable phase locking at rational voltages (fractional Shapiro structure), and (ii) for nonequilibrium subgap transport, MAR cycles acquire photon-assisted replicas (PAMAR).
-
-        An explicit ac extension of this Hamiltonian/Floquet framework to microwave-irradiated point contacts was developed by Cuevas \textit{et al.} \cite{cuevas_subharmonic_2002}. In addition to the Josephson periodicity at $\nu_J=2eV/h$, the rf drive at $\nu$ introduces a second time scale, so that the Green functions acquire a double Floquet (sideband) structure. Compared to the dc case, the ac theory predicts additional photon-assisted MAR features---replicas and splittings of the SGS peaks in $\mathrm dI/\mathrm dV$ at voltages $eV\approx 2\Delta/m \pm ph\nu/m$---and, in current-biased configurations, subharmonic Shapiro structure; the fully microscopic treatment is therefore considerably more costly for dense parameter scans and not feasible for this thesis.
-
-        %=========================================================
-        \subsubsection*{Fractional Shapiro Steps}
-        %=========================================================
-
-            For highly transparent short weak links, the equilibrium current--phase relation (CPR) deviates markedly from a pure sinusoid and can be expanded in harmonics,
-            \begin{equation}
-                I(\phi)=\sum_{p = 1}^\infty I_p\sin(p\phi)\,.
-                \label{eq:meso:cpr-harmonics}
-            \end{equation}
-            Here $p$ labels the harmonic order. When the junction is irradiated at frequency $\nu$, the driven phase dynamics can lock to the external drive, producing Shapiro plateaus. For an anharmonic CPR, each harmonic contributes current components oscillating at multiples of the Josephson frequency and thereby enables additional locking conditions. 
-            
-            Consequently, voltage plateaus may occur at rational fractions of the fundamental step voltage,
-            \begin{equation}
-                V_{n/m}=\frac{n}{m}\,\frac{hf}{2e}\,,\qquad n\in\mathbb{Z},\; p\ge 1\,.
-                \label{eq:meso:shapiro-fractional}
-            \end{equation}
-            The most prominent fractional steps are typically the half-integer steps, which become visible when the second harmonic $I_2$ is appreciable.
-
-            In the overdamped RSJ limit and for a sinusoidal drive, the step amplitudes inherit the same Bessel-function structure as the conventional integer Shapiro steps, but weighted by the corresponding harmonic coefficient. A useful rule of thumb for the current width of the $(n/p)$ plateau is
-            \begin{equation}
-                \Delta I_{n/p}\;\propto\;2\,|I_p|\,\big|J_n(p a)\big|\,,\qquad a\equiv\frac{2eV_\mathrm{ac}}{\hbar\omega}\,,
-                \label{eq:meso:shapiro-bessel}
-            \end{equation}
-            where $J_n$ denotes the Bessel function of the first kind and $V_\mathrm{ac}$ the rf voltage amplitude across the junction.
-
-            Importantly, fractional Shapiro steps do not by themselves imply a $4\pi$-periodic Josephson effect: they arise naturally in conventional short junctions whenever the CPR contains higher harmonics. In the following (Sec.~\ref{sec:macro}), we model the microwave-driven phase dynamics within an RCSJ-type description that allows for an anharmonic CPR, and use the appearance and relative strength of fractional steps as an empirical indicator of higher-harmonic content.
-            
-            \begin{align}                
-                \phi(t)=\phi_0+\omega_J t + a\sin(\omega t),\qquad
-                \omega_J=\frac{2eV_\mathrm{dc}}{\hbar},\quad a=\frac{2eV_\mathrm{ac}}{\hbar\omega}.\\
-                I(t)=\sum_{p\ge 1}\sum_{n=-\infty}^{\infty} I_p\,J_n(pa)\,
-                \sin\!\Big(p\phi_0+(p\omega_J+n\omega)t\Big).
-            \end{align}
-
-            This is non-RCSJ in the sense that it is purely kinematic: it is just the driven phase inserted into the CPR (or, microscopically, the Jacobi--Anger expansion of the gauge factor). It predicts the full harmonic content and the Bessel weights $J_n(pa)$. What it does not give you is a dc-voltage plateau under current bias—because you have fixed V(t) rather than solving for $\phi(t)$.
-
-            \begin{equation}
-            I_{\mathrm dc}(V_{\mathrm dc})
-            =\sum_{p\ge1}\sum_{n\in\mathbb Z}
-            I_p\,J_n(pa)\,\sin(p\phi_0)\,
-            \delta\!\left(V_{\mathrm dc}-\frac{n}{p}\frac{h\nu}{2e}\right).
-            \label{eq:meso:voltagebiased-dc-comb}
-            \end{equation}
-
-            \begin{equation}
-            |I_{\mathrm dc}(V_{\mathrm dc})|_{\max}
-            =\sum_{p\ge1}\sum_{n\in\mathbb Z}
-            |I_p|\,|J_n(pa)|\,
-            \delta\!\left(V_{\mathrm dc}-\frac{n}{p}\frac{h\nu}{2e}\right),
-            \label{eq:meso:voltagebiased-dc-envelope}
-            \end{equation}
-
-            % -------------------------------------------------------------------------
-            % Note to self (biasing + interpretation of 'fractional Shapiro step height')
-            %
-            % In the coherent regime the *rational positions* follow from the same
-            % commensurability condition as in RSJ/RCSJ, but what you observe depends on
-            % the bias mode.
-            %
-            % (i) Current bias (RSJ/RCSJ): true Shapiro steps = plateaus in dc voltage
-            %     while sweeping I_dc. Fractional steps appear when the CPR contains
-            %     higher harmonics, I(φ)=∑_{p≥1} I_p sin(pφ), because the phase dynamics
-            %     can lock via the p-th harmonic.
-            %
-            % (ii) Ideal voltage bias: there are no 'steps' (V is imposed), but at
-            %     special dc voltages the *time-averaged supercurrent* becomes nonzero.
-            %     This is the voltage-biased analogue of a step 'height'.
-            %
-            % Assume V(t)=V_dc + V_ac cos(2πν t) (ω=2πν). Then
-            %   φ(t)=φ_0 + ω_J t + a sin(ω t),
-            %   ω_J = 2e V_dc / ħ,
-            %   a   = 2e V_ac / (ħ ω) = 2e V_ac / (h ν).
-            %
-            % Insert into the harmonic CPR and use Jacobi-Anger:
-            %   I(t)=∑_{p≥1} ∑_{n∈ℤ} I_p J_n(p a) sin[pφ_0 + (pω_J + nω)t].
-            %
-            % The dc component ⟨I⟩ is nonzero only if one sideband is stationary:
-            %   pω_J + nω = 0  ⇒  V_dc = (n/p) (hν/2e).
-            % Hence the *fractional positions* are at V=(n/p)(hν/2e).
-            %
-            % At such a commensurate bias, and if the p-th harmonic dominates, the dc
-            % supercurrent takes the form
-            %   I_dc^{(n/p)}(φ_0) = I_p J_n(p a) sin(pφ_0),
-            % so the maximal possible dc component (varying the phase offset φ_0) is
-            %   |I_dc^{(n/p)}|_max ≈ |I_p| |J_n(p a)|.
-            %
-            % In current bias, this same quantity sets the *locking range* (plateau width)
-            % in dc current (up to model-dependent prefactors), giving the familiar rule:
-            %   ΔI_{n/p} ∝ 2 |I_p| |J_n(p a)|.
-            %
-            % Important: the maximization here is over the phase offset φ_0 (relative phase
-            % between drive and Josephson oscillation), not over the static CPR maximum
-            % max_φ I(φ). Under voltage bias you get dc-current features at rational V;
-            % under current bias you get voltage plateaus (Shapiro steps).
-            % -------------------------------------------------------------------------
-
-
-        %=========================================================
-        \subsubsection*{Photon-Assisted Multiple Andreev Refelction}
-        %=========================================================
-
-            \begin{equation}
-                eV_{m,n}
-                = \frac{2\Delta}{m}
-                    \pm \frac{n h\nu}{m},
-            \end{equation}
-
-        \begin{equation}
-                I(V_{\mathrm{dc}},A)
-                = \sum_{m=1}^{\infty}
-                    \sum_{n=-\infty}^{\infty}
-                        J_n^2(\alpha_m)\,
-                        I_m\!\left(
-                            V_{\mathrm{dc}}
-                            - \frac{n h\nu}{q_m}
-                        \right),
-                \label{eq:meso:pamar-unified}
-            \end{equation}

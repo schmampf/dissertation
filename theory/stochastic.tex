@@ -1,7 +1,9 @@
 % !TEX root = ../thesis.tex
 
+%=========================================================
 \section{Stochastic Description}
 \label{sec:stochastic}
+%=========================================================
     
     In the previous sections superconducting transport was described in three complementary ways. The microscopic picture treats it as incoherent quasiparticle tunneling, the macroscopic picture describes it as coherent Cooper-pair dynamics governed by the superconducting phase, and the mesoscopic picture considers coherent electron-hole processes in high-transmission weak links. All of these descriptions rely on a well-defined superconducting phase and on the coherence of successive tunneling events. When the electromagnetic environment generates strong voltage fluctuations, this phase coherence is lost. The junction then enters the stochastic transport regime.
 
@@ -26,8 +28,10 @@
     The stochastic description therefore complements the microscopic, macroscopic, and mesoscopic frameworks by covering the fully incoherent limit of superconducting transport. The following sections introduce the origin of phase fluctuations, the \textit{P(E)}--formalism, and the resulting phenomena: dynamical Coulomb blockade of single-electron tunneling\footnote{In the microscopic description, tunneling is elastic and proceeds between well-defined BCS quasi-particle states, which we refer to as quasi-particle tunneling. In contrast, the stochastic description considers single-electron tunneling events dressed by environmental fluctuations, where energy exchange with the environment renders the process inelastic and probabilistic.}, incoherent Cooper-pair tunneling and its photon-assisted counterpart, incoherent Andreev reflection in the absence of phase coherence, and finally the superconducting single-electron transistor as a device in which these processes combine in a controlled and experimentally relevant manner.
     
 
+    %=========================================================
     \subsection[P(E)--Theory]{\textit{P(E)}--Theory}
     \label{subsec:stochastic:pe-theory}
+    %=========================================================
 
         In the presence of strong phase fluctuations, charge transport through a junction occurs as a sequence of independent tunneling events. Because the electromagnetic environment can absorb or emit energy during such a process, the tunneling rate is determined not only by the electronic density of states but also by the probability $P(E)$ that the environment exchanges an energy $E$ with the junction. This renders the tunneling process inelastic even at zero temperature and forms the basis of the stochastic description of superconducting transport.
 
@@ -93,8 +97,10 @@
         The specific consequences of these limiting forms for single-electron tunneling, Cooper-pair tunneling, and subgap Andreev processes are discussed in the subsequent sections.
 
 
+    %=========================================================
     \subsection{Dynamical Coulomb Blockade}
     \label{subsec:stochastic:dcb}
+    %=========================================================
 
         Dynamical Coulomb blockade (DCB) describes the suppression of single-electron tunneling at low bias due to the combined effects of charge quantization and the electromagnetic environment. In contrast to the microscopic description, where quasi-particle tunneling is elastic and governed solely by the electronic density of states, DCB arises when the environment possesses a sufficiently large real impedance such that the transfer of an electron across the junction requires the environment to absorb a finite amount of energy. If this energy is not available, the tunneling event is suppressed.
 
@@ -122,7 +128,9 @@
         We now apply this general formalism to single-electron tunneling before turning to the corresponding two-electron processes.
 
 
+        %=========================================================
         \subsubsection*{Dynamical Coulomb Blockade with Environmental Resonances}
+        %=========================================================
 
             If the impedance contains discrete resonances that originate from inductive elements or cavity modes, the real part of the impedance acquires sharp features at the corresponding frequencies. These features imprint themselves onto the $P(E)$ function, which develops peaks at the energies of the environmental modes. The resulting $I(V)$ curves contain satellite structures at the same energies. These resonant features arise purely from the structure of the electromagnetic environment and should not be confused with photon-assisted dynamical Coulomb blockade, discussed below, which requires an externally applied microwave drive and produces sidebands at integer multiples of the drive frequency.
 
@@ -137,7 +145,9 @@
             so that satellite peaks appear at voltages shifted by $n\hbar\omega_0/e$. These features arise solely from the internal mode of the environment and do not require an external microwave drive.
 
 
+        %=========================================================
         \subsubsection*{Photon-Assisted Dynamical Coulomb Blockade}
+        %=========================================================
 
             In the presence of microwave irradiation, a tunneling electron may absorb or emit integer multiples of the photon energy $h\nu$. In the stochastic regime this photon-assisted tunneling does not arise from a coherent phase modulation as in the Tien--Gordon description, but instead from additional energy channels in the inelastic $P(E)$-process.  
             In this regime the microwave field is treated as a classical, deterministic voltage modulation superposed on the stochastic environmental fluctuations; no phase-coherent mixing between sidebands occurs. The classical treatment of the microwave field is valid whenever the applied drive contains many photons per cycle, such that quantum fluctuations of the field are negligible compared to the deterministic modulation.
@@ -160,8 +170,10 @@
             DCB constitutes the single-electron $q=e$ counterpart of incoherent Cooper-pair tunneling, which is discussed next. Whereas DCB suppresses the tunneling of individual electrons, the same environmental interaction enables incoherent $q=2e$ charge transfer in superconducting junctions. This forms the basis of incoherent Cooper-pair tunneling, discussed in the following section.
 
 
+    %=========================================================
     \subsection{Incoherent Two-Electron Tunneling}
     \label{subsec:stochastic:2e}
+    %=========================================================
 
         In the stochastic regime, the superconducting phase becomes fully randomized by the electromagnetic environment, and any phase-coherent mechanism—Josephson tunneling, Andreev bound states, and multiple Andreev reflections—is suppressed. Nevertheless, the transfer of a charge $(2e)$ across a voltage-biased junction remains possible through inelastic, stochastic tunneling events. These processes form a unified class of incoherent two-electron tunneling, in which the junction exchanges an energy $(2e)V$ with its environment. Their rates are governed by the same $P(E)$ kernel as in dynamical Coulomb blockade, but evaluated at the doubled energy scale associated with the transferred charge.
 
@@ -174,7 +186,9 @@
         
         The stochastic regime treats all $(2e)$ processes on equal footing: both incoherent Cooper-pair tunneling in SS junctions and incoherent Andreev reflection in NS junctions are described by the same charge-$(2e)$ energy-exchange kernel $P(E)$, with only their electronic prefactors differentiating them. The following subsections describe these two cases in detail.
 
+        %=========================================================
         \subsubsection*{Incoherent Cooper-Pair Tunneling}
+        %=========================================================
 
             In a SS tunnel junction the coherent Josephson effect is destroyed once environmental phase fluctuations become strong enough that the phase-dependent part of the Cooper-pair tunneling amplitude averages to zero
             \begin{equation}
@@ -196,7 +210,9 @@
             The low-bias suppression of $I_\mathrm{ICPT}(V)$ is therefore entirely governed by the behavior of $P(E)$ near $E=0$. For Ohmic environments this leads to the universal power law $I\propto V^{2R/R_\mathrm{Q}-1}$, identical to the dynamical Coulomb blockade of single-electron tunneling but evaluated at the doubled charge $(2e)$.
 
 
+        %=========================================================
         \subsubsection*{Incoherent Andreev Reflection}
+        %=========================================================
 
             At an NS interface, subgap transport is governed microscopically by Andreev reflection: an incoming electron from the normal electrode is retroreflected as a hole, while a Cooper pair is injected into the superconductor. In the coherent BTK description this process relies on well-defined electron-hole amplitudes. Once environmental phase fluctuations destroy coherence, Andreev reflection remains possible but becomes a stochastic, inelastic two-electron tunneling process.
 
@@ -216,7 +232,9 @@
             Finally, it is important to clarify why neither coherent Andreev reflection nor multiple Andreev reflections survive in a SS junction once the system enters the stochastic regime. In an SS junction both electrodes possess gapped BCS densities of states, so no normal-metal continuum is available to support elastic electron-hole conversion inside the gap. Coherent Andreev reflection relies on well-defined electron and hole amplitudes with a fixed superconducting phase, and multiple Andreev reflections require an extended sequence of such coherent conversions. Strong environmental phase fluctuations destroy this phase coherence, making the amplitudes of successive conversion events uncorrelated. As a result, MAR processes are fully suppressed, and even single Andreev reflection has no independent meaning in SS junctions. The only remaining subgap transport channel is therefore the incoherent transfer of a Cooper pair between the two condensates, described by incoherent Cooper-pair tunneling (ICPT).
 
 
+        %=========================================================
         \subsubsection*{Photon-Assisted Incoherent Two-Electron Tunneling}
+        %=========================================================
 
             When a microwave drive is applied, the phase remains fully randomized by the environment, so no Shapiro-like coherent interference occurs. Instead, the drive opens additional inelastic channels. The probability to exchange energy with both environment and microwave field becomes
             \begin{equation}
@@ -232,8 +250,10 @@
             where $I_{2e,0}(V)$ is either Eqs.~\ref{eq:stochastic:icpt-current} (ICPT) or \ref{eq:stochastic:iar-current} (IAR), depending on the junction type. Thus photon-assisted ICPT and photon-assisted IAR share the same structure, only their electronic prefactors differ.
 
 
+    %=========================================================
     \subsection{Superconducting Single-Electron Transistor}
     \label{subsec:stochastic:sset}
+    %=========================================================
 
         The superconducting single-electron transistor (SSET) combines two fundamental ingredients of mesoscopic charge transport: Coulomb blockade due to charge quantization on a small island, and superconductivity in the source, drain, and island electrodes. To understand its transport characteristics, it is instructive to first recall the basic concepts of static Coulomb blockade and the operation of a normal-state single-electron transistor (SET), before discussing the qualitative differences that arise once all electrodes are superconducting.
 
@@ -255,7 +275,9 @@
             \end{equation}
             with $n_\mathrm{G} = C_\mathrm{G}V_\mathrm{G}/e$ the dimensionless gate-induced charge. Degeneracy between two charge states occurs at half-integer values of $n_\mathrm{G}$.
 
+        %=========================================================
         \subsubsection*{Normal-State SET}
+        %=========================================================
 
             A normal-state single-electron transistor consists of two tunnel junctions in series, each with tunneling resistance $R_{T,i}$ and capacitance $C_i$, and a metallic island between them.  Transport occurs through sequential single-electron transitions $n\!\rightarrow n\pm1$ whenever the electrostatic energy decreases during the tunneling event.
 
@@ -269,7 +291,9 @@
 
             Away from the degeneracy points, only higher-order cotunneling processes remain, and the conductance is strongly suppressed.
 
+        %=========================================================
         \subsubsection*{Superconducting SET (SSET): Why It Is Special}
+        %=========================================================
 
             When the leads and the island become superconducting, the SET acquires qualitatively new transport channels:
             \begin{enumerate}
@@ -279,12 +303,15 @@
             \end{enumerate}
             Together, these ingredients produce a device whose transport is governed not simply by sequential tunneling, but by competing single-electron and two-electron processes, each dressed by the electromagnetic environment through stochastic energy exchange. The SSET therefore naturally combines all mechanisms introduced in this chapter: DCB of quasiparticles, incoherent Cooper-pair tunneling, and incoherent Andreev processes at the NS interfaces between island and leads.
 
+        %=========================================================
         \subsubsection*{Transport Cycles in the SSET}
+        %=========================================================
 
             The coexistence of quasiparticle and Cooper-pair processes gives rise to distinct transport cycles, the most prominent being the Josephson--quasiparticle (JQP) cycle, the double Josephson--quasiparticle (DJQP) cycle, and subgap cycles involving incoherent Andreev reflection. These cycles arise when a sequence of energetically allowed transitions forms a closed loop in the $(n,V)$ plane, enabling a steady-state current through the device. In the stochastic regime, the rates of the Cooper-pair steps are governed by ICPT, the quasiparticle steps follow the DCB-modified single-electron tunneling expression, and the cycle current is set by the slowest transition.
 
             A quantitative description is obtained by writing rate equations for the charge-state occupations and computing the steady-state current, discussed in the following sections.
 
+        %=========================================================
         \subsubsection*{Coherent Multiple Andreev Reflections in SSETs}
 
 In addition to incoherent processes described by the $P(E)$-framework, 
@@ -307,7 +334,9 @@ subharmonic gap structures at
 which appear as step-like onsets in the current-voltage characteristics 
 and as pronounced lines of enhanced conductance in the SSET stability diagram.
 
+        %=========================================================
 \subsubsection*{Experimental observations (Lorenz and Sprenger).}
+        %=========================================================
 Coherent MAR in aluminium SSETs was first observed in detail by 
 Lorenz~\cite{LorenzPhD} and Sprenger~\cite{SprengerPhD}. Their devices 
 featured moderately transparent tunnel junctions and an electromagnetic 
@@ -317,7 +346,9 @@ structure, MAR-induced steps in the $I(V)$ characteristics, and coherent
 interference features indicative of well-preserved superconducting 
 phase dynamics.
 
+        %=========================================================
 \subsubsection*{Theoretical and hybrid-regime simulations (Sobral-Rey).}
+        %=========================================================
 More recently, Sobral-Rey extended this picture by studying the 
 interplay of MAR and Coulomb blockade in hybrid SSET devices in a regime 
 that interpolates between pure tunneling and coherent Andreev transport. 
@@ -330,7 +361,9 @@ show that MAR remains robust well beyond the simplest weak-coupling
 limit and that charging energy and superconductivity can coexist in a 
 nontrivial way in the intermediate-transparency regime.
 
+        %=========================================================
 \subsubsection*{Relation to the stochastic regime.}
+        %=========================================================
 Coherent MAR processes rely on a well-defined superconducting phase and 
 on the correlated nature of successive electron-hole conversions. 
 Therefore, they lie fundamentally outside the applicability of the 
