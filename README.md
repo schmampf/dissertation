@@ -30,7 +30,7 @@ To compile additional parts, uncomment the relevant `\include{...}` lines in `th
   - `theory/stochastic.tex` (stochastic/finite-temperature aspects; noise / fluctuations where applicable)
   Additional / work-in-progress material:
   - `theory/mesowave.tex` (microwave-driven transport notes / standalone draft)
-  - `theory/todo.tex` (scratchpad / placeholders; included currently, so expect unfinished parts)
+  - `todo.md` (central task tracker for unfinished sections and placeholders)
   
 - `methods/`  
   Experimental methods chapter scaffold. Notable files:

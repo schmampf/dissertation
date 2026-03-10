@@ -203,17 +203,17 @@
             \centering
             \subfigure[
                 Classic Regime
-                ]{\import{theory/schema}{classic.pdf_tex}}
+                ]{\import{theory/schema/scattering}{classic.pdf_tex}}
             \hfill
             \subfigure[
                 Diffusive Regime
-                ]{\import{theory/schema}{diffusive.pdf_tex}}
+                ]{\import{theory/schema/scattering}{diffusive.pdf_tex}}
             \hfill
             \subfigure[
                 Ballistic Regime
-                ]{\import{theory/schema}{ballistic.pdf_tex}}
+                ]{\import{theory/schema/scattering}{ballistic.pdf_tex}}
             \caption{
-            Schematic transport regimes set by the conductor length $L$, the elastic mean free path $\ell_{\mathrm{qp}}$, and the phase-coherence length $\ell_{\phi}$: (a) classical ($L \gg \ell_{\phi},\, \ell_{\mathrm{qp}}$), (b) phase-coherent diffusive ($\ell_{\mathrm{qp}} \ll L \lesssim \ell_{\phi}$), and (c) ballistic ($L \ll \ell_{\mathrm{qp}}, L \lesssim \ell_{\phi}$). The constriction (\legend{seegrau120}) defines the scattering region of length $L$. Grey dots (\legend{seegrau100}) indicate scattering centers, whose density sets $\ell_{\mathrm{qp}}$. A representative quasiparticle trajectory is shown, phase-coherent segments in blue (\legend{seeblau65}) and phase-randomized segments in grey (\legend{seegrau65}). The phase-coherence length is visualized by a disk of radius $\ell_{\phi}$ (\legend{seeblau20}).
+            Transport regimes are set by conductor length $L$ relative to elastic mean free path $\ell_{\mathrm{qp}}$ and phase-coherence length $\ell_{\phi}$. Left: classical regime with $L \gg \ell_{\phi}, \ell_{\mathrm{qp}}$. Middle: phase-coherent diffusive regime with $\ell_{\mathrm{qp}} \ll L \lesssim \ell_{\phi}$. Right: ballistic regime with $L \ll \ell_{\mathrm{qp}}$ and $L \lesssim \ell_{\phi}$. Legend: constriction \legend{seegrau120}, scattering centers \legend{seegrau100}, phase-coherent trajectory \legend{seeblau65}, phase-randomized trajectory \legend{seegrau65}, phase-coherence disk \legend{seeblau20}.
             }
             \label{fig:basics:meso}
         \end{figure}
@@ -247,8 +247,8 @@
                 \captionsetup{format=plain}%
                 \centering
                 \vspace{-1em} % fine-tune vertical position
-                \import{theory/schema}{ballistic.pdf_tex}
-                \\\textbf{This is a placeholder!}
+                \import{theory/schema/scattering}{ballistic.pdf_tex}
+                % TODO[THY-03]: Replace this provisional marker with the final ballistic-scattering figure content.
                 \caption{
                     Sketch of a two-terminal scatterer connecting ideal leads. Incoming and outgoing mode amplitudes are related by the scattering matrix $S$.
                 }
