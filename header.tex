@@ -35,18 +35,18 @@
 %%% corporate design %%%
     \RequirePackage{etex}
 
-    \usepackage{.utilities/themeKonstanzXelatexAddOn}
+    \usepackage{utilities/themeKonstanzXelatexAddOn}
     % XeLaTeX mit Schriftart Arial, VOR dem Standardpaket importieren
 
-    \usepackage{.utilities/themeKonstanz} % Muss immer verwendet werden (Standardpaket)
+    \usepackage{utilities/themeKonstanz} % Muss immer verwendet werden (Standardpaket)
     % modified so no geometry is used
 
-    % \usepackage{.utilities/themeKonstanzStyleAddOn}
+    % \usepackage{utilities/themeKonstanzStyleAddOn}
     % Style Add-On für andere Überschriften, NACH dem Standardpaket importieren
     % doesn't show any difference
 
     % usepackage that contains my modification to themeKonstanz
-    \usepackage{.utilities/myKonstanz}
+    \usepackage{utilities/myKonstanz}
 
     \usepackage{scrhack} % Fixes KOMA-Script compatibility issues
     
@@ -88,6 +88,8 @@
 
     % for wrappings / putting small pictures to the right
     \usepackage{wrapfig}
+    \usepackage{rotating}
+    \usepackage{pdflscape}
 
     % \usepackage{caption}
     \usepackage{subcaption} % subfigures

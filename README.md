@@ -1,6 +1,6 @@
 # Dissertation (LaTeX)
 
-This repository contains the LaTeX source for my dissertation. The project is structured around KOMA-Script (`scrreport`) and a University of Konstanz corporate design theme (`.utilities/themeKonstanz*`).
+This repository contains the LaTeX source for my dissertation. The project is structured around KOMA-Script (`scrreport`) and a University of Konstanz corporate design theme (`utilities/themeKonstanz*`).
 
 ## Current status
 
@@ -45,7 +45,7 @@ To compile additional parts, uncomment the relevant `\include{...}` lines in `th
 - `miscellaneous/`  
   Optional chapters/sections (e.g., abstract, intro, conclusion, appendix, acknowledgements), depending on what is included from `thesis.tex`.
 
-- `.utilities/`  
+- `utilities/`  
   Style files (Konstanz theme), logos, and templates used by the document.
 
 ## Bibliography
