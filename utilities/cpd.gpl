@@ -1,7 +1,7 @@
 GIMP Palette
 Name: Konstanz Corporate Design (RGB)
 Columns: 8
-# cp ./.utilities/cpd.gpl ../../Library/Application\ Support/org.inkscape.Inkscape/config/inkscape/palettes
+# cp ./utilities/cpd.gpl ../../Library/Application\ Support/org.inkscape.Inkscape/config/inkscape/palettes
 #
 0   142 206  seeblau120
 0   169 224  seeblau100
