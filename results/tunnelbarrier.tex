@@ -1,10 +1,40 @@
 % !TEX root = ../thesis.tex
 %=========================================================
-\section{Tunnel Barrier Spectroscopy}
+\section{Tunnel Barrier}
 \label{sec:results:tunnelbarrier}
 %=========================================================
 
     This section is the reference dataset of the thesis. I analyzed a superconducting tunnel barrier in a regime without supercurrent. I used this dataset to connect measurement, processing, and model comparison in one complete workflow.
+
+    \begin{landscape}
+    \vspace*{-.3in}
+        \begin{center}
+            \captionsetup{type=figure}
+            \subfigure[$I(V)$]{%
+                \parbox[t]{2.1in}{%
+                    \centering
+                    \import{results/tunnelbarrier/1_raw_iv/}{main.pgf}%
+                }%
+            }%
+            \hfill%
+            \subfigure[$\mathrm{d}I/\mathrm{d}V$]{%
+                \parbox[t]{2.1in}{%
+                    \centering
+                    \import{results/tunnelbarrier/1_raw_didv/}{main.pgf}%
+                }%
+            }%
+            \hfill%
+            \subfigure[$\mathrm{d}V/\mathrm{d}I$]{%
+                \parbox[t]{2.1in}{%
+                    \centering
+                    \import{results/tunnelbarrier/1_raw_dvdi/}{main.pgf}%
+                }%
+            }
+            \vspace{-.1in}
+            \captionof{figure}{Experimental tunnel-barrier spectroscopy under microwave irradiation at $\nu=13.6\,\mathrm{GHz}$. The three columns show the measured \textit{I--V}, $\mathrm{d}I/\mathrm{d}V$, and $\mathrm{d}V/\mathrm{d}I$ maps as a function of dc bias or dc current and output amplitude $A_\mathrm{out}$. Each column combines heatmap, surface, and waterfall views of the same data to show both the global map structure and the evolution of individual traces with irradiation. The spectra remain in the tunnel regime over the full amplitude range; photon-assisted sideband structure develops with increasing drive, while no supercurrent branch is observed.}
+            \label{fig:tb:irradiation-exp}
+        \end{center}
+    \end{landscape}
 
     %=========================================================
     \subsection{Device and Measurement Window}
