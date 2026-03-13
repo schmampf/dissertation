@@ -63,4 +63,4 @@ Inline tags in source files use the format `TODO[ID]` and map to the IDs below.
 
 - [ ] [INT-01] `thesis.tex` Enable methods, results, and miscellaneous chapters once minimum-draft content exists.
 - [ ] [INT-02] Global placeholder sweep before final compile.
-- [ ] [INT-03] Full notation and style pass against `/Users/oliver/Documents/dissertation/WRITING_PROFILE.md`.
+- [ ] [INT-03] Full notation and style pass against `/Users/oliver/Documents/cryolab/dissertation/AGENTS.md`.
