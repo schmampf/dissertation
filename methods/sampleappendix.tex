@@ -1,0 +1,177 @@
+\section{Practical Notes from the Laboratory} 
+\label{subsection:realization}
+    This section collects practical notes from the laboratory that complement the conceptual description in the main text. It is not intended as a fully standardized protocol. Instead, it documents the small but critical steps, common pitfalls, and empirically useful habits that make reliable sample preparation more likely.
+
+
+    \subsubsection*{Wafer Preparation}
+        Start with a 300\,\textmu m thick bronze wafer, which is typically covered by a protective foil. To remove this foil without damaging the wafer, cool the wafer in liquid nitrogen and then gently peel off the brittle fragments. This method has proven effective and largely non-destructive. The wafer is then polished. For this purpose, attach a polishing head made of sewn cotton cloth to a drill and use aluminum oxide from a white polishing compound block as the abrasive. The polishing head should be well moistened, preferably soaked, with a solvent such as ethanol or IPA. Fix the wafer to a smooth milled steel block using double-sided adhesive tape\footnote{e.g. Tesa Universal}, taking care that no tape protrudes beyond the wafer edge. During polishing, move the polishing head from top to bottom so that debris generated in the process is less likely to settle back onto the wafer surface. Rotate the steel block periodically, since the lower part of the wafer is generally easier to polish uniformly. Polishing is complete once the entire surface shows a homogeneous mirror-like finish. To detach the wafer from the steel block, cool it again in liquid nitrogen. For cleaning, rinse the wafer first with acetone and then with IPA, ensuring that the acetone is removed completely before switching solvents. Finally, dry the wafer with pressurized nitrogen while the IPA is still wet in order to avoid residue formation. \cite{oberg_machinerys_2000}
+        
+        An alternative polishing method uses sandpaper with progressively finer grit on a glass slide, as described by Patrick Raif \cite{raif_fabrication_nodate}. It is better suited to reducing long-range surface variations, but it is also considerably more time-consuming and was therefore not used routinely.
+
+        Next, prepare the spin coater, the polyamide (PA), and the vacuum oven. The PA is pre-portioned into small crimp-seal vials to minimize moisture exposure and to reduce the time required for warming. Remove one vial from the freezer and allow it to reach room temperature while preheating the convection oven to 135\,$^\circ$C. Line the inside of the spin coater with aluminum foil and verify that the vacuum oven is operational and open.
+
+        To remove adsorbed water, place the wafer on a hot plate at 100\,$^\circ$C for at least one minute. For reliable adhesion to the 1\,in chuck, apply a layer of parafilm and bend it securely around the chuck edge. Then make five small holes in the parafilm using a syringe: one in the center and one near the edge in each cardinal direction. Allow the wafer to cool to room temperature before centering it on the chuck, and only then switch on the vacuum pump. Before dispensing the PA, it is advisable to run the spin-coating program once as a quick check that the wafer is held securely. This is particularly important for larger wafers, where insufficient adhesion may not be immediately obvious.
+        
+        Blow the wafer dry with nitrogen to remove residual dust. Pour the PA onto the wafer so that roughly 90\,\% of the surface is covered, taking care to avoid trapped air bubbles. If bubbles remain, move or burst them carefully with a syringe without scratching the wafer. The spin-coating program consists of an initial spread step at 300\,rpm for 30\,s followed by a final spin step at 5000\,rpm for 90\,s. Immediately afterward, transfer the wafer to the convection oven for a 5\,min soft bake at 135\,$^\circ$C. The hard bake is then performed in the vacuum oven using a programmed cycle that ramps to 400\,$^\circ$C, holds for 30\,min, and cools back to room temperature over several hours. Detailed instructions and the corresponding temperature profile are given in Ref.~\cite{raif_fabrication_nodate}. In practice, starting the bake immediately after spin coating has been found to improve reproducibility.
+        
+        The application of the EL11 and A4 resist layers follows the same general workflow, but the individual spin and baking parameters differ. In this case, aluminum foil inside the spin coater is unnecessary because these resists can be removed easily with acetone. The age of the resist should be checked before use, since prolonged storage can noticeably degrade performance. In particular, EL11 is first followed by its soft-bake step. After the A4 layer is applied, the subsequent A4 baking step also hard-bakes the underlying EL11 layer. The relevant process parameters in this subsection follow Table \ref{tab:methods:sample_parameter}.
+
+        The wafer is then cut into smaller pieces of 3\,$\times$\,8\,mm using a custom shear-sheet cutter equipped with 3\,mm and 18\,mm spacers. Before cutting, clean the cutting edges thoroughly with IPA to reduce contamination and to maintain clean cuts. Samples taken from the outer wafer region are more likely to show thickness variations in the PI and resist layers. For reproducible fabrication, pieces from the central region of the wafer are therefore preferred. Edge-related thickness variations can affect the dose required during electron-beam lithography. After cutting, store the samples in a chip tray\footnote{e.g. Entegris} for safe handling.
+
+    \subsubsection*{Electron beam lithography}
+        The next step is electron-beam lithography (EBL) using the Crossbeam system. Begin by measuring the beam current with the jig containing the Faraday cup. A position list in the Zeiss software is helpful for locating the Faraday cup quickly. For reliable operation, the working distance should be kept as close as possible to 5.00\,mm. Since the beam current may require some time to stabilize, it is often useful either to wait before measuring or to return later and repeat the check.
+
+        Accurate horizontal alignment of the sample is essential for exposure. The alignment tools in the Focused Ion Beam (FIB) toolbox simplify this step. A practical approach is to zoom out to the maximum field of view and use the upper-right corner of the sample together with the farthest left sample edge for the initial alignment. This is usually sufficient to correct the dominant angular misalignment. Additional refinement within Elphy Plus is possible, but in practice it rarely improves the final angular alignment once the sample is mounted in the cryostat.
+
+        Next, focus the beam in the upper-right corner of the sample. Use the wobble function to center the beam in the aperture and minimize astigmatism with the \textit{x}- and \textit{y}-stigmators. Once the beam is well focused, check the current again at the Faraday cup. For the 30\,\textmu m aperture in high-current mode, the beam current should be about 0.5\,nA. This setting is used for the small high-resolution structures. For the 120\,\textmu m aperture, which is used for the 1000\,\textmu m writing fields, the exact current is less critical because the larger leads tolerate moderate underexposure. In practice, a slight underexposure in these larger fields can even reduce writing time without compromising the result. The beam current for the 120\,\textmu m aperture in high-current mode is typically around 5\,nA. Perform a final focusing step at the central position along the upper sample edge. A dirt particle on the resist is often useful as a focusing aid. At this stage, confirm once more that the working distance is 5.00(1)\,mm and that the beam shift is set to zero.
+
+        Before starting the exposure, note the current time. Since the design layout includes a timestamp, this provides a convenient way to match laboratory notes to the physical sample. If the measured beam current differs from earlier sessions, recalculate the settling time for the 100\,\textmu m field accordingly. The executed position list in Elphy Plus then locates the writing fields automatically, applies the corresponding settings, and writes the design. Stitching between adjacent writing fields is enforced by overlapping their nominal positions by 100\,\textmu m.
+
+        In practice, it is advantageous to keep the written design as simple as possible and to avoid an unnecessarily large number of polygons. This reduces writing overhead and makes the exposure procedure more robust. In addition, contamination dots were deliberately avoided as focusing markers. Instead, the combination of high-current mode and the 30\,\textmu m aperture proved sufficient for reliable focusing because it provides a comparatively large depth of focus. The drawback is that very low exposure doses are no longer readily accessible, but this was not a practical limitation for the structures used here.
+        
+        Repeat the full alignment, focusing, and writing sequence for the remaining samples until a batch of roughly four to five samples has been completed.
+
+        If several weeks have passed since the previous EBL session, it is advisable to verify the alignment between the 100\,\textmu m and 1000\,\textmu m writing fields before exposing the first sample. A simple check is to expose one 100\,\textmu m field together with a neighboring 1000\,\textmu m field in the upper-right corner of a sample. The exposed resist appears visibly different from the unexposed surroundings and can therefore be used to judge the relative alignment. Prolonged observation should be avoided, however, since the resist can be exposed unintentionally and lose contrast. If misalignment is found, adjust the settings accordingly. For example, if the 100\,\textmu m field is shifted to the left, correct \textit{U} by --$\Delta$\textit{X}; if it is shifted upward, correct \textit{V} by --$\Delta$\textit{Y}. Repeat the test until the alignment is satisfactory.
+
+        After exposure, the samples are developed. Prepare a crimp-seal vial containing a mixture of one part MIBK and three parts IPA, and prepare one additional vial of pure IPA for each sample. Immerse the sample in the MIBK/IPA developer for 25\,s while gently swirling the vial to maintain uniform development. Then transfer the sample immediately into pure IPA and continue swirling. The developer can be reused for all samples in the same batch, whereas fresh IPA should be used for each individual sample. Leave the sample in IPA for 60\,s, then remove it and dry it carefully with a stream of nitrogen. During the full process, hold the sample securely with tweezers to avoid accidental dropping during waiting or transfer steps. Finally, inspect the developed structures under a light microscope to verify that the pattern is complete and free of obvious defects.
+
+    \subsubsection*{Shadow Evaporation}
+        To begin shadow evaporation, place the sample holder on a hot plate at 100\,$^\circ$C for a few minutes in order to remove adsorbed water. This step improves the vacuum noticeably. Check the sample orientation carefully so that the shadow evaporation proceeds in the intended direction. For best results, load the sample into the load lock and pump it overnight, or longer if possible, before starting the deposition sequence.
+
+        Once the vacuum is satisfactory, transfer the sample holder into the main chamber for the first evaporation. Using electron-beam evaporation, deposit 60\,nm of aluminum at an angle of 4$^\circ$. Heat the aluminum gradually over approximately 5\,--\,10\,min to avoid stressing the crucible and to promote stable evaporation. The crucible should contain a sufficient amount of aluminum; in practice, one to three pellets per evaporation are typically adequate.
+
+        After the first evaporation, transfer the sample back into the load lock and close the pumping line. Introduce pure oxygen until a pressure of 3.0(2)\,mbar is reached and oxidize the sample for 3\,min. To terminate the oxidation, reopen the pumping line. In order to recover a vacuum on the order of 10$^\text{--6}$\,mbar afterward, it is important that the oxygen feed line itself has been evacuated thoroughly.
+
+        Once the load lock vacuum has recovered, transfer the sample back into the main chamber for the second evaporation. Deposit 100\,nm of aluminum at an angle of 34$^\circ$ to complete the shadow-evaporation sequence.
+
+        A smooth aluminum surface is desirable for forming a well-defined Al$_\text{2}$O$_\text{3}$ layer. In practice, however, the deposited aluminum often showed a large number of dimples. Several measures were tested in an attempt to reduce them, but no decisive remedy was identified. There was some indication that higher evaporation rates, in particular values above 4\,\AA/s, may reduce the number of dimples, although the effect was not statistically convincing. Somewhat contrary to earlier expectations, a less extreme vacuum or a shorter time between the last vacuum break and the evaporation occasionally appeared to improve the surface. One possible interpretation is that a very clean sample mainly suppresses desorption of water or other contaminants during deposition, whereas a less ideal chamber condition may influence nucleation in a way that incidentally smooths the film. Since the observed differences remained small, the issue was not pursued further.
+
+        Lift-off is performed by placing the sample in a crimp-seal vial filled with pure acetone and heating it on a hot plate at about 60\,$^\circ$C for 1\,--\,3\,h. Afterward, use a pipette to agitate the acetone carefully until all visible metal flakes have detached. Rinse the sample with IPA and dry it with nitrogen.
+
+    \subsubsection*{Plasma Etching}
+        The penultimate fabrication step is plasma etching using the PlasmaPro 80 ICP RIE system by Oxford. Although this tool is not designed specifically for highly homogeneous etching, it can be operated in a regime that gives sufficiently uniform results by combining low table RF power with elevated pressure. An ignition step is used first to stabilize the plasma before switching to the less stable regime that favors homogeneous etching. The sample temperature is particularly important for obtaining the desired undercut. A table temperature of 100\,$^\circ$C proved to be a good compromise: it produces a sufficient undercut while keeping the etch slow enough to control the depth reliably. The process parameters that gave the best results are listed in Table \ref{tab:methods:rie_parameter}.
+        \begin{table}
+            \centering
+            \caption{RIE recipe \texttt{MCBJ SSET v5 @ 100C}}
+            \label{tab:methods:rie_parameter}
+            \vspace{1em}
+            \begin{tabular}{llll}
+                \hline
+                Parameter       & Stabilization         & Ignition      & Etching  \\
+                \\\hline
+                Process time    & 5\,min                & 5\,s          & 30\,min       \\
+                Table heater    & 100\,$^\circ$C   & -             & -             \\
+                Oxygen flow     & 50\,sccm           & -             & -             \\
+    
+                Pressure        & 100\,mTorr & ramp & 250\,mTorr \\       
+    
+                \\\hline
+                Table RF &&&\\
+                Power Demand            & - & 20(5)\,W              & 3(5)\,W \\
+                Max Reflected Power     & - & 5\,W                  & 2\,W \\
+                Tolerance Time          & - & 7\,s                  & - \\
+                Min DC Bias             & - & 1\,V                  & - \\
+                AMU (C1, C2)            & - & (41\,\%, 23\,\%)      & - \\
+    
+                \\\hline
+                ICP RF &&&\\
+                Power Demand            & - & 400(50)\,W            & - \\
+                Max Reflected Power     & - & 100\,W                & - \\
+                Tolerance Time          & - & 10\,s                 & - \\
+                AMU (C1, C2)            & - & (64\,\%, 39\,\%)      & - \\
+                
+            \end{tabular}
+        \end{table}
+        
+        A laser interferometer is used to monitor the etched depth. For this purpose, choose a spot on the sample without metal structures where the reflected intensity is as large as possible without reaching saturation. During the etch, the signal follows an approximately cosine-like oscillation that can be used to estimate the removed thickness. The required number of periods $m$ depends on the laser wavelength $\lambda$, the target depth $d$, and the refractive index $n=1.81$ \cite{fujifilm_electronic_materials_usa_polyamic_nodate}. For the present process, the target value is
+        % \begin{align}
+        %     \textit{m} = \frac{\text{2} \cdot \textit{n} \cdot \textit{d}}{\lambda} = \frac{2 \cdot 1.81 \cdot 500\,\mathrm{nm}}{632.8\,nm} = 2.86
+        % \end{align}
+        \begin{align}
+            m = \frac{2 \cdot n \cdot d}{\lambda} = \frac{2 \cdot 1.81 \cdot 500\,\mathrm{nm}}{632.8\,\mathrm{nm}} = 2.86
+        \end{align}
+        periods. An example of the recorded laser intensity during etching is shown in Figure \ref{fig:methods:rie}.
+
+        \begin{figure}
+            \centering
+            \import{methods/sample/rie}{etchdata.pgf}
+            \caption{Recorded laser intensity during the plasma-etch process.}
+            \label{fig:methods:rie}
+        \end{figure}
+        
+        Since the etch rate varies noticeably from sample to sample, each sample should ideally be etched individually.
+
+
+
+    \subsubsection*{Electrical contacting}
+        Electrical contacting is one of the most delicate steps in the entire fabrication sequence. Many otherwise successful samples are lost at this stage, so patience and a calm working setup are more important than speed. In practice, it is usually better to contact fewer samples carefully than to rush several samples in one session.
+
+        Good working conditions matter. Stable hand positioning, appropriate lighting, and a comfortable bench height all make the process significantly easier. A setup that allows the operator to sit close to the sample while keeping both hands supported is particularly helpful. It is also worth minimizing avoidable sources of hand tremor before starting.
+
+        To fix the sample, adhesive strips\footnote{e.g. tesafilm\textregistered\ standard by Tesa} are used on a copper plate. This arrangement keeps the sample in place while still allowing some freedom to reposition the plate. Prepare 90\,\textmu m insulated copper wires soldered to post connectors in advance. The wire ends should be stripped, and the bias-line wires may be twisted. The wires should be kept as short as practical; typically, 4\,--\,5\,cm is sufficient. The rear part of each post connector should be insulated with a varnish\footnote{e.g. GE Low Temperature Varnish (59-C5-101) by Oxford Instruments}.
+
+        \begin{wrapfigure}[18]{r}{0.4\textwidth}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-1em}
+            \includegraphics[width=.4\textwidth]{methods/sample/contacting/foto.jpg}
+            \caption{Example of a contacted sample, before adding strain relief.}
+            \label{fig:methods:contacting}
+        \end{wrapfigure}
+        Position the wire ends on the sample pads with the help of play dough. Then, using a sharpened toothpick, apply a small amount of silver paste to connect each wire to its pad. The viscosity of the silver paste is critical: if it is too fluid, shorts can form; if it is too viscous, it tends to remain on the toothpick instead of wetting the pad properly. In practice, using paste collected from the lid after shaking the bottle works well. Only a very small amount should be transferred, just enough to wet the pad. Afterward, apply two-component epoxy as strain relief for the wires. Here as well, the viscosity is important. If the epoxy is used too soon after mixing, it continues to flow and may spread into unwanted areas. Since the interaction between epoxy and silver paste is not fully understood, the two materials should be kept separate as much as possible. A useful approach is to test the epoxy on small trial dots and wait until it reaches a suitable consistency before applying it to the sample. The two sides of the sample are best glued separately, since the useful working window is fairly short.
+        
+        After the sample has been mounted in the cryostat, the final step is to scratch the shorting bridge with an engraving tool. During this step, and also while closing the radiation shields, proper grounding is essential. Wearing a grounding bracelet is recommended. In dry conditions, additional precautions such as increasing the ambient humidity can further reduce the risk of electrostatic discharge.
+
+
+    \newpage
+    \subsubsection*{Summary of key process parameters}
+        \begin{table}[!h]
+            \centering
+            \caption{Key process parameters used for sample preparation.}
+            \label{tab:methods:sample_parameter}
+            \vspace{1em}
+            \begin{tabular}{ll}
+                \hline
+                Sacrificial layer   & Durimide 115A\\
+                Spinning            & spread cycle: 300\,rpm for 30\,s\\
+                                    & spin cycle: 5000\,rpm for 90\,s\\
+                                    & ramps for 3\,s, \texttt{Program 3}\\
+                Soft baking         & 135\,$^\circ$C for 5\,min in convection oven\\
+                Hard baking         & 400\,$^\circ$C for 30\,min in vacuum oven\\
+
+                \hline
+                Spacing layer       & MMA(8.5)MAA EL11\\
+                Spinning            & spread cycle: 500\,rpm for 5\,s\\
+                                    & spin cycle: 2500\,rpm for 90\,s\\
+                                    & ramps for 3\,s, \texttt{Program 1}\\
+                Soft baking         & 150\,$^\circ$C for 1\,min on hot plate\\
+
+                \hline
+                Electron resist     & 950 PMMA A4\\
+                Spinning            & spread cycle: 500\,rpm for 5\,s\\
+                                    & spin cycle: 5000\,rpm for 60\,s\\
+                                    & ramps for 3\,s, \texttt{Program 2}\\
+                Hard baking         & 170\,$^\circ$C for 30\,min in convection oven\\
+
+                \hline
+                Exposure            & Crossbeam by Zeiss, Elphy Plus by Raith\\
+                Settings            & 10\,kV acceleration, 5\,mm working distance,\\ 
+                Aperture            & 30\,\textmu m and 120\,\textmu m aperture, high current,\\
+                                    & 155\,\textmu C$/$cm$^\text{2}$ area dose\\
+                Development         & 25\,s in 1:3 MIBK:IPA\\
+                                    & 60\,s in IPA\\
+                
+                \hline
+                Shadow Evaporation  & First layer: 60\,nm Al at 4$^\circ$\\
+                                    & Oxidation: 3.0\,mbar O$_\text{2}$ for 3\,min\\
+                                    & Second layer: 100\,nm Al at 34$^\circ$\\
+                Lift-off            & 1\,h in acetone at 60\,$^\circ$C\\
+
+                \hline
+                Reactive Ion Etching & PlasmaPro 80 ICP RIE by Oxford\\
+                                    & \texttt{MCBJ SSET v5 @ 100C}, see Table \ref{tab:methods:rie_parameter}\\
+                \hline
+                Electrical contacting & 90\,\textmu m insulated copper wire, silver paste as\\
+                                    & electrical contact and epoxy as strain relief\\
+            \end{tabular}
+        \end{table}
