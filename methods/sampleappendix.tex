@@ -83,25 +83,23 @@
             \end{tabular}
         \end{table}
         
-        A laser interferometer is used to monitor the etched depth. For this purpose, choose a spot on the sample without metal structures where the reflected intensity is as large as possible without reaching saturation. During the etch, the signal follows an approximately cosine-like oscillation that can be used to estimate the removed thickness. The required number of periods $m$ depends on the laser wavelength $\lambda$, the target depth $d$, and the refractive index $n=1.81$ \cite{fujifilm_electronic_materials_usa_polyamic_nodate}. For the present process, the target value is
-        % \begin{align}
-        %     \textit{m} = \frac{\text{2} \cdot \textit{n} \cdot \textit{d}}{\lambda} = \frac{2 \cdot 1.81 \cdot 500\,\mathrm{nm}}{632.8\,nm} = 2.86
-        % \end{align}
+        A laser interferometer is used to monitor the etched depth. For this purpose, choose a spot on the sample without metal structures where the reflected intensity is as large as possible without reaching saturation. 
+        
+        \begin{wrapfigure}[13]{r}{0.4\textwidth}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-1em}
+            \import{methods/sample}{rie.pgf}
+            \caption{Recorded laser intensity $I_{\mathrm{Laser}}(t)$ during plasma etching. The process is terminated after approximately 2.8 periods, corresponding to the target etch depth.}
+            \label{fig:methods:rie}
+        \end{wrapfigure}
+        During the etch, the signal follows an approximately cosine-like oscillation that can be used to estimate the removed thickness. The required number of periods $m$ depends on the laser wavelength $\lambda=632.8\,\mathrm{nm}$, the target depth $d=500\,\mathrm{nm}$, and the refractive index $n=1.81$ \cite{fujifilm_electronic_materials_usa_polyamic_nodate}. For the present process, the target value is
         \begin{align}
             m = \frac{2 \cdot n \cdot d}{\lambda} = \frac{2 \cdot 1.81 \cdot 500\,\mathrm{nm}}{632.8\,\mathrm{nm}} = 2.86
         \end{align}
         periods. An example of the recorded laser intensity during etching is shown in Figure \ref{fig:methods:rie}.
-
-        \begin{figure}
-            \centering
-            \import{methods/sample/rie}{etchdata.pgf}
-            \caption{Recorded laser intensity during the plasma-etch process.}
-            \label{fig:methods:rie}
-        \end{figure}
         
         Since the etch rate varies noticeably from sample to sample, each sample should ideally be etched individually.
-
-
 
     \subsubsection*{Electrical contacting}
         Electrical contacting is one of the most delicate steps in the entire fabrication sequence. Many otherwise successful samples are lost at this stage, so patience and a calm working setup are more important than speed. In practice, it is usually better to contact fewer samples carefully than to rush several samples in one session.
@@ -110,18 +108,16 @@
 
         To fix the sample, adhesive strips\footnote{e.g. tesafilm\textregistered\ standard by Tesa} are used on a copper plate. This arrangement keeps the sample in place while still allowing some freedom to reposition the plate. Prepare 90\,\textmu m insulated copper wires soldered to post connectors in advance. The wire ends should be stripped, and the bias-line wires may be twisted. The wires should be kept as short as practical; typically, 4\,--\,5\,cm is sufficient. The rear part of each post connector should be insulated with a varnish\footnote{e.g. GE Low Temperature Varnish (59-C5-101) by Oxford Instruments}.
 
-        \begin{wrapfigure}[18]{r}{0.4\textwidth}
+        \begin{wrapfigure}[14]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
-            \vspace{-1em}
-            \includegraphics[width=.4\textwidth]{methods/sample/contacting/foto.jpg}
+            \includegraphics[width=.4\textwidth]{methods/sample/contacting.jpg}
             \caption{Example of a contacted sample, before adding strain relief.}
             \label{fig:methods:contacting}
         \end{wrapfigure}
         Position the wire ends on the sample pads with the help of play dough. Then, using a sharpened toothpick, apply a small amount of silver paste to connect each wire to its pad. The viscosity of the silver paste is critical: if it is too fluid, shorts can form; if it is too viscous, it tends to remain on the toothpick instead of wetting the pad properly. In practice, using paste collected from the lid after shaking the bottle works well. Only a very small amount should be transferred, just enough to wet the pad. Afterward, apply two-component epoxy as strain relief for the wires. Here as well, the viscosity is important. If the epoxy is used too soon after mixing, it continues to flow and may spread into unwanted areas. Since the interaction between epoxy and silver paste is not fully understood, the two materials should be kept separate as much as possible. A useful approach is to test the epoxy on small trial dots and wait until it reaches a suitable consistency before applying it to the sample. The two sides of the sample are best glued separately, since the useful working window is fairly short.
         
         After the sample has been mounted in the cryostat, the final step is to scratch the shorting bridge with an engraving tool. During this step, and also while closing the radiation shields, proper grounding is essential. Wearing a grounding bracelet is recommended. In dry conditions, additional precautions such as increasing the ambient humidity can further reduce the risk of electrostatic discharge.
-
 
     \newpage
     \subsubsection*{Summary of key process parameters}
