@@ -17,16 +17,17 @@
 
         The sample design must satisfy several requirements simultaneously. Mechanically, it must provide a freestanding bridge on a bendable substrate so that an atomic contact can be formed in a controlled manner. Lithographically, it must enable suspended shadow-mask structures for double-angle evaporation. Electrically, it must define an island between two weak links and provide gate coupling. Finally, the design should allow efficient coupling of microwave fields.
 
-        The MCBJ is realized as a freestanding bridge-like structure on a bendable substrate. The substrate can be bent either by pushing a stamp from below or by pressing counter rods from above. This bending elongates the bridge and allows the junction to be tuned into the atomic-contact regime.
+        \begin{wrapfigure}[7]{r}{40mm}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-1em}
+            \import{methods/sample/bruchmechanik}{bruchmechanik.pdf_tex}
+            \caption{Schematic illustration of the principle of a MCBJ. Adapted from Ref \cite{schirm_einfluss_2009}.}
+            \label{fig:methods:bruchmechanik}
+        \end{wrapfigure}
+        The MCBJ is realized as a freestanding bridge-like structure on a bendable substrate, as illustrated schematically in Figure~\ref{fig:methods:bruchmechanik}. The substrate can be bent either by pushing a stamp from below or by pressing counter rods from above. This bending elongates the bridge and allows the junction to be tuned into the atomic-contact regime.
 
         The mechanical setup of the MCBJ is described in more detail in Subsection \ref{subsec:mcbj}.
-
-        \begin{figure}
-            \includegraphics{methods/sample/mcbj/image.png}
-            % TODO[MTH-03]: Replace provisional caption with final figure caption.
-            \caption{Here comes some text}
-            \label{fig:methods:mcbj}
-        \end{figure}
 
         A polyimide (PI) layer insulates the substrate from the structures produced in the subsequent steps. More importantly, the PI layer serves as a sacrificial layer. During later processing, it is partially etched, allowing the structure to become freestanding.
 
@@ -63,23 +64,24 @@
 
         EBL is carried out using a Zeiss Crossbeam system that was modified for significantly faster beam blanking. The beam blanker operates synchronously with the beam deflection, allowing arbitrary structures to be exposed precisely within the selected field of view. For small high-resolution structures, a field size of 100\,\textmu m is typically used, whereas coarser and larger features are written in a 1000\,\textmu m field. Structures exceeding these dimensions are exposed over multiple adjacent fields by moving the sample stage. To ensure smooth transitions between neighboring fields, a deliberate overlap is included for stitching.
 
-        At the beginning of my doctoral work, only one of the two available EBL software packages, \texttt{Elphy Plus} by Raith, was functional and properly supported. The sample design therefore had to be reimplemented from scratch, since my predecessors had used a different software environment. The dimensions of the break junction and the gate follow the established geometry shown in Figure \ref{fig:methods:ebeam} and are consistent with earlier implementations in Refs.~\cite{lorenz_wechselspiel_2018, sprenger_interplay_2019,sobral-rey_interplay_2022}. In contrast, the finger defining the oxide barrier was modified to become wider toward its lower part. This reduces the freestanding length of the evaporation mask and thereby improves its mechanical stability. However, older resist material was found to collapse more easily during evaporation. In those cases, the finger does not reliably reach the island during the second evaporation step, which results in defective structures.
+        At the beginning of my doctoral work, only one of the two available EBL software packages, \texttt{Elphy Plus} by Raith, was functional and properly supported. The sample design therefore had to be reimplemented from scratch, since my predecessors had used a different software environment. The dimensions of the break junction and the gate follow the established geometry and are consistent with earlier implementations in Refs.~\cite{lorenz_wechselspiel_2018, sprenger_interplay_2019,sobral-rey_interplay_2022}. In contrast, the finger defining the oxide barrier was modified to become wider toward its lower part. This reduces the freestanding length of the evaporation mask and thereby improves its mechanical stability. However, older resist material was found to collapse more easily during evaporation. In those cases, the finger does not reliably reach the island during the second evaporation step, which results in defective structures. The overall electron-beam lithography design is shown in Figure~\ref{fig:methods:ebeam}.
         
         \begin{figure}
             \centering
-            \import{methods/sample/ebeamdesign}{test.pdf_tex}
-            % TODO[MTH-03]: Replace provisional caption with final figure caption.
-            \caption{blablabla.}
+            {\fontsize{6}{7}\selectfont
+            \import{methods/sample/ebeamdesign}{ebeam.pdf_tex}
+            }
+            \caption{Electron-beam lithography design of the sample at different length scales. The overview at the bottom shows the full pattern including leads and contact pads, while the upper panels successively magnify the central device region down to 100\,\textmu m, 10\,\textmu m, and 1\,\textmu m scales. Blue structures (\legend{seeblau100}) are written in a 100\,\textmu m writing field, whereas gray structures (\legend{seegrau100}) are written in 1000\,\textmu m writing fields. In the overview, the individual writing fields are indicated by dashed squares. The detailed views show the break junction, the island, the oxide-barrier finger, the nearby DC gate, and the adjacent AC gate. The outer leads are arranged to simplify electrical contacting, and a shorting structure is included to protect the sample against electrostatic discharge.}
+            % label subfigures?
             \label{fig:methods:ebeam}
         \end{figure}
 
         The larger leads and contact pads are arranged to simplify electrical contacting. In addition, an AC gate or strip line is placed at a distance of 8\,\textmu m to maximize microwave coupling while keeping the electron-beam writing time within reasonable limits. A shorting structure is also included to protect the sensitive tunnel barrier against electrostatic discharge. Finally, the central vertical lead is made wider to improve its visibility, which helps to align the break junction precisely with the stamp during mounting.
-        % The resonance frequency is about 10 GHz.           
 
         The evaporator used in this work has a comparatively long source-to-sample distance. As a result, the aluminum deposition is highly directional, although the effective deposition cross-section is reduced. The system offers two methods for aluminum evaporation: thermal evaporation and electron-beam evaporation. In thermal evaporation, a large current heats a small crucible until the aluminum evaporates. However, the crucible used for this method is fragile and must be loaded and run empty after each use to avoid crack formation. This procedure is laborious, prone to errors, and offers no clear advantage over electron-beam evaporation. In electron-beam evaporation, a focused electron beam locally heats the aluminum charge, resulting in a more efficient and reliable deposition process. For this reason, and in contrast to Refs.~\cite{lorenz_wechselspiel_2018, sprenger_interplay_2019,sobral-rey_interplay_2022}, electron-beam evaporation was used throughout this work.
 
         The oxidation step between the two evaporations is performed in the load lock of the evaporator at an oxygen pressure of approximately 3.0(2)\,mbar for 3\,min \cite{sobral-rey_interplay_2022}. In the past, this step was found to be insufficiently reproducible. It is therefore monitored carefully in the present process \cite{sprenger_interplay_2019, conzelmann_optimierung_nodate}.
 
-        Reactive ion etching (RIE) is carried out using the \textit{PlasmaPro 80 ICP RIE system} from Oxford Instruments. Although this tool is not primarily designed for highly homogeneous etching, acceptable uniformity can be achieved by combining low table radio-frequency (RF) power, high inductively coupled plasma (ICP) RF power, and high chamber pressure. The ICP source generates a high-density plasma by coupling energy into the chamber via an electromagnetic field, whereas the RF power applied to the table controls the ion energy at the sample surface. A heated sample table further improves etch homogeneity. The etched depth is monitored in real time by laser interferometry, which allows precise process control.
+        Reactive ion etching (RIE) is carried out using the \textit{PlasmaPro 80 ICP RIE system} from Oxford Instruments. This system was newly introduced when I began my doctoral work, so the fabrication of break junctions with it had to be established from scratch, including the development of a suitable etching recipe. Although this tool is not primarily designed for highly homogeneous etching, acceptable uniformity can be achieved by combining low table radio-frequency (RF) power, high inductively coupled plasma (ICP) RF power, and high chamber pressure. The ICP source generates a high-density plasma by coupling energy into the chamber via an electromagnetic field, whereas the RF power applied to the table controls the ion energy at the sample surface. A heated sample table further improves etch homogeneity. The etched depth is monitored in real time by laser interferometry, which allows precise process control.
 
         The final step is electrical contacting of the sample. Wedge bonding is unsuitable because the bonding wire can press through the pad and penetrate the soft PI layer, thereby causing a short. Instead, thin copper wires are attached to the pads using conductive silver paste. This approach provides reliable electrical contact without damaging the underlying structure.
