@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.3.2 (091e20e, 2023-11-25), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'test.pdf' (pdf, eps, ps)
+%% Accompanies image file 'ebeam.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{273.5999794bp}%
+    \setlength{\unitlength}{305.54719459bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,9 +50,16 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.71052638)%
+  \begin{picture}(1,0.41886903)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{test.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{ebeam.pdf}}%
+    \put(0.22978028,0.22520671){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1\,\textmu m\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{ebeam.pdf}}%
+    \put(0.54037393,0.22520671){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}10\,\textmu m\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=3]{ebeam.pdf}}%
+    \put(0.84995729,0.29942491){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}100\,\textmu m\end{tabular}}}}%
+    \put(0.80070734,0.03038476){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}1000\,\textmu m\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=4]{ebeam.pdf}}%
   \end{picture}%
 \endgroup%
