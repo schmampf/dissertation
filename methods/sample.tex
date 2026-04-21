@@ -2,9 +2,22 @@
 \section{Sample Preparation}
 \label{section:sample-preparation}
 
+    \begin{wrapfigure}[18]{r}{40mm}
+        \captionsetup{format=plain}%
+        \vspace{-1em}
+        \centering
+        \begingroup
+        \ooalign{%
+            {\fontsize{7pt}{9pt}\selectfont\import{methods/sample/probe}{probe.pdf_tex}}\cr
+            {\fontsize{5pt}{9pt}\selectfont\import{methods/sample/probe}{probe2.pdf_tex}}\cr
+        }%
+        \endgroup
+        \caption{Scanning electron micrograph of the central sample region. The colored region highlights the top layer that forms one electrode of the oxide tunnel barrier. In addition, schematic insets illustrate the atomic contact at the MCBJ weak link and the cross-section of the tunnel barrier.}
+        \label{fig:methods:sem}
+    \end{wrapfigure}
     Single-electron transistors (SETs) consist of two junctions that define a small island capacitively coupled to a DC gate electrode. Typically, this geometry is realized using two oxide barriers in a wire fabricated by shadow evaporation \cite{fulton_observation_1987,henning_charging_1999,krupenin_metallic_2001}.
 
-    In the present approach, one of these oxide barriers is replaced by a mechanically controlled break junction (MCBJ). Aluminum is chosen as the device material because it becomes superconducting at low temperatures \cite{lorenz_wechselspiel_2018, sprenger_interplay_2019,sobral-rey_interplay_2022}. In addition, an AC gate or strip line is integrated to ensure efficient and controlled coupling of microwave fields.
+    In the present approach, one of these oxide barriers is replaced by a mechanically controlled break junction (MCBJ). Aluminum is chosen as the device material because it becomes superconducting at low temperatures \cite{lorenz_wechselspiel_2018, sprenger_interplay_2019,sobral-rey_interplay_2022}. In addition, an AC gate or strip line is integrated to ensure efficient and controlled coupling of microwave fields. Such a sample is shown in Figure~\ref{fig:methods:sem}.
 
     This section describes work carried out together with Patrick Raif as part of his project practical\footnote{A component of the master's curriculum completed within a semester.} \cite{raif_electronic_2024}.
 
@@ -17,23 +30,25 @@
 
         The sample design must satisfy several requirements simultaneously. Mechanically, it must provide a freestanding bridge on a bendable substrate so that an atomic contact can be formed in a controlled manner. Lithographically, it must enable suspended shadow-mask structures for double-angle evaporation. Electrically, it must define an island between two weak links and provide gate coupling. Finally, the design should allow efficient coupling of microwave fields.
 
+        The MCBJ is realized as a freestanding bridge-like structure on a bendable substrate, as illustrated schematically in Figure~\ref{fig:methods:bruchmechanik}. The substrate can be bent either by pushing a stamp from below or by pressing counter rods from above. This bending elongates the bridge and allows the junction to be tuned into the atomic-contact regime. The mechanical setup of the MCBJ is described in more detail in Subsection \ref{subsec:mcbj}.
+
         \begin{wrapfigure}[7]{r}{40mm}
             \captionsetup{format=plain}%
             \centering
-            \vspace{-1em}
+            \vspace{-2em}
             \import{methods/sample/bruchmechanik}{bruchmechanik.pdf_tex}
             \caption{Schematic illustration of the principle of a MCBJ. Adapted from Ref \cite{schirm_einfluss_2009}.}
             \label{fig:methods:bruchmechanik}
         \end{wrapfigure}
-        The MCBJ is realized as a freestanding bridge-like structure on a bendable substrate, as illustrated schematically in Figure~\ref{fig:methods:bruchmechanik}. The substrate can be bent either by pushing a stamp from below or by pressing counter rods from above. This bending elongates the bridge and allows the junction to be tuned into the atomic-contact regime.
-
-        The mechanical setup of the MCBJ is described in more detail in Subsection \ref{subsec:mcbj}.
-
         A polyimide (PI) layer insulates the substrate from the structures produced in the subsequent steps. More importantly, the PI layer serves as a sacrificial layer. During later processing, it is partially etched, allowing the structure to become freestanding.
 
         Next, a bilayer of positive electron-sensitive resist is applied. Electron-beam lithography (EBL) is then used to expose the desired pattern with high precision. After development, the exposed resist is removed, leaving behind the lithographically defined structure.
 
         In addition to the MCBJ, the SET requires a second weak link, which is realized as an oxide barrier. A convenient method for fabricating this barrier is shadow evaporation \cite{niemeyer_observation_1976,dolan_offset_1977}. In this technique, two evaporation steps are carried out at different incident angles, producing a lateral offset between the deposited structures. Between the two depositions, a controlled oxidation step is performed without breaking vacuum. This yields overlapping regions with a metal--oxide--metal cross-section, as illustrated in Figure \ref{fig:methods:flow}.
+
+        Since the aim is to fabricate a superconducting single-electron transistor (SSET), aluminum (Al) is used in both evaporation steps. This results in an Al break junction (BJ) and an Al--Al$_\text{2}$O$_\text{3}$--Al oxide barrier, as described by Thomas Lorenz \cite{lorenz_wechselspiel_2018} and Susanne Sprenger \cite{sprenger_interplay_2019}. Alternatively, the second electrode material can be changed; for example, Al--Al$_\text{2}$O$_\text{3}$--Cu structures were successfully realized by Laura Sobral Rey \cite{sobral-rey_interplay_2022}.
+
+        In the final fabrication step, approximately 500\,nm of the PI layer is removed by oxygen plasma etching. Because the etch proceeds essentially homogeneously, a pronounced undercut is created, as illustrated in Figure~\ref{fig:methods:sem}. This step releases the bridge and renders the break junction freestanding.
 
         \begin{figure}[t]
             \subfigure[
@@ -65,18 +80,6 @@
             \label{fig:methods:flow}
         \end{figure}
 
-
-        Since the aim is to fabricate a superconducting single-electron transistor (SSET), aluminum (Al) is used in both evaporation steps. This results in an Al break junction (BJ) and an Al--Al$_\text{2}$O$_\text{3}$--Al oxide barrier, as described by Thomas Lorenz \cite{lorenz_wechselspiel_2018} and Susanne Sprenger \cite{sprenger_interplay_2019}. Alternatively, the second electrode material can be changed; for example, Al--Al$_\text{2}$O$_\text{3}$--Cu structures were successfully realized by Laura Sobral Rey \cite{sobral-rey_interplay_2022}.
-
-        In the final fabrication step, approximately 500\,nm of the PI layer is removed by oxygen plasma etching. Because the etch proceeds essentially homogeneously, a pronounced undercut is created, as illustrated in Figure~\ref{fig:methods:sem}. This step releases the bridge and renders the break junction freestanding.
-
-        \begin{figure}
-            \includegraphics[width=0.4\textwidth]{methods/sample/stamps/stamps.png}
-            \includegraphics[width=0.4\textwidth]{methods/sample/stamps/image.png}
-            % TODO[MTH-03]: Replace provisional caption with final figure caption.
-            \caption{Here comes some text}
-            \label{fig:methods:sem}
-        \end{figure}
 
 
     \subsection{Design} 
