@@ -33,7 +33,42 @@
 
         Next, a bilayer of positive electron-sensitive resist is applied. Electron-beam lithography (EBL) is then used to expose the desired pattern with high precision. After development, the exposed resist is removed, leaving behind the lithographically defined structure.
 
-        In addition to the MCBJ, the SET requires a second weak link, which is realized as an oxide barrier. A convenient method for fabricating this barrier is shadow evaporation \cite{niemeyer_observation_1976,dolan_offset_1977}. In this technique, two evaporation steps are carried out at different incident angles, producing a lateral offset between the deposited structures. Between the two depositions, a controlled oxidation step is performed without breaking vacuum. This yields overlapping regions with a metal--oxide--metal cross-section, as illustrated in Figure \ref{fig:methods:sem}.
+        In addition to the MCBJ, the SET requires a second weak link, which is realized as an oxide barrier. A convenient method for fabricating this barrier is shadow evaporation \cite{niemeyer_observation_1976,dolan_offset_1977}. In this technique, two evaporation steps are carried out at different incident angles, producing a lateral offset between the deposited structures. Between the two depositions, a controlled oxidation step is performed without breaking vacuum. This yields overlapping regions with a metal--oxide--metal cross-section, as illustrated in Figure \ref{fig:methods:flow}.
+
+        \begin{figure}[t]
+            \subfigure[
+                A bilayer resist stack is spin-coated onto the substrate (bottom: copolymer, top: PMMA).
+                ]{\import{methods/sample/flowchart}{flowchart1.pdf_tex}}
+            \hfill
+            \subfigure[
+                The structure is exposed by an electron-beam. A fraction of the incident electrons is backscattered.
+                ]{\import{methods/sample/flowchart}{flowchart2.pdf_tex}}
+            \hfill
+            \subfigure[
+                Development with creates an undercut in the copolymer layer.
+                ]{\import{methods/sample/flowchart}{flowchart3.pdf_tex}}
+                \\
+            \subfigure[
+                First metal deposition normal to the sample plane.
+                ]{\import{methods/sample/flowchart}{flowchart4.pdf_tex}}
+            \hfill
+            \subfigure[
+                Second deposition at an oblique angle. The second layer must be thicker to ensure electrical continuity.
+                ]{\import{methods/sample/flowchart}{flowchart5.pdf_tex}}
+            \hfill
+            \subfigure[
+                The resist undercut facilitates lift-off after deposition.
+                ]{\import{methods/sample/flowchart}{flowchart6.pdf_tex}}
+            \caption{
+                Schematic cross-section of the fabrication process used to realize an oxide tunnel barrier by electron-beam lithography, and double-angle evaporation.
+            }
+            \label{fig:methods:flow}
+        \end{figure}
+
+
+        Since the aim is to fabricate a superconducting single-electron transistor (SSET), aluminum (Al) is used in both evaporation steps. This results in an Al break junction (BJ) and an Al--Al$_\text{2}$O$_\text{3}$--Al oxide barrier, as described by Thomas Lorenz \cite{lorenz_wechselspiel_2018} and Susanne Sprenger \cite{sprenger_interplay_2019}. Alternatively, the second electrode material can be changed; for example, Al--Al$_\text{2}$O$_\text{3}$--Cu structures were successfully realized by Laura Sobral Rey \cite{sobral-rey_interplay_2022}.
+
+        In the final fabrication step, approximately 500\,nm of the PI layer is removed by oxygen plasma etching. Because the etch proceeds essentially homogeneously, a pronounced undercut is created, as illustrated in Figure~\ref{fig:methods:sem}. This step releases the bridge and renders the break junction freestanding.
 
         \begin{figure}
             \includegraphics[width=0.4\textwidth]{methods/sample/stamps/stamps.png}
@@ -43,16 +78,6 @@
             \label{fig:methods:sem}
         \end{figure}
 
-        Since the aim is to fabricate a superconducting single-electron transistor (SSET), aluminum (Al) is used in both evaporation steps. This results in an Al break junction (BJ) and an Al--Al$_\text{2}$O$_\text{3}$--Al oxide barrier, as described by Thomas Lorenz \cite{lorenz_wechselspiel_2018} and Susanne Sprenger \cite{sprenger_interplay_2019}. Alternatively, the second electrode material can be changed; for example, Al--Al$_\text{2}$O$_\text{3}$--Cu structures were successfully realized by Laura Sobral Rey \cite{sobral-rey_interplay_2022}.
-
-        In the final fabrication step, approximately 500\,nm of the PI layer is removed by oxygen plasma etching. Because the etch proceeds essentially homogeneously, a pronounced undercut is created, as illustrated in Figure~\ref{fig:methods:sem}. This step releases the bridge and renders the break junction freestanding.
-
-        \begin{figure}
-            \includegraphics[width=0.9\textwidth]{methods/sample/flowchart/image.png}
-            % TODO[MTH-03]: Replace provisional caption with final figure caption.
-            \caption{Here comes some text}
-            \label{fig:methods:flow}
-        \end{figure}
 
     \subsection{Design} 
     \label{subsection:design}
@@ -66,7 +91,7 @@
 
         At the beginning of my doctoral work, only one of the two available EBL software packages, \texttt{Elphy Plus} by Raith, was functional and properly supported. The sample design therefore had to be reimplemented from scratch, since my predecessors had used a different software environment. The dimensions of the break junction and the gate follow the established geometry and are consistent with earlier implementations in Refs.~\cite{lorenz_wechselspiel_2018, sprenger_interplay_2019,sobral-rey_interplay_2022}. In contrast, the finger defining the oxide barrier was modified to become wider toward its lower part. This reduces the freestanding length of the evaporation mask and thereby improves its mechanical stability. However, older resist material was found to collapse more easily during evaporation. In those cases, the finger does not reliably reach the island during the second evaporation step, which results in defective structures. The overall electron-beam lithography design is shown in Figure~\ref{fig:methods:ebeam}.
         
-        \begin{figure}
+        \begin{figure}[t]
             \centering
             {\fontsize{6}{7}\selectfont
             \import{methods/sample/ebeamdesign}{ebeam.pdf_tex}
