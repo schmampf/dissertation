@@ -3,28 +3,66 @@
 \section{Experimental Setup}
 \label{section:setup}
 
-Here comes a description of the Setup.
+    \subsection{Cryostat}
 
-\begin{figure}[t]
-    \centering
-    {\fontsize{7}{9}\selectfont
-    \import{methods/setup/electric}{setup.pdf_tex}
-    }
-    \caption{Schematic overview of the experimental wiring. All the parts are mounted at the base temperature stage in the dilution fridge, except for the hf line attenuator that are mounted at the 4\,K stage (indicated with ''-10\,dB''). The \legend{seeblau65} box indicates the sample and the corresponding schema. The \legend{seeblau100} circle indicates the island, which is coupled to the MCBJ (left) and the tunnel barrier (bottom), and capacitively coupled to the DC gate (right), and the AC gate (top). Those four components are bonded via thin coppercables, that are likewise soldered to pin heads (\legend{seegrau100} circles). The \legend{seegrau65} box indicates the extra shielded part of the reference resistors ($R_\mathrm{ref}$). }
-    \label{fig:methods:setup}
-\end{figure}
+        The measurements were carried out in an LD400 Bluefors dry dilution refrigerator. The cryostat combines several cooling stages, each of which removes heat in a different temperature range and prepares the next stage for operation. In the following, the cooling process is discussed along this sequence: first, the pulse-tube cryocooler provides closed-cycle precooling to the few-kelvin range; second, Joule--Thomson cooling is used to condense and further cool the circulating helium mixture; and third, the dilution refrigerator reaches the millikelvin regime by exploiting the enthalpy of mixing of $^\text{3}$He and $^\text{4}$He.
 
-        \subsection{cryostat and thermometer}
-        \subsection{MCBJ} \label{subsec:mcbj}
-            % TODO[MTH-02]: Replace this placeholder note with technical MCBJ setup details.
+        \subsubsection*{Pulse Tube}
 
-        \subsection{DC Cabling} \label{subsec:dc cabling}
-        4point measurements
-            \subsubsection*{copper powder filter}
-            \subsubsection*{steel capillary cable}
-            \subsubsection*{silver epoxy filter}
+            The first cooling stage of the dry cryostat is provided by a two-stage Gifford--McMahon-type pulse-tube cryocooler. It is a closed-cycle refrigerator in which helium is periodically compressed and expanded, but, in contrast to a conventional Gifford--McMahon cooler, the cold head contains no mechanical displacer. The pressure oscillation is generated at room temperature by a compressor package and a rotary valve, while the low-temperature part uses regenerators, heat exchangers, pulse-tube volumes, and flow impedances to convert this oscillating gas flow into refrigeration. In the Bluefors LD400 system, the pulse tube precools the radiation shields, thermalizes wiring at intermediate stages, and brings the helium mixture of the dilution circuit to the few-kelvin range, where condensation and the subsequent dilution process become possible.
 
-        \subsection{AC cabling}
-            \subsubsection*{Attenuators}
-            \subsubsection*{Antenna}
-            \subsubsection*{stripline}
+            The basic pulse-tube principle is illustrated in Figure~\ref{fig:setup:pulsetube}(a) for a single-stage orifice pulse-tube refrigerator, following the descriptions in Refs.~\cite{de_waele_basic_2011, bar-cohen_low_2019}. Starting from the warm end, such a stage consists of an aftercooler, a regenerator, a cold heat exchanger, the pulse-tube volume itself, a warm heat exchanger, and a flow impedance connected to a buffer volume. The compressor imposes a periodic pressure variation on the helium. The gas therefore oscillates back and forth rather than circulating through the cold head in one direction. In the regenerator, the oscillating helium is in good thermal contact with a porous matrix with high heat capacity. Gas moving from the warm side toward the cold side gives up heat to this matrix, while gas moving back takes heat up again. Ideally, the regenerator stores and returns heat locally during each cycle, thereby maintaining the temperature gradient between the warm and cold ends without producing a net heat load by itself.
+
+            \begin{figure}[t!]
+                \centering
+                \subfigure[
+                Operating principle of a single-stage pulse-tube refrigerator. Adapted from Ref.~\cite{bar-cohen_low_2019}.
+                ]{\fontsize{7}{9}\selectfont
+                \import{methods/setup/cryo}{pulsetube1.pdf_tex}
+                }
+                \hfill
+                \subfigure[
+                Schematic of a two-stage Gifford--McMahon-type pulse tube. Adapted from Ref.~\cite{de_waele_basic_2011}.
+                ]{\fontsize{7}{9}\selectfont
+                \import{methods/setup/cryo}{pulsetube2.pdf_tex}
+                }
+                \caption{Schematic illustration of pulse-tube cooling. (a) Operating principle of a single-stage pulse-tube refrigerator. The oscillating helium flow passes from the warm end through the aftercooler HX$_\text{0}$, the regenerator, and the cold heat exchanger HX$_\text{c}$ into the pulse-tube volume. The gray squares (\legend{seegrau65}) indicate the gas column that acts as a virtual piston, while the warm heat exchanger HX$_\text{w}$ and the flow impedance connected to the buffer volume set the phase relation between pressure and gas displacement. Gray shaded areas indicate high-pressure phases, black arrows indicate motion of the gas piston, and blue arrows (\legend{seeblau100}) indicate heat flow. (b) Schematic of a two-stage Gifford--McMahon-type pulse tube used for few-kelvin precooling. The rotary valve (\legend{seegrau65}) alternately connects the cold head to the high- and low-pressure sides of the compressor. The first stage provides an intermediate thermal anchor, while the second stage is precooled by the first stage and reaches the few-kelvin range.}
+                \label{fig:setup:pulsetube}
+            \end{figure}
+
+            The pulse tube replaces the mechanical displacer by a column of gas. A part of this gas column remains inside the pulse tube during the entire cycle and acts as a virtual piston. Near the warm end, gas enters the pulse tube from the buffer when the pressure in the pulse tube is below the buffer pressure and leaves it again when the pulse-tube pressure is above the buffer pressure. Because compression heats the gas and expansion cools it, gas parcels near the warm end leave the pulse tube at a higher temperature than they had when entering; this heat is rejected at the warm heat exchanger. At the cold end, the timing is such that gas entering the pulse tube from the cold heat exchanger is returned at a lower temperature, so that heat is absorbed from the cold stage. In this view, the useful cooling is associated with a net enthalpy flow through the pulse-tube gas column: gas motion toward the warm end occurs, on average, at higher temperature than gas motion back toward the cold end.
+
+            The phase relation between pressure and volume flow is the central design parameter. If the cold-end volume flow did not have the proper phase relation to the pressure oscillation, the pulse tube would not provide efficient heat pumping. The flow impedance at the warm end, realized by an orifice, an inertance tube, a reservoir, or combinations of these elements, delays the exchange of gas with the buffer volume and thereby shifts the phase of the gas displacement relative to the pressure oscillation. Equivalently, the pulse tube and its termination form an acoustic circuit: the compressor and rotary valve provide the pressure drive, while the impedance network determines when gas moves. This phase shift is the element that replaces the function of the cold displacer in a conventional Gifford--McMahon cooler.
+
+            In a Gifford--McMahon-type pulse tube, the pressure oscillation is not produced by a piston directly attached to the pulse tube. Instead, the compressor maintains high- and low-pressure helium reservoirs, and a rotary valve alternately connects the cold head to these pressure levels. This makes the drive similar to that of a Gifford--McMahon cryocooler, while the cold head remains a pulse-tube cold head. This distinction is important experimentally: the absence of a moving displacer at low temperature reduces mechanical wear and direct vibration close to the experiment, but the rotary valve, pressure oscillations, and gas dynamics still generate vibrations that can couple into sensitive transport measurements.
+
+            For reaching the few-kelvin range, two pulse-tube stages are cascaded, as shown schematically in Figure~\ref{fig:setup:pulsetube}(b) and described in Ref.~\cite{de_waele_basic_2011}. The first stage removes the dominant heat load at intermediate temperatures and typically provides a thermal anchor near 40\,K. The second stage is precooled by the first stage and reaches the few-kelvin range. In the idealized U-shaped two-stage geometry, the cold ends are placed conveniently for integration into the cryostat, while heat rejected at the warm end of the second pulse tube is not imposed as a direct load on the first stage.
+
+            The pulse-tube system is driven by an oil-lubricated room-temperature helium compressor. Low-pressure helium returning from the cold head is compressed, cooled, purified, and supplied again to the cold head as high-pressure helium. Oil is useful inside the compressor because it lubricates the moving parts, improves the sealing of small clearances, and helps to remove heat generated during compression. Before the helium returns to the cold head, oil separators, coalescing filters, and adsorbers remove oil droplets, oil mist, and residual contaminants. This purification chain is essential because oil or other impurities would freeze out at cryogenic temperatures and could degrade the regenerator or block small flow impedances in the pulse-tube circuit.\footnote{During this work, several maintenance interventions were required on the pulse-tube compressor package. The compressor adsorber was replaced as part of the oil-management and helium-purification chain, and the compressor heat exchanger required repeated repairs due to leaks. One contributing practical issue is that the compressor cooling water is supplied from Lake Constance. The lake water is very soft and can therefore be corrosive to copper cooling-water circuits if not chemically conditioned. Over time, this can promote corrosion and gradual dissolution of copper piping. Due to insufficient filtering, the water may contain dirt particles with diameters of up to 1\,mm, which can further abrade the piping. In addition, Lake Constance has been affected by the invasive quagga mussel, which can contribute shell and mussel debris to technical water circuits~\cite{haltiner_distribution_2022}. Eventually, a leak between the cooling-water circuit and the helium circuit led to replacement of the compressor package.}
+
+        \subsubsection*{Joule--Thomson Cooling}
+
+
+        \subsubsection*{Dilution Refrigerator}
+
+    \subsection{MCBJ} \label{subsec:mcbj}
+
+    \subsection{Electrical Wiring}
+
+        \begin{figure}[t]
+            \centering
+            {\fontsize{7}{9}\selectfont
+            \import{methods/setup/electric}{setup.pdf_tex}
+            }
+            \caption{Schematic overview of the custom wiring inside the dilution fridge. All the parts are mounted at the base temperature stage, except for the hf line attenuator that are mounted at the 4\,K stage (indicated with ''-10\,dB''). The \legend{seeblau65} box indicates the sample and the corresponding schema. The \legend{seeblau100} circle indicates the island, which is coupled to the MCBJ (left) and the tunnel barrier (bottom), and capacitively coupled to the DC gate (right), and the AC gate (top). Those four components are bonded via thin coppercables, that are likewise soldered to pin heads (\legend{seegrau100} circles). The \legend{seegrau65} box indicates the extra shielded part around the reference resistors ($R_\mathrm{ref}$). The pinheads are either connected to coaxial twisted pair cables or a high-frequency coaxial cable. The custom build copper powder (CP) filters and the comercial MFT25 filter are filtering high-frequency components and act as thermalizer.}
+            \label{fig:methods:setup}
+        \end{figure}
+
+        \subsubsection*{DC Filtering}
+        Steel Capilary, Twisted Pair, CP Filter, Silver Epoxy Filter
+
+        \subsubsection*{Thermometry}
+        Heater and Lakeshore
+
+        \subsubsection*{AC Cabling}
+        Attenuators, Antenna Stripline
