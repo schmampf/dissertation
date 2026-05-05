@@ -9,7 +9,7 @@
     \subsection{Cryostat}
     %=========================================================
 
-        The measurements were carried out in an LD400 Bluefors dry dilution refrigerator. The cryostat combines several cooling stages, each of which removes heat in a different temperature range and prepares the next stage for operation. In the following, the cooling process is discussed along this sequence: first, the pulse-tube cryocooler provides closed-cycle precooling to the few-kelvin range; second, Joule--Thomson cooling is used to condense and further cool the circulating helium mixture; and third, the dilution refrigerator reaches the millikelvin regime by exploiting the enthalpy of mixing of $^\text{3}$He and $^\text{4}$He.
+        The measurements were carried out in an LD400 Bluefors dry dilution refrigerator. The cryostat combines several cooling stages, each of which removes heat in a different temperature range and prepares the next stage for operation. In the following, the cooling process is discussed along this sequence: first, the pulse-tube cryocooler provides closed-cycle precooling to the few-kelvin range; second, Joule--Thomson cooling is used to condense and further cool the circulating helium mixture; and third, the dilution refrigerator reaches the millikelvin regime by exploiting the enthalpy of mixing of \textsuperscript{3}He and \textsuperscript{4}He.
 
         %=========================================================
         \subsubsection*{Pulse Tube Cryocooler}
@@ -51,7 +51,7 @@
         \subsubsection*{Joule--Thomson Cooling}
         %=========================================================
 
-            After the pulse tube has cooled the cryostat to the few-kelvin range, the circulating helium mixture still has to be condensed before it can be used in the dilution circuit. This step cannot be performed efficiently at room temperature, because the incoming gas would carry too much enthalpy into the low-temperature part of the cryostat. Instead, the high-pressure mixture is first thermalized at the pulse-tube stages and then expanded through a flow impedance. This expansion stage is the Joule--Thomson stage of the refrigerator.
+            After the pulse tube has cooled the cryostat to the few-kelvin range, the circulating helium mixture still has to be condensed before it can be used in the dilution circuit. This step cannot be performed efficiently at room temperature, because the incoming gas would carry too much enthalpy into the low-temperature part of the cryostat. Instead, the high-pressure mixture is first thermalized at the pulse-tube stages and then expanded through a flow impedance. This expansion stage is the Joule--Thomson stage of the refrigerator~\cite{de_waele_basic_2011,pobell_matter_nodate}.
 
             Joule--Thomson cooling is based on the temperature change of a real gas during expansion at approximately constant enthalpy $H$, given by
             \begin{equation}
@@ -86,22 +86,35 @@
             Such contamination is problematic because the Joule--Thomson impedance is narrow and can become clogged by residual gases or moisture that freeze out at cryogenic temperatures. For this reason, the mixture handling line is passed through a liquid-nitrogen trap before condensation or circulation. The overpressure operation of the Joule--Thomson stage is mainly relevant for condensation. During continuous circulation, the same restriction still defines part of the pressure drop and the counterflow heat exchangers recover cooling from the outgoing stream, but the pressure conditions and practical failure modes are different.
 
             Once the mixture has condensed and circulation is established, the refrigerator enters its dilution-cooling mode. The Joule--Thomson stage then no longer marks the end point of the cooldown procedure, but becomes part of the continuous circulation path that supplies liquid mixture to the lower-temperature stages. The actual millikelvin cooling is produced in the mixing chamber, as discussed in the following subsection.
-
-            \cite{de_waele_basic_2011,pobell_matter_nodate}
             
         %=========================================================
         \subsubsection*{Dilution Refrigerator}
         %=========================================================
 
-            \begin{wrapfigure}[17]{r}{0.4\textwidth}
+            \begin{wrapfigure}[42]{r}{0.4\textwidth}
                 \captionsetup{format=plain}%
                 \centering
-                \vspace{-2em}
+                \vspace{-2.75em}
+                \vspace{-2.0em}
                 \import{methods/setup/cryo}{phase-diagram.pgf}
-                \caption{fig:setup:phase-diagram \cite{brewer_phase_1962,edwards_solubility_1965,de_bruyn_ouboter_thermodynamic_1960, radebaugh_thermodynamic_1967}}
+                \vspace{-1.75em}
+                \caption{Phase diagram of liquid \textsuperscript{3}He\,/\,\textsuperscript{4}He mixtures. The diagram shows the phase-separation boundary and the lambda line. Above this boundary, the liquid separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase. Adapted from Ref.~\cite{radebaugh_thermodynamic_1967}.}
+            %     % \caption{fig:setup:phase-diagram \cite{brewer_phase_1962,edwards_solubility_1965,de_bruyn_ouboter_thermodynamic_1960, radebaugh_thermodynamic_1967}}
+            %     \caption{Phase diagram of liquid \textsuperscript{3}He\,/\,\textsuperscript{4}He mixtures. The diagram shows the phase-separation boundary and the lambda line. Above this boundary, the liquid separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase. The finite low-temperature solubility of \textsuperscript{3}He in the dilute phase enables continuous dilution refrigeration. Adapted from Ref.~\cite{radebaugh_thermodynamic_1967}.}
                 \label{fig:setup:phase-diagram}
+                \vspace{1.0em}
+                \import{methods/setup/cryo}{dilution-fridge.pdf_tex}
+                \vspace{-1.25em}
+                \caption{Schematic operation principle of the dilution refrigerator. The incoming \textsuperscript{3}He-rich liquid (\legend{seeblau100}) is precooled in the counterflow heat exchangers before entering the mixing chamber. Cooling is produced as \textsuperscript{3}He crosses the phase boundary from the concentrated phase into the dilute phase (\legend{seegrau65}). The mixture returns to the still, where preferential evaporation of \textsuperscript{3}He maintains the circulation. The color gradient on the right indicates the temperature gradient, while the spheres schematically indicate the relative \textsuperscript{3}He and \textsuperscript{4}He content.}
+                \label{fig:setup:dilution-fridge}
             \end{wrapfigure}
-            some text about dilfidge
+            The dilution refrigerator uses the phase separation of liquid \textsuperscript{3}He\,/\,\textsuperscript{4}He mixtures to reach the millikelvin regime. As shown in Figure~\ref{fig:setup:phase-diagram}, a liquid mixture below the phase-separation boundary separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase. In the low-temperature limit, the concentrated phase approaches pure \textsuperscript{3}He, while the dilute phase retains a finite \textsuperscript{3}He concentration of about 6.6\,\%. This finite solubility is the key property that allows continuous refrigeration: \textsuperscript{3}He can keep entering the dilute phase even as the temperature approaches zero.
+
+            The cooling mechanism is based on the enthalpy difference of \textsuperscript{3}He in the two phases. In the mixing chamber, the phase boundary separates the concentrated phase from the dilute phase. As \textsuperscript{3}He crosses this boundary from the concentrated phase into the dilute phase, energy is required. This energy is absorbed from the mixing chamber and provides the cooling power of the dilution stage. The process is not a one-time mixing event, but is maintained by continuously removing \textsuperscript{3}He from the dilute phase and returning it to the concentrated phase through the circulation loop.
+
+            The circulation path is illustrated schematically in Figure~\ref{fig:setup:dilution-fridge}. The incoming \textsuperscript{3}He-rich stream is first precooled by the outgoing cold stream in the counterflow heat exchangers and then enters the mixing chamber as part of the concentrated phase. At the phase boundary, \textsuperscript{3}He enters the dilute phase and produces cooling. The dilute mixture then flows back toward the still. Since \textsuperscript{3}He has a much higher vapor pressure than \textsuperscript{4}He at the still temperature, heating the still preferentially evaporates \textsuperscript{3}He and maintains the circulation. The evaporated \textsuperscript{3}He-rich gas is pumped away, purified and compressed by the room-temperature gas-handling system, and finally returned to the condensing line. The cooling power of the dilution refrigerator is therefore set primarily by the \textsuperscript{3}He circulation rate and by the efficiency of the heat exchangers, which determine how well the incoming stream is precooled before it reaches the mixing chamber~\cite{de_waele_basic_2011,pobell_matter_nodate}.
+
+            Together, these stages define the thermal environment of the experiment. The pulse tube provides the dominant cooling power at intermediate temperatures, the Joule--Thomson stage condenses the helium mixture and enables continuous circulation, and the dilution unit provides the millikelvin cooling power at the mixing chamber. The sample, filters, thermometers, and wiring are thermally anchored to the corresponding cryostat stages, so that electrical measurements can be performed while maintaining the sample close to the base-temperature stage.
 
     \subsection{MCBJ} \label{subsec:mcbj}
 
@@ -124,3 +137,6 @@
 
         \subsubsection*{AC Cabling}
         Attenuators, Antenna Stripline
+
+        \subsection*{Mesurement Devices}
+        Adwin, Femto, VNA, Lakeshore
