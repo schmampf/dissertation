@@ -1,13 +1,19 @@
 % !TEX root = ../thesis.tex
 
+%=========================================================
 \section{Experimental Setup}
 \label{section:setup}
+%=========================================================
 
+    %=========================================================
     \subsection{Cryostat}
+    %=========================================================
 
         The measurements were carried out in an LD400 Bluefors dry dilution refrigerator. The cryostat combines several cooling stages, each of which removes heat in a different temperature range and prepares the next stage for operation. In the following, the cooling process is discussed along this sequence: first, the pulse-tube cryocooler provides closed-cycle precooling to the few-kelvin range; second, Joule--Thomson cooling is used to condense and further cool the circulating helium mixture; and third, the dilution refrigerator reaches the millikelvin regime by exploiting the enthalpy of mixing of $^\text{3}$He and $^\text{4}$He.
 
-        \subsubsection*{Pulse Tube}
+        %=========================================================
+        \subsubsection*{Pulse Tube Cryocooler}
+        %=========================================================
 
             The first cooling stage of the dry cryostat is provided by a two-stage Gifford--McMahon-type pulse-tube cryocooler. It is a closed-cycle refrigerator in which helium is periodically compressed and expanded, but, in contrast to a conventional Gifford--McMahon cooler, the cold head contains no mechanical displacer. The pressure oscillation is generated at room temperature by a compressor package and a rotary valve, while the low-temperature part uses regenerators, heat exchangers, pulse-tube volumes, and flow impedances to convert this oscillating gas flow into refrigeration. In the Bluefors LD400 system, the pulse tube precools the radiation shields, thermalizes wiring at intermediate stages, and brings the helium mixture of the dilution circuit to the few-kelvin range, where condensation and the subsequent dilution process become possible.
 
@@ -26,11 +32,11 @@
                 ]{\fontsize{7}{9}\selectfont
                 \import{methods/setup/cryo}{pulsetube2.pdf_tex}
                 }
-                \caption{Schematic illustration of pulse-tube cooling. (a) Operating principle of a single-stage pulse-tube refrigerator. The oscillating helium flow passes from the warm end through the aftercooler HX$_\text{0}$, the regenerator, and the cold heat exchanger HX$_\text{c}$ into the pulse-tube volume. The gray squares (\legend{seegrau65}) indicate the gas column that acts as a virtual piston, while the warm heat exchanger HX$_\text{w}$ and the flow impedance connected to the buffer volume set the phase relation between pressure and gas displacement. Gray shaded areas indicate high-pressure phases, black arrows indicate motion of the gas piston, and blue arrows (\legend{seeblau100}) indicate heat flow. (b) Schematic of a two-stage Gifford--McMahon-type pulse tube used for few-kelvin precooling. The rotary valve (\legend{seegrau65}) alternately connects the cold head to the high- and low-pressure sides of the compressor. The first stage provides an intermediate thermal anchor, while the second stage is precooled by the first stage and reaches the few-kelvin range.}
+                \caption{Schematic illustration of pulse-tube cooling. (a) Operating principle of a single-stage pulse-tube refrigerator. The oscillating helium flow passes from the warm end through the aftercooler HX$_\text{0}$, the regenerator, and the cold heat exchanger HX$_\text{c}$ into the pulse-tube volume. The gray squares (\legend{seegrau65}) indicate the gas column that acts as a virtual piston, while the warm heat exchanger HX$_\text{w}$ and the flow impedance connected to the buffer volume set the phase relation between pressure and gas displacement $\Delta x$. Gray arrows indicate the inlet and outlet pressure $p$, gray shaded areas indicate high-pressure phases, black arrows indicate motion of the gas piston, and blue arrows (\legend{seeblau100}) indicate heat flow. (b) Schematic of a two-stage Gifford--McMahon-type pulse tube used for few-kelvin precooling. The rotary valve (\legend{seegrau65}) alternately connects the cold head to the high- and low-pressure sides of the compressor. The first stage provides an intermediate thermal anchor, while the second stage is precooled by the first stage and reaches the few-kelvin range.}
                 \label{fig:setup:pulsetube}
             \end{figure}
 
-            The pulse tube replaces the mechanical displacer by a column of gas. A part of this gas column remains inside the pulse tube during the entire cycle and acts as a virtual piston. Near the warm end, gas enters the pulse tube from the buffer when the pressure in the pulse tube is below the buffer pressure and leaves it again when the pulse-tube pressure is above the buffer pressure. Because compression heats the gas and expansion cools it, gas parcels near the warm end leave the pulse tube at a higher temperature than they had when entering; this heat is rejected at the warm heat exchanger. At the cold end, the timing is such that gas entering the pulse tube from the cold heat exchanger is returned at a lower temperature, so that heat is absorbed from the cold stage. In this view, the useful cooling is associated with a net enthalpy flow through the pulse-tube gas column: gas motion toward the warm end occurs, on average, at higher temperature than gas motion back toward the cold end.
+            The pulse tube replaces the mechanical displacer by a column of gas. A part of this gas column remains inside the pulse tube during the entire cycle and acts as a virtual piston. Near the warm end, gas enters the pulse tube from the buffer when the pressure in the pulse tube is below the buffer pressure and leaves it again when the pulse-tube pressure is above the buffer pressure. Because compression heats the gas and expansion cools it, gas parcels near the warm end leave the pulse tube at a higher temperature than they had when entering. This heat is rejected at the warm heat exchanger. At the cold end, the timing is such that gas entering the pulse tube from the cold heat exchanger is returned at a lower temperature, so that heat is absorbed from the cold stage. In this view, the useful cooling is associated with a net enthalpy flow through the pulse-tube gas column: gas motion toward the warm end occurs, on average, at higher temperature than gas motion back toward the cold end.
 
             The phase relation between pressure and volume flow is the central design parameter. If the cold-end volume flow did not have the proper phase relation to the pressure oscillation, the pulse tube would not provide efficient heat pumping. The flow impedance at the warm end, realized by an orifice, an inertance tube, a reservoir, or combinations of these elements, delays the exchange of gas with the buffer volume and thereby shifts the phase of the gas displacement relative to the pressure oscillation. Equivalently, the pulse tube and its termination form an acoustic circuit: the compressor and rotary valve provide the pressure drive, while the impedance network determines when gas moves. This phase shift is the element that replaces the function of the cold displacer in a conventional Gifford--McMahon cooler.
 
@@ -40,10 +46,62 @@
 
             The pulse-tube system is driven by an oil-lubricated room-temperature helium compressor. Low-pressure helium returning from the cold head is compressed, cooled, purified, and supplied again to the cold head as high-pressure helium. Oil is useful inside the compressor because it lubricates the moving parts, improves the sealing of small clearances, and helps to remove heat generated during compression. Before the helium returns to the cold head, oil separators, coalescing filters, and adsorbers remove oil droplets, oil mist, and residual contaminants. This purification chain is essential because oil or other impurities would freeze out at cryogenic temperatures and could degrade the regenerator or block small flow impedances in the pulse-tube circuit.\footnote{During this work, several maintenance interventions were required on the pulse-tube compressor package. The compressor adsorber was replaced as part of the oil-management and helium-purification chain, and the compressor heat exchanger required repeated repairs due to leaks. One contributing practical issue is that the compressor cooling water is supplied from Lake Constance. The lake water is very soft and can therefore be corrosive to copper cooling-water circuits if not chemically conditioned. Over time, this can promote corrosion and gradual dissolution of copper piping. Due to insufficient filtering, the water may contain dirt particles with diameters of up to 1\,mm, which can further abrade the piping. In addition, Lake Constance has been affected by the invasive quagga mussel, which can contribute shell and mussel debris to technical water circuits~\cite{haltiner_distribution_2022}. Eventually, a leak between the cooling-water circuit and the helium circuit led to replacement of the compressor package.}
 
+
+        %=========================================================
         \subsubsection*{Joule--Thomson Cooling}
+        %=========================================================
 
+            After the pulse tube has cooled the cryostat to the few-kelvin range, the circulating helium mixture still has to be condensed before it can be used in the dilution circuit. This step cannot be performed efficiently at room temperature, because the incoming gas would carry too much enthalpy into the low-temperature part of the cryostat. Instead, the high-pressure mixture is first thermalized at the pulse-tube stages and then expanded through a flow impedance. This expansion stage is the Joule--Thomson stage of the refrigerator.
 
+            Joule--Thomson cooling is based on the temperature change of a real gas during expansion at approximately constant enthalpy $H$, given by
+            \begin{equation}
+                H = U + pV\,,\qquad \Delta H \approx 0\,,
+            \end{equation}
+            with internal energy $U$, pressure $p$, and volume $V$. The first term describes the energy stored inside the gas, while the pressure-volume contribution accounts for the work associated with displacing gas into or out of a volume. During throttling through a narrow restriction, no mechanical work is extracted and ideally no heat is exchanged directly within the impedance. The gas therefore changes pressure without changing its enthalpy appreciably.
+
+            \begin{wrapfigure}[17]{r}{0.4\textwidth}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-2em}
+                \import{methods/setup/cryo}{joule-thomson.pgf}
+                \caption{Joule--Thomson coefficient of $^\text{4}$He as a function of temperature. The curve was calculated for a pressure of $p = 1\,\mathrm{bar}$ using CoolProp~\cite{bell_pure_2014} and illustrates the change of sign at the inversion temperature.}
+                \label{fig:setup:joule-thomson}
+            \end{wrapfigure}
+            Although the enthalpy remains approximately constant across the restriction, the temperature does not necessarily remain constant. For a small pressure drop, the corresponding temperature change can be written as
+            \begin{equation}
+                \Delta T \approx \mu_\mathrm{JT}\, \Delta p\,,
+            \end{equation}
+            where $\mu_\mathrm{JT}$ is the Joule--Thomson coefficient, which is given by
+            \begin{equation}
+                \mu_\mathrm{JT} = \left( \tfrac{\partial T}{\partial p} \right)_H = \tfrac{V}{C_\mathrm{p}} (\alpha T -1)\,.
+            \end{equation}
+            Here $C_\mathrm{p}$ is the heat capacity at constant pressure and $\alpha$ is the thermal expansion coefficient. The Joule--Thomson coefficient is the slope of an isenthalpic path in the temperature-pressure plane. It therefore determines whether a pressure drop through the impedance cools or heats the gas. For an ideal gas, the enthalpy depends only on temperature, so an isenthalpic expansion would leave the temperature unchanged. Joule--Thomson cooling is therefore a real-gas effect. In the form above, this is reflected by the factor $\alpha T - 1$: for an ideal gas, the thermal expansion coefficient satisfies $\alpha T = 1$, and the Joule--Thomson coefficient vanishes.
+
+            The sign of $\mu_\mathrm{JT}$ changes at the inversion temperature, as shown in Figure~\ref{fig:setup:joule-thomson}. On one side of this point, an isenthalpic pressure drop lowers the temperature. On the other side, the same pressure drop raises it. Helium has an unusually low inversion temperature, so room-temperature helium would not be cooled by a Joule--Thomson expansion. This is why the pulse tube is essential: it brings the gas into the thermodynamic regime in which the subsequent Joule--Thomson expansion cools rather than heats the mixture.
+
+            In the dry dilution refrigerator, the incoming high-pressure helium mixture is therefore cooled stepwise before it reaches the Joule--Thomson impedance. It is anchored thermally at the pulse-tube stages and exchanges heat with colder return flows in the lower-temperature part of the dilution unit. After this precooling, the pressure drop across the impedance lowers the temperature further and allows part of the mixture to condense. The condensed liquid mixture can then continue toward the still, heat exchangers, and mixing chamber of the dilution refrigerator. The Joule--Thomson stage thus forms the link between pulse-tube precooling and dilution refrigeration: it converts a precooled, pressurized gas flow into a cold liquid mixture suitable for continuous circulation through the millikelvin stage.
+
+            A practical distinction must be made between the initial condensation procedure and regular circulation. During condensation, the mixture line is operated at overpressure in order to drive the gas through the Joule--Thomson impedance and condense the mixture. In this regime, leaks are particularly critical because helium mixture can be lost from the system to the surrounding vacuum or laboratory environment. During regular circulation, by contrast, large parts of the return path are operated below atmospheric pressure. Loss of mixture through small leaks is then less likely, but leaks can instead draw residual gas or contamination into the circulation path.
+
+            Such contamination is problematic because the Joule--Thomson impedance is narrow and can become clogged by residual gases or moisture that freeze out at cryogenic temperatures. For this reason, the mixture handling line is passed through a liquid-nitrogen trap before condensation or circulation. The overpressure operation of the Joule--Thomson stage is mainly relevant for condensation. During continuous circulation, the same restriction still defines part of the pressure drop and the counterflow heat exchangers recover cooling from the outgoing stream, but the pressure conditions and practical failure modes are different.
+
+            Once the mixture has condensed and circulation is established, the refrigerator enters its dilution-cooling mode. The Joule--Thomson stage then no longer marks the end point of the cooldown procedure, but becomes part of the continuous circulation path that supplies liquid mixture to the lower-temperature stages. The actual millikelvin cooling is produced in the mixing chamber, as discussed in the following subsection.
+
+            \cite{de_waele_basic_2011,pobell_matter_nodate}
+            
+        %=========================================================
         \subsubsection*{Dilution Refrigerator}
+        %=========================================================
+
+            \begin{wrapfigure}[17]{r}{0.4\textwidth}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-2em}
+                \import{methods/setup/cryo}{phase-diagram.pgf}
+                \caption{fig:setup:phase-diagram \cite{brewer_phase_1962,edwards_solubility_1965,de_bruyn_ouboter_thermodynamic_1960, radebaugh_thermodynamic_1967}}
+                \label{fig:setup:phase-diagram}
+            \end{wrapfigure}
+            some text about dilfidge
 
     \subsection{MCBJ} \label{subsec:mcbj}
 
@@ -54,7 +112,7 @@
             {\fontsize{7}{9}\selectfont
             \import{methods/setup/electric}{setup.pdf_tex}
             }
-            \caption{Schematic overview of the custom wiring inside the dilution fridge. All the parts are mounted at the base temperature stage, except for the hf line attenuator that are mounted at the 4\,K stage (indicated with ''-10\,dB''). The \legend{seeblau65} box indicates the sample and the corresponding schema. The \legend{seeblau100} circle indicates the island, which is coupled to the MCBJ (left) and the tunnel barrier (bottom), and capacitively coupled to the DC gate (right), and the AC gate (top). Those four components are bonded via thin coppercables, that are likewise soldered to pin heads (\legend{seegrau100} circles). The \legend{seegrau65} box indicates the extra shielded part around the reference resistors ($R_\mathrm{ref}$). The pinheads are either connected to coaxial twisted pair cables or a high-frequency coaxial cable. The custom build copper powder (CP) filters and the comercial MFT25 filter are filtering high-frequency components and act as thermalizer.}
+            \caption{Schematic overview of the custom wiring inside the dilution fridge. All components are mounted at the base-temperature stage, except for the high-frequency line attenuators, which are mounted at the 4\,K stage (indicated with ``-10\,dB''). The \legend{seeblau65} box indicates the sample and the corresponding schematic. The \legend{seeblau100} circle indicates the island, which is coupled to the MCBJ (left) and the tunnel barrier (bottom), and capacitively coupled to the DC gate (right) and the AC gate (top). These four components are bonded with thin copper cables, which are soldered to pin headers (\legend{seegrau100} circles). The \legend{seegrau65} box indicates the extra shielded part around the reference resistors ($R_\mathrm{ref}$). The pin headers are connected either to coaxial twisted-pair cables or to a high-frequency coaxial cable. The custom-built copper-powder (CP) filters and the commercial MFT25 filter suppress high-frequency components and act as thermal anchors.}
             \label{fig:methods:setup}
         \end{figure}
 
