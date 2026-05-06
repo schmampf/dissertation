@@ -32,7 +32,7 @@
                 ]{\fontsize{7}{9}\selectfont
                 \import{methods/setup/cryo}{pulsetube2.pdf_tex}
                 }
-                \caption{Schematic illustration of pulse-tube cooling. (a) Operating principle of a single-stage pulse-tube refrigerator. The oscillating helium flow passes from the warm end through the aftercooler HX$_\text{0}$, the regenerator, and the cold heat exchanger HX$_\text{c}$ into the pulse-tube volume. The gray squares (\legend{seegrau65}) indicate the gas column that acts as a virtual piston, while the warm heat exchanger HX$_\text{w}$ and the flow impedance connected to the buffer volume set the phase relation between pressure and gas displacement $\Delta x$. Gray arrows indicate the inlet and outlet pressure $p$, gray shaded areas indicate high-pressure phases, black arrows indicate motion of the gas piston, and blue arrows (\legend{seeblau100}) indicate heat flow. (b) Schematic of a two-stage Gifford--McMahon-type pulse tube used for few-kelvin precooling. The rotary valve (\legend{seegrau65}) alternately connects the cold head to the high- and low-pressure sides of the compressor. The first stage provides an intermediate thermal anchor, while the second stage is precooled by the first stage and reaches the few-kelvin range.}
+                \caption{Schematic illustration of pulse-tube cooling. (a) Operating principle of a single-stage pulse-tube refrigerator. The oscillating helium flow passes from the warm end through the aftercooler HX\textsubscript{0}, the regenerator, and the cold heat exchanger HX\textsubscript{c} into the pulse-tube volume. The gray squares (\legend{seegrau65}) indicate the gas column that acts as a virtual piston, while the warm heat exchanger HX\textsubscript{w} and the flow impedance connected to the buffer volume set the phase relation between pressure and gas displacement $\Delta x$. Gray arrows indicate the inlet and outlet pressure $p$, gray shaded areas indicate high-pressure phases, black arrows indicate motion of the gas piston, and blue arrows (\legend{seeblau100}) indicate heat flow. (b) Schematic of a two-stage Gifford--McMahon-type pulse tube used for few-kelvin precooling. The rotary valve (\legend{seegrau65}) alternately connects the cold head to the high- and low-pressure sides of the compressor. The first stage provides an intermediate thermal anchor, while the second stage is precooled by the first stage and reaches the few-kelvin range.}
                 \label{fig:setup:pulsetube}
             \end{figure}
 
@@ -64,7 +64,7 @@
                 \centering
                 \vspace{-2em}
                 \import{methods/setup/cryo}{joule-thomson.pgf}
-                \caption{Joule--Thomson coefficient of $^\text{4}$He as a function of temperature. The curve was calculated for a pressure of $p = 1\,\mathrm{bar}$ using CoolProp~\cite{bell_pure_2014} and illustrates the change of sign at the inversion temperature.}
+                \caption{Joule--Thomson coefficient of \textsuperscript{4}He as a function of temperature. The curve was calculated for a pressure of $p = 1\,\mathrm{bar}$ using CoolProp~\cite{bell_pure_2014} and illustrates the change of sign at the inversion temperature.}
                 \label{fig:setup:joule-thomson}
             \end{wrapfigure}
             Although the enthalpy remains approximately constant across the restriction, the temperature does not necessarily remain constant. For a small pressure drop, the corresponding temperature change can be written as
@@ -108,7 +108,7 @@
                 \caption{Schematic operation principle of the dilution refrigerator. The incoming \textsuperscript{3}He-rich liquid (\legend{seeblau100}) is precooled in the counterflow heat exchangers before entering the mixing chamber. Cooling is produced as \textsuperscript{3}He crosses the phase boundary from the concentrated phase into the dilute phase (\legend{seegrau65}). The mixture returns to the still, where preferential evaporation of \textsuperscript{3}He maintains the circulation. The color gradient on the right indicates the temperature gradient, while the spheres schematically indicate the relative \textsuperscript{3}He and \textsuperscript{4}He content.}
                 \label{fig:setup:dilution-fridge}
             \end{wrapfigure}
-            The dilution refrigerator uses the phase separation of liquid \textsuperscript{3}He\,/\,\textsuperscript{4}He mixtures to reach the millikelvin regime. As shown in Figure~\ref{fig:setup:phase-diagram}, a liquid mixture below the phase-separation boundary separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase. In the low-temperature limit, the concentrated phase approaches pure \textsuperscript{3}He, while the dilute phase retains a finite \textsuperscript{3}He concentration of about 6.6\,\%. This finite solubility is the key property that allows continuous refrigeration: \textsuperscript{3}He can keep entering the dilute phase even as the temperature approaches zero.
+            The dilution refrigerator uses the phase separation of liquid \textsuperscript{3}He\,/\,\textsuperscript{4}He mixtures to reach the millikelvin regime. As shown in Figure~\ref{fig:setup:phase-diagram}, a liquid mixture below the phase-separation boundary separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase. In the low-temperature limit, the concentrated phase approaches pure \textsuperscript{3}He, while the dilute phase retains a finite \textsuperscript{3}He concentration of about 0.066. This finite solubility is the key property that allows continuous refrigeration: \textsuperscript{3}He can keep entering the dilute phase even as the temperature approaches zero.
 
             The cooling mechanism is based on the enthalpy difference of \textsuperscript{3}He in the two phases. In the mixing chamber, the phase boundary separates the concentrated phase from the dilute phase. As \textsuperscript{3}He crosses this boundary from the concentrated phase into the dilute phase, energy is required. This energy is absorbed from the mixing chamber and provides the cooling power of the dilution stage. The process is not a one-time mixing event, but is maintained by continuously removing \textsuperscript{3}He from the dilute phase and returning it to the concentrated phase through the circulation loop.
 
@@ -116,7 +116,45 @@
 
             Together, these stages define the thermal environment of the experiment. The pulse tube provides the dominant cooling power at intermediate temperatures, the Joule--Thomson stage condenses the helium mixture and enables continuous circulation, and the dilution unit provides the millikelvin cooling power at the mixing chamber. The sample, filters, thermometers, and wiring are thermally anchored to the corresponding cryostat stages, so that electrical measurements can be performed while maintaining the sample close to the base-temperature stage.
 
-    \subsection{MCBJ} \label{subsec:mcbj}
+
+    %=========================================================
+    \subsection{Mechanically Controlled Break Junction} \label{subsec:mcbj}
+    %=========================================================
+        
+        \begin{wrapfigure}[32]{r}{0.3\textwidth}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-1em}
+            \import{methods/setup/mcbj}{bruchmechanik.pdf_tex}
+            \caption{Rendering of the differential screw, stamp, counterrods and sample holder. Project~\texttt{07062016}.}
+            \label{fig:setup:bruchmechanik}
+        \end{wrapfigure}
+        The mechanically controllable break-junction (MCBJ) setup is used to tune the conductance of the atomic contact in situ at low temperature. The sample is mounted in a three-point bending geometry, where the substrate is supported by two fixed counter supports and bent by a central pushing element, as shown in Fig.~\ref{fig:methods:bruchmechanik}. In many MCBJ implementations, the counter supports are moved with respect to a fixed pushing element. In the present design, by contrast, the counter supports remain fixed and the central pushing element is displaced. Because the metallic constriction is patterned as a suspended bridge on an elastic substrate, a comparatively large displacement of the bending mechanism is converted into a much smaller elongation of the atomic contact. This mechanical reduction provides the stability required to form and maintain atomic-scale contacts over extended measurement times.
+
+        The break mechanics used in this work is based on the LD400-compatible design developed by A. Fischer and M. Prestel~\cite{prestel_magnetic_2020}, which follows the same general MCBJ concept as earlier implementations in the group. The relative displacement between the pushing element and the counter supports is generated by a differential screw, which converts the rotary motion of the drive train into the linear motion of the bending mechanism. The screw combines an M4 and an M5 thread. Since the two threads have slightly different pitches, one full revolution does not move the bending mechanism by either pitch individually, but only by their difference. This results in an effective feed of 0.1\,mm per revolution. The differential screw therefore forms the mechanical interface between the rotary drive train and the three-point bending mechanism.
+
+        The central design constraint of the cryogenic drive train is the transmission of a controlled rotary motion from room temperature to the sample space while keeping the heat load on the lower cryostat stages small and avoiding excessive mechanical stress. For this reason, the drive train is mechanically segmented and thermalized at several cryostat stages. Hollow stainless-steel tubes connect the individual gear stages, while the gearboxes simultaneously transmit the motion and provide thermal interruption of the drive shaft.
+
+        In the original implementation, four commercial gearboxes with equal reduction were used along the drive train. For the measurements presented here, this distribution was modified. The gearhead close to the motor was replaced by a 1:9.7 reduction, and the first two cryogenic gearboxes were replaced by 1:5.4 reductions. The remaining gear stages (1:3.1) were left unchanged. The motivation for this modification was to redistribute the required torque more favorably along the drive train. Instead of generating a large torque already at the uppermost cryogenic gearbox, the reduction is distributed over several stages, so that the mechanical load is transferred more gradually toward the actual break mechanics. The increased number of rotations at the 40\,K and 4\,K stages is acceptable, because these stages provide substantially larger cooling power than the millikelvin stages.
+
+        \begin{wrapfigure}[14]{r}{0.3\textwidth}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-1.5em}
+            \import{methods/setup/mcbj}{motorhalterung.pdf_tex}
+            \vspace{-.5em}
+            \caption{Rendering of mounting plates for vacuum feed through and motor. Project~\texttt{13042026}.}
+            \label{fig:setup:motorhalterung}
+        \end{wrapfigure}
+        Several mechanical components of the room-temperature drive were redesigned during this work. In the previous motor mount, the clamping element consisted of a massive plastic disk with a central bore and a narrow radial slit that was closed by a screw. In practice, most of the applied force was spent on elastically deforming the plastic body instead of reducing the bore diameter. In addition, the thread was cut directly into the plastic and was damaged by the high forces required to close the slit. As a result, the mount did not clamp reliably to the motor or to the vacuum feedthrough. This part was replaced by a two-piece clamp manufactured by the scientific workshop, as shown in Fig.~\ref{fig:setup:motorhalterung}. Separate clamps are now used for the motor and the vacuum feedthrough and are connected by rods, which provides a much stiffer and more reproducible alignment of the room-temperature drive. The motor and gearhead are also connected by a 3D-printed clamp instead of being glued in place.
+
+        The vacuum feedthrough is another critical component of the room--temperature drive. To keep the rotational friction low and to avoid stick--slip motion or excessive load on the motor, the feedthrough was lubricated regularly with Fomblin vacuum grease.
+
+        The slip clutch between the motor and the vacuum feedthrough was also modified. In the original part, the clamping threads were cut into plastic. During operation these threads were repeatedly compressed and deformed, which shifted the clutch away from the rotation axis. This misalignment increased the load on the motor and led to premature motor failure. The plastic threads were therefore replaced by brass inserts. This change improves the centering of the clutch and makes the coupling mechanically more stable under repeated clamping.
+
+        Careful alignment of the cryogenic drive train is essential. The rods inside the cryostat were fixed while already rotating slowly, so that small angular or lateral offsets could relax during assembly. This procedure reduces the probability that the completed drive train locks at low temperature because of a residual misalignment between adjacent stages. The gearboxes were prepared before cooldown by removing the original lubricant. They were cleaned overnight in an ultrasonic acetone bath, subsequently rinsed with isopropanol, and heated with a hot-air gun immediately before cooldown to remove residual solvent as well as moisture adsorbed after cleaning. This preparation is necessary because frozen lubricant, solvent, or water residues can block the gear motion at cryogenic temperatures.
+
+        With these modifications, the break mechanics provides a slow and reproducible conversion from motor rotation to sample bending while keeping the dissipated heat and the mechanical load on the cold stages manageable. The setup therefore allows the contact to be opened and closed repeatedly and to be positioned in the tunneling, few-channel, or atomic-contact regime during low-temperature transport measurements.
 
     \subsection{Electrical Wiring}
 
