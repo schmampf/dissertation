@@ -160,63 +160,58 @@
     \subsection{Electrical Wiring}
     %=========================================================
 
-        First we discuss the measurement schematic, the wiring inside the cryostat and the used filtering, and the used devices and the ground schema.
+        The electrical setup connects a nanoscale device at millikelvin temperature to room-temperature sources, amplifiers, microwave equipment, and control electronics. This makes the wiring more than a passive connection. It defines the bias condition of the sample, sets the noise environment, determines how well the electronic degrees of freedom are thermalized, and limits which microwave amplitudes can be applied without excessive heating. In the following, I first introduce the measurement schematic used to reconstruct the sample voltage and current. I then describe the cryostat wiring, filtering, microwave lines, thermometry, and the grounding strategy of the complete setup.
 
         %=========================================================
         \subsubsection*{Measurement Schematic}
         %=========================================================
 
+            The transport measurement is based on a voltage-biased circuit with simultaneous readout of sample voltage and current. A programmed bias voltage $V_\mathrm{bias}$ is applied to the bias line, but the voltage arriving at the device is not assumed to be identical to this source voltage. The finite resistance of filters, leads, reference resistors, and contacts creates a voltage divider together with the sample. Therefore both relevant quantities are measured directly: $V_\mathrm{sample}$ is measured across the device, and the current is inferred from the voltage drop $V_\mathrm{ref}$ across a known reference resistor.
+
+            A useful way to characterize the bias condition is the ratio
+            \begin{equation}
+                \eta = R_\mathrm{series}\,/\, R_\mathrm{sample}\,,
+                \label{eq:methods:bias-eta}
+            \end{equation}
+            where $R_\mathrm{sample}$ is the instantaneous device resistance and $R_\mathrm{series}$ is the remaining resistance in the bias path,
+            \begin{equation}
+                R_\mathrm{series}
+                % = R_\mathrm{total}-R_\mathrm{sample}
+                \simeq 2R_\mathrm{ref} + R_\mathrm{filters} + R_\mathrm{leads} + \ldots\,.
+                \label{eq:methods:series-resistance}
+            \end{equation}
+            In the limit $\eta \ll 1$, the circuit approaches an ideal voltage bias because most of the applied voltage drops across the sample. In the opposite limit, $\eta \gg 1$, the series resistance dominates and the circuit approaches a current-bias condition. The present setup is deliberately flexible, but this also means that the bias condition changes with the state of the MCBJ. During a measurement the sample resistance can range from a few ohms in a closed atomic contact to many megaohms in the tunneling regime, while the series resistance of the filtered bias environment is of order 100\,k\textohm. The experiment therefore moves between voltage-biased, mixed, and more current-biased regimes depending on the junction configuration.
+
+            This is the reason why both $V_\mathrm{sample}$ and $I_\mathrm{sample}$ are reconstructed from measured voltages rather than inferred from the programmed source value. The current is obtained from the reference resistor,
+            \begin{equation}
+                I_\mathrm{sample} = V_\mathrm{ref}\,/\,R_\mathrm{ref}\,.
+                \label{eq:methods:sample-current}
+            \end{equation}
+            In a linearized resistive approximation, the voltage and current would follow
+            \begin{align}
+                V_\mathrm{sample} &\simeq V_\mathrm{bias}\,R_\mathrm{sample}\,/\,R_\mathrm{total}\,, \\
+                I_\mathrm{sample} &\simeq V_\mathrm{bias}\,/\,R_\mathrm{total}\,.
+                \label{eq:methods:bias-divider}
+            \end{align}
+            These expressions are useful for intuition, but the actual analysis uses the simultaneously measured voltage drops. This is essential for nonlinear superconducting transport, where the sample resistance changes with bias and where small deviations from an ideal bias condition can distort the apparent \textit{I--V} curve.
+
             \begin{figure}[t]
                 \centering
                 \subfigure[
-                Schematic of high-impedance measurement schema.
+                Schematic for high-impedance samples.
                 ]{\fontsize{7}{9}\selectfont
                 \import{methods/setup/electric}{measurement-schema1.pdf_tex}
                 }
                 \hfill
                 \subfigure[
-                Schematic of low-impedance measurement schema, with additional warm reference resistor.
+                Schematic for low-impedance samples with an additional warm reference resistor.
                 ]{\fontsize{7}{9}\selectfont
                 \import{methods/setup/electric}{measurement-schema2.pdf_tex}
                 }
-                \caption{Schematic of measurement schema for (a) low-impedance and (b) high-impedance samples. The voltages over sample $V_\mathrm{sample}$, and reference resistor $V_\mathrm{ref}$ are measured. A quasi-DC voltage $V_\mathrm{bias}$ is applied in order to bias the sample. The opposing triangles indicate the sample and the gray region (\legend{seegrau65}) indicated the cold components.}
+                \caption{Measurement schematics for high- and low-impedance sample configurations. A quasi-dc bias voltage $V_\mathrm{bias}$ is applied to the bias line, while the voltage drop across the sample $V_\mathrm{sample}$ and the voltage drop across a reference resistor $V_\mathrm{ref}$ are measured simultaneously. The opposing triangles indicate the sample, and the gray region (\legend{seegrau65}) indicates the cold part of the circuit. For low sample impedances, the modified configuration reduces the cold series resistance so that a larger fraction of the programmed bias drops across the sample; the additional warm reference resistor provides the current readout.}
                 \label{fig:methods:measurement-schema}
             \end{figure}
-            Our measuremnt schema includes voltage measurements over the sample, a reference resistor and we apply a bias voltage, as hown in fig. \ref{fig:methods:measurement-schema}a.
-
-            In roder to understand our bias situation its helpful to introduce eta
-            \begin{equation}
-                \eta = R_\mathrm{series}\, /\, R_\mathrm{sample}
-            \end{equation}
-            where the series resistance in our case is the sum of all resistances in the bias line - Rsample:
-            \begin{equation}
-                R_\mathrm{series} = R_total - R_sample = 2\,R_\mathrm{ref} + R_\mathrm{filters} + R_\mathrm{leads} + ...
-            \end{equation}
-
-            if eta << 1 we are in the voltage bias limit.
-            if eta >> 1 we are in the current bias limit.
-
-            for us the situation is rather complex, since our sample resistance ranges from about 10 to 10 MOhm, while our environment, Rseries approximatly 200kOhm.
-            So we end up in eta $\approx$> 1, so a mixed / current biased situation.
-
-            So even so the current varies mostly linear with the aplplied bias voltage, we still might get some non-linearities.
-            We need to measure both the voltage and the current over the sample
-
-            For that we place one voltage measurement directly at the sample to aquire $V_sample$. In order to aquire the current we place a voltage measurement over a seperate reference resistor in the bias line. So we get
-
-            \begin{equation}
-                I_\mathrm{sample} = V_\mathrm{ref}\, /\, R_\mathrm{ref}
-            \end{equation}
-
-            The only possible source is voltage. commercial current sorce also use large series resistance to become current source. However so we apply a bias voltage at the bias line, we can approximate the voltage and current over the sample as:
-            \begin{align}
-                V_\mathrm{sample} &= V_\mathrm{bias}\, R_sample / R_total\,, \\
-                I_\mathrm{sample} &= V_\mathrm{bias}\, / R_total
-            \end{align}
-
-            For really low impedances, we cant apply enough current to get a significant voltage drop over the sample. This is why we came up with another low-impedance measurement schema, that includes another reference resistor outside the cryostat, as shown in fig \ref{fig:methods:measurement-schema}b. However here the series resistance adds up to about 500 Ohm.
-
-            Something about john nyquist noise. large resistance, large noise. low temperature, lower level of noise. Shot noise doesnt play a role for the resistances?
+        Figure~\ref{fig:methods:measurement-schema}(a) shows the standard configuration used for high-impedance tunnel and few-channel measurements. For very low sample impedances, however, the large cold series resistance limits the voltage that can be applied across the sample. A substantial part of the programmed bias then drops across the reference resistors instead of the device, so that the accessible sample-voltage range can become too small to drive the junction out of the zero-voltage supercurrent branch or to reach spectroscopic features such as the superconducting gap. In this regime I use the modified configuration shown in Fig.~\ref{fig:methods:measurement-schema}(b), which reduces the effective cold series resistance to about 500\,\textohm. The additional warm reference resistor is then used for current readout. Although its resistance is substantially smaller than in the standard configuration, it is located at room temperature and therefore adds Johnson--Nyquist noise from the warm environment. The low-impedance configuration is therefore used only when the increased accessible sample-voltage range outweighs this added noise contribution.
 
         %=========================================================
         \subsubsection*{Wiring inside Cryostat}
@@ -285,6 +280,8 @@
             V_divided = V_bias / (2*R_series/R_shunt + 1)
         \end{equation}
         Reason for making the Voltage divider warm (in contrast to \cite{prestel_magnetic_2020}) is that we can run diagnositcs on the filters and grounding, even in cold state, as in \cite{lorenz_wechselspiel_2018}. The shunt in the bias line inside the crystat, leaves you little tools of diagnostics.
+
+        We tested several combination of available Power Sources, Amplifier and Multimeter for the lowest noise floor. a single device for reading out two voltage signals bear another advantage, since the tuple is measured always at the same time.
 
         We apply a symmetrical bias, meaning one electrode is +Vbias/2 and the other is -Vbias/2 in respect to ground. We linearly ramp the voltage down and up, with period length reaching 5min and longer.
 
