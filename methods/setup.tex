@@ -156,9 +156,72 @@
 
         With these modifications, the break mechanics provides a slow and reproducible conversion from motor rotation to sample bending while keeping the dissipated heat and the mechanical load on the cold stages manageable. The setup therefore allows the contact to be opened and closed repeatedly and to be positioned in the tunneling, few-channel, or atomic-contact regime during low-temperature transport measurements.
 
+    %=========================================================
     \subsection{Electrical Wiring}
+    %=========================================================
 
-        \begin{figure}[t]
+        First we discuss the measurement schematic, the wiring inside the cryostat and the used filtering, and the used devices and the ground schema.
+
+        %=========================================================
+        \subsubsection*{Measurement Schematic}
+        %=========================================================
+
+            \begin{figure}[t]
+                \centering
+                \subfigure[
+                Schematic of high-impedance measurement schema.
+                ]{\fontsize{7}{9}\selectfont
+                \import{methods/setup/electric}{measurement-schema1.pdf_tex}
+                }
+                \hfill
+                \subfigure[
+                Schematic of low-impedance measurement schema, with additional warm reference resistor.
+                ]{\fontsize{7}{9}\selectfont
+                \import{methods/setup/electric}{measurement-schema2.pdf_tex}
+                }
+                \caption{Schematic of measurement schema for (a) low-impedance and (b) high-impedance samples. The voltages over sample $V_\mathrm{sample}$, and reference resistor $V_\mathrm{ref}$ are measured. A quasi-DC voltage $V_\mathrm{bias}$ is applied in order to bias the sample. The opposing triangles indicate the sample and the gray region (\legend{seegrau65}) indicated the cold components.}
+                \label{fig:methods:measurement-schema}
+            \end{figure}
+            Our measuremnt schema includes voltage measurements over the sample, a reference resistor and we apply a bias voltage, as hown in fig. \ref{fig:methods:measurement-schema}a.
+
+            In roder to understand our bias situation its helpful to introduce eta
+            \begin{equation}
+                \eta = R_\mathrm{series}\, /\, R_\mathrm{sample}
+            \end{equation}
+            where the series resistance in our case is the sum of all resistances in the bias line - Rsample:
+            \begin{equation}
+                R_\mathrm{series} = R_total - R_sample = 2\,R_\mathrm{ref} + R_\mathrm{filters} + R_\mathrm{leads} + ...
+            \end{equation}
+
+            if eta << 1 we are in the voltage bias limit.
+            if eta >> 1 we are in the current bias limit.
+
+            for us the situation is rather complex, since our sample resistance ranges from about 10 to 10 MOhm, while our environment, Rseries approximatly 200kOhm.
+            So we end up in eta $\approx$> 1, so a mixed / current biased situation.
+
+            So even so the current varies mostly linear with the aplplied bias voltage, we still might get some non-linearities.
+            We need to measure both the voltage and the current over the sample
+
+            For that we place one voltage measurement directly at the sample to aquire $V_sample$. In order to aquire the current we place a voltage measurement over a seperate reference resistor in the bias line. So we get
+
+            \begin{equation}
+                I_\mathrm{sample} = V_\mathrm{ref}\, /\, R_\mathrm{ref}
+            \end{equation}
+
+            The only possible source is voltage. commercial current sorce also use large series resistance to become current source. However so we apply a bias voltage at the bias line, we can approximate the voltage and current over the sample as:
+            \begin{align}
+                V_\mathrm{sample} &= V_\mathrm{bias}\, R_sample / R_total\,, \\
+                I_\mathrm{sample} &= V_\mathrm{bias}\, / R_total
+            \end{align}
+
+            For really low impedances, we cant apply enough current to get a significant voltage drop over the sample. This is why we came up with another low-impedance measurement schema, that includes another reference resistor outside the cryostat, as shown in fig \ref{fig:methods:measurement-schema}b. However here the series resistance adds up to about 500 Ohm.
+
+            Something about john nyquist noise. large resistance, large noise. low temperature, lower level of noise. Shot noise doesnt play a role for the resistances?
+
+        %=========================================================
+        \subsubsection*{Wiring inside Cryostat}
+        %=========================================================
+        \begin{figure}[t!]
             \centering
             {\fontsize{7}{9}\selectfont
             \import{methods/setup/electric}{setup.pdf_tex}
@@ -167,14 +230,76 @@
             \label{fig:methods:setup}
         \end{figure}
 
+        The electrical wiring inside the cryostat has to satisfy two competing requirements. First, the wiring must provide a sufficiently well-defined electrical environment for low-noise transport measurements on high-impedance tunnel contacts and few-channel atomic contacts. This requires filtering of external noise, suppression of unwanted high-frequency components, and a symmetric wiring geometry, so the sample is on zero potential \cite{lorenz_wechselspiel_2018,sprenger_interplay_2019,sobral-rey_interplay_2022}. Second, the same wiring must not introduce an excessive heat load from room temperature to the millikelvin stage and must thermalize the electronic degrees of freedom close to the sample temperature. The wiring concept therefore follows the same general strategy as the earlier MCBJ and SET setups in the group~\cite{lorenz_wechselspiel_2018, prestel_magnetic_2020}: resistive low-thermal-conductance wiring is used between temperature stages, the lines are thermalized and filtered repeatedly, and the most sensitive components are mounted close to the sample at the base-temperature stage.
+
+        Figure~\ref{fig:methods:setup} shows the custom wiring used in this work. The sample is mounted at the base-temperature stage and connected by short copper wires with pin heads. Those pinheads separates the different electrical terminals of the device: the bias contacts across the MCBJ--tunnel-barrier series circuit, the DC gate, the AC gate, the antenna line, thermometer wiring, and heater wiring. Short copper wires are used only in the immediate sample region, where good thermalization and low contact resistance are required. From the pin heads onward, the low-frequency lines are routed as coaxial twisted pairs. This geometry reduces inductive pickup, keeps the two wires of a differential signal close to the same electromagnetic environment, and provides additional shielding through the outer conductor. The high-frequency drive lines are routed separately as coaxial microwave lines.
+
         \subsubsection*{DC Filtering}
-        Steel Capilary, Twisted Pair, CP Filter, Silver Epoxy Filter
+        The DC wiring carries the slowly varying bias and gate voltages as well as the voltage signals used to determine the current and the sample voltage. The bias circuit is operated in a quasi-DC mode. The externally applied voltage is swept slowly, while the actual sample voltage and the current through the device are recorded simultaneously. This is important because the MCBJ conductance can change over several orders of magnitude and because the voltage division between reference resistors, filters, wiring impedance, and sample depends on the instantaneous device resistance. Measuring both voltage and current directly avoids relying only on the programmed source voltage.
 
-        \subsubsection*{Thermometry}
-        Heater and Lakeshore
+        The low-frequency lines are filtered and thermalized in several stages. The custom-built copper-powder filters are mounted at the base-temperature stage and suppress high-frequency radiation that would otherwise couple to the sample through the DC leads. In these filters, the signal wire is embedded in compacted copper powder inside a metallic housing. The wire and the surrounding powder form a lossy distributed transmission line: at high frequencies, currents are increasingly confined to the wire surface by the skin effect, while the electromagnetic field couples dissipatively into the surrounding metallic powder. The resulting attenuation is broadband and does not rely on a single lumped resonance. At the same time, the large metal--metal contact area between wire, powder, and housing provides an efficient thermal anchor for the electronic degrees of freedom in the line. This combination of microwave attenuation and thermalization is the main reason why copper-powder filters are commonly used in cryogenic low-level transport measurements~\cite{thalmann_comparison_2017}.
 
+        The attenuation of such distributed filters depends on the conductor material, wire diameter, packing and geometry of the powder, and the thermalization of the filter body. Measurements on comparable cryogenic filter types show that capillary wiring and powder filters can provide strong attenuation in the GHz range, but also that the detailed transmission depends on the conductor material and can contain frequency windows with reduced attenuation. Using several filtering and thermalization stages therefore makes the filtering more robust than relying on a single component. In addition to the copper-powder filters, commercial MFT25 microwave filter--thermalizers are used on selected lines. According to the manufacturer, these filters embed the signal conductor in a highly conductive silver matrix, which acts as a heat exchanger, and the compact MFT25 package contains 25 such filter lines in a gold-plated non-magnetic copper box. The manufacturer specifies strong microwave attenuation above 130\,MHz together with low capacitance and good thermal contact to the millikelvin stage. In this setup, the MFT25 filters are therefore used as compact commercial microwave filter--thermalizers rather than as the only low-pass element of the DC measurement chain.
+
+        The combination of resistive wiring, twisted-pair geometry, copper-powder filters, commercial MFT25 filter--thermalizers, and cold thermal anchoring reduces externally injected noise and helps to keep the electronic temperature of the sample close to the base-temperature environment.
+
+        The reference resistors are mounted in the shielded base-temperature region close to the sample. Their voltage drop is used to infer the current through the device. Placing these resistors cold and close to the sample reduces the length of the high-impedance part of the circuit and keeps the current measurement in the same filtered environment as the sample. The reference-resistor region is additionally shielded, as indicated in Fig.~\ref{fig:methods:setup}, to reduce capacitive pickup from neighboring lines. This is particularly relevant for superconducting subgap measurements, where small current contributions must be resolved on top of a strongly nonlinear current--voltage characteristic.
+
+        %=========================================================
         \subsubsection*{AC Cabling}
-        Attenuators, Antenna Stripline
+        %=========================================================
 
-        \subsection*{Mesurement Devices}
-        Adwin, Femto, VNA, Lakeshore
+        In addition to the DC bias and gate lines, the setup contains two high-frequency paths for microwave excitation. One path drives the AC gate on the sample chip, while the other drives the on-chip antenna or stripline. Both are routed as coaxial lines, because at GHz frequencies impedance control, shielding, and reproducible attenuation matter more than the low-frequency symmetry that is useful for the DC wiring. The microwave lines are thermalized by attenuators mounted at cryogenic stages. In the present setup, the attenuators indicated in Fig.~\ref{fig:methods:setup} are mounted at the 4\,K stage, where they suppress room-temperature microwave noise and define part of the total transmission to the sample.
+
+        The important point is not that these two paths realize fundamentally different excitation schemes. Rather, they exhibit different transmission to the sample, and that transmission depends on frequency. That difference is useful, because it gives access to different effective power windows for different microwave tones without requiring an absolute calibration of the local field. Together with Patrick Raif~\cite{raif_electronic_2024}, we showed that both paths act, in practice, like antennas for the device: part of the microwave power is launched already at the pin head, and from the point of view of the sample the two paths behave more like two different antennas than like two sharply separated drive mechanisms. The AC gate couples capacitively to the island region, while the stripline or antenna couples through the local microwave field in the sample vicinity. What we can state reliably is the relative transmission difference between the paths, not the absolute microwave amplitude at the junction.
+
+        %=========================================================
+        \subsubsection*{Thermometry and Heating}
+        %=========================================================
+
+        The sample space is also equipped with thermometer and heater wiring to monitor and control the local temperature of the base-temperature stage. These lines are routed separately from the transport and microwave paths so that heater or thermometer signals do not leak into the sample circuit. The thermometer provides the local cryostat temperature during cooldown, thermalization, and measurements. The heater allows controlled heating of the stage, for example for thermal cycling, temperature-dependent checks, or recovery after mechanical motion of the break junction has dissipated heat into the cold stage.
+
+        The thermometer and heater lines are filtered and thermalized for the same reason as the transport lines: they connect room-temperature electronics to the millikelvin stage and can therefore act as both thermal and electrical noise channels. Their requirements are less restrictive than those of the transport lines with respect to voltage noise at the sample, but they still have to be sufficiently well anchored to avoid parasitic heating. In practice, the thermometer and heater wiring is therefore treated as part of the same cryogenic wiring system rather than as auxiliary cabling that can be ignored once the electrical transport circuit is defined.
+
+        %=========================================================
+        \subsubsection*{Used Devices and Grounding Schematic}
+        %=========================================================
+        \begin{figure}[t!]
+            \centering
+            {\fontsize{6}{9}\selectfont
+            \import{methods/setup/electric}{grounding-schema.pdf_tex}
+            }
+            \caption{Schematics of all used devices and their grounding connection. The ground of the building and the cryostat are carefully separated, except a 13\,M\textohm\ short~(G) between the temperature controller and the cryostat. The motor controller and LAN switch are not connected to ground, since their plug does not support a ground. The powersupply of the magnet remains ungrounded, since it provided the cleanest spectra this way.}
+            \label{fig:methods:grounding}
+        \end{figure}
+
+        Cryostat is its own ground, since its a huge metallic mass so it can be floating and stable. And no separated measurement ground is available as in P5\cite{lorenz_wechselspiel_2018}.
+
+        Computer that is connected to a LAN. GPIB and RS-232 are adapted to usb. USB connection are either separated by USB-over-LAN or by Groundtrenner.
+        Cryostat control unit\footnote{Bluefors LD400, connected by USB}
+        
+        in order to amplify the voltage signals, voltage pre-amplifiers\footnote{Femto Pre-Amplifier DLPVA, Power supply \texttt{WW-98000627}, connected by Luci10} are used. The provide a lowpass of about 100khz and amplifications of 20, 40, 60, 80dB. The output voltage of the amplifier is in respect to gorund. The amplified signal is then digitized i nrespect to ground in the DAC of a measurement card\footnote{ADwin Gold II, connected by LAN} with high prezision, with up to 100kHz, however is sampled down in the adwin already, since it is way to much data. This first downsampling has to be proven to be reasonably down to 137 Hz.
+
+        The bias voltage is applied by a ADC in the same measurement card, and becomes divided by a symmetric voltage divider (in order to preserve resolution in the decired area) and passes a low-pass filter\footnote{Thorlabs EF120}. Here we want low resistances to reduce noise and less impact on the bias situation. However it also needs to be big enough to to meaningfull division.
+        \begin{equation}
+            V_divided = V_bias / (2*R_series/R_shunt + 1)
+        \end{equation}
+        Reason for making the Voltage divider warm (in contrast to \cite{prestel_magnetic_2020}) is that we can run diagnositcs on the filters and grounding, even in cold state, as in \cite{lorenz_wechselspiel_2018}. The shunt in the bias line inside the crystat, leaves you little tools of diagnostics.
+
+        We apply a symmetrical bias, meaning one electrode is +Vbias/2 and the other is -Vbias/2 in respect to ground. We linearly ramp the voltage down and up, with period length reaching 5min and longer.
+
+        An arbitrary DC gate voltage $V_gate$ is applied via a high precision source\footnote{Yokogawa GS200, connected by GPIB} with respect to ground.
+
+        All those DC lines are passed through a break-out box\footnote{Major Tom \texttt{WW-2280090}} into the commercial cabling of the cryostat.
+
+        The AC gate and antenna are connected to the two ports of a vector network analyzer (VNA)\footnote{Rohde \& Schwarz ZNB40, connected by LAN}. 
+
+        The sample heater and sample thermometer, as well as other auxillary thermometer are measured with a AC resistance bride\footnote{Lakeshore 372AC \& 3726, connected by USB}.
+
+        The motor is driven by an encoded motor incl. driver\footnote{Faulhaber 2232R024S R IE2-1024 4613, Driver, connected by RS-232}.
+
+        Also in addition a one-axis 7T Magnet\footnote{American Instruments Inc. AMI430, connected by LAN} (four quadrant?) is used in times to supress superconductivity.
+
+        For diagnositcs additional a power source\footnote{Keysight B2962A, connected by LAN} and multiple digital multimeters\footnote{Keysight 34461A, connected by LAN} are used.
+
+        For highest spectra quality, the magnet controler and power supply are usually disconnected, as well the communication cable of pre-amplifiers are disconnected.
