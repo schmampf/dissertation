@@ -1,9 +1,12 @@
 % !TEX root = ../thesis.tex
 
 %=========================================================
+%=========================================================
 \section{Experimental Setup}
 \label{section:setup}
 %=========================================================
+
+    The experimental setup combines a dilution refrigerator, a mechanically controlled break junction, and a filtered low-noise wiring environment. Together, these subsystems define the conditions under which superconducting atomic contacts and tunnel devices can be formed, tuned, and measured. The cryostat provides the millikelvin thermal environment required to resolve superconducting energy scales. The break-junction mechanics allows the conductance of the atomic contact to be adjusted in situ from the tunneling regime to few-channel and atomic-scale contacts. The electrical wiring, filtering, microwave lines, and grounding scheme determine the bias condition, noise environment, thermalization, and high-frequency coupling to the sample. This section describes these elements in the order in which they constrain the measurement: first the cryogenic environment, then the mechanical contact tuning, and finally the electrical measurement chain.
 
     %=========================================================
     \subsection{Cryostat}
@@ -257,46 +260,27 @@
         The thermometer and heater lines are filtered and thermalized for the same reason as the transport lines: they connect room-temperature electronics to the millikelvin stage and can therefore act as both thermal and electrical noise channels. Their requirements are less restrictive than those of the transport lines with respect to voltage noise at the sample, but they still have to be sufficiently well anchored to avoid parasitic heating. In practice, the thermometer and heater wiring is therefore treated as part of the same cryogenic wiring system rather than as auxiliary cabling that can be ignored once the electrical transport circuit is defined.
 
         %=========================================================
-        \subsubsection*{Used Devices and Grounding Schematic}
+        \subsubsection*{Instrumentation and Grounding Schematic}
         %=========================================================
         \begin{figure}[t!]
             \centering
             {\fontsize{6}{9}\selectfont
             \import{methods/setup/electric}{grounding-schema.pdf_tex}
             }
-            \caption{Schematics of all used devices and their grounding connection. The ground of the building and the cryostat are carefully separated, except a 13\,M\textohm\ short~(G) between the temperature controller and the cryostat. The motor controller and LAN switch are not connected to ground, since their plug does not support a ground. The powersupply of the magnet remains ungrounded, since it provided the cleanest spectra this way.}
+            \caption{Grounding and instrument schematic of the room-temperature setup. Building ground and cryostat ground are kept separate except for a 13\,M\textohm{} connection~(G) through the temperature controller. The motor controller (B) and LAN switch (W) are floating because their plugs do not provide a protective-earth connection. The magnet power supply (Y) was also operated floating, which minimized the observed noise in the measured spectra.}
             \label{fig:methods:grounding}
         \end{figure}
 
-        Cryostat is its own ground, since its a huge metallic mass so it can be floating and stable. And no separated measurement ground is available as in P5\cite{lorenz_wechselspiel_2018}.
+        Figure~\ref{fig:methods:grounding} summarizes the room-temperature instruments and their grounding connections. The cryostat was treated as the local ground reference of the experiment. This is practical because the cryostat is a large metallic body with a stable electrical potential, while the setup did not provide a separate measurement ground comparable to the P5 setup~\cite{lorenz_wechselspiel_2018}. The main grounding rule was therefore to avoid uncontrolled loops between building ground, computer interfaces, and the cryostat body. The control computer was connected to the laboratory network, while GPIB and RS-232 instruments were interfaced through USB adapters. USB connections were isolated either by USB-over-LAN links or by galvanic USB isolators. The cryostat control unit\footnote{Bluefors LD400, connected by USB} was included in this isolated control chain.
 
-        Computer that is connected to a LAN. GPIB and RS-232 are adapted to usb. USB connection are either separated by USB-over-LAN or by Groundtrenner.
-        Cryostat control unit\footnote{Bluefors LD400, connected by USB}
-        
-        in order to amplify the voltage signals, voltage pre-amplifiers\footnote{Femto Pre-Amplifier DLPVA, Power supply \texttt{WW-98000627}, connected by Luci10} are used. The provide a lowpass of about 100khz and amplifications of 20, 40, 60, 80dB. The output voltage of the amplifier is in respect to gorund. The amplified signal is then digitized i nrespect to ground in the DAC of a measurement card\footnote{ADwin Gold II, connected by LAN} with high prezision, with up to 100kHz, however is sampled down in the adwin already, since it is way to much data. This first downsampling has to be proven to be reasonably down to 137 Hz.
+        The voltage signals were first amplified by voltage preamplifiers\footnote{Femto Pre-Amplifier DLPVA, power supply \texttt{WW-98000627}, communication Luci10, connected by USB}. These amplifiers provide selectable gains and a low-pass bandwidth of about 100\,kHz. Their output voltage is referenced to ground and is digitized by the analog inputs of the measurement card\footnote{ADwin Gold II, connected by LAN}. Although the ADwin can sample at rates up to 100\,kHz, much faster than required for the quasi-dc sweeps used here, the data stream was reduced on the ADwin to 137\,Hz.
 
-        The bias voltage is applied by a ADC in the same measurement card, and becomes divided by a symmetric voltage divider (in order to preserve resolution in the decired area) and passes a low-pass filter\footnote{Thorlabs EF120}. Here we want low resistances to reduce noise and less impact on the bias situation. However it also needs to be big enough to to meaningfull division.
-        \begin{equation}
-            V_divided = V_bias / (2*R_series/R_shunt + 1)
-        \end{equation}
-        Reason for making the Voltage divider warm (in contrast to \cite{prestel_magnetic_2020}) is that we can run diagnositcs on the filters and grounding, even in cold state, as in \cite{lorenz_wechselspiel_2018}. The shunt in the bias line inside the crystat, leaves you little tools of diagnostics.
+        The bias voltage was generated by an analog output of the same measurement card. Before entering the cryostat wiring, it passed through a warm symmetric voltage divider and a low-pass filter\footnote{Thorlabs EF120}. The divider reduced the full output range of the card to the voltage window relevant for the sample, thereby improving the effective bias resolution. Its resistances were chosen low enough that their thermal noise and their contribution to the total source impedance remained limited. The divider was kept at room temperature, in contrast to the cold shunt used in Ref.~\cite{prestel_magnetic_2020}. This choice preserved access to filter, wiring, and grounding diagnostics during cooldown and low-temperature operation, following the same practical motivation as in Ref.~\cite{lorenz_wechselspiel_2018}. A shunt mounted inside the cryostat would have fixed part of the bias environment locally, but it would also have made several grounding and continuity checks inaccessible during a cooldown.
 
-        We tested several combination of available Power Sources, Amplifier and Multimeter for the lowest noise floor. a single device for reading out two voltage signals bear another advantage, since the tuple is measured always at the same time.
+        Several combinations of available voltage sources, amplifiers, and multimeters were tested before settling on the configuration shown in Fig.~\ref{fig:methods:grounding}. The practical optimization criterion was the low-frequency noise in the recorded sample- and reference-voltage channels under the same filtering and grounding conditions used for transport measurements. Using one measurement card for both voltage channels also ensured that the sample-voltage and reference-voltage readings were acquired as synchronized pairs. During a typical measurement, the bias was applied symmetrically around ground, so that the common-mode voltage of the sample remained close to zero. The voltage was then ramped slowly down and up, with full periods of 5\,min or longer.
 
-        We apply a symmetrical bias, meaning one electrode is +Vbias/2 and the other is -Vbias/2 in respect to ground. We linearly ramp the voltage down and up, with period length reaching 5min and longer.
+        The remaining instruments can be grouped by function. The DC gate voltage was applied with respect to ground by a high-precision voltage source\footnote{Yokogawa GS200, connected by GPIB}, and all DC lines were routed through a break-out box\footnote{Major Tom \texttt{WW-2280090}} into the commercial cryostat cabling. The microwave excitation paths were driven by the two ports of a vector network analyzer\footnote{Rohde \& Schwarz ZNB40, connected by LAN}, which were connected to the AC gate and antenna lines. Temperature monitoring and local heating were handled by an AC resistance bridge\footnote{Lakeshore 372AC \& 3726, connected by USB}, which read out the sample heater, the sample thermometer, and auxiliary thermometers. Mechanical actuation of the break junction was provided by an encoded motor and driver\footnote{Faulhaber Motor 2232R024S, Encoder R IE2-1024 4613, Driver MCDC3002S RS, Gear Head 22/2S, connected by RS-232}. A one-axis 7\,T magnet supply\footnote{American Magnetics Inc. AMI430, connected by LAN} was used when superconductivity had to be suppressed. Additional diagnostic access was provided by a precision source\footnote{Keysight B2962A, connected by LAN} and several digital multimeters\footnote{Keysight 34461A, connected by LAN}.
 
-        An arbitrary DC gate voltage $V_gate$ is applied via a high precision source\footnote{Yokogawa GS200, connected by GPIB} with respect to ground.
+        For the lowest-noise spectra, devices that were not required during the actual sweep were disconnected from the setup. In particular, the magnet controller and magnet power supply were usually disconnected when not in use. The communication cables of the preamplifiers were removed whenever remote gain control was not needed. This reduced the number of possible ground-loop and pickup paths connected to the sensitive voltage-readout circuit.
 
-        All those DC lines are passed through a break-out box\footnote{Major Tom \texttt{WW-2280090}} into the commercial cabling of the cryostat.
-
-        The AC gate and antenna are connected to the two ports of a vector network analyzer (VNA)\footnote{Rohde \& Schwarz ZNB40, connected by LAN}. 
-
-        The sample heater and sample thermometer, as well as other auxillary thermometer are measured with a AC resistance bride\footnote{Lakeshore 372AC \& 3726, connected by USB}.
-
-        The motor is driven by an encoded motor incl. driver\footnote{Faulhaber 2232R024S R IE2-1024 4613, Driver, connected by RS-232}.
-
-        Also in addition a one-axis 7T Magnet\footnote{American Instruments Inc. AMI430, connected by LAN} (four quadrant?) is used in times to supress superconductivity.
-
-        For diagnositcs additional a power source\footnote{Keysight B2962A, connected by LAN} and multiple digital multimeters\footnote{Keysight 34461A, connected by LAN} are used.
-
-        For highest spectra quality, the magnet controler and power supply are usually disconnected, as well the communication cable of pre-amplifiers are disconnected.
+        The final grounding configuration was therefore not imposed by the nominal instrument grounds alone, but selected empirically from configurations that preserved a well-defined cryostat reference while minimizing pickup in the measured voltage channels.
