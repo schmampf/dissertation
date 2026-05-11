@@ -213,17 +213,22 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 
 ## Instrumentation and Grounding
 
-- [ ] State the practical grounding rule in one crisp sentence.
-- [ ] Make clear that the cryostat was used as the local experimental ground reference.
-- [ ] Document which instruments were floating, isolated, connected to building ground, or disconnected during sensitive measurements.
-- [ ] Add a table or compact list of instruments if the prose becomes too dense.
-- [ ] Include interface types only where they matter for grounding or synchronization.
-- [ ] Add the empirical optimization criterion: low-frequency noise in the sample- and reference-voltage channels under measurement conditions.
+- [x] State the practical grounding rule in one crisp sentence.
+  -> Added: instruments connect to the cryostat reference only through intended signal paths or deliberately isolated control links.
+- [x] Make clear that the cryostat was used as the local experimental ground reference.
+- [x] Document which instruments were floating, isolated, connected to building ground, or disconnected during sensitive measurements.
+  -> Added isolated USB/USB-over-LAN control chain, LAN-connected instruments, floating motor controller/LAN switch, and disconnected magnet/diagnostic devices.
+- [x] Add a table or compact list of instruments if the prose becomes too dense.
+  -> Kept prose grouped by function. No table needed yet.
+- [x] Include interface types only where they matter for grounding or synchronization.
+  -> Kept GPIB, RS-232, USB, LAN, measurement-card synchronization, and Lake Shore 372AC continuous sample-thermometer readout where they affect grounding, isolation, paired voltage readout, or PID temperature control.
+- [x] Add the empirical optimization criterion: low-frequency noise in the sample- and reference-voltage channels under measurement conditions.
 - [ ] Add the measured or representative noise level if available.
-- [ ] Clarify the role of USB isolation, USB-over-LAN, GPIB, RS-232, and LAN connections.
-- [ ] Explain why the magnet supply and unused devices were disconnected during low-noise spectra.
-- [ ] State the limits of the grounding solution: optimized empirically, not a universal ground model.
-- [ ] Connect grounding quality to the measured `\textit{I--V}` stability and spectral cleanliness.
+  -> Still open until a representative measured value is available.
+- [x] Clarify the role of USB isolation, USB-over-LAN, GPIB, RS-232, and LAN connections.
+- [x] Explain why the magnet supply and unused devices were disconnected during low-noise spectra.
+- [x] State the limits of the grounding solution: optimized empirically, not a universal ground model.
+- [x] Connect grounding quality to the measured `\textit{I--V}` stability and spectral cleanliness.
 
 ## Figures and Captions
 
