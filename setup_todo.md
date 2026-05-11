@@ -50,17 +50,20 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 - [x] Trim or tighten pulse-tube theory so it supports the specific experimental constraints: precooling, vibration, thermal anchoring, and maintenance.
   -> First pass done. The section still keeps the physics explanation, but the framing now states why it matters for the LD400 and for transport measurements.
 - [ ] Add setup-specific values if available:
-  - [ ] typical base temperature
-    -> Added nominal 8.5 mK and practical installed-experiment value of about 40 mK.
-  - [ ] typical mixing-chamber temperature during measurements
-    -> Added approximate 40 mK value. Still check against representative cooldown logs.
-  - [ ] cooldown time
-  - [ ] condensation time
+  - [x] typical base temperature
+    -> Added manufacturer-specified 8 mK expected base temperature and practical installed-experiment values of about 30--40 mK.
+  - [x] typical mixing-chamber temperature during measurements
+    -> Added practical 30--40 mK range.
+  - [x] cooldown time
+    -> Added about 36 h to cool to the few-kelvin regime including the magnet, plus about 3 h from 4 K to base.
+  - [x] condensation time
+    -> Added about 1 h.
   - [x] warm-up time
     -> Added normal Bluefors warm-up script duration of about 2--3 days.
-  - [ ] still temperature range
+  - [x] still temperature range
     -> Added approximate still temperature of about 1 K.
-  - [ ] 4 K and 40 K stage temperatures
+  - [x] 4 K and 40 K stage temperatures
+    -> Added typical 40 K stage near 47 K and 4 K stage near 3.2 K.
   - [x] circulation rate
     -> Not available. Martin Prestel did not record a recoverable circulation-rate value, and the relevant logs are lost. Do not keep this as an open TODO.
   - [x] cooling power or manufacturer specification if relevant
@@ -82,28 +85,37 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 - [x] Connect dilution cooling explicitly to electronic temperature, filter thermalization, and measurement resolution.
 - [ ] Add a final cryostat takeaway that states the practical temperature and stability conditions under which the measurements were performed.
   -> Added that the MCBJ could be moved step by step while remaining in the 40 mK regime, so base-temperature stability was not the dominant limitation compared with microwave heating.
-  -> Conceptual takeaway added. Nominal 8.5 mK, practical about 40 mK, still about 1 K, and week-scale contact stability added. Still needs cooldown time, condensation time, and stage temperatures where available.
+  -> Conceptual takeaway added. Practical 30--40 mK range, still about 1 K, cooldown and condensation times, stage temperatures, and week-scale contact stability added.
 
 ## MCBJ Mechanics
 
-- [ ] Make the MCBJ section read as a controlled mechanical reduction chain from motor rotation to atomic-contact elongation.
-- [ ] Add or verify the mechanical reduction factor from substrate bending to junction elongation if available.
-- [ ] Add the effective displacement per motor step or per encoder count if available.
-- [ ] Verify and document the differential screw pitch calculation.
+- [x] Make the MCBJ section read as a controlled mechanical reduction chain from motor rotation to atomic-contact elongation.
+  -> First pass done. The section now distinguishes motor/drive motion, differential-screw feed, bending, and atomic-contact response.
+- [x] Add or verify the mechanical reduction factor from substrate bending to junction elongation if available.
+  -> Not independently calibrated in this work. The text now states this explicitly and treats position operationally through relative displacement and conductance response.
+- [x] Add the effective displacement per motor step or per encoder count if available.
+  -> Raw encoder units are intentionally not used because the scale is inconvenient and not physically transparent. The text now uses the relative 0--18 displacement coordinate, corresponding to 30 differential-screw revolutions and 3 mm macroscopic screw feed.
+- [x] Verify and document the differential screw pitch calculation.
+  -> Kept effective feed of 0.1 mm per revolution.
 - [ ] Add the total gearbox reduction before and after the modifications.
-- [ ] Explain why the gearbox redistribution improved reliability using torque, heat load, and failure mode language.
-- [ ] State which parts were redesigned during this work and which were inherited from earlier group setups.
-- [ ] Rework CAD-style captions into thesis captions that state function and consequence.
-- [ ] Add practical assembly knowledge for successors:
-  - [ ] alignment while rotating slowly
-  - [ ] gearbox cleaning procedure
-  - [ ] lubricant removal
-  - [ ] solvent and moisture removal
-  - [ ] feedthrough lubrication
-  - [ ] failure signs during cooldown or operation
-- [ ] Decide whether detailed workshop project numbers belong in captions, footnotes, or an appendix.
-- [ ] Connect the mechanics to observable behavior: stable tunneling traces, contact opening and closing, access to few-channel contacts, and reduced risk of motor failure.
-- [ ] End with a clear takeaway on reproducibility and stability of contact tuning.
+- [x] Explain why the gearbox redistribution improved reliability using torque, heat load, and failure mode language.
+  -> Added failure mode: high torque at the first gearbox plus a blockage lower in the drive train can deform the drive rod or decouple the gearbox from the following shaft.
+- [x] State which parts were redesigned during this work and which were inherited from earlier group setups.
+  -> Added that the inherited platform is from Fischer/Prestel, while motor mounting and gearbox distribution/replacements were part of this work.
+- [x] Rework CAD-style captions into thesis captions that state function and consequence.
+- [x] Add practical assembly knowledge for successors:
+  - [x] alignment while rotating slowly
+  - [x] gearbox cleaning procedure
+  - [x] lubricant removal
+  - [x] solvent and moisture removal
+  - [x] feedthrough lubrication
+  - [x] failure signs during cooldown or operation
+    -> Added cold-function diagnostic: intentional motion should produce sample-stage heating, sometimes up to about 1 K. Monitor gas-handling pressure because still heat load can cause overpressure.
+- [x] Decide whether detailed workshop project numbers belong in captions, footnotes, or an appendix.
+  -> Moved workshop project numbers from captions to footnotes.
+- [x] Connect the mechanics to observable behavior: stable tunneling traces, contact opening and closing, access to few-channel contacts, and reduced risk of motor failure.
+- [x] End with a clear takeaway on reproducibility and stability of contact tuning.
+  -> Added final paragraph: after the gearbox distribution, motor mount, slip clutch, feedthrough lubrication, and assembly procedure were revised, the mechanics could be operated reliably during cooldown and at base temperature.
 
 ## Measurement Circuit
 
