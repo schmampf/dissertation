@@ -247,6 +247,7 @@
         %=========================================================
         \subsubsection*{Wiring inside Cryostat}
         %=========================================================
+
         \begin{figure}[t!]
             \centering
             {\fontsize{7}{9}\selectfont
@@ -262,7 +263,10 @@
 
         The sample is mounted at the base-temperature stage and connected through pin headers. The local sample contacts are made from 90\,\textmu m insulated copper wires, which are soldered to the pin headers and attached to the sample pads with conductive silver paste. This short copper section provides low contact resistance and good thermal anchoring near the device. The voltage and current leads define a four-terminal measurement with respect to the cryostat wiring, but not an ideal Kelvin measurement of the junction alone, because the local copper wires, silver-paste contacts, and sample pads remain inside the measured sample region. The high-frequency drive lines are routed separately as coaxial microwave lines.
 
+        %=========================================================
         \subsubsection*{DC Filtering}
+        %=========================================================
+
         The DC wiring carries the slowly varying bias and gate voltages as well as the voltage signals used to determine the current and the sample voltage. The bias circuit is operated in a quasi-DC mode. The externally applied voltage is swept slowly, while the actual sample voltage and the current through the device are recorded simultaneously. This is important because the MCBJ conductance can change over several orders of magnitude and because the voltage division between reference resistors, filters, wiring impedance, and sample depends on the instantaneous device resistance. Measuring both voltage and current directly avoids relying only on the programmed source voltage.
 
         The low-frequency lines are filtered and thermalized in several stages. Six copper-powder filters are mounted at the base-temperature stage, one each for the voltage, bias, current, heater, thermometer, and DC-gate lines. These filters are inherited group-built components based on the filter concept described in Ref.~\cite{thalmann_comparison_2017}. In this filter type, a copper signal wire is embedded in compacted copper powder inside a gold-plated copper housing. The filter therefore has a low resistance for DC and low-frequency signals, but becomes increasingly lossy at high frequency. The relevant mechanism is the skin effect: microwave currents are confined closer to the surface of the signal wire, and the surrounding copper powder provides a dissipative electromagnetic environment. The resulting attenuation is broadband and is not set by a single RC cutoff or lumped resonance. The copper-powder filters therefore act as a robust broadband safety stage against microwave leakage, while the large metal--metal contact area between wire, powder, and housing also provides an efficient thermal anchor for the electronic degrees of freedom in the line. The important point for the present setup is their role in the filter stack. They add broadband high-frequency loss without adding a large DC resistance to the measurement circuit. Using them in series with a commercial filter--thermalizer makes the electrical environment more robust than relying on a single low-pass element.
@@ -274,6 +278,15 @@
         The reference resistors are mounted in the shielded base-temperature region close to the sample. In an earlier configuration they were located at the still stage. Moving them to the base-temperature stage reduces their Johnson--Nyquist voltage noise, whose spectral density scales as $\sqrt{T}$, and keeps the current readout in the same cold filtered environment as the sample. The design was also made mechanically more robust. An earlier through-hole metal-oxide resistor developed intermittent contacts, while the revised design uses an SMD resistor on a small chip, which provides better thermal contact and a less fragile electrical connection. Before cooldown, the wiring was checked by measuring the resistance matrix between the relevant ports and by verifying the ground connections of the lines. The reference-resistor region is additionally shielded, as indicated in Fig.~\ref{fig:setup:setup}, to reduce capacitive pickup from neighboring lines. This is particularly relevant for superconducting subgap measurements, where small current contributions must be resolved on top of a strongly nonlinear current--voltage characteristic.
 
         %=========================================================
+        \subsubsection*{Thermometry and Heating}
+        %=========================================================
+
+        The sample space is also equipped with thermometer and heater wiring to monitor and control the local temperature of the base-temperature stage. These lines are routed separately from the transport and microwave paths so that heater or thermometer signals do not leak into the sample circuit. The thermometer provides the local cryostat temperature during cooldown, thermalization, and measurements. The heater allows controlled heating of the stage, for example for thermal cycling, temperature-dependent checks, or recovery after mechanical motion of the break junction has dissipated heat into the cold stage.
+
+        The thermometer and heater lines are filtered and thermalized for the same reason as the transport lines: they connect room-temperature electronics to the millikelvin stage and can therefore act as both thermal and electrical noise channels. Their requirements are less restrictive than those of the transport lines with respect to voltage noise at the sample, but they still have to be sufficiently well anchored to avoid parasitic heating. In practice, the thermometer and heater wiring is therefore treated as part of the same cryogenic wiring system rather than as auxiliary cabling that can be ignored once the electrical transport circuit is defined.
+
+
+        %=========================================================
         \subsubsection*{AC Cabling}
         %=========================================================
 
@@ -282,16 +295,9 @@
         The important point is not that these two paths realize fundamentally different excitation schemes. Rather, they exhibit different transmission to the sample, and that transmission depends on frequency. That difference is useful, because it gives access to different effective power windows for different microwave tones without requiring an absolute calibration of the local field. Together with Patrick Raif~\cite{raif_electronic_2024}, we showed that both paths act, in practice, like antennas for the device: part of the microwave power is launched already at the pin head, and from the point of view of the sample the two paths behave more like two different antennas than like two sharply separated drive mechanisms. The AC gate couples capacitively to the island region, while the stripline or antenna couples through the local microwave field in the sample vicinity. What we can state reliably is the relative transmission difference between the paths, not the absolute microwave amplitude at the junction.
 
         %=========================================================
-        \subsubsection*{Thermometry and Heating}
-        %=========================================================
-
-        The sample space is also equipped with thermometer and heater wiring to monitor and control the local temperature of the base-temperature stage. These lines are routed separately from the transport and microwave paths so that heater or thermometer signals do not leak into the sample circuit. The thermometer provides the local cryostat temperature during cooldown, thermalization, and measurements. The heater allows controlled heating of the stage, for example for thermal cycling, temperature-dependent checks, or recovery after mechanical motion of the break junction has dissipated heat into the cold stage.
-
-        The thermometer and heater lines are filtered and thermalized for the same reason as the transport lines: they connect room-temperature electronics to the millikelvin stage and can therefore act as both thermal and electrical noise channels. Their requirements are less restrictive than those of the transport lines with respect to voltage noise at the sample, but they still have to be sufficiently well anchored to avoid parasitic heating. In practice, the thermometer and heater wiring is therefore treated as part of the same cryogenic wiring system rather than as auxiliary cabling that can be ignored once the electrical transport circuit is defined.
-
-        %=========================================================
         \subsubsection*{Instrumentation and Grounding Schematic}
         %=========================================================
+        
         \begin{figure}[t!]
             \centering
             {\fontsize{6}{9}\selectfont
