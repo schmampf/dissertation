@@ -35,14 +35,6 @@ Inline tags in source files use the format `TODO[ID]` and map to the IDs below.
 - [ ] [THY-03] `/Users/oliver/Documents/dissertation/theory/basics.tex` Replace placeholder marker in ballistic-scattering figure block.
 - [ ] [THY-04] `/Users/oliver/Documents/dissertation/theory/stochastic.tex` Early draft pass: tighten structure, clean language, and align with final thesis terminology.
 
-## Methods chapter completion
-
-- [ ] [MTH-01] `/Users/oliver/Documents/dissertation/methods/setup.tex` Replace scaffold headings with complete text for cryostat, MCBJ, DC cabling, and AC cabling.
-- [ ] [MTH-02] `/Users/oliver/Documents/dissertation/methods/setup.tex` Remove "Danke Martin!" and replace with technical content.
-- [ ] [MTH-03] `/Users/oliver/Documents/dissertation/methods/sample.tex` Replace placeholder captions for MCBJ, SEM/stamp, flowchart, and EBL design figures.
-- [ ] [MTH-04] `/Users/oliver/Documents/dissertation/methods/sample.tex` Remove "Polished up to here" note after full revision.
-- [ ] [MTH-05] `/Users/oliver/Documents/dissertation/methods/appendix.tex` Replace placeholder captions ("blabla", "here goes some text") with final captions.
-
 ## Front matter and end matter
 
 - [ ] [FME-01] `/Users/oliver/Documents/dissertation/miscellaneous/abstract.tex` Write German summary and English abstract.
