@@ -15,13 +15,17 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 
 ## Structure and Narrative
 
-- [ ] Decide the role of each main block: cryostat, MCBJ mechanics, electrical measurement chain, microwave coupling, thermometry, and grounding.
-- [ ] Add a short roadmap at the start that explains why this order is used.
-- [ ] Make each subsection answer three questions:
+- [x] Decide the role of each main block: cryostat, MCBJ mechanics, electrical measurement chain, microwave coupling, thermometry, and grounding.
+  -> Added roadmap framing by experimental constraint: cryogenic operating window, mechanical contact tuning, then electrical interpretation environment.
+- [x] Add a short roadmap at the start that explains why this order is used.
+  -> Added an explicit roadmap after the setup overview.
+- [x] Make each subsection answer three questions:
   - What does this subsystem do?
   - What constraints does it impose on the measurement?
   - What was specific, changed, or learned during this work?
-- [ ] End each major subsection with a short takeaway paragraph.
+  -> Cryogenic environment, MCBJ mechanics, and electrical measurement environment now each state function, measurement constraint, and project-specific lessons.
+- [x] End each major subsection with a short takeaway paragraph.
+  -> Cryogenic, MCBJ, and electrical sections now each close with an interpretation/reproducibility takeaway.
 - [x] Check whether `Electrical Wiring` should be renamed to something broader, for example `Electrical Measurement Environment`, because it includes instrumentation and grounding.
 - [x] Check whether the starred subsubsections should become numbered subsubsections so they can be referenced later.
   -> No, it is fine that they are not numbered. I do not want to have four numbered references.
