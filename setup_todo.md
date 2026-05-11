@@ -6,8 +6,11 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 
 - [ ] Make the setup section read as a mature experimental methods section, not as a collection of notes.
 - [ ] Make clear which parts are general cryogenic or electrical principles, which parts describe the specific LD400 setup, and which parts were modified during this work.
+  -> Started for the cryostat section by tying each cooling principle to an experimental constraint.
 - [ ] Preserve practical setup knowledge that would help a successor operate, diagnose, or rebuild the experiment.
+  -> Started for the cryostat compressor and cooling-water maintenance history.
 - [ ] Connect every technical subsystem to the observables used later in the thesis: `\textit{I--V}`, `\textit{dI--dV}`, conductance maps, microwave response, extracted gaps, switching behavior, and noise limits.
+  -> Started for the cryostat section by linking thermalization, radiation, and vibration to spectra and contact stability.
 - [ ] Avoid overclaiming. Where performance was optimized empirically, state the criterion and the observed consequence.
 
 ## Structure and Narrative
@@ -21,7 +24,7 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 - [ ] End each major subsection with a short takeaway paragraph.
 - [x] Check whether `Electrical Wiring` should be renamed to something broader, for example `Electrical Measurement Environment`, because it includes instrumentation and grounding.
 - [x] Check whether the starred subsubsections should become numbered subsubsections so they can be referenced later.
-  -> No its fine they are not numbered. I dont want to have 4 numbered references.
+  -> No, it is fine that they are not numbered. I do not want to have four numbered references.
 
 ## Labels and Cross-References
 
@@ -36,31 +39,50 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   - `subsec:setup:dc-filtering`
   - `subsec:setup:ac-cabling`
   - `subsec:setup:grounding`
-- [ ] Add labels to important equations in the Joule--Thomson section.
+- [x] Add labels to important equations in the Joule--Thomson section.
 - [ ] Check all references use `Sec.~\ref{...}`, `Fig.~\ref{...}`, and `Eq.~\eqref{...}` consistently.
 - [x] Replace inconsistent `Figure~...` and `Fig.~...` usage with the thesis convention.
 
 ## Cryostat Section
 
-- [ ] Decide how much cryogenic textbook explanation belongs here versus in a shortened methods-focused form.
-- [ ] Trim or tighten pulse-tube theory so it supports the specific experimental constraints: precooling, vibration, thermal anchoring, and maintenance.
+- [x] Decide how much cryogenic textbook explanation belongs here versus in a shortened methods-focused form.
+  -> Keep the textbook explanations for pulse-tube cooling, Joule--Thomson cooling, and dilution refrigeration, but make each one end in a specific experimental consequence.
+- [x] Trim or tighten pulse-tube theory so it supports the specific experimental constraints: precooling, vibration, thermal anchoring, and maintenance.
+  -> First pass done. The section still keeps the physics explanation, but the framing now states why it matters for the LD400 and for transport measurements.
 - [ ] Add setup-specific values if available:
   - [ ] typical base temperature
+    -> Added nominal 8.5 mK and practical installed-experiment value of about 40 mK.
   - [ ] typical mixing-chamber temperature during measurements
+    -> Added approximate 40 mK value. Still check against representative cooldown logs.
   - [ ] cooldown time
   - [ ] condensation time
+  - [x] warm-up time
+    -> Added normal Bluefors warm-up script duration of about 2--3 days.
   - [ ] still temperature range
+    -> Added approximate still temperature of about 1 K.
   - [ ] 4 K and 40 K stage temperatures
-  - [ ] circulation rate
-  - [ ] cooling power or manufacturer specification if relevant
+  - [x] circulation rate
+    -> Not available. Martin Prestel did not record a recoverable circulation-rate value, and the relevant logs are lost. Do not keep this as an open TODO.
+  - [x] cooling power or manufacturer specification if relevant
+    -> Added manufacturer specifications for LD400: guaranteed 10 mK base temperature, expected 8 mK base temperature, 14 uW at 20 mK, 400 uW at 100 mK, and 575 uW at 120 mK. Explicitly stated that these values were not remeasured for the installed experiment.
 - [ ] Clarify how pulse-tube vibrations affect MCBJ stability, contact tuning, or noise.
-- [ ] Check the pulse-tube maintenance footnote for tone and placement. It contains valuable successor knowledge, but it may be too long for a footnote.
-- [ ] Decide whether compressor maintenance, water-cooling issues, adsorber replacement, and contamination risks should move into a short practical paragraph or appendix note.
-- [ ] Verify the Joule--Thomson description for helium mixture operation and avoid implying pure `\textsuperscript{4}He` behavior where the mixture is the relevant working fluid.
-- [ ] Add labels to the Joule--Thomson equations.
-- [ ] Check whether the phase-diagram caption correctly states the phase separation region.
-- [ ] Connect dilution cooling explicitly to electronic temperature, filter thermalization, and measurement resolution.
+  -> Added air-spring damping at four cryostat corners, about 6 bar operating pressure, the role of the large suspended mass, contact stability on the scale of weeks, and occasional atomic rearrangements during individual measurements. The local AMI magnet specification gives the 7 T magnet weight as 57 lb, about 26 kg. No reliable total cryostat/support-frame mass was found, so keep the total mass qualitative.
+- [x] Resolve `TODO[SETUP-CRYO-01]`: add air-spring operating pressure if available.
+- [ ] Resolve `TODO[SETUP-CRYO-02]`: add later heater-power calibration for controlled sample-stage warming if the corresponding measurement data are recovered.
+  -> Also connect this later to microwave heating: during microwave irradiation, the sample-stage temperature could rise to several hundred millikelvin, and in extreme cases approach 1 K.
+- [x] Check the pulse-tube maintenance footnote for tone and placement. It contains valuable successor knowledge, but it may be too long for a footnote.
+  -> Moved the maintenance history into the main text so it reads as practical setup knowledge rather than an oversized footnote.
+- [x] Decide whether compressor maintenance, water-cooling issues, adsorber replacement, and contamination risks should move into a short practical paragraph or appendix note.
+  -> Kept it in the main cryostat text because it explains real setup reliability limits and successor-relevant diagnostics.
+- [x] Verify the Joule--Thomson description for helium mixture operation and avoid implying pure `\textsuperscript{4}He` behavior where the mixture is the relevant working fluid.
+  -> First pass done by stating that the plotted `\textsuperscript{4}He` curve illustrates the sign change, while the circulating mixture differs quantitatively.
+- [x] Add labels to the Joule--Thomson equations.
+- [x] Check whether the phase-diagram caption correctly states the phase separation region.
+  -> Corrected to below the phase-separation boundary.
+- [x] Connect dilution cooling explicitly to electronic temperature, filter thermalization, and measurement resolution.
 - [ ] Add a final cryostat takeaway that states the practical temperature and stability conditions under which the measurements were performed.
+  -> Added that the MCBJ could be moved step by step while remaining in the 40 mK regime, so base-temperature stability was not the dominant limitation compared with microwave heating.
+  -> Conceptual takeaway added. Nominal 8.5 mK, practical about 40 mK, still about 1 K, and week-scale contact stability added. Still needs cooldown time, condensation time, and stage temperatures where available.
 
 ## MCBJ Mechanics
 
@@ -226,4 +248,3 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 - [ ] Read the section once as an examiner: does it demonstrate expertise and justify the measurement environment?
 - [ ] Read the section once as a successor: could a new student understand what to check, preserve, and avoid?
 - [ ] Read the section once as a thesis author: does every paragraph earn its place?
-
