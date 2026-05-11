@@ -19,14 +19,15 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   - What constraints does it impose on the measurement?
   - What was specific, changed, or learned during this work?
 - [ ] End each major subsection with a short takeaway paragraph.
-- [ ] Check whether `Electrical Wiring` should be renamed to something broader, for example `Electrical Measurement Environment`, because it includes instrumentation and grounding.
-- [ ] Check whether the starred subsubsections should become numbered subsubsections so they can be referenced later.
+- [x] Check whether `Electrical Wiring` should be renamed to something broader, for example `Electrical Measurement Environment`, because it includes instrumentation and grounding.
+- [x] Check whether the starred subsubsections should become numbered subsubsections so they can be referenced later.
+  -> No its fine they are not numbered. I dont want to have 4 numbered references.
 
 ## Labels and Cross-References
 
-- [ ] Change `\label{section:setup}` to a thesis-guide-compliant label such as `\label{sec:methods:setup}`.
-- [ ] Add labels directly after each subsection and important subsubsection.
-- [ ] Use namespaced labels consistently:
+- [x] Change `\label{section:setup}` to a thesis-guide-compliant label such as `\label{sec:methods:setup}`.
+- [x] Add labels directly after each subsection and important subsubsection.
+- [x] Use namespaced labels consistently:
   - `sec:methods:setup`
   - `subsec:setup:cryostat`
   - `subsec:setup:mcbj`
@@ -37,7 +38,7 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   - `subsec:setup:grounding`
 - [ ] Add labels to important equations in the Joule--Thomson section.
 - [ ] Check all references use `Sec.~\ref{...}`, `Fig.~\ref{...}`, and `Eq.~\eqref{...}` consistently.
-- [ ] Replace inconsistent `Figure~...` and `Fig.~...` usage with the thesis convention.
+- [x] Replace inconsistent `Figure~...` and `Fig.~...` usage with the thesis convention.
 
 ## Cryostat Section
 

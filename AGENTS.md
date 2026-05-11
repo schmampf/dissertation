@@ -54,6 +54,7 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
   - `eq:...` for equations
 - Include chapter/topic context in label tails, for example `subsec:results:tb:model` or `eq:micro:tunnel`.
 - Use `Sec.~\ref{...}`, `Chapter~\ref{...}`, `Fig.~\ref{...}`, and `Eq.~\eqref{...}` consistently.
+  - Except its in the beginning of a sentence, then dont use the Abbreviation.
 
 ## Writing Conventions
 
