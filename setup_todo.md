@@ -151,10 +151,11 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   - [x] DC gate
   - [x] thermometer
   - [x] heater
-  - [ ] spare or diagnostic lines if used
+  - [x] spare or diagnostic lines if used
+    -> The DC gate uses two physical lines shorted at the lowest practical point for diagnostic and backup access.
 - [x] Add actual wire types, line counts, and approximate resistances if available.
   -> Added Bluefors commercial cabling from room temperature to base and GVLZ169 low-temperature coaxial cable at base. Line resistances are not known.
-- [x] Clarify the path from sample pin heads to coaxial twisted pairs and room-temperature instruments.
+- [x] Clarify the path from sample pin headers to coaxial twisted pairs and room-temperature instruments.
   -> Revised to pin headers, 90 um insulated copper wires, conductive silver paste, Bluefors cabling, and GVLZ169 base-stage cable.
 - [x] Fix grammar and terminology around pin heads or pin headers.
   -> Use pin headers.
@@ -176,15 +177,21 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 
 ## Thermometry and Heating
 
-- [ ] Add the thermometer type and location.
-- [ ] Add how base-stage temperature was monitored during measurements.
-- [ ] State whether the measured thermometer temperature is the same as the electronic temperature, and if not, why not.
-- [ ] Add heater purpose and typical use cases:
-  - [ ] thermal cycling
-  - [ ] recovery after mechanical motion
-  - [ ] temperature-dependent checks
-- [ ] Explain possible thermal lag or gradients between thermometer, filters, and sample.
-- [ ] Connect temperature control to superconducting gap extraction and thermal broadening.
+- [x] Add the thermometer type and location.
+  -> Location added: mounted on the sample holder next to the sample, following the earlier MCBJ setup used by Martin Prestel. Exact sensor type is not documented. Remaining identifiers are the control-software curve name `MCBJ Sample ORI` and serial number `U06030`.
+- [x] Add how base-stage temperature was monitored during measurements.
+  -> Added local sample-holder thermometer readout and separate thermometer/heater wiring through a separate cable tree and break-out box.
+- [x] State whether the measured thermometer temperature is the same as the electronic temperature, and if not, why not.
+  -> Added distinction between local sample-holder temperature and junction electronic temperature.
+- [x] Add heater purpose and typical use cases:
+  - [x] thermal cycling
+  - [x] recovery after mechanical motion
+  - [x] temperature-dependent checks
+  -> Added about 100 Ohm insulated manganin heater wire wrapped around a sample-holder support post.
+- [x] Explain possible thermal lag or gradients between thermometer, filters, and sample.
+  -> Added that imperfect line thermalization, residual radiation, bias dissipation, and microwave excitation can make the electronic temperature exceed the thermometer reading.
+- [x] Connect temperature control to superconducting gap extraction and thermal broadening.
+  -> Added that temperature-dependent SIS spectra can check electronic temperature through thermal broadening, but this belongs to data analysis rather than direct thermometry.
 
 ## AC Cabling and Microwave Coupling
 
