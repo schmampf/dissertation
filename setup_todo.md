@@ -109,6 +109,7 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   - [x] lubricant removal
   - [x] solvent and moisture removal
   - [x] feedthrough lubrication
+    -> Fomblin vacuum grease used. Exact type remains open as `TODO[SETUP-MCBJ-GREASE]`.
   - [x] failure signs during cooldown or operation
     -> Added cold-function diagnostic: intentional motion should produce sample-stage heating, sometimes up to about 1 K. Monitor gas-handling pressure because still heat load can cause overpressure.
 - [x] Decide whether detailed workshop project numbers belong in captions, footnotes, or an appendix.
@@ -116,6 +117,7 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 - [x] Connect the mechanics to observable behavior: stable tunneling traces, contact opening and closing, access to few-channel contacts, and reduced risk of motor failure.
 - [x] End with a clear takeaway on reproducibility and stability of contact tuning.
   -> Added final paragraph: after the gearbox distribution, motor mount, slip clutch, feedthrough lubrication, and assembly procedure were revised, the mechanics could be operated reliably during cooldown and at base temperature.
+- [ ] Resolve `TODO[SETUP-MCBJ-GREASE]`: add the exact Fomblin vacuum-grease type used on the vacuum feedthrough.
 
 ## Measurement Circuit
 
