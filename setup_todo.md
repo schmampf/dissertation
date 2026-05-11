@@ -119,41 +119,60 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 
 ## Measurement Circuit
 
-- [ ] Make the biasing discussion maximally clear for readers who need to reconstruct `V_\mathrm{sample}` and `I_\mathrm{sample}`.
-- [ ] Verify all sign conventions for `V_\mathrm{bias}`, `V_\mathrm{sample}`, `V_\mathrm{ref}`, and `I_\mathrm{sample}`.
-- [ ] State whether `V_\mathrm{ref}` is measured across one reference resistor or a symmetric pair.
-- [ ] Verify whether the current formula needs a sign or factor of two depending on the exact measurement configuration.
-- [ ] Add actual reference resistor values for the standard and low-impedance configurations.
-- [ ] Add typical ranges of sample resistance for tunnel, few-channel, and low-resistance contact regimes.
-- [ ] Add the effective cold series resistance in each configuration.
-- [ ] Clarify when the setup behaves voltage-biased, mixed-biased, or current-biased.
-- [ ] Explain how the measured voltage channels are converted into calibrated `\textit{I--V}` and `\textit{dI--dV}` curves.
-- [ ] State the limits of the low-impedance configuration, especially warm Johnson--Nyquist noise and reduced filtering.
-- [ ] Check whether the measurement-schematic figure shows all components needed to understand the equations.
+- [x] Make the biasing discussion maximally clear for readers who need to reconstruct `V_\mathrm{sample}` and `I_\mathrm{sample}`.
+  -> Revised standard configuration, current reconstruction, and low-impedance fallback.
+- [x] Verify all sign conventions for `V_\mathrm{bias}`, `V_\mathrm{sample}`, `V_\mathrm{ref}`, and `I_\mathrm{sample}`.
+  -> Avoided detailed sign discussion in the thesis. Text states that plotted polarity is chosen consistently for each dataset.
+- [x] State whether `V_\mathrm{ref}` is measured across one reference resistor or a symmetric pair.
+  -> It is measured across one cold reference resistor.
+- [x] Verify whether the current formula needs a sign or factor of two depending on the exact measurement configuration.
+  -> No factor of two enters because `V_\mathrm{ref}` is measured across one reference resistor.
+- [x] Add actual reference resistor values for the standard and low-impedance configurations.
+  -> Standard cold reference value added as `R_\mathrm{ref}=101.473\,\mathrm{k}\Omega`; low-impedance cold bias resistors stated as nominally `100\,\Omega` each.
+- [x] Add typical ranges of sample resistance for tunnel, few-channel, and low-resistance contact regimes.
+  -> Added representative values: about 100 Ohm for a closed break junction, about `R_0=1/G_0\simeq12.9 kOhm` for a few-channel atomic contact, and tunnel regime starting roughly around 100 kOhm or 0.1 `G_0`.
+- [x] Add the effective cold series resistance in each configuration.
+  -> Standard setup now states about 203 kOhm from the two cold reference resistors alone; low-impedance setup states nominally 100 Ohm on each side in the cold bias line.
+- [x] Clarify when the setup behaves voltage-biased, mixed-biased, or current-biased.
+  -> Kept `\eta=R_\mathrm{series}/R_\mathrm{sample}` explanation and tied it to MCBJ state.
+- [x] Explain how the measured voltage channels are converted into calibrated `\textit{I--V}` and `\textit{dI--dV}` curves.
+  -> this goes into seperate section about my digital infrastructure / data threadment / evaluation...
+- [x] State the limits of the low-impedance configuration, especially warm Johnson--Nyquist noise and reduced filtering.
+  -> Added room-temperature current-readout noise tradeoff.
+- [x] Check whether the measurement-schematic figure shows all components needed to understand the equations.
+  -> Caption now states that `V_\mathrm{ref}` is measured across one reference resistor and that the standard configuration has symmetric cold reference resistors.
 
 ## DC Wiring and Filtering
 
-- [ ] List the DC line functions clearly:
-  - [ ] bias
-  - [ ] sample-voltage readout
-  - [ ] reference-voltage readout
-  - [ ] DC gate
-  - [ ] thermometer
-  - [ ] heater
+- [x] List the DC line functions clearly:
+  - [x] bias
+  - [x] sample-voltage readout
+  - [x] reference-voltage readout
+  - [x] DC gate
+  - [x] thermometer
+  - [x] heater
   - [ ] spare or diagnostic lines if used
-- [ ] Add actual wire types, line counts, and approximate resistances if available.
-- [ ] Clarify the path from sample pin heads to coaxial twisted pairs and room-temperature instruments.
-- [ ] Fix grammar and terminology around pin heads or pin headers.
-- [ ] Add filter inventory:
-  - [ ] copper-powder filters
-  - [ ] MFT25 filters
-  - [ ] warm low-pass filters
+- [x] Add actual wire types, line counts, and approximate resistances if available.
+  -> Added Bluefors commercial cabling from room temperature to base and GVLZ169 low-temperature coaxial cable at base. Line resistances are not known.
+- [x] Clarify the path from sample pin heads to coaxial twisted pairs and room-temperature instruments.
+  -> Revised to pin headers, 90 um insulated copper wires, conductive silver paste, Bluefors cabling, and GVLZ169 base-stage cable.
+- [x] Fix grammar and terminology around pin heads or pin headers.
+  -> Use pin headers.
+- [x] Add filter inventory:
+  - [x] copper-powder filters
+  - [x] MFT25 filters
+  - [x] warm low-pass filters
+    -> goes into intrumentation
   - [ ] any commercial or custom RC filters
-- [ ] Add known cutoff frequencies, attenuation ranges, or manufacturer specifications where relevant.
-- [ ] Distinguish between filtering for electrical noise and thermalization for electronic temperature.
-- [ ] State which filter performance is measured, specified, inferred from comparable setups, or assumed.
-- [ ] Explain why several filtering stages are needed instead of relying on one element.
-- [ ] Connect filtering quality to subgap leakage, gap sharpness, and low-current resolution.
+- [x] Add known cutoff frequencies, attenuation ranges, or manufacturer specifications where relevant.
+  -> Added MFT25 manufacturer specification language already present: strong attenuation above 130 MHz, low capacitance, and good thermal contact. CP-filter attenuation is not measured in this work.
+- [x] Distinguish between filtering for electrical noise and thermalization for electronic temperature.
+- [x] State which filter performance is measured, specified, inferred from comparable setups, or assumed.
+  -> CP-filter performance is inferred from Thalmann/group design. Text now emphasizes low DC resistance and broadband skin-effect loss rather than a specific measured attenuation curve. MFT25 claims are manufacturer specifications.
+- [x] Explain why several filtering stages are needed instead of relying on one element.
+  -> CP filters act as a low-resistance broadband safety stage against microwave leakage, while MFT25 provides a compact commercial filter-thermalizer stage.
+- [x] Connect filtering quality to subgap leakage, gap sharpness, and low-current resolution.
+  -> Text connects cold filtering/readout to low electronic temperature and resolving small subgap currents.
 
 ## AC Cabling and Microwave Coupling
 
