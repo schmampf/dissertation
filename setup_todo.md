@@ -49,6 +49,17 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 - [x] Replace inconsistent figure-reference usage with the thesis convention.
   -> Do not start a sentence with `Fig.~...`.
 
+## Citation Pass
+
+- [x] Add local references for sources that should not be stored only in the Zotero export.
+  -> Added local entries for the Cryomech PT415/CP1110 manual, Basel Precision Instruments MFT product page, and the Johnson/Nyquist thermal-noise papers.
+- [x] Cite manufacturer/specification claims locally.
+  -> Added citations for the compressor purification chain and the MFT25 manufacturer attenuation/thermalization specification.
+- [x] Cite non-obvious noise and microwave conversion claims.
+  -> Added Johnson/Nyquist citations for warm reference-resistor noise and cold-reference-resistor relocation. Added a microwave-engineering citation for the 10 dBm to 1 V matched-50 Ohm conversion.
+- [ ] Check later whether part-specific footnotes should be converted into bibliography entries where a stable datasheet or manual exists.
+  -> Keep workshop project numbers and one-off component identifiers in footnotes. Use bibliography entries for sources that support physical claims or manufacturer specifications.
+
 ## Cryostat Section
 
 - [x] Decide how much cryogenic textbook explanation belongs here versus in a shortened methods-focused form.
@@ -214,9 +225,9 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 - [x] Add room-temperature source details only insofar as they affect delivered microwave power and synchronization.
   -> later in instrumentation.
 - [x] State known frequency range and usable power range.
-  -> Added reliable transmission up to about 20 GHz based on SIS and photon-assisted tunneling response. Maximum applied AC source power was 10 dBm, corresponding to 1 V peak amplitude in a matched 50 Ohm system. This is not the local sample voltage.
+  -> Added reliable transmission up to about 20 GHz based on microwave-induced spectral changes. Maximum applied AC source power was 10 dBm, corresponding to 1 V peak amplitude in a matched 50 Ohm system. This is not the local sample voltage.
 - [x] Explain what is calibrated absolutely, what is calibrated relatively, and what remains unknown at the sample.
-  -> Added that the sample coupling is not impedance matched and that absolute local microwave-voltage calibration was not attempted. Calibration is instead effective, using known microwave-induced spectral signatures such as SIS photon-assisted tunneling. Relative transmission differences and spectral responses are meaningful, while absolute microwave voltage at the junction remains unknown.
+  -> Added that the sample coupling is not impedance matched and that absolute local microwave-voltage calibration was not attempted. Calibration is instead effective and uses internal spectral references where available, with the SIS photon-assisted-tunneling cross-reference given once in the AC-cabling text. Relative transmission differences and spectral responses are meaningful, while absolute microwave voltage at the junction remains unknown.
 - [x] Use Patrick Raif's result carefully: both lines behave effectively as microwave antennas, but the exact local voltage at the junction is not known.
 - [x] Connect this limitation to the later interpretation of photon-assisted tunneling or microwave-driven features.
 - [x] Add a clear scope paragraph: microwave amplitude at the junction is treated as an effective parameter unless otherwise calibrated.
