@@ -154,7 +154,7 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   - [x] spare or diagnostic lines if used
     -> The DC gate uses two physical lines shorted at the lowest practical point for diagnostic and backup access.
 - [x] Add actual wire types, line counts, and approximate resistances if available.
-  -> Added Bluefors commercial cabling from room temperature to base and GVLZ169 low-temperature coaxial cable at base, including LEMO connector identifiers in a footnote. Line resistances are not known.
+  -> Added Bluefors commercial cabling from room temperature to base and GVLZ169 low-temperature coaxial cable at base, including LEMO connector identifiers and copper bend-protection tubes in a footnote. Line resistances are not known.
 - [x] Clarify the path from sample pin headers to coaxial twisted pairs and room-temperature instruments.
   -> Revised to pin headers, 90 um insulated copper wires, conductive silver paste, Bluefors cabling, and GVLZ169 base-stage cable.
 - [x] Fix grammar and terminology around pin heads or pin headers.
@@ -221,11 +221,12 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 - [x] Add a table or compact list of instruments if the prose becomes too dense.
   -> Kept prose grouped by function. No table needed yet.
 - [x] Include interface types only where they matter for grounding or synchronization.
-  -> Kept GPIB, RS-232, USB, LAN, measurement-card synchronization, and Lake Shore 372AC continuous sample-thermometer readout where they affect grounding, isolation, paired voltage readout, or PID temperature control.
+  -> Kept GPIB, RS-232, USB, LAN, measurement-card synchronization, and Lake Shore 372AC continuous sample-thermometer readout where they affect grounding, isolation, paired voltage readout, or PID temperature control. Added thermometry break-out box `WW-2480259` for separating the sample line from auxiliary thermometry lines.
 - [x] Add the empirical optimization criterion: low-frequency noise in the sample- and reference-voltage channels under measurement conditions.
 - [ ] Add the measured or representative noise level if available.
   -> Still open until a representative measured value is available.
 - [x] Clarify the role of USB isolation, USB-over-LAN, GPIB, RS-232, and LAN connections.
+  -> Added National Instruments GPIB-USB-HS, Icron USB 2.0 Ranger 2304, CESYS C028149, and D-Link DGS-108 identifiers.
 - [x] Explain why the magnet supply and unused devices were disconnected during low-noise spectra.
 - [x] State the limits of the grounding solution: optimized empirically, not a universal ground model.
 - [x] Connect grounding quality to the measured `\textit{I--V}` stability and spectral cleanliness.
