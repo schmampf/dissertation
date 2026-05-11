@@ -174,18 +174,6 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 - [x] Connect filtering quality to subgap leakage, gap sharpness, and low-current resolution.
   -> Text connects cold filtering/readout to low electronic temperature and resolving small subgap currents.
 
-## AC Cabling and Microwave Coupling
-
-- [ ] Clarify the two microwave paths: AC gate and on-chip antenna or stripline.
-- [ ] Add the physical routing and thermalization points of each line.
-- [ ] Add attenuator values and locations.
-- [ ] Add room-temperature source details only insofar as they affect delivered microwave power and synchronization.
-- [ ] State known frequency range and usable power range.
-- [ ] Explain what is calibrated absolutely, what is calibrated relatively, and what remains unknown at the sample.
-- [ ] Use Patrick Raif's result carefully: both lines behave effectively as microwave antennas, but the exact local voltage at the junction is not known.
-- [ ] Connect this limitation to the later interpretation of photon-assisted tunneling or microwave-driven features.
-- [ ] Add a clear scope paragraph: microwave amplitude at the junction is treated as an effective parameter unless otherwise calibrated.
-
 ## Thermometry and Heating
 
 - [ ] Add the thermometer type and location.
@@ -197,6 +185,18 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   - [ ] temperature-dependent checks
 - [ ] Explain possible thermal lag or gradients between thermometer, filters, and sample.
 - [ ] Connect temperature control to superconducting gap extraction and thermal broadening.
+
+## AC Cabling and Microwave Coupling
+
+- [ ] Clarify the two microwave paths: AC gate and on-chip antenna or stripline.
+- [ ] Add the physical routing and thermalization points of each line.
+- [ ] Add attenuator values and locations.
+- [ ] Add room-temperature source details only insofar as they affect delivered microwave power and synchronization.
+- [ ] State known frequency range and usable power range.
+- [ ] Explain what is calibrated absolutely, what is calibrated relatively, and what remains unknown at the sample.
+- [ ] Use Patrick Raif's result carefully: both lines behave effectively as microwave antennas, but the exact local voltage at the junction is not known.
+- [ ] Connect this limitation to the later interpretation of photon-assisted tunneling or microwave-driven features.
+- [ ] Add a clear scope paragraph: microwave amplitude at the junction is treated as an effective parameter unless otherwise calibrated.
 
 ## Instrumentation and Grounding
 
