@@ -154,7 +154,7 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   - [x] spare or diagnostic lines if used
     -> The DC gate uses two physical lines shorted at the lowest practical point for diagnostic and backup access.
 - [x] Add actual wire types, line counts, and approximate resistances if available.
-  -> Added Bluefors commercial cabling from room temperature to base and GVLZ169 low-temperature coaxial cable at base. Line resistances are not known.
+  -> Added Bluefors commercial cabling from room temperature to base and GVLZ169 low-temperature coaxial cable at base, including LEMO connector identifiers in a footnote. Line resistances are not known.
 - [x] Clarify the path from sample pin headers to coaxial twisted pairs and room-temperature instruments.
   -> Revised to pin headers, 90 um insulated copper wires, conductive silver paste, Bluefors cabling, and GVLZ169 base-stage cable.
 - [x] Fix grammar and terminology around pin heads or pin headers.
@@ -166,7 +166,7 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
     -> goes into intrumentation
   - [ ] any commercial or custom RC filters
 - [x] Add known cutoff frequencies, attenuation ranges, or manufacturer specifications where relevant.
-  -> Added MFT25 manufacturer specification language already present: strong attenuation above 130 MHz, low capacitance, and good thermal contact. CP-filter attenuation is not measured in this work.
+  -> Added MFT25 manufacturer specification language already present: strong attenuation above 130 MHz, low capacitance, and good thermal contact. Added MFT25 part/serial and Micro-D connector information in a footnote. CP-filter attenuation is not measured in this work.
 - [x] Distinguish between filtering for electrical noise and thermalization for electronic temperature.
 - [x] State which filter performance is measured, specified, inferred from comparable setups, or assumed.
   -> CP-filter performance is inferred from Thalmann/group design. Text now emphasizes low DC resistance and broadband skin-effect loss rather than a specific measured attenuation curve. MFT25 claims are manufacturer specifications.
@@ -178,9 +178,9 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 ## Thermometry and Heating
 
 - [x] Add the thermometer type and location.
-  -> Location added: mounted on the sample holder next to the sample, following the earlier MCBJ setup used by Martin Prestel. Exact sensor type is not documented. Remaining identifiers are the control-software curve name `MCBJ Sample ORI` and serial number `U06030`.
+  -> Location added: mounted on the sample holder next to the sample, following the earlier MCBJ setup used by Martin Prestel. Sensor added as Rox resistor thermometer RX102B-CB. Serial number `U06030` and curve name `MCBJ Sample ORI` moved to a footnote.
 - [x] Add how base-stage temperature was monitored during measurements.
-  -> Added local sample-holder thermometer readout and separate thermometer/heater wiring through a separate cable tree and break-out box.
+  -> Added local sample-holder thermometer readout and separate thermometer/heater wiring through a separate cable tree and break-out box, with the Bluefors-cabling LEMO plug identifier in a footnote.
 - [x] State whether the measured thermometer temperature is the same as the electronic temperature, and if not, why not.
   -> Added distinction between local sample-holder temperature and junction electronic temperature.
 - [x] Add heater purpose and typical use cases:
@@ -195,15 +195,21 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 
 ## AC Cabling and Microwave Coupling
 
-- [ ] Clarify the two microwave paths: AC gate and on-chip antenna or stripline.
-- [ ] Add the physical routing and thermalization points of each line.
-- [ ] Add attenuator values and locations.
-- [ ] Add room-temperature source details only insofar as they affect delivered microwave power and synchronization.
-- [ ] State known frequency range and usable power range.
-- [ ] Explain what is calibrated absolutely, what is calibrated relatively, and what remains unknown at the sample.
-- [ ] Use Patrick Raif's result carefully: both lines behave effectively as microwave antennas, but the exact local voltage at the junction is not known.
-- [ ] Connect this limitation to the later interpretation of photon-assisted tunneling or microwave-driven features.
-- [ ] Add a clear scope paragraph: microwave amplitude at the junction is treated as an effective parameter unless otherwise calibrated.
+- [x] Clarify the two microwave paths: AC gate and on-chip antenna or stripline.
+  -> Use `AC-gate line` for the on-chip capacitive gate and `antenna line` for the stripped coaxial cable near the sample.
+- [x] Add the physical routing and thermalization points of each line.
+  -> Added coaxial microwave routing, superconducting commercial cryostat cabling, pass-through connectors at each temperature stage, and base-temperature cabling installed together with Patrick Raif.
+- [x] Add attenuator values and locations.
+  -> Added 10 dB attenuators at the 4 K flange and pass-through connectors at the other stages. Added future recommendation to move attenuation to the MXC pass-through.
+- [x] Add room-temperature source details only insofar as they affect delivered microwave power and synchronization.
+  -> later in instrumentation.
+- [x] State known frequency range and usable power range.
+  -> Added reliable transmission up to about 20 GHz based on SIS and photon-assisted tunneling response. Maximum applied AC source power was 10 dBm, corresponding to 1 V peak amplitude in a matched 50 Ohm system. This is not the local sample voltage.
+- [x] Explain what is calibrated absolutely, what is calibrated relatively, and what remains unknown at the sample.
+  -> Added that the sample coupling is not impedance matched and that absolute local microwave-voltage calibration was not attempted. Calibration is instead effective, using known microwave-induced spectral signatures such as SIS photon-assisted tunneling. Relative transmission differences and spectral responses are meaningful, while absolute microwave voltage at the junction remains unknown.
+- [x] Use Patrick Raif's result carefully: both lines behave effectively as microwave antennas, but the exact local voltage at the junction is not known.
+- [x] Connect this limitation to the later interpretation of photon-assisted tunneling or microwave-driven features.
+- [x] Add a clear scope paragraph: microwave amplitude at the junction is treated as an effective parameter unless otherwise calibrated.
 
 ## Instrumentation and Grounding
 
