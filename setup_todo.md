@@ -5,13 +5,15 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 ## Overall Goal
 
 - [ ] Make the setup section read as a mature experimental methods section, not as a collection of notes.
+  -> Substantial narrative pass done. The remaining subsections now end with measurement consequences rather than component inventory.
 - [ ] Make clear which parts are general cryogenic or electrical principles, which parts describe the specific LD400 setup, and which parts were modified during this work.
-  -> Started for the cryostat section by tying each cooling principle to an experimental constraint.
+  -> Started for the cryostat section by tying each cooling principle to an experimental constraint. Extended to the electrical subsections by separating measurement schematic, cryostat wiring, filtering, thermometry, microwave coupling, and room-temperature grounding.
 - [ ] Preserve practical setup knowledge that would help a successor operate, diagnose, or rebuild the experiment.
-  -> Started for the cryostat compressor and cooling-water maintenance history.
+  -> Started for the cryostat compressor and cooling-water maintenance history. Extended to reference-resistor redesign, filter-stack reliability, thermometry cable separation, microwave-line limitations, and grounding diagnostics.
 - [ ] Connect every technical subsystem to the observables used later in the thesis: `\textit{I--V}`, `\textit{dI--dV}`, conductance maps, microwave response, extracted gaps, switching behavior, and noise limits.
-  -> Started for the cryostat section by linking thermalization, radiation, and vibration to spectra and contact stability.
+  -> Started for the cryostat section by linking thermalization, radiation, and vibration to spectra and contact stability. Extended to the electrical subsections by stating how voltage/current reconstruction, filtering, temperature readout, microwave coupling, and grounding constrain the later spectra and maps.
 - [ ] Avoid overclaiming. Where performance was optimized empirically, state the criterion and the observed consequence.
+  -> Added explicit scope language for electronic temperature, microwave amplitude, filter performance, and empirical grounding optimization.
 
 ## Structure and Narrative
 
@@ -107,11 +109,12 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 ## MCBJ Mechanics
 
 - [x] Make the MCBJ section read as a controlled mechanical reduction chain from motor rotation to atomic-contact elongation.
-  -> First pass done. The section now distinguishes motor/drive motion, differential-screw feed, bending, and atomic-contact response.
+  -> Narrative check done. The section now distinguishes motor/drive motion, differential-screw feed, bending, and atomic-contact response.
 - [x] Add or verify the mechanical reduction factor from substrate bending to junction elongation if available.
   -> Not independently calibrated in this work. The text now states this explicitly and treats position operationally through relative displacement and conductance response.
 - [x] Add the effective displacement per motor step or per encoder count if available.
   -> Raw encoder units are intentionally not used because the scale is inconvenient and not physically transparent. The text now uses the relative 0--18 displacement coordinate, corresponding to 30 differential-screw revolutions and 3 mm macroscopic screw feed.
+  -> Added explicit scope language that the physical calibration comes from the conductance response, not from the encoder number itself.
 - [x] Verify and document the differential screw pitch calculation.
   -> Kept effective feed of 0.1 mm per revolution.
 - [ ] Add the total gearbox reduction before and after the modifications.
