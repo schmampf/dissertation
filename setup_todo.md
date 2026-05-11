@@ -237,7 +237,7 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   - main mechanism or trend
   - essential conditions or parameters only
 - [ ] Replace CAD-project-note captions with explanatory captions.
-- [ ] Decide whether workshop project numbers should be preserved in footnotes, appendix text, or omitted.
+- [x] Decide whether workshop project numbers should be preserved in footnotes, appendix text, or omitted.
 - [ ] Verify that each figure is referenced before or near where it appears.
 - [ ] Check figure placement and wrapping in the compiled PDF.
 - [ ] Check whether any wrapfigure causes awkward line breaks or excessive whitespace.
