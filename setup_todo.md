@@ -40,8 +40,10 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   - `subsec:setup:ac-cabling`
   - `subsec:setup:grounding`
 - [x] Add labels to important equations in the Joule--Thomson section.
-- [ ] Check all references use `Sec.~\ref{...}`, `Fig.~\ref{...}`, and `Eq.~\eqref{...}` consistently.
-- [x] Replace inconsistent `Figure~...` and `Fig.~...` usage with the thesis convention.
+- [x] Check all references use `Sec.~\ref{...}`, `Fig.~\ref{...}`, and `Eq.~\eqref{...}` consistently.
+  -> Use full `Figure~\ref{...}` at the beginning of a sentence and abbreviated `Fig.~\ref{...}` inside a sentence. Keep `Sec.~\ref{...}` and `Eq.~\eqref{...}` for section and equation references.
+- [x] Replace inconsistent figure-reference usage with the thesis convention.
+  -> Do not start a sentence with `Fig.~...`.
 
 ## Cryostat Section
 
@@ -49,7 +51,7 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   -> Keep the textbook explanations for pulse-tube cooling, Joule--Thomson cooling, and dilution refrigeration, but make each one end in a specific experimental consequence.
 - [x] Trim or tighten pulse-tube theory so it supports the specific experimental constraints: precooling, vibration, thermal anchoring, and maintenance.
   -> First pass done. The section still keeps the physics explanation, but the framing now states why it matters for the LD400 and for transport measurements.
-- [ ] Add setup-specific values if available:
+- [x] Add setup-specific values if available:
   - [x] typical base temperature
     -> Added manufacturer-specified 8 mK expected base temperature and practical installed-experiment values of about 30--40 mK.
   - [x] typical mixing-chamber temperature during measurements
@@ -68,7 +70,7 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
     -> Not available. Martin Prestel did not record a recoverable circulation-rate value, and the relevant logs are lost. Do not keep this as an open TODO.
   - [x] cooling power or manufacturer specification if relevant
     -> Added manufacturer specifications for LD400: guaranteed 10 mK base temperature, expected 8 mK base temperature, 14 uW at 20 mK, 400 uW at 100 mK, and 575 uW at 120 mK. Explicitly stated that these values were not remeasured for the installed experiment.
-- [ ] Clarify how pulse-tube vibrations affect MCBJ stability, contact tuning, or noise.
+- [x] Clarify how pulse-tube vibrations affect MCBJ stability, contact tuning, or noise.
   -> Added air-spring damping at four cryostat corners, about 6 bar operating pressure, the role of the large suspended mass, contact stability on the scale of weeks, and occasional atomic rearrangements during individual measurements. The local AMI magnet specification gives the 7 T magnet weight as 57 lb, about 26 kg. No reliable total cryostat/support-frame mass was found, so keep the total mass qualitative.
 - [x] Resolve `TODO[SETUP-CRYO-01]`: add air-spring operating pressure if available.
 - [ ] Resolve `TODO[SETUP-CRYO-02]`: add later heater-power calibration for controlled sample-stage warming if the corresponding measurement data are recovered.
@@ -83,7 +85,7 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 - [x] Check whether the phase-diagram caption correctly states the phase separation region.
   -> Corrected to below the phase-separation boundary.
 - [x] Connect dilution cooling explicitly to electronic temperature, filter thermalization, and measurement resolution.
-- [ ] Add a final cryostat takeaway that states the practical temperature and stability conditions under which the measurements were performed.
+- [x] Add a final cryostat takeaway that states the practical temperature and stability conditions under which the measurements were performed.
   -> Added that the MCBJ could be moved step by step while remaining in the 40 mK regime, so base-temperature stability was not the dominant limitation compared with microwave heating.
   -> Conceptual takeaway added. Practical 30--40 mK range, still about 1 K, cooldown and condensation times, stage temperatures, and week-scale contact stability added.
 
@@ -166,7 +168,8 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   - [x] MFT25 filters
   - [x] warm low-pass filters
     -> goes into intrumentation
-  - [ ] any commercial or custom RC filters
+  - [x] any commercial or custom RC filters
+    -> No additional custom RC filters are documented for the cryostat wiring. The warm Thorlabs EF120 low-pass filter is described in the instrumentation path.
 - [x] Add known cutoff frequencies, attenuation ranges, or manufacturer specifications where relevant.
   -> Added MFT25 manufacturer specification language already present: strong attenuation above 130 MHz, low capacitance, and good thermal contact. Added MFT25 part/serial and Micro-D connector information in a footnote. CP-filter attenuation is not measured in this work.
 - [x] Distinguish between filtering for electrical noise and thermalization for electronic temperature.
@@ -176,6 +179,7 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
   -> CP filters act as a low-resistance broadband safety stage against microwave leakage, while MFT25 provides a compact commercial filter-thermalizer stage.
 - [x] Connect filtering quality to subgap leakage, gap sharpness, and low-current resolution.
   -> Text connects cold filtering/readout to low electronic temperature and resolving small subgap currents.
+- [ ] Resolve `TODO[SETUP-REF-HOUSING]`: add the scientific-workshop project number or identifier for the reference-resistor housing after it can be checked.
 
 ## Thermometry and Heating
 
@@ -258,11 +262,16 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 
 ## Language and Style Pass
 
-- [ ] Convert long nested sentences into shorter thesis-style prose.
-- [ ] Keep methods/results tense consistent: past tense and `I` for work performed in this project.
-- [ ] Use `we` only when referring to collaborative published or group work if that is intentional.
-- [ ] Remove double-dash or em-dash punctuation where present.
-- [ ] Avoid semicolons.
+- [x] Convert long nested sentences into shorter thesis-style prose.
+  -> First pass done in cryostat operation, dilution cooling, wiring, filtering, microwave coupling, biasing, and instrumentation paragraphs. Remaining long physical lines are mainly captions or footnote artifacts rather than nested prose.
+- [x] Keep methods/results tense consistent: past tense and `I` for work performed in this project.
+  -> Current first-person usage is for work performed in this project.
+- [x] Use `we` only when referring to collaborative published or group work if that is intentional.
+  -> Current `we` usage refers to the collaborative result with Patrick Raif.
+- [x] Remove double-dash or em-dash punctuation where present.
+  -> No em dashes found. Remaining double hyphens are intentional LaTeX notation or terms such as `\textit{I--V}` and `Joule--Thomson`.
+- [x] Avoid semicolons.
+  -> No semicolons found in `methods/setup.tex`.
 - [ ] Minimize parentheses.
 - [ ] Use consistent terminology:
   - `quasiparticle`
@@ -278,18 +287,22 @@ This file tracks the work needed to make `methods/setup.tex` a polished thesis s
 
 ## Successor Documentation
 
-- [ ] Add practical knowledge that is hard to recover from schematics alone.
-- [ ] Document known failure modes:
-  - [ ] compressor water leaks
-  - [ ] contamination or blockage in mixture handling
-  - [ ] feedthrough friction
-  - [ ] motor overload
-  - [ ] gearbox freezing
-  - [ ] ground loops
-  - [ ] microwave heating
-- [ ] For each failure mode, state the observed symptom and the mitigation if known.
-- [ ] Decide which practical details belong in the main methods text and which belong in an appendix.
-- [ ] Make sure the final text helps a future student understand why the setup is built this way, not only what components are present.
+- [x] Add practical knowledge that is hard to recover from schematics alone.
+  -> Added compressor maintenance, water-cooling issues, vacuum and cooldown diagnostics, gearbox cleaning, feedthrough lubrication, wiring continuity checks, grounding isolation, and microwave-heating limits.
+- [x] Document known failure modes:
+  - [x] compressor water leaks
+  - [x] contamination or blockage in mixture handling
+  - [x] feedthrough friction
+  - [x] motor overload
+  - [x] gearbox freezing
+  - [x] ground loops
+  - [x] microwave heating
+- [x] For each failure mode, state the observed symptom and the mitigation if known.
+  -> Current text states the observed consequence and practical mitigation for each known failure mode at methods-section level.
+- [x] Decide which practical details belong in the main methods text and which belong in an appendix.
+  -> Kept details in the main methods text when they affect reliability, temperature, noise, or reproducible operation. Exact missing part identifiers remain TODOs rather than appendix material.
+- [x] Make sure the final text helps a future student understand why the setup is built this way, not only what components are present.
+  -> Current section emphasizes practical constraints, failure modes, and measurement consequences rather than only listing parts.
 
 ## Compile and Review
 
