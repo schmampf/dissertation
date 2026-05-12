@@ -8,7 +8,7 @@
         \centering
         \begingroup
         \ooalign{%
-            {\fontsize{7pt}{9pt}\selectfont\import{methods/sample/probe}{probe.pdf_tex}}\cr
+            {\fontsize{7pt}{9pt}\selectfont\import{methods/sample/probe}{probe1.pdf_tex}}\cr
             {\fontsize{5pt}{9pt}\selectfont\import{methods/sample/probe}{probe2.pdf_tex}}\cr
         }%
         \endgroup
@@ -26,12 +26,6 @@
     \subsection{Concept} 
     \label{subsection:concept}
 
-        In this subsection, I introduce the general concept of the sample fabrication process and its connection to the underlying device physics.
-
-        The sample design must satisfy several requirements simultaneously. Mechanically, it must provide a freestanding bridge on a bendable substrate so that an atomic contact can be formed in a controlled manner. Lithographically, it must enable suspended shadow-mask structures for double-angle evaporation. Electrically, it must define an island between two weak links and provide gate coupling. Finally, the design should allow efficient coupling of microwave fields.
-
-        The MCBJ is realized as a freestanding bridge-like structure on a bendable substrate, as illustrated schematically in Figure~\ref{fig:methods:bruchmechanik}. The substrate can be bent either by pushing a stamp from below or by pressing counter rods from above. This bending elongates the bridge and allows the junction to be tuned into the atomic-contact regime. The mechanical setup of the MCBJ is described in more detail in Subsection \ref{subsec:setup:mcbj}.
-
         \begin{wrapfigure}[7]{r}{40mm}
             \captionsetup{format=plain}%
             \centering
@@ -40,6 +34,12 @@
             \caption{Schematic illustration of the principle of a MCBJ. Adapted from Ref \cite{schirm_einfluss_2009}.}
             \label{fig:methods:bruchmechanik}
         \end{wrapfigure}
+        In this subsection, I introduce the general concept of the sample fabrication process and its connection to the underlying device physics.
+
+        The sample design must satisfy several requirements simultaneously. Mechanically, it must provide a freestanding bridge on a bendable substrate so that an atomic contact can be formed in a controlled manner. Lithographically, it must enable suspended shadow-mask structures for double-angle evaporation. Electrically, it must define an island between two weak links and provide gate coupling. Finally, the design should allow efficient coupling of microwave fields.
+
+        The MCBJ is realized as a freestanding bridge-like structure on a bendable substrate, as illustrated schematically in Figure~\ref{fig:methods:bruchmechanik}. The substrate can be bent either by pushing a stamp from below or by pressing counter rods from above. This bending elongates the bridge and allows the junction to be tuned into the atomic-contact regime. The mechanical setup of the MCBJ is described in more detail in Subsection \ref{subsec:setup:mcbj}.
+
         A polyimide (PI) layer insulates the substrate from the structures produced in the subsequent steps. More importantly, the PI layer serves as a sacrificial layer. During later processing, it is partially etched, allowing the structure to become freestanding.
 
         Next, a bilayer of positive electron-sensitive resist is applied. Electron-beam lithography (EBL) is then used to expose the desired pattern with high precision. After development, the exposed resist is removed, leaving behind the lithographically defined structure.
@@ -93,13 +93,19 @@
         EBL is carried out using a Zeiss Crossbeam system that was modified for significantly faster beam blanking. The beam blanker operates synchronously with the beam deflection, allowing arbitrary structures to be exposed precisely within the selected field of view. For small high-resolution structures, a field size of 100\,\textmu m is typically used, whereas coarser and larger features are written in a 1000\,\textmu m field. Structures exceeding these dimensions are exposed over multiple adjacent fields by moving the sample stage. To ensure smooth transitions between neighboring fields, a deliberate overlap is included for stitching.
 
         At the beginning of my doctoral work, only one of the two available EBL software packages, \texttt{Elphy Plus} by Raith, was functional and properly supported. The sample design therefore had to be reimplemented from scratch, since my predecessors had used a different software environment. The dimensions of the break junction and the gate follow the established geometry and are consistent with earlier implementations in Refs.~\cite{lorenz_wechselspiel_2018, sprenger_interplay_2019,sobral-rey_interplay_2022}. In contrast, the finger defining the oxide barrier was modified to become wider toward its lower part. This reduces the freestanding length of the evaporation mask and thereby improves its mechanical stability. However, older resist material was found to collapse more easily during evaporation. In those cases, the finger does not reliably reach the island during the second evaporation step, which results in defective structures. The overall electron-beam lithography design is shown in Figure~\ref{fig:methods:ebeam}.
-        
+
         \begin{figure}[t]
             \centering
-            {\fontsize{6}{7}\selectfont
-            \import{methods/sample/ebeamdesign}{ebeam.pdf_tex}
-            }
-            \caption{Electron-beam lithography design of the sample at different length scales. The overview at the bottom shows the full pattern including leads and contact pads, while the upper panels successively magnify the central device region down to 100\,\textmu m, 10\,\textmu m, and 1\,\textmu m scales. Blue structures (\legend{seeblau100}) are written in a 100\,\textmu m writing field, whereas gray structures (\legend{seegrau100}) are written in 1000\,\textmu m writing fields. In the overview, the individual writing fields are indicated by dashed squares. The detailed views show the break junction, the island, the oxide-barrier finger, the nearby DC gate, and the adjacent AC gate. The outer leads are arranged to simplify electrical contacting, and a shorting structure is included to protect the sample against electrostatic discharge.}
+
+            \subfigure[
+                Central region, successively magnified, showing the break junction, the island, the oxide-barrier finger, the nearby DC gate, and the adjacent AC gate. Blue structures (\legend{seeblau100}) are written in a 100\,\textmu m writing field, whereas gray structures (\legend{seegrau100}) are written in 1000\,\textmu m writing fields.
+                ]{{
+            \centering\fontsize{6}{7}\selectfont\import{methods/sample/ebeamdesign}{ebeam1.pdf_tex}}}
+            \subfigure[
+                Overview of full pattern. Individual writing fields are indicated by dashed squares. Their overlap avoids stiching problems. The outer leads are arranged to simplify electrical contacting, and a shorting structure is included to protect the sample against electrostatic discharge.
+                ]{{
+            \centering\fontsize{6}{7}\selectfont\import{methods/sample/ebeamdesign}{ebeam2.pdf_tex}}}
+            \caption{Electron-beam lithography design of the sample at different length scales.}
             % label subfigures?
             \label{fig:methods:ebeam}
         \end{figure}

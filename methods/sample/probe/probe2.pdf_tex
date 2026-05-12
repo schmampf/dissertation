@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{113.38582677bp}%
+    \setlength{\unitlength}{113.38583758bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,13 +50,11 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.6602108)%
+  \begin{picture}(1,0.66249989)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{probe2.pdf}}%
-    \put(0.68763611,0.57184944){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Al\end{tabular}}}}%
-    \put(0.68763611,0.47184262){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Al\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{probe2.pdf}}%
-    \put(0.68711936,0.52397299){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Al$_\text{2}$O$_\text{3}$\end{tabular}}}}%
+    \put(0.6892191,0.57307537){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Al\end{tabular}}}}%
+    \put(0.6892191,0.47307537){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Al\end{tabular}}}}%
+    \put(0.69435684,0.52510086){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Al\textsubscript{2}O\textsubscript{3}\end{tabular}}}}%
   \end{picture}%
 \endgroup%
