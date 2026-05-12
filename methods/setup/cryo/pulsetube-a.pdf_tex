@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.3.2 (091e20e, 2023-11-25), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'pulsetube2.pdf' (pdf, eps, ps)
+%% Accompanies image file 'pulsetube-a.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{147.4015748bp}%
+    \setlength{\unitlength}{141.73228346bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,12 +50,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.34615385)%
+  \begin{picture}(1,0.32)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0.88081256,0.19364509){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}HX$_\text{c}$\end{tabular}}}}%
-    \put(0.88081256,0.82826041){\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}HX$_\text{w}$\end{tabular}}}}%
-    \put(0.38081254,1.25133735){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}HX$_\text{0}$\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{pulsetube2.pdf}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{pulsetube-a.pdf}}%
+    \put(-0.00000488,0.21551764){\color[rgb]{0,0.6627451,0.87843137}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta p$\end{tabular}}}}%
+    \put(0.16000001,0.24){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta Q$\end{tabular}}}}%
+    \put(0.76000001,0.24){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta Q$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

@@ -24,31 +24,55 @@
             \begin{figure}[t!]
                 \centering
                 \subfigure[
-                Operating principle of a single-stage pulse-tube refrigerator. Adapted from Ref.~\cite{bar-cohen_low_2019}.
+                Pressure $\Delta p$ enters from the left. Heat $\Delta Q$ is lost to the surrounding. The high-pressure is stopped by the orifice.
                 ]{\fontsize{7}{9}\selectfont
-                \import{methods/setup/cryo}{pulsetube1.pdf_tex}
+                \import{methods/setup/cryo}{pulsetube-a.pdf_tex}
+                }
+                \setcounter{subfigure}{2}
+                \subfigure[
+                The returning high-pressure from the orifice takes in heat in the cold heat-exchanger and leaves to the left.
+                ]{\fontsize{7}{9}\selectfont
+                \import{methods/setup/cryo}{pulsetube-c.pdf_tex}
                 }
                 \hfill
+                \setcounter{subfigure}{1}
                 \subfigure[
-                Schematic of a two-stage Gifford--McMahon-type pulse tube. Adapted from Ref.~\cite{de_waele_basic_2011}.
+                The virtual gas piston gets displaced and the high-pressure is delayed by the buffer volume.
                 ]{\fontsize{7}{9}\selectfont
-                \import{methods/setup/cryo}{pulsetube2.pdf_tex}
+                \import{methods/setup/cryo}{pulsetube-b.pdf_tex}
                 }
-                \caption{Schematic illustration of pulse-tube cooling. (a) Operating principle of a single-stage pulse-tube refrigerator. The oscillating helium flow passes from the warm end through the aftercooler HX\textsubscript{0}, the regenerator, and the cold heat exchanger HX\textsubscript{c} into the pulse-tube volume. The gray squares (\legend{seegrau65}) indicate the gas column that acts as a virtual piston, while the warm heat exchanger HX\textsubscript{w} and the flow impedance connected to the buffer volume set the phase relation between pressure and gas displacement $\Delta x$. Gray arrows indicate the inlet and outlet pressure $p$, gray shaded areas indicate high-pressure phases, black arrows indicate motion of the gas piston, and blue arrows (\legend{seeblau100}) indicate heat flow. (b) Schematic of a two-stage Gifford--McMahon-type pulse tube used for few-kelvin precooling. The rotary valve (\legend{seegrau65}) alternately connects the cold head to the high- and low-pressure sides of the compressor. The first stage provides an intermediate thermal anchor, while the second stage is precooled by the first stage and reaches the few-kelvin range.}
+                \setcounter{subfigure}{3}
+                \subfigure[
+                The virtual gas-piston gets again displaced and the pressure is in equilibrium, beofre the next cycle starts over again.
+                ]{\fontsize{7}{9}\selectfont
+                \import{methods/setup/cryo}{pulsetube-d.pdf_tex}
+                }
+                \caption{Schematic of pulse-tube cooling. It includes aftercooler (X\textsubscript{0}), regenerator (RG), cold heat-exchanger (X\textsubscript{c}), pulse tube (PT), hot heat-exchanger (X\textsubscript{h}), virtual gas piston (GP), orifice (OR), and buffer volume (BV). High-pressure regions are indicated in blue (\legend{seeblau100}). Adapted from Ref.~\cite{bar-cohen_low_2019}}
                 \label{fig:setup:pulsetube}
             \end{figure}
 
-            The first cooling stage of the dry cryostat is a two-stage Gifford--McMahon-type pulse-tube cryocooler. It is a closed-cycle refrigerator in which helium is periodically compressed and expanded, but the cold head contains no mechanical displacer. The pressure oscillation is generated at room temperature by a compressor package and rotary valve. Regenerators, heat exchangers, pulse-tube volumes, and flow impedances then convert this oscillating gas flow into refrigeration. In the Bluefors LD400 system, the pulse tube precools the radiation shields, thermalizes wiring, and brings the helium mixture to the few-kelvin range.
+            The first cooling stage of the dry cryostat is a two-stage Gifford--McMahon-type (GM-type) pulse-tube cryocooler. It is a closed-cycle refrigerator in which helium is periodically compressed and expanded, but the cold head contains no mechanical displacer. The pressure oscillation is generated at room temperature by a compressor package and rotary valve. Regenerators, heat exchangers, pulse-tube volumes, and flow impedances then convert this oscillating gas flow into refrigeration. In the Bluefors LD400 system, the pulse tube precools the radiation shields, thermalizes wiring, and brings the helium mixture to the few-kelvin range.
 
-            The basic pulse-tube principle is illustrated in Fig.~\ref{fig:setup:pulsetube}(a) for a single-stage orifice pulse-tube refrigerator, following Refs.~\cite{de_waele_basic_2011, bar-cohen_low_2019}. From the warm end to the cold end, the stage contains an aftercooler, a regenerator, a cold heat exchanger, the pulse-tube volume, a warm heat exchanger, and a flow impedance connected to a buffer volume. The compressor imposes a periodic pressure variation, so the helium oscillates through the cold head rather than circulating in one direction. In the regenerator, the gas exchanges heat with a porous matrix of high heat capacity, which maintains the temperature gradient between the warm and cold ends.
+            The basic pulse-tube principle is illustrated in Fig.~\ref{fig:setup:pulsetube} for a single-stage orifice pulse-tube refrigerator, following Refs.~\cite{de_waele_basic_2011, bar-cohen_low_2019}. From the warm end to the cold end, the stage contains an aftercooler, a regenerator, a cold heat exchanger, the pulse-tube volume, a warm heat exchanger, and a flow impedance connected to a buffer volume. The compressor imposes a periodic pressure variation, so the helium oscillates through the cold head rather than circulating in one direction. In the regenerator, the gas exchanges heat with a porous matrix of high heat capacity, which maintains the temperature gradient between the warm and cold ends.
 
             The pulse tube replaces the mechanical displacer by a gas column that acts as a virtual piston. Near the warm end, gas enters from the buffer when the pulse-tube pressure is low and leaves again when the pressure is high. Because compression heats the gas and expansion cools it, gas parcels near the warm end reject heat to the warm heat exchanger. At the cold end, the phase timing is such that gas returns to the cold heat exchanger at lower temperature and absorbs heat from the cold stage. The useful cooling is therefore associated with a net enthalpy flow through the pulse-tube gas column.
 
             The phase relation between pressure and volume flow is the central design parameter. The warm-end impedance, realized by an orifice, an inertance tube, a reservoir, or a combination of these elements, delays gas exchange with the buffer volume and shifts the gas displacement relative to the pressure oscillation. The compressor and rotary valve provide the pressure drive, while the impedance network determines when gas moves. This phase shift replaces the function of the cold displacer in a conventional Gifford--McMahon cooler.
 
+            \begin{wrapfigure}[25]{r}{0.4\textwidth}
+                \captionsetup{format=plain}%
+                \centering
+                % \vspace{-1.5em}
+                \vspace{-0.75em}
+                {\fontsize{7}{9}\selectfont
+                \import{methods/setup/cryo}{pulsetube-gm.pdf_tex}}
+                % \vspace{-0.75em}
+                \caption{Schematic of a two-stage Gifford--McMahon-type pulse tube. The rotary valve (RV) alternately connects the cold head to the high- and low-pressure sides of the compressor (CP). The first stage provides an intermediate thermal anchor, while the second stage is precooled by the first stage. Adapted from Ref.~\cite{de_waele_basic_2011}.}
+                \label{fig:setup:pulse-tube-gm}
+            \end{wrapfigure}
             In a Gifford--McMahon-type pulse tube, the compressor maintains high- and low-pressure helium reservoirs, and a rotary valve alternately connects the cold head to these pressure levels. The drive is therefore similar to that of a Gifford--McMahon cryocooler, while the cold head remains a pulse-tube cold head. This distinction matters experimentally. The absence of a moving displacer at low temperature reduces wear and direct vibration close to the sample, but the rotary valve, pressure oscillations, and gas dynamics still generate vibrations that can couple into sensitive transport measurements.
 
-            To reach the few-kelvin range, two pulse-tube stages are cascaded, as shown in Fig.~\ref{fig:setup:pulsetube}(b) and described in Ref.~\cite{de_waele_basic_2011}. The first stage removes the dominant heat load at intermediate temperatures and provides a thermal anchor near 40\,K. The second stage is precooled by the first stage and reaches the few-kelvin range. In the idealized U-shaped two-stage geometry, the cold ends are placed conveniently for cryostat integration, while heat from the warm end of the second pulse tube is not imposed on the first stage.
+            To reach the few-kelvin range, two pulse-tube stages are cascaded, as shown in Fig.~\ref{fig:setup:pulse-tube-gm} and described in Ref.~\cite{de_waele_basic_2011}. The first stage removes the dominant heat load at intermediate temperatures and provides a thermal anchor near 40\,K. The second stage is precooled by the first stage and reaches the few-kelvin range. In the idealized U-shaped two-stage geometry, the cold ends are placed conveniently for cryostat integration, while heat from the warm end of the second pulse tube is not imposed on the first stage.
 
             Mechanical decoupling is therefore part of the cryostat design. To reduce the transmission of pulse-tube and building vibrations to the sample stage, the cryostat frame is supported by pneumatic air springs at the four corners, operated at about 6\,bar. The suspended cryostat assembly has a large mass, even before accounting for the support frame and experimental wiring. The integrated 7\,T magnet alone has a specified weight of about 26\,kg~\cite{bluefors_bluefors_nodate-1}. This large suspended mass provides additional inertial filtering of external vibrations, while the air springs lower the mechanical coupling between the laboratory floor and the MCBJ. The damping does not remove all pulse-tube-driven motion, but it reduces the sensitivity of the atomic contact to laboratory vibrations and improves the stability of slow conductance tuning. In practice, contacts could remain stable on the scale of weeks as long as the cryostat was not mechanically disturbed. A small fraction of contacts still showed atomic rearrangements during individual measurements, which is an intrinsic limitation of atomic-scale junctions rather than only a cryostat-stability issue.
 
@@ -66,7 +90,7 @@
                 \vspace{-2.0em}
                 \import{methods/setup/cryo}{joule-thomson.pgf}
                 \vspace{-2.0em}
-                \caption{Joule--Thomson coefficient of \textsuperscript{4}He as a function of temperature. The curve was calculated for a pressure of $p = 1\,\mathrm{bar}$ using CoolProp~\cite{bell_pure_2014} and illustrates the change of sign at the inversion temperature.}
+                \caption{Joule--Thomson coefficient of \textsuperscript{4}He as a function of temperature. The curve was calculated for a pressure of 1\,bar using CoolProp~\cite{bell_pure_2014} and shows the change of sign at the inversion temperature.}
                 \label{fig:setup:joule-thomson}
             \end{wrapfigure}
             After the pulse tube has cooled the cryostat to the few-kelvin range, the circulating helium mixture still has to be condensed before it can enter the dilution circuit. Condensation cannot be performed efficiently at room temperature, because the incoming gas would carry too much enthalpy into the cold part of the cryostat. The high-pressure mixture is therefore thermalized at the pulse-tube stages and then expanded through a flow impedance. This expansion stage is the Joule--Thomson stage of the refrigerator~\cite{de_waele_basic_2011,pobell_matter_nodate}.
@@ -104,21 +128,42 @@
         \subsubsection*{Dilution Refrigerator}
         %=========================================================
 
-            \begin{wrapfigure}[43]{r}{0.4\textwidth}
-                \captionsetup{format=plain}%
+            % \begin{wrapfigure}[43]{r}{0.4\textwidth}
+            %     \captionsetup{format=plain}%
+            %     \centering
+            %     \vspace{-2.75em}
+            %     \vspace{-2.0em}
+            %     \import{methods/setup/cryo}{phase-diagram.pgf}
+            %     \vspace{-1.75em}
+            %     \caption{Phase diagram of liquid \textsuperscript{3}He\,/\,\textsuperscript{4}He mixtures. The diagram shows the phase-separation boundary and the lambda line. Below the phase-separation boundary, the liquid separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase. Adapted from Ref.~\cite{radebaugh_thermodynamic_1967}.}
+            %     \label{fig:setup:phase-diagram}
+            %     \vspace{1.0em}
+            %     \import{methods/setup/cryo}{dilution-fridge.pdf_tex}
+            %     \vspace{-1.25em}
+            %     \caption{Schematic operation principle of the dilution refrigerator. The incoming \textsuperscript{3}He-rich liquid (\legend{seeblau100}) is precooled in the counterflow heat exchangers before entering the mixing chamber. Cooling is produced as \textsuperscript{3}He crosses the phase boundary from the concentrated phase into the dilute phase (\legend{seegrau65}). The mixture returns to the still, where preferential evaporation of \textsuperscript{3}He maintains the circulation. The color gradient on the right indicates the temperature gradient, while the spheres schematically indicate the relative \textsuperscript{3}He and \textsuperscript{4}He content.}
+            %     \label{fig:setup:dilution-fridge}
+            % \end{wrapfigure}
+
+            \begin{figure}[t]
                 \centering
-                \vspace{-2.75em}
-                \vspace{-2.0em}
-                \import{methods/setup/cryo}{phase-diagram.pgf}
-                \vspace{-1.75em}
-                \caption{Phase diagram of liquid \textsuperscript{3}He\,/\,\textsuperscript{4}He mixtures. The diagram shows the phase-separation boundary and the lambda line. Below the phase-separation boundary, the liquid separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase. Adapted from Ref.~\cite{radebaugh_thermodynamic_1967}.}
-                \label{fig:setup:phase-diagram}
-                \vspace{1.0em}
-                \import{methods/setup/cryo}{dilution-fridge.pdf_tex}
-                \vspace{-1.25em}
-                \caption{Schematic operation principle of the dilution refrigerator. The incoming \textsuperscript{3}He-rich liquid (\legend{seeblau100}) is precooled in the counterflow heat exchangers before entering the mixing chamber. Cooling is produced as \textsuperscript{3}He crosses the phase boundary from the concentrated phase into the dilute phase (\legend{seegrau65}). The mixture returns to the still, where preferential evaporation of \textsuperscript{3}He maintains the circulation. The color gradient on the right indicates the temperature gradient, while the spheres schematically indicate the relative \textsuperscript{3}He and \textsuperscript{4}He content.}
+                \subfigure[
+                Phase diagram of liquid \textsuperscript{3}He\,/\,\textsuperscript{4}He mixtures. The diagram shows the phase-separation boundary and the lambda line. Below the phase-separation boundary, the liquid separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase. Adapted from Ref.~\cite{radebaugh_thermodynamic_1967}
+                ]{\ooalign{%
+                        \import{methods/setup/cryo}{phase-diagram.pgf}\cr
+                        {\fontsize{7}{9}\selectfont\import{methods/setup/cryo}{phase-diagram.pdf_tex}}\cr
+                    }%
+                }
+                \hfill
+                \subfigure[
+                Schematic operation principle of the dilution refrigerator. The color gradient on the right indicates the temperature gradient, while the spheres indicate the relative \textsuperscript{3}He and \textsuperscript{4}He content.
+                ]{\fontsize{7}{9}\selectfont\import{methods/setup/cryo}{dilution-fridge.pdf_tex}
+                }
+                \caption{The incoming \textsuperscript{3}He-rich liquid (\legend{seeblau100}) is precooled in the counterflow heat exchangers before entering the mixing chamber. Cooling is produced as \textsuperscript{3}He crosses the phase boundary from the concentrated phase into the dilute phase (\legend{seegrau65}). The mixture returns to the still, where preferential evaporation of \textsuperscript{3}He maintains the circulation. }
                 \label{fig:setup:dilution-fridge}
-            \end{wrapfigure}
+            \end{figure}
+
+
+
             The dilution refrigerator uses the phase separation of liquid \textsuperscript{3}He\,/\,\textsuperscript{4}He mixtures to reach the millikelvin regime. As shown in Fig.~\ref{fig:setup:phase-diagram}, a liquid mixture below the phase-separation boundary separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase. In the low-temperature limit, the concentrated phase approaches pure \textsuperscript{3}He, while the dilute phase retains a finite \textsuperscript{3}He concentration of about 0.066. This finite solubility is the key property that allows continuous refrigeration: \textsuperscript{3}He can keep entering the dilute phase even as the temperature approaches zero.
 
             The cooling mechanism is based on the enthalpy difference of \textsuperscript{3}He in the two phases. In the mixing chamber, the phase boundary separates the concentrated phase from the dilute phase. As \textsuperscript{3}He crosses this boundary from the concentrated phase into the dilute phase, energy is required. This energy is absorbed from the mixing chamber and provides the cooling power of the dilution stage. The process is not a one-time mixing event, but is maintained by continuously removing \textsuperscript{3}He from the dilute phase and returning it to the concentrated phase through the circulation loop.
