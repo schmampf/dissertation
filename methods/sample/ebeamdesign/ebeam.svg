@@ -26,13 +26,13 @@
      inkscape:pagecheckerboard="0"
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
-     inkscape:zoom="1.5338903"
-     inkscape:cx="213.18344"
-     inkscape:cy="251.32176"
-     inkscape:window-width="1920"
-     inkscape:window-height="1022"
-     inkscape:window-x="0"
-     inkscape:window-y="30"
+     inkscape:zoom="1.5202649"
+     inkscape:cx="122.01821"
+     inkscape:cy="159.84056"
+     inkscape:window-width="1472"
+     inkscape:window-height="843"
+     inkscape:window-x="215"
+     inkscape:window-y="1113"
      inkscape:window-maximized="0"
      inkscape:current-layer="g60"
      showgrid="false"
@@ -169,11 +169,10 @@
      transform="translate(-3.3975344e-6,26)"
      inkscape:export-filename="inprogress.pdf"
      inkscape:export-xdpi="96"
-     inkscape:export-ydpi="96"
-     sodipodi:insensitive="true">
+     inkscape:export-ydpi="96">
     <g
        id="g2"
-       transform="matrix(-1.3333333,0,0,1.3333333,123,-0.9999968)"
+       transform="matrix(-1.3333333,0,0,1.3333333,123,-26.999997)"
        inkscape:label="leads"
        inkscape:export-filename="inprogress.pdf"
        inkscape:export-xdpi="96"
@@ -219,7 +218,7 @@
     </g>
     <g
        id="g1"
-       transform="matrix(-1.3333333,0,0,1.3333333,123,-0.9999968)"
+       transform="matrix(-1.3333333,0,0,1.3333333,123,-26.999997)"
        inkscape:label="writing fields"
        style="fill:none;stroke:#73787e;stroke-width:0.15;stroke-dasharray:0.6, 0.15;stroke-dashoffset:0;stroke-opacity:1">
       <rect
@@ -344,7 +343,7 @@
     </g>
     <g
        id="g11"
-       transform="matrix(0.01,0,0,-0.01,50.039625,4.380878)"
+       transform="matrix(0.01,0,0,-0.01,50.039625,-21.619122)"
        inkscape:label="100mu">
       <g
          id="g35"
@@ -421,7 +420,7 @@
     <g
        id="g48"
        inkscape:label="stiches"
-       transform="translate(-2.999998,-0.99999987)">
+       transform="translate(-2.999998,-27)">
       <rect
          style="display:inline;fill:#73787e;fill-opacity:0.75;stroke:none;stroke-width:0.104828;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
          id="rect48-8"
@@ -556,13 +555,13 @@
        width="9.9927807"
        height="7.4857807"
        x="-55.99654"
-       y="2.0499995"
+       y="-23.950001"
        inkscape:label="100mu in 1000mu"
        transform="scale(-1,1)" />
     <g
        id="g28"
        inkscape:label="1000mu"
-       transform="translate(-2.9999946,-31.00009)"
+       transform="translate(-2.9999946,-57.00009)"
        style="display:inline;stroke-width:0.5;stroke-dasharray:none">
       <text
          xml:space="preserve"

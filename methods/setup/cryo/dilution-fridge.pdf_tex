@@ -50,13 +50,17 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.35714295)%
+  \begin{picture}(1,1.40714282)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{dilution-fridge.pdf}}%
-    \put(0.93961335,0.66574656){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Temperature Gradient\end{tabular}}}}}%
-    \put(0.09042437,0.23809541){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Still\end{tabular}}}}}%
-    \put(0.09042437,1.02380963){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MXC\end{tabular}}}}}%
-    \put(0.08996709,0.62566663){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Heat Exchanger\end{tabular}}}}}%
+    \put(0.61904769,0.83571431){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textsuperscript{3}He\,/\,\textsuperscript{4}He\\\end{tabular}}}}%
+    \put(0.68907524,0.75324213){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Gas\end{tabular}}}}%
+    \put(0.69009914,0.58542872){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Fermi Fluid\,/\\Superfluid\end{tabular}}}}%
+    \put(0.69009914,0.66876714){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Normal Fluid\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{dilution-fridge.pdf}}%
+    \put(0.07187674,0.30528592){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Still\end{tabular}}}}}%
+    \put(0.07187672,1.09100017){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MXC\end{tabular}}}}}%
+    \put(0.07141943,0.69285718){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Heat Exchanger\end{tabular}}}}}%
   \end{picture}%
 \endgroup%
