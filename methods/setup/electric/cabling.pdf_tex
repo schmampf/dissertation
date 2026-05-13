@@ -57,14 +57,15 @@
     \put(0.52602793,0.44485016){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}pin headers\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{cabling.pdf}}%
     \put(0.47338509,0.57088268){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}shielded box\end{tabular}}}}%
-    \put(0.00640387,0.52563496){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}twisted coaxial cables\end{tabular}}}}}%
-    \put(0.77563651,0.52563496){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}coaxial AC cables\end{tabular}}}}}%
+    \put(0.00640612,0.49998997){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}coaxial twisted-pair cables\end{tabular}}}}}%
+    \put(0.77563646,0.51280617){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}coaxias microwave cables\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{cabling.pdf}}%
     \put(0.82979181,0.96187247){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-0\,dB\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{cabling.pdf}}%
     \put(0.95800111,0.96187248){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-0\,dB\end{tabular}}}}}%
     \put(0.28846422,1.33333141){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}commercial\\cabling\end{tabular}}}}%
-    \put(0.00640802,0.12819928){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}insulated copper wires\end{tabular}}}}}%
+    \put(0.3155087,0.20009875){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}copper wires\end{tabular}}}}}%
+    \put(0.00640614,0.19878047){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}manganin wire\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{cabling.pdf}}%
     \put(0.13461316,1.06409648){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{T}\textsubscript{sample}\end{tabular}}}}}%
     \put(0.00640801,1.06409648){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{P}\textsubscript{heating}\end{tabular}}}}}%
@@ -89,7 +90,8 @@
     \put(0.82979172,1.25033816){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-10\,dB\end{tabular}}}}}%
     \put(0.35755217,0.05756773){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sample\end{tabular}}}}%
     \put(0.46057354,0.22596213){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MCBJ\end{tabular}}}}%
-    \put(0.52624236,0.16378478){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}TB\end{tabular}}}}%
+    \put(0.52564104,0.16666665){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}TB\end{tabular}}}}%
+    \put(0.41025643,0.15384614){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Island\end{tabular}}}}%
     \put(0.17960692,0.26066472){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Thermo-\\meter\end{tabular}}}}%
     \put(0.17799921,0.05189549){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Heater\end{tabular}}}}%
     \put(0.8577536,0.01318546){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Antenna\end{tabular}}}}%
