@@ -54,6 +54,6 @@
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{phase-diagram.pdf}}%
-    \put(0.55989159,0.21295975){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Phase Transition\end{tabular}}}}%
+    \put(0.55989159,0.21295975){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Phase Transition\end{tabular}}}}%
   \end{picture}%
 \endgroup%

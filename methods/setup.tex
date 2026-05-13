@@ -128,26 +128,12 @@
         \subsubsection*{Dilution Refrigerator}
         %=========================================================
 
-            % \begin{wrapfigure}[43]{r}{0.4\textwidth}
-            %     \captionsetup{format=plain}%
-            %     \centering
-            %     \vspace{-2.75em}
-            %     \vspace{-2.0em}
-            %     \import{methods/setup/cryo}{phase-diagram.pgf}
-            %     \vspace{-1.75em}
-            %     \caption{Phase diagram of liquid \textsuperscript{3}He\,/\,\textsuperscript{4}He mixtures. The diagram shows the phase-separation boundary and the lambda line. Below the phase-separation boundary, the liquid separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase. Adapted from Ref.~\cite{radebaugh_thermodynamic_1967}.}
-            %     \label{fig:setup:phase-diagram}
-            %     \vspace{1.0em}
-            %     \import{methods/setup/cryo}{dilution-fridge.pdf_tex}
-            %     \vspace{-1.25em}
-            %     \caption{Schematic operation principle of the dilution refrigerator. The incoming \textsuperscript{3}He-rich liquid (\legend{seeblau100}) is precooled in the counterflow heat exchangers before entering the mixing chamber. Cooling is produced as \textsuperscript{3}He crosses the phase boundary from the concentrated phase into the dilute phase (\legend{seegrau65}). The mixture returns to the still, where preferential evaporation of \textsuperscript{3}He maintains the circulation. The color gradient on the right indicates the temperature gradient, while the spheres schematically indicate the relative \textsuperscript{3}He and \textsuperscript{4}He content.}
-            %     \label{fig:setup:dilution-fridge}
-            % \end{wrapfigure}
-
-            \begin{figure}[t]
+            \begin{figure}[t!]
                 \centering
+                \newcommand{\capHeThree}{\smash{\textsuperscript{3}}He}
+                \newcommand{\capHeFour}{\smash{\textsuperscript{4}}He}
                 \subfigure[
-                Phase diagram of liquid \textsuperscript{3}He\,/\,\textsuperscript{4}He mixtures. The diagram shows the phase-separation boundary and the lambda line. Below the phase-separation boundary, the liquid separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase. Adapted from Ref.~\cite{radebaugh_thermodynamic_1967}
+                Phase diagram of liquid \capHeThree\,/\,\capHeFour{} mixtures. The white region is forbidden for a homogeneous liquid, because mixtures in this range lower their free energy by separating into a \capHeThree-rich concentrated phase and a \capHeFour-rich dilute phase. The $\lambda$-line marks the superfluid transition of the \capHeFour-rich phase. Adapted from Ref.~\cite{radebaugh_thermodynamic_1967}.
                 ]{\ooalign{%
                         \import{methods/setup/cryo}{phase-diagram.pgf}\cr
                         {\fontsize{7}{9}\selectfont\import{methods/setup/cryo}{phase-diagram.pdf_tex}}\cr
@@ -155,20 +141,19 @@
                 }
                 \hfill
                 \subfigure[
-                Schematic operation principle of the dilution refrigerator. The color gradient on the right indicates the temperature gradient, while the spheres indicate the relative \textsuperscript{3}He and \textsuperscript{4}He content.
-                ]{\fontsize{7}{9}\selectfont\import{methods/setup/cryo}{dilution-fridge.pdf_tex}
+                Dilution-unit circulation. The incoming \capHeThree-rich stream is precooled, enters the mixing chamber (MXC), and cools it as \capHeThree{} crosses into the dilute phase. The still evaporates \capHeThree{} and closes the cycle.
+                ]{{\fontsize{7}{9}\selectfont\import{methods/setup/cryo}{dilution-fridge.pdf_tex}}
                 }
-                \caption{The incoming \textsuperscript{3}He-rich liquid (\legend{seeblau100}) is precooled in the counterflow heat exchangers before entering the mixing chamber. Cooling is produced as \textsuperscript{3}He crosses the phase boundary from the concentrated phase into the dilute phase (\legend{seegrau65}). The mixture returns to the still, where preferential evaporation of \textsuperscript{3}He maintains the circulation. }
+                \vspace{-.75em}
+                \caption{Dilution refrigeration with a \textsuperscript{3}He\,/\,\textsuperscript{4}He mixture. (a) The phase diagram shows the miscibility gap and the finite low-temperature \textsuperscript{3}He solubility of the dilute phase. (b) The circulation schematic shows how continuous removal of \textsuperscript{3}He from the dilute phase keeps the mixing chamber cold.}
                 \label{fig:setup:dilution-fridge}
             \end{figure}
 
+            The dilution unit is governed by the low-temperature phase diagram of the helium mixture rather than by a further gas-expansion step. Figure~\ref{fig:setup:dilution-fridge}(a) shows that a homogeneous liquid is stable only outside the phase-separation boundary. The white ``Forbidden Region'' is therefore not an impossible total mixture composition. It is a miscibility gap. If the average \textsuperscript{3}He concentration and temperature place the mixture inside this region, the homogeneous liquid has a higher free energy than two coexisting liquids. The mixture therefore separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase with compositions on the phase boundary at the same temperature~\cite{radebaugh_thermodynamic_1967,pobell_matter_nodate}.
 
+            This phase separation is useful because the dilute phase does not become pure \textsuperscript{4}He as the temperature approaches zero. Instead, it retains a finite \textsuperscript{3}He concentration of about 0.066, while the concentrated phase approaches nearly pure \textsuperscript{3}He. The mixing chamber exploits exactly this property. Its phase boundary separates the upper concentrated phase from the lower dilute phase. When \textsuperscript{3}He atoms cross from the concentrated phase into the dilute phase, they enter a state with larger enthalpy. The required energy is taken from the mixing chamber, so the transfer cools the sample stage. The refrigerator can keep cooling only if this transfer is driven continuously. Without circulation, the phases would approach equilibrium and the cooling power would vanish.
 
-            The dilution refrigerator uses the phase separation of liquid \textsuperscript{3}He\,/\,\textsuperscript{4}He mixtures to reach the millikelvin regime. As shown in Fig.~\ref{fig:setup:phase-diagram}, a liquid mixture below the phase-separation boundary separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase. In the low-temperature limit, the concentrated phase approaches pure \textsuperscript{3}He, while the dilute phase retains a finite \textsuperscript{3}He concentration of about 0.066. This finite solubility is the key property that allows continuous refrigeration: \textsuperscript{3}He can keep entering the dilute phase even as the temperature approaches zero.
-
-            The cooling mechanism is based on the enthalpy difference of \textsuperscript{3}He in the two phases. In the mixing chamber, the phase boundary separates the concentrated phase from the dilute phase. As \textsuperscript{3}He crosses this boundary from the concentrated phase into the dilute phase, energy is required. This energy is absorbed from the mixing chamber and provides the cooling power of the dilution stage. The process is not a one-time mixing event, but is maintained by continuously removing \textsuperscript{3}He from the dilute phase and returning it to the concentrated phase through the circulation loop.
-
-            The circulation path is illustrated schematically in Fig.~\ref{fig:setup:dilution-fridge}. The incoming \textsuperscript{3}He-rich stream is first precooled by the outgoing cold stream in the counterflow heat exchangers and then enters the mixing chamber as part of the concentrated phase. At the phase boundary, \textsuperscript{3}He enters the dilute phase and produces cooling. The dilute mixture then flows back toward the still. Since \textsuperscript{3}He has a much higher vapor pressure than \textsuperscript{4}He at the still temperature, heating the still preferentially evaporates \textsuperscript{3}He and maintains the circulation. The evaporated \textsuperscript{3}He-rich gas is pumped away, purified and compressed by the room-temperature gas-handling system, and finally returned to the condensing line. The cooling power is therefore set primarily by the \textsuperscript{3}He circulation rate and by the heat-exchanger efficiency. The heat exchangers determine how well the incoming stream is precooled before it reaches the mixing chamber~\cite{de_waele_basic_2011,pobell_matter_nodate}.
+            The circulation path in Fig.~\ref{fig:setup:dilution-fridge}(b) shows how this non-equilibrium condition is maintained. The incoming \textsuperscript{3}He-rich stream is precooled by the outgoing cold dilute stream in the counterflow heat exchangers and enters the mixing chamber on the concentrated side of the phase boundary. After crossing into the dilute phase, the \textsuperscript{3}He is carried upward with the dilute mixture toward the still. At the still temperature, \textsuperscript{3}He has a much higher vapor pressure than \textsuperscript{4}He, so still heating evaporates \textsuperscript{3}He preferentially. The pumps remove this \textsuperscript{3}He-rich gas, the room-temperature gas-handling system cleans and compresses it, and the condensing line returns it to the cryostat. The cooling power is therefore set mainly by the \textsuperscript{3}He circulation rate and by the heat-exchanger efficiency. The heat exchangers determine how much of the outgoing cooling is recovered before the incoming stream reaches the mixing chamber~\cite{de_waele_basic_2011,pobell_matter_nodate}.
 
             Typical preparation and cooldown values are useful diagnostics for later operation. Before cooldown, the cryostat vacuum space was pumped for up to 24\,h and reached pressures of about $6\times10^{-3}\,\mathrm{mbar}$. During cryogenic operation, the insulating vacuum reached about $2\times10^{-6}\,\mathrm{mbar}$. A full cooldown to the few-kelvin regime, including the magnet, took about 36\,h. Under typical operating conditions the nominal 40\,K stage stabilized near 47\,K, while the 4\,K stage reached about 3.2\,K. Once the system was at 4\,K, condensation of the mixture took about 1\,h, and the subsequent cooldown from 4\,K to base temperature took about 3\,h.
 
