@@ -11,6 +11,7 @@
     This section is organized by experimental constraint rather than by component list. I first describe the cryogenic environment, because temperature, vibration, and thermal anchoring set the basic operating window. I then describe the break-junction mechanics, which determines how reproducibly the contact can be opened and tuned. Finally, I describe the electrical measurement environment, because the measured spectra depend on the wiring, filters, instruments, and grounding as much as on the nominal source settings.
 
     %=========================================================
+    \newpage
     \subsection{Cryogenic Environment}
     \label{subsec:setup:cryostat}
     %=========================================================
@@ -21,7 +22,10 @@
         \subsubsection*{Pulse Tube Cryocooler}
         %=========================================================
 
-            \begin{figure}[t!]
+
+            The first active cooling stage is a two-stage Gifford--McMahon-type (GM-type) pulse tube. It is a closed-cycle helium refrigerator. A room-temperature compressor and rotary valve generate a pressure oscillation, while the cold head contains no mechanical displacer. This distinction is important for the MCBJ experiment. The pulse tube removes the dominant heat load, cools the radiation shields, provides thermal anchors for wiring, and brings the helium mixture to the few-kelvin range. At the same time, the pressure oscillation and rotary valve remain a source of mechanical vibration.
+
+            \begin{figure}[tb]
                 \centering
                 \subfigure[
                 Pressure $\Delta p$ enters from the left. Heat $\Delta Q$ is rejected at the warm end. The high-pressure front is delayed by the orifice.
@@ -50,42 +54,32 @@
                 \caption{Schematic of pulse-tube cooling. The stage consists of an aftercooler (X\textsubscript{0}), regenerator (RG), cold heat exchanger (X\textsubscript{c}), pulse tube (PT), warm heat exchanger (X\textsubscript{h}), virtual gas piston (GP), orifice (OR), and buffer volume (BV). High-pressure regions are indicated in blue (\legend{seeblau100}). Adapted from Ref.~\cite{bar-cohen_low_2019}.}
                 \label{fig:setup:pulsetube}
             \end{figure}
-
-            The first active cooling stage is a two-stage Gifford--McMahon-type (GM-type) pulse tube. It is a closed-cycle helium refrigerator. A room-temperature compressor and rotary valve generate a pressure oscillation, while the cold head contains no mechanical displacer. This distinction is important for the MCBJ experiment. The pulse tube removes the dominant heat load, cools the radiation shields, provides thermal anchors for wiring, and brings the helium mixture to the few-kelvin range. At the same time, the pressure oscillation and rotary valve remain a source of mechanical vibration.
-
             Figure~\ref{fig:setup:pulsetube} shows the basic operation of a single-stage orifice pulse tube, following Refs.~\cite{de_waele_basic_2011, bar-cohen_low_2019}. The compressor drives helium back and forth through the aftercooler, regenerator, cold heat exchanger, pulse-tube volume, warm heat exchanger, and the flow impedance to the buffer volume. The gas does not circulate through the cold head in one direction. It oscillates. The regenerator stores heat during one part of the cycle and returns it during another, which maintains the temperature gradient between the warm and cold ends.
 
             Cooling is produced by the phase relation between pressure and gas displacement. In a conventional GM cooler, this phase relation is imposed by a cold mechanical displacer. In a pulse tube, the gas column itself acts as a virtual piston. The warm-end impedance and buffer volume delay the flow relative to the pressure oscillation. With the correct timing, gas rejects heat at the warm heat exchanger and absorbs heat at the cold heat exchanger. The useful cooling can therefore be understood as an enthalpy flow through an oscillating gas column.
 
             The LD400 uses two cascaded pulse-tube stages, as sketched in Fig.~\ref{fig:setup:pulse-tube-gm}. The first stage removes heat at intermediate temperature and provides a thermal anchor near 40\,K. The second stage is precooled by the first and reaches the few-kelvin range. These stages are not only refrigeration points. They are also the first thermal anchors for radiation shields, cabling, and the incoming mixture line. Their performance therefore affects both the cooldown time and the heat load that must later be handled by the dilution unit.
 
-            \begin{wrapfigure}[25]{r}{0.4\textwidth}
-                \captionsetup{format=plain}%
-                \centering
-                {\fontsize{7}{9}\selectfont
-                \import{methods/setup/cryo}{pulsetube-gm.pdf_tex}}
-                \caption{Schematic of a two-stage Gifford--McMahon-type pulse tube. The rotary valve (RV) alternately connects the cold head to the high- and low-pressure sides of the compressor (CP). The first stage provides an intermediate thermal anchor, while the second stage is precooled by the first stage. Adapted from Ref.~\cite{de_waele_basic_2011}.}
-                \label{fig:setup:pulse-tube-gm}
-            \end{wrapfigure}
             Mechanical decoupling is part of the cryostat design because pulse-tube-driven motion can couple to the break junction. The cryostat frame is supported by pneumatic air springs at the four corners, operated at about 6\,bar and the suspended assembly has a large mass. The mass and air springs reduce the transmission of building and compressor vibrations to the MCBJ. They do not remove all motion, but they make slow contact tuning practical. In this configuration, contacts could remain stable on the scale of weeks as long as the cryostat was not mechanically disturbed. A small fraction of contacts still showed atomic rearrangements during individual measurements. I treat this as an intrinsic limitation of atomic-scale junctions, not only as a cryostat-stability issue.
 
             The pulse-tube system is driven by an oil-lubricated room-temperature helium compressor.\footnote{Cryomech, \texttt{CPA1110W2FNCE-21770300001}.} Low-pressure helium returning from the cold head is compressed, cooled, purified, and supplied again as high-pressure helium. Oil improves sealing and removes heat from the compressor, but it must not reach the cold head. Oil separators, coalescing filters, and adsorbers therefore remove oil droplets, mist, and residual contaminants before the helium returns to the cryostat. This purification chain is essential because impurities can freeze out at cryogenic temperatures and degrade the regenerator or block small flow impedances~\cite{cryomech_pt415_cp1110_manual_2011}.
 
+            \begin{wrapfigure}[22]{r}{0.4\textwidth}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-.5em}
+                {\fontsize{7}{9}\selectfont
+                \import{methods/setup/cryo}{pulsetube-gm.pdf_tex}}
+                \vspace{-.5em}
+                \caption{Schematic of a two-stage Gifford--McMahon-type pulse tube. The rotary valve (RV) alternately connects the cold head to the high- and low-pressure sides of the compressor (CP). The first stage provides an intermediate thermal anchor, while the second stage is precooled by the first stage. Adapted from Ref.~\cite{de_waele_basic_2011}.}
+                \label{fig:setup:pulse-tube-gm}
+            \end{wrapfigure}
             Compressor maintenance became relevant during this work. The adsorber was replaced, and the compressor heat exchanger required repeated repairs due to leaks. One practical cause was the cooling-water supply. The compressor was cooled with water from Lake Constance, which is very soft and can corrode copper cooling-water circuits if it is not chemically conditioned. Dirt particles and shell debris in insufficiently filtered lake water can additionally abrade the piping~\cite{haltiner_distribution_2022}. Eventually, a leak between the cooling-water circuit and the helium circuit led to replacement of the compressor package. This history is included because compressor degradation or helium contamination can reduce pulse-tube performance before a problem is visible at the sample stage.
 
         %=========================================================
         \subsubsection*{Joule--Thomson Cooling}
         %=========================================================
 
-            \begin{wrapfigure}[15]{r}{0.4\textwidth}
-                \captionsetup{format=plain}%
-                \centering
-                \vspace{-1.5em}
-                \import{methods/setup/cryo}{joule-thomson.pgf}
-                \vspace{-1.5em}
-                \caption{Joule--Thomson coefficient of \textsuperscript{4}He as a function of temperature. The curve was calculated for a pressure of 1\,bar using CoolProp~\cite{bell_pure_2014} and shows the change of sign at the inversion temperature.}
-                \label{fig:setup:joule-thomson}
-            \end{wrapfigure}
             After pulse-tube precooling, the circulating \textsuperscript{3}He\,/\,\textsuperscript{4}He mixture must be condensed before it can feed the dilution unit. The mixture cannot simply be expanded from room temperature into the cold part of the cryostat, because the incoming gas would carry too much enthalpy. It is first thermalized at the pulse-tube stages and by lower-temperature return flows. It then passes through a flow impedance. This is the Joule--Thomson stage of the refrigerator~\cite{de_waele_basic_2011,pobell_matter_nodate}.
 
             Joule--Thomson cooling is the temperature change of a real gas during throttling at approximately constant enthalpy $H$,
@@ -107,6 +101,15 @@
             \end{equation}
             Here $C_\mathrm{p}$ is the heat capacity at constant pressure and $\alpha$ is the thermal expansion coefficient. The Joule--Thomson coefficient is the slope of an isenthalpic path in the temperature-pressure plane. Its sign determines whether a pressure drop cools or heats the gas. For an ideal gas, enthalpy depends only on temperature, so an isenthalpic expansion would not change the temperature. Joule--Thomson cooling is therefore a real-gas effect.
 
+            \begin{wrapfigure}[15]{r}{0.4\textwidth}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-1.5em}
+                \import{methods/setup/cryo}{joule-thomson.pgf}
+                \vspace{-1.5em}
+                \caption{Joule--Thomson coefficient of \textsuperscript{4}He as a function of temperature. The curve was calculated for a pressure of 1\,bar using CoolProp~\cite{bell_pure_2014} and shows the change of sign at the inversion temperature.}
+                \label{fig:setup:joule-thomson}
+            \end{wrapfigure}
             The sign of $\mu_\mathrm{JT}$ changes at the inversion temperature, as shown in Fig.~\ref{fig:setup:joule-thomson} for \textsuperscript{4}He. Helium has an unusually low inversion temperature, so room-temperature helium would not be cooled by Joule--Thomson expansion. The exact values differ for the circulating \textsuperscript{3}He\,/\,\textsuperscript{4}He mixture, but the practical requirement is the same. The gas must be precooled before throttling can be used for condensation. The pulse tube is therefore not just a convenience stage. It brings the mixture into the thermodynamic regime where expansion removes heat instead of adding it.
 
             In the dry dilution refrigerator, the incoming high-pressure mixture is cooled stepwise before it reaches the Joule--Thomson impedance. It is anchored at the pulse-tube stages and exchanges heat with colder return flows in the lower-temperature part of the dilution unit. After this precooling, the pressure drop across the impedance lowers the temperature further and condenses the mixture. The Joule--Thomson stage thus connects pulse-tube precooling to dilution refrigeration by converting a precooled, pressurized gas flow into a cold liquid mixture for continuous circulation.
@@ -156,6 +159,7 @@
 
 
     %=========================================================
+    \newpage
     \subsection{Mechanically Controlled Break Junction}
     \label{subsec:setup:mcbj}
     %=========================================================
@@ -197,6 +201,7 @@
 
 
     %=========================================================
+    \newpage
     \subsection{Electrical Measurement Environment}
     \label{subsec:setup:electrical}
     %=========================================================
