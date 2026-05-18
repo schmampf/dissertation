@@ -60,6 +60,6 @@
     \put(0.03703748,0.4203905){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}InstrumentServer\end{tabular}}}}%
     \put(0.79452223,0.37670557){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GUI\end{tabular}}}}%
     \put(0.79452701,0.22602064){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Script\end{tabular}}}}%
-    \put(0.4657512,0.03423985){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}H5 File\end{tabular}}}}%
+    \put(0.4657512,0.03423985){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}HDF5 File\end{tabular}}}}%
   \end{picture}%
 \endgroup%
