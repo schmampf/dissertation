@@ -53,9 +53,9 @@
   \begin{picture}(1,0.47945195)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0.87209193,0.43475843){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}viewer.py\end{tabular}}}}%
-    \put(0.5275032,0.43924177){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}myserver.py\end{tabular}}}}%
-    \put(0.8191757,0.2840735){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}myscript.ipynb\end{tabular}}}}%
-    \put(0.54811395,0.09199777){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}myfile.h5\end{tabular}}}}%
+    \put(0.97260261,0.43835607){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}viewer.py\end{tabular}}}}%
+    \put(0.67123278,0.43835607){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}myserver.py\end{tabular}}}}%
+    \put(0.97260262,0.28767116){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}myscript.ipynb\end{tabular}}}}%
+    \put(0.64383553,0.09589035){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}myfile.h5\end{tabular}}}}%
   \end{picture}%
 \endgroup%
