@@ -1,0 +1,195 @@
+% !TEX root = ../thesis.tex
+
+%=========================================================
+\section{Digital Infrastructure}
+\label{sec:methods:digital}
+%=========================================================
+
+    %=========================================================
+    \subsection{Digital Measurement Architecture}
+    \label{subsec:methods:digital:architecture}
+    %=========================================================
+
+        The measurements in this work were controlled by a layered Python infrastructure. The first layer, \texttt{p5control}, provided the general abstraction for instrument access, server-based control, and HDF5 data storage. The second layer, \texttt{p5control-bluefors}, adapted this framework to the Bluefors break-junction setup by defining the relevant drivers, calculated diagnostic channels, and spectroscopy protocols. Together, these layers connected the physical instruments described in Sec.~\ref{subsec:setup:instrumentation-grounding} to the raw voltage traces and metadata used for the later data evaluation.
+
+        %=========================================================
+        \subsubsection*{\texttt{p5control}: Instrument Abstraction and Data Acquisition}
+        %=========================================================
+
+            The experiment required a control layer that could handle many slow instruments during quasi-dc spectroscopy without turning each measurement script into a collection of device-specific commands. The relevant quantities were not only the voltage traces recorded during a sweep, but also the state of the surrounding setup: amplifier gains, microwave settings, sample temperature, motor position, magnetic field, gate voltage, and diagnostic values. I therefore treated the measurement program as part of the experimental apparatus. Its task was to keep instrument control, data acquisition, and metadata logging in one reproducible structure.
+
+            The general framework for this task was \texttt{p5control}, which was written by Florian Kayatz during his student-assistant work under my supervision~\cite{kayatz_p5control}. The central idea of the framework is to separate device-specific communication from measurement scripts and graphical user interfaces. Physical instruments are represented by drivers. These drivers expose the relevant control parameters and readout values in a common form, while the details of LAN, GPIB, RS-232, USB, or device-specific command syntax remain hidden inside the driver implementation.
+
+            Figure~\ref{fig:methods:digital:p5control} shows the resulting architecture. The \texttt{InstrumentServer} and \texttt{DataServer} separate instrument control from file writing, while measurement scripts and graphical user interfaces communicate with both servers through RPyC~\cite{rpyc_github}. This made the same instrument layer available for interactive control widgets and scripted measurement protocols, and it kept the file-writing logic independent of individual measurement scripts.
+
+            \begin{figure}[t]
+                \centering
+                \makebox[\textwidth][c]{%
+                    \ooalign{%
+                        \hfil\begin{minipage}{\textwidth}
+                            \centering
+                            \import{methods/digital}{p5control-9.pdf_tex}%
+                        \end{minipage}\hfil\cr
+                        \hfil\begin{minipage}{\textwidth}
+                            \centering
+                            {\fontsize{7}{9}\selectfont
+                            \import{methods/digital}{p5control-7.pdf_tex}}%
+                        \end{minipage}\hfil\cr
+                        \hfil\begin{minipage}{\textwidth}
+                            \centering
+                            {\fontsize{5}{9}\selectfont\ttfamily
+                            \import{methods/digital}{p5control-5.pdf_tex}}%
+                        \end{minipage}\hfil\cr
+                    }%
+                }%
+                \caption{Architecture of the \texttt{p5control} measurement framework. Device-specific drivers connect physical instruments to an \texttt{InstrumentServer}; a separate \texttt{DataServer} writes status and measurement data to an HDF5 file. Scripts and graphical user interfaces communicate with both servers through RPyC.}
+                \label{fig:methods:digital:p5control}
+            \end{figure}
+
+            During operation, \texttt{p5control} distinguishes between status data and measurement data. Status data are recorded continuously. They document the slowly changing state of the setup, for example temperatures, motor position, magnet field, microwave settings, amplifier gains, or output states. Measurement data are written when a measurement is started. They contain the time traces acquired for a specific sweep or protocol. This distinction is important because the physical context of a spectrum can change on a slower time scale than the spectrum itself.
+
+            The data are stored in an HDF5 file using \texttt{h5py} and the HDF5 data model, as sketched in Fig.~\ref{fig:methods:digital:datatree}~\cite{h5py_github,hdf5_github}. The file contains both the raw traces used for later evaluation and the surrounding instrument state needed to interpret them. It therefore acts as a measurement record and as a digital laboratory notebook.
+
+            \begin{figure}[t]
+                \ttfamily\fontsize{7}{9}\selectfont
+                \centering
+                \setlength{\subfigcapskip}{0.8em}
+                \subfigure[
+                    \texttt{myfile.h5}
+                ]{
+                    \begin{tabular}{r@{}l@{}l@{}l}
+                        measurement/ & mpath0/ & dev0 \\
+                                    &           & dev1 \\
+                                    & mpath1/ & dev0 \\
+                                    &           & dev1 \\
+                        status/ & dev0 & & \\
+                                & dev1 & & \\
+                    \end{tabular}
+                }
+                \hfill
+                \subfigure[
+                    \texttt{.../mpath0/dev0}
+                ]{
+                \begin{tabular}{l|ll}
+                    t & x1 & x2\\\hline
+                    0.00 & 0.12 & 3.45\\
+                    0.01 & 1.23 & 4.56\\
+                    0.02 & 2.34 & 5.67\\
+                    0.03 & 3.45 & 6.78\\
+                    ... & ... & ... \\
+                \end{tabular}
+                }
+                \hfill
+                \subfigure[
+                    \texttt{status/dev0}
+                ]{
+                \begin{tabular}{l|ll}
+                    t & a & b\\\hline
+                    0.0 & 0.5 & 0.1\\
+                    1.0 & 1.0 & 0.1\\
+                    2.0 & 1.0 & 0.2\\
+                    3.0 & 0.0 & 0.2\\
+                    ... & ... & ...\\
+                \end{tabular}
+                }
+                \caption{HDF5 data structure used by \texttt{p5control}. The \texttt{measurement} branch stores sweep-specific datasets, while the \texttt{status} branch stores continuously logged setup quantities. Both are written as time-indexed tables.}
+                \label{fig:methods:digital:datatree}            
+            \end{figure}
+
+            The framework was designed for reproducible spectroscopy rather than hard real-time feedback. Timing-critical acquisition remained on the ADwin, which recorded the synchronized voltage channels during a sweep. \texttt{p5control} coordinated the higher-level experiment: it configured instruments, started measurements, collected data streams, and wrote the resulting traces and metadata to disk. This division matched the requirements of the break-junction experiment, where individual spectra were slow, but the relation between raw voltage traces and setup state had to remain reproducible. It made each spectrum traceable to synchronized voltage traces, instrument settings, and the logged state of the setup.
+
+        %=========================================================
+        \subsubsection*{\texttt{p5control-bluefors}: Setup-Specific Control Layer}
+        %=========================================================
+
+            The generic \texttt{p5control} layer provided the server structure, data storage, and driver abstraction, but it did not define the measurement logic of the Bluefors break-junction setup. This setup required a spectroscopy-oriented control layer that knew which instruments belonged to one transport measurement and which quantities had to be stored with each spectrum. I implemented this setup-specific layer in \texttt{p5control-bluefors}, including device-specific drivers, graphical control widgets, calculated transport channels, and the measurement protocols used for the data in this thesis~\cite{kayatz_p5control_bluefors}.
+
+            The layer treats each controlled object through the same practical model, summarized in Fig.~\ref{fig:methods:digital:drivers}: parameters, values, and state. Parameters are quantities set by the user or by a measurement script, for example bias amplitude, amplifier gain, microwave source settings, temperature setpoint, magnetic-field target, or motor displacement. Values are quantities read back from instruments or calculated from measured channels. State records whether a device is actively sweeping, irradiating, heating, ramping, moving, outputting, or reporting a diagnostic condition such as amplifier overload. This model kept slow control variables and safety-relevant state changes in the same status log as the measured spectra.
+
+            \begin{figure}[t]
+                \centering
+                    \begin{tabular}{r|l|l|l}
+                        driver & parameters & values & state \\\hline
+                        ADwin & $V_0$, $T_0$, $f_0$ & $V_0$, $V_1$, $V_2$ & Output, Sweeping \\
+                        Femtos & $A_1$, $A_2$ &  & {\color{seegrau100}Overload} \\
+                        VNA & $A_\mathrm{out}$, $\nu$ & {\color{seegrau100} $S_{11}$, $S_{21}$} & Irradiating\\
+                        BlueFors & $P_\mathrm{heater}$ & $T_\mathrm{sample}$, {\color{seegrau100}$(T, p)_\mathrm{aux}$} & Heating\\
+                        Yoko & $V_\mathrm{gate}$ & {\color{seegrau100}$I_\mathrm{leak}$} & Output\\
+                        Magnet & $\mu_0H$, $\tfrac{\partial}{\partial t}\mu_0H$ & $\mu_0H$ & Ramping\\
+                        Motor & $\Delta x$, $\tfrac{\partial}{\partial t}\Delta x$ & $\Delta x$ & Moving\\
+                        Calc & $R_\mathrm{ref}$ & {\color{seegrau100}$(I, V, G, R)_\mathrm{sample}$}, & Calculating\\
+                            & &  {\color{seegrau100}$(V_1, V_2)_{\mathrm{off}}$}\\
+                    \end{tabular}
+                \caption{Setup-specific driver model used by \texttt{p5control-bluefors}. Each driver exposes set parameters, read or calculated values, and state variables. Parameters and states are logged as status data, while measurement values are stored with the corresponding spectrum. Gray entries mark diagnostic quantities.}
+                \label{fig:methods:digital:drivers}
+            \end{figure}
+
+            The primary measurement record consists of the synchronized voltage traces recorded by the ADwin and the instrument state stored around the sweep. Together with the selected Femto gains and the reference resistance, these raw voltage traces define the later reconstruction of $V_\mathrm{sample}$ and $I_\mathrm{sample}$. In \texttt{p5control-bluefors}, the same conversion was also implemented in the \texttt{Calc} driver as a diagnostic layer for live monitoring. This layer was useful during setup work and interactive checks, but it was usually inactive during actual measurements. The spectra used for analysis were derived separately from the stored raw voltage traces, as described in the following subsection. The remaining drivers provide the physical context of the spectrum: microwave amplitude and frequency, sample temperature, displacement of the break junction, magnetic field, and gate voltage. In this sense, \texttt{p5control-bluefors} connects the electrical reconstruction described in Sec.~\ref{subsec:setup:electrical} to the structured data record described above.
+
+            This connection is enforced by the measurement protocol shown in Fig.~\ref{fig:methods:digital:ivscript}. A single \textit{I--V} spectrum is not only a voltage ramp. The relevant gains, reference value, bias waveform, timing parameters, and instrument states have to be fixed before the sweep, and the synchronized voltage traces have to be stored together with these settings. The script \texttt{single\_iv.py} therefore defines one complete spectrum: it sets the sweep parameters, waits through an offset interval, records the sweep, and writes the acquired data and metadata to the HDF5 file.
+
+            \begin{figure}[t]
+                \centering
+                \subfigure[
+                    Sequence of single \textit{I--V} measurement
+                ]{
+                    \begin{minipage}[t][1.5in]{1.8in}
+                        \centering
+                        \vspace{0pt}
+                        \import{methods/digital}{ivscript.pgf}
+                    \end{minipage}
+                }
+                \hfill
+                \subfigure[
+                    Settings of measurement sequences
+                ]{
+                \fontsize{7}{9}\selectfont
+                    \begin{minipage}[t][1.5in]{2.2in}
+                        \centering
+                        \vspace{0pt}
+                        \begin{tabular}{rl}
+                            \texttt{single\_iv.py}  &  \\
+                            $(V_0, T_0)$: & sweep (amplitude, period)\\
+                            $(t_\mathrm{offset}, t_\mathrm{sweep})$: & time of (offset, sweep) \\
+                            $(A_1, A_2)$: & channel amplifications  \\ 
+                            $f_0$: & sampling rate \vspace{.5em}\\ 
+                            \texttt{iv\_script.py}  &  \\
+                            $(A_\mathrm{out}, \nu)$: & microwave irradiation\\
+                            $T_\mathrm{sample}$: & sample temperature \\
+                            $\Delta x$: & sample displacement \\
+                            $\mu_0 H$: & magnetic field \\
+                            $V_\mathrm{gate}$: & gate voltage  \\
+                        \end{tabular}
+                    \end{minipage}
+                }
+                \caption{Protocol for quasi-dc \textit{I--V} spectroscopy. (a) A single spectrum consists of an offset interval followed by a controlled bias sweep. (b) \texttt{single\_iv.py} defines the sweep settings, gains, and sampling rate. \texttt{iv\_script.py} repeats this spectrum over an external parameter axis.}
+                \label{fig:methods:digital:ivscript}
+            \end{figure}
+
+            Parameter-dependent measurements are built by repeating this elementary spectrum. The script \texttt{iv\_script.py} steps through an external parameter axis, for example microwave amplitude, frequency, sample temperature, break-junction displacement, magnetic field, or gate voltage. For each point it starts one \texttt{single\_iv.py} measurement and stores the result in the corresponding measurement path. This structure makes maps reproducible because each line or point in the map is linked to the raw voltage traces and to the status of the surrounding setup at the time of acquisition.
+
+
+    %=========================================================
+    \subsection{Data Evaluation with \texttt{superconductivity}}
+    \label{subsec:methods:digital:analysis}
+    %=========================================================
+
+        %=========================================================
+        \newpage
+        \subsubsection*{Evaluation}
+        %=========================================================
+
+        %=========================================================
+        \newpage
+        \subsubsection*{Simulation}
+        %=========================================================
+
+        %=========================================================
+        \newpage
+        \subsubsection*{Fitting}
+        %=========================================================
+
+        %=========================================================
+        \newpage
+        \subsubsection*{Visualization}
+        %=========================================================
