@@ -516,3 +516,11 @@
             Figures~\ref{fig:meso:fcs} and \ref{fig:meso:fcs-m-inv} provide an intuitive visualization of this charge-resolved picture for selected transparencies. For each bias point, the total dc current is decomposed into the contributions $I_m(V)$ associated with processes transferring an effective charge $q=me$.
 
             This decomposition is particularly useful for microwave irradiation. Once the dc weights $I_m(V)$ are known, photon-assisted MAR can be constructed efficiently by dressing each effective-charge contribution $q=me$ with photon sidebands, avoiding a full two-frequency Floquet--Keldysh treatment for dense parameter scans. In the following section we exploit this idea to obtain a practical PAMAR description in terms of the microscopic $I_m(V)$.
+
+            A multi-channel contact was represented by a pincode-like set of transmission eigenvalues $\boldsymbol{\tau}=\{\tau_i\}$. The calculated current was the sum of independent single-channel MAR currents,
+            \begin{equation}
+                I_\mathrm{MAR}(V;\boldsymbol{\tau},T,\Delta,\gamma)
+                =
+                \sum_i I_\mathrm{HA}(V;\tau_i,T,\Delta,\gamma)\,.
+                \label{eq:meso:channel-sum}
+            \end{equation}
