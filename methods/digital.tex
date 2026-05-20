@@ -110,15 +110,15 @@
                 \centering
                     \begin{tabular}{r|l|l|l}
                         driver & parameters & values & state \\\hline
-                        ADwin & $V_0$, $T_0$, $f_0$ & $V_0$, $V_1$, $V_2$ & Output, Sweeping \\
-                        Femtos & $A_1$, $A_2$ &  & {\color{seegrau100}Overload} \\
+                        ADwin & $V_0$, $T_0$, $f_0$ & $V_1$, $V_2$, $i_0$ & Output, Sweeping \\
+                        Femtos & $A_1$, $A_2$ &  & {\color{seegrau100}Overload (2)} \\
                         VNA & $A_\mathrm{out}$, $\nu$ & {\color{seegrau100} $S_{11}$, $S_{21}$} & Irradiating\\
                         BlueFors & $P_\mathrm{heater}$ & $T_\mathrm{sample}$, {\color{seegrau100}$(T, p)_\mathrm{aux}$} & Heating\\
                         Yoko & $V_\mathrm{gate}$ & {\color{seegrau100}$I_\mathrm{leak}$} & Output\\
                         Magnet & $\mu_0H$, $\tfrac{\partial}{\partial t}\mu_0H$ & $\mu_0H$ & Ramping\\
                         Motor & $\Delta x$, $\tfrac{\partial}{\partial t}\Delta x$ & $\Delta x$ & Moving\\
-                        Calc & $R_\mathrm{ref}$ & {\color{seegrau100}$(I, V, G, R)_\mathrm{sample}$}, & Calculating\\
-                            & &  {\color{seegrau100}$(V_1, V_2)_{\mathrm{off}}$}\\
+                        Calc & $R_\mathrm{ref}$ & {\color{seegrau100}$(I, V, G, R)_\mathrm{sample}$} & Calculating\\
+                            & &  {\color{seegrau100}$(V_1, V_2)_{\mathrm{offset}}$}\\
                     \end{tabular}
                 \caption{Setup-specific driver model used by \texttt{p5control-bluefors}. Each driver exposes set parameters, read or calculated values, and state variables. Parameters and states are logged as status data, while measurement values are stored with the corresponding spectrum. Gray entries mark diagnostic quantities.}
                 \label{fig:methods:digital:drivers}
@@ -174,22 +174,146 @@
     \label{subsec:methods:digital:analysis}
     %=========================================================
 
+        The raw HDF5 files produced by the measurement stack contain synchronized instrument outputs and setup metadata, but they are not yet the physical data products used in the analysis. I first implemented many of the basic evaluation ideas in the setup-specific repository \texttt{p5control-bluefors-evaluation}~\cite{p5control_bluefors_evaluation}. For this thesis I then developed the broader Python package \texttt{superconductivity}~\cite{aschenbrenner_superconductivity} as the evaluation layer between acquisition and interpretation. In addition to trace evaluation, \texttt{superconductivity} contains numerical models for BCS and MAR spectra, fitting routines, a graphical user interface, and a visualization pipeline. The graphical interface and visualization tools were useful for daily work but are not discussed in detail here. This subsection focuses on the reproducible data path from raw voltage traces to calibrated \textit{I--V} spectra, uniformly sampled grids, and fitted model parameters.
+
         %=========================================================
-        \newpage
         \subsubsection*{Evaluation}
         %=========================================================
 
-        %=========================================================
-        \newpage
-        \subsubsection*{Simulation}
-        %=========================================================
+            The first evaluation step converts one recorded measurement path into one raw \textit{I--V} trace. The ADwin stores the synchronized channels $V_1$, $V_2$, and $i_0$ on the same time base. The voltages $V_1$ and $V_2$ are the amplified room-temperature output signals of the two readout channels. They are therefore not yet the sample voltage and current. The additional channel $i_0$ records the internal trigger state of the ADwin program and marks which part of the measurement sequence a point belongs to.
+
+            I use $i_0$ to split the recorded trace into the offset interval and the individual sweep branches. This avoids inferring sweep boundaries only from the noisy voltage ramp. For each spectrum, the evaluation selects either the upward or downward branch and discards the other parts of the sequence. Unless stated otherwise, the spectra shown in this thesis use the downward branch. This gives one monotonic sweep segment with synchronized values of $V_1(t)$ and $V_2(t)$.
+
+            The selected branch is then converted from amplifier output voltages to the physical transport variables. With voltage gains $A_1$ and $A_2$, reference resistance $R_\mathrm{ref}$, and channel offsets $V_{1,\mathrm{off}}$ and $V_{2,\mathrm{off}}$, the raw sample voltage and current are
+            \begin{align}
+                V(t) &= \frac{V_1(t) - V_{1,\mathrm{off}}}{A_1}\,, \\
+                I(t) &= \frac{V_2(t) - V_{2,\mathrm{off}}}{A_2 R_\mathrm{ref}}\,.
+                \label{eq:methods:digital:raw-iv}
+            \end{align}
+            This coarse offset subtraction is performed for every spectrum. It uses the offset interval recorded before the sweep and compensates slow thermal drifts of the Femto amplifier outputs. A second, smaller offset correction can be applied later as an optional fine tuning step when the symmetry-based offset analysis described below is used. At this point the data are still an ordered time trace, not a uniformly sampled function of voltage or current.
+
+            The raw branch is not yet suitable for numerical derivatives or direct comparison between spectra. Voltage and current are recorded as time traces, while the later analysis treats each spectrum as a function of sample voltage or current. I therefore convert each selected branch to a regular grid. Figure~\ref{fig:methods:digital:eva} illustrates the steps for one representative trace.
+
+            \begin{figure}[t]
+                \centering
+                \renewcommand{\mu}{\upmu}
+                    \subfigure[
+                            Raw branch and low-pass filtered trace.
+                        ]{
+                            \import{methods/digital}{eva_0.pgf}
+                            
+                        }
+                    \hfill
+                    \subfigure[
+                            Zoom-in of the filtering step.
+                        ]{
+                            \import{methods/digital}{eva_1.pgf}
+                        }
+                    \\
+                    \subfigure[
+                            Voltage-grid representation $I(V)$
+                        ]{
+                            \import{methods/digital}{eva_2.pgf}
+                        }
+                    \hfill
+                    \subfigure[
+                            Current-grid representation $V(I)$
+                        ]{
+                            \import{methods/digital}{eva_3.pgf}
+                        }
+                \caption{Evaluation pipeline for one selected sweep branch. The trace is low-pass filtered, resampled to increase the point density, and binned onto a regular voltage or current grid.}
+                \label{fig:methods:digital:eva}
+            \end{figure}
+
+            The branch entering the gridding pipeline has therefore already been corrected by the offsets introduced in Eq.~\eqref{eq:methods:digital:raw-iv}. If an additional offset analysis is performed, the resulting fine correction is applied at this stage before filtering and binning. A low-pass filter can then suppress high-frequency pickup that is not resolved by the quasi-dc sweep. This filtering is applied to the selected branch, not to the full measurement sequence, so that the discontinuities between offset interval and sweep do not enter the filtered trace.
+
+            The filtered branch is then resampled on a finer internal time axis. This step does not add physical information. Its purpose is to avoid empty or sparsely populated bins when the sweep is later projected onto a voltage or current axis. After resampling, the data are assigned to equally spaced bins. For a voltage-based representation, the current values in the bin around $V_k$ are averaged,
+            \begin{equation}
+                I(V_k) = \langle I(t_j) \rangle_{V(t_j) \in [V_k-\Delta V/2, V_k+\Delta V/2]}\,.
+                \label{eq:methods:digital:voltage-binning}
+            \end{equation}
+            The same operation can be performed with the axes exchanged to obtain $V(I_k)$. This second representation is useful for branches with steep current changes, where a voltage grid would concentrate many points in a small voltage interval. Optional smoothing is applied only after binning, so that derivatives are taken from a regular data product rather than from the irregular raw trace.
+
+            This pipeline yields the evaluated \textit{I--V} curve used for plotting, numerical differentiation, and model comparison. Its output remains tied to one selected sweep branch and to the acquisition metadata described above.
 
         %=========================================================
-        \newpage
-        \subsubsection*{Fitting}
+        \subsubsection*{Offset Analysis}
         %=========================================================
 
+            The coarse offset subtraction described above removes the dominant amplifier drift. For quantitative spectra, I could additionally apply a smaller symmetry-based correction to align the residual voltage origin. This step was optional and was only used when the measured curve contained enough symmetric structure to determine the remaining offset reliably.
+
+            The voltage-offset search is based on a correlation-like alignment of the differential conductance with its mirrored counterpart. The method assumes that the intrinsic quasi-dc \textit{I--V} curve is point symmetric. For such a curve, $\mathrm{d}I/\mathrm{d}V$ is even in voltage. This is useful because a constant current offset drops out under differentiation. The remaining problem is therefore the horizontal alignment of the conductance trace. If the correct voltage origin is chosen, the derivative overlaps with its reflection. In the implementation, this idea is written as a mirror-symmetry error rather than as a product-type correlation function.
+
+            In practice, the analysis scans a list of candidate voltage offsets. For a candidate $\delta V$, the trace is shifted by subtracting $\delta V$, then passed through the same filtering, resampling, binning, and smoothing pipeline as the final data. The shifted trace defines a sampled curve $I_{\delta V}(V_k)$ on a symmetric voltage grid. The score is the mean absolute mirror mismatch of its differential conductance,
+            \begin{equation}
+                \epsilon_V(\delta V)
+                =
+                \left\langle
+                    \left|
+                        \frac{\mathrm{d}I_{\delta V}}{\mathrm{d}V}(V_k)
+                        -
+                        \frac{\mathrm{d}I_{\delta V}}{\mathrm{d}V}(-V_k)
+                    \right|
+                \right\rangle_k\,.
+                \label{eq:methods:digital:offset:vscore}
+            \end{equation}
+            The voltage offset assigned to the trace is the candidate with the smallest finite value of $\epsilon_V$.
+
+            The procedure is a diagnostic correction, not a physical model fit. It is meaningful only when the expected \textit{I--V} curve is point symmetric over the analyzed bias window. Real asymmetries, rectification, strong hysteresis, or too narrow a bias range would bias the minimum of Eq.~\eqref{eq:methods:digital:offset:vscore}. The same principle can be applied to determine a residual current offset by exchanging the axes and comparing $\mathrm{d}V/\mathrm{d}I$ with its mirrored copy.
+
         %=========================================================
-        \newpage
-        \subsubsection*{Visualization}
+        \subsubsection*{BCS Simulation and Fitting}
         %=========================================================
+
+            The BCS simulation implements the forward model used for tunnel-regime quasiparticle spectra. The microscopic tunnel expressions were introduced in Sec.~\ref{subsec:micro:tunnel-current}. Here I describe how they are evaluated numerically and used in fits.
+
+            The core model evaluates the SIS tunnel current from Eq.~\eqref{eq:micro:tunnel}. The two electrodes are represented by Dynes-broadened BCS densities of states and finite-temperature Fermi functions. The free or fixed model parameters are the normal conductance $G_\mathrm{N}$, electronic temperature $T$, superconducting gap $\Delta$, and Dynes broadening $\gamma$.
+
+            For repeated evaluations, the production model uses the convolution form of the tunnel current, Eq.~\eqref{eq:micro:tunnel-conv}. Instead of recomputing the full energy integral for every bias point, the occupied and empty spectral functions are correlated on an energy grid and interpolated back to the requested voltage axis. This makes parameter sweeps and fits substantially faster while keeping the same physical model.
+
+            Photon-assisted tunneling is included by applying the Tien--Gordon sideband sum of Eq.~\eqref{eq:micro:pat-iv} to the BCS current. This extension adds the irradiation amplitude $A$ and frequency $\nu$ as model parameters. The model can also include an optional Gaussian voltage-noise broadening, which averages the current over a distribution of bias offsets with width $\sigma_V$.
+
+            The fitting interface was designed so that each model parameter can either be optimized or kept fixed. This is important for map data, where global parameters such as $\Delta$, $\gamma$, $G_\mathrm{N}$, $\nu$, or $\sigma_V$ may be determined independently or from a reference trace and then held constant while only $T$ or $A$ is fitted for each spectrum. Fixing well-constrained parameters reduces correlations between fit parameters and makes the extracted trends easier to interpret.
+
+            The JAX backend is used for production fits because the model is evaluated many times for each spectrum and for complete maps. JAX provides composable transformations for just-in-time compilation and vectorized array evaluation, which makes it well suited for repeated numerical model evaluation \cite{jax2018github}. Computational cost was treated as part of the evaluation design: JIT compilation, vectorized array operations, and the convolution kernel keep typical fitting tasks on the order of minutes on a standard laptop. The NumPy implementation serves as a transparent reference backend.
+
+            The resulting fits should be interpreted as tunnel-regime quasiparticle fits. They extract effective parameters within the BCS-Dynes description, but they do not describe finite-transmission MAR, coherent supercurrent dynamics, Coulomb blockade, or environmental phase fluctuations.
+
+        %=========================================================
+        \subsubsection*{MAR Simulation}
+        %=========================================================
+
+            The MAR simulation implements the finite-transmission forward model used for atomic-contact spectra. The physical model is described in Sec.~\ref{subsec:meso:mar}; here I only describe the numerical layer used for evaluation. The core calculations were based on three compiled Fortran backends from Carlos Cuevas: a symmetric Hamiltonian approach solver, an asymmetric Hamiltonian approach solver, and a full-counting-statistics solver. The two Hamiltonian approach solvers evaluate the dc MAR current described in Ref.~\cite{cuevas_hamiltonian_1996}, while the FCS backend gives the charge-resolved decomposition of Ref.~\cite{cuevas_full_2003}. I did not modify these numerical kernels. My contribution was the Python layer around them, which handled units, model dispatch, temperature-dependent gaps, caching, odd-symmetry reconstruction, segmented calls, and parallel evaluation.
+
+            The reason for this additional layer was computational cost. In my evaluation environment, an uncached single-channel calculation on a sufficiently resolved voltage grid typically took a few tens of seconds with the symmetric Hamiltonian approach backend, about one to two minutes with the asymmetric backend, and about ten minutes with the FCS backend. Dense parameter scans would therefore be impractical if every voltage grid and every parameter point were evaluated from scratch. The wrapper was designed to reduce the number of backend calls without changing the physical model.
+
+            The implementation distinguishes between symmetric and asymmetric superconducting electrodes. If the two thermal gaps and broadenings are equal within the numerical tolerance, the symmetric Hamiltonian approach backend is used. This case is much faster and was the default for dense fitting grids. If the two electrodes differ, the asymmetric backend is selected. The full-counting-statistics backend is only used when charge-resolved MAR currents are needed, for example for photon-assisted MAR constructions. Since asymmetric and FCS calculations are considerably more expensive, they were used selectively.
+
+            Redundant backend calls were avoided by an HDF5 cache. Each curve was stored under a deterministic key built from the rounded model parameters, including $\tau$, $T$, $\Delta$, and $\gamma$. The voltage axis was quantized to an integer grid before lookup. Because the dc \textit{I--V} curve of the model is point symmetric, only positive voltages were evaluated and cached, while the negative branch was reconstructed. Missing cache points were split into independent voltage segments and parameter combinations, then evaluated in parallel by multiple worker processes. This made large theory landscapes practical without changing the underlying model.
+
+            The wrapper also included the temperature dependence of the superconducting gap. The user-facing parameter was the zero-temperature gap, while the backend was called with the temperature dependent gap. This was important when temperature was scanned or fitted, because a change in $T$ affects both the Fermi occupations and the MAR voltage scale.
+
+        %=========================================================
+        \subsubsection*{MAR Fitting}
+        %=========================================================
+
+            To determine the pincode of an atomic contact, the measured finite-transmission spectrum has to be compared to MAR theory. The fit parameters for a multi-channel contact were therefore the channel transmissions ${\tau_i}$ and, depending on the data set, the effective temperature $T$, the zero-temperature gap $\Delta_0$, and the broadening $\gamma$.
+
+            For fitting, the experimental trace was first mapped onto the non-uniform voltage grid of the theory landscape. Only voltage points for which both experimental and theoretical values existed were kept. I compared the traces using the normalized finite-bias conductance. This avoids numerical differentiation of noisy MAR traces while still comparing the nonlinear subgap structure. An optional weight vector could mask voltage regions that should not constrain the MAR fit, most importantly a central switching or supercurrent feature that is not described by the dc quasiparticle MAR model.
+
+            The actual fit was a grid-based landscape search. Candidate pincodes were generated from the discrete transmission grid and restricted to a plausible interval of total transmission, $\tau_{\Sigma,\mathrm{min}}\leq \sum_i \tau_i \leq \tau_{\Sigma,\mathrm{max}}$. For each candidate and for each point in the $(T,\Delta,\gamma)$ grid, the residual score was
+            \begin{equation}
+                \chi^2(\boldsymbol{\tau},T,\Delta,\gamma)
+                =
+                \sum_{k\in\mathcal M}
+                w_k
+                \left[
+                    G_\mathrm{exp}(V_k)
+                    -
+                    \sum_i G_\mathrm{HA}(V_k;\tau_i,T,\Delta,\gamma)
+                \right]^2\,,
+                \label{eq:methods:digital:mar:chi2}
+            \end{equation}
+            where $\mathcal M$ denotes the masked common voltage grid. The expensive part of this comparison was vectorized and JIT compiled with JAX \cite{jax2018github}. In practice, preparing the cached theory landscape was the time-consuming step and took on the order of a few hours on a standard laptop for the grids used here. Once this cache existed, fitting an individual spectrum only required the landscape comparison and typically ran on the order of a few tens of seconds. The resulting landscape was converted into weights proportional to $\exp(-\chi^2/2)$, from which the best global parameter set and the channel-resolved transmission weights were extracted. The final channel transmissions were obtained from the maxima of these weights, with Gaussian peak fits used as a smooth interpolation on the discrete transmission grid.
+
+            This fitting procedure should be interpreted as a controlled numerical approximation to a continuous MAR fit. It assumes that the residual landscape is sufficiently smooth on the chosen parameter grid and that the physical minimum lies inside the scanned parameter ranges. The extracted transmissions are therefore effective channel transmissions within the coherent short-contact MAR model. The procedure does not model the dc supercurrent branch itself, environmental phase fluctuations, Coulomb blockade, or nonequilibrium heating beyond the effective parameters included in the grid.
