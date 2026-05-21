@@ -356,6 +356,8 @@
 
         The voltage signals were first amplified by voltage preamplifiers\footnote{Femto, \texttt{DLPVA}, preamplifier. Scientific workshop, \texttt{WW-98000627}, power supply. Femto, \texttt{Luci10}, USB control interface.}. These amplifiers provide selectable gains and a low-pass bandwidth of about 100\,kHz. Their ground-referenced output voltages are digitized by the analog inputs of the measurement card\footnote{Jäger Computergesteuerte Messtechnik GmbH, \texttt{ADwin Gold II}, connected by LAN.}. Although the ADwin can sample at rates up to 100\,kHz, the quasi-dc sweeps used here did not require this bandwidth. The data stream was therefore reduced on the ADwin to 137\,Hz.
 
+        The acquisition strategy was to record synchronized voltage traces as directly as practical and to postpone non-essential filtering, smoothing, and gridding to the evaluation stage. This keeps irreversible processing out of the measurement chain. It is especially important when new measurement protocols are commissioned, because a processing mistake should remain correctable from the stored raw data rather than being built into the only copy of the spectrum. Once the voltage signals were digitized on the ADwin, they were therefore kept digital through storage and evaluation. Additional analog--digital, digital filtering, and digital--analog conversion stages inside intermediate instruments were avoided because they would obscure which operation changed the data and would make the final trace harder to audit.
+
         \begin{figure}[t!]
             \centering
             {\fontsize{6}{9}\selectfont
