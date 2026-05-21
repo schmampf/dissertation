@@ -5,13 +5,14 @@
 \label{chapter:experimental-methods}
 %=========================================================
 
-    In this chapter, I will describe the experimental methods used in this work.
+    This chapter describes how the measurements in this thesis were made reproducible. The central experimental object was not only the superconducting nanostructure itself, but the complete measurement chain around it: sample fabrication, cryogenic mounting, filtered electrical wiring, room-temperature instrumentation, digital acquisition, and numerical evaluation. Each part constrained the quality and interpretation of the measured \textit{I--V} curves, \textit{dI--dV} spectra, conductance maps, and extracted model parameters.
 
-    First, I will discuss the sample preparation process. Although the fabrication of break junctions is well-established within the group, significant changes have been made to the design. These improvements have led to the development of a new protocol, enhancing the overall quality and stability of the samples.
+    I first describe the fabrication of mechanically controlled break-junction samples. The process followed established group experience, but I adapted the design and fabrication protocol to improve sample stability, contacting, and reproducibility. This section therefore focuses on the steps that determined the mechanical and electrical properties of the final devices, rather than on a complete cleanroom manual.
 
-    The second section covers the experimental setup. Considerable time was invested in making modifications, performing routine maintenance, and addressing issues with aging components. In particular, the cabling for direct current (DC) and alternating current (AC) measurements underwent significant upgrades to improve reliability and performance.
+    I then describe the cryogenic and electrical setup used for transport measurements. The setup section follows the measurement signal from the sample environment to the room-temperature electronics. It discusses the dilution refrigerator, mechanical actuation, cold wiring, filtering, microwave coupling, voltage and current reconstruction, and grounding strategy. The emphasis is on the choices that affected electronic temperature, low-frequency noise, microwave irradiation, and the reliability of repeated spectra.
 
-    In the third section, I will describe the electronics used. This includes an overview of the general setup and a detailed discussion of the newly implemented measurement program. Additional technical details about the Python implementation can be found in the appendix. Finally, I will present the measurement and evaluation protocols, including the data processing methods.
+    Finally, I describe the digital infrastructure that connected the physical setup to the data products analyzed in later chapters. This includes the Python-based instrument control, HDF5 data structure, evaluation pipeline, offset correction, and numerical model interfaces for tunnel-regime BCS fits and finite-transmission MAR analysis. Together, these sections define the experimental basis on which the results chapter builds.
+
     \newpage
 
     %=========================================================
