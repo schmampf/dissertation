@@ -38,7 +38,7 @@
   \newcommand*\fsize{\dimexpr\f@size pt\relax}%
   \newcommand*\lineheight[1]{\fontsize{\fsize}{#1\fsize}\selectfont}%
   \ifx\svgwidth\undefined%
-    \setlength{\unitlength}{206.92915548bp}%
+    \setlength{\unitlength}{206.92913386bp}%
     \ifx\svgscale\undefined%
       \relax%
     \else%
@@ -50,12 +50,12 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.47945195)%
+  \begin{picture}(1,0.47945205)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0.97260261,0.43835607){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}viewer.py\end{tabular}}}}%
-    \put(0.67123278,0.43835607){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}myserver.py\end{tabular}}}}%
-    \put(0.97260262,0.28767116){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}myscript.ipynb\end{tabular}}}}%
-    \put(0.64383553,0.09589035){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}myfile.h5\end{tabular}}}}%
+    \put(0.97260272,0.43835617){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}viewer.py\end{tabular}}}}%
+    \put(0.67123285,0.43835617){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}myserver.py\end{tabular}}}}%
+    \put(0.97260272,0.28767124){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}myscript.ipynb\end{tabular}}}}%
+    \put(0.64383559,0.09589042){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}myfile.h5\end{tabular}}}}%
   \end{picture}%
 \endgroup%

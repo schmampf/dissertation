@@ -2,9 +2,9 @@
 <!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
-   width="108mm"
-   height="174mm"
-   viewBox="0 0 108 174"
+   width="73mm"
+   height="35mm"
+   viewBox="0 0 73 35"
    version="1.1"
    id="svg1"
    inkscape:version="1.3.2 (091e20e, 2023-11-25)"
@@ -27,14 +27,14 @@
      inkscape:deskcolor="#d1d1d1"
      inkscape:document-units="mm"
      showgrid="true"
-     inkscape:zoom="1.8183825"
-     inkscape:cx="197.97815"
-     inkscape:cy="81.940955"
-     inkscape:window-width="1472"
-     inkscape:window-height="843"
+     inkscape:zoom="2.7251386"
+     inkscape:cx="135.03901"
+     inkscape:cy="97.059285"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
      inkscape:window-x="0"
-     inkscape:window-y="33"
-     inkscape:window-maximized="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
      inkscape:current-layer="layer3">
     <inkscape:grid
        id="grid1"
@@ -57,57 +57,57 @@
      id="defs1">
     <rect
        x="219.21259"
-       y="98.267714"
+       y="98.267715"
        width="30.236225"
        height="11.338584"
        id="rect31" />
     <rect
        x="68.031494"
        y="109.6063"
-       width="67.168653"
+       width="67.168655"
        height="12.987491"
        id="rect30" />
     <rect
        x="34.015747"
        y="113.38582"
-       width="68.031495"
+       width="68.031494"
        height="11.338588"
        id="rect20" />
     <rect
-       x="49.133857"
+       x="49.133858"
        y="120.94488"
        width="147.40157"
-       height="83.149604"
+       height="83.149605"
        id="rect19" />
     <rect
        x="11.338582"
        y="34.015747"
-       width="139.84252"
-       height="18.360345"
+       width="139.84251"
+       height="18.360346"
        id="rect13" />
     <rect
-       x="68.031488"
+       x="68.031487"
        y="44.557926"
-       width="64.251973"
+       width="64.251976"
        height="12.134986"
        id="rect10" />
     <rect
-       x="68.031488"
+       x="68.031487"
        y="49.942009"
-       width="56.692916"
+       width="56.692917"
        height="10.396849"
        id="rect9" />
     <rect
-       x="90.708659"
-       y="22.677165"
-       width="59.372881"
-       height="33.634581"
+       x="90.708656"
+       y="22.677164"
+       width="59.372883"
+       height="33.634583"
        id="rect5" />
     <rect
-       x="34.015748"
+       x="34.015747"
        y="11.54127"
-       width="74.548212"
-       height="20.623437"
+       width="74.54821"
+       height="20.623438"
        id="rect4" />
     <rect
        x="68.031487"
@@ -172,8 +172,8 @@
     <rect
        x="34.015747"
        y="11.54127"
-       width="70.784738"
-       height="29.809506"
+       width="70.784737"
+       height="29.809505"
        id="rect4-9" />
     <rect
        x="68.031494"
@@ -452,7 +452,7 @@
        y="0"><tspan
          x="104.49348"
          y="50.563626"
-         id="tspan2">viewer.py</tspan></text>
+         id="tspan1">viewer.py</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,14.000068,-10.378293)"
@@ -462,7 +462,7 @@
        y="0"><tspan
          x="96.348941"
          y="50.563626"
-         id="tspan3">myserver.py</tspan></text>
+         id="tspan2">myserver.py</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,36.000068,0.62170707)"
@@ -472,7 +472,7 @@
        y="0"><tspan
          x="89.679016"
          y="50.563626"
-         id="tspan4">myscript.ipynb</tspan></text>
+         id="tspan3">myscript.ipynb</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,12.000068,14.621707)"
@@ -482,7 +482,7 @@
        y="0"><tspan
          x="105.60676"
          y="50.563626"
-         id="tspan6">myfile.h5</tspan></text>
+         id="tspan4">myfile.h5</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -496,7 +496,7 @@
        style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;white-space:pre;shape-inside:url(#rect20);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.13386;stroke-dasharray:none"><tspan
          x="34.015625"
          y="121.79376"
-         id="tspan7">measurement</tspan></text>
+         id="tspan5">measurement</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,13.704112,-16.741711)"
@@ -504,7 +504,7 @@
        style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;white-space:pre;shape-inside:url(#rect20-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.13386;stroke-dasharray:none"><tspan
          x="34.015625"
          y="121.79376"
-         id="tspan8">status</tspan></text>
+         id="tspan6">status</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,24.999906,-7.224143)"
@@ -512,7 +512,7 @@
        style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;white-space:pre;shape-inside:url(#rect30-0);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.15773;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="68.03125"
          y="118.01251"
-         id="tspan9">data</tspan></text>
+         id="tspan7">data</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,6.9999233,-3.2242589)"
@@ -520,7 +520,7 @@
        style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;white-space:pre;shape-inside:url(#rect31);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.15773;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="219.21289"
          y="106.67462"
-         id="tspan10">RPyC</tspan></text>
+         id="tspan8">RPyC</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,6.9999233,0.75721742)"
@@ -528,7 +528,7 @@
        style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;white-space:pre;shape-inside:url(#rect31-2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.15773;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="219.21289"
          y="106.67462"
-         id="tspan11">h5py</tspan></text>
+         id="tspan9">h5py</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,6.9999233,4.738627)"
@@ -536,7 +536,7 @@
        style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;white-space:pre;shape-inside:url(#rect31-2-4);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.15773;stroke-dasharray:none;stroke-opacity:1"><tspan
          x="219.21289"
          y="106.67462"
-         id="tspan12">SCPI</tspan></text>
+         id="tspan10">SCPI</tspan></text>
   </g>
   <g
      inkscape:groupmode="layer"
@@ -550,7 +550,7 @@
        style="font-size:12px;font-family:arial;-inkscape-font-specification:arial;white-space:pre;shape-inside:url(#rect4);display:inline;fill:#000000;stroke:none;stroke-width:1.13386;stroke-dasharray:4.5354, 1.13386"><tspan
          x="34.015625"
          y="22.350069"
-         id="tspan14">Drivers</tspan></text>
+         id="tspan11">Drivers</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,-4.8363027,23.241703)"
@@ -558,11 +558,11 @@
        style="font-size:12px;font-family:arial;-inkscape-font-specification:arial;white-space:pre;shape-inside:url(#rect4-9);display:inline;fill:#000000;stroke:none;stroke-width:1.13386;stroke-dasharray:4.5354, 1.13386"><tspan
          x="34.015625"
          y="22.350069"
-         id="tspan15">Physical
+         id="tspan12">Physical
 </tspan><tspan
          x="34.015625"
          y="37.350069"
-         id="tspan16">Instruments</tspan></text>
+         id="tspan13">Instruments</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,11.731054,4.272564)"
@@ -570,11 +570,11 @@
        style="font-size:12px;font-family:arial;-inkscape-font-specification:arial;white-space:pre;shape-inside:url(#rect5);display:inline;fill:#000000;stroke:none;stroke-width:1.13386;stroke-dasharray:4.5354, 1.13386"><tspan
          x="90.708984"
          y="33.486787"
-         id="tspan17">Data-
+         id="tspan14">Data-
 </tspan><tspan
          x="90.708984"
          y="48.486787"
-         id="tspan18">Server</tspan></text>
+         id="tspan15">Server</tspan></text>
     <text
        xml:space="preserve"
        id="text12"
@@ -582,7 +582,7 @@
        transform="matrix(0.26458333,0,0,0.26458333,-0.29608086,-7.5483761)"><tspan
          x="11.337891"
          y="44.824678"
-         id="tspan19">InstrumentServer</tspan></text>
+         id="tspan16">InstrumentServer</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,55.000312,-4.3593756)"
@@ -590,7 +590,7 @@
        style="font-size:12px;font-family:arial;-inkscape-font-specification:arial;white-space:pre;shape-inside:url(#rect13-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.13386;stroke-dasharray:none"><tspan
          x="11.337891"
          y="44.824678"
-         id="tspan20">GUI</tspan></text>
+         id="tspan17">GUI</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,55.000661,6.640625)"
@@ -598,7 +598,7 @@
        style="font-size:12px;font-family:arial;-inkscape-font-specification:arial;white-space:pre;shape-inside:url(#rect13-9-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.13386;stroke-dasharray:none"><tspan
          x="11.337891"
          y="44.824678"
-         id="tspan21">Script</tspan></text>
+         id="tspan18">Script</tspan></text>
     <text
        xml:space="preserve"
        transform="matrix(0.26458333,0,0,0.26458333,31.000024,20.640624)"
@@ -606,6 +606,6 @@
        style="font-size:12px;font-family:arial;-inkscape-font-specification:arial;white-space:pre;shape-inside:url(#rect13-9-9-5);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.13386;stroke-dasharray:none"><tspan
          x="11.337891"
          y="44.824678"
-         id="tspan22">HDF5 File</tspan></text>
+         id="tspan19">Data File</tspan></text>
   </g>
 </svg>

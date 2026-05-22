@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.3.2 (091e20e, 2023-11-25), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'p5control-9.pdf' (pdf, eps, ps)
+%% Accompanies image file 'p5control.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -53,12 +53,6 @@
   \begin{picture}(1,0.47945205)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0.1015312,0.25872891){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Drivers\end{tabular}}}}%
-    \put(0.0570365,0.08006632){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Physical\\Instruments\end{tabular}}}}%
-    \put(0.48946766,0.29955329){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Data-\\Server\end{tabular}}}}%
-    \put(0.03703748,0.4203906){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}InstrumentServer\end{tabular}}}}%
-    \put(0.79452231,0.37670566){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}GUI\end{tabular}}}}%
-    \put(0.79452709,0.22602072){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Script\end{tabular}}}}%
-    \put(0.46575124,0.03423991){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Data File\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{p5control.pdf}}%
   \end{picture}%
 \endgroup%
