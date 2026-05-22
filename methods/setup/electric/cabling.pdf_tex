@@ -50,50 +50,50 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,1.35897436)%
+  \begin{picture}(1,1.35897426)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{cabling.pdf}}%
-    \put(0.52602793,0.44485016){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}pin headers\end{tabular}}}}%
+    \put(0.52602793,0.44485006){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}pin headers\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{cabling.pdf}}%
-    \put(0.47338509,0.57088268){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}shielded box\end{tabular}}}}%
-    \put(0.00640612,0.49998997){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}coaxial twisted-pair cables\end{tabular}}}}}%
-    \put(0.77563646,0.51280617){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}coaxias microwave cables\end{tabular}}}}}%
+    \put(0.47338509,0.57088258){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}shielded box\end{tabular}}}}%
+    \put(0.00640612,0.49998987){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}coaxial twisted-pair cables\end{tabular}}}}}%
+    \put(0.77563646,0.51280608){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}coaxias microwave cables\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{cabling.pdf}}%
-    \put(0.82979181,0.96187247){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-0\,dB\end{tabular}}}}}%
+    \put(0.82979181,0.96187237){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-0\,dB\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{cabling.pdf}}%
-    \put(0.95800111,0.96187248){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-0\,dB\end{tabular}}}}}%
-    \put(0.28846422,1.33333141){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}commercial\\cabling\end{tabular}}}}%
-    \put(0.3155087,0.20009875){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}copper wires\end{tabular}}}}}%
-    \put(0.00640614,0.19878047){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}manganin wire\end{tabular}}}}}%
+    \put(0.95800111,0.96187238){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-0\,dB\end{tabular}}}}}%
+    \put(0.28846422,1.33333131){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}commercial\\cabling\end{tabular}}}}%
+    \put(0.3155087,0.20009866){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}copper wires\end{tabular}}}}}%
+    \put(0.00640614,0.19878037){\color[rgb]{0.45098039,0.47058824,0.49411765}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}manganin wire\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{cabling.pdf}}%
-    \put(0.13461316,1.06409648){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{T}\textsubscript{sample}\end{tabular}}}}}%
-    \put(0.00640801,1.06409648){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{P}\textsubscript{heating}\end{tabular}}}}}%
-    \put(0.26281831,1.06409648){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{sample}\end{tabular}}}}}%
-    \put(0.39102342,1.06409651){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{bias}\end{tabular}}}}}%
-    \put(0.51922855,1.06409653){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{ref}\end{tabular}}}}}%
-    \put(0.64743364,1.0640965){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{gate}\end{tabular}}}}}%
-    \put(0.77563879,1.06409651){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{A}\textsubscript{gate}\end{tabular}}}}}%
-    \put(0.90384393,1.06409651){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{A}\textsubscript{antenna}\end{tabular}}}}}%
+    \put(0.13461316,1.06409638){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{T}\textsubscript{sample}\end{tabular}}}}}%
+    \put(0.00640801,1.06409638){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{P}\textsubscript{heater}\end{tabular}}}}}%
+    \put(0.26281831,1.06409638){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{sample}\end{tabular}}}}}%
+    \put(0.39102342,1.06409641){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{bias}\end{tabular}}}}}%
+    \put(0.51922855,1.06409643){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{ref}\end{tabular}}}}}%
+    \put(0.64743364,1.0640964){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{gate}\end{tabular}}}}}%
+    \put(0.77563879,1.06409641){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{A}\textsubscript{gate}\end{tabular}}}}}%
+    \put(0.90384393,1.06409641){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{A}\textsubscript{antenna}\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{cabling.pdf}}%
-    \put(0.49860461,1.21958894){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MFT25 Filter\end{tabular}}}}%
-    \put(0.95799679,1.25033815){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-10\,dB\end{tabular}}}}}%
-    \put(0.47081732,0.69159825){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}100\,k\textohm\end{tabular}}}}}%
-    \put(0.41953543,0.69159825){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}100\,k\textohm\end{tabular}}}}}%
-    \put(0.70363495,0.9605275){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CP Filter\end{tabular}}}}}%
-    \put(0.57542976,0.96052752){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CP Filter\end{tabular}}}}}%
-    \put(0.44722462,0.96052753){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CP Filter\end{tabular}}}}}%
-    \put(0.31919873,0.9599973){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CP Filter\end{tabular}}}}}%
-    \put(0.19029914,0.95999732){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CP Filter\end{tabular}}}}}%
-    \put(0.06139956,0.95999732){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CP Filter\end{tabular}}}}}%
-    \put(0.49999589,0.68207314){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{R}\textsubscript{ref}\end{tabular}}}}%
-    \put(0.82979172,1.25033816){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-10\,dB\end{tabular}}}}}%
-    \put(0.35755217,0.05756773){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sample\end{tabular}}}}%
-    \put(0.46057354,0.22596213){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MCBJ\end{tabular}}}}%
-    \put(0.52564104,0.16666665){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}TB\end{tabular}}}}%
-    \put(0.41025643,0.15384614){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Island\end{tabular}}}}%
-    \put(0.17960692,0.26066472){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Thermo-\\meter\end{tabular}}}}%
-    \put(0.17799921,0.05189549){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Heater\end{tabular}}}}%
-    \put(0.8577536,0.01318546){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Antenna\end{tabular}}}}%
+    \put(0.49860461,1.21958884){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MFT25 Filter\end{tabular}}}}%
+    \put(0.95799679,1.25033806){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-10\,dB\end{tabular}}}}}%
+    \put(0.47081732,0.69159816){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}100\,k\textohm\end{tabular}}}}}%
+    \put(0.41953543,0.69159815){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}100\,k\textohm\end{tabular}}}}}%
+    \put(0.70363495,0.96052741){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CP Filter\end{tabular}}}}}%
+    \put(0.57542975,0.96052742){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CP Filter\end{tabular}}}}}%
+    \put(0.44722462,0.96052743){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CP Filter\end{tabular}}}}}%
+    \put(0.31919873,0.95999721){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CP Filter\end{tabular}}}}}%
+    \put(0.19029914,0.95999723){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CP Filter\end{tabular}}}}}%
+    \put(0.06139956,0.95999722){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}CP Filter\end{tabular}}}}}%
+    \put(0.49999589,0.68207304){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{R}\textsubscript{ref}\end{tabular}}}}%
+    \put(0.82979172,1.25033807){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-10\,dB\end{tabular}}}}}%
+    \put(0.35755217,0.05756763){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Sample\end{tabular}}}}%
+    \put(0.46057354,0.22596203){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MCBJ\end{tabular}}}}%
+    \put(0.52564104,0.16666656){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}TB\end{tabular}}}}%
+    \put(0.41025642,0.15384604){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Island\end{tabular}}}}%
+    \put(0.17960692,0.26066463){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Thermo-\\meter\end{tabular}}}}%
+    \put(0.17799921,0.05189539){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Heater\end{tabular}}}}%
+    \put(0.8577536,0.01318536){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Antenna\end{tabular}}}}%
   \end{picture}%
 \endgroup%
