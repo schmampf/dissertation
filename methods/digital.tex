@@ -7,14 +7,14 @@
 
     The transport measurements in this thesis depend on more than the electrical circuit described above. Each \textit{I--V} trace also has to remain connected to the state of the surrounding experiment: amplifier gains, reference resistance, bias waveform, temperature, microwave settings, magnetic field, gate voltage, and the mechanical position of the break junction. Without this context, a recorded voltage trace would not be a reproducible physical measurement, but only a time series from the acquisition card.
 
-    The digital infrastructure was therefore treated as part of the experimental apparatus. Its role was to connect instrument control, synchronized acquisition, metadata logging, and data evaluation into one traceable path from raw voltages to calibrated \textit{I--V} curves, derived \textit{dI--dV} spectra, and fitted model parameters. This section first describes the measurement architecture used to acquire and store the data. It then describes the evaluation layer that converts raw HDF5 records into the common data products used for tunnel-regime BCS analysis and finite-transmission MAR fitting.
+    The digital infrastructure was therefore treated as part of the experimental apparatus. Its role was to connect instrument control, synchronized acquisition, metadata logging, and data evaluation into one traceable path from raw voltages to calibrated \textit{I--V} curves, derived \textit{dI--dV} spectra, and fitted model parameters. This section first describes the measurement architecture used to acquire and store the data. It then describes the evaluation layer that converts raw measurement records into the common data products used for tunnel-regime BCS analysis and finite-transmission MAR fitting.
 
     %=========================================================
     \subsection{Digital Measurement Architecture}
     \label{subsec:methods:digital:architecture}
     %=========================================================
 
-        The measurements in this work were controlled by a layered Python infrastructure. The first layer, \texttt{p5control}, provided the general abstraction for instrument access, server-based control, and HDF5 data storage. The second layer, \texttt{p5control-bluefors}, adapted this framework to the Bluefors break-junction setup by defining the relevant drivers, calculated diagnostic channels, and spectroscopy protocols. Together, these layers connected the physical instruments described in Sec.~\ref{subsec:setup:instrumentation-grounding} to the raw voltage traces and metadata used for the later data evaluation.
+        The measurements in this work were controlled by a layered Python infrastructure. The first layer, \texttt{p5control}, provided the general abstraction for instrument access, server-based control, and structured data storage. The second layer, \texttt{p5control-bluefors}, adapted this framework to the Bluefors break-junction setup by defining the relevant drivers, calculated diagnostic channels, and spectroscopy protocols. Together, these layers connected the physical instruments described in Sec.~\ref{subsec:setup:instrumentation-grounding} to the raw voltage traces and metadata used for the later data evaluation.
 
         %=========================================================
         \subsubsection*{\texttt{p5control}: Instrument Abstraction and Data Acquisition}
@@ -46,13 +46,13 @@
                         \end{minipage}\hfil\cr
                     }%
                 }%
-                \caption{Architecture of the \texttt{p5control} measurement framework. Device-specific drivers connect physical instruments to an \texttt{InstrumentServer}; a separate \texttt{DataServer} writes status and measurement data to an HDF5 file. Scripts and graphical user interfaces communicate with both servers through RPyC.}
+                \caption{Architecture of the \texttt{p5control} measurement framework. Device-specific drivers connect physical instruments to an \texttt{InstrumentServer}; a separate \texttt{DataServer} writes status and measurement data to the measurement file. Scripts and graphical user interfaces communicate with both servers through RPyC.}
                 \label{fig:methods:digital:p5control}
             \end{figure}
 
             During operation, \texttt{p5control} distinguishes between status data and measurement data. Status data are recorded continuously. They document the slowly changing state of the setup, for example temperatures, motor position, magnet field, microwave settings, amplifier gains, or output states. Measurement data are written when a measurement is started. They contain the time traces acquired for a specific sweep or protocol. This distinction is important because the physical context of an \textit{I--V} trace can change on a slower time scale than the trace itself.
 
-            The data are stored in an HDF5 file using \texttt{h5py} and the HDF5 data model, as sketched in Fig.~\ref{fig:methods:digital:datatree}~\cite{h5py_github,hdf5_github}. The file contains both the raw traces used for later evaluation and the surrounding instrument state needed to interpret them. It therefore acts as a measurement record and as a digital laboratory notebook.
+            The measurement file uses HDF5, a hierarchical data format written here through \texttt{h5py}, as sketched in Fig.~\ref{fig:methods:digital:datatree}~\cite{h5py_github,hdf5_github}. It contains both the raw traces used for later evaluation and the surrounding instrument state needed to interpret them. It therefore acts as a measurement record and as a digital laboratory notebook.
 
             \begin{figure}[t]
                 \ttfamily\fontsize{7}{9}\selectfont
@@ -96,7 +96,7 @@
                     ... & ... & ...\\
                 \end{tabular}
                 }
-                \caption{HDF5 data structure used by \texttt{p5control}. The \texttt{measurement} branch stores sweep-specific datasets, while the \texttt{status} branch stores continuously logged setup quantities. Both are written as time-indexed tables.}
+                \caption{Structure of the measurement file used by \texttt{p5control}. The \texttt{measurement} branch stores sweep-specific datasets, while the \texttt{status} branch stores continuously logged setup quantities. Both are written as time-indexed tables.}
                 \label{fig:methods:digital:datatree}            
             \end{figure}
 
@@ -130,7 +130,7 @@
 
             The primary measurement record consists of the synchronized voltage traces recorded by the ADwin and the instrument state stored around the sweep. Together with the selected Femto gains and the reference resistance, these raw voltage traces define the later reconstruction of $V_\mathrm{sample}$ and $I_\mathrm{sample}$. In \texttt{p5control-bluefors}, the same conversion was also implemented in the \texttt{Calc} driver as a diagnostic layer for live monitoring. This layer was useful during setup work and interactive checks, but it was usually inactive during actual measurements. The \textit{I--V} curves used for analysis were derived separately from the stored raw voltage traces, as described in the following subsection. The remaining drivers provide the physical context of each trace: microwave amplitude and frequency, sample temperature, displacement of the break junction, magnetic field, and gate voltage. In this sense, \texttt{p5control-bluefors} connects the electrical reconstruction described in Sec.~\ref{subsec:setup:electrical} to the structured data record described above.
 
-            This connection is enforced by the measurement protocol shown in Fig.~\ref{fig:methods:digital:ivscript}. A single \textit{I--V} trace is not only a voltage ramp. The relevant gains, reference value, bias waveform, timing parameters, and instrument states have to be fixed before the sweep, and the synchronized voltage traces have to be stored together with these settings. The script \texttt{single\_iv.py} therefore defines one complete trace: it sets the sweep parameters, waits through an offset interval, records the sweep, and writes the acquired data and metadata to the HDF5 file.
+            This connection is enforced by the measurement protocol shown in Fig.~\ref{fig:methods:digital:ivscript}. A single \textit{I--V} trace is not only a voltage ramp. The relevant gains, reference value, bias waveform, timing parameters, and instrument states have to be fixed before the sweep, and the synchronized voltage traces have to be stored together with these settings. The script \texttt{single\_iv.py} therefore defines one complete trace: it sets the sweep parameters, waits through an offset interval, records the sweep, and writes the acquired data and metadata to the measurement file.
 
             \begin{figure}[t]
                 \centering
@@ -178,7 +178,7 @@
     \label{subsec:methods:digital:analysis}
     %=========================================================
 
-        The raw HDF5 files produced by the measurement stack contain synchronized instrument outputs and setup metadata, but they are not yet the physical data products used in the analysis. This separation is intentional: the measurement stores the least processed useful record, while filtering, offset correction, gridding, and smoothing are applied later with explicit parameters. I first implemented many of the basic evaluation ideas in the setup-specific repository \texttt{p5control-bluefors-evaluation}~\cite{p5control_bluefors_evaluation}. For this thesis I then developed the broader Python package \texttt{superconductivity}~\cite{aschenbrenner_superconductivity} as the evaluation layer between acquisition and interpretation. In addition to trace evaluation, \texttt{superconductivity} contains numerical models for BCS and MAR spectra, fitting routines, a graphical user interface, and a visualization pipeline. The graphical interface and visualization tools were useful for daily work but are not discussed in detail here. This subsection focuses on the reproducible data path from raw voltage traces to calibrated \textit{I--V} curves, derived \textit{dI--dV} spectra, uniformly sampled grids, and fitted model parameters.
+        The raw measurement files produced by the measurement stack contain synchronized instrument outputs and setup metadata, but they are not yet the physical data products used in the analysis. This separation is intentional: the measurement stores the least processed useful record, while filtering, offset correction, gridding, and smoothing are applied later with explicit parameters. I first implemented many of the basic evaluation ideas in the setup-specific repository \texttt{p5control-bluefors-evaluation}~\cite{p5control_bluefors_evaluation}. For this thesis I then developed the broader Python package \texttt{superconductivity}~\cite{aschenbrenner_superconductivity} as the evaluation layer between acquisition and interpretation. In addition to trace evaluation, \texttt{superconductivity} contains numerical models for BCS and MAR spectra, fitting routines, a graphical user interface, and a visualization pipeline. The graphical interface and visualization tools were useful for daily work but are not discussed in detail here. This subsection focuses on the reproducible data path from raw voltage traces to calibrated \textit{I--V} curves, derived \textit{dI--dV} spectra, uniformly sampled grids, and fitted model parameters.
 
         %=========================================================
         \subsubsection*{Evaluation}
