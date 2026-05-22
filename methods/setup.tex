@@ -237,7 +237,7 @@
             \begin{equation}
                 R_\mathrm{series}
                 % = R_\mathrm{total}-R_\mathrm{sample}
-                \simeq 2R_\mathrm{ref} + R_\mathrm{filters} + R_\mathrm{leads} + \ldots\,.
+                \simeq 2\,R_\mathrm{ref} + R_\mathrm{filters} + R_\mathrm{leads} + \ldots\,.
                 \label{eq:setup:series-resistance}
             \end{equation}
             In the limit $\eta \ll 1$, most of the applied voltage drops across the sample and the circuit approaches voltage bias. In the opposite limit, $\eta \gg 1$, the series resistance dominates and the circuit approaches current bias. The MCBJ moves between these limits during operation. A closed junction can have a resistance of order 100\,\textohm{}, a few-channel atomic contact has a resistance of order 12.9\,k\textohm{}, and the tunnel regime starts roughly around 100\,k\textohm. Since the standard filtered bias environment already contains about 200\,k\textohm{} from the two cold reference resistors, the same wiring can represent a voltage-biased, mixed, or more current-biased environment depending on the junction state.
@@ -258,17 +258,17 @@
             \begin{figure}[t]
                 \centering
                 \subfigure[
-                Schematic for high-impedance samples.
+                Standard high-impedance wiring.
                 ]{\fontsize{7}{9}\selectfont
                 \import{methods/setup/electric}{measurement-schema-high.pdf_tex}
                 }
                 \hfill
                 \subfigure[
-                Schematic for low-impedance samples with an additional warm reference resistor.
+                Modified low-impedance wiring.
                 ]{\fontsize{7}{9}\selectfont
                 \import{methods/setup/electric}{measurement-schema-low.pdf_tex}
                 }
-                \caption{Measurement schematics used to reconstruct sample voltage and current. A quasi-dc bias voltage $V_\mathrm{bias}$ is applied to the bias line, while $V_\mathrm{sample}$ and $V_\mathrm{ref}$ are measured simultaneously. The opposing triangles indicate the sample, and the gray region (\legend{seegrau65}) marks the cold part of the circuit. (a) In the high-impedance configuration, two cold reference resistors are placed symmetrically around the sample. (b) In the low-impedance configuration, the voltage-sense and bias wiring are exchanged so that a larger fraction of the programmed bias drops across the sample. An additional warm reference resistor provides the current readout.}
+                \caption{Bias and readout configurations used to reconstruct sample voltage and current. The programmed quasi-dc bias \textit{V}\textsubscript{bias} is applied through the bias line, while \textit{V}\textsubscript{sample} and \textit{V}\textsubscript{ref} are recorded as synchronized voltage drops. Opposing triangles denote the sample, and gray shading (\legend{seegrau65}) marks components thermalized inside the cryostat. (a) The standard high-impedance configuration places two cold reference resistors symmetrically around the sample, keeping the current readout in the cold filtered environment. (b) For low sample impedances, exchanging the voltage-sense and bias wiring increases the fraction of \textit{V}\textsubscript{bias} that drops across the sample. The current is then inferred from an additional warm reference resistor.}
                 \label{fig:setup:measurement-schema}
             \end{figure}
 
