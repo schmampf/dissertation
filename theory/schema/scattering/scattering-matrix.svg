@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="108mm"
+   height="174mm"
+   viewBox="0 0 108 174"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25)"
+   sodipodi:docname="scattering-matrix.svg"
+   inkscape:export-filename="scattering-matrix.pdf"
+   inkscape:export-xdpi="96"
+   inkscape:export-ydpi="96"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="4.2990994"
+     inkscape:cx="45.009427"
+     inkscape:cy="40.35729"
+     inkscape:window-width="1920"
+     inkscape:window-height="1022"
+     inkscape:window-x="0"
+     inkscape:window-y="30"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1"
+     showgrid="true">
+    <inkscape:grid
+       id="grid2"
+       units="mm"
+       originx="0"
+       originy="0"
+       spacingx="1"
+       spacingy="0.99999997"
+       empcolor="#0099e5"
+       empopacity="0.30196078"
+       color="#0099e5"
+       opacity="0.14901961"
+       empspacing="3"
+       dotted="false"
+       gridanglex="30"
+       gridanglez="30"
+       visible="true" />
+  </sodipodi:namedview>
+  <defs
+     id="defs1">
+    <rect
+       x="30.23622"
+       y="30.23622"
+       width="60.472441"
+       height="45.354331"
+       id="rect2" />
+    <rect
+       x="0"
+       y="0"
+       width="120.94488"
+       height="105.82677"
+       id="rect1" />
+    <rect
+       x="30.236219"
+       y="30.236219"
+       width="60.472443"
+       height="45.354332"
+       id="rect2-9" />
+    <rect
+       x="30.236219"
+       y="30.236219"
+       width="60.472443"
+       height="45.354332"
+       id="rect2-9-3" />
+    <rect
+       x="30.236219"
+       y="30.236219"
+       width="60.472443"
+       height="45.354332"
+       id="rect2-9-6" />
+    <rect
+       x="30.236219"
+       y="30.236219"
+       width="60.472443"
+       height="45.354332"
+       id="rect2-9-3-8" />
+  </defs>
+  <g
+     inkscape:label="classic"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <path
+       style="fill:none;stroke:#4d5054;stroke-width:0.5;stroke-dasharray:none"
+       d="m 0.9997767,0.9997767 8,8 H 24.999777 l 8,-8 M 0.9997767,28.999777 l 8,-8 H 24.999777 l 8,8"
+       id="path1"
+       sodipodi:nodetypes="cccccccc"
+       inkscape:label="umriss" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,1.0135867,5.4807693)"
+       id="text1"
+       style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;text-align:center;white-space:pre;shape-inside:url(#rect2);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.755906"
+       x="-46.789696"
+       y="0"><tspan
+         x="39.976244"
+         y="38.643367"
+         id="tspan1">$\mat{S}$</tspan></text>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-11.000057,1.272068)"
+       id="text1-9"
+       style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;text-align:center;white-space:pre;shape-inside:url(#rect2-9);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.755906"
+       x="-33.220367"
+       y="0"><tspan
+         x="46.97852"
+         y="38.643367"
+         id="tspan2">$A_1$</tspan></text>
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-dasharray:none"
+       d="m 6.4861339,12.501066 0.9999999,1 -0.9999999,0.999999"
+       id="path2" />
+    <path
+       style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-dasharray:none"
+       d="M 7.4861338,13.501066 H 2.486134"
+       id="path3" />
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,-11.000057,7.776068)"
+       id="text1-9-7"
+       style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;text-align:center;white-space:pre;shape-inside:url(#rect2-9-3);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.755906"
+       x="-33.220367"
+       y="0"><tspan
+         x="46.97852"
+         y="38.643367"
+         id="tspan3">$B_1$</tspan></text>
+    <g
+       id="g3"
+       transform="rotate(180,4.8491329,19.503535)">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-dasharray:none"
+         d="m 5.9999998,18.003114 0.9999999,1 -0.9999999,0.999999"
+         id="path2-2" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-dasharray:none"
+         d="M 6.9999997,19.003114 H 1.9999999"
+         id="path3-5" />
+    </g>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,13.02723,1.272068)"
+       id="text1-9-3"
+       style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;text-align:center;white-space:pre;shape-inside:url(#rect2-9-6);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.755906"
+       x="-33.220367"
+       y="0"><tspan
+         x="46.97852"
+         y="38.643367"
+         id="tspan4">$A_2$</tspan></text>
+    <g
+       id="g4"
+       transform="matrix(-1,0,0,1,58.238974,2.2502277e-4)">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-dasharray:none"
+         d="m 30.513421,12.500841 1,1 -1,0.999999"
+         id="path2-6" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-dasharray:none"
+         d="m 31.513421,13.500841 h -5"
+         id="path3-8" />
+    </g>
+    <text
+       xml:space="preserve"
+       transform="matrix(0.26458333,0,0,0.26458333,13.02723,7.776068)"
+       id="text1-9-7-6"
+       style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;text-align:center;white-space:pre;shape-inside:url(#rect2-9-3-8);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.755906"
+       x="-33.220367"
+       y="0"><tspan
+         x="46.97852"
+         y="38.643367"
+         id="tspan5">$B_2$</tspan></text>
+    <g
+       id="g3-7"
+       transform="matrix(1,0,0,-1,24.51342,39.00707)">
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-dasharray:none"
+         d="m 5.9999998,18.003114 0.9999999,1 -0.9999999,0.999999"
+         id="path2-2-1" />
+      <path
+         style="fill:none;fill-opacity:1;stroke:#000000;stroke-width:0.3;stroke-dasharray:none"
+         d="M 6.9999997,19.003114 H 1.9999999"
+         id="path3-5-8" />
+    </g>
+  </g>
+</svg>
