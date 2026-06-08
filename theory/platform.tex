@@ -1,0 +1,157 @@
+% !TEX root = ../thesis.tex
+
+%=========================================================
+\section{Material Platform and Microwave Driving}
+\label{sec:platform}
+%=========================================================
+
+    After establishing the general transport framework, we now specialize to aluminum as the material platform used throughout this thesis. We then introduce the common voltage and electromagnetic-phase conventions for driven junctions. These definitions are used in the later microscopic, macroscopic, mesoscopic, and stochastic descriptions.
+
+    %=========================================================
+    \subsection{Aluminum as Material Platform}
+    \label{subsec:platform:aluminum}
+    %=========================================================
+
+        Aluminum now turns the general transport hierarchy into the concrete scales used in this thesis. Aluminum electrodes provide the normal-state quasiparticles, weak-coupling BCS condensates, and atomic contacts, while aluminum oxide provides the tunnel barriers.
+
+        Aluminum is a simple $sp$ metal with three valence electrons per atom and an fcc crystal structure. In the effective single-band picture introduced above, its low-energy normal-state properties can be summarized by the same quasiparticle parameters $m^\ast$, $v_\mathrm{F}$, $N_0$, and $t_\mathrm{qp}$. Bulk aluminum is nearly free-electron-like, such that $m^\ast \simeq m$ is often a good approximation. Its Fermi energy is approximately $E_\mathrm{F} = 11.7\,\mathrm{eV}$ \cite{chauvin_josephson_2005}. Correspondingly, the Fermi wavelength is on the sub-nanometer scale and the Fermi velocity is of order $10^6\,\mathrm{m/s}$. In thin films, the elastic mean free path $\ell_\mathrm{qp}$ can reach tens of nanometers in high-purity samples, but its precise value depends sensitively on disorder, thickness, and microstructure \cite{steinberg_quasi-particle_2008}.
+
+        For mesoscopic aluminum structures the phase-coherence length $\ell_\phi$ is not a fixed material constant but depends on temperature, disorder, geometry, and the electromagnetic environment. The length hierarchy established for atomic contacts above places the measured aluminum constrictions in the ballistic, phase-coherent regime \cite{scheer_conduction_1997, agrait_quantum_2003}.
+
+        %=========================================================
+        \subsubsection*{Aluminum as Superconductor}
+        %=========================================================
+
+            As a superconductor, aluminum is a prototypical weak-coupling BCS material with an isotropic $s$-wave order parameter\footnote{
+                Here and in the following, ``$s$-wave'' refers to the isotropic angular dependence of the superconducting order parameter on the Fermi surface, classified by spherical harmonics, and should not be confused with atomic $s$ orbitals. In aluminum the conduction band has predominantly $sp$-hybridized character, but the Cooper-pair wave function is $s$-wave in the sense of an isotropic pairing symmetry.
+                },
+            and a well-understood phonon-mediated pairing mechanism.
+
+            The zero-temperature gap and critical temperature are, to good approximation,
+            \begin{equation}
+                \Delta_0 \approx 180\,\mu\mathrm{eV}\,,\qquad
+                T_\mathrm{C} \approx 1.2\,\mathrm{K}\,.
+                \label{eq:platform:aluminum}
+            \end{equation}
+            The comparatively small gap places typical microwave frequencies well below the pair-breaking threshold\footnote{
+                The pair-breaking frequency of aluminum is given by $\nu_\mathrm{pb}=2\Delta_0/h\approx 87\,\mathrm{GHz}$. For further information, see Sec.~\ref{subsec:macro:josephson}.
+                },
+            enabling controlled photon-assisted processes without degrading superconductivity. \cite{tinkham_introduction_2004, murray_material_2021}
+
+            The clean-limit BCS coherence length is
+            \begin{equation}
+                \xi_0 = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\,,
+                \label{eq:platform:aluminum-clean-coherence-length}
+            \end{equation}
+            yielding a value of order $1$--$2\,\text{\textmu m}$ for aluminum. At zero temperature, the corresponding diffusive decay length of superconducting correlations is
+            \begin{equation}
+                \xi_{\mathrm{dirty},0}
+                = \sqrt{\frac{\hbar D}{\Delta_0}}\,.
+                \label{eq:platform:aluminum-dirty-coherence-length}
+            \end{equation}
+            For typical evaporated aluminum films, $\xi_{\mathrm{dirty},0}$ is roughly $100$--$300\,\mathrm{nm}$. Close to $T_\mathrm{C}$, the dirty-limit Ginzburg--Landau coherence length instead diverges as
+            \begin{equation}
+                \xi_\mathrm{GL}(T)
+                \simeq
+                \frac{0.855\sqrt{\xi_0\ell_\mathrm{qp}}}
+                     {\sqrt{1-T/T_\mathrm{C}}}
+                \simeq
+                \sqrt{\frac{\pi\hbar D}
+                            {8k_\mathrm{B}(T_\mathrm{C}-T)}}\,.
+                \label{eq:platform:aluminum-gl-coherence-length}
+            \end{equation}
+            The gap $\Delta_0$ sets the voltage scale of superconducting \textit{I--V} and \textit{dI--dV} characteristics, while these coherence lengths set the spatial scales over which superconducting correlations respond to interfaces and disorder in their respective temperature regimes. These properties make aluminum well suited for tunneling spectroscopy and mesoscopic superconducting transport. \cite{tinkham_introduction_2004, murray_material_2021}
+
+        %=========================================================
+        \subsubsection*{Aluminum Oxide as Insulator}
+        %=========================================================
+
+            A key practical advantage of aluminum is its native oxide. Upon exposure to oxygen, aluminum rapidly forms a thin insulating AlO$_x$ layer on its surface that passivates the metal and is strongly bound to the underlying film. Under ambient conditions this native oxide is typically only a few nanometers thick and self-limiting \cite{saif_effect_2002}. By controlled oxidation in vacuum one can reproducibly tune the barrier properties and thereby the normal-state tunnel resistance over several orders of magnitude. The resulting Al--AlO$_x$--Al junctions are a standard workhorse of superconducting electronics and, when well fabricated, provide stable tunnel barriers with low subgap leakage.
+
+            In the context of this thesis, artificially grown aluminum oxide defines the tunnel barriers in our SIS junctions, while the native surface oxide influences the mechanical response of thin aluminum electrodes \cite{murray_material_2021,saif_effect_2002}. The oxide barriers realize the low-transmission limit, while aluminum atomic contacts realize the finite-transmission limit. The next subsection adds the time-dependent drive used to probe both regimes.
+        
+    %=========================================================
+    \newpage
+    \subsection{Microwave Drive and Electromagnetic Phase}
+    \label{subsec:platform:microwave}
+    %=========================================================
+
+        The static material and channel parameters determine which transport processes are available. A time-dependent electromagnetic drive then controls how these processes exchange energy and accumulate phase. To avoid repeated introductions of the same setup, we summarize here the assumptions used in all subsequent driven descriptions. The drive is treated as a classical, externally imposed field. No cavity modes or backaction of the junction onto the field are considered. The entire voltage drop is assumed to occur across the junction, a convenient gauge choice.
+
+        Consequently, the electromagnetic field enters through the scalar potential in the tunneling Hamiltonian or through the Josephson phase evolution. We assume that the drive does not appreciably heat the electrodes, which therefore remain in local thermal equilibrium with Fermi--Dirac distributions. We also restrict the drive frequency to $h\nu < 2\Delta_0$, below the pair-breaking threshold. The experiments considered here use microwave frequencies up to approximately $20\,\mathrm{GHz}$. \cite{josephson_possible_1962, shapiro_josephson_1963,tien_multiphoton_1963,werthamer_temperature_1966}
+
+        %=========================================================
+        \subsubsection*{Electromagnetic Phase}
+        %=========================================================
+
+            \begin{figure}[t]
+                \centering
+                \subfigure[
+                    Harmonic drive voltage $V(t)$ (Eq.~\eqref{eq:platform:drive-voltage}).
+                ]{\import{theory/basics}{mw-V.pgf}}
+                \hfill
+                \subfigure[
+                    Accumulated phase $\phi(t)$ (Eq.~\eqref{eq:platform:mw-phase}).
+                ]{\import{theory/basics}{mw-phi.pgf}}
+                \hfill
+                \subfigure[
+                    Gauge phase factor $U(t)$ (Eq.~\eqref{eq:platform:phase-factor}).
+                ]{\import{theory/basics}{mw-ReU.pgf}}
+                \hfill
+                \subfigure[
+                    Bessel coefficients $J_n(\alpha)$ vs. frequency $\nu$.
+                ]{\import{theory/basics}{mw-Jn.pgf}}
+                \caption{Illustration of a harmonic microwave drive and the associated electromagnetic phase factors for an aluminum junction (Sec.~\ref{subsec:platform:aluminum}).
+                Parameters: $q=e$, $eV_0 = 0.5\,\Delta_0$, $eA = 0.5\,\Delta_0$, and $\nu=10\,\mathrm{GHz}$.}
+                \label{fig:platform:microwave}
+            \end{figure}
+
+            The spatially uniform drive voltage is
+            \begin{equation}
+                V(t) = V_0 + A \cos (2\pi\nu t)\,,
+                \label{eq:platform:drive-voltage}
+            \end{equation}
+            with static component $V_0$, drive amplitude $A$, and frequency $\nu$, as shown in Fig.~\ref{fig:platform:microwave}(a).
+        
+            A time-dependent voltage changes the electrochemical-potential difference between the electrodes and imprints a time-dependent phase on a charge-transfer amplitude. In the gauge used here, the voltage enters through the scalar potential $V(t)$ and appears as a phase factor $U(t)$ multiplying the amplitude.
+
+            We denote the positive magnitude of the elementary transferred charge by $q$. Thus, $q=e$ for single-quasiparticle tunneling and $q=2e$ for coherent Cooper-pair transfer. An Andreev reflection also transfers charge $2e$ into or out of a condensate. Coherent multiple Andreev reflection, however, consists of a sequence of electron--hole conversions and is not obtained by simply replacing $q$ with an effective charge $me$ in the phase factor. Its charge-resolved description is introduced in the mesoscopic transport section.
+
+            In general, the accumulated electromagnetic phase between time $0$ and $t$ is given by
+            \begin{equation}
+                \phi(t) = \frac{q}{\hbar} \int_0^t V(t')\, dt'\,,
+                \label{eq:platform:mw-phase}
+            \end{equation}
+            Figure~\ref{fig:platform:microwave}(b) shows this accumulated phase. It is the common link between the applied voltage and phase-sensitive transport observables.
+
+            The phase enters the tunnel matrix element as a phase factor 
+            \begin{equation}
+                U(t)\equiv \exp\!\left(-\ima\phi(t)\right)\,.
+                \label{eq:platform:phase-factor}
+            \end{equation}
+
+            Inserting Eq.~\eqref{eq:platform:drive-voltage} and performing the time integration separates the phase factor into static and oscillatory contributions,
+            \begin{align}
+                U(t) = \exp\!\left(-\ima \phi_0(t)\right)\,
+                \exp\!\left(-\ima \alpha \sin(2\pi\nu t)\right)\,,
+                \label{eq:platform:mw-phase-decomposition}
+            \end{align}
+            where
+            \begin{equation}
+                \phi_0(t) = \frac{q V_0 t}{\hbar}
+                \qquad\text{and}\qquad
+                \alpha = \frac{q A}{h\nu}\,,
+                \label{eq:platform:mw-drive-parameters}
+            \end{equation}
+            denote the phase accumulated from the static bias and the dimensionless modulation strength, respectively. Both scale linearly with the elementary transferred charge $q$. Figure~\ref{fig:platform:microwave}(c) shows the real part of the phase factor.
+
+            The oscillatory phase factor is conveniently expanded using the Jacobi--Anger identity,
+            \begin{equation}
+                \exp\!\left(\pm\ima\alpha \sin(2\pi\nu t)\right)
+                = \sum_{n=-\infty}^{\infty} J_n(\alpha)\,
+                \exp\!\left(\pm\ima n\, 2\pi\nu t\right)\,,
+                \label{eq:platform:jacobi-anger}
+            \end{equation}
+            where $J_n(\alpha)$ is the $n$-th Bessel function of the first kind. Equivalently, the oscillatory phase factor forms a discrete frequency comb at harmonics $n\nu$, with complex amplitudes given by the Bessel coefficients $J_n(\alpha)$, as illustrated in Fig.~\ref{fig:platform:microwave}(d). In quasiparticle transport this decomposition produces photon-assisted replicas in \textit{I--V} and \textit{dI--dV} characteristics. In coherent Cooper-pair transport it produces the harmonics that underlie Shapiro response.
+
+            The four descriptions developed next are selected by the inputs established in these two preparatory sections. Material and spectral scales such as $\Delta_0$, $T_\mathrm{C}$, and $N_0$ determine the available states and characteristic energies. The hierarchy of $L$, $\ell_\mathrm{qp}$, and $\ell_\phi$ selects bulk or phase-coherent transport, while the transmission eigenvalues $\{\tau_i\}$ distinguish tunnel junctions from finite-transmission contacts. The voltage $V(t)$ and its electromagnetic phase specify the external drive, and the environmental impedance determines whether energy exchange and phase fluctuations must be treated explicitly. The microscopic section applies these inputs to quasiparticle tunneling. The macroscopic section treats tunnel-limit phase dynamics. The mesoscopic section develops Andreev transport at finite transmission. The stochastic section incorporates environment-assisted tunneling through \textit{P(E)} theory.

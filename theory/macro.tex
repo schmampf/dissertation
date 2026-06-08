@@ -24,7 +24,7 @@
  
     A weak link, such as an insulating barrier, a metallic constriction, or a short normal region, allows the pairing potentials of the two superconductors to overlap. Since their amplitudes remain essentially constant on the junction scale, the coupling depends only on the relative phase. This phase difference is the essential quantity governing coherent Cooper-pair tunneling and forms the basis of the Josephson effect. \cite{josephson_possible_1962, likharev_superconducting_1979, barone_physics_1982, tinkham_introduction_2004}
 
-    The following subsections introduce the two Josephson relations, apply the voltage and phase conventions of Sec.~\ref{subsec:basics:micro-wave} to microwave-driven junctions, and develop the RCSJ model for dissipative phase dynamics.
+    The following subsections introduce the two Josephson relations, apply the voltage and phase conventions of Sec.~\ref{subsec:platform:microwave} to microwave-driven junctions, and develop the RCSJ model for dissipative phase dynamics.
 
     %=========================================================
     \subsection{Josephson Effect}
@@ -115,21 +115,21 @@
             \centering
             \import{theory/macro}{shapiro-ideal.pgf}
             \caption{
-                Microwave-driven transport in a weakly coupled Josephson junction. Parameters correspond to aluminum (Sec.~\ref{subsec:basics:aluminum}), with $T=0$, $\gamma=0$, and $\nu=10.0\,\mathrm{GHz}$.
+                Microwave-driven transport in a weakly coupled Josephson junction. Parameters correspond to aluminum (Sec.~\ref{subsec:platform:aluminum}), with $T=0$, $\gamma=0$, and $\nu=10.0\,\mathrm{GHz}$.
                 }
             \label{fig:macro:shaprio-iv}
         \end{figure}
         
         Under microwave irradiation, a Josephson junction develops quantized constant-voltage plateaus in its dc \textit{I--V} characteristic, so-called Shapiro steps or inverse AC Josephson effect, arising from frequency locking between the Josephson oscillation and the applied drive. \cite{shapiro_josephson_1963,barone_physics_1982,tinkham_introduction_2004}
 
-        When a Josephson junction is exposed to an external microwave field, the phase dynamics become modulated by the drive introduced in Section~\ref{subsec:basics:micro-wave}. The Josephson frequency $\nu_0$ mixes with the external frequency $\nu$, and the phase takes the form
+        When a Josephson junction is exposed to an external microwave field, the phase dynamics become modulated by the drive introduced in Section~\ref{subsec:platform:microwave}. The Josephson frequency $\nu_0$ mixes with the external frequency $\nu$, and the phase takes the form
         \begin{equation}
             \phi(t)=\phi_0 + 2\pi\nu_0 t + \alpha\sin(2\pi\nu t)\,,
             \label{eq:macro:shapiro-phase}
         \end{equation}
         with $\alpha = 2eA/h\nu$ the dimensionless drive strength.
 
-        Inserting this expression into the Josephson current-phase relation (Eq.~\ref{eq:macro:dc}) and expanding the phase modulation using the Jacobi-Anger identity (Eq.~\ref{eq:microwave:jacobi-anger}) yields harmonics at frequencies $\nu_0 - n\nu$. Whenever the resonance condition $\nu_0 = n\nu$ is satisfied, the $n$-th harmonic becomes stationary and contributes a finite dc component to the current. This produces quantized voltage plateaus at
+        Inserting this expression into the Josephson current-phase relation (Eq.~\ref{eq:macro:dc}) and expanding the phase modulation using the Jacobi-Anger identity (Eq.~\ref{eq:platform:jacobi-anger}) yields harmonics at frequencies $\nu_0 - n\nu$. Whenever the resonance condition $\nu_0 = n\nu$ is satisfied, the $n$-th harmonic becomes stationary and contributes a finite dc component to the current. This produces quantized voltage plateaus at
         \begin{equation}
             V_n = \frac{nh\nu}{2e}\,,
             \label{eq:macro:shapiro-step}
@@ -317,7 +317,7 @@
         \subsubsection*{Shapiro Steps in the RCSJ Model}
         %=========================================================
 
-            In the full RCSJ model, Shapiro steps arise through frequency locking between the intrinsic Josephson oscillation and an external microwave drive, as described in Section~\ref{subsec:basics:micro-wave}. The normalized RCSJ equation becomes
+            In the full RCSJ model, Shapiro steps arise through frequency locking between the intrinsic Josephson oscillation and an external microwave drive, as described in Section~\ref{subsec:platform:microwave}. The normalized RCSJ equation becomes
             \begin{equation}
                 i + a\sin(2\pi\nu' t')
                 = \sin\phi
@@ -353,7 +353,7 @@
                     Overdamped junction ($Q\ll 1$), switching current parameter $I_\mathrm{SW}=0.2\,I_\mathrm{c}$.
                     ]{\import{theory/macro/}{shapiro-over.pgf}}
                 \caption{
-                    Microwave-driven dc transport of a Josephson junction within the RCSJ model for (a) underdamped and (b) overdamped phase dynamics. Shown is the normalized bias current $I_\mathrm{bias}/(G_\mathrm{N}\Delta_0/e)$ versus the normalized voltage $eV/\Delta_0$ for drive amplitudes $eA/\Delta_0\in\{0,0.3,0.6\}$ at $\nu=10\,\mathrm{GHz}$. Parameters correspond to aluminum (Sec.~\ref{subsec:basics:aluminum}) with $T=0$ and $\gamma=0$.
+                    Microwave-driven dc transport of a Josephson junction within the RCSJ model for (a) underdamped and (b) overdamped phase dynamics. Shown is the normalized bias current $I_\mathrm{bias}/(G_\mathrm{N}\Delta_0/e)$ versus the normalized voltage $eV/\Delta_0$ for drive amplitudes $eA/\Delta_0\in\{0,0.3,0.6\}$ at $\nu=10\,\mathrm{GHz}$. Parameters correspond to aluminum (Sec.~\ref{subsec:platform:aluminum}) with $T=0$ and $\gamma=0$.
                     }
                 \label{fig:macro:rcsj-shapiro-iv}
             \end{figure}

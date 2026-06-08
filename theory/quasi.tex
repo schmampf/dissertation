@@ -3,7 +3,7 @@
 %=========================================================
 % \setcounter{section}{-1}
 \section{Quasiparticles and Transport Regimes}
-\label{sec:basics}
+\label{sec:quasi}
 %=========================================================
     
     This section establishes the transport framework used throughout the chapter. We begin with a many-electron Hamiltonian and reduce it to the quasiparticle parameters that govern low-energy transport. In a large diffusive conductor these parameters lead to the Drude description and the measured normal-state resistance. When phase coherence extends across a finite conductor, scattering theory resolves transport into transmission channels. A coherent diffusive conductor contains many such channels, whereas an atomic contact is described by a small channel set.
@@ -12,7 +12,7 @@
 
     %=========================================================
     \subsection{Microscopic Quasiparticles}
-    \label{subsec:basics:micro}
+    \label{subsec:quasi:micro}
     %=========================================================
 
         We consider $N$ electrons at coordinates $\{\vec{r}_i\}$ in a crystalline solid whose ionic cores are fixed at positions $\{\vec{R}_a\}$. With the ionic coordinates absorbed into $V_\text{ion}$, the Hamiltonian in first quantization is
@@ -24,13 +24,13 @@
             \right)
             + \frac{1}{2} \sum_{i \neq j}
             \frac{e^2}{4\pi\varepsilon_0 \lvert \vec{r}_i - \vec{r}_j \rvert}\,,
-            \label{eq:micro:full-hamiltonian}
+            \label{eq:quasi:full-hamiltonian}
         \end{equation}
         with canonical momenta $\hat{\vec{p}}_i = -\ima\hbar\nabla_i$ and electron mass $m$. The ionic potential $V_\text{ion}(\vec{r})$ represents the Coulomb attraction of the electrons to the positively charged lattice. To a good approximation it is periodic,
         \begin{equation}
             V_\text{ion}(\vec{r} + \vec{R})
             = V_\text{ion}(\vec{r})
-            \label{eq:basics:ionic-periodicity}
+            \label{eq:quasi:ionic-periodicity}
         \end{equation}
         for all Bravais lattice vectors $\vec{R}$.
 
@@ -38,7 +38,7 @@
         \begin{equation}
             \ima\hbar \frac{\partial}{\partial t} \Psi
             = \hat{H}\,\Psi\,,
-            \label{eq:micro:schroedinger}
+            \label{eq:quasi:schroedinger}
         \end{equation}
         supplemented by antisymmetry under particle exchange due to Fermi statistics. Solving this problem exactly is not feasible. To arrive at a tractable description of electronic transport we now introduce a sequence of simplifications. \cite{ashcroft_solid_2012, gross_festkorperphysik_2014}
 
@@ -54,7 +54,7 @@
                 \qquad
                 \hat{H}_\text{eff}
                 = \frac{\hat{\vec{p}}^{\,2}}{2m} + V_\text{per}(\vec{r})\,,
-                \label{eq:micro:heff}
+                \label{eq:quasi:heff}
             \end{equation}
             where $V_\text{per}(\vec{r})$ is a periodic effective potential that already includes the mean-field action of the other electrons. 
             Residual interactions and disorder manifest at low energies through renormalized band parameters and relaxation processes that we summarize below by a small set of effective quasiparticle parameters.
@@ -65,7 +65,7 @@
                     -\frac{\hbar^2}{2m}\nabla^2 + V_\text{per}(\vec{r})
                 \right] \psi(\vec{r})
                 = E\,\psi(\vec{r})\,,
-                \label{eq:micro:schroedinger-periodic}
+                \label{eq:quasi:schroedinger-periodic}
             \end{equation}
             is the starting point for band theory. Its solutions provide the electronic states from which the low-energy transport parameters are constructed. \cite{born_zur_1927, ashcroft_solid_2012,bloch_uber_1929}
 
@@ -78,14 +78,14 @@
                 \psi_{n\vec{k}}(\vec{r})
                 = \mathrm{e}^{\ima\vec{k}\cdot\vec{r}}\,
                 u_{n\vec{k}}(\vec{r})\,,
-                \label{eq:micro:bloch}
+                \label{eq:quasi:bloch}
             \end{equation}
-            where $n$ is a band index, $\vec{k}$ lies in the first Brillouin zone, and $u_{n\vec{k}}(\vec{r}+\vec{R}) = u_{n\vec{k}}(\vec{r})$ is lattice-periodic. Inserting Eq.~\eqref{eq:micro:bloch} into Eq.~\eqref{eq:micro:schroedinger-periodic} yields for each $\vec{k}$ a discrete set of eigenvalues $E_n(\vec{k})$ that define the band structure.
+            where $n$ is a band index, $\vec{k}$ lies in the first Brillouin zone, and $u_{n\vec{k}}(\vec{r}+\vec{R}) = u_{n\vec{k}}(\vec{r})$ is lattice-periodic. Inserting Eq.~\eqref{eq:quasi:bloch} into Eq.~\eqref{eq:quasi:schroedinger-periodic} yields for each $\vec{k}$ a discrete set of eigenvalues $E_n(\vec{k})$ that define the band structure.
 
             The Bloch functions form an orthonormal basis. In the independent-electron approximation, the many-electron ground state is obtained by filling the one-particle eigenstates up to the Fermi energy $E_\mathrm{F}$, with at most two electrons, spin up and spin down, per state. For a given electron density, the filling of the bands fixes $E_\mathrm{F}$ and the corresponding Fermi surface defined by
             \begin{equation}
                 E_n(\vec{k}) = E_\mathrm{F}\,.
-                \label{eq:basics:fermi-surface}
+                \label{eq:quasi:fermi-surface}
             \end{equation}
 
             In simple metals one or a few bands cross the Fermi level. For transport at low temperature and low bias, only states in a narrow energy window $\lvert E - E_\mathrm{F} \rvert \sim \max(k_\mathrm{B}T, eV)$ are relevant. The detailed band structure away from the Fermi surface can therefore be compressed into effective parameters such as the Fermi velocity and the density of states at the Fermi energy. These are the quantities that enter the transport models below. \cite{ashcroft_solid_2012,bloch_uber_1929}
@@ -101,11 +101,11 @@
                 \right)\,,
                 \qquad
                 \frac{\mathrm{d}\vec{r}}{\mathrm{d}t} = \frac{1}{\hbar}\,\nabla_{\vec{k}} E_n(\vec{k})\,,
-                \label{eq:micro:semiclassical}
+                \label{eq:quasi:semiclassical}
             \end{equation}
             where $\mathrm{d}\vec{r}/\mathrm{d}t$ is the group velocity, given by the gradient of the band energy, and $\vec{E}$, $\vec{B}$ are external electric and magnetic fields. \cite{ashcroft_solid_2012}
 
-            In a perfect, infinite crystal without interactions, Bloch electrons would evolve according to Eq.~\eqref{eq:micro:semiclassical} and, for a uniform electric field, undergo Bloch oscillations rather than exhibit steady Ohmic transport. Real materials contain impurities, lattice defects, and phonons, and residual electron-electron interactions. These processes scatter carriers between Bloch states and thereby relax the current. \cite{bloch_uber_1929,zener_theory_1934}
+            In a perfect, infinite crystal without interactions, Bloch electrons would evolve according to Eq.~\eqref{eq:quasi:semiclassical} and, for a uniform electric field, undergo Bloch oscillations rather than exhibit steady Ohmic transport. Real materials contain impurities, lattice defects, and phonons, and residual electron-electron interactions. These processes scatter carriers between Bloch states and thereby relax the current. \cite{bloch_uber_1929,zener_theory_1934}
 
             For the transport regimes relevant in this thesis it is sufficient to summarize all momentum-relaxing processes by a single energy-averaged momentum-relaxation time $t_\mathrm{qp}$. Between scattering events, electrons propagate as Bloch wave packets. Scattering events then randomize the momentum distribution and permit a stationary current. We now recast this picture in terms of quasiparticles and the effective parameters that connect band dynamics to measured conductance. \cite{ashcroft_solid_2012, gross_festkorperphysik_2014}
 
@@ -122,26 +122,26 @@
                 E(\vec{k}) \approx \frac{\hbar^2 \lvert \vec{k} \rvert^2}{2m^\ast}\,,
                 \qquad
                 E_\mathrm{F} = \frac{\hbar^2 k_\mathrm{F}^2}{2m^\ast}\,.
-                \label{eq:micro:parabolic}
+                \label{eq:quasi:parabolic}
             \end{equation}
             The effective mass generally differs from the bare electron mass $m$ and encodes both the band-structure curvature and renormalization due to interactions. The quasiparticle group velocity is then
             \begin{equation}
                 \vec{v}(\vec{k})
                 = \frac{1}{\hbar} \nabla_{\vec{k}} E(\vec{k})
                 \approx \frac{\hbar\vec{k}}{m^\ast}\,,
-                \label{eq:basics:quasiparticle-velocity}
+                \label{eq:quasi:quasiparticle-velocity}
             \end{equation}
             and the Fermi velocity is $v_\mathrm{F} = \hbar k_\mathrm{F} / m^\ast$.
 
             The density of states per unit volume, including both spin directions, for a three-dimensional parabolic band reads
             \begin{equation}
                 N(E) = \frac{1}{2\pi^2} \left( \frac{2m^\ast}{\hbar^2} \right)^{3/2} \sqrt{E}\,,
-                \label{eq:basics:n-dos}
+                \label{eq:quasi:n-dos}
             \end{equation}
             with $E$ measured from the band edge. Its value at the Fermi energy is $N_0 = N(E_\mathrm{F})$. Since $E_\mathrm{F}$ is of order eV whereas the relevant excitation energies are on the meV scale, $N(E)$ varies only weakly in the window of interest. It is therefore convenient to approximate it by a constant,
             \begin{equation}
                 N(E) \approx N_0 = N(E_\mathrm{F})\,,
-                \label{eq:basics:n-dos-approx}
+                \label{eq:quasi:n-dos-approx}
             \end{equation}
             This approximation is accurate in the energy range relevant for low-temperature transport. The parameters $m^\ast$, $v_\mathrm{F}$, $N_0$, and $t_\mathrm{qp}$ define the minimal quasiparticle description used throughout this thesis. They determine both spectral quantities and the normal-state transport scales, providing the input for the Drude model derived next. \cite{ashcroft_solid_2012, gross_festkorperphysik_2014}
 
@@ -153,25 +153,25 @@
             \begin{equation}
                 \frac{\mathrm{d}\langle \vec{p}\, \rangle}{\mathrm{d}t}
                 = -e \vec{E} - \frac{\langle \vec{p}\, \rangle}{t_\mathrm{qp}}\,,
-                \label{eq:basics:drude-eom}
+                \label{eq:quasi:drude-eom}
             \end{equation}
             where the second term is a simple relaxation-time approximation for the effect of scattering. In the steady state, $\mathrm{d}\langle \vec{p} \,\rangle / \mathrm{d}t = 0$ and $\langle \vec{p} \rangle = - e t_\mathrm{qp} \vec{E}$. The average drift velocity is therefore
             \begin{equation}
                 \vec{v}_\mathrm{drift}
                 = \frac{\langle \vec{p}\, \rangle}{m^\ast}
                 = - \frac{e t_\mathrm{qp}}{m^\ast} \vec{E}\,.
-                \label{eq:basics:drift-velocity}
+                \label{eq:quasi:drift-velocity}
             \end{equation}
             Multiplying by the carrier density $n$ gives the current density
             \begin{equation}
                 \vec{j} = - n e \vec{v}_\mathrm{drift}
                 = \frac{n e^2 t_\mathrm{qp}}{m^\ast} \vec{E}\,,
-                \label{eq:basics:drude-current-density}
+                \label{eq:quasi:drude-current-density}
             \end{equation}
             which identifies the Drude conductivity
             \begin{equation}
                 \sigma = \frac{n e^{2} t_\mathrm{qp}}{m^\ast}\,.
-                \label{eq:basics:drude-conductivity}
+                \label{eq:quasi:drude-conductivity}
             \end{equation}
             The conductivity therefore translates the microscopic relaxation time into the slope of the normal-state \textit{I--V} characteristic. In this bulk limit the system is assumed to be spatially homogeneous, and spatial variations of the electric field and current density are slow on the scale of the microscopic scattering lengths, such that transport is fully captured by the local constitutive relation $\vec{j} = \sigma \vec{E}$.
 
@@ -179,33 +179,33 @@
             \begin{equation}
                 I = G \ V\,,\qquad
                 G = \sigma\,\frac{A}{L}\,.
-                \label{eq:basics:ohms-law}
+                \label{eq:quasi:ohms-law}
             \end{equation}
             Equivalently, $V=IR$ with $R = 1/G$ and one may introduce the resistivity $\rho= 1/\sigma$ such that $R=\rho L/A$. Thus, a measured normal-state resistance combines the microscopic scattering rate with the sample geometry. This bulk relation provides the reference against which coherent mesoscopic transport is identified. \cite{ohm_galvanische_1827}
 
             The same relaxation time $t_\mathrm{qp}$ that enters $\sigma$ also sets the characteristic length and time scales of quasiparticle motion. Momentum randomization over this time defines an elastic mean free path
             \begin{equation}
                 \ell_\mathrm{qp}= v_\mathrm{F} t_\mathrm{qp}\,,
-                \label{eq:basics:mean-free-path}
+                \label{eq:quasi:mean-free-path}
             \end{equation}
             where $v_\mathrm{F}$ is the Fermi velocity, and on longer scales the coarse-grained dynamics of the carrier density become diffusive with diffusion constant
             \begin{equation}
                 D = \frac{v_\mathrm{F}^{2} t_\mathrm{qp}}{3} = \frac{v_\mathrm{F}\ell_\mathrm{qp}}{3}\,.
-                \label{eq:basics:diffusion-constant}
+                \label{eq:quasi:diffusion-constant}
             \end{equation}
             The quantities $\sigma$, $\ell_\mathrm{qp}$, and $D$ summarize the influence of microscopic scattering in the bulk diffusive limit. The comparison of $\ell_\mathrm{qp}$ with the conductor size $L$ determines when this local description remains adequate. Once finite size and phase coherence matter, the transport problem must be organized by a hierarchy of length scales rather than by conductivity alone. \cite{drude_zur_1900}
                 
     %=========================================================
     \newpage
     \subsection{Mesoscopic Quasiparticles}
-    \label{subsec:basics:meso}
+    \label{subsec:quasi:meso}
     %=========================================================
 
         Mesoscopic transport occurs when the conductor size $L$ becomes comparable to microscopic transport length scales. Finite-size effects and quantum interference can then produce behavior that is not captured by the bulk Drude picture. The relevant hierarchy involves the elastic mean free path $\ell_\mathrm{qp}$, the phase-coherence length $\ell_\phi$, and the thermal length $\ell_T$. This hierarchy determines the applicable transport description.
 
         The phase-coherence length $\ell_\phi$ is set by inelastic and dephasing processes such as electron--electron and electron--phonon scattering. It quantifies how far a quasiparticle propagates while retaining a well-defined quantum phase. At finite temperature, thermal averaging further limits observable interference on the scale $\ell_T$.
 
-        In macroscopic conductors, where $L \gg \ell_\mathrm{qp}$ and $L \gg \ell_\phi$, quasiparticles undergo many scattering events and lose phase coherence before traversing the sample. Transport is then well described by the bulk Drude picture. When $L \lesssim \ell_\phi$, phase coherence extends across the conductor and quantum interference between scattering paths becomes observable. The mean free path then distinguishes two coherent regimes. Transport is ballistic for $L \ll \ell_\mathrm{qp}$ and diffusive but phase coherent for $\ell_\mathrm{qp} \ll L \lesssim \ell_\phi$. Figure~\ref{fig:basics:meso} summarizes this hierarchy. \cite{ashcroft_solid_2012, gross_festkorperphysik_2014}
+        In macroscopic conductors, where $L \gg \ell_\mathrm{qp}$ and $L \gg \ell_\phi$, quasiparticles undergo many scattering events and lose phase coherence before traversing the sample. Transport is then well described by the bulk Drude picture. When $L \lesssim \ell_\phi$, phase coherence extends across the conductor and quantum interference between scattering paths becomes observable. The mean free path then distinguishes two coherent regimes. Transport is ballistic for $L \ll \ell_\mathrm{qp}$ and diffusive but phase coherent for $\ell_\mathrm{qp} \ll L \lesssim \ell_\phi$. Figure~\ref{fig:quasi:meso} summarizes this hierarchy. \cite{ashcroft_solid_2012, gross_festkorperphysik_2014}
 
         \begin{figure}
             \centering
@@ -224,7 +224,7 @@
             Transport regimes are set by conductor length $L$ relative to elastic mean free path $\ell_{\mathrm{qp}}$ and phase-coherence length $\ell_{\phi}$. (a)~Classical regime with $L \gg \ell_{\phi}, \ell_{\mathrm{qp}}$. (b)~Phase-coherent diffusive regime with $\ell_{\mathrm{qp}} \ll L \lesssim \ell_{\phi}$. (c)~Ballistic regime with $L \ll \ell_{\mathrm{qp}}$ and $L \lesssim \ell_{\phi}$.
             }
             % Legend: constriction \legend{seegrau120}, scattering centers \legend{seegrau100}, phase-coherent trajectory \legend{seeblau65}, phase-randomized trajectory \legend{seegrau65}, phase-coherence disk \legend{seeblau20}.
-            \label{fig:basics:meso}
+            \label{fig:quasi:meso}
         \end{figure}
 
         %=========================================================
@@ -236,12 +236,12 @@
             For diffusive motion the phase-coherence length is conveniently expressed in terms of the diffusion constant $D$ and a dephasing time $t_\phi$,
             \begin{equation}
                 \ell_\phi = \sqrt{D t_\phi}\,.
-                \label{eq:basics:diffusive-coherence-length}
+                \label{eq:quasi:diffusive-coherence-length}
             \end{equation}
             At finite temperature, interference is additionally reduced by thermal averaging over an energy window $\sim k_\mathrm{B}T$. This introduces the thermal length
             \begin{equation}
                 \ell_T = \sqrt{\hbar D / k_\mathrm{B}T}\,,
-                \label{eq:basics:thermal-length}
+                \label{eq:quasi:thermal-length}
             \end{equation}
             such that phase-coherent effects are most pronounced when $L \lesssim \min(\ell_\phi,\,\ell_T)$.
 
@@ -263,27 +263,27 @@
                 \caption{
                     Sketch of a two-terminal scatterer connecting ideal leads. Incoming and outgoing mode amplitudes $\vec{A}$, $\vec{B}$ are related by the scattering matrix $\mat{S}$.
                 }
-                \label{fig:basics:scatter}
+                \label{fig:quasi:scatter}
             \end{wrapfigure}
             In the ballistic regime the length of the constriction is shorter than the elastic mean free path, $L \ll \ell_\mathrm{qp}$, such that quasiparticles traverse the contact without momentum-randomizing scattering. If, in addition, the contact is shorter than the phase-coherence length, $L \lesssim \ell_\phi$, transport is phase coherent across the entire constriction. In the ballistic limit one may express the phase-coherence length in terms of the Fermi velocity and a dephasing time $t_\phi$,
             \begin{equation}
                 \ell_\phi = v_\mathrm{F} \, t_\phi\,.
-                \label{eq:basics:ballistic-coherence-length}
+                \label{eq:quasi:ballistic-coherence-length}
             \end{equation}
 
-            Ballistic transport is most naturally formulated as an elastic scattering problem. A finite region connects ideal leads in which the electronic modes propagate without dissipation. We denote the complex incoming mode amplitudes in the left and right leads by $A_1$ and $A_2$, and the corresponding outgoing amplitudes by $B_1$ and $B_2$, as shown in Fig.~\ref{fig:basics:scatter}.
+            Ballistic transport is most naturally formulated as an elastic scattering problem. A finite region connects ideal leads in which the electronic modes propagate without dissipation. We denote the complex incoming mode amplitudes in the left and right leads by $A_1$ and $A_2$, and the corresponding outgoing amplitudes by $B_1$ and $B_2$, as shown in Fig.~\ref{fig:quasi:scatter}.
             
             Linear scattering then implies a matrix relation which we write explicitly as
             \begin{equation}
                 \begin{pmatrix} B_1 \\ B_2 \end{pmatrix} = \mat{S}\,\begin{pmatrix} A_1 \\ A_2 \end{pmatrix}\,.
-                \label{eq:basics:scatter-1}
+                \label{eq:quasi:scatter-1}
             \end{equation}
 
             In the general multi-mode case, $A_{1,2}$ and $B_{1,2}$ become vectors collecting all propagating modes in the corresponding lead. The scattering matrix decomposes into reflection blocks $\mat{r}$ and $\mat{r}'$ and transmission blocks $\mat{t}$ and $\mat{t}'$,
             \begin{equation}
                 \mat{S}
                 = \begin{pmatrix} \mat{r} & \mat{t}' \\ \mat{t} & \mat{r}' \end{pmatrix}\,.
-                \label{eq:basics:scatter-2}
+                \label{eq:quasi:scatter-2}
             \end{equation}
             For purely elastic normal-state scattering, $\mat{S}$ is unitary because probability current is conserved.
             
@@ -291,7 +291,7 @@
             \begin{equation}
                 \{\tau_i\} = \operatorname{eig}\!\left(\mat{t}^\dagger\,\mat{t}\right)\,,\quad 
                 \tau_i\in[0,1]\,.
-                \label{eq:basics:tau_i}
+                \label{eq:quasi:tau_i}
             \end{equation}
             Choosing a basis of transmission eigenchannels diagonalizes $\mat{t}^\dagger\mat{t}$. This basis is unique up to unitary rotations within degenerate subspaces.
 
@@ -300,7 +300,7 @@
                 G_\mathrm{N} = G_0 \sum_{i=1}^N \tau_i\,,
                 \quad
                 G_0 = \frac{2e^2}{h}\,,
-                \label{eq:basics:landauer}
+                \label{eq:quasi:landauer}
             \end{equation}
             where $\tau_i$ are the transmission eigenvalues and $G_0$ is the conductance quantum\footnote{
                 Throughout this thesis the conductance quantum is defined as $G_0 \equiv 2e^2/h = 77.48\,\mu\mathrm{S}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = 12.9\,\mathrm{k\Omega}$.
@@ -312,7 +312,7 @@
         \subsubsection*{Atomic-Scale Contacts}
         %=========================================================
 
-            As a didactic reference for the channel picture, it is useful to recall the textbook case of a split-gate quantum point contact (QPC) in a high-mobility two-dimensional electron gas. There, the width of a short ballistic constriction is tuned electrostatically, and the conductance increases in approximately quantized steps as additional transverse modes become available. In the Landauer picture each newly populated mode contributes roughly one conductance quantum $G_0$ when its transmission approaches unity. The resulting staircase $G(V_\mathrm{G})$ is shown in Fig.~\ref{fig:basics:atomic-contact}(a). \cite{van_wees_quantized_1988, buttiker_four-terminal_1986, beenakker_random-matrix_1997}
+            As a didactic reference for the channel picture, it is useful to recall the textbook case of a split-gate quantum point contact (QPC) in a high-mobility two-dimensional electron gas. There, the width of a short ballistic constriction is tuned electrostatically, and the conductance increases in approximately quantized steps as additional transverse modes become available. In the Landauer picture each newly populated mode contributes roughly one conductance quantum $G_0$ when its transmission approaches unity. The resulting staircase $G(V_\mathrm{G})$ is shown in Fig.~\ref{fig:quasi:atomic-contact}(a). \cite{van_wees_quantized_1988, buttiker_four-terminal_1986, beenakker_random-matrix_1997}
 
             While semiconductor QPCs provide a particularly clean and tunable example of conductance quantization, the focus of this work lies on metallic atomic contacts. In these contacts the number, symmetry, and transparency of the transmission channels are dictated by atomic-scale structure and chemistry rather than by lithographic geometry.
 
@@ -339,173 +339,17 @@
                 (b) Aluminum atomic contact: opening trace $G(\Delta x)$.
                 (c) Conductance histogram $P(G)$ accumulated over many breaking cycles.
                 }
-                \label{fig:basics:atomic-contact}
+                \label{fig:quasi:atomic-contact}
             \end{figure}
 
-            Metallic atomic contacts provide a paradigmatic realization of ballistic, phase-coherent transport. The constriction consists of only one or a few atoms, with a characteristic length of order an interatomic spacing. This scale is far shorter than the elastic mean free path and, at low temperature, also much shorter than the phase-coherence length, such that typically $L \ll \ell_\mathrm{qp}$ and $L \ll \ell_\phi$. Experimentally, the formation and rupture of such contacts are tracked by recording the conductance while mechanically separating the electrodes, producing an opening trace as in Fig.~\ref{fig:basics:atomic-contact}(b). \cite{scheer_conduction_1997, agrait_quantum_2003}
+            Metallic atomic contacts provide a paradigmatic realization of ballistic, phase-coherent transport. The constriction consists of only one or a few atoms, with a characteristic length of order an interatomic spacing. This scale is far shorter than the elastic mean free path and, at low temperature, also much shorter than the phase-coherence length, such that typically $L \ll \ell_\mathrm{qp}$ and $L \ll \ell_\phi$. Experimentally, the formation and rupture of such contacts are tracked by recording the conductance while mechanically separating the electrodes, producing an opening trace as in Fig.~\ref{fig:quasi:atomic-contact}(b). \cite{scheer_conduction_1997, agrait_quantum_2003}
 
-            The transmission eigenchannels of an atomic contact are set by the valence orbitals of the atoms forming the narrowest part of the constriction and by their hybridization with the electrodes. For aluminum, whose conduction states have predominantly $sp$ character, this typically results in three dominant transport channels: one mainly $sp_z$-like channel and two transverse $p$-like channels. Depending on atomic geometry and disorder, additional weaker channels may appear, but the transport is usually governed by a small number of highly transparent modes. A complementary statistical view is provided by conductance histograms, Fig.~\ref{fig:basics:atomic-contact}(c), where peaks reflect preferred atomic configurations and their associated typical channel sets. \cite{yanson_histograms_1997,scheer_signature_1998, agrait_quantum_2003}
+            The transmission eigenchannels of an atomic contact are set by the valence orbitals of the atoms forming the narrowest part of the constriction and by their hybridization with the electrodes. For aluminum, whose conduction states have predominantly $sp$ character, this typically results in three dominant transport channels: one mainly $sp_z$-like channel and two transverse $p$-like channels. Depending on atomic geometry and disorder, additional weaker channels may appear, but the transport is usually governed by a small number of highly transparent modes. A complementary statistical view is provided by conductance histograms, Fig.~\ref{fig:quasi:atomic-contact}(c), where peaks reflect preferred atomic configurations and their associated typical channel sets. \cite{yanson_histograms_1997,scheer_signature_1998, agrait_quantum_2003}
 
             Experimentally, the set of transmission probabilities $\{\tau_i\}$ can be extracted from superconducting transport measurements using multiple Andreev reflection and related techniques. Throughout this thesis we therefore characterize each atomic contact by its mesoscopic pin code. These transmission eigenvalues serve as input for the microscopic description of superconducting transport in the following sections. \cite{scheer_conduction_1997,scheer_signature_1998}
 
             Together, opening traces and conductance histograms show how atomic configurations select reproducible conductance ranges. They motivate the channel description used throughout this thesis, while superconducting subgap spectroscopy supplies the additional information required to resolve the individual $\tau_i$. The remaining step is to specify the material scales that place aluminum contacts in this ballistic superconducting regime.
 
-    In summary, the comparison of $L$ with $\ell_\mathrm{qp}$, $\ell_\phi$, and $\ell_T$ determines whether transport is described by a local Drude conductivity or by a phase-coherent scattering problem. In the coherent regime, the transmission eigenvalues $\{\tau_i\}$ connect the contact structure to normal-state conductance and superconducting subgap observables. Section~\ref{sec:basics:platform-drive} now specializes this general framework to aluminum and introduces the voltage and phase conventions used for driven junctions.
+    In summary, the comparison of $L$ with $\ell_\mathrm{qp}$, $\ell_\phi$, and $\ell_T$ determines whether transport is described by a local Drude conductivity or by a phase-coherent scattering problem. In the coherent regime, the transmission eigenvalues $\{\tau_i\}$ connect the contact structure to normal-state conductance and superconducting subgap observables. Section~\ref{sec:platform} now specializes this general framework to aluminum and introduces the voltage and phase conventions used for driven junctions.
 
 
-%=========================================================
-\newpage
-\section{Material Platform and Microwave Driving}
-\label{sec:basics:platform-drive}
-%=========================================================
-
-    After establishing the general transport framework, we now specialize to aluminum as the material platform used throughout this thesis. We then introduce the common voltage and electromagnetic-phase conventions for driven junctions. These definitions are used in the later microscopic, macroscopic, mesoscopic, and stochastic descriptions.
-
-    %=========================================================
-    \subsection{Aluminum as Material Platform}
-    \label{subsec:basics:aluminum}
-    %=========================================================
-
-        Aluminum now turns the general transport hierarchy into the concrete scales used in this thesis. Aluminum electrodes provide the normal-state quasiparticles, weak-coupling BCS condensates, and atomic contacts, while aluminum oxide provides the tunnel barriers.
-
-        Aluminum is a simple $sp$ metal with three valence electrons per atom and an fcc crystal structure. In the effective single-band picture introduced above, its low-energy normal-state properties can be summarized by the same quasiparticle parameters $m^\ast$, $v_\mathrm{F}$, $N_0$, and $t_\mathrm{qp}$. Bulk aluminum is nearly free-electron-like, such that $m^\ast \simeq m$ is often a good approximation. Its Fermi energy is approximately $E_\mathrm{F} = 11.7\,\mathrm{eV}$ \cite{chauvin_josephson_2005}. Correspondingly, the Fermi wavelength is on the sub-nanometer scale and the Fermi velocity is of order $10^6\,\mathrm{m/s}$. In thin films, the elastic mean free path $\ell_\mathrm{qp}$ can reach tens of nanometers in high-purity samples, but its precise value depends sensitively on disorder, thickness, and microstructure \cite{steinberg_quasi-particle_2008}.
-
-        For mesoscopic aluminum structures the phase-coherence length $\ell_\phi$ is not a fixed material constant but depends on temperature, disorder, geometry, and the electromagnetic environment. The length hierarchy established for atomic contacts above places the measured aluminum constrictions in the ballistic, phase-coherent regime \cite{scheer_conduction_1997, agrait_quantum_2003}.
-
-        %=========================================================
-        \subsubsection*{Aluminum as Superconductor}
-        %=========================================================
-
-            As a superconductor, aluminum is a prototypical weak-coupling BCS material with an isotropic $s$-wave order parameter\footnote{
-                Here and in the following, ``$s$-wave'' refers to the isotropic angular dependence of the superconducting order parameter on the Fermi surface, classified by spherical harmonics, and should not be confused with atomic $s$ orbitals. In aluminum the conduction band has predominantly $sp$-hybridized character, but the Cooper-pair wave function is $s$-wave in the sense of an isotropic pairing symmetry.
-                },
-            and a well-understood phonon-mediated pairing mechanism.
-
-            The zero-temperature gap and critical temperature are, to good approximation,
-            \begin{equation}
-                \Delta_0 \approx 180\,\mu\mathrm{eV}\,,\qquad
-                T_\mathrm{C} \approx 1.2\,\mathrm{K}\,.
-                \label{eq:basics:aluminum}
-            \end{equation}
-            The comparatively small gap places typical microwave frequencies well below the pair-breaking threshold\footnote{
-                The pair-breaking frequency of aluminum is given by $\nu_\mathrm{pb}=2\Delta_0/h\approx 87\,\mathrm{GHz}$. For further information, see Sec.~\ref{subsec:macro:josephson}.
-                },
-            enabling controlled photon-assisted processes without degrading superconductivity. \cite{tinkham_introduction_2004, murray_material_2021}
-
-            The clean-limit BCS coherence length is
-            \begin{equation}
-                \xi_0 = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\,,
-                \label{eq:basics:aluminum-clean-coherence-length}
-            \end{equation}
-            yielding a value of order $1$--$2\,\text{\textmu m}$ for aluminum. At zero temperature, the corresponding diffusive decay length of superconducting correlations is
-            \begin{equation}
-                \xi_{\mathrm{dirty},0}
-                = \sqrt{\frac{\hbar D}{\Delta_0}}\,.
-                \label{eq:basics:aluminum-dirty-coherence-length}
-            \end{equation}
-            For typical evaporated aluminum films, $\xi_{\mathrm{dirty},0}$ is roughly $100$--$300\,\mathrm{nm}$. Close to $T_\mathrm{C}$, the dirty-limit Ginzburg--Landau coherence length instead diverges as
-            \begin{equation}
-                \xi_\mathrm{GL}(T)
-                \simeq
-                \frac{0.855\sqrt{\xi_0\ell_\mathrm{qp}}}
-                     {\sqrt{1-T/T_\mathrm{C}}}
-                \simeq
-                \sqrt{\frac{\pi\hbar D}
-                            {8k_\mathrm{B}(T_\mathrm{C}-T)}}\,.
-                \label{eq:basics:aluminum-gl-coherence-length}
-            \end{equation}
-            The gap $\Delta_0$ sets the voltage scale of superconducting \textit{I--V} and \textit{dI--dV} characteristics, while these coherence lengths set the spatial scales over which superconducting correlations respond to interfaces and disorder in their respective temperature regimes. These properties make aluminum well suited for tunneling spectroscopy and mesoscopic superconducting transport. \cite{tinkham_introduction_2004, murray_material_2021}
-
-        %=========================================================
-        \subsubsection*{Aluminum Oxide as Insulator}
-        %=========================================================
-
-            A key practical advantage of aluminum is its native oxide. Upon exposure to oxygen, aluminum rapidly forms a thin insulating AlO$_x$ layer on its surface that passivates the metal and is strongly bound to the underlying film. Under ambient conditions this native oxide is typically only a few nanometers thick and self-limiting \cite{saif_effect_2002}. By controlled oxidation in vacuum one can reproducibly tune the barrier properties and thereby the normal-state tunnel resistance over several orders of magnitude. The resulting Al--AlO$_x$--Al junctions are a standard workhorse of superconducting electronics and, when well fabricated, provide stable tunnel barriers with low subgap leakage.
-
-            In the context of this thesis, artificially grown aluminum oxide defines the tunnel barriers in our SIS junctions, while the native surface oxide influences the mechanical response of thin aluminum electrodes \cite{murray_material_2021,saif_effect_2002}. The oxide barriers realize the low-transmission limit, while aluminum atomic contacts realize the finite-transmission limit. The next subsection adds the time-dependent drive used to probe both regimes.
-        
-    %=========================================================
-    \newpage
-    \subsection{Microwave Drive and Electromagnetic Phase}
-    \label{subsec:basics:micro-wave}
-    %=========================================================
-
-        The static material and channel parameters determine which transport processes are available. A time-dependent electromagnetic drive then controls how these processes exchange energy and accumulate phase. To avoid repeated introductions of the same setup, we summarize here the assumptions used in all subsequent driven descriptions. The drive is treated as a classical, externally imposed field. No cavity modes or backaction of the junction onto the field are considered. The entire voltage drop is assumed to occur across the junction, a convenient gauge choice.
-
-        Consequently, the electromagnetic field enters through the scalar potential in the tunneling Hamiltonian or through the Josephson phase evolution. We assume that the drive does not appreciably heat the electrodes, which therefore remain in local thermal equilibrium with Fermi--Dirac distributions. We also restrict the drive frequency to $h\nu < 2\Delta_0$, below the pair-breaking threshold. The experiments considered here use microwave frequencies up to approximately $20\,\mathrm{GHz}$. \cite{josephson_possible_1962, shapiro_josephson_1963,tien_multiphoton_1963,werthamer_temperature_1966}
-
-        %=========================================================
-        \subsubsection*{Electromagnetic Phase}
-        %=========================================================
-
-            \begin{figure}[t]
-                \centering
-                \subfigure[
-                    Harmonic drive voltage $V(t)$ (Eq.~\eqref{eq:microwave}).
-                ]{\import{theory/basics}{mw-V.pgf}}
-                \hfill
-                \subfigure[
-                    Accumulated phase $\phi(t)$ (Eq.~\eqref{eq:basics:mw-phase}).
-                ]{\import{theory/basics}{mw-phi.pgf}}
-                \hfill
-                \subfigure[
-                    Gauge phase factor $U(t)$ (Eq.~\eqref{eq:microwave:phase-factor}).
-                ]{\import{theory/basics}{mw-ReU.pgf}}
-                \hfill
-                \subfigure[
-                    Bessel coefficients $J_n(\alpha)$ vs. frequency $\nu$.
-                ]{\import{theory/basics}{mw-Jn.pgf}}
-                \caption{Illustration of a harmonic microwave drive and the associated electromagnetic phase factors for an aluminum junction (Sec.~\ref{subsec:basics:aluminum}).
-                Parameters: $q=e$, $eV_0 = 0.5\,\Delta_0$, $eA = 0.5\,\Delta_0$, and $\nu=10\,\mathrm{GHz}$.}
-                \label{fig:basics:microwave}
-            \end{figure}
-
-            The spatially uniform drive voltage is
-            \begin{equation}
-                V(t) = V_0 + A \cos (2\pi\nu t)\,,
-                \label{eq:microwave}
-            \end{equation}
-            with static component $V_0$, drive amplitude $A$, and frequency $\nu$, as shown in Fig.~\ref{fig:basics:microwave}(a).
-        
-            A time-dependent voltage changes the electrochemical-potential difference between the electrodes and imprints a time-dependent phase on a charge-transfer amplitude. In the gauge used here, the voltage enters through the scalar potential $V(t)$ and appears as a phase factor $U(t)$ multiplying the amplitude.
-
-            We denote the positive magnitude of the elementary transferred charge by $q$. Thus, $q=e$ for single-quasiparticle tunneling and $q=2e$ for coherent Cooper-pair transfer. An Andreev reflection also transfers charge $2e$ into or out of a condensate. Coherent multiple Andreev reflection, however, consists of a sequence of electron--hole conversions and is not obtained by simply replacing $q$ with an effective charge $me$ in the phase factor. Its charge-resolved description is introduced in the mesoscopic transport section.
-
-            In general, the accumulated electromagnetic phase between time $0$ and $t$ is given by
-            \begin{equation}
-                \phi(t) = \frac{q}{\hbar} \int_0^t V(t')\, dt'\,,
-                \label{eq:basics:mw-phase}
-            \end{equation}
-            Figure~\ref{fig:basics:microwave}(b) shows this accumulated phase. It is the common link between the applied voltage and phase-sensitive transport observables.
-
-            The phase enters the tunnel matrix element as a phase factor 
-            \begin{equation}
-                U(t)\equiv \exp\!\left(-\ima\phi(t)\right)\,.
-                \label{eq:microwave:phase-factor}
-            \end{equation}
-
-            Inserting Eq.~\eqref{eq:microwave} and performing the time integration separates the phase factor into static and oscillatory contributions,
-            \begin{align}
-                U(t) = \exp\!\left(-\ima \phi_0(t)\right)\,
-                \exp\!\left(-\ima \alpha \sin(2\pi\nu t)\right)\,,
-                \label{eq:basics:mw-phase-decomposition}
-            \end{align}
-            where
-            \begin{equation}
-                \phi_0(t) = \frac{q V_0 t}{\hbar}
-                \qquad\text{and}\qquad
-                \alpha = \frac{q A}{h\nu}\,,
-                \label{eq:basics:mw-drive-parameters}
-            \end{equation}
-            denote the phase accumulated from the static bias and the dimensionless modulation strength, respectively. Both scale linearly with the elementary transferred charge $q$. Figure~\ref{fig:basics:microwave}(c) shows the real part of the phase factor.
-
-            The oscillatory phase factor is conveniently expanded using the Jacobi--Anger identity,
-            \begin{equation}
-                \exp\!\left(\pm\ima\alpha \sin(2\pi\nu t)\right)
-                = \sum_{n=-\infty}^{\infty} J_n(\alpha)\,
-                \exp\!\left(\pm\ima n\, 2\pi\nu t\right)\,,
-                \label{eq:microwave:jacobi-anger}
-            \end{equation}
-            where $J_n(\alpha)$ is the $n$-th Bessel function of the first kind. Equivalently, the oscillatory phase factor forms a discrete frequency comb at harmonics $n\nu$, with complex amplitudes given by the Bessel coefficients $J_n(\alpha)$, as illustrated in Fig.~\ref{fig:basics:microwave}(d). In quasiparticle transport this decomposition produces photon-assisted replicas in \textit{I--V} and \textit{dI--dV} characteristics. In coherent Cooper-pair transport it produces the harmonics that underlie Shapiro response.
-
-            The four descriptions developed next are selected by the inputs established in these two preparatory sections. Material and spectral scales such as $\Delta_0$, $T_\mathrm{C}$, and $N_0$ determine the available states and characteristic energies. The hierarchy of $L$, $\ell_\mathrm{qp}$, and $\ell_\phi$ selects bulk or phase-coherent transport, while the transmission eigenvalues $\{\tau_i\}$ distinguish tunnel junctions from finite-transmission contacts. The voltage $V(t)$ and its electromagnetic phase specify the external drive, and the environmental impedance determines whether energy exchange and phase fluctuations must be treated explicitly. The microscopic section applies these inputs to quasiparticle tunneling. The macroscopic section treats tunnel-limit phase dynamics. The mesoscopic section develops Andreev transport at finite transmission. The stochastic section incorporates environment-assisted tunneling through \textit{P(E)} theory.
