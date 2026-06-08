@@ -2,13 +2,13 @@
 
 %=========================================================
 % \setcounter{section}{-1}
-\section{Basic Concepts}
+\section{Quasiparticles and Transport Regimes}
 \label{sec:basics}
 %=========================================================
     
-    The central question of this section is which transport description applies for a given conductor size, junction transparency, and drive condition. We begin with a many-electron Hamiltonian and reduce it to the quasiparticle parameters that govern low-energy transport. In a large diffusive conductor these parameters lead to the Drude description and the measured normal-state resistance. When the conductor becomes phase coherent and comparable to microscopic length scales, transport must instead be resolved into transmission channels. We then specialize this framework to aluminum, the material platform used throughout this thesis, before introducing the microwave voltage and electromagnetic phase that control photon-assisted and Josephson transport.
+    This section establishes the transport framework used throughout the chapter. We begin with a many-electron Hamiltonian and reduce it to the quasiparticle parameters that govern low-energy transport. In a large diffusive conductor these parameters lead to the Drude description and the measured normal-state resistance. When phase coherence extends across a finite conductor, scattering theory resolves transport into transmission channels. A coherent diffusive conductor contains many such channels, whereas an atomic contact is described by a small channel set.
 
-    The aim is not to reproduce each theory in full, but to establish the formulas, scales, and observables needed in the following sections. The resulting progression is from microscopic carriers to bulk transport, from bulk transport to coherent channels, and from static channels to driven superconducting junctions. Material-specific refinements are introduced only where they determine this progression. \cite{ashcroft_solid_2012, gross_festkorperphysik_2014}
+    The aim is not to reproduce each theory in full, but to establish the normal-state parameters and length-scale hierarchy that select the applicable transport description. Bulk diffusive transport is described by Drude theory, while coherent finite conductors require a channel-based scattering description. \cite{ashcroft_solid_2012, gross_festkorperphysik_2014}
 
     %=========================================================
     \subsection{Microscopic Quasiparticles}
@@ -149,7 +149,7 @@
         \subsubsection*{Drude Model from the Microscopic Picture}
         %=========================================================
 
-            Within the semiclassical picture the simplest transport model is the Drude description of a homogeneous metal. We treat the quasiparticles introduced above as classical point-like carriers with charge $-e$, effective mass $m^\ast$, and density $n$, which experience random momentum-relaxing collisions characterized by the relaxation time $t_\mathrm{qp}$ introduced above. In a weak, static electric field $\vec{E}$ the equation of motion for the average quasiparticle momentum reads
+            Within the semiclassical picture the simplest transport model is the Drude description of a homogeneous metal. We treat the quasiparticles introduced above as semiclassical carriers with charge $-e$, effective mass $m^\ast$, and density $n$. Random momentum-relaxing collisions are represented by the relaxation time $t_\mathrm{qp}$. In a weak, static electric field $\vec{E}$ the equation of motion for the average quasiparticle momentum reads
             \begin{equation}
                 \frac{\mathrm{d}\langle \vec{p}\, \rangle}{\mathrm{d}t}
                 = -e \vec{E} - \frac{\langle \vec{p}\, \rangle}{t_\mathrm{qp}}\,,
@@ -201,7 +201,7 @@
     \label{subsec:basics:meso}
     %=========================================================
 
-        Mesoscopic transport occurs when the conductor size $L$ becomes comparable to microscopic transport length scales. Finite-size effects and quantum interference can then produce behavior that is not captured by the bulk Drude picture. The relevant hierarchy involves the elastic mean free path $\ell_\mathrm{qp}$, the phase-coherence length $\ell_\phi$, and the thermal length $\ell_T$. This hierarchy selects the appropriate model before a conductance calculation is attempted.
+        Mesoscopic transport occurs when the conductor size $L$ becomes comparable to microscopic transport length scales. Finite-size effects and quantum interference can then produce behavior that is not captured by the bulk Drude picture. The relevant hierarchy involves the elastic mean free path $\ell_\mathrm{qp}$, the phase-coherence length $\ell_\phi$, and the thermal length $\ell_T$. This hierarchy determines the applicable transport description.
 
         The phase-coherence length $\ell_\phi$ is set by inelastic and dephasing processes such as electron--electron and electron--phonon scattering. It quantifies how far a quasiparticle propagates while retaining a well-defined quantum phase. At finite temperature, thermal averaging further limits observable interference on the scale $\ell_T$.
 
@@ -350,18 +350,27 @@
 
             Together, opening traces and conductance histograms show how atomic configurations select reproducible conductance ranges. They motivate the channel description used throughout this thesis, while superconducting subgap spectroscopy supplies the additional information required to resolve the individual $\tau_i$. The remaining step is to specify the material scales that place aluminum contacts in this ballistic superconducting regime.
 
+    In summary, the comparison of $L$ with $\ell_\mathrm{qp}$, $\ell_\phi$, and $\ell_T$ determines whether transport is described by a local Drude conductivity or by a phase-coherent scattering problem. In the coherent regime, the transmission eigenvalues $\{\tau_i\}$ connect the contact structure to normal-state conductance and superconducting subgap observables. Section~\ref{sec:basics:platform-drive} now specializes this general framework to aluminum and introduces the voltage and phase conventions used for driven junctions.
+
+
+%=========================================================
+\newpage
+\section{Material Platform and Microwave Driving}
+\label{sec:basics:platform-drive}
+%=========================================================
+
+    After establishing the general transport framework, we now specialize to aluminum as the material platform used throughout this thesis. We then introduce the common voltage and electromagnetic-phase conventions for driven junctions. These definitions are used in the later microscopic, macroscopic, mesoscopic, and stochastic descriptions.
 
     %=========================================================
-    \newpage
     \subsection{Aluminum as Material Platform}
     \label{subsec:basics:aluminum}
     %=========================================================
 
-        Aluminum now turns the general transport hierarchy into the concrete scales used in this thesis. It provides the normal-state electrodes, the weak-coupling BCS condensates, and the oxide barriers required for atomic contacts and tunnel junctions.
+        Aluminum now turns the general transport hierarchy into the concrete scales used in this thesis. Aluminum electrodes provide the normal-state quasiparticles, weak-coupling BCS condensates, and atomic contacts, while aluminum oxide provides the tunnel barriers.
 
         Aluminum is a simple $sp$ metal with three valence electrons per atom and an fcc crystal structure. In the effective single-band picture introduced above, its low-energy normal-state properties can be summarized by the same quasiparticle parameters $m^\ast$, $v_\mathrm{F}$, $N_0$, and $t_\mathrm{qp}$. Bulk aluminum is nearly free-electron-like, such that $m^\ast \simeq m$ is often a good approximation. Its Fermi energy is approximately $E_\mathrm{F} = 11.7\,\mathrm{eV}$ \cite{chauvin_josephson_2005}. Correspondingly, the Fermi wavelength is on the sub-nanometer scale and the Fermi velocity is of order $10^6\,\mathrm{m/s}$. In thin films, the elastic mean free path $\ell_\mathrm{qp}$ can reach tens of nanometers in high-purity samples, but its precise value depends sensitively on disorder, thickness, and microstructure \cite{steinberg_quasi-particle_2008}.
 
-        For mesoscopic aluminum structures the phase-coherence length $\ell_\phi$ is not a fixed material constant but depends on temperature, disorder, geometry, and the electromagnetic environment. An atomic contact is nevertheless much shorter than the elastic and dephasing lengths reached at low temperature. Aluminum contacts can therefore be treated as ballistic and phase coherent on the scale of the constriction, which justifies applying the transmission-channel model to the measured contacts \cite{scheer_conduction_1997, agrait_quantum_2003}.
+        For mesoscopic aluminum structures the phase-coherence length $\ell_\phi$ is not a fixed material constant but depends on temperature, disorder, geometry, and the electromagnetic environment. The length hierarchy established for atomic contacts above places the measured aluminum constrictions in the ballistic, phase-coherent regime \cite{scheer_conduction_1997, agrait_quantum_2003}.
 
         %=========================================================
         \subsubsection*{Aluminum as Superconductor}
@@ -388,7 +397,7 @@
                 \xi_0 = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\,,
                 \label{eq:basics:aluminum-clean-coherence-length}
             \end{equation}
-            yielding a value of order $1$--$2\,\text{\textmu m}$ for aluminum. At zero temperature, a useful diffusive superconducting scale is
+            yielding a value of order $1$--$2\,\text{\textmu m}$ for aluminum. At zero temperature, the corresponding diffusive decay length of superconducting correlations is
             \begin{equation}
                 \xi_{\mathrm{dirty},0}
                 = \sqrt{\frac{\hbar D}{\Delta_0}}\,.
@@ -413,7 +422,7 @@
 
             A key practical advantage of aluminum is its native oxide. Upon exposure to oxygen, aluminum rapidly forms a thin insulating AlO$_x$ layer on its surface that passivates the metal and is strongly bound to the underlying film. Under ambient conditions this native oxide is typically only a few nanometers thick and self-limiting \cite{saif_effect_2002}. By controlled oxidation in vacuum one can reproducibly tune the barrier properties and thereby the normal-state tunnel resistance over several orders of magnitude. The resulting Al--AlO$_x$--Al junctions are a standard workhorse of superconducting electronics and, when well fabricated, provide stable tunnel barriers with low subgap leakage.
 
-            In the context of this thesis, artificially grown aluminum oxide defines the tunnel barriers in our SIS junctions, while the native surface oxide influences the mechanical response of thin aluminum electrodes \cite{murray_material_2021,saif_effect_2002}. Aluminum therefore supplies both limiting structures considered later: low-transparency oxide barriers and highly transmitting atomic contacts. The next subsection adds the time-dependent drive used to probe both limits.
+            In the context of this thesis, artificially grown aluminum oxide defines the tunnel barriers in our SIS junctions, while the native surface oxide influences the mechanical response of thin aluminum electrodes \cite{murray_material_2021,saif_effect_2002}. The oxide barriers realize the low-transmission limit, while aluminum atomic contacts realize the finite-transmission limit. The next subsection adds the time-dependent drive used to probe both regimes.
         
     %=========================================================
     \newpage
@@ -499,4 +508,4 @@
             \end{equation}
             where $J_n(\alpha)$ is the $n$-th Bessel function of the first kind. Equivalently, the oscillatory phase factor forms a discrete frequency comb at harmonics $n\nu$, with complex amplitudes given by the Bessel coefficients $J_n(\alpha)$, as illustrated in Fig.~\ref{fig:basics:microwave}(d). In quasiparticle transport this decomposition produces photon-assisted replicas in \textit{I--V} and \textit{dI--dV} characteristics. In coherent Cooper-pair transport it produces the harmonics that underlie Shapiro response.
 
-            The descriptions developed in this section can now be summarized by four groups of inputs. Material and spectral scales such as $\Delta_0$, $T_\mathrm{C}$, and $N_0$ determine the available states and characteristic energies. The hierarchy of $L$, $\ell_\mathrm{qp}$, and $\ell_\phi$ selects the bulk, diffusive mesoscopic, or ballistic regime. The transmission eigenvalues $\{\tau_i\}$ encode the contact structure. Finally, $V(t)$ and its electromagnetic phase specify the external drive. The following sections combine these inputs to construct the microscopic, macroscopic, and mesoscopic \textit{I--V} and \textit{dI--dV} characteristics used throughout this thesis.
+            The four descriptions developed next are selected by the inputs established in these two preparatory sections. Material and spectral scales such as $\Delta_0$, $T_\mathrm{C}$, and $N_0$ determine the available states and characteristic energies. The hierarchy of $L$, $\ell_\mathrm{qp}$, and $\ell_\phi$ selects bulk or phase-coherent transport, while the transmission eigenvalues $\{\tau_i\}$ distinguish tunnel junctions from finite-transmission contacts. The voltage $V(t)$ and its electromagnetic phase specify the external drive, and the environmental impedance determines whether energy exchange and phase fluctuations must be treated explicitly. The microscopic section applies these inputs to quasiparticle tunneling. The macroscopic section treats tunnel-limit phase dynamics. The mesoscopic section develops Andreev transport at finite transmission. The stochastic section incorporates environment-assisted tunneling through \textit{P(E)} theory.
