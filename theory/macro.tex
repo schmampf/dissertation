@@ -122,12 +122,12 @@
         
         Under microwave irradiation, a Josephson junction develops quantized constant-voltage plateaus in its dc \textit{I--V} characteristic, so-called Shapiro steps or inverse AC Josephson effect, arising from frequency locking between the Josephson oscillation and the applied drive. \cite{shapiro_josephson_1963,barone_physics_1982,tinkham_introduction_2004}
 
-        When a Josephson junction is exposed to an external microwave field, the phase dynamics become modulated by the drive introduced in Section~\ref{subsec:platform:microwave}. The Josephson frequency $\nu_0$ mixes with the external frequency $\nu$, and the phase takes the form
+        When a Josephson junction is exposed to an external microwave field, the phase dynamics become modulated by the drive introduced in Sec.~\ref{subsec:platform:microwave}. For Cooper-pair transfer, the charge-dependent drive phase is evaluated at $q=2e$ and contributes directly to the superconducting phase difference. The Josephson frequency $\nu_0$ then mixes with the external frequency $\nu$, and the phase takes the form
         \begin{equation}
             \phi(t)=\phi_0 + 2\pi\nu_0 t + \alpha\sin(2\pi\nu t)\,,
             \label{eq:macro:shapiro-phase}
         \end{equation}
-        with $\alpha = 2eA/h\nu$ the dimensionless drive strength.
+        with $\alpha = \alpha_{2e} = 2eA/h\nu$ the dimensionless Cooper-pair drive strength.
 
         Inserting this expression into the Josephson current-phase relation (Eq.~\ref{eq:macro:dc}) and expanding the phase modulation using the Jacobi-Anger identity (Eq.~\ref{eq:platform:jacobi-anger}) yields harmonics at frequencies $\nu_0 - n\nu$. Whenever the resonance condition $\nu_0 = n\nu$ is satisfied, the $n$-th harmonic becomes stationary and contributes a finite dc component to the current. This produces quantized voltage plateaus at
         \begin{equation}
