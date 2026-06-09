@@ -120,18 +120,18 @@
         \begin{figure}
             \centering
             \subfigure[
-                Dynes-broadened superconducting DOS $N_\mathrm{S}(E)/N_0$ for several $\gamma/\Delta_0$, showing rounded coherence peaks and finite subgap spectral weight.
+                Superconducting DOS for varying $\gamma/\Delta_0$.
                 ]{\import{theory/micro}{dos.pgf}}
             \hfill
             \subfigure[
-                Fermi--Dirac distributions for several $T/T_\mathrm{c}$, showing thermal smearing of the occupation edge around $E=0$.
+                Fermi--Dirac distribution for varying $T/T_\mathrm{c}$.
                 ]{\import{theory/micro}{fermi.pgf}}
             \hfill
             \subfigure[
-                Thermal broadening kernels for the same $T/T_\mathrm{c}$, showing the widening energy window contributing to transport.
+                Thermal kernel for varying $T/T_\mathrm{c}$.
                 ]{\import{theory/micro}{fermi-kernel.pgf}}
             \caption{
-                Dynes broadening and thermal occupation set the spectral resolution of microscopic tunnel spectroscopy. Together they determine the line shape of the corresponding \textit{I--V} and \textit{dI--dV} characteristics.
+                Dynes broadening modifies the superconducting DOS, while temperature broadens the occupation edge and thermal kernel.
                 }
             \label{fig:micro:dos-fermi}
         \end{figure}
@@ -200,7 +200,7 @@
                 SIS junction
             ]{\import{theory/schema/semiconductor}{sis-qp.pdf_tex}}
             \caption{
-                Quasiparticle tunneling in the three tunnel-junction configurations. (a) An NIN junction provides an Ohmic normal-state reference. (b) An NIS junction probes the superconducting DOS with a normal electrode. (c) An SIS junction probes the overlap of two gapped densities of states. Filled states are shown in blue, empty states in grey, and arrows indicate allowed quasiparticle transfer at the applied bias.
+                Quasiparticle tunneling in NIN, NIS, and SIS junctions. Blue and grey denote filled and empty states, and arrows indicate quasiparticle transfer.
             }
             \label{fig:micro:tunnel-current}
         \end{figure}
@@ -265,21 +265,21 @@
             \begin{figure}[t]
                 \centering
                 \subfigure[
-                    \textit{I--V} characteristics for varying $T/T_\mathrm{c}$ at $\gamma=0$.
+                    \textit{I--V} characteristics for varying $T/T_\mathrm{c}$.
                     ]{\import{theory/micro}{tunnel-iv-T.pgf}}
                 \hfill
                 \subfigure[
-                    \textit{dI--dV} characteristics for varying $T/T_\mathrm{c}$ at $\gamma=0$.
+                    \textit{dI--dV} characteristics for varying $T/T_\mathrm{c}$.
                     ]{\import{theory/micro}{tunnel-didv-T.pgf}}
                 \subfigure[
-                    \textit{I--V} characteristics for varying $\gamma/\Delta_0$ at $T=0$.
+                    \textit{I--V} characteristics for varying $\gamma/\Delta_0$.
                     ]{\import{theory/micro}{tunnel-iv-gamma.pgf}}
                 \hfill
                 \subfigure[
-                    \textit{dI--dV} characteristics for varying $\gamma/\Delta_0$ at $T=0$.
+                    \textit{dI--dV} characteristics for varying $\gamma/\Delta_0$.
                     ]{\import{theory/micro}{tunnel-didv-gamma.pgf}}
                 \caption{
-                    Temperature and Dynes broadening modify NIS and SIS tunnel spectra in distinct ways. Temperature mainly broadens occupation and fills the subgap region, while Dynes broadening smooths DOS singularities and suppresses coherence peaks. The NIN curve is shown in grey as reference.
+                    Temperature and Dynes broadening of NIS (gray) and SIS (blue) \textit{I--V} and \textit{dI/dV} curves. The gray dashed line represents the NIN reference. Unless varied explicitly, $\gamma$ and $T$ are set to zero.
                     }
                 \label{fig:micro:tunnel-iv-didv}
             \end{figure}
@@ -291,16 +291,17 @@
             Comparing measured \textit{I--V} or \textit{dI--dV} data with this model can constrain $\Delta_0$, $T$, and $\gamma$. These parameters may be correlated, and additional broadening from noise or spatial inhomogeneity can produce similar line shapes. Their interpretation therefore requires independent calibration or comparison across multiple spectra.
 
     %=========================================================
+    \newpage
     \subsection{Photon-Assisted Tunneling}
     \label{subsec:micro:pat}
     %=========================================================
 
-        \begin{wrapfigure}[17]{r}{0.4\textwidth}
+        \begin{wrapfigure}[14]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
-            % \vspace{-1em}
+            \vspace{-1em}
             \import{theory/schema/semiconductor}{sis-pat.pdf_tex}
-            \caption{Photon-assisted quasiparticle tunneling in an SIS junction. Absorption or emission of $nh\nu$ shifts the tunneling threshold. Black arrows show photon exchange and grey arrows quasiparticle transfer.}
+            \caption{Photon-assisted SIS tunneling. Exchange of $nh\nu$ shifts the threshold. Black and grey arrows show photon exchange and quasiparticle transfer.}
             \label{fig:micro:pat:schematic}
         \end{wrapfigure}
 
@@ -361,22 +362,22 @@
         \begin{figure}[t]
             \centering
             \subfigure[
-                Harmonic drive voltage $V(t)$ from Eq.~\eqref{eq:micro:pat:drive-voltage}.
+                Harmonic voltage $V(t)$.
             ]{\import{theory/basics}{mw-V.pgf}}
             \hfill
             \subfigure[
-                Charge-transfer phase $\phi_q(t)$ from Eq.~\eqref{eq:micro:pat:phase}.
+                Charge-transfer phase $\phi_q(t)$.
             ]{\import{theory/basics}{mw-phi.pgf}}
             \hfill
             \subfigure[
-                Real part of the gauge phase factor $U_q(t)$.
+                Phase factor $\Re\!U_q(t)$.
             ]{\import{theory/basics}{mw-ReU.pgf}}
             \hfill
             \subfigure[
-                Bessel coefficients $J_n(\alpha_q)$ at fixed $A$.
+                Sideband amplitudes $J_n(\alpha_q)$.
             ]{\import{theory/basics}{mw-Jn.pgf}}
             \caption{
-                A harmonic junction voltage generates a charge-dependent phase modulation and a discrete sideband spectrum. The parameters are $q=e$, $eV_0=0.5\,\Delta_0$, $eA=0.5\,\Delta_0$, and $\nu=10\,\mathrm{GHz}$.
+                Harmonic voltage, charge-transfer phase, phase factor, and sideband amplitudes. The parameters are $q=e$, $eV_0=0.5\,\Delta_0$, $eA=0.5\,\Delta_0$, and $\nu=10\,\mathrm{GHz}$.
             }
             \label{fig:micro:pat:drive}
         \end{figure}
@@ -412,7 +413,7 @@
                 \textit{dI--dV} characteristics.
                 ]{\import{theory/micro}{pat-didv.pgf}}
             \caption{
-                Photon-assisted tunneling in NIS (grey) and SIS (blue) junctions. The harmonic drive redistributes the static \textit{I--V} and \textit{dI--dV} characteristics among replicas separated by $h\nu/e$. Their relative weights follow $J_n^2(eA/h\nu)$. The parameters are $T=0$, $\gamma=0$, and $\nu=10.0\,\mathrm{GHz}$.
+                Photon-assisted NIS (grey) and SIS (blue) spectra. Sidebands are separated by $h\nu/e$ and weighted by $J_n^2(eA/h\nu)$. The parameters are $T=\gamma=0$ and $\nu=10\,\mathrm{GHz}$.
                 }
             \label{fig:micro:pat}
         \end{figure}
