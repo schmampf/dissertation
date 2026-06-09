@@ -43,6 +43,7 @@
             \label{eq:micro:aluminum-scales}
         \end{equation}
         These values set the energy, voltage, and temperature scales of the aluminum junctions considered throughout this thesis. \cite{tinkham_introduction_2004,murray_material_2021}
+        Unless stated otherwise, all following figures use these values.
 
         The superconducting gap, however, is not constant with temperature. At $T=0$, electrons within the pairing shell around the Fermi energy form a condensate characterized by a well-defined order parameter. With increasing temperature, thermal excitations break an increasing fraction of Cooper pairs, reducing the number of electrons bound in the superconducting state. As fewer pairs contribute to the condensate, the magnitude of the order parameter decreases, and the energy required to break a pair, $\Delta(T)$, is gradually reduced.
 
@@ -51,7 +52,7 @@
         \begin{wrapfigure}[13]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
-            % \vspace{-1em}
+            \vspace{-1em}
             \import{theory/micro}{gap.pgf}
             \caption{Temperature dependence of the superconducting gap $\Delta(T)$ in the weak-coupling limit.}
             \label{fig:micro:gap}
@@ -126,17 +127,18 @@
         \begin{figure}
             \centering
             \subfigure[
-                Dynes-broadened superconducting DOS $N_\mathrm{S}(E)/N_0$ for several values of $\gamma/\Delta_0$, showing how finite quasi-particle lifetimes smooth the coherence peaks and introduce subgap spectral weight. 
+                Dynes-broadened superconducting DOS $N_\mathrm{S}(E)/N_0$ for several $\gamma/\Delta_0$, showing rounded coherence peaks and finite subgap spectral weight.
                 ]{\import{theory/micro}{dos.pgf}}
+            \hfill
             \subfigure[
-                Fermi--Dirac distributions at different temperatures $T/T_\mathrm{c}$ illustrating thermal occupation smearing.
+                Fermi--Dirac distributions for several $T/T_\mathrm{c}$, showing thermal smearing of the occupation edge around $E=0$.
                 ]{\import{theory/micro}{fermi.pgf}}
-            \hspace{.2in}
+            \hfill
             \subfigure[
-                Thermal broadening kernel at different temperatures $T/T_\mathrm{c}$.
+                Thermal broadening kernels for the same $T/T_\mathrm{c}$, showing the widening energy window contributing to transport.
                 ]{\import{theory/micro}{fermi-kernel.pgf}}
             \caption{
-                Dynes broadening and thermal occupation set the spectral resolution of microscopic tunnel spectroscopy. Together they determine the line shape of the corresponding \textit{I--V} and \textit{dI--dV} characteristics. Aluminum parameters from Eq.~\eqref{eq:micro:aluminum-scales} are used.
+                Dynes broadening and thermal occupation set the spectral resolution of microscopic tunnel spectroscopy. Together they determine the line shape of the corresponding \textit{I--V} and \textit{dI--dV} characteristics.
                 }
             \label{fig:micro:dos-fermi}
         \end{figure}
@@ -252,7 +254,7 @@
                 Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, illustrating the strong suppression and smearing of the coherence peaks due to lifetime broadening. 
                 ]{\import{theory/micro}{tunnel-didv-gamma.pgf}}
             \caption{
-                Temperature and Dynes broadening modify NS and SS tunnel spectra in distinct ways. Temperature mainly broadens occupation and fills the subgap region, while Dynes broadening smooths DOS singularities and suppresses coherence peaks. The NN curve is shown in grey as reference. Aluminum parameters from Eq.~\eqref{eq:micro:aluminum-scales} are used.
+                Temperature and Dynes broadening modify NS and SS tunnel spectra in distinct ways. Temperature mainly broadens occupation and fills the subgap region, while Dynes broadening smooths DOS singularities and suppresses coherence peaks. The NN curve is shown in grey as reference.
                 }
             \label{fig:micro:tunnel-iv-didv}
         \end{figure}
@@ -329,7 +331,7 @@
                 Bessel coefficients $J_n(\alpha_q)$ at fixed $A$.
             ]{\import{theory/basics}{mw-Jn.pgf}}
             \caption{
-                A harmonic junction voltage generates a charge-dependent phase modulation and a discrete sideband spectrum. Parameters use aluminum scales from Eq.~\eqref{eq:micro:aluminum-scales}, with $q=e$, $eV_0=0.5\,\Delta_0$, $eA=0.5\,\Delta_0$, and $\nu=10\,\mathrm{GHz}$.
+                A harmonic junction voltage generates a charge-dependent phase modulation and a discrete sideband spectrum. The parameters are $q=e$, $eV_0=0.5\,\Delta_0$, $eA=0.5\,\Delta_0$, and $\nu=10\,\mathrm{GHz}$.
             }
             \label{fig:micro:pat:drive}
         \end{figure}
@@ -355,7 +357,7 @@
                 Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, showing photon-assisted replicas of the coherence peaks, weighted by $J_n^2(eA/h\nu)$. 
                 ]{\import{theory/micro}{pat-didv.pgf}}
             \caption{
-                Photon-assisted tunneling in NS (grey) and SS (blue) junctions. The microwave drive couples electronic states differing in energy by $h\nu$, producing sideband replicas of the static \textit{I--V} and \textit{dI--dV} characteristics. Aluminum parameters from Eq.~\eqref{eq:micro:aluminum-scales} are used, with $T=0$, $\gamma=0$, and $\nu=10.0\,\mathrm{GHz}$.
+                Photon-assisted tunneling in NS (grey) and SS (blue) junctions. The microwave drive couples electronic states differing in energy by $h\nu$, producing sideband replicas of the static \textit{I--V} and \textit{dI--dV} characteristics. The parameters are $T=0$, $\gamma=0$, and $\nu=10.0\,\mathrm{GHz}$.
                 }
             \label{fig:micro:pat}
         \end{figure}
