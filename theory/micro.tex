@@ -42,8 +42,7 @@
             T_\mathrm{c} \approx 1.2\,\mathrm{K}\,.
             \label{eq:micro:aluminum-scales}
         \end{equation}
-        These values set the energy, voltage, and temperature scales of the aluminum junctions considered throughout this thesis. \cite{tinkham_introduction_2004,murray_material_2021}
-        Unless stated otherwise, all following figures use these values.
+        These values set the energy, voltage, and temperature scales of the aluminum junctions considered throughout this thesis. Unless stated otherwise, all following figures use these values. \cite{tinkham_introduction_2004,murray_material_2021}
 
         The superconducting gap, however, is not constant with temperature. At $T=0$, electrons within the pairing shell around the Fermi energy form a condensate characterized by a well-defined order parameter. With increasing temperature, thermal excitations break an increasing fraction of Cooper pairs, reducing the number of electrons bound in the superconducting state. As fewer pairs contribute to the condensate, the magnitude of the order parameter decreases, and the energy required to break a pair, $\Delta(T)$, is gradually reduced.
 
@@ -75,15 +74,7 @@
 
         Throughout this section, energies are measured relative to the chemical potential, which for conventional metals coincides with the Fermi energy to very good approximation. Thus $E=0$ corresponds to the Fermi level around which superconducting correlations form.
 
-        In the normal state, the electronic density of states (DOS) varies only weakly with energy near the Fermi level. Over the narrow pairing shell relevant to weak-coupling superconductivity, this variation can be neglected and the DOS may be taken as constant. We define $N_0$ per unit volume and include both spin directions. Its value at the Fermi level is
-        \begin{equation}
-            N_0 \equiv
-                 \tfrac{1}{2\pi^2}\!
-                \left(\tfrac{2m}{\hbar^2}\right)^{3/2}
-                \sqrt{E_\mathrm{F}}\,,
-            \label{eq:micro:DOS-N0}
-        \end{equation}
-        which follows from a free-electron parabolic dispersion and is an excellent approximation for aluminum.
+        As introduced in Sec.~\ref{subsec:quasi:micro}, the normal-state density of states (DOS) is approximately constant near the Fermi level. We denote its value per unit volume, including both spin directions, by $N_0 \equiv N(E_\mathrm{F})$.
 
         When superconductivity sets in, pairing correlations reorganize this otherwise flat spectrum. A gap of width $2\Delta$ opens around the Fermi level where single-particle excitations are absent in the ideal BCS limit. The spectral weight removed from the gap interior is redistributed to the gap edges, producing the characteristic coherence peaks. The resulting normalized DOS is
         \begin{equation}
@@ -153,123 +144,156 @@
 
         The tunnel barriers used in this thesis are formed by controlled oxidation between two aluminum depositions. The resulting Al--AlO$_x$--Al junctions operate in the low-transmission regime. Their barrier thickness and interface quality determine the normal-state conductance, channel transparencies, and subgap leakage \cite{niemeyer_observation_1976,dolan_offset_1977,sprenger_interplay_2019,sobral-rey_interplay_2022}.
         
-        % tunneling I/V
-        Under these conditions, the microscopic current flowing from electrode $1$ to electrode $2$ is proportional to the number of occupied states at energy $E$ in electrode $1$ and the number of empty states at energy $E+eV$ in electrode $2$
-        \begin{equation}
-            I_{1\to2}(V) \propto \int_{-\infty}^\infty \left(N_1(E) f_1(E) \right)\cdot \left(N_2(E+eV)\left(1-f_2(E+eV)\right)\right)\mathrm{d}E\,,
-            \label{eq:micro:tunnel-1to2}
-        \end{equation}        
-        where $V$ is the externally applied bias voltage. The reverse process $2\to1$ is described by an analogous expression. Subtracting the two contributions yields the measurable tunnel current
-        \begin{equation}
-            I(V) = G_\mathrm{N} \int_{-\infty}^\infty N_1(E)\, N_2(E+eV)\, \left(f_1(E)-f_2(E+eV)\right)\mathrm{d}E\,,
-            \label{eq:micro:tunnel}
-        \end{equation}
-        where all geometric and matrix-element factors, as well as the constant DOS $N_0$, are absorbed into the normal-state conductance $G_\mathrm{N}$.
+        %=========================================================
+        \subsubsection*{General Tunnel Junction}
+        %=========================================================
 
-        For some discussions, it's quite convinient to think about the tunnel current as a result of two convolutions\footnote{
-            Convolution is mathematically defined as $\left( f \otimes g \right)(x) = \int f(y)g(x-y)\mathrm{d}y$. A convolution weights all shifted copies of one function by another, expressing how strongly their features overlap as one is slid across the other.
-            } 
-        \begin{equation}
-            I(V) = G_\mathrm{N} \left[ N_2\left(1-f_2\right) \otimes N_{1} - N_1f_1 \otimes N_2\right](eV)\,.
-            \label{eq:micro:tunnel-conv}            
-        \end{equation}
-        
-        This equation highlights the two microscopic ingredients of tunneling. The densities of states $N_1(E)$ and $N_2(E)$, specifying where electrons may tunnel, and the Fermi--Dirac distributions, specifying which of those states are occupied. The factor $f_1(E) - f_2(E+eV)$ encodes the occupation imbalance created by the applied bias and ensures that current flows only when filled states in one electrode overlap with empty states in the other. The tunnel current therefore represents a convolution of the electronic structure of the two electrodes with their occupation functions, directly linking microscopic quasi-particle physics to the measurable \textit{I--V} characteristics.
+            Under these conditions, the microscopic current flowing from electrode 1 to electrode 2 is proportional to the number of occupied states at energy $E$ in electrode 1 and the number of empty states at energy $E+eV$ in electrode 2
+            \begin{equation}
+                I_{1\to2}(V) \propto \int_{-\infty}^\infty \left(N_1(E) f_1(E) \right)\cdot \left(N_2(E+eV)\left(1-f_2(E+eV)\right)\right)\mathrm{d}E\,,
+                \label{eq:micro:tunnel-1to2}
+            \end{equation}
+            where $V$ is the externally applied bias voltage. The reverse process $2\to1$ is described by an analogous expression. Subtracting the two contributions yields the measurable tunnel current
+            \begin{equation}
+                I(V) = G_\mathrm{N} \int_{-\infty}^\infty N_1(E)\, N_2(E+eV)\, \left(f_1(E)-f_2(E+eV)\right)\mathrm{d}E\,,
+                \label{eq:micro:tunnel}
+            \end{equation}
+            where all geometric and matrix-element factors, as well as the constant DOS $N_0$, are absorbed into the normal-state conductance $G_\mathrm{N}$.
 
-        Throughout this section we adopt the asymmetric voltage convention, in which the applied bias shifts only the quasi-particle energies of electrode 2, $E \to E+eV$. This choice is equivalent to a gauge transformation and leaves the physics unchanged, but keeps the microscopic expressions particularly transparent.
+            For some discussions, it's quite convinient to think about the tunnel current as a result of two convolutions\footnote{
+                Convolution is mathematically defined as $\left( f \otimes g \right)(x) = \int f(y)g(x-y)\mathrm{d}y$. A convolution weights all shifted copies of one function by another, expressing how strongly their features overlap as one is slid across the other.
+                }
+            \begin{equation}
+                I(V) = G_\mathrm{N} \left[ N_2\left(1-f_2\right) \otimes N_{1} - N_1f_1 \otimes N_2\right](eV)\,.
+                \label{eq:micro:tunnel-conv}
+            \end{equation}
 
-        Depending on whether either electrode is normal or superconducting, Eq. \ref{eq:micro:tunnel} reduces to three experimentally relevant cases.
-        
-        % NN case
-        \subsubsection*{N-N tunnel junction}
-        In the case of a fully normal-conducting tunnel junction, both electrodes provide a flat density of states near the Fermi level. The microscopic expression for the current therefore reduces to
-        \begin{equation}
-            I_\mathrm{NN}(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^{\infty}f(E) - f(E + eV)\mathrm{d}E\,,
-            \label{eq:micro:tunnel-nn}
-        \end{equation}
-        where all geometric and matrix-element factors, as well as the constant DOS $N_0$, are absorbed into the normal-state conductance $G_\mathrm{N}$. 
-        If both electrodes share the same temperature, the difference of Fermi functions integrates to the applied energy shift $eV$. The microscopic expression thus reproduces Ohm's law,
-        \begin{equation}
-            I_\mathrm{NN}(V) =  G_\mathrm{N}V\,,
-            \label{eq:micro:ohms-law}
-        \end{equation}
-        showing that an NN junction exhibits purely ohmic behaviour in the tunneling limit.
+            This equation highlights the two microscopic ingredients of tunneling. The densities of states $N_1(E)$ and $N_2(E)$, specifying where electrons may tunnel, and the Fermi--Dirac distributions, specifying which of those states are occupied. The factor $f_1(E) - f_2(E+eV)$ encodes the occupation imbalance created by the applied bias and ensures that current flows only when filled states in one electrode overlap with empty states in the other. The tunnel current therefore represents a convolution of the electronic structure of the two electrodes with their occupation functions, directly linking microscopic quasi-particle physics to the measurable \textit{I--V} characteristics.
 
-        % NS case
-        \subsubsection*{N-S tunnel junction}
-        In a junction between a normal metal and a superconductor, the tunneling current becomes sensitive to the superconducting quasi-particle spectrum. Since the normal electrode provides a flat DOS, only the superconducting DOS enters the microscopic expression,
-        \begin{equation}
-            I_\mathrm{NS}(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^{\infty} N_\mathrm{S}(E) \left(f(E) - f(E + eV)\right) \mathrm{d}E\,.
-            \label{eq:micro:tunnel-ns}
-        \end{equation}
+            Throughout this section we adopt the asymmetric voltage convention, in which the applied bias shifts only the quasi-particle energies of electrode 2, $E \to E+eV$. This choice is equivalent to a gauge transformation and leaves the physics unchanged, but keeps the microscopic expressions particularly transparent.
 
-        % dI/dV NS case
-        In the N-S case, one can probe the superconducting DOS, by measuring the \textit{dI--dV} characteristic. It is proportional to the convolution, of the superconducting DOS with the thermal broadening kernel (Eq.~\ref{eq:micro:fermi-kernel}). The thermal broadening kernel sets the fundamental energy resolution\footnote{
-            A commonly used estimate is $\delta E \approx 3.5\,k_\mathrm{B}T$. At 30\,mK (typical for a dilution refrigerator), this corresponds to about 10\,\textmu eV, whereas at 300\,mK (He$_\text{3}$ cryostat) the resolution is limited to about 100\,\textmu eV. The relevant temperature is the electronic temperature, which can exceed the cryostat base temperature due to imperfect filtering, finite electron-phonon coupling, or microwave leakage.
-        } in N-S tunnel spectroscopy. However, it does not change the superconducting DOS, it alters the measured \textit{dI--dV}. As temperature approaches zero, the \textit{dI--dV} characteristic becomes directly proportional to the superconducting DOS.
-        
-        Differentiating Equation~\ref{eq:micro:tunnel-ns} with respect to $V$ acts only on the term $f(E+eV)$, since both $N_{\mathrm{S}}(E)$ and $f(E)$ are independent of the applied bias. Using the chain rule, reveals the thermal broadening kernel at shifted energy $E+eV$.
-        This results precisely in the convolution of the superconducting DOS with the thermal broadening kernel evaluated at the energy shift $eV$,
-        \begin{equation}
-            \frac{\mathrm{d}I_\mathrm{NS}(V)}{\mathrm{d}V} = G_\mathrm{N} \left( N_\mathrm{S} \otimes K_\mathrm{T}\right)(eV)\,.
-            \label{eq:micro:tunnel-ns-didv}
-        \end{equation}
+            Depending on the electronic state of the two electrodes, Eq.~\eqref{eq:micro:tunnel} describes the three tunnel-junction configurations shown in Fig.~\ref{fig:micro:tunnel-current}. Here, N denotes a normal electrode, I the insulating barrier, and S a superconducting electrode. An NIN junction provides an Ohmic reference and determines the normal-state conductance $G_\mathrm{N}$. In an NIS junction, the normal electrode acts as an approximately energy-independent probe of the superconducting DOS. An SIS junction instead measures the overlap of two gapped densities of states, which shifts the quasiparticle threshold to $|eV|=2\Delta$ for identical electrodes. These configurations therefore provide increasing sensitivity to the superconducting excitation spectrum.
 
-        These considerations directly underlie scanning tunneling microscopy, where a normal-metal tip above a superconducting surface realizes an N-S junction in the tunneling limit. Measuring the resulting \textit{I--V} or \textit{dI--dV} characteristics, at sufficiently low electronic temperatures, therefore provides a direct and spatially localized probe of the superconductor's quasi-particle DOS. In addition, the thermal broadening of the spectrum enables a reliable determination of the system's electronic temperature.
-
-        % SS case
-        \subsubsection*{S-S tunnel junction}
-        In a junction where both electrodes are superconducting, the tunnel current depends on the multiplicative overlap of the two gapped densities of states, evaluated at energies $E$ and $E+eV$. The microscopic expression now reads
-        \begin{equation}
-            I_\mathrm{SS}(V)
-                = \frac{G_\mathrm{N}}{e}
-                  \int_{-\infty}^{\infty}
-                      N_\mathrm{S}(E)\,
-                      N_\mathrm{S}(E+eV)\,
-                      \left(f(E) - f(E+eV)\right)
-                  \mathrm{d}E\,.
-            \label{eq:micro:tunnel-ss}
-        \end{equation} 
-
-        For S-S junctions, the differential conductance cannot be written as a convolution of the superconducting DOS with the thermal kernel. The shifted DOS $N_{\mathrm{S}}(E+eV)$ carries an explicit voltage dependence, so differentiating the microscopic current generates additional contributions. Although the convolution form is sometimes quoted in the literature by analogy to the N-S case, this represents a misinterpretation and an unjustified generalization of the N-S result. However, there is a representation including the derivation of the DOS. At this point, an intuitive understanding for the differential conductance,is not given anymore.
-
-        In contrast to the N-S case, the S-S differential conductance reflects the full multiplicative structure of the two gapped DOS. As a result, the onset of tunneling occurs only once $|eV|$ exceeds $2\Delta$, producing a pronounced threshold in both \textit{I--V} and \textit{dI--dV}.
-
-        % ref figures
-        Figure~\ref{fig:micro:tunnel-iv-didv} summarizes these effects and makes the contrasting roles of temperature and Dynes broadening in NS and SS junctions explicit.  
-        \begin{figure}[ht]
+        \begin{figure}[t]
             \centering
             \subfigure[
-                Calculated \textit{I--V} characteristics for different temperatures $T/T_\mathrm{c}$ at vanishing Dynes broadening ($\gamma = 0$). Increasing temperature rounds the coherence peaks and gradually fills the subgap region. 
-                ]{\import{theory/micro}{tunnel-iv-T.pgf}}
+                NIN junction
+            ]{\import{theory/schema/semiconductor}{nin-qp.pdf_tex}}
             \hfill
             \subfigure[
-                Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, showing the thermally induced suppression and broadening of the coherence peaks.
-                ]{\import{theory/micro}{tunnel-didv-T.pgf}}
-            \subfigure[
-                Calculated \textit{I--V} characteristics for different Dynes parameters $\gamma/\Delta_0$ at $T=0$. Lifetime broadening smooths the onset of quasi-particle tunneling and produces finite subgap conductance.
-                ]{\import{theory/micro}{tunnel-iv-gamma.pgf}}
+                NIS junction
+            ]{\import{theory/schema/semiconductor}{nis-qp.pdf_tex}}
             \hfill
             \subfigure[
-                Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, illustrating the strong suppression and smearing of the coherence peaks due to lifetime broadening. 
-                ]{\import{theory/micro}{tunnel-didv-gamma.pgf}}
+                SIS junction
+            ]{\import{theory/schema/semiconductor}{sis-qp.pdf_tex}}
             \caption{
-                Temperature and Dynes broadening modify NS and SS tunnel spectra in distinct ways. Temperature mainly broadens occupation and fills the subgap region, while Dynes broadening smooths DOS singularities and suppresses coherence peaks. The NN curve is shown in grey as reference.
-                }
-            \label{fig:micro:tunnel-iv-didv}
+                Quasiparticle tunneling in the three tunnel-junction configurations. (a) An NIN junction provides an Ohmic normal-state reference. (b) An NIS junction probes the superconducting DOS with a normal electrode. (c) An SIS junction probes the overlap of two gapped densities of states. Filled states are shown in blue, empty states in grey, and arrows indicate allowed quasiparticle transfer at the applied bias.
+            }
+            \label{fig:micro:tunnel-current}
         \end{figure}
 
-        In NS junctions, temperature primarily broadens the occupation factor and therefore rounds the coherence peak and smooths the gap edge, while Dynes broadening directly reduces the sharpness of the superconducting DOS itself.  
+        %=========================================================
+        \subsubsection*{NIN Tunnel Junction}
+        %=========================================================
 
-        In SS junctions, the impact of both mechanisms is amplified by the multiplicative appearance of the DOS from each electrode. Temperature generates a noticeable subgap conductance and diminishes the peak height as it approaches the critical temperature. Whereas Dynes broadening suppresses the spectral features far more strongly than in the NS case due to its action on both electrodes simultaneously.
-        
-        By fitting measured \textit{I-V} or \textit{dI-dV} data, with $\Delta_0$, $T$, and $\gamma$ as variables, one can disentangle thermal effects from genuine lifetime or inelastic processes. These interpretations form the foundation of tunneling spectroscopy as a quantitative probe of superconductivity, allowing the extraction of these parameter from experimental data with high accuracy.
+            In the case of a fully normal-conducting tunnel junction, both electrodes provide a flat density of states near the Fermi level. The microscopic expression for the current therefore reduces to
+            \begin{equation}
+                I_\mathrm{NIN}(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^{\infty}f(E) - f(E + eV)\mathrm{d}E\,,
+                \label{eq:micro:tunnel-nin}
+            \end{equation}
+            If both electrodes share the same temperature, the difference of Fermi functions integrates to the applied energy shift $eV$. The microscopic expression thus reproduces Ohm's law,
+            \begin{equation}
+                I_\mathrm{NIN}(V) =  G_\mathrm{N}V\,,
+                \label{eq:micro:ohms-law}
+            \end{equation}
+            showing that an NIN junction exhibits purely ohmic behaviour in the tunneling limit.
+
+            % NIS case
+            \subsubsection*{NIS Tunnel Junction}
+            In a junction between a normal metal and a superconductor, the tunneling current becomes sensitive to the superconducting quasi-particle spectrum. Since the normal electrode provides a flat DOS, only the superconducting DOS enters the microscopic expression,
+            \begin{equation}
+                I_\mathrm{NIS}(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^{\infty} N_\mathrm{S}(E) \left(f(E) - f(E + eV)\right) \mathrm{d}E\,.
+                \label{eq:micro:tunnel-nis}
+            \end{equation}
+
+            % dI/dV NIS case
+            In the NIS case, one can probe the superconducting DOS, by measuring the \textit{dI--dV} characteristic. It is proportional to the convolution, of the superconducting DOS with the thermal broadening kernel (Eq.~\ref{eq:micro:fermi-kernel}). The thermal broadening kernel sets the fundamental energy resolution\footnote{
+                A commonly used estimate is $\delta E \approx 3.5\,k_\mathrm{B}T$. At 30\,mK (typical for a dilution refrigerator), this corresponds to about 10\,\textmu eV, whereas at 300\,mK (He$_\text{3}$ cryostat) the resolution is limited to about 100\,\textmu eV. The relevant temperature is the electronic temperature, which can exceed the cryostat base temperature due to imperfect filtering, finite electron-phonon coupling, or microwave leakage.
+            } in NIS tunnel spectroscopy. However, it does not change the superconducting DOS, it alters the measured \textit{dI--dV}. As temperature approaches zero, the \textit{dI--dV} characteristic becomes directly proportional to the superconducting DOS.
+
+            Differentiating Equation~\ref{eq:micro:tunnel-nis} with respect to $V$ acts only on the term $f(E+eV)$, since both $N_{\mathrm{S}}(E)$ and $f(E)$ are independent of the applied bias. Using the chain rule, reveals the thermal broadening kernel at shifted energy $E+eV$.
+            This results precisely in the convolution of the superconducting DOS with the thermal broadening kernel evaluated at the energy shift $eV$,
+            \begin{equation}
+                \frac{\mathrm{d}I_\mathrm{NIS}(V)}{\mathrm{d}V} = G_\mathrm{N} \left( N_\mathrm{S} \otimes K_\mathrm{T}\right)(eV)\,.
+                \label{eq:micro:tunnel-nis-didv}
+            \end{equation}
+
+            These considerations directly underlie scanning tunneling microscopy, where a normal-metal tip above a superconducting surface realizes an NIS junction in the tunneling limit. Measuring the resulting \textit{I--V} or \textit{dI--dV} characteristics, at sufficiently low electronic temperatures, therefore provides a direct and spatially localized probe of the superconductor's quasi-particle DOS. In addition, the thermal broadening of the spectrum enables a reliable determination of the system's electronic temperature.
+
+        %=========================================================
+        \subsubsection*{SIS Tunnel Junction}
+        %=========================================================
+
+            In a junction where both electrodes are superconducting, the tunnel current depends on the multiplicative overlap of the two gapped densities of states, evaluated at energies $E$ and $E+eV$. The microscopic expression now reads
+            \begin{equation}
+                I_\mathrm{SIS}(V)
+                    = \frac{G_\mathrm{N}}{e}
+                    \int_{-\infty}^{\infty}
+                        N_\mathrm{S}(E)\,
+                        N_\mathrm{S}(E+eV)\,
+                        \left(f(E) - f(E+eV)\right)
+                    \mathrm{d}E\,.
+                \label{eq:micro:tunnel-sis}
+            \end{equation}
+
+            For SIS junctions, the differential conductance cannot be written as a convolution of the superconducting DOS with the thermal kernel. The shifted DOS $N_{\mathrm{S}}(E+eV)$ carries an explicit voltage dependence, so differentiating the microscopic current generates additional contributions. Although the convolution form is sometimes quoted in the literature by analogy to the NIS case, this represents a misinterpretation and an unjustified generalization of the NIS result. However, there is a representation including the derivation of the DOS. At this point, an intuitive understanding for the differential conductance,is not given anymore.
+
+            In contrast to the NIS case, the SIS differential conductance reflects the full multiplicative structure of the two gapped DOS. As a result, the onset of tunneling occurs only once $|eV|$ exceeds $2\Delta$, producing a pronounced threshold in both \textit{I--V} and \textit{dI--dV}.
+
+            % ref figures
+            Figure~\ref{fig:micro:tunnel-iv-didv} summarizes these effects and makes the contrasting roles of temperature and Dynes broadening in NIS and SIS junctions explicit.
+            \begin{figure}[t]
+                \centering
+                \subfigure[
+                    Calculated \textit{I--V} characteristics for different temperatures $T/T_\mathrm{c}$ at vanishing Dynes broadening ($\gamma = 0$). Increasing temperature rounds the coherence peaks and gradually fills the subgap region.
+                    ]{\import{theory/micro}{tunnel-iv-T.pgf}}
+                \hfill
+                \subfigure[
+                    Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, showing the thermally induced suppression and broadening of the coherence peaks.
+                    ]{\import{theory/micro}{tunnel-didv-T.pgf}}
+                \subfigure[
+                    Calculated \textit{I--V} characteristics for different Dynes parameters $\gamma/\Delta_0$ at $T=0$. Lifetime broadening smooths the onset of quasi-particle tunneling and produces finite subgap conductance.
+                    ]{\import{theory/micro}{tunnel-iv-gamma.pgf}}
+                \hfill
+                \subfigure[
+                    Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, illustrating the strong suppression and smearing of the coherence peaks due to lifetime broadening.
+                    ]{\import{theory/micro}{tunnel-didv-gamma.pgf}}
+                \caption{
+                    Temperature and Dynes broadening modify NIS and SIS tunnel spectra in distinct ways. Temperature mainly broadens occupation and fills the subgap region, while Dynes broadening smooths DOS singularities and suppresses coherence peaks. The NIN curve is shown in grey as reference.
+                    }
+                \label{fig:micro:tunnel-iv-didv}
+            \end{figure}
+
+            In NIS junctions, temperature primarily broadens the occupation factor and therefore rounds the coherence peak and smooths the gap edge, while Dynes broadening directly reduces the sharpness of the superconducting DOS itself.
+
+            In SIS junctions, the impact of both mechanisms is amplified by the multiplicative appearance of the DOS from each electrode. Temperature generates a noticeable subgap conductance and diminishes the peak height as it approaches the critical temperature. Whereas Dynes broadening suppresses the spectral features far more strongly than in the NIS case due to its action on both electrodes simultaneously.
+
+            By fitting measured \textit{I-V} or \textit{dI-dV} data, with $\Delta_0$, $T$, and $\gamma$ as variables, one can disentangle thermal effects from genuine lifetime or inelastic processes. These interpretations form the foundation of tunneling spectroscopy as a quantitative probe of superconductivity, allowing the extraction of these parameter from experimental data with high accuracy.
 
     %=========================================================
     \subsection{Photon-Assisted Tunneling}
     \label{subsec:micro:pat}
     %=========================================================
 
+        \begin{wrapfigure}[13]{r}{0.4\textwidth}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-1em}
+            \import{theory/schema/semiconductor}{sis-pat.pdf_tex}
+            \caption{Temperature dependence of the superconducting gap $\Delta(T)$ in the weak-coupling limit.}
+            \label{fig:micro:pat:schematic}
+        \end{wrapfigure}
         A time-dependent electromagnetic drive adds energy and phase scales to the static tunnel model. We introduce the common drive convention here and reuse it for Cooper-pair and finite-transmission transport later. The effective voltage across the junction is modeled as
         \begin{equation}
             V(t) = V_0 + A\cos(2\pi\nu t)\,,
@@ -350,14 +374,14 @@
         \begin{figure}[ht]
             \centering
             \subfigure[
-                Calculated \textit{I--V} characteristics for NS (grey) and SS (blue) junctions under microwave irradiation for different drive amplitudes $eA/\Delta_0$. Increasing amplitude generates additional photon-assisted tunneling channels at voltages shifted by $\pm n h\nu/e$.
+                Calculated \textit{I--V} characteristics for NIS (grey) and SIS (blue) junctions under microwave irradiation for different drive amplitudes $eA/\Delta_0$. Increasing amplitude generates additional photon-assisted tunneling channels at voltages shifted by $\pm n h\nu/e$.
                 ]{\import{theory/micro}{pat-iv.pgf}}
             \hfill
             \subfigure[
                 Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, showing photon-assisted replicas of the coherence peaks, weighted by $J_n^2(eA/h\nu)$. 
                 ]{\import{theory/micro}{pat-didv.pgf}}
             \caption{
-                Photon-assisted tunneling in NS (grey) and SS (blue) junctions. The microwave drive couples electronic states differing in energy by $h\nu$, producing sideband replicas of the static \textit{I--V} and \textit{dI--dV} characteristics. The parameters are $T=0$, $\gamma=0$, and $\nu=10.0\,\mathrm{GHz}$.
+                Photon-assisted tunneling in NIS (grey) and SIS (blue) junctions. The microwave drive couples electronic states differing in energy by $h\nu$, producing sideband replicas of the static \textit{I--V} and \textit{dI--dV} characteristics. The parameters are $T=0$, $\gamma=0$, and $\nu=10.0\,\mathrm{GHz}$.
                 }
             \label{fig:micro:pat}
         \end{figure}
@@ -390,6 +414,6 @@
         \end{equation}
         which is the Tien--Gordon result. Each term contributes a replica of $I_0(V_0)$ shifted by $n h\nu/e$ and weighted by the probability $J_n^2(\alpha)$ of absorbing or emitting $|n|$ photons. \cite{tien_multiphoton_1963}
 
-        PAT therefore provides a universal semiclassical modification of quasi-particle tunneling. All differences between NS and SS junctions under microwave irradiation arise solely from their static DOS and not from the PAT mechanism itself. Figure~\ref{fig:micro:pat} illustrates this behaviour for NS (grey) and SS (blue) junctions.
+        PAT therefore provides a universal semiclassical modification of quasi-particle tunneling. All differences between NIS and SIS junctions under microwave irradiation arise solely from their static DOS and not from the PAT mechanism itself. Figure~\ref{fig:micro:pat} illustrates this behaviour for NIS (grey) and SIS (blue) junctions.
 
         Experimentally, the drive amplitude $A$ can be extracted from the relative sideband heights through the Bessel weights, while the spacing $h\nu$ between replicas provides a robust calibration of the microwave frequency. Photon-assisted tunneling thereby bridges static tunneling spectroscopy and driven superconducting transport in a fully microscopic and conceptually transparent way.
