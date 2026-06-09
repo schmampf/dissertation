@@ -44,7 +44,7 @@
         \end{equation}
         These values set the energy, voltage, and temperature scales of the aluminum junctions considered throughout this thesis. Unless stated otherwise, all following figures use these values. \cite{tinkham_introduction_2004,murray_material_2021}
 
-        The superconducting gap, however, is not constant with temperature. At $T=0$, electrons within the pairing shell around the Fermi energy form a condensate characterized by a well-defined order parameter. With increasing temperature, thermal excitations break an increasing fraction of Cooper pairs, reducing the number of electrons bound in the superconducting state. As fewer pairs contribute to the condensate, the magnitude of the order parameter decreases, and the energy required to break a pair, $\Delta(T)$, is gradually reduced.
+        The superconducting gap, however, is not constant with temperature. At $T=0$, electrons within the pairing shell around the Fermi energy form a condensate characterized by a well-defined order parameter. With increasing temperature, thermal excitations break an increasing fraction of Cooper pairs, reducing the number of electrons bound in the superconducting state. As fewer pairs contribute to the condensate, the magnitude of the order parameter and the minimum quasiparticle excitation energy $\Delta(T)$ decrease. Breaking a Cooper pair creates two quasiparticles and therefore requires an energy of at least $2\Delta(T)$.
 
         This reduction proceeds smoothly until the critical temperature $T_\mathrm{c}$ is reached. At $T=T_\mathrm{c}$, thermal fluctuations fully disrupt the pairing correlations, the order parameter vanishes continuously, and superconductivity is lost. The temperature dependence of the gap reflects the balance between the condensation energy gained by pairing and the entropy associated with thermal excitations. The universal weak-coupling curve is shown in Fig.~\ref{fig:micro:gap}.
 
@@ -65,6 +65,8 @@
             \label{eq:micro:DeltaT}
         \end{equation}
         which reproduces the numerical result with high accuracy throughout the full temperature range. \cite{muhlschlegel_thermodynamischen_1959}
+
+        At low temperature, the gap directly sets the approximate quasiparticle onset in tunnel spectroscopy: $|eV|=\Delta(T)$ for an NIS junction and $|eV|=2\Delta(T)$ for an SIS junction with identical electrodes.
 
 
     %=========================================================
@@ -150,9 +152,11 @@
         % \subsubsection*{General Tunnel Junction}
         % %=========================================================
 
+            In the expressions below, $N_i(E)$ is the DOS relative to the constant normal-state value of electrode $i$. Thus, a normal electrode has $N_i(E)=1$. The constant DOS scales, junction geometry, and tunneling matrix element are absorbed into the normal-state conductance $G_\mathrm{N}$.
+
             Under these conditions, the microscopic current flowing from electrode 1 to electrode 2 is proportional to the number of occupied states at energy $E$ in electrode 1 and the number of empty states at energy $E+eV$ in electrode 2,
             \begin{equation}
-                I_{1\to2}(V) \propto \int_{-\infty}^\infty \left(N_1(E) f_1(E) \right)\cdot \left(N_2(E+eV)\left(1-f_2(E+eV)\right)\right)\mathrm{d}E\,,
+                I_{1\to2}(V)  = \frac{G_\mathrm{N}}{e} \int_{-\infty}^\infty \left(N_1(E) f_1(E) \right)\cdot \left(N_2(E+eV)\left(1-f_2(E+eV)\right)\right)\mathrm{d}E\,,
                 \label{eq:micro:tunnel-1to2}
             \end{equation}
             where $V$ is the externally applied bias voltage. The reverse process $2\to1$ is described by an analogous expression. Subtracting the two contributions yields the measurable tunnel current
@@ -160,10 +164,10 @@
                 I(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^\infty N_1(E)\, N_2(E+eV)\, \left(f_1(E)-f_2(E+eV)\right)\mathrm{d}E\,,
                 \label{eq:micro:tunnel}
             \end{equation}
-            where $N_1$ and $N_2$ denote the energy-dependent DOS factors. Their constant normal-state scales, together with geometric and matrix-element factors, are absorbed into the normal-state conductance $G_\mathrm{N}$.
+            where $N_1$ and $N_2$ are the relative DOS factors defined above.
 
             For numerical evaluation, it is useful to express the current through a convolution\footnote{
-                Throughout this thesis, we define convulution as $\left(f\otimes g\right)(x)=\int_{-\infty}^{\infty}f(E)g(E+x)\,\mathrm{d}E$.
+                Throughout this thesis, we define convolution as $\left(f\otimes g\right)(x)=\int_{-\infty}^{\infty}f(E)g(E+x)\,\mathrm{d}E$.
                 }
             \begin{equation}
                 I(V)
@@ -180,7 +184,7 @@
 
             Throughout this section we adopt the asymmetric voltage convention, in which the applied bias shifts only the quasiparticle energies of electrode 2, $E \to E+eV$. This choice is equivalent to a gauge transformation and leaves the physics unchanged, but keeps the microscopic expressions particularly transparent.
 
-            Depending on the electronic state of the two electrodes, Eq.~\eqref{eq:micro:tunnel} describes the three tunnel-junction configurations shown in Fig.~\ref{fig:micro:tunnel-current}. Here, N denotes a normal electrode, I the insulating barrier, and S a superconducting electrode. An NIN junction provides an Ohmic reference and determines the normal-state conductance $G_\mathrm{N}$. In an NIS junction, the normal electrode acts as an approximately energy-independent probe of the superconducting DOS. An SIS junction instead measures the overlap of two gapped densities of states, which shifts the quasiparticle threshold to $|eV|=2\Delta$ for identical electrodes. These configurations therefore provide increasing sensitivity to the superconducting excitation spectrum.
+            Depending on the electronic state of the two electrodes, Eq.~\eqref{eq:micro:tunnel} describes the three tunnel-junction configurations shown in Fig.~\ref{fig:micro:tunnel-current}. Here, $N$ denotes a normal electrode, I the insulating barrier, and S a superconducting electrode. An NIN junction provides an Ohmic reference and determines the normal-state conductance $G_\mathrm{N}$. In an NIS junction, the normal electrode acts as an approximately energy-independent probe of the superconducting DOS. An SIS junction instead measures the overlap of two gapped densities of states, which shifts the quasiparticle threshold to $|eV|=2\Delta$ for identical electrodes. These configurations therefore provide increasing sensitivity to the superconducting excitation spectrum.
 
         \begin{figure}[t]
             \centering
@@ -254,9 +258,7 @@
                 \label{eq:micro:tunnel-sis}
             \end{equation}
 
-            SIS transport depends on the voltage-dependent overlap of both superconducting densities of states. Unlike the NIS case, the differential conductance is not reduced here to a simple convolution of one DOS with the thermal kernel. The \textit{dI--dV} characteristics shown below are therefore evaluated numerically from the full SIS current.
-
-            In contrast to the NIS case, the SIS differential conductance reflects the full multiplicative structure of the two gapped DOS. As a result, the onset of tunneling occurs only once $|eV|$ exceeds $2\Delta$, producing a pronounced threshold in both \textit{I--V} and \textit{dI--dV}.
+            SIS transport probes the voltage-dependent overlap of both superconducting densities of states. Unlike the NIS case, its differential conductance is not reduced here to a convolution of one DOS with the thermal kernel. The \textit{dI--dV} characteristics shown below are therefore evaluated numerically from the full SIS current. For identical electrodes, quasiparticle tunneling begins near $|eV|=2\Delta$, producing a pronounced threshold in both \textit{I--V} and \textit{dI--dV}.
 
             % ref figures
             Figure~\ref{fig:micro:tunnel-iv-didv} summarizes these effects and makes the contrasting roles of temperature and Dynes broadening in NIS and SIS junctions explicit.
