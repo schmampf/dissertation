@@ -14,19 +14,32 @@
     %=========================================================
 
     To describe superconductivity in mesoscopic and spatially inhomogeneous structures, we employ the Bogoliubov--de~Gennes (BdG) formalism, i.e. the real-space mean-field formulation of BCS theory. Starting from the BCS pairing Hamiltonian \cite{bardeen_microscopic_1957} and applying the canonical Bogoliubov transformation \cite{bogoljubov_new_1958} in the electron--hole (Nambu) representation \cite{nambu_quasi-particles_1960}, one obtains a quadratic quasiparticle Hamiltonian and an effective eigenvalue problem for the two-component Nambu spinor, as presented systematically by de~Gennes \cite{de_gennes_superconductivity_1966}. 
-    
+
     The BdG framework provides a microscopic description of electron--hole conversion at normal--superconductor interfaces (Andreev reflection) \cite{andreev_thermal_1964} and underlies scattering approaches to transport in hybrid junctions, including the BTK model and its extensions \cite{blonder_transition_1982,beenakker_quantum_1992}.
+
+    The clean-limit BCS coherence length connects the aluminum Fermi velocity to the superconducting gap,
+    \begin{equation}
+        \xi_0 = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\,.
+        \label{eq:meso:aluminum-clean-coherence-length}
+    \end{equation}
+    For aluminum, this gives a value of order $1$--$2\,\text{\textmu m}$. In a diffusive film, the corresponding zero-temperature decay length is
+    \begin{equation}
+        \xi_{\mathrm{dirty},0}
+        = \sqrt{\frac{\hbar D}{\Delta_0}}\,,
+        \label{eq:meso:aluminum-dirty-coherence-length}
+    \end{equation}
+    which is typically of order $100$--$300\,\mathrm{nm}$ for evaporated aluminum films. Both lengths are much larger than an atomic constriction and support the short-junction description used below. \cite{tinkham_introduction_2004,steinberg_quasi-particle_2008}
     
         %=========================================================
         \subsubsection*{Single Particle Hamiltonian}
         %=========================================================
 
-            To establish notation, we start from the normal-state single-particle description in the grand-canonical ensemble, where energies are measured relative to the chemical potential. The corresponding Hamiltonian reads
+            We use the effective normal-state Hamiltonian introduced in Eq.~\eqref{eq:quasi:normal-hamiltonian}. In the grand-canonical ensemble, where energies are measured relative to the chemical potential, it reads
             \begin{equation}
-                \hat{H}_\mathrm{N}(\vec{r}) = -\frac{\hbar^2}{2m}\nabla^2 + U(\vec{r}) - \mu\,,
+                \hat{H}_\mathrm{N}(\vec{r}) = -\frac{\hbar^2}{2m^\ast}\nabla^2 + U(\vec{r}) - \mu\,,
                 \label{eq:meso:h-n}
             \end{equation}
-            where the (possibly spatially varying) potential $U(\vec r)$ models confinement, tunnel barriers, or disorder.
+            where the effective mass $m^\ast$ and the possibly spatially varying potential $U(\vec r)$ retain the same meaning as in the normal-state description. In a device model, $U(\vec r)$ accounts for confinement, tunnel barriers, and disorder.
 
             The eigenfunctions of $\hat{H}_\mathrm{N}$ define the natural mode basis of the normal conductor,
             \begin{equation}
@@ -39,7 +52,7 @@
             In a homogeneous metal ($U=0$), the eigenfunctions and eigenvalues are given by
             \begin{equation}
                 \Phi_{\vec q}(\vec r) \propto e^{\ima \vec q\cdot \vec r}\,,\quad
-                \varepsilon_{\vec q}=\tfrac{\hbar^2 q^2}{2m}\,.
+                \varepsilon_{\vec q}=\tfrac{\hbar^2 q^2}{2m^\ast}\,.
             \end{equation}
 
             In this translationally invariant limit, the abstract mode label $k$ can be identified with the wave vector $\vec q$. Throughout this chapter we reserve $k$ for a generic mode index and use explicit vectors such as $\vec q$ whenever a plane-wave momentum label is meant. More generally, the label $k$ should be understood as a compact index for the normal-state eigenmodes.
@@ -126,7 +139,7 @@
             As a solvable reference case, consider a homogeneous bulk superconductor with constant $U$ and a uniform pair potential $\Delta=|\Delta|e^{\ima\phi}$. In this case the BdG eigenmodes can be labeled by a wave vector $\vec q$ and an electron-like or hole-like branch, and take the plane-wave form
             \begin{equation}
                 \Psi_{\vec q}(\vec r) = \Psi_{0}(E_{\vec q})\, e^{\ima \vec q \cdot \vec r}\,,\qquad
-                \xi_{\vec q}=\frac{\hbar^2 q^2}{2m}-\mu\,,\qquad
+                \xi_{\vec q}=\frac{\hbar^2 q^2}{2m^\ast}-\mu\,,\qquad
                 E_{\vec q}=\sqrt{\xi_{\vec q}^2+|\Delta|^2}\,.
                 \label{eq:meso:BdG-plane-wave}
             \end{equation}
@@ -186,7 +199,7 @@
                 \hfill
                 \subfigure[\textit{dI--dV} characteristics]{\import{theory/meso}{btk-didv.pgf}}
                 \caption{
-                    BTK spectral weights of the single-particle (1e) and two-particle (2e) channels and the corresponding \textit{I--V} and \textit{dI--dV} characteristics for various channel transparencies $\tau$. Increasing $\tau$ shifts spectral weight from normal to Andreev processes, leading to enhanced subgap conductance and reduced coherence-peak height. Parameters correspond to aluminum (Sec.~\ref{subsec:platform:aluminum}), with $T=0$ and $\gamma = 0$.
+                    BTK spectral weights of the single-particle (1e) and two-particle (2e) channels and the corresponding \textit{I--V} and \textit{dI--dV} characteristics for various channel transparencies $\tau$. Increasing $\tau$ shifts spectral weight from normal to Andreev processes, leading to enhanced subgap conductance and reduced coherence-peak height. Aluminum parameters from Eq.~\eqref{eq:micro:aluminum-scales} are used, with $T=0$ and $\gamma=0$.
                     }
                 \label{fig:meso:btk}
             \end{figure}
@@ -457,7 +470,7 @@
                 \label{eq:ha:ht}
             \end{align}
 
-            The dc voltage bias is incorporated through the superconducting phase difference $\phi(t)$. Its voltage-driven part corresponds to the $q=2e$ phase $\phi_{2e}(t)$ defined in Eq.~\eqref{eq:platform:mw-phase}. Choosing this time dependence to reside in the coupling term makes the problem explicitly time periodic and requires a nonequilibrium treatment. In the Hamiltonian approach this is handled with Keldysh Green functions in Nambu space and a Floquet (sideband) representation in energy, yielding the dc current $I(V)$ for arbitrary transparency $\tau$. Finite temperature enters through the reservoir occupations and, if desired, a phenomenological broadening $\gamma$ can be used to regularize the low-bias limit.
+            The dc voltage bias is incorporated through the superconducting phase difference $\phi(t)$. Its voltage-driven part corresponds to the $q=2e$ phase $\phi_{2e}(t)$ defined in Eq.~\eqref{eq:micro:pat:phase}. Choosing this time dependence to reside in the coupling term makes the problem explicitly time periodic and requires a nonequilibrium treatment. In the Hamiltonian approach this is handled with Keldysh Green functions in Nambu space and a Floquet (sideband) representation in energy, yielding the dc current $I(V)$ for arbitrary transparency $\tau$. Finite temperature enters through the reservoir occupations and, if desired, a phenomenological broadening $\gamma$ can be used to regularize the low-bias limit.
 
             Figure~\ref{fig:meso:mar-ha} illustrates the characteristic evolution of MAR transport with transparency. For small $\tau$ the subgap current is dominated by higher-order MAR cycles and therefore exhibits distinct onsets at the KBT voltages $V_m$. As $\tau$ increases, Andreev conversion becomes more probable at each interface, so that the subgap current rises strongly and the SGS contrast is reduced. In the ballistic limit ($\tau\approx 1$), transport approaches an almost continuous MAR ladder with a large subgap current and a sizable excess current above the gap.
 

@@ -7,9 +7,12 @@
 
     The microscopic description begins with Bardeen--Cooper--Schrieffer (BCS) theory. An effective phonon-mediated attraction allows electrons near the Fermi surface to form Cooper pairs with opposite momentum and spin. The resulting condensate is characterized by a complex pairing order parameter whose magnitude determines the gap in the quasiparticle spectrum. This section focuses on the spectral properties and tunnel-limit quasiparticle current. Phase-dependent Cooper-pair transport is introduced in the macroscopic description, while finite-transmission electron--hole processes are treated in the mesoscopic description. \cite{cooper_bound_1956,bardeen_microscopic_1957}
 
-    A key assumption of the BCS framework is that this effective interaction is weak compared to the electronic energy scales of the metal. This situation is referred to as the weak-coupling limit. In this regime, the attractive interaction acts only within a narrow energy shell around the Fermi surface, typically a few meV compared to Fermi energies of several eV. As a result, only a small fraction of electrons near the Fermi level participate in pairing, while the rest of the electronic structure remains essentially unaffected. Because the coupling is weak, the resulting energy gap and the critical temperature are small but can be predicted with high accuracy from the microscopic parameters. For all numerical examples and illustrations in this chapter, aluminum is used as a representative weak-coupling BCS superconductor (Sec.~\ref{subsec:platform:aluminum}).
+    A key assumption of the BCS framework is that this effective interaction is weak compared to the electronic energy scales of the metal. This situation is referred to as the weak-coupling limit. In this regime, the attractive interaction acts only within a narrow energy shell around the Fermi surface, typically a few meV compared to Fermi energies of several eV. As a result, only a small fraction of electrons near the Fermi level participate in pairing, while the rest of the electronic structure remains essentially unaffected. Because the coupling is weak, the resulting energy gap and the critical temperature are small but can be predicted with high accuracy from the microscopic parameters. Aluminum is a representative weak-coupling BCS superconductor and provides the material parameters used throughout this chapter.
 
-    The superconducting order parameter is the complex pairing amplitude 
+    The superconducting order parameter is the complex pairing amplitude
+    \footnote{
+        Here and in the following, ``$s$-wave'' refers to the isotropic angular dependence of the superconducting order parameter on the Fermi surface. It should not be confused with atomic $s$ orbitals. Aluminum has predominantly $sp$-hybridized conduction states, while its Cooper-pair wave function is $s$-wave in the sense of isotropic pairing symmetry.
+    }
     \begin{equation}
         \Delta(\vec{r}) = \left|\Delta\right| e^{\ima\phi(\vec{r})}\,.
         \label{eq:micro:complex-delta}
@@ -18,7 +21,7 @@
     
     For the purposes of tunneling spectroscopy, only the magnitude $|\Delta|$ is experimentally relevant. In consequence, we treat $\Delta$ as a scalar quantity, i.e., we consider only its magnitude and assume a uniform, spatially constant phase, since tunneling spectroscopy in the weak-coupling limit is sensitive solely to the energy gap $|\Delta|$ and not to spatial or vectorial structure of the order parameter.
 
-    The following subsections introduce the temperature dependence of the superconducting gap, the superconducting DOS and its phenomenological broadening, and the tunnel-current expressions that connect these quantities to spectroscopy. The final subsection extends the static tunnel model to photon-assisted transport using the electromagnetic phase defined in Sec.~\ref{subsec:platform:microwave}.
+    The following subsections introduce the temperature dependence of the superconducting gap, the superconducting DOS and its phenomenological broadening, and the tunnel-current expressions that connect these quantities to spectroscopy. The final subsection introduces the common electromagnetic-drive convention and extends the static tunnel model to photon-assisted transport.
 
     %=========================================================
     \subsection{Superconducting Gap}
@@ -30,7 +33,16 @@
             \Delta_0 \approx 1.764\, k_\mathrm{B} T_\mathrm{c}\,,
             \label{eq:micro:Delta0}
         \end{equation}
-        which holds for all weak-coupling BCS superconductors.
+            which holds for all weak-coupling BCS superconductors.
+
+        For aluminum, the characteristic superconducting scales are, to good approximation,
+        \begin{equation}
+            \Delta_0 \approx 180\,\mu\mathrm{eV}\,,
+            \qquad
+            T_\mathrm{c} \approx 1.2\,\mathrm{K}\,.
+            \label{eq:micro:aluminum-scales}
+        \end{equation}
+        These values set the energy, voltage, and temperature scales of the aluminum junctions considered throughout this thesis. \cite{tinkham_introduction_2004,murray_material_2021}
 
         The superconducting gap, however, is not constant with temperature. At $T=0$, electrons within the pairing shell around the Fermi energy form a condensate characterized by a well-defined order parameter. With increasing temperature, thermal excitations break an increasing fraction of Cooper pairs, reducing the number of electrons bound in the superconducting state. As fewer pairs contribute to the condensate, the magnitude of the order parameter decreases, and the energy required to break a pair, $\Delta(T)$, is gradually reduced.
 
@@ -124,7 +136,7 @@
                 Thermal broadening kernel at different temperatures $T/T_\mathrm{c}$.
                 ]{\import{theory/micro}{fermi-kernel.pgf}}
             \caption{
-                Dynes broadening and thermal occupation set the spectral resolution of microscopic tunnel spectroscopy. Together they determine the line shape of the corresponding \textit{I--V} and \textit{dI--dV} characteristics. Parameters correspond to aluminum in Sec.~\ref{subsec:platform:aluminum}.
+                Dynes broadening and thermal occupation set the spectral resolution of microscopic tunnel spectroscopy. Together they determine the line shape of the corresponding \textit{I--V} and \textit{dI--dV} characteristics. Aluminum parameters from Eq.~\eqref{eq:micro:aluminum-scales} are used.
                 }
             \label{fig:micro:dos-fermi}
         \end{figure}
@@ -136,6 +148,8 @@
     %=========================================================
 
         Tunneling spectroscopy provides a direct and conceptually transparent probe of the quasi-particle excitation spectrum. When two electrodes are separated by a sufficiently thin insulating barrier, electrons may tunnel quantum-mechanically between them even though the process is classically forbidden. In the tunneling limit, the barrier is high and wide enough that phase coherence between the electrodes is lost and momentum conservation across the junction no longer applies. In this regime, tunneling reduces to an incoherent single-particle transfer process governed solely by the available electronic states and their occupation. \cite{bardeen_tunnelling_1961,giaever_electron_1960,giaever_study_1961}
+
+        The tunnel barriers used in this thesis are formed by controlled oxidation between two aluminum depositions. The resulting Al--AlO$_x$--Al junctions operate in the low-transmission regime. Their barrier thickness and interface quality determine the normal-state conductance, channel transparencies, and subgap leakage \cite{niemeyer_observation_1976,dolan_offset_1977,sprenger_interplay_2019,sobral-rey_interplay_2022}.
         
         % tunneling I/V
         Under these conditions, the microscopic current flowing from electrode $1$ to electrode $2$ is proportional to the number of occupied states at energy $E$ in electrode $1$ and the number of empty states at energy $E+eV$ in electrode $2$
@@ -238,7 +252,7 @@
                 Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, illustrating the strong suppression and smearing of the coherence peaks due to lifetime broadening. 
                 ]{\import{theory/micro}{tunnel-didv-gamma.pgf}}
             \caption{
-                Temperature and Dynes broadening modify NS and SS tunnel spectra in distinct ways. Temperature mainly broadens occupation and fills the subgap region, while Dynes broadening smooths DOS singularities and suppresses coherence peaks. The NN curve is shown in grey as reference. Parameters correspond to aluminum in Sec.~\ref{subsec:platform:aluminum}.
+                Temperature and Dynes broadening modify NS and SS tunnel spectra in distinct ways. Temperature mainly broadens occupation and fills the subgap region, while Dynes broadening smooths DOS singularities and suppresses coherence peaks. The NN curve is shown in grey as reference. Aluminum parameters from Eq.~\eqref{eq:micro:aluminum-scales} are used.
                 }
             \label{fig:micro:tunnel-iv-didv}
         \end{figure}
@@ -253,6 +267,84 @@
     \subsection{Photon-Assisted Tunneling}
     \label{subsec:micro:pat}
     %=========================================================
+
+        A time-dependent electromagnetic drive adds energy and phase scales to the static tunnel model. We introduce the common drive convention here and reuse it for Cooper-pair and finite-transmission transport later. The effective voltage across the junction is modeled as
+        \begin{equation}
+            V(t) = V_0 + A\cos(2\pi\nu t)\,,
+            \label{eq:micro:pat:drive-voltage}
+        \end{equation}
+        where $V_0$ is the static bias, $A$ is the effective ac voltage amplitude at the junction, and $\nu$ is the drive frequency. We treat the coherent tone as a prescribed classical drive and neglect backaction of the junction on it.
+
+        Gauge freedom allows the voltage dependence to be represented either through time-dependent electrode energies or through a phase in the charge-transfer amplitude. We use the phase-factor representation. For a process that transfers a positive charge magnitude $q$, the accumulated phase is
+        \begin{equation}
+            \phi_q(t)
+            = \frac{q}{\hbar}\int_0^t V(t')\,\mathrm{d}t'\,,
+            \label{eq:micro:pat:phase}
+        \end{equation}
+        and the corresponding coupling amplitude carries the factor
+        \begin{equation}
+            U_q(t)
+            \equiv \exp\!\left[-\ima\phi_q(t)\right]\,.
+            \label{eq:micro:pat:phase-factor}
+        \end{equation}
+        Here $q=e$ for single-quasiparticle tunneling, while $q=2e$ applies to coherent Cooper-pair phase dynamics. Multiple Andreev reflection consists of a sequence of electron--hole conversions and is not obtained by assigning one effective transferred charge to Eq.~\eqref{eq:micro:pat:phase}.
+
+        For the harmonic voltage in Eq.~\eqref{eq:micro:pat:drive-voltage}, the phase factor separates into static and oscillatory contributions,
+        \begin{align}
+            U_q(t)
+            &= \exp\!\left[-\ima\phi_{q,0}(t)\right]
+            \exp\!\left[-\ima\alpha_q\sin(2\pi\nu t)\right]\,,
+            \label{eq:micro:pat:phase-decomposition}\\
+            \phi_{q,0}(t)
+            &= \frac{qV_0t}{\hbar}\,,
+            \qquad
+            \alpha_q = \frac{qA}{h\nu}\,.
+            \label{eq:micro:pat:drive-parameters}
+        \end{align}
+        The oscillatory phase is expanded with the Jacobi--Anger identity,
+        \begin{equation}
+            \exp\!\left[\pm\ima\alpha_q\sin(2\pi\nu t)\right]
+            = \sum_{n=-\infty}^{\infty}
+            J_n(\alpha_q)\,
+            \exp\!\left(\pm\ima n\,2\pi\nu t\right)\,.
+            \label{eq:micro:pat:jacobi-anger}
+        \end{equation}
+        This expansion produces sidebands separated by $h\nu$, with amplitudes set by the Bessel coefficients $J_n(\alpha_q)$.
+
+        \begin{figure}[t]
+            \centering
+            \subfigure[
+                Harmonic drive voltage $V(t)$ from Eq.~\eqref{eq:micro:pat:drive-voltage}.
+            ]{\import{theory/basics}{mw-V.pgf}}
+            \hfill
+            \subfigure[
+                Charge-transfer phase $\phi_q(t)$ from Eq.~\eqref{eq:micro:pat:phase}.
+            ]{\import{theory/basics}{mw-phi.pgf}}
+            \hfill
+            \subfigure[
+                Real part of the gauge phase factor $U_q(t)$.
+            ]{\import{theory/basics}{mw-ReU.pgf}}
+            \hfill
+            \subfigure[
+                Bessel coefficients $J_n(\alpha_q)$ at fixed $A$.
+            ]{\import{theory/basics}{mw-Jn.pgf}}
+            \caption{
+                A harmonic junction voltage generates a charge-dependent phase modulation and a discrete sideband spectrum. Parameters use aluminum scales from Eq.~\eqref{eq:micro:aluminum-scales}, with $q=e$, $eV_0=0.5\,\Delta_0$, $eA=0.5\,\Delta_0$, and $\nu=10\,\mathrm{GHz}$.
+            }
+            \label{fig:micro:pat:drive}
+        \end{figure}
+
+        For aluminum, the single-photon pair-breaking threshold is
+        \begin{equation}
+            \nu_\mathrm{pb}
+            = \frac{2\Delta_0}{h}
+            \approx 87\,\mathrm{GHz}\,.
+            \label{eq:micro:pat:pair-breaking}
+        \end{equation}
+        The experimental setup transmitted frequencies up to approximately $20\,\mathrm{GHz}$, below this threshold. Direct single-photon pair breaking is therefore excluded, although heating, multiphoton absorption, and nonequilibrium quasiparticle generation may still occur. We assume that the electrodes remain in local thermal equilibrium unless stated otherwise. \cite{tinkham_introduction_2004,murray_material_2021}
+
+        For photon-assisted quasiparticle tunneling we now specialize the generic phase convention to $q=e$, such that $\alpha_e=eA/(h\nu)$.
+
         \begin{figure}[ht]
             \centering
             \subfigure[
@@ -263,12 +355,12 @@
                 Corresponding differential conductances $\mathrm{d}I/\mathrm{d}V$, showing photon-assisted replicas of the coherence peaks, weighted by $J_n^2(eA/h\nu)$. 
                 ]{\import{theory/micro}{pat-didv.pgf}}
             \caption{
-                Photon-assisted tunneling in NS (grey) and SS (blue) junctions. The microwave drive couples electronic states differing in energy by $h\nu$, producing sideband replicas of the static \textit{I--V} and \textit{dI--dV} characteristics. Parameters correspond to aluminum (Sec.~\ref{subsec:platform:aluminum}), with $T = 0$, $\gamma = 0$, and $\nu = 10.0\,\mathrm{GHz}$.
+                Photon-assisted tunneling in NS (grey) and SS (blue) junctions. The microwave drive couples electronic states differing in energy by $h\nu$, producing sideband replicas of the static \textit{I--V} and \textit{dI--dV} characteristics. Aluminum parameters from Eq.~\eqref{eq:micro:aluminum-scales} are used, with $T=0$, $\gamma=0$, and $\nu=10.0\,\mathrm{GHz}$.
                 }
             \label{fig:micro:pat}
         \end{figure}
 
-        In the static tunneling expressions above, the Hamiltonian is time-independent and the Bardeen tunneling matrix element carries only its intrinsic phase. Once a microwave drive is applied, as introduced in Sec.~\ref{subsec:platform:microwave}, this matrix element acquires the time-dependent phase factor $U_e(t)$ from Eq.~\eqref{eq:platform:phase-factor}, evaluated for $q=e$. The drive thus modulates the single-electron tunneling phase, not the macroscopic superconducting phase, and this modulation is the microscopic origin of photon-assisted tunneling (PAT).
+        In the static tunneling expressions above, the Hamiltonian is time-independent and the Bardeen tunneling matrix element carries only its intrinsic phase. Under the drive, this matrix element acquires the time-dependent factor $U_e(t)$ from Eq.~\eqref{eq:micro:pat:phase-factor}. The drive thus modulates the single-electron tunneling phase, not the macroscopic superconducting phase, and this modulation is the microscopic origin of photon-assisted tunneling (PAT).
 
         PAT remains an incoherent quasi-particle process. The AC drive mixes electronic energies separated by integer multiples of $h\nu$, but it does not induce any phase-coherent Cooper-pair dynamics. This sharply distinguishes PAT from the Josephson phase dynamics responsible for Shapiro steps (Sec.~\ref{subsec:macro:shapiro}).
 
@@ -284,7 +376,7 @@
                     J_n^2(\alpha)\, N(E_0 + n h\nu)\,,
             \label{eq:micro:pat-dos}
         \end{equation}
-        where $\alpha = eA/h\nu$ is the single-electron drive strength. Here, the photon-dressed DOS refers to the electrode whose quasi-particle energies are shifted by the applied bias, consistent with the asymmetric voltage convention used throughout this section.
+        where $\alpha=\alpha_e=eA/(h\nu)$ is the single-electron drive strength defined in Eq.~\eqref{eq:micro:pat:drive-parameters}. Here, the photon-dressed DOS refers to the electrode whose quasi-particle energies are shifted by the applied bias, consistent with the asymmetric voltage convention used throughout this section.
 
         Analogously, the tunnel current becomes a weighted sum of shifted copies of the static characteristic,
         \begin{equation}
