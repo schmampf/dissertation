@@ -172,7 +172,7 @@
             \end{equation}
             Here the choice of branch $\xi_{\pm}(E)$ corresponds to electron-like ($+$) or hole-like ($-$) propagation. These energy-domain expressions will be used throughout the following scattering formulations (e.g. BTK), where one works at fixed $E$ rather than fixed $\vec q$.
 
-        The absence of propagating subgap quasiparticles in a homogeneous superconductor is the microscopic origin of Andreev conversion at an N--S interface. In particular, the spectrum $E^2=\xi^2+|\Delta|^2$ implies the familiar BCS density of states, Equation~\eqref{eq:micro:dos-bcs}, while for $|E|<|\Delta|$ one must describe transport in terms of coherent electron--hole conversion processes.
+        The absence of propagating subgap quasiparticles in a homogeneous superconductor is the microscopic origin of Andreev conversion at an NS interface. In particular, the spectrum $E^2=\xi^2+|\Delta|^2$ implies the familiar BCS density of states, Equation~\eqref{eq:micro:dos-bcs}, while for $|E|<|\Delta|$ one must describe transport in terms of coherent electron--hole conversion processes.
     
 
     %=========================================================
@@ -180,9 +180,9 @@
     \label{subsec:meso:ar}
     %=========================================================
 
-        At a normal--superconductor (N--S) interface, quasiparticles with energies $|E|<|\Delta|$ cannot propagate in the superconductor because the BCS quasiparticle continuum starts only at $|E|=|\Delta|$. Instead, the corresponding BdG solutions in the superconducting electrode are evanescent. Subgap transport across the interface is therefore mediated by coherent electron--hole conversion. An incident electron from the normal side can be reflected as a hole while a charge $2e$ is transferred into the condensate. This process is known as Andreev reflection and constitutes the elementary mechanism by which normal-state carriers couple to superconducting correlations \cite{andreev_thermal_1964}.
+        At a normal--superconductor (NS) interface, quasiparticles with energies $|E|<|\Delta|$ cannot propagate in the superconductor because the BCS quasiparticle continuum starts only at $|E|=|\Delta|$. Instead, the corresponding BdG solutions in the superconducting electrode are evanescent. Subgap transport across the interface is therefore mediated by coherent electron--hole conversion. An incident electron from the normal side can be reflected as a hole while a charge $2e$ is transferred into the condensate. This process is known as Andreev reflection and constitutes the elementary mechanism by which normal-state carriers couple to superconducting correlations \cite{andreev_thermal_1964}.
         
-        Andreev reflection provides the dominant subgap transport mechanism in N--S junctions and serves as the microscopic building block for superconducting transport in mesoscopic weak links. In a two-terminal S--N--S geometry, successive Andreev conversions at both interfaces lead to discrete Andreev bound states (ABS) in equilibrium and to multiple Andreev reflection (MAR) under finite bias. The following sections build directly on this Andreev-based picture, developing ABS and MAR from the same underlying mechanism.
+        Andreev reflection provides the dominant subgap transport mechanism at NS interfaces and serves as the microscopic building block for superconducting transport in mesoscopic weak links. In a two-terminal SNS geometry, successive Andreev conversions at both interfaces lead to discrete Andreev bound states (ABS) in equilibrium and to multiple Andreev reflection (MAR) under finite bias. The following sections build directly on this Andreev-based picture, developing ABS and MAR from the same underlying mechanism.
 
         More generally, and in particular for atomic-scale contacts, the same physics is most naturally formulated in terms of scattering channels characterized by their normal-state transmissions $\tau_i$. To make this qualitative picture quantitative and to compute the corresponding \textit{I--V} characteristics across the full transparency range, we now turn to the Blonder--Tinkham--Klapwijk (BTK) model \cite{blonder_transition_1982,beenakker_quantum_1992}.
 
@@ -204,7 +204,7 @@
                 \label{fig:meso:btk}
             \end{figure}
 
-            Building on the qualitative picture of Andreev reflection introduced above, the Blonder--Tinkham--Klapwijk (BTK) model provides a quantitative scattering description of an N--S interface with arbitrary transparency $\tau$. It yields the energy-resolved  probabilities for Andreev reflection ($A$), normal reflection ($B$), and transmission into the superconductor ($C$). To incorporate finite quasiparticle lifetimes, we use the phenomenological broadening introduced by Pleceník \textit{et al.}, replacing the quasiparticle energy by $E \rightarrow |E| + \ima\gamma$ \cite{plecenik_finite-quasiparticle-lifetime_1994}. 
+            Building on the qualitative picture of Andreev reflection introduced above, the Blonder--Tinkham--Klapwijk (BTK) model provides a quantitative scattering description of an NS interface with arbitrary transparency $\tau$. It yields the energy-resolved  probabilities for Andreev reflection ($A$), normal reflection ($B$), and transmission into the superconductor ($C$). To incorporate finite quasiparticle lifetimes, we use the phenomenological broadening introduced by Pleceník \textit{et al.}, replacing the quasiparticle energy by $E \rightarrow |E| + \ima\gamma$ \cite{plecenik_finite-quasiparticle-lifetime_1994}.
 
             Using the normalization factor $d$, the Andreev and normal reflection amplitudes ($a$, $b$) acquire the compact form,
             \begin{equation}
@@ -229,7 +229,7 @@
             \end{equation}
             which quantify the relative importance of normal and Andreev processes. For finite lifetime broadening ($\gamma>0$) this strict relation is relaxed and the effective single-particle weight $\rho_{\mathrm{1e}}$ acquires finite subgap contributions. Although these functions resemble densities of states, they should not be interpreted as the physical BCS DOS. Instead, they represent the BTK spectral kernels entering the current integral (Eq.~\ref{eq:meso:btk-iv}). 
 
-            The current through an N--S junction then follows from the BTK kernel,
+            The current through an NS interface then follows from the BTK kernel,
             \begin{equation}
                 \begin{aligned}
                     I_\mathrm{1e}(V) &= \frac{G_0}{e} \int_{-\infty}^{\infty} \rho_\mathrm{1e}(E) \left(f(E) - f(E + eV)\right) \mathrm{d}E\,,\\
@@ -240,7 +240,7 @@
             \end{equation}
             Increasing the transparency enhances the weight of Andreev processes, leading to a pronounced subgap conductance and a gradual reduction of the coherence-peak height. In the tunneling limit ($\tau \ll 1$), Eq.~\eqref{eq:meso:btk-iv} reduces to the conventional quasiparticle-tunneling expression, while for $\tau \approx 1$ the transport approaches the Andreev limit, where charge is transferred predominantly in units of $2e$.
 
-            Figure~\ref{fig:meso:btk} summarizes the BTK description of an N--S interface across the full transparency range. Panels (a) and (b) show the energy-resolved spectral weights $\rho_{\mathrm{1e}}(E)$ and $\rho_{\mathrm{2e}}(E)$ (Eq.~\eqref{eq:meso:btk-dos}), which enter the current integral in Eq.~\eqref{eq:meso:btk-iv}. In the tunneling regime ($\tau\ll 1$), the response is dominated by the single-particle channel and exhibits pronounced coherence peaks at $|E|\approx\Delta$. With increasing transparency, spectral weight is transferred to the Andreev channel, yielding enhanced subgap conductance and a reduced peak height, as reflected in the corresponding $I$--$V$ and $\mathrm{d}I/\mathrm{d}V$ curves in panels (c) and (d).
+            Figure~\ref{fig:meso:btk} summarizes the BTK description of an NS interface across the full transparency range. Panels (a) and (b) show the energy-resolved spectral weights $\rho_{\mathrm{1e}}(E)$ and $\rho_{\mathrm{2e}}(E)$ (Eq.~\eqref{eq:meso:btk-dos}), which enter the current integral in Eq.~\eqref{eq:meso:btk-iv}. In the tunneling regime ($\tau\ll 1$), the response is dominated by the single-particle channel and exhibits pronounced coherence peaks at $|E|\approx\Delta$. With increasing transparency, spectral weight is transferred to the Andreev channel, yielding enhanced subgap conductance and a reduced peak height, as reflected in the corresponding $I$--$V$ and $\mathrm{d}I/\mathrm{d}V$ curves in panels (c) and (d).
 
 
     %=========================================================
@@ -259,7 +259,7 @@
                 }
             \label{fig:meso:delta-r}
         \end{wrapfigure}
-        Andreev reflection becomes phase-coherent and spectrally quantized when two superconductors are connected by a mesoscopic weak link. In an S--N--S geometry, a subgap quasiparticle ($|E|<|\Delta|$) cannot escape into the superconducting continua and instead undergoes successive Andreev conversions at both interfaces, alternating between electron- and hole-like character while acquiring the superconducting phase difference 
+        Andreev reflection becomes phase-coherent and spectrally quantized when two superconductors are connected by a mesoscopic weak link. In an SNS geometry, a subgap quasiparticle ($|E|<|\Delta|$) cannot escape into the superconducting continua and instead undergoes successive Andreev conversions at both interfaces, alternating between electron- and hole-like character while acquiring the superconducting phase difference
         \begin{equation}
             \phi = \phi_1 - \phi_2\,.
             \label{eq:meso:phase-difference}
@@ -284,7 +284,7 @@
             \end{equation}
             implying that the Andreev-reflected hole approximately retraces the incoming trajectory, so called retroreflection, up to corrections of order $E/E_\mathrm{F}$.
 
-            In the Andreev limit of a clean, specular, and highly transparent N--S interface with negligible normal reflection, subgap conversion occurs with approximately unit probability. The corresponding Andreev reflection amplitude for an electron being reflected as a hole at the electrode can then be written as a pure phase factor,
+            In the Andreev limit of a clean, specular, and highly transparent NS interface with negligible normal reflection, subgap conversion occurs with approximately unit probability. The corresponding Andreev reflection amplitude for an electron being reflected as a hole at the electrode can then be written as a pure phase factor,
             \begin{equation}
                 r_\mathrm{A}(E) = e^{-\ima\phi_\mathrm{A}(E)}\,e^{-\ima\phi}\,,\qquad
                 \phi_\mathrm{A}(E)\equiv\arccos\!\left(E/|\Delta|\right)\,.
@@ -429,7 +429,7 @@
     \label{subsec:meso:mar}
     %=========================================================
 
-        Multiple Andreev reflection (MAR) provides the microscopic mechanism of subgap transport in voltage-biased S--N--S weak links or short superconducting point contacts. For $|eV|<2\Delta$, quasiparticles cannot directly enter the quasiparticle continua of the superconducting leads. Instead, transport proceeds through successive Andreev conversions at the two S interfaces, alternating between electron- and hole-like character. Each traversal across the junction shifts the quasiparticle energy by $\pm eV$, producing an ``energy ladder'' that must bridge the gap $2|\Delta|$ before escape into the continuum becomes possible. In the trajectory picture of Klapwijk, Blonder, and Tinkham (KBT) \cite{klapwijk_explanation_1982}, MAR cycles involving $m$ such subgap energy increments turn on at
+        Multiple Andreev reflection (MAR) provides the microscopic mechanism of subgap transport in voltage-biased SNS weak links or short superconducting point contacts. For $|eV|<2\Delta$, quasiparticles cannot directly enter the quasiparticle continua of the superconducting leads. Instead, transport proceeds through successive Andreev conversions at the two S interfaces, alternating between electron- and hole-like character. Each traversal across the junction shifts the quasiparticle energy by $\pm eV$, producing an ``energy ladder'' that must bridge the gap $2|\Delta|$ before escape into the continuum becomes possible. In the trajectory picture of Klapwijk, Blonder, and Tinkham (KBT) \cite{klapwijk_explanation_1982}, MAR cycles involving $m$ such subgap energy increments turn on at
         \begin{equation}
             eV_m=\frac{2|\Delta|}{m}\,,\qquad m=1,2,3,\dots\,.
             \label{eq:meso:mar-sgs}

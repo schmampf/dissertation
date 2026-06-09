@@ -122,7 +122,7 @@
             I(V) \propto \int_{-\infty}^\infty P(E)\, \frac{N_1(E)}{N_0}\, \frac{N_2(E+eV)}{N_0}\, \left(f_1(E)-f_2(E+eV)\right)\,\mathrm{d}E\,.
             \label{eq:stochastic:dcb-current}
         \end{equation}
-        but the electronic factor inherits the density of states of the electrodes. For NN junctions the density of states is constant, for NS junctions it contains the superconducting BCS form on one side, and for SS junctions both electrodes contribute superconducting densities of states. Regardless of the microscopic details, the environment always suppresses single-electron tunneling at low bias through the same mechanism.
+        but the electronic factor inherits the density of states of the electrodes. For NIN junctions the density of states is constant, for NIS junctions it contains the superconducting BCS form on one side, and for SIS junctions both electrodes contribute superconducting densities of states. Regardless of the microscopic details, the environment always suppresses single-electron tunneling at low bias through the same mechanism.
         In SIS junctions the single-electron current appears only above the pair-breaking threshold $eV \gtrsim 2\Delta$, but once quasi-particle states are available, the environmental suppression of small-energy exchange acts on the onset in the same universal manner.
 
         We now apply this general formalism to single-electron tunneling before turning to the corresponding two-electron processes.
@@ -177,20 +177,20 @@
 
         In the stochastic regime, the superconducting phase becomes fully randomized by the electromagnetic environment, and any phase-coherent mechanism—Josephson tunneling, Andreev bound states, and multiple Andreev reflections—is suppressed. Nevertheless, the transfer of a charge $(2e)$ across a voltage-biased junction remains possible through inelastic, stochastic tunneling events. These processes form a unified class of incoherent two-electron tunneling, in which the junction exchanges an energy $(2e)V$ with its environment. Their rates are governed by the same $P(E)$ kernel as in dynamical Coulomb blockade, but evaluated at the doubled energy scale associated with the transferred charge.
 
-        Despite their different microscopic origins, incoherent Cooper-pair tunneling (SS junctions) and incoherent Andreev reflection (NS junctions) share the same universal structure:
+        Despite their different microscopic origins, incoherent Cooper-pair tunneling in SIS junctions and incoherent Andreev reflection at NS interfaces share the same universal structure:
         \begin{equation}
             \Gamma_{2e}(V) = \int_{-\infty}^{\infty} P(E)\,F_{2e}(E,V)\,\mathrm{d}E\,,
             \label{eq:stochastic:2e-general}
         \end{equation}
         with the environment coupling to the charge $(2e)$ through the argument of the $P(E)$ function. The only distinction lies in the electronic prefactor $F_{2e}(E,V)$, which encodes the microscopic structure of the junction.
         
-        The stochastic regime treats all $(2e)$ processes on equal footing: both incoherent Cooper-pair tunneling in SS junctions and incoherent Andreev reflection in NS junctions are described by the same charge-$(2e)$ energy-exchange kernel $P(E)$, with only their electronic prefactors differentiating them. The following subsections describe these two cases in detail.
+        The stochastic regime treats all $(2e)$ processes on equal footing: both incoherent Cooper-pair tunneling in SIS junctions and incoherent Andreev reflection at NS interfaces are described by the same charge-$(2e)$ energy-exchange kernel $P(E)$, with only their electronic prefactors differentiating them. The following subsections describe these two cases in detail.
 
         %=========================================================
         \subsubsection*{Incoherent Cooper-Pair Tunneling}
         %=========================================================
 
-            In a SS tunnel junction the coherent Josephson effect is destroyed once environmental phase fluctuations become strong enough that the phase-dependent part of the Cooper-pair tunneling amplitude averages to zero
+            In an SIS tunnel junction the coherent Josephson effect is destroyed once environmental phase fluctuations become strong enough that the phase-dependent part of the Cooper-pair tunneling amplitude averages to zero
             \begin{equation}
                 \left\langle \exp(\ima\phi(t))\right\rangle = 0\,.
             \end{equation}
@@ -229,7 +229,7 @@
 
             As in ICPT, low-bias IAR is suppressed by $P(E\to 0)$. The only difference between IAR and ICPT lies in the electronic factor: the normal metal provides the Fermi functions $f(E\pm eV)$, whereas ICPT involves only the condensate wave functions encoded in $E_\mathrm{J}^{2}$.
 
-            Finally, it is important to clarify why neither coherent Andreev reflection nor multiple Andreev reflections survive in a SS junction once the system enters the stochastic regime. In an SS junction both electrodes possess gapped BCS densities of states, so no normal-metal continuum is available to support elastic electron-hole conversion inside the gap. Coherent Andreev reflection relies on well-defined electron and hole amplitudes with a fixed superconducting phase, and multiple Andreev reflections require an extended sequence of such coherent conversions. Strong environmental phase fluctuations destroy this phase coherence, making the amplitudes of successive conversion events uncorrelated. As a result, MAR processes are fully suppressed, and even single Andreev reflection has no independent meaning in SS junctions. The only remaining subgap transport channel is therefore the incoherent transfer of a Cooper pair between the two condensates, described by incoherent Cooper-pair tunneling (ICPT).
+            Finally, it is important to clarify why neither coherent Andreev reflection nor multiple Andreev reflections survive in an SIS junction once the system enters the stochastic regime. In an SIS junction both electrodes possess gapped BCS densities of states, so no normal-metal continuum is available to support elastic electron-hole conversion inside the gap. Coherent Andreev reflection relies on well-defined electron and hole amplitudes with a fixed superconducting phase, and multiple Andreev reflections require an extended sequence of such coherent conversions. Strong environmental phase fluctuations destroy this phase coherence, making the amplitudes of successive conversion events uncorrelated. As a result, MAR processes are fully suppressed, and even single Andreev reflection has no independent meaning in SIS junctions. The only remaining subgap transport channel is therefore the incoherent transfer of a Cooper pair between the two condensates, described by incoherent Cooper-pair tunneling (ICPT).
 
 
         %=========================================================
@@ -370,7 +370,7 @@ Therefore, they lie fundamentally outside the applicability of the
 $P(E)$-framework, which assumes statistically independent tunneling 
 events. As environmental damping increases or the junction transparency 
 is reduced, phase fluctuations destroy this coherence and MAR gradually 
-gives way to incoherent two-electron processes (ICPT in SS junctions and 
-IAR in NS junctions). MAR therefore marks the opposite, mesoscopic 
+gives way to incoherent two-electron processes (ICPT in SIS junctions and
+IAR at NS interfaces). MAR therefore marks the opposite, mesoscopic
 extreme of superconducting transport compared to the stochastic regime 
 discussed in this chapter.
