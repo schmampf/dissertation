@@ -107,15 +107,15 @@
         \begin{figure}
             \centering
             \subfigure[
-                Incoherent Diffusive Regime
+                Incoherent diffusive
                 ]{\import{theory/schema/scattering}{classic.pdf_tex}}
             \hfill
             \subfigure[
-                Diffusive Regime
+                Phase-coherent diffusive
                 ]{\import{theory/schema/scattering}{diffusive.pdf_tex}}
             \hfill
             \subfigure[
-                Ballistic Regime
+                Ballistic
                 ]{\import{theory/schema/scattering}{ballistic.pdf_tex}}
             \caption{
             The hierarchy of conductor length $L$, elastic mean free path $\ell_{\mathrm{qp}}$, and phase-coherence length $\ell_{\phi}$ selects the transport description. (a)~Incoherent diffusive transport follows a local conductivity when $L \gg \ell_{\mathrm{qp}},\ell_{\phi}$. (b)~Elastic scattering remains frequent for $\ell_{\mathrm{qp}} \ll L \lesssim \ell_{\phi}$, but coherent path interference can modify the average diffusive response. (c)~For $L \ll \ell_{\mathrm{qp}}$ and $L \lesssim \ell_{\phi}$, the constriction is ballistic and is described by transmission channels.
@@ -135,12 +135,12 @@
                 \ell_\phi = \sqrt{D t_\phi}\,.
                 \label{eq:quasi:diffusive-coherence-length}
             \end{equation}
-            At finite temperature, interference is additionally reduced by thermal averaging over an energy window $\sim k_\mathrm{B}T$. This introduces the thermal length
+            At finite temperature, interference is additionally reduced by thermal averaging over an energy window $\sim k_\mathrm{B}T$. A commonly used characteristic thermal length is
             \begin{equation}
                 \ell_T = \sqrt{\hbar D / k_\mathrm{B}T}\,,
                 \label{eq:quasi:thermal-length}
             \end{equation}
-            such that phase-coherent effects are most pronounced when $L \lesssim \min(\ell_\phi,\,\ell_T)$.
+            such that phase-coherent effects are most pronounced when $L \lesssim \min(\ell_\phi,\,\ell_T)$. Numerical prefactors in the definition of $\ell_T$ depend on the geometry and convention.
 
             On average, transport still follows the bulk drift-diffusion picture with the conductivity and diffusion constant introduced above. Quantum mechanically, however, the coherent superposition of scattering amplitudes produces characteristic corrections to this average conductance, most prominently weak localization and universal conductance fluctuations. In low-dimensional or strongly disordered systems these interference effects can become strong and may ultimately lead to Anderson localization.
             \cite{bergmann_weak_1984,lee_universal_1985,lee_disordered_1985,anderson_absence_1958,schertel_magnetic-field_2019}
@@ -162,11 +162,12 @@
                 }
                 \label{fig:quasi:scatter}
             \end{wrapfigure}
-            In the ballistic regime the length of the constriction is shorter than the elastic mean free path, $L \ll \ell_\mathrm{qp}$, such that quasiparticles traverse the contact without momentum-randomizing scattering. If, in addition, the contact is shorter than the phase-coherence length, $L \lesssim \ell_\phi$, transport is phase coherent across the entire constriction. In the ballistic limit one may express the phase-coherence length in terms of the Fermi velocity and a dephasing time $t_\phi$,
+            In the ballistic regime the length of the constriction is shorter than the elastic mean free path, $L \ll \ell_\mathrm{qp}$, such that quasiparticles traverse the contact without momentum-randomizing scattering. If, in addition, the contact is shorter than the phase-coherence length, $L \lesssim \ell_\phi$, transport is phase coherent across the entire constriction. A characteristic ballistic coherence length may be estimated from the Fermi velocity and a dephasing time $t_\phi$,
             \begin{equation}
                 \ell_\phi = v_\mathrm{F} \, t_\phi\,.
                 \label{eq:quasi:ballistic-coherence-length}
             \end{equation}
+            Here, the precise numerical prefactor depends on the definition of the dephasing time.
 
             Ballistic transport is most naturally formulated as an elastic scattering problem. A finite region connects ideal leads in which the electronic modes propagate without dissipation. We denote the complex incoming mode amplitudes in the left and right leads by $A_1$ and $A_2$, and the corresponding outgoing amplitudes by $B_1$ and $B_2$, as shown in Fig.~\ref{fig:quasi:scatter}.
             
@@ -242,10 +243,10 @@
 
             Metallic atomic contacts provide a paradigmatic realization of ballistic, phase-coherent transport. The constriction consists of only one or a few atoms, with a characteristic length of order an interatomic spacing. In aluminum films, the elastic mean free path $\ell_\mathrm{qp}$ depends strongly on disorder, thickness, and microstructure, and can reach tens of nanometers in high-purity samples \cite{steinberg_quasi-particle_2008}. It therefore remains much larger than the atomic length of the constriction. At low temperature, the phase-coherence length is also much larger, such that typically $L \ll \ell_\mathrm{qp}$ and $L \ll \ell_\phi$. Experimentally, the formation and rupture of such contacts are tracked by recording the conductance while mechanically separating the electrodes, producing an opening trace as in Fig.~\ref{fig:quasi:atomic-contact}(b). \cite{scheer_conduction_1997,agrait_quantum_2003}
 
-            The transmission eigenchannels of an atomic contact are set by the valence orbitals of the atoms forming the narrowest part of the constriction and by their hybridization with the electrodes. For aluminum, whose conduction states have predominantly $sp$ character, this typically results in three dominant transport channels: one mainly $sp_z$-like channel and two transverse $p$-like channels. Depending on atomic geometry and disorder, additional weaker channels may appear, but the transport is usually governed by a small number of highly transparent modes. A complementary statistical view is provided by conductance histograms, Fig.~\ref{fig:quasi:atomic-contact}(c), where peaks reflect preferred atomic configurations and their associated typical channel sets. \cite{yanson_histograms_1997,scheer_signature_1998,agrait_quantum_2003}
+            The transmission eigenchannels of an atomic contact are set by the valence orbitals of the atoms forming the narrowest part of the constriction and by their hybridization with the electrodes. For aluminum, whose conduction states have predominantly $sp$ character, a typical single-atom contact has three dominant transport channels: one mainly $sp_z$-like channel and two transverse $p$-like channels. The exact number and transmission values depend on the atomic geometry and disorder, and additional weaker channels may appear. A complementary statistical view is provided by conductance histograms, Fig.~\ref{fig:quasi:atomic-contact}(c), where peaks reflect preferred atomic configurations and their associated typical channel sets. \cite{yanson_histograms_1997,scheer_signature_1998,agrait_quantum_2003}
 
             Experimentally, the set of transmission probabilities $\{\tau_i\}$ can be extracted from superconducting transport measurements using multiple Andreev reflection and related techniques. Throughout this thesis we therefore characterize each atomic contact by its mesoscopic pin code. These transmission eigenvalues serve as input for the finite-transmission description of superconducting transport in the following sections. \cite{scheer_conduction_1997,scheer_signature_1998}
 
             Together, opening traces and conductance histograms show how atomic configurations select reproducible conductance ranges. They motivate the channel description used throughout this thesis, while superconducting subgap spectroscopy supplies the additional information required to resolve the individual $\tau_i$.
 
-    In summary, the comparison of $L$ with $\ell_\mathrm{qp}$, $\ell_\phi$, and $\ell_T$ determines whether transport is described by a local bulk conductivity or by a phase-coherent scattering problem. In the coherent regime, the transmission eigenvalues $\{\tau_i\}$ connect the contact structure to normal-state conductance and superconducting subgap observables. Section~\ref{sec:micro} now introduces superconducting pairing, the quasiparticle spectrum, and tunnel transport.
+    In summary, the comparison of $L$ with $\ell_\mathrm{qp}$, $\ell_\phi$, and $\ell_T$ determines whether transport is described by a local bulk conductivity or by a phase-coherent scattering problem. In the coherent regime, the normal-state conductance determines only the sum $\sum_i\tau_i$. Channel-resolved superconducting spectroscopy supplies the additional information needed to determine the individual transmission eigenvalues. Section~\ref{sec:micro} now introduces superconducting pairing, the quasiparticle spectrum, and tunnel transport.

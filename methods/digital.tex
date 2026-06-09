@@ -275,7 +275,7 @@
 
             The core model evaluates the SIS tunnel current from Eq.~\eqref{eq:micro:tunnel}. The two electrodes are represented by Dynes-broadened BCS densities of states and finite-temperature Fermi functions. The free or fixed model parameters are the normal conductance $G_\mathrm{N}$, electronic temperature $T$, zero-temperature superconducting gap $\Delta_0$, and Dynes broadening $\gamma$.
 
-            For repeated evaluations, the production model uses the convolution form of the tunnel current, Eq.~\eqref{eq:micro:tunnel-conv}. Instead of recomputing the full energy integral for every bias point, the occupied and empty spectral functions are correlated on an energy grid and interpolated back to the requested voltage axis. This makes parameter sweeps and fits substantially faster while keeping the same physical model.
+            For repeated evaluations, the production model uses the convolution form of the tunnel current, Eq.~\eqref{eq:micro:tunnel-conv}. Instead of recomputing the full energy integral for every bias point, the occupied and empty spectral functions are convolved on an energy grid and interpolated back to the requested voltage axis. This makes parameter sweeps and fits substantially faster while keeping the same physical model.
 
             Photon-assisted tunneling is included by applying the Tien--Gordon sideband sum of Eq.~\eqref{eq:micro:pat-iv} to the BCS current. This extension adds the irradiation amplitude $A$ and frequency $\nu$ as model parameters. The model can also include an optional Gaussian voltage-noise broadening, which averages the current over a distribution of bias offsets with width $\sigma_V$.
 
