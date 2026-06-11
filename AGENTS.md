@@ -82,6 +82,7 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
 ## Language Style
 
 - Write concept-first, technical, and structured prose.
+- Keep each prose paragraph on one physical source line. Do not insert hard line breaks within a paragraph. Use a blank line only to separate paragraphs.
 - Use short signposting transitions such as `In this section...`, `We now compare...`, and `This implies...` when they improve flow.
 - Prefer concise sentences over long nested constructions.
 - Remove repetition unless it materially improves clarity.
