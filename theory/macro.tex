@@ -10,7 +10,7 @@
         \centering
         \vspace{-1.0em}
         \import{theory/schema/semiconductor}{sis-cp.pdf_tex}
-        \caption{Schematic Cooper Pair tunneling in SIS junction.}
+        \caption{Schematic Cooper-pair tunneling in an SIS junction.}
         \label{fig:macro:schematic}
         \vspace{.5em}
         \import{theory/macro}{delta-r.pgf}
@@ -117,7 +117,7 @@
     \label{subsec:macro:shapiro}
     %=========================================================
         
-        Under microwave irradiation, a Josephson junction develops quantized constant-voltage plateaus in its dc \textit{I--V} characteristic, so-called Shapiro steps or inverse AC Josephson effect, arising from frequency locking between the Josephson oscillation and the applied drive. \cite{shapiro_josephson_1963,barone_physics_1982,tinkham_introduction_2004}
+        Under microwave irradiation, a Josephson junction develops quantized constant-voltage plateaus in its dc \textit{I--V} characteristic, known as Shapiro steps or the inverse AC Josephson effect, arising from frequency locking between the Josephson oscillation and the applied drive. \cite{shapiro_josephson_1963,barone_physics_1982,tinkham_introduction_2004}
 
         When a Josephson junction is exposed to an external microwave field, the phase dynamics become modulated by the drive introduced in Sec.~\ref{subsec:micro:pat}. For coherent Cooper-pair transfer, the charge-dependent phase in Eq.~\eqref{eq:micro:pat:phase} is evaluated at $q=2e$ and contributes directly to the superconducting phase difference. The Josephson frequency $\nu_0$ then mixes with the external frequency $\nu$, and the phase takes the form
         \begin{equation}
@@ -259,6 +259,7 @@
                 -\partial u/\partial\phi = i - \sin\phi\,,
                 \quad
                 u = U/ E_\mathrm{J}\,,
+                \label{eq:macro:washboard-force}
             \end{equation}
             which yields
             \begin{equation}
@@ -281,7 +282,7 @@
 
             As the bias is increased, the tilt of the potential grows and the barriers separating adjacent minima are reduced. At $i=1$, the barriers vanish and the phase becomes free to run down the potential without encountering any local minima. This running solution corresponds to the finite-voltage, resistive state of the junction. In the intermediate regime, fluctuations, either thermal or current-induced, can cause the phase to escape from a metastable minimum even for $i<1$, giving rise to switching from the superconducting to the resistive branch.
         
-            A finite phase momentum acquired during escape might, once the bias is reduced again, retrap the phase only at a smaller tilt, leading to a retrapping back to the superconducting branch.
+            A finite phase momentum acquired during escape might, once the bias is reduced again, retrap the phase only at a smaller tilt, leading to retrapping onto the superconducting branch.
 
             The washboard picture thus provides a unified interpretation of phase localization, escape, and running dynamics. It naturally explains the origin of the switching current, the emergence of retrapping current, and the role of thermal activation and noise, which are explored in the following subsections.
 
@@ -313,7 +314,7 @@
             \end{wrapfigure}
             A representative phenomenological \textit{I--V} trace is shown in Fig.~\ref{fig:macro:rcsj-iv}. It highlights the finite slope of the supercurrent branch, the switching transition at $I_\mathrm{SW}$, and the return at $I_\mathrm{R}$. These currents are prescribed observables in the plotted characteristic rather than outputs of the deterministic equation above.
 
-            In the ideal overdamped limit ($Q\ll 1$), the phase has essentially no inertia and relocks as soon as stable minima reappear. Switching and retrapping therefore occur at similar currents in the deterministic model. Experimentally, thermal fluctuations and the electromagnetic environment can still produce distinct observed values of $I_\mathrm{SW}$ and $I_\mathrm{R}$. The overdamped regime is the relevant limit for the atomic aluminum contact studied in this work.
+            In the ideal overdamped limit ($Q\ll 1$), the phase has essentially no inertia and relocks as soon as stable minima reappear. Switching and retrapping therefore occur at similar currents in the deterministic model. Experimentally, stochastic fluctuations, frequency-dependent environmental damping, or heating can still produce distinct observed values of $I_\mathrm{SW}$ and $I_\mathrm{R}$. The overdamped regime is the relevant limit for the atomic aluminum contact studied in this work.
             
             In the underdamped limit ($Q\gg 1$), the phase retains significant kinetic energy after escape and cannot relock until the tilt is nearly removed. The retrapping current therefore approaches zero, giving rise to strong hysteresis in the \textit{I--V} characteristic.
 
