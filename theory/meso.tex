@@ -13,166 +13,67 @@
     \label{subsec:meso:bdg}
     %=========================================================
 
-    To describe superconductivity in mesoscopic and spatially inhomogeneous structures, we employ the Bogoliubov--de~Gennes (BdG) formalism, i.e. the real-space mean-field formulation of BCS theory. Starting from the BCS pairing Hamiltonian \cite{bardeen_microscopic_1957} and applying the canonical Bogoliubov transformation \cite{bogoljubov_new_1958} in the electron--hole (Nambu) representation \cite{nambu_quasi-particles_1960}, one obtains a quadratic quasiparticle Hamiltonian and an effective eigenvalue problem for the two-component Nambu spinor, as presented systematically by de~Gennes \cite{de_gennes_superconductivity_1966}. 
+        The Bogoliubov--de~Gennes (BdG) formalism is the real-space mean-field extension of BCS theory used for spatially inhomogeneous superconducting structures. We consider spin-singlet \textit{s}-wave pairing without spin-dependent fields, for which the problem separates into two equivalent $2\times2$ electron--hole blocks. This minimal description provides the amplitudes required for Andreev reflection and forms the basis of the scattering treatments of Andreev bound states and multiple Andreev reflection developed below. \cite{bardeen_microscopic_1957,bogoljubov_new_1958,nambu_quasi-particles_1960,de_gennes_superconductivity_1966}
 
-    The BdG framework provides a microscopic description of electron--hole conversion at normal--superconductor interfaces (Andreev reflection) \cite{andreev_thermal_1964} and underlies scattering approaches to transport in hybrid junctions, including the BTK model and its extensions \cite{blonder_transition_1982,beenakker_quantum_1992}.
+        We use the effective normal-state Hamiltonian introduced in Eq.~\eqref{eq:quasi:normal-hamiltonian}, with energies measured relative to the chemical potential,
+        \begin{equation}
+            \hat{H}_\mathrm{N}(\vec r)
+            = -\frac{\hbar^2}{2m^\ast}\nabla^2 + U(\vec r) - \mu\,.
+            \label{eq:meso:h-n}
+        \end{equation}
+        The potential $U(\vec r)$ represents confinement, tunnel barriers, and disorder. At the BCS mean-field level, superconductivity enters through the local pair potential
+        \begin{equation}
+            \Delta(\vec r)=|\Delta(\vec r)|e^{\ima\phi(\vec r)}\,,
+            \label{eq:meso:pair-potential}
+        \end{equation}
+        which couples time-reversed electron and hole amplitudes. In the reduced Nambu basis, a quasiparticle mode is represented by
+        \begin{equation}
+            \Psi_k(\vec r)
+            =
+            \begin{pmatrix}
+                u_k(\vec r)\\
+                v_k(\vec r)
+            \end{pmatrix},
+            \label{eq:meso:nambu-spinor}
+        \end{equation}
+        where $u_k$ and $v_k$ are its electron-like and hole-like components.
 
-    The clean-limit BCS coherence length connects the aluminum Fermi velocity to the superconducting gap,
-    \begin{equation}
-        \xi_0 = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\,.
-        \label{eq:meso:aluminum-clean-coherence-length}
-    \end{equation}
-    For aluminum, this gives a value of order $1$--$2\,\text{\textmu m}$. In a diffusive film, the corresponding zero-temperature decay length is
-    \begin{equation}
-        \xi_{\mathrm{dirty},0}
-        = \sqrt{\frac{\hbar D}{\Delta_0}}\,,
-        \label{eq:meso:aluminum-dirty-coherence-length}
-    \end{equation}
-    which is typically of order $100$--$300\,\mathrm{nm}$ for evaporated aluminum films. Both lengths are much larger than an atomic constriction and support the short-junction description used below. \cite{tinkham_introduction_2004,steinberg_quasi-particle_2008}
-    
-        %=========================================================
-        \subsubsection*{Single Particle Hamiltonian}
-        %=========================================================
+        The corresponding BdG Hamiltonian and eigenvalue problem are
+        \begin{align}
+            \hat{H}_\mathrm{BdG}(\vec r)
+            &=
+            \begin{pmatrix}
+                \hat{H}_\mathrm{N}(\vec r) & \Delta(\vec r)\\
+                \Delta^\ast(\vec r) & -\hat{H}_\mathrm{N}^\ast(\vec r)
+            \end{pmatrix},
+            \label{eq:meso:h-bdg}\\
+            \hat{H}_\mathrm{BdG}(\vec r)\Psi_k(\vec r)
+            &=E_k\Psi_k(\vec r)\,.
+            \label{eq:meso:BdG}
+        \end{align}
+        The off-diagonal pair potential mixes electron and hole amplitudes. Particle--hole symmetry relates every solution at $+E_k$ to a partner at $-E_k$ with exchanged electron and hole components. In the normal-state limit $\Delta\to0$, the two components decouple and recover the electron and hole sectors of Eq.~\eqref{eq:meso:h-n}.
 
-            We use the effective normal-state Hamiltonian introduced in Eq.~\eqref{eq:quasi:normal-hamiltonian}. In the grand-canonical ensemble, where energies are measured relative to the chemical potential, it reads
-            \begin{equation}
-                \hat{H}_\mathrm{N}(\vec{r}) = -\frac{\hbar^2}{2m^\ast}\nabla^2 + U(\vec{r}) - \mu\,,
-                \label{eq:meso:h-n}
-            \end{equation}
-            where the effective mass $m^\ast$ and the possibly spatially varying potential $U(\vec r)$ retain the same meaning as in the normal-state description. In a device model, $U(\vec r)$ accounts for confinement, tunnel barriers, and disorder.
+        For a homogeneous superconductor with uniform $\Delta=|\Delta|e^{\ima\phi}$, the modes are labeled by the wave vector $\vec q$. Defining the normal-state energy $\xi_{\vec q}=\hbar^2q^2/(2m^\ast)-\mu$, the bulk quasiparticle dispersion is
+        \begin{equation}
+            E_{\vec q}=\sqrt{\xi_{\vec q}^2+|\Delta|^2}\,.
+            \label{eq:meso:BdG-plane-wave}
+        \end{equation}
+        Scattering calculations instead fix the quasiparticle energy $E$ and distinguish the two branches through
+        \begin{equation}
+            \xi_{\pm}(E)=\pm\sqrt{E^2-|\Delta|^2}\,,
+            \label{eq:meso:xi-branches}
+        \end{equation}
+        and the corresponding coherence factors are
+        \begin{equation}
+            \begin{aligned}
+                u_0(E) &= \sqrt{\tfrac{1}{2}\left(1+\xi_{\pm}(E)/E\right)}\,,\\
+                v_0(E) &= \sqrt{\tfrac{1}{2}\left(1-\xi_{\pm}(E)/E\right)}\,.
+            \end{aligned}
+            \label{eq:meso:coherence-factors}
+        \end{equation}
+        The signs in Eq.~\eqref{eq:meso:xi-branches} label the electron-like and hole-like branches. When broadening is introduced in the BTK model below, the square roots are evaluated with the complex energy argument $|E|+\ima\gamma$, and the physical solution is selected by the propagation or decay boundary condition. At $\gamma=0$ and $|E|<|\Delta|$, $\xi_\pm$ is imaginary, so the bulk solutions are evanescent rather than propagating.
 
-            The eigenfunctions of $\hat{H}_\mathrm{N}$ define the natural mode basis of the normal conductor,
-            \begin{equation}
-                \hat{H}_\mathrm{N}(\vec{r})\, \Phi_k(\vec{r}) = \xi_k\, \Phi_k(\vec{r})\,,\quad
-                \xi_k=\varepsilon_k-\mu\,,
-                \label{eq:meso:psi-n}
-            \end{equation}
-            where $\xi_k$ denotes the single-particle energies measured from the chemical potential. 
-            
-            In a homogeneous metal ($U=0$), the eigenfunctions and eigenvalues are given by
-            \begin{equation}
-                \Phi_{\vec q}(\vec r) \propto e^{\ima \vec q\cdot \vec r}\,,\quad
-                \varepsilon_{\vec q}=\tfrac{\hbar^2 q^2}{2m^\ast}\,.
-            \end{equation}
-
-            In this translationally invariant limit, the abstract mode label $k$ can be identified with the wave vector $\vec q$. Throughout this chapter we reserve $k$ for a generic mode index and use explicit vectors such as $\vec q$ whenever a plane-wave momentum label is meant. More generally, the label $k$ should be understood as a compact index for the normal-state eigenmodes.
-
-        %=========================================================
-        \subsubsection*{BCS Hamiltonian}
-        %=========================================================
-
-            Upon second quantization, we introduce fermionic field operators $\hat{\psi}_\sigma(\vec r)$ and $\hat{\psi}_\sigma^\dagger(\vec r)$ that annihilate/create an electron at position $\vec{r}$ with spin $\sigma$. In the normal-state eigenbasis they admit the expansion $\hat\psi_\sigma(\mathbf r)=\sum_k \Phi_k(\mathbf r)\,c_{k\sigma}$, but we will work in real space in the following.
-
-            Superconductivity is incorporated at the mean-field level by decoupling an effective attractive interaction in the spin-singlet pairing channel. This introduces the (generally position-dependent) pair potential $\Delta(\vec r)$, which couples time-reversed states and yields the quadratic mean-field (BCS) Hamiltonian
-            \begin{equation}
-                \begin{aligned}
-                \hat{H}_\mathrm{BCS}(\vec{r}) 
-                &= \int \mathrm{d}r^3 \sum_{\sigma=\uparrow, \downarrow} \hat{\psi}_\sigma^\dagger(\vec{r})\, \hat{H}_\mathrm{N}(\vec{r})\, \hat{\psi}_\sigma(\vec{r})\\
-                &+ \int \mathrm{d}r^3 \left( 
-                    \Delta(\vec{r})\, \hat{\psi}_\uparrow^\dagger(\vec{r})\, \hat{\psi}_\downarrow^\dagger(\vec{r})
-                    + \Delta^\ast(\vec{r})\, \hat{\psi}_\downarrow(\vec{r})\, \hat{\psi}_\uparrow(\vec{r})
-                    \right)
-                \end{aligned}
-                \label{eq:meso:h-bcs}
-            \end{equation}
-
-            Here $\Delta$ is the complex superconducting order parameter, which in general may depend on position. In the simplest $s$-wave, spin-singlet case considered throughout this thesis, it can be written as $\Delta(\vec r) = |\Delta| \, e^{\ima\phi(\vec r)}$, as introduced in Section~\ref{sec:micro}. It represents the amplitude and phase of the Cooper-pair condensate. The mean-field decoupling generates an additional condensation term, proportional to $|\Delta|^2$ and the inverse pairing interaction. Since it does not affect the quasiparticle eigenproblem, we omit it here.
-
-        %=========================================================
-        \subsubsection*{Bogoliubov Transformation (Nambu Formalism)}
-        %=========================================================
-        
-            The bilinear structure of Eq.~\eqref{eq:meso:h-bcs} suggests working in an electron--hole representation, where quasiparticles appear as coherent superpositions of particle and hole degrees of freedom. In the spin-singlet \textit{s}-wave case, and in the absence of spin-dependent fields, the problem separates into two equivalent $2\times 2$ blocks. We work in the reduced Nambu basis
-            \begin{equation}
-                \hat\Psi(\vec r) =
-                \begin{psmallmatrix}
-                    \hat{\psi}_{\uparrow}(\vec r) \\
-                    \hat{\psi}^{\dagger}_{\downarrow}(\vec r)
-                \end{psmallmatrix}\,.
-                \label{eq:meso:nambu-operator}
-            \end{equation}
-
-            We now diagonalize the quadratic Hamiltonian (Eq.~\eqref{eq:meso:h-bcs}) by introducing a set of fermionic quasiparticle operators $\hat\gamma_k$ labeled by a mode index $k$. Each mode is characterized by two position-dependent $c$-number amplitudes $u_k(\vec r)$ and $v_k(\vec r)$, which encode the electron- and hole-like components of the corresponding Bogoliubov quasiparticle.
-
-            A Bogoliubov quasiparticle mode $k$ is then created by an operator of the form
-            \begin{equation}
-                \hat{\gamma}_k^{\dagger} = \int \mathrm{d}^3 r\,\left(u_k(\vec r)\,\hat{\psi}^{\dagger}_{\uparrow}(\vec r) + v_k(\vec r)\,\hat{\psi}_{\downarrow}(\vec r)\right),
-                \label{eq:meso:bogoliubov-operator}
-            \end{equation}
-            where the amplitudes $u_k(\vec r)$ and $v_k(\vec r)$ quantify the electron- and hole-like components of the quasiparticle wave function. For compactness, we collect these amplitudes into the Nambu spinor
-            \begin{equation}
-                \Psi_k(\vec r) =
-                \begin{psmallmatrix}
-                    u_k(\vec r) \\
-                    v_k(\vec r)
-                \end{psmallmatrix}\,.
-                \label{eq:meso:nambu-spinor}
-            \end{equation}
-
-        %=========================================================
-        \subsubsection*{Bogoliubov--de~Gennes Equation}
-        %=========================================================
-
-            In this reduced Nambu basis, the quadratic mean-field Hamiltonian of Eq.~\eqref{eq:meso:h-bcs} can be written as the Bogoliubov--de~Gennes (BdG) Hamiltonian,
-            \begin{equation}
-                \hat{H}_\mathrm{BdG}(\vec r) =
-                \begin{pmatrix}
-                    \hat{H}_\mathrm{N}(\vec r) & \Delta(\vec r) \\
-                    \Delta^\ast(\vec r) & -\hat{H}_\mathrm{N}^\ast(\vec r)
-                \end{pmatrix}
-                \,,
-                \label{eq:meso:h-bdg}
-            \end{equation}
-            whose off-diagonal pairing potential $\Delta(\vec r)$ explicitly couples electron and hole amplitudes.
-
-            The quasiparticle modes are then obtained from the BdG eigenvalue problem
-            \begin{equation}
-                \hat{H}_\mathrm{BdG}(\vec r) \, \Psi_k(\vec r) = E_k\, \Psi_k(\vec r)\,.
-                \label{eq:meso:BdG}
-            \end{equation}
-            Here the index $k$ labels the resulting quasiparticle eigenmodes, while the explicit argument $\vec r$ denotes their spatial dependence. Because the BdG Hamiltonian possesses an intrinsic particle--hole symmetry, every solution at energy $+E_k$ is accompanied by a partner at $-E_k$ (with exchanged electron and hole components). In the normal-state limit $\Delta\to 0$, Eq.~\eqref{eq:meso:BdG} reduces to the eigenproblem of $\hat{H}_\mathrm{N}$ in Eq.~\eqref{eq:meso:h-n}.
-
-        %=========================================================
-        \subsubsection*{Uniform \textit{s}-wave Superconductor}
-        %=========================================================
-
-            As a solvable reference case, consider a homogeneous bulk superconductor with constant $U$ and a uniform pair potential $\Delta=|\Delta|e^{\ima\phi}$. In this case the BdG eigenmodes can be labeled by a wave vector $\vec q$ and an electron-like or hole-like branch, and take the plane-wave form
-            \begin{equation}
-                \Psi_{\vec q}(\vec r) = \Psi_{0}(E_{\vec q})\, e^{\ima \vec q \cdot \vec r}\,,\qquad
-                \xi_{\vec q}=\frac{\hbar^2 q^2}{2m^\ast}-\mu\,,\qquad
-                E_{\vec q}=\sqrt{\xi_{\vec q}^2+|\Delta|^2}\,.
-                \label{eq:meso:BdG-plane-wave}
-            \end{equation}
-            Here $\Psi_{0}(E_{\vec q})$ is a two-component spinor containing the electron and hole amplitudes for the quasiparticle at energy $E_{\vec q}$. Choosing a gauge where $\phi$ is constant, a convenient phase convention is
-            \begin{equation}
-                \Psi_{0}(E_{\vec q})\equiv
-                \begin{psmallmatrix}
-                    u_0(E_{\vec q}) \\
-                    v_0(E_{\vec q})\,e^{\ima\phi}
-                \end{psmallmatrix}\,,
-            \end{equation}
-            so that the condensate phase appears explicitly in the hole component.
-        
-            In the bulk description above, quasiparticle states are naturally labeled by the mode index (here the wave vector $\vec q$). In scattering problems, by contrast, one typically works at fixed quasiparticle energy $E$ (set by bias and the reservoir distributions) and distinguishes electron-like and hole-like branches through the sign of the normal-state energy.
-
-            Accordingly, we reparametrize the bulk dispersion relation $E^2=\xi^2+|\Delta|^2$ in terms of
-            \begin{equation}
-                \xi_{\pm}(E) = \pm\sqrt{E^2-|\Delta|^2}\,.
-                \label{eq:meso:xi-branches}
-            \end{equation}
-            For $|E|<|\Delta|$ the quantity $\xi_{\pm}(E)$ is purely imaginary, reflecting that bulk solutions are evanescent rather than propagating.
-
-            The corresponding coherence factors of a uniform $s$-wave superconductor can then be written in their standard form,
-            \begin{equation}
-                \begin{aligned}
-                    u_0(E) &= \sqrt{\tfrac{1}{2}\left(1+\xi_{\pm}(E)\,/\,E\right)}\,,\\
-                    v_0(E) &= \sqrt{\tfrac{1}{2}\left(1-\xi_{\pm}(E)\,/\,E\right)}\,.
-                \end{aligned}
-                \label{eq:meso:coherence-factors}
-            \end{equation}
-            Here the choice of branch $\xi_{\pm}(E)$ corresponds to electron-like ($+$) or hole-like ($-$) propagation. These energy-domain expressions will be used throughout the following scattering formulations (e.g. BTK), where one works at fixed $E$ rather than fixed $\vec q$.
-
-        The absence of propagating subgap quasiparticles in a homogeneous superconductor is the microscopic origin of Andreev conversion at an NS interface. In particular, the spectrum $E^2=\xi^2+|\Delta|^2$ implies the familiar BCS density of states, Equation~\eqref{eq:micro:dos-bcs}, while for $|E|<|\Delta|$ one must describe transport in terms of coherent electron--hole conversion processes.
+        The BdG formalism therefore supplies the electron--hole amplitudes and phases needed for superconducting scattering, but it does not by itself specify the interface or contact geometry. The absence of propagating subgap states in a homogeneous superconductor leads directly to coherent electron--hole conversion at an NS interface, which is introduced as Andreev reflection in the following subsection. The same framework also reproduces the BCS density of states in Eq.~\eqref{eq:micro:dos-bcs}. \cite{andreev_thermal_1964,blonder_transition_1982,beenakker_quantum_1992}
     
 
     %=========================================================
@@ -192,14 +93,18 @@
 
             \begin{figure}[t]
                 \centering
+                \subfigure[Schematic of single-particle process]{\import{theory/schema/semiconductor}{ns-qp.pdf_tex}}
+                \hfill
                 \subfigure[Spectral weight of single-particle process]{\import{theory/meso}{btk-1e-dos.pgf}}
                 \hfill
-                \subfigure[Spectral weight of two-particle process]{\import{theory/meso}{btk-2e-dos.pgf}}
-                \subfigure[\textit{I--V} characteristic]{\import{theory/meso}{btk-iv.pgf}}
+                \subfigure[All-particle \textit{I--V} characteristic]{\import{theory/meso}{btk-iv.pgf}}
+                \subfigure[Schematic of two-particle process]{\import{theory/schema/semiconductor}{ns-ar.pdf_tex}}
                 \hfill
-                \subfigure[\textit{dI--dV} characteristics]{\import{theory/meso}{btk-didv.pgf}}
+                \subfigure[Spectral weight of two-particle process]{\import{theory/meso}{btk-2e-dos.pgf}}
+                \hfill
+                \subfigure[All-particle \textit{dI--dV} characteristics]{\import{theory/meso}{btk-didv.pgf}}
                 \caption{
-                    BTK spectral weights of the single-particle (1e) and two-particle (2e) channels and the corresponding \textit{I--V} and \textit{dI--dV} characteristics for various channel transparencies $\tau$ at $T=0$ and $\gamma=0$. Increasing $\tau$ shifts spectral weight from normal to Andreev processes, leading to enhanced subgap conductance and reduced coherence-peak height.
+                    BTK schematics and spectral weights of the single-particle (1e) and two-particle (2e) channels and the corresponding \textit{I--V} and \textit{dI--dV} characteristics for various channel transparencies $\tau$. Increasing $\tau$ shifts spectral weight from normal to Andreev processes, leading to enhanced subgap conductance and reduced coherence-peak height.
                     }
                 \label{fig:meso:btk}
             \end{figure}
@@ -267,6 +172,19 @@
         The resulting constructive-interference condition quantizes the motion into discrete subgap eigenstates localized around the junction, known as Andreev bound states (ABS) \cite{andreev_thermal_1964,kulik_effect_1969,ishii_josephson_1970}. 
         
         These ABS form the microscopic origin of the dc Josephson effect in short and mesoscopic junctions and their phase-dependent energies $E_n(\phi)$ determine the equilibrium supercurrent via their occupation \cite{beenakker_josephson_1991, beenakker_quantum_1992}.
+
+        The atomic constrictions considered in this thesis are short compared with the superconducting coherence length. In clean aluminum, the BCS coherence length is
+        \begin{equation}
+            \xi_0 = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\,,
+            \label{eq:meso:aluminum-clean-coherence-length}
+        \end{equation}
+        which is of order $1$--$2\,\text{\textmu m}$. For a diffusive aluminum film, the corresponding zero-temperature decay length is
+        \begin{equation}
+            \xi_{\mathrm{dirty},0}
+            = \sqrt{\frac{\hbar D}{\Delta_0}}\,,
+            \label{eq:meso:aluminum-dirty-coherence-length}
+        \end{equation}
+        and is typically of order $100$--$300\,\mathrm{nm}$. Both scales are much larger than an atomic constriction and justify the short-junction approximation used below. \cite{tinkham_introduction_2004,steinberg_quasi-particle_2008}
 
         %=========================================================
         \subsubsection*{Andreev Approximation and Limit}
