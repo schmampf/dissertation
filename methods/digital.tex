@@ -299,11 +299,11 @@
         \subsubsection*{MAR Fitting}
         %=========================================================
 
-            To determine the pincode of an atomic contact, the measured finite-transmission spectrum has to be compared to MAR theory. The fit parameters for a multi-channel contact were therefore the channel transmissions ${\tau_i}$ and, depending on the data set, the effective temperature $T$, the zero-temperature gap $\Delta_0$, and the broadening $\gamma$.
+            To determine the mesoscopic pincode $\{\tau_i\}$ of an atomic contact, I compared the measured finite-transmission spectrum with MAR theory. The fit parameters for a multichannel contact were therefore the channel transmissions $\{\tau_i\}$ and, depending on the data set, the effective temperature $T$, the zero-temperature gap $\Delta_0$, and the broadening $\gamma$.
 
             For fitting, the experimental trace was first mapped onto the non-uniform voltage grid of the theory landscape. This grid used many points in the subgap region, where the channel transmissions determine the MAR structure, and fewer points far outside the gap, where the spectrum mainly constrains the total transmission. Only voltage points for which both experimental and theoretical values existed were kept. I compared the traces using the normalized finite-bias conductance. This avoids numerical differentiation of noisy MAR traces while still comparing the nonlinear subgap structure. An optional weight vector could mask voltage regions that should not constrain the MAR fit, most importantly a central switching or supercurrent feature that is not described by the dc quasiparticle MAR model.
 
-            The actual fit was a grid-based landscape search. Candidate pincodes were generated from the discrete transmission grid and restricted to a plausible interval of total transmission, $\tau_{\Sigma,\mathrm{min}}\leq \sum_i \tau_i \leq \tau_{\Sigma,\mathrm{max}}$. For each candidate and for each point in the $(T,\Delta,\gamma)$ grid, the residual score was
+            The actual fit was a grid-based landscape search. Candidate mesoscopic pincodes were generated from the discrete transmission grid and restricted to a plausible interval of total transmission, $\tau_{\Sigma,\mathrm{min}}\leq \sum_i \tau_i \leq \tau_{\Sigma,\mathrm{max}}$. For each candidate and for each point in the $(T,\Delta,\gamma)$ grid, the residual score was
             \begin{equation}
                 \chi^2(\boldsymbol{\tau},T,\Delta,\gamma)
                 =

@@ -487,18 +487,31 @@
         \subsubsection*{Multichannel Atomic Contacts}
         %=========================================================
 
-            A short atomic contact is described by its transmission eigenvalue set, or channel PIN code, $\boldsymbol{\tau}=\{\tau_i\}$. Independent channels contribute additively to the coherent dc current,
+            A short atomic contact is described by its mesoscopic pincode, the transmission-eigenvalue set $\{\tau_i\}$. Independent channels contribute additively to the coherent dc current,
             \begin{equation}
-                I_\mathrm{MAR}(V;\boldsymbol{\tau},T,\Delta,\gamma)
+                I(V,\{\tau_i\},T,\Delta,\gamma)
                 =
-                \sum_i I_\mathrm{HA}(V;\tau_i,T,\Delta,\gamma)\,.
+                \sum_i I(V,\tau_i,T,\Delta,\gamma)\,.
                 \label{eq:meso:channel-sum}
             \end{equation}
-            The normal-state conductance constrains only $G_\mathrm{N}=G_0\sum_i\tau_i$. By contrast, different channel sets with the same conductance produce different nonlinear MAR line shapes. Fits to the measured \textit{I--V} or \textit{dI--dV} characteristic can therefore resolve the individual transmissions, within the independent-channel short-contact model.
+            Each transmission produces a characteristic \textit{I--V} and \textit{dI--dV} line shape because the probabilities of the different MAR orders depend differently on $\tau_i$. Their channel sum therefore retains information about the individual transmissions. This pronounced sensitivity to $\{\tau_i\}$ makes MAR spectroscopy a channel-resolved probe of the mesoscopic pincode \cite{scheer_conduction_1997}.
+
+            The normal-state conductance constrains only the total transmission, so different mesoscopic pincodes can have the same $G_\mathrm{N}$. Their nonlinear SIS spectra generally remain distinguishable and can be fitted to extract $\{\tau_i\}$ within the coherent short-contact model. Channels with the same transmission produce identical spectral contributions and therefore cannot be distinguished individually. The fitting procedure is described in the methods section (Sec.~\ref{subsec:methods:digital:analysis}).
 
         %=========================================================
         \subsubsection*{Charge-Resolved MAR}
         %=========================================================
+
+
+
+            Full counting statistics provides a process-resolved extension of the coherent MAR calculation \cite{cuevas_full_2003}. We use it only to decompose the dc current into contributions associated with transfer of an effective charge $q=me$,
+            \begin{equation}
+                I(V)=\sum_{m=1}^{\infty} I_m(V)\,.
+                \label{eq:meso:fcs-decomposition}
+            \end{equation}
+            The index $m$ now labels transfer charge rather than only the threshold order used in Eq.~\eqref{eq:meso:mar-sgs}. The two meanings are physically connected because lower voltages require longer Andreev sequences and permit larger effective charge transfers, but several $I_m$ can coexist at the same bias.
+
+            Figure~\ref{fig:meso:fcs} shows this redistribution for three transmissions. Near the gap edge, low-order processes carry most of the current. Lower bias requires access to larger transfer orders, although these processes are strongly suppressed in the tunneling regime. As $\tau$ increases, repeated traversal becomes more probable and several charge-transfer orders acquire appreciable weight.
 
             \begin{figure}[t]
                 \centering
@@ -513,27 +526,25 @@
                 \subfigure[
                     $\tau = 0.33$
                     ]{\import{theory/meso}{fcs-033.pgf}}
-                \hfill
-                \subfigure[
-                    $\tau = 0.10$
-                    ]{\import{theory/meso}{fcs-010.pgf}}
                 \caption{
-                    Charge-resolved MAR current for four single-channel transmissions.
+                    Charge-resolved MAR current for three single-channel transmissions.
                     Each panel decomposes the total current into contributions $I_m(V)$ associated with effective charge transfer $q=me$.
                     Lower bias requires access to larger transfer orders, while increasing $\tau$ makes repeated traversal more probable and allows several orders to carry appreciable current.
                     }
                 \label{fig:meso:fcs}
             \end{figure}
 
+            Figure~\ref{fig:meso:fcs-m-inv} compares the total Hamiltonian result with its charge-resolved representation. Panels (a) and (b) show the total current and differential conductance, while panels (c) and (d) resolve the same structures into $I_m(V)$. Their sum recovers the total response in Eq.~\eqref{eq:meso:fcs-decomposition}, and the inverse-voltage axis makes the alignment with the KBT thresholds explicit.
+
             \begin{figure}[t]
                 \centering
-                \subfigure[
-                    Total HA \textit{I--V}
-                    ]{\import{theory/meso}{ha-iv-inv.pgf}}
-                \hspace{.1in}
-                \subfigure[
-                    Total HA \textit{dI--dV}
-                    ]{\import{theory/meso}{ha-didv-inv.pgf}}
+                % \subfigure[
+                %     Total HA \textit{I--V}
+                %     ]{\import{theory/meso}{ha-iv-inv.pgf}}
+                % \hspace{.1in}
+                % \subfigure[
+                %     Total HA \textit{dI--dV}
+                %     ]{\import{theory/meso}{ha-didv-inv.pgf}}
                 \subfigure[
                     Charge-resolved \textit{I--V}
                     ]{\import{theory/meso}{fcs-iv-m-inv.pgf}}
@@ -548,16 +559,5 @@
                     }
                 \label{fig:meso:fcs-m-inv}
             \end{figure}
-
-            Full counting statistics provides a process-resolved extension of the coherent MAR calculation \cite{cuevas_full_2003}. We use it only to decompose the dc current into contributions associated with transfer of an effective charge $q=me$,
-            \begin{equation}
-                I(V)=\sum_{m=1}^{\infty} I_m(V)\,.
-                \label{eq:meso:fcs-decomposition}
-            \end{equation}
-            The index $m$ now labels transfer charge rather than only the threshold order used in Eq.~\eqref{eq:meso:mar-sgs}. The two meanings are physically connected because lower voltages require longer Andreev sequences and permit larger effective charge transfers, but several $I_m$ can coexist at the same bias.
-
-            Figure~\ref{fig:meso:fcs} shows this redistribution for four transmissions. Near the gap edge, low-order processes carry most of the current. Lower bias requires access to larger transfer orders, although these processes are strongly suppressed in the tunneling regime. As $\tau$ increases, repeated traversal becomes more probable and several charge-transfer orders acquire appreciable weight.
-
-            Figure~\ref{fig:meso:fcs-m-inv} compares the total Hamiltonian result with its charge-resolved representation. Panels (a) and (b) show the total current and differential conductance, while panels (c) and (d) resolve the same structures into $I_m(V)$. Their sum recovers the total response in Eq.~\eqref{eq:meso:fcs-decomposition}, and the inverse-voltage axis makes the alignment with the KBT thresholds explicit.
-
+            
             The resolved functions $I_m(V)$ also provide the natural input for photon-assisted MAR. Each effective-charge contribution can later be dressed with its corresponding charge-dependent photon sidebands, without introducing that microwave extension into the present dc section.
