@@ -125,3 +125,114 @@
                         \right),
                 \label{eq:meso:pamar-unified}
             \end{equation}
+
+
+
+        Multiple Andreev reflection (MAR) provides the microscopic mechanism of subgap transport in voltage-biased SNS weak links or short superconducting point contacts. For $|eV|<2\Delta$, quasiparticles cannot directly enter the quasiparticle continua of the superconducting leads. Instead, transport proceeds through successive Andreev conversions at the two S interfaces, alternating between electron- and hole-like character. Each traversal across the junction shifts the quasiparticle energy by $\pm eV$, producing an ``energy ladder'' that must bridge the gap $2|\Delta|$ before escape into the continuum becomes possible. In the trajectory picture of Klapwijk, Blonder, and Tinkham (KBT) \cite{klapwijk_explanation_1982}, MAR cycles involving $m$ such subgap energy increments turn on at
+        \begin{equation}
+            eV_m=\frac{2|\Delta|}{m}\,,\qquad m=1,2,3,\dots\,.
+            \label{eq:meso:mar-sgs}
+        \end{equation}
+
+        We use the index $m$ because, in this idealized ladder picture, the same integer that counts the required number of traversals also sets the characteristic charge-transfer scale associated with the corresponding MAR cycle. Strictly speaking, $m$ here counts the number of Andreev-assisted energy increments needed to reach the quasiparticle continua. The full charge-transfer statistics contains contributions from several $q=ke$ and becomes particularly transparent in a full-counting-statistics formulation.
+
+        Historically, the first widely used quantitative treatment is the incoherent semiclassical OTBK model \cite{octavio_subharmonic_1983}, which evolves energy- and direction-resolved quasiparticle occupation probabilities within a Boltzmann-type scheme. For short, ballistic few-channel contacts, however, transport is phase coherent and naturally parameterized by the transmission eigenvalues $\{\tau_i\}$. We therefore use OTBK mainly as a qualitative reference and turn to the fully coherent, channel-resolved Hamiltonian/scattering approach of Cuevas \textit{et al.} for quantitative modeling across the full transparency range.
+
+        In the high-transparency limit, it is often useful to connect this MAR picture back to the Andreev bound states: under a dc bias the phase evolves in time, and the system is repeatedly swept through the avoided crossing of the ABS branches near $\phi\approx\pi$ (opened by finite normal reflection, $1-\tau$). Nonadiabatic Landau--Zener transitions at this avoided crossing provide an intuitive two-level viewpoint on how a running phase generates dissipation and populates the quasiparticle continuum. We mention this perspective only as physical intuition; for quantitative $I$--$V$ characteristics at arbitrary $\tau$ we rely on the Hamiltonian Approach discussed below.
+
+        %=========================================================
+        \subsubsection*{Hamiltonian Approach}
+        %=========================================================
+
+            \begin{figure}[t]
+                \centering
+                \subfigure[
+                    \text{I--V} characteristic
+                    ]{\import{theory/meso}{ha-iv.pgf}}
+                \hfill
+                \subfigure[
+                    \text{dI--dV} characteristic
+                    ]{\import{theory/meso}{ha-didv.pgf}}
+                \caption{
+                    \textit{I--V} and \textit{dI--dV} characteristics of the Hamiltonian approach (HA) for a short single-channel contact at selected transparencies.
+                    }
+                \label{fig:meso:mar-ha}
+            \end{figure}
+
+            Following Cuevas \textit{et al.} \cite{cuevas_hamiltonian_1996}, we model a short superconducting point contact by two bulk BCS reservoirs coupled by a local link. This is the same microscopic starting point used throughout this chapter: in equilibrium ($V=0$) it yields Andreev bound states (Sec.~\ref{subsec:meso:abs}), while under finite voltage bias it generates coherent multiple Andreev reflection (MAR) and the corresponding subharmonic-gap structure in the dc $I$--$V$ characteristics. The various MAR formalisms (Hamiltonian approach, and its full-counting-statistics extension) differ primarily in the solution method and in the observables extracted, not in the underlying Hamiltonian.
+
+            The junction Hamiltonian is written as
+            \begin{align}
+                \hat{H} &= \hat{H}_L + \hat{H}_R + \hat{H}_T(t)\,,\\
+                \hat{H}_T(t) &= \sum_\sigma \left( t\,e^{+\ima \phi(t)/2}\,\hat{c}^\dagger_{L\sigma}\hat{c}_{R\sigma}
+                + t\,e^{-\ima \phi(t)/2}\,\hat{c}^\dagger_{R\sigma}\hat{c}_{L\sigma}\right)\,.
+                \label{eq:ha:ht}
+            \end{align}
+
+            The dc voltage bias is incorporated through the superconducting phase difference $\phi(t)$. Its voltage-driven part corresponds to the $q=2e$ phase $\phi_{2e}(t)$ defined in Eq.~\eqref{eq:micro:pat:phase}. Choosing this time dependence to reside in the coupling term makes the problem explicitly time periodic and requires a nonequilibrium treatment. In the Hamiltonian approach this is handled with Keldysh Green functions in Nambu space and a Floquet (sideband) representation in energy, yielding the dc current $I(V)$ for arbitrary transparency $\tau$. Finite temperature enters through the reservoir occupations and, if desired, a phenomenological broadening $\gamma$ can be used to regularize the low-bias limit.
+
+            Figure~\ref{fig:meso:mar-ha} illustrates the characteristic evolution of MAR transport with transparency. For small $\tau$ the subgap current is dominated by higher-order MAR cycles and therefore exhibits distinct onsets at the KBT voltages $V_m$. As $\tau$ increases, Andreev conversion becomes more probable at each interface, so that the subgap current rises strongly and the SGS contrast is reduced. In the ballistic limit ($\tau\approx 1$), transport approaches an almost continuous MAR ladder with a large subgap current and a sizable excess current above the gap.
+
+        %=========================================================
+        \subsubsection*{Full Counting Statistics}
+        %=========================================================
+
+            \begin{figure}[t]
+                \centering
+                \subfigure[
+                    $\tau = 0.90$
+                    ]{\import{theory/meso}{fcs-090.pgf}}
+                \hfill
+                \subfigure[
+                    $\tau = 0.66$
+                    ]{\import{theory/meso}{fcs-066.pgf}}
+                \subfigure[
+                    $\tau = 0.33$
+                    ]{\import{theory/meso}{fcs-033.pgf}}
+                \hfill
+                \subfigure[
+                    $\tau = 0.10$
+                    ]{\import{theory/meso}{fcs-010.pgf}}
+                \caption{Charge-resolved MAR current from a full-counting-statistics (FCS) decomposition. Each panel shows the set of contributions $\{I_m(V)\}$ (Eq.~\eqref{eq:meso:fcs-decomposition}) for a fixed channel transmission $\tau$ as a function of dc bias. The index $m$ labels the effective charge transfer $q=me$ associated with a given MAR cycle. At low bias (large $m\simeq 2\Delta/eV$) higher-order processes dominate, while near the gap edge ($eV\lesssim 2\Delta$) the weight shifts to smaller $m$; increasing transparency redistributes weight towards lower orders and enhances the overall subgap current.}
+                \label{fig:meso:fcs}
+            \end{figure}
+
+            \begin{figure}[t]
+                \centering
+                \subfigure[
+                    \text{I--V} characteristic
+                    ]{\import{theory/meso}{ha-iv-inv.pgf}}
+                \hspace{.1in}
+                \subfigure[
+                    \text{dI--dV} characteristic
+                    ]{\import{theory/meso}{ha-didv-inv.pgf}}
+                \subfigure[
+                    \text{I--V} characteristic
+                    ]{\import{theory/meso}{fcs-iv-m-inv.pgf}}
+                \subfigure[
+                    \text{dI--dV} characteristic
+                    ]{\import{theory/meso}{fcs-didv-m-inv.pgf}}
+                \caption{Charge-resolved FCS \text{I--V} and \text{dI--dV}, replotted on an inverse-voltage scale to emphasize the subharmonic-gap structure. The vertical markers correspond to the KBT voltages $eV_m=2\Delta/m$ (Eq.~\eqref{eq:meso:mar-sgs}), highlighting how contributions of order $m$ become relevant as the bias enters the corresponding MAR window.}
+                \label{fig:meso:fcs-m-inv}
+            \end{figure}
+
+            Full counting statistics (FCS) provides a process-resolved description of nonequilibrium charge transfer by characterizing the full probability distribution of transferred charge, rather than only its mean. This is particularly natural for MAR in superconducting point contacts: under dc voltage bias, subgap transport proceeds through sequences of Andreev conversions, so that an individual transport cycle can transfer an effective charge $q=me$ with $m\ge 1$. While the Hamiltonian approach yields the total dc current $I(V)$, FCS makes explicit which effective-charge processes dominate at a given bias.
+
+            In practice, FCS is implemented by introducing a counting field $\chi$ that ``tags'' charge transfer across the contact (a phase twist of the coupling term on the Keldysh contour). The resulting cumulant generating function $\mathcal S(\chi)$ encodes all charge-transfer cumulants; in particular, the dc current and current noise follow from derivatives at $\chi=0$. For the present thesis, we do not require the full distribution $P(Q)$, but only the physically transparent decomposition of the dc MAR current into contributions associated with $q=me$ transfer processes,
+            \begin{equation}
+                I(V)=\sum_{m=1}^{\infty} I_m(V)\,.
+                \label{eq:meso:fcs-decomposition}
+            \end{equation}
+            Here $I_m(V)$ quantifies the weight of MAR cycles of order $m$. In the tunneling regime the distribution is strongly peaked at small $m$ (rare higher-order processes), whereas for high transparency several orders contribute simultaneously and the subgap current approaches an almost continuous MAR ladder.
+
+            Figures~\ref{fig:meso:fcs} and \ref{fig:meso:fcs-m-inv} provide an intuitive visualization of this charge-resolved picture for selected transparencies. For each bias point, the total dc current is decomposed into the contributions $I_m(V)$ associated with processes transferring an effective charge $q=me$.
+
+            This decomposition is particularly useful for microwave irradiation. Once the dc weights $I_m(V)$ are known, photon-assisted MAR can be constructed efficiently by dressing each effective-charge contribution $q=me$ with photon sidebands, avoiding a full two-frequency Floquet--Keldysh treatment for dense parameter scans. In the following section we exploit this idea to obtain a practical PAMAR description in terms of the microscopic $I_m(V)$.
+
+            A multi-channel contact was represented by a pincode-like set of transmission eigenvalues $\boldsymbol{\tau}=\{\tau_i\}$. The calculated current was the sum of independent single-channel MAR currents,
+            \begin{equation}
+                I_\mathrm{MAR}(V;\boldsymbol{\tau},T,\Delta,\gamma)
+                =
+                \sum_i I_\mathrm{HA}(V;\tau_i,T,\Delta,\gamma)\,.
+                \label{eq:meso:channel-sum}
+            \end{equation}
