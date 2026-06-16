@@ -502,8 +502,6 @@
         \subsubsection*{Charge-Resolved MAR}
         %=========================================================
 
-
-
             Full counting statistics provides a process-resolved extension of the coherent MAR calculation \cite{cuevas_full_2003}. We use it only to decompose the dc current into contributions associated with transfer of an effective charge $q=me$,
             \begin{equation}
                 I(V)=\sum_{m=1}^{\infty} I_m(V)\,.
@@ -538,26 +536,26 @@
 
             \begin{figure}[t]
                 \centering
-                % \subfigure[
-                %     Total HA \textit{I--V}
-                %     ]{\import{theory/meso}{ha-iv-inv.pgf}}
-                % \hspace{.1in}
-                % \subfigure[
-                %     Total HA \textit{dI--dV}
-                %     ]{\import{theory/meso}{ha-didv-inv.pgf}}
                 \subfigure[
-                    Charge-resolved \textit{I--V}
+                    \textit{I--V} characteristics
+                    ]{\import{theory/meso}{fcs-iv-m.pgf}}
+                \hfill
+                \subfigure[
+                    \textit{I--V} over inverse-voltage
                     ]{\import{theory/meso}{fcs-iv-m-inv.pgf}}
+                \\
                 \subfigure[
-                    Charge-resolved \textit{dI--dV}
+                    \textit{dI--dV} characteristics
+                    ]{\import{theory/meso}{fcs-didv-m.pgf}}
+                \hfill
+                \subfigure[
+                    \textit{dI--dV} over inverse-voltage
                     ]{\import{theory/meso}{fcs-didv-m-inv.pgf}}
                 \caption{
-                    Total and charge-resolved MAR transport on an inverse-voltage scale.
-                    (a,b) The Hamiltonian approach gives the total \textit{I--V} and \textit{dI--dV} characteristics.
-                    (c,d) The FCS decomposition resolves the contributions $I_m(V)$ whose sum reproduces the total response.
+                    Charge-resolved MAR transport on normal- and inverse-voltage scale. The FCS decomposition resolves the contributions $I_m(V)$ whose sum reproduces the total response.
                     Vertical markers identify the KBT thresholds $eV_m=2|\Delta|/m$ and align the onset of each MAR window with the corresponding transport structure.
                     }
                 \label{fig:meso:fcs-m-inv}
             \end{figure}
-            
+
             The resolved functions $I_m(V)$ also provide the natural input for photon-assisted MAR. Each effective-charge contribution can later be dressed with its corresponding charge-dependent photon sidebands, without introducing that microwave extension into the present dc section.
