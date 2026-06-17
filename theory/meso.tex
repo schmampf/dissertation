@@ -13,7 +13,7 @@
     \label{subsec:meso:bdg}
     %=========================================================
 
-        The Bogoliubov--de~Gennes (BdG) formalism is the real-space mean-field extension of BCS theory used for spatially inhomogeneous superconducting structures. We consider spin-singlet \textit{s}-wave pairing without spin-dependent fields, for which the problem separates into two equivalent $2\times2$ electron--hole blocks. This minimal description provides the amplitudes required for Andreev reflection and forms the basis of the scattering treatments of Andreev bound states and multiple Andreev reflection developed below. \cite{bardeen_microscopic_1957,bogoljubov_new_1958,nambu_quasiparticles_1960,de_gennes_superconductivity_1966}
+        The Bogoliubov--de~Gennes (BdG) formalism is the real-space mean-field extension of BCS theory used for spatially inhomogeneous superconducting structures. We consider spin-singlet \textit{s}-wave pairing without spin-dependent fields, for which the problem separates into two equivalent $2\times2$ electron--hole blocks. This minimal description provides the amplitudes required for Andreev reflection and forms the basis of the scattering treatments of Andreev bound states and multiple Andreev reflection developed below. \cite{bardeen_microscopic_1957,bogoljubov_new_1958,nambu_quasi-particles_1960,de_gennes_superconductivity_1966}
 
         We use the effective normal-state Hamiltonian introduced in Eq.~\eqref{eq:quasi:normal-hamiltonian}, with energies measured relative to the chemical potential,
         \begin{equation}
@@ -496,7 +496,7 @@
             \end{equation}
             Each transmission produces a characteristic \textit{I--V} and \textit{dI--dV} line shape because the probabilities of the different MAR orders depend differently on $\tau_i$. Their channel sum therefore retains information about the individual transmissions. This pronounced sensitivity to $\{\tau_i\}$ makes MAR spectroscopy a channel-resolved probe of the mesoscopic pincode \cite{scheer_conduction_1997}.
 
-            The normal-state conductance constrains only the total transmission, so different mesoscopic pincodes can have the same $G_\mathrm{N}$. Their nonlinear SIS spectra generally remain distinguishable and can be fitted to extract $\{\tau_i\}$ within the coherent short-contact model. Channels with the same transmission produce identical spectral contributions and therefore cannot be distinguished individually. The fitting procedure is described in the methods section (Sec.~\ref{subsec:methods:digital:analysis}).
+            The normal-state conductance constrains only the total transmission, so different mesoscopic pincodes can have the same $G_\mathrm{N}$. Their nonlinear SIS spectra generally remain distinguishable and can be fitted to extract $\{\tau_i\}$ within the coherent short-contact model. Channels with the same transmission produce identical spectral contributions and therefore cannot be distinguished individually. The fitting procedure is described in the methods section.
 
         %=========================================================
         \subsubsection*{Charge-Resolved MAR}
@@ -532,7 +532,7 @@
                 \label{fig:meso:fcs}
             \end{figure}
 
-            Figure~\ref{fig:meso:fcs-m-inv} compares the total Hamiltonian result with its charge-resolved representation. Panels (a) and (b) show the total current and differential conductance, while panels (c) and (d) resolve the same structures into $I_m(V)$. Their sum recovers the total response in Eq.~\eqref{eq:meso:fcs-decomposition}, and the inverse-voltage axis makes the alignment with the KBT thresholds explicit.
+            Figure~\ref{fig:meso:fcs-m} compares the charge-resolved decomposition on the usual voltage axis and on an inverse-voltage axis. The top row shows the current contributions, while the bottom row shows the corresponding differential conductance. The inverse-voltage panels make the alignment between the resolved MAR orders and the KBT thresholds explicit.
 
             \begin{figure}[t]
                 \centering
@@ -555,10 +555,38 @@
                         Charge-resolved MAR current and differential conductance for selected single-channel transmissions.
                         (a,c) show the current contributions $I_m(V)$ and their differential conductance on the usual voltage axis.
                         (b,d) show the same decomposition on the inverse-voltage axis, where integer positions correspond to the KBT thresholds $eV_m=2|\Delta|/m$.
-                        Colored curves resolve the effective-charge components labeled by $m$. Shading correspond to different transmissions $\tau$.
+                        Colored curves resolve the effective-charge components labeled by $m$. Shading corresponds to different transmissions $\tau$.
                         This representation makes the redistribution of current among MAR orders and its connection to the subharmonic-gap structure explicit.
                     }
-                \label{fig:meso:fcs-m-inv}
+                \label{fig:meso:fcs-m}
             \end{figure}
 
-            The resolved functions $I_m(V)$ also provide the natural input for photon-assisted MAR. Each effective-charge contribution can later be dressed with its corresponding charge-dependent photon sidebands, without introducing that microwave extension into the present dc section.
+            The resolved functions $I_m(V)$ also provide the natural bridge from dc MAR to photon-assisted MAR. Each component carries an effective charge $q=me$, so a microwave field couples to the different charge-transfer orders with different voltage scales.
+
+        %=========================================================
+        \subsubsection*{Photon-Assisted Multiple Andreev Reflection}
+        %=========================================================
+
+            Irradiated MAR is more complex than dc MAR because a voltage-biased superconducting contact already contains the Josephson frequency $\nu_J=2eV/h$. A microwave drive at frequency $\nu$ adds a second time scale. The driven problem therefore cannot generally be reduced to the single-Floquet structure used for the dc Hamiltonian approach.
+
+            The full coherent ac theory was developed by Cuevas \textit{et al.} for superconducting point contacts of arbitrary transmission \cite{cuevas_subharmonic_2002}. In that treatment the Josephson oscillation and the external microwave drive are handled by a two-frequency Keldysh--Floquet calculation. This double-Floquet theory is the microscopic reference description for subharmonic Shapiro structure and photon-assisted MAR in irradiated point contacts. Its numerical cost, however, is much higher than that of the dc problem, which makes it impractical as the routine model for dense parameter scans and fitting workflows.
+
+            A practical alternative is to combine the Tien--Gordon sideband picture with charge-resolved MAR. Soerensen \textit{et al.} introduced this charge-dependent viewpoint for microwave-modified subharmonic-gap structure, and recent experiments by Carrad \textit{et al.} used the same logic to identify high-order MAR processes from photon-assisted sideband spacings \cite{soerensen_microwave_1974,carrad_photon-assisted_2022}. In the notation used here, the FCS decomposition in Eq.~\eqref{eq:meso:fcs-decomposition} supplies the dc current components $I_m(V)$, and each component is dressed with the Tien--Gordon weights appropriate for its effective charge $q=me$.
+
+            This gives the charge-resolved photon-assisted MAR current
+            \begin{equation}
+                I_\mathrm{PAMAR}(V,A)
+                =
+                \sum_{m\in\mathbb{N}^+}\sum_{n\in\mathbb{Z}}
+                J_n^2\left(\frac{meA}{h\nu}\right)\,
+                I_m\!\left(V+\frac{nh\nu}{me}\right)\,,
+                \label{eq:meso:pamar-current}
+            \end{equation}
+            where $A$ is the effective microwave voltage amplitude at the junction, $m$ labels the effective charge order, and $n$ labels the photon sideband. The corresponding photon-assisted replicas of the KBT thresholds appear approximately at
+            \begin{equation}
+                eV_{m,n}\simeq\frac{2|\Delta|}{m}\pm\frac{nh\nu}{m}\,.
+                \label{eq:meso:pamar-thresholds}
+            \end{equation}
+            The sideband spacing therefore scales as $h\nu/(me)$ in voltage. Photon-assisted MAR can thus identify the effective charge order associated with a subgap feature, complementing the dc charge resolution in Fig.~\ref{fig:meso:fcs-m}.
+
+            Equation~\eqref{eq:meso:pamar-current} is a practical dressing of dc FCS components, not a replacement for the full double-Floquet theory. It neglects coherent two-frequency interference, microwave-induced changes of ABS occupation, heating, environmental energy exchange, and current-biased phase dynamics. Within these limits, it provides an interpretable state-of-the-art model for connecting microwave-induced sidebands to the charge-resolved MAR processes used in this thesis.
