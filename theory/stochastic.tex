@@ -34,12 +34,12 @@
         The environmental impedance sets the spectrum of voltage fluctuations. Since voltage fluctuations integrate into phase fluctuations, the impedance enters through the phase correlation function
         \begin{equation}
             J(t) = \frac{2}{R_\mathrm{Q}} \int_0^\infty
-            \underbrace{\frac{\mathrm{Re}\,Z(\omega)}{\textstyle \omega}}_{\text{coupling}}
-            \left[
+            \underbrace{\vphantom{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}\frac{\mathrm{Re}\,Z(\omega)}{\textstyle \omega}}_{\text{coupling}}
+            \biggl[
             \underbrace{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}_{\text{diffusion}}
             -
-            \underbrace{\ima\sin(\omega t)}_{\text{winding}}
-            \right]\mathrm{d}\omega\,,
+            \underbrace{\vphantom{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}\ima\sin(\omega t)}_{\text{winding}}
+            \biggr]\mathrm{d}\omega\,,
             \label{eq:stochastic:Jt}
         \end{equation}
         Here $R_\mathrm{Q}=h/(2e)^2$ is the superconducting resistance quantum. It sets the impedance scale for phase fluctuations coupled to Cooper-pair charge.
@@ -54,29 +54,30 @@
         The result is a spectrum of allowed energy exchanges. A narrow peak near zero energy means that tunneling is nearly elastic. A broad or structured distribution means that the environment must participate, which produces suppressed onsets, shifted thresholds, and satellite features in measured \textit{I--V} and \textit{dI--dV} curves.
 
         % TODO[THY-04]: Add a schematic of a tunnel junction embedded in $Z(\omega)$ together with representative weak, Ohmic, and resonant $P(E)$ kernels.
-
-        The rate for a tunneling event,
-        \begin{equation}
-            \Gamma(V) = \int_{-\infty}^\infty P(E)\,F(E, V)\,\mathrm{d}E\,,
-            \label{eq:stochastic:rate}
-        \end{equation}
-        is obtained from Fermi's golden rule as a convolution of the environmental spectrum with the electronic tunneling factor. This electronic factor contains the density of states, occupation functions, and matrix elements of the specific process. The same structure applies to single-electron tunneling, Cooper-pair tunneling, and Andreev processes, but the transferred charge fixes the voltage-to-energy conversion. The environment couples to $qV$, with $q=e$ for single-electron tunneling and $q=2e$ for Cooper-pair tunneling and Andreev reflection.
+        % TODO[THY-04]: Add the simulation-ready representation of $P(E)$ used for numerical evaluation.
 
         Two limiting cases give useful intuition. For a weak electromagnetic environment, phase fluctuations are small and tunneling is nearly elastic,
         \begin{equation}
-            P(E) \approx \delta(E) \qquad (\mathrm{Re}\,Z(\omega) \ll R_\mathrm{Q})\,.
+            P(E) \approx \delta(E)\,, \qquad \mathrm{Re}\,Z(\omega) \ll R_\mathrm{Q}\,.
             \label{eq:stochastic:pe-coherent}
         \end{equation}
         In this limit the stochastic description reduces back toward the usual elastic tunneling picture.
 
-        In contrast, a strong electromagnetic environment produces large phase fluctuations and a broad energy-exchange spectrum. For an Ohmic impedance, the low-energy behavior has the power-law form
+        In contrast, a strong electromagnetic environment produces large phase fluctuations and a broad energy-exchange spectrum. For an Ohmic impedance, a simple zero-temperature cutoff model gives
         \begin{equation}
-            P(E) \propto E^{2R/R_\mathrm{Q} - 1} \qquad (E > 0,\ \mathrm{Re}\,Z(\omega) = R)\,,
+            P_\mathrm{Ohmic}(E)
+            = P_0
+            \left(\frac{E}{E_\mathrm{c}}\right)^{2R/R_\mathrm{Q}-1}
+            \exp\!\left(-\frac{E}{E_\mathrm{c}}\right)\,,
+            \qquad
+            E>0\,.
             \label{eq:stochastic:pe-ohmic}
         \end{equation}
-        which shows directly how the impedance controls the low-energy weight of the kernel. This suppression of small-energy exchange underlies dynamical Coulomb blockade and also sets the scale for incoherent Cooper-pair tunneling.
+        Here $E_\mathrm{c}=\hbar\omega_\mathrm{c}$ is the cutoff energy of the environment, and $P_0$ is fixed by the normalization of $P(E)$ for the chosen cutoff model. The power law is the Ohmic low-energy result. The exponential factor only regularizes the high-energy tail, reflecting that a real circuit behaves Ohmically over a finite bandwidth.
+
+        At zero temperature this form has support only for $E>0$, because the environment can absorb energy but cannot emit energy from its ground state. At finite temperature, thermal modes add a negative-energy tail to $P(E)$, corresponding to energy emitted by the environment into the tunneling process. The full finite-temperature kernel is usually evaluated from Eq.~\eqref{eq:stochastic:pedef}. The low-energy suppression of $P(E)$ underlies dynamical Coulomb blockade and also sets the scale for incoherent Cooper-pair tunneling.
         
-        The \textit{P(E)} framework applies to well-separated tunneling events described by rates. It does not describe coherent multi-particle trajectories such as multiple Andreev reflection at finite transparency. Those processes require the mesoscopic description introduced in Sec.~\ref{sec:meso}.
+        The following subsections use the same kernel at three levels of description. DCB dresses a single-junction current by convolution with $P(E)$. Incoherent two-electron tunneling is most naturally written in terms of transition rates. The SSET then combines several such rates in a master equation for charge-state occupations.
 
 
     %=========================================================
@@ -89,6 +90,13 @@
         The physical origin of dynamical Coulomb blockade can be understood by considering the energetic requirements of a single tunneling event. When an electron traverses the junction, it must transiently raise the voltage across the junction capacitor, which requires an electrostatic energy of the order of $E_\mathrm{C} = e^2/2C$. Because this charge transfer takes place within a quantum circuit, the required energy cannot arise from the junction itself, but must instead be supplied by the surrounding electromagnetic environment. Whether the environment can provide this energy is determined by the probability distribution $P(E)$, whose low-energy weight reflects the extent to which environmental modes can exchange small amounts of energy.
         
         If the real part of the environmental impedance is appreciable at low frequencies, the corresponding suppression of $P(E\!\approx\!0)$ makes low-energy charge transfer unlikely. This reduces the differential conductance near zero voltage and suppresses all tunneling events that rely on small energy exchange with the environment. The resulting modification of the \textit{I--V} characteristics is therefore governed by the low-frequency properties of the impedance. This mechanism, rooted in discrete charge transfer and environmental energy conservation, captures the universal essence of dynamical Coulomb blockade.
+
+        For a single-electron tunnel junction, the observable DCB current is obtained by dressing the elastic tunnel current with the environmental energy-exchange spectrum,
+        \begin{equation}
+            I(V) = \int_{-\infty}^{\infty} P(\varepsilon)\, I_0\!\left(V - \frac{\varepsilon}{e}\right)\,\mathrm{d}\varepsilon\,.
+            \label{eq:stochastic:dcb-current-convolution}
+        \end{equation}
+        Here $I_0(V)$ is the current of the same junction in the absence of environmental energy exchange. The convolution states that the voltage energy available to the electronic tunneling process is shifted by the energy $\varepsilon$ absorbed or emitted by the environment. For charge transfer by a general charge $q$, the voltage shift is $\varepsilon/q$. In this subsection $q=e$.
         
         Whenever the low-frequency part of the environmental impedance is Ohmic, $\mathrm{Re}\,Z(\omega)=R$ for $\omega \ll \omega_c$, the suppression of small-energy exchange produces a characteristic power-law dependence of the differential conductance,
         \begin{equation}
@@ -99,12 +107,7 @@
 
         For environments with a real impedance that exceeds $R_\mathrm{Q}$ at low frequencies the tunneling electron cannot draw the small amounts of energy needed for charge transfer. The conductance then becomes exponentially small at low bias. In this strong damping limit the charge remains localized on the junction capacitor and the junction behaves as an effective insulator.
 
-        DCB is not restricted to normal-metal junctions. The expression for the tunneling current retains the same convolution structure,
-        \begin{equation}
-            I(V) \propto \int_{-\infty}^\infty P(E)\, \frac{N_1(E)}{N_0}\, \frac{N_2(E+eV)}{N_0}\, \left(f_1(E)-f_2(E+eV)\right)\,\mathrm{d}E\,.
-            \label{eq:stochastic:dcb-current}
-        \end{equation}
-        but the electronic factor inherits the density of states of the electrodes. For NIN junctions the density of states is constant, for NIS junctions it contains the superconducting BCS form on one side, and for SIS junctions both electrodes contribute superconducting densities of states. Regardless of these microscopic details, the environment suppresses single-electron tunneling through the same low-energy mechanism. In SIS junctions the single-electron current appears only above the pair-breaking threshold $eV \gtrsim 2\Delta$, but once quasiparticle states are available, the environmental suppression acts on the onset in the same way.
+        DCB is not restricted to normal-metal junctions. In Eq.~\eqref{eq:stochastic:dcb-current-convolution}, the elastic current $I_0(V)$ contains the electrode density of states and Fermi occupations. For NIN junctions the density of states is approximately constant, for NIS junctions it contains the superconducting BCS form on one side, and for SIS junctions both electrodes contribute superconducting densities of states. The environment then dresses this elastic current rather than replacing the electronic tunneling model. In SIS junctions the single-electron current appears only above the pair-breaking threshold $eV \gtrsim 2\Delta$, but once quasiparticle states are available, the environmental suppression acts on the onset in the same way.
 
         % TODO[THY-04]: Add a compact comparison figure showing the DCB suppression for $q=e$ and the corresponding ICPT response for $q=2e$.
 
@@ -141,7 +144,7 @@
             \end{equation}
             where $A$ and $\nu$ are the amplitude and frequency of the applied microwave drive.
 
-            The resulting photon-assisted DCB current generalizes Eq.~\eqref{eq:stochastic:dcb-current} by incorporating the additional photon sidebands,
+            The resulting photon-assisted DCB current generalizes Eq.~\eqref{eq:stochastic:dcb-current-convolution} by incorporating the additional photon sidebands,
             \begin{equation}
                 I(V_0) = \sum_{n=-\infty}^{\infty} J_n^2\!\left( \frac{eA}{h\nu}\right) \cdot I_0\!\left(V_0 - \frac{n h\nu}{e}\right)\,.
                 \label{eq:stochastic:padcb}
@@ -156,7 +159,7 @@
     \label{subsec:stochastic:2e}
     %=========================================================
 
-        In the stochastic regime, the superconducting phase can become randomized by the electromagnetic environment, suppressing phase-coherent Josephson tunneling, Andreev bound states, and multiple Andreev reflection. Nevertheless, the transfer of a charge $(2e)$ across a voltage-biased junction remains possible through inelastic tunneling events. These processes form a unified class of incoherent two-electron tunneling, in which the junction exchanges an energy $(2e)V$ with its environment. Their rates are governed by the same $P(E)$ kernel as in dynamical Coulomb blockade, but evaluated at the doubled energy scale associated with the transferred charge.
+        The DCB description above uses $P(E)$ at the level of a measurable single-junction current. For discrete two-electron processes it is more useful to work one level lower, with transition rates. In the stochastic regime, the superconducting phase can become randomized by the electromagnetic environment, suppressing phase-coherent Josephson tunneling, Andreev bound states, and multiple Andreev reflection. Nevertheless, the transfer of a charge $(2e)$ across a voltage-biased junction remains possible through inelastic tunneling events. These processes form a unified class of incoherent two-electron tunneling, in which the junction exchanges an energy $(2e)V$ with its environment. Their rates are governed by the same $P(E)$ kernel as in dynamical Coulomb blockade, but evaluated at the doubled energy scale associated with the transferred charge.
 
         Despite their different microscopic origins, incoherent Cooper-pair tunneling in SIS junctions and incoherent Andreev reflection at NS interfaces share the same universal structure:
         \begin{equation}
@@ -290,9 +293,16 @@
         \subsubsection*{Transport Cycles in the SSET}
         %=========================================================
 
+            % TODO[THY-04]: Specify the device-dependent transition energies and current operator for the SSET master equation used in the measurements.
+
             The coexistence of quasiparticle and Cooper-pair processes gives rise to distinct transport cycles, including Josephson--quasiparticle (JQP) cycles, double Josephson--quasiparticle (DJQP) cycles, and subgap cycles involving incoherent Andreev reflection. These cycles arise when a sequence of energetically allowed transitions forms a closed loop in charge-state space, enabling a steady-state current through the device. In the stochastic regime, the rates of Cooper-pair steps are governed by ICPT, the quasiparticle steps follow the DCB-modified single-electron tunneling expression, and the cycle current is often set by the slowest transition.
 
-            A quantitative description is obtained by writing rate equations for the charge-state occupations and computing the steady-state current. This rate-equation viewpoint is the natural connection between the single-junction stochastic processes described above and gate-dependent SSET stability maps.
+            A quantitative description is obtained by writing a master equation for the charge-state occupations $p_n$,
+            \begin{equation}
+                \dot{p}_n = \sum_m \left(\Gamma_{m\to n}p_m - \Gamma_{n\to m}p_n\right)\,, \qquad \sum_n p_n = 1\,.
+                \label{eq:stochastic:sset-master}
+            \end{equation}
+            The steady-state solution $\dot{p}_n=0$ gives the occupation probabilities of the island charge states, and the measured current follows from the net rate of charge transfer through one junction. This master-equation viewpoint is the natural connection between the single-junction stochastic processes described above and gate-dependent SSET stability maps.
 
     %=========================================================
     \subsection{Coherent and Incoherent Transport in SSETs}
