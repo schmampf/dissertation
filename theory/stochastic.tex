@@ -5,9 +5,9 @@
 \label{sec:stochastic}
 %=========================================================
     
-    The microscopic, macroscopic, and mesoscopic descriptions developed above emphasize different degrees of freedom of a superconducting weak link. The microscopic description treats quasiparticle spectra and tunneling densities of states. The macroscopic description treats the condensate phase as a collective dynamical variable. The mesoscopic description treats coherent scattering, Andreev reflection, and finite-transmission trajectories. A complete transport description also has to specify the electromagnetic environment in which the junction is embedded. The surrounding impedance produces voltage fluctuations, absorbs and emits energy, and can therefore participate directly in a tunneling event.
+    The microscopic, macroscopic, and mesoscopic descriptions developed above emphasize different degrees of freedom of a superconducting weak link. The microscopic description treats quasiparticle spectra and tunneling densities of states. The macroscopic description treats the condensate phase as a collective dynamical variable. The mesoscopic description treats coherent scattering, Andreev reflection, and finite-transmission trajectories. The stochastic description adds the electromagnetic environment as an active transport degree of freedom. The surrounding impedance produces voltage fluctuations, absorbs and emits energy, and can therefore participate directly in a tunneling event.
 
-    This crossover is governed by the conjugacy of the superconducting phase $\phi$ and the charge $q$ on the junction,
+    The relevant crossover is governed by the conjugacy of the superconducting phase $\phi$ and the charge $q$ on the junction,
     \begin{equation}
         \left[\phi, q\right] = 2e\ima\,,
         \label{eq:stochastic:phase-charge}
@@ -18,84 +18,65 @@
         \label{eq:stochastic:phase-fluctuation}
     \end{equation}
 
-    In the strongly fluctuating limit, phase memory can decay until the long-time average of a phase-sensitive factor vanishes,
-    \begin{equation}
-        \left\langle \exp(\ima\phi(t))\right\rangle = 0\,.
-        \label{eq:stochastic:phase-average}
-    \end{equation}
-    A reduced phase average signals suppression of long-range phase coherence. Coherent Josephson and Andreev processes are then broadened or suppressed rather than being removed at a sharp boundary. In the limit where independent tunneling events dominate, their rates are governed by the energy exchanged with the electromagnetic environment. The crossover depends on the frequency-dependent impedance, junction parameters, temperature, and the transport process under consideration.
+    Strong phase fluctuations suppress phase memory over long times. Coherent Josephson and Andreev processes are then broadened or suppressed rather than being removed at a sharp boundary. In the limit where independent tunneling events dominate, their rates are governed by the energy exchanged with the electromagnetic environment. The crossover depends on the frequency-dependent impedance, junction parameters, temperature, and the transport process under consideration.
 
-    In this incoherent limit, charge transfer proceeds through discrete tunneling events. The environment can absorb or emit energy during each event, so the tunneling rates depend on both the electronic density of states and the impedance of the surrounding circuit. This interplay is described by \textit{P(E)} theory, which gives the probability density for energy exchange between a tunnel junction and its environment.
-
-    The stochastic description therefore complements the microscopic, macroscopic, and mesoscopic frameworks by making environmental energy exchange an explicit part of superconducting transport. The following subsections introduce the \textit{P(E)} formalism and apply it to dynamical Coulomb blockade of single-electron tunneling\footnote{In the microscopic description, tunneling is elastic and proceeds between well-defined BCS quasiparticle states. In the stochastic description, environmental fluctuations dress single-electron tunneling and make the energy exchange probabilistic.}, incoherent Cooper-pair tunneling and its photon-assisted counterpart, and the superconducting single-electron transistor.
+    In this incoherent limit, charge transfer proceeds through discrete tunneling events. The environment can absorb or emit energy during each event, so the tunneling rates depend on both the electronic density of states and the impedance of the surrounding circuit. This interplay is described by \textit{P(E)} theory, which gives the probability density for energy exchange between a tunnel junction and its environment. The following subsections apply this formalism to dynamical Coulomb blockade of single-electron tunneling, incoherent Cooper-pair tunneling and its photon-assisted counterpart, and the superconducting single-electron transistor.
     
 
     %=========================================================
+    \newpage
     \subsection[P(E)--Theory]{\textit{P(E)}--Theory}
     \label{subsec:stochastic:pe-theory}
     %=========================================================
 
-        In the presence of strong phase fluctuations, charge transport through a tunnel junction occurs as a sequence of independent events. The tunneling rate is then determined not only by the electronic density of states and occupation factors, but also by the probability $P(E)$ that the environment exchanges an energy $E$ with the junction. This makes tunneling inelastic even at zero temperature and forms the basis of the stochastic description used below.
+        In the presence of strong phase fluctuations, charge transport through a tunnel junction occurs as a sequence of independent events. Each event may exchange energy with the surrounding circuit. The central object is therefore the probability density $P(E)$ for the environment to absorb or emit the energy needed during tunneling.
 
-        The statistical properties of these fluctuations are determined by the environmental impedance $Z(\omega)$. Within linear-response theory, the phase correlation function can be written as
+        The environmental impedance sets the spectrum of voltage fluctuations. Since voltage fluctuations integrate into phase fluctuations, the impedance enters through the phase correlation function
         \begin{equation}
-            J(t) = \frac{2}{R_\mathrm{Q}} \int_0^\infty \frac{\mathrm{Re}\,Z(\omega)}{\omega}
-            \coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right) \left(\cos(\omega t) - 1\right)
-            - \ima\sin(\omega t)\,\mathrm{d}\omega\,,
+            J(t) = \frac{2}{R_\mathrm{Q}} \int_0^\infty
+            \underbrace{\frac{\mathrm{Re}\,Z(\omega)}{\textstyle \omega}}_{\text{coupling}}
+            \left[
+            \underbrace{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}_{\text{diffusion}}
+            -
+            \underbrace{\ima\sin(\omega t)}_{\text{winding}}
+            \right]\mathrm{d}\omega\,,
             \label{eq:stochastic:Jt}
         \end{equation}
-        where $R_\mathrm{Q}$ is the superconducting resistance quantum\footnote{The superconducting resistance quantum is $R_\mathrm{Q} = h/(2e)^2 \approx 6.453\,\mathrm{k\Omega}$, which appears when phase fluctuations couple to Cooper-pair charge $2e$. The quantity $R_0 = h/2e^2 = 12.9\,\mathrm{k\Omega}$ is the resistance quantum for a single spin-resolved electronic channel. In this thesis the conductance quantum is defined as $G_0 = 2e^2/h = 77.48\,\mu\mathrm{S}$, which includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. $R_\mathrm{Q}$ governs the strength of phase fluctuations in the stochastic description, while $R_0$ and $G_0$ appear in mesoscopic transport and Landauer-type expressions.}.
+        Here $R_\mathrm{Q}=h/(2e)^2$ is the superconducting resistance quantum. It sets the impedance scale for phase fluctuations coupled to Cooper-pair charge.
 
-        The structure of Eq.~\ref{eq:stochastic:Jt} reflects how the electromagnetic environment shapes the phase dynamics. The factor $\mathrm{Re}\,Z(\omega)$ captures the dissipative part of the environment, which determines how strongly voltage fluctuations couple to the junction. It appears divided by $\omega$ because the phase is the time integral of the voltage, so that low-frequency components contribute most strongly to its fluctuations. The thermal occupation of each environmental mode enters through the factor $\coth(\beta\hbar\omega/2)$, ensuring that both quantum and thermal noise are included. The combination $\cos(\omega t)-1$ forms the real part of $J(t)$ and describes phase diffusion, reflecting the loss of phase memory induced by fluctuating voltages. In contrast, the term $-\ima\sin(\omega t)$ yields the imaginary part of $J(t)$ and encodes the phase winding generated by the environment. Altogether, these ingredients ensure that the long-time or low-frequency behavior of the environmental impedance dominates the asymptotic form of $J(t)$.
+        Equation~\eqref{eq:stochastic:Jt} can be read from left to right through the three annotated factors. The coupling factor gives the dissipative environmental spectrum seen by the junction. The division by frequency appears because phase is the time integral of voltage, which makes low-frequency noise especially effective. The diffusion factor is the real part of the correlator and describes loss of phase memory. The winding factor is the imaginary part and tracks the deterministic phase shift generated by the environment.
 
-        The energy-exchange probability is defined as the Fourier transform of the phase correlator,
+        The energy-exchange probability is obtained by Fourier transforming this phase correlator,
         \begin{equation}
             P(E) = \frac{1}{2\pi\hbar} \int_{-\infty}^{\infty} \exp\left(J(t) + \ima E t/\hbar\right)\,\mathrm{d}t\,.
             \label{eq:stochastic:pedef}
         \end{equation}
-        This formulation assumes a linear, Gaussian environment, so that all phase fluctuations are captured by the correlator $J(t)$. The shape of $P(E)$ therefore reflects the spectral properties of the environment in a universal way. A narrow peak near $E=0$ corresponds to nearly elastic tunneling, while a broad or structured distribution produces suppressed onsets, shifted thresholds, and satellite features in measured \textit{I--V} and \textit{dI--dV} curves.
+        The result is a spectrum of allowed energy exchanges. A narrow peak near zero energy means that tunneling is nearly elastic. A broad or structured distribution means that the environment must participate, which produces suppressed onsets, shifted thresholds, and satellite features in measured \textit{I--V} and \textit{dI--dV} curves.
 
         % TODO[THY-04]: Add a schematic of a tunnel junction embedded in $Z(\omega)$ together with representative weak, Ohmic, and resonant $P(E)$ kernels.
-        
-        An important universal property of the $P(E)$ function is its normalization,
-        \begin{equation}
-            \int_{-\infty}^{\infty} P(E)\,\mathrm{d}E = 1\,,
-            \label{eq:stochastic:pe-normalization}
-        \end{equation}
-        which follows directly from the definition in Eq.~\ref{eq:stochastic:pedef} and the condition $J(t\!\to\!0)=0$. This ensures that environmental fluctuations redistribute spectral weight among different energy-exchange channels without altering the total tunneling probability.
 
-        In thermal equilibrium the environment additionally satisfies the detailed-balance relation
-        \begin{equation}
-            P(-E) = e^{-E/k_\mathrm{B}T} P(E)\,,
-            \label{eq:stochastic:pe-detailedbalance}
-        \end{equation}
-        which guarantees thermodynamic consistency of energy exchange processes.
-
-        The rate for a tunneling event\footnote{Throughout this work we distinguish between the Dynes broadening parameter $\gamma$, which enters the quasiparticle density of states in the microscopic tunneling description, and the tunneling rates $\Gamma$ that appear in the stochastic description of incoherent charge transfer. The two quantities are unrelated and refer to different physical mechanisms.},
+        The rate for a tunneling event,
         \begin{equation}
             \Gamma(V) = \int_{-\infty}^\infty P(E)\,F(E, V)\,\mathrm{d}E\,,
             \label{eq:stochastic:rate}
         \end{equation}
-        is obtained from Fermi's golden rule as a convolution of $P(E)$ with the electronic factor $F(E,V)$. This factor contains the density of states, occupation functions, and matrix elements of the specific tunneling process. The structure applies to single-electron tunneling, Cooper-pair tunneling, and Andreev processes alike\footnote{The transferred charge fixes the voltage-to-energy conversion. The environment couples to $qV$, with $q=e$ for single-electron tunneling and $q=2e$ for Cooper-pair tunneling and Andreev reflection.}.
+        is obtained from Fermi's golden rule as a convolution of the environmental spectrum with the electronic tunneling factor. This electronic factor contains the density of states, occupation functions, and matrix elements of the specific process. The same structure applies to single-electron tunneling, Cooper-pair tunneling, and Andreev processes, but the transferred charge fixes the voltage-to-energy conversion. The environment couples to $qV$, with $q=e$ for single-electron tunneling and $q=2e$ for Cooper-pair tunneling and Andreev reflection.
 
-        Several limiting forms of $P(E)$ are particularly useful for understanding the stochastic transport regime. The \textit{P(E)} framework applies strictly to tunneling processes, where individual transfer events are well separated and described by Fermi's golden rule. It does not capture coherent multi-particle trajectories such as multiple Andreev reflections, which require a mesoscopic description at finite transparency. For a weak electromagnetic environment, phase fluctuations are small and $P(E)$ becomes sharply peaked around $E=0$, approaching
+        Two limiting cases give useful intuition. For a weak electromagnetic environment, phase fluctuations are small and tunneling is nearly elastic,
         \begin{equation}
             P(E) \approx \delta(E) \qquad (\mathrm{Re}\,Z(\omega) \ll R_\mathrm{Q})\,.
             \label{eq:stochastic:pe-coherent}
         \end{equation}
-        In this limit tunneling is effectively elastic and the environmental correction becomes weak.
+        In this limit the stochastic description reduces back toward the usual elastic tunneling picture.
 
-        In contrast, a strong electromagnetic environment with $\mathrm{Re}\,Z(\omega)\sim R_\mathrm{Q}$ produces large phase fluctuations and a broad $P(E)$, such that tunneling events must exchange energy with the environment. This regime marks the onset of incoherent, environment-assisted charge transfer and underlies phenomena such as dynamical Coulomb blockade and incoherent Cooper-pair tunneling.
-
-        For an Ohmic environment, the low-energy behavior of $P(E)$ exhibits a universal power law,
+        In contrast, a strong electromagnetic environment produces large phase fluctuations and a broad energy-exchange spectrum. For an Ohmic impedance, the low-energy behavior has the power-law form
         \begin{equation}
             P(E) \propto E^{2R/R_\mathrm{Q} - 1} \qquad (E > 0,\ \mathrm{Re}\,Z(\omega) = R)\,,
             \label{eq:stochastic:pe-ohmic}
         \end{equation}
-        which reflects the suppression of small-energy exchange by quantum fluctuations. 
-        This result follows from the low-frequency limit of an environment with a frequency-independent real impedance, $\mathrm{Re}\,Z(\omega)=R$, and is therefore a property of the $P(E)$ kernel itself rather than a feature of any specific transport process.
+        which shows directly how the impedance controls the low-energy weight of the kernel. This suppression of small-energy exchange underlies dynamical Coulomb blockade and also sets the scale for incoherent Cooper-pair tunneling.
         
-        The specific consequences of these limiting forms for single-electron tunneling, Cooper-pair tunneling, and subgap Andreev processes are discussed in the subsequent sections.
+        The \textit{P(E)} framework applies to well-separated tunneling events described by rates. It does not describe coherent multi-particle trajectories such as multiple Andreev reflection at finite transparency. Those processes require the mesoscopic description introduced in Sec.~\ref{sec:meso}.
 
 
     %=========================================================
