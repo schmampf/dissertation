@@ -416,12 +416,12 @@
     \label{subsec:meso:mar}
     %=========================================================
 
-        Multiple Andreev reflection (MAR) provides the microscopic mechanism of subgap transport in voltage-biased SNS weak links and short superconducting point contacts. For $|eV|<2|\Delta|$, a quasiparticle cannot directly enter the continuum of the opposite electrode. Instead, successive Andreev conversions alternate its electron- and hole-like character while each traversal changes its energy by $eV$, as illustrated for several orders in Fig.~\ref{fig:meso:mar-schematic}. In the trajectory picture of Klapwijk, Blonder, and Tinkham (KBT), the threshold for a process requiring $m$ energy increments is \cite{klapwijk_explanation_1982}
+        Multiple Andreev reflection (MAR) provides the microscopic mechanism of subgap transport in voltage-biased SNS weak links and short superconducting point contacts. We first introduce the energy-ladder picture because it fixes the voltage scales used throughout the section. For $|eV|<2|\Delta|$, a quasiparticle cannot directly enter the continuum of the opposite electrode. Instead, successive Andreev conversions alternate its electron- and hole-like character while each traversal changes its energy by $eV$, as illustrated for several orders in Fig.~\ref{fig:meso:mar-schematic}. In the trajectory picture of Klapwijk, Blonder, and Tinkham (KBT), the threshold for a process requiring $m$ energy increments is \cite{klapwijk_explanation_1982}
         \begin{equation}
             eV_m=\frac{2|\Delta|}{m}\,,\qquad m\in\mathbb{N}^+\,.
             \label{eq:meso:mar-sgs}
         \end{equation}
-        Here $m$ denotes the order of the idealized energy-ladder process and labels the corresponding subharmonic-gap threshold. These voltages produce changes of slope in the \textit{I--V} characteristic and peaks or kinks in \textit{dI--dV}. The same integer is closely related to the effective transferred charge in a charge-resolved description, but the threshold index and transfer-charge label should not be identified without qualification because several MAR processes can contribute at a given bias.
+        We refer to these voltages as MAR thresholds. Here $m$ denotes the threshold order of the idealized energy-ladder process. The MAR thresholds generate the subharmonic-gap structure observed as changes of slope in the \textit{I--V} characteristic and peaks or kinks in \textit{dI--dV}. The same integer is closely related to the effective charge order in a charge-resolved description, but the threshold order and effective charge order should not be identified without qualification because several MAR processes can contribute at a given bias.
 
         \begin{figure}[t]
             \centering
@@ -464,12 +464,12 @@
                 \caption{
                     Coherent MAR transport through a short single-channel contact at selected transmissions.
                     (a) The subgap current increases strongly with $\tau$, and a finite excess current remains above the gap.
-                    (b) The corresponding differential conductance displays subharmonic-gap features at the KBT thresholds of Eq.~\eqref{eq:meso:mar-sgs}, which broaden and overlap as transmission increases.
+                    (b) The corresponding differential conductance displays subharmonic-gap features at the MAR thresholds of Eq.~\eqref{eq:meso:mar-sgs}, which broaden and overlap as transmission increases.
                     }
                 \label{fig:meso:mar-ha}
             \end{figure}
 
-            We model a short single-channel contact as two bulk BCS reservoirs coupled by a local hopping amplitude \cite{cuevas_hamiltonian_1996}. This is the finite-voltage continuation of the model used for ABS: at $V=0$ it produces the equilibrium spectrum discussed in Sec.~\ref{subsec:meso:abs}, while a running phase generates coherent MAR.
+            We now replace the trajectory picture by the coherent single-channel model used for quantitative dc MAR. We model a short single-channel contact as two bulk BCS reservoirs coupled by a local hopping amplitude \cite{cuevas_hamiltonian_1996}. This is the finite-voltage continuation of the model used for ABS: at $V=0$ it produces the equilibrium spectrum discussed in Sec.~\ref{subsec:meso:abs}, while a running phase generates coherent MAR.
 
             The junction Hamiltonian is written as
             \begin{align}
@@ -481,33 +481,33 @@
 
             The phase factors in $\hat{H}_T(t)$ incorporate the dc voltage through the $q=2e$ phase of Eq.~\eqref{eq:micro:pat:phase}. The resulting time-periodic problem is solved with Keldysh Green functions in Nambu space and a Floquet representation in energy. For one channel, the calculation returns $I_\mathrm{HA}(V;\tau,T,\Delta,\gamma)$ from the transmission $\tau$, gap $\Delta$, temperature $T$, broadening $\gamma$, and applied voltage $V$.
 
-            Figure~\ref{fig:meso:mar-ha}(a) shows that increasing $\tau$ enhances the subgap current because successive traversals are less strongly suppressed. The threshold voltages remain fixed by Eq.~\eqref{eq:meso:mar-sgs}, but the associated structures increasingly overlap and the current approaches a smooth high-transmission response. Figure~\ref{fig:meso:mar-ha}(b) makes the same evolution visible in the differential conductance, where the KBT thresholds appear as peaks or kinks. Above the gap, the curves retain a transmission-dependent excess current generated by Andreev processes.
+            Figure~\ref{fig:meso:mar-ha}(a) shows that increasing $\tau$ enhances the subgap current because successive traversals are less strongly suppressed. The MAR thresholds remain fixed by Eq.~\eqref{eq:meso:mar-sgs}, but the associated structures increasingly overlap and the current approaches a smooth high-transmission response. Figure~\ref{fig:meso:mar-ha}(b) makes the same evolution visible in the differential conductance, where the thresholds appear as peaks or kinks. Above the gap, the curves retain a transmission-dependent excess current generated by Andreev processes.
 
         %=========================================================
         \subsubsection*{Multichannel Atomic Contacts}
         %=========================================================
 
-            A short atomic contact is described by its mesoscopic pincode, the transmission-eigenvalue set $\{\tau_i\}$. Independent channels contribute additively to the coherent dc current,
+            The single-channel result becomes experimentally useful when it is combined with the discrete transmission set of an atomic contact. A short atomic contact is described by its mesoscopic pincode $\{\tau_i\}$, the set of transmission eigenvalues. Independent channels contribute additively to the coherent dc current,
             \begin{equation}
                 I(V,\{\tau_i\},T,\Delta,\gamma)
                 =
                 \sum_i I(V,\tau_i,T,\Delta,\gamma)\,.
                 \label{eq:meso:channel-sum}
             \end{equation}
-            Each transmission produces a characteristic \textit{I--V} and \textit{dI--dV} line shape because the probabilities of the different MAR orders depend differently on $\tau_i$. Their channel sum therefore retains information about the individual transmissions. This pronounced sensitivity to $\{\tau_i\}$ makes MAR spectroscopy a channel-resolved probe of the mesoscopic pincode \cite{scheer_conduction_1997}.
+            Each transmission produces a characteristic \textit{I--V} and \textit{dI--dV} line shape because the probabilities of the different MAR processes depend differently on $\tau_i$. Their channel sum therefore remains sensitive to the mesoscopic pincode $\{\tau_i\}$. This transmission sensitivity makes nonlinear SIS spectra a channel-resolved probe of atomic contacts \cite{scheer_conduction_1997}.
 
-            The normal-state conductance constrains only the total transmission, so different mesoscopic pincodes can have the same $G_\mathrm{N}$. Their nonlinear SIS spectra generally remain distinguishable and can be fitted to extract $\{\tau_i\}$ within the coherent short-contact model. Channels with the same transmission produce identical spectral contributions and therefore cannot be distinguished individually. The fitting procedure is described in the methods section.
+            The normal-state conductance constrains only the total transmission, so different mesoscopic pincodes can have the same $G_\mathrm{N}$. Their nonlinear SIS spectra can nevertheless differ and can be fitted to extract the mesoscopic pincode $\{\tau_i\}$ within the coherent short-contact model. Channels with the same transmission produce identical spectral contributions and therefore cannot be distinguished individually. The fitting procedure is described in the methods section.
 
         %=========================================================
-        \subsubsection*{Charge-Resolved MAR}
+        \subsubsection*{Charge-Resolved Multiple Andreev Reflection}
         %=========================================================
 
-            Full counting statistics provides a process-resolved extension of the coherent MAR calculation \cite{cuevas_full_2003}. We use it only to decompose the dc current into contributions associated with transfer of an effective charge $q=me$,
+            To connect dc MAR to charge transfer, we next use the current decomposition provided by full counting statistics. Full counting statistics provides a process-resolved extension of the coherent MAR calculation \cite{cuevas_full_2003}. We use it only to decompose the dc current into contributions associated with transfer of an effective charge $q=me$,
             \begin{equation}
                 I(V)=\sum_{m=1}^{\infty} I_m(V)\,.
                 \label{eq:meso:fcs-decomposition}
             \end{equation}
-            The index $m$ now labels transfer charge rather than only the threshold order used in Eq.~\eqref{eq:meso:mar-sgs}. The two meanings are physically connected because lower voltages require longer Andreev sequences and permit larger effective charge transfers, but several $I_m$ can coexist at the same bias.
+            The index $m$ now labels effective charge order rather than the threshold order used in Eq.~\eqref{eq:meso:mar-sgs}. The two meanings are physically connected because lower voltages require longer Andreev sequences and permit larger effective charge transfers, but several $I_m$ can coexist at the same bias.
 
             Figure~\ref{fig:meso:fcs} shows this redistribution for three transmissions. Near the gap edge, low-order processes carry most of the current. Lower bias requires access to larger transfer orders, although these processes are strongly suppressed in the tunneling regime. As $\tau$ increases, repeated traversal becomes more probable and several charge-transfer orders acquire appreciable weight.
 
@@ -532,7 +532,7 @@
                 \label{fig:meso:fcs}
             \end{figure}
 
-            Figure~\ref{fig:meso:fcs-m} compares the charge-resolved decomposition on the usual voltage axis and on an inverse-voltage axis. The top row shows the current contributions, while the bottom row shows the corresponding differential conductance. The inverse-voltage panels make the alignment between the resolved MAR orders and the KBT thresholds explicit.
+            Figure~\ref{fig:meso:fcs-m} shows the same charge-resolved quantities in a form that emphasizes the MAR thresholds. Panels (a) and (c) display $I_m(V)$ and the corresponding differential conductance on the usual voltage axis, while panels (b) and (d) replot them against inverse voltage. On this axis the threshold positions of Eq.~\eqref{eq:meso:mar-sgs} fall at integer values, so the alignment between effective charge order and subharmonic-gap structure becomes visible.
 
             \begin{figure}[t]
                 \centering
@@ -553,10 +553,10 @@
                     ]{\import{theory/meso}{fcs-didv-m-inv.pgf}}
                 \caption{
                         Charge-resolved MAR current and differential conductance for selected single-channel transmissions.
-                        (a,c) show the current contributions $I_m(V)$ and their differential conductance on the usual voltage axis.
-                        (b,d) show the same decomposition on the inverse-voltage axis, where integer positions correspond to the KBT thresholds $eV_m=2|\Delta|/m$.
-                        Colored curves resolve the effective-charge components labeled by $m$. Shading corresponds to different transmissions $\tau$.
-                        This representation makes the redistribution of current among MAR orders and its connection to the subharmonic-gap structure explicit.
+                        (a,c) show $I_m(V)$ and its differential conductance on the voltage axis.
+                        (b,d) show the same components on the inverse-voltage axis, where integer positions correspond to the MAR thresholds $eV_m=2|\Delta|/m$.
+                        Colored curves resolve the effective charge order $m$.
+                        Shading corresponds to different transmissions $\tau$.
                     }
                 \label{fig:meso:fcs-m}
             \end{figure}
@@ -567,11 +567,11 @@
         \subsubsection*{Photon-Assisted Multiple Andreev Reflection}
         %=========================================================
 
-            Irradiated MAR is more complex than dc MAR because a voltage-biased superconducting contact already contains the Josephson frequency $\nu_J=2eV/h$. A microwave drive at frequency $\nu$ adds a second time scale. The driven problem therefore cannot generally be reduced to the single-Floquet structure used for the dc Hamiltonian approach.
+            The final step is to add microwave irradiation to the charge-resolved dc MAR picture. Irradiated MAR is more complex than dc MAR because a voltage-biased superconducting contact already contains the Josephson frequency $\nu_J=2eV/h$. A microwave drive at frequency $\nu$ adds a second time scale. The driven problem therefore cannot generally be reduced to the single-Floquet structure used for the dc Hamiltonian approach.
 
             The full coherent ac theory was developed by Cuevas \textit{et al.} for superconducting point contacts of arbitrary transmission \cite{cuevas_subharmonic_2002}. In that treatment the Josephson oscillation and the external microwave drive are handled by a two-frequency Keldysh--Floquet calculation. This double-Floquet theory is the microscopic reference description for subharmonic Shapiro structure and photon-assisted MAR in irradiated point contacts. Its numerical cost, however, is much higher than that of the dc problem, which makes it impractical as the routine model for dense parameter scans and fitting workflows.
 
-            A practical alternative is to combine the Tien--Gordon sideband picture with charge-resolved MAR. Soerensen \textit{et al.} introduced this charge-dependent viewpoint for microwave-modified subharmonic-gap structure, and recent experiments by Carrad \textit{et al.} used the same logic to identify high-order MAR processes from photon-assisted sideband spacings \cite{soerensen_microwave_1974,carrad_photon-assisted_2022}. In the notation used here, the FCS decomposition in Eq.~\eqref{eq:meso:fcs-decomposition} supplies the dc current components $I_m(V)$, and each component is dressed with the Tien--Gordon weights appropriate for its effective charge $q=me$.
+            A practical alternative is to combine the Tien--Gordon sideband picture with charge-resolved MAR. Soerensen \textit{et al.} introduced this charge-dependent viewpoint for microwave-modified subharmonic-gap structure, and recent experiments by Carrad \textit{et al.} used the same logic to identify high-order MAR processes from photon-assisted sideband spacings \cite{soerensen_microwave_1974,carrad_photon-assisted_2022}. In the notation used here, the FCS decomposition in Eq.~\eqref{eq:meso:fcs-decomposition} supplies the dc current components $I_m(V)$, and each component is dressed with the Tien--Gordon weights appropriate for its effective charge order $m$.
 
             This gives the charge-resolved photon-assisted MAR current
             \begin{equation}
@@ -582,7 +582,7 @@
                 I_m\!\left(V+\frac{nh\nu}{me}\right)\,,
                 \label{eq:meso:pamar-current}
             \end{equation}
-            where $A$ is the effective microwave voltage amplitude at the junction, $m$ labels the effective charge order, and $n$ labels the photon sideband. The corresponding photon-assisted replicas of the KBT thresholds appear approximately at
+            where $A$ is the effective microwave voltage amplitude at the junction, $m$ labels the effective charge order, and $n$ labels the photon sideband. The corresponding photon-assisted replicas of the MAR thresholds appear approximately at
             \begin{equation}
                 eV_{m,n}\simeq\frac{2|\Delta|}{m}\pm\frac{nh\nu}{m}\,.
                 \label{eq:meso:pamar-thresholds}
@@ -590,3 +590,5 @@
             The sideband spacing therefore scales as $h\nu/(me)$ in voltage. Photon-assisted MAR can thus identify the effective charge order associated with a subgap feature, complementing the dc charge resolution in Fig.~\ref{fig:meso:fcs-m}.
 
             Equation~\eqref{eq:meso:pamar-current} is a practical dressing of dc FCS components, not a replacement for the full double-Floquet theory. It neglects coherent two-frequency interference, microwave-induced changes of ABS occupation, heating, environmental energy exchange, and current-biased phase dynamics. Within these limits, it provides an interpretable state-of-the-art model for connecting microwave-induced sidebands to the charge-resolved MAR processes used in this thesis.
+
+            The resulting hierarchy is the one used in the remainder of this thesis. The dc Hamiltonian approach describes channel-resolved MAR in a short coherent contact, channel sums connect this response to the mesoscopic pincode $\{\tau_i\}$, FCS resolves the effective charge order, and charge-dependent Tien--Gordon dressing gives a practical PAMAR model. The full Cuevas double-Floquet theory remains the microscopic benchmark for irradiated point contacts.
