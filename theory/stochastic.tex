@@ -99,7 +99,7 @@
     \label{subsec:stochastic:dcb}
     %=========================================================
 
-        Dynamical Coulomb blockade (DCB) describes the suppression of single-electron tunneling by the electromagnetic environment. In the microscopic tunnel description, the voltage bias fixes the electronic energy window and the current is determined by the density of states and occupations of the two electrodes. In DCB, a tunneling event must also exchange energy with the surrounding circuit. If the relevant environmental modes cannot absorb the released energy, the event is suppressed.
+        Dynamical Coulomb blockade (DCB) describes the suppression of single-electron tunneling by the electromagnetic environment. In the microscopic tunnel description, the voltage bias fixes the electronic energy window and the current is determined by the density of states and occupations of the two electrodes. In DCB, a tunneling event must also exchange energy with the surrounding circuit. If the relevant environmental modes do not support the required energy balance, the event is suppressed.
 
         The physical origin can be seen from a single electron crossing a junction with capacitance $C$. The transferred charge changes the electrostatic energy of the junction by an amount of order $E_\mathrm{C}=e^2/2C$. In a quantum circuit this energy bookkeeping is not external to the tunneling process. It is carried by voltage fluctuations of the environment and therefore by the same $P(E)$ kernel introduced above. A small low-energy weight of $P(E)$ means that small-energy tunneling events are unlikely, which appears experimentally as a zero-bias suppression in \textit{dI--dV}.
 
@@ -110,42 +110,44 @@
             I_{2\to 1}(V) &= \int_{-\infty}^{\infty} P(\varepsilon)\, I_{2\to 1}^{(0)}\!\left(-V - \frac{\varepsilon}{e}\right)\,\mathrm{d}\varepsilon\,.
             \label{eq:stochastic:dcb-total-current}
         \end{align}
-        Here $I_{1\to 2}^{(0)}$ is the corresponding elastic branch without environmental energy exchange (Eq.~\ref{eq:micro:tunnel-1to2}). This branch-wise form makes the voltage symmetry transparent. For a passive symmetric junction in equilibrium, the negative-bias current is the sign-reversed positive-bias current even though the zero-temperature kernel has support only for positive exchanged energy. The environment absorbs energy released by the favored tunneling direction in either voltage polarity.
+        Here $I_{i\to j}^{(0)}$ is the corresponding elastic branch without environmental energy exchange. It contains the electrode density of states, occupation factors, and tunneling matrix element for that direction, as in Eq.~\ref{eq:micro:tunnel-1to2}. This branch-wise form makes the voltage symmetry transparent. For a passive symmetric junction in equilibrium, the negative-bias current is the sign-reversed positive-bias current even though the zero-temperature kernel has support only for positive exchanged energy. The environment absorbs energy according to the favored tunneling direction in either voltage polarity.
+
+        Figure~\ref{fig:stochastic:dcb} shows the resulting \textit{I--V} and \textit{dI--dV} curves for NIN, SIN, and SIS junctions in an ohmic environment. The NIN panels isolate the zero-bias anomaly, while SIN and SIS show how the same environmental dressing reshapes superconducting thresholds.
 
         \begin{figure}[t]
             \centering
             \subfigure[
-                SIS current
-                ]{\import{theory/stochastic}{iv-sis.pgf}}
+                NIN current
+                ]{\import{theory/stochastic}{iv-nin.pgf}}
             \hfill
             \subfigure[
                 SIN current
                 ]{\import{theory/stochastic}{iv-sin.pgf}}
             \hfill
             \subfigure[
-                NIN current
-                ]{\import{theory/stochastic}{iv-nin.pgf}}
+                SIS current
+                ]{\import{theory/stochastic}{iv-sis.pgf}}
             \\
             \subfigure[
-                SIS conductance
-                ]{\import{theory/stochastic}{didv-sis.pgf}}
+                NIN conductance
+                ]{\import{theory/stochastic}{didv-nin.pgf}}
             \hfill
             \subfigure[
                 SIN conductance
                 ]{\import{theory/stochastic}{didv-sin.pgf}}
             \hfill
             \subfigure[
-                NIN conductance
-                ]{\import{theory/stochastic}{didv-nin.pgf}}
+                SIS conductance
+                ]{\import{theory/stochastic}{didv-sis.pgf}}
             \caption{
-                DCB dressing of tunnel \textit{I--V} and \textit{dI--dV} curves for SIS, SIN, and NIN junctions.
+                DCB dressing of tunnel \textit{I--V} and \textit{dI--dV} curves for NIN, SIN, and SIS junctions.
                 The calculation uses the Ohmic kernel from Eq.~\eqref{eq:stochastic:pe-ohmic} with cutoff energy $E_\mathrm{c}=\Delta$.
-                Increasing $R/R_\mathrm{Q}$ deepens the zero-bias conductance dip in the NIN case and broadens the environment-induced suppression near the superconducting thresholds in the SIN and SIS cases.
+                Increasing $R/R_\mathrm{Q}$ deepens the NIN zero-bias conductance dip, broadens the SIN threshold, and redistributes spectral weight near the SIS pair-breaking onset.
                 }
             \label{fig:stochastic:dcb}
         \end{figure}
 
-        Figure~\ref{fig:stochastic:dcb} shows the resulting \textit{I--V} and \textit{dI--dV} curves for SIS, SIN, and NIN junctions in an ohmic environment. In an NIN junction the elastic branch is nearly featureless, so DCB appears primarily as a conductance dip around zero bias. In an SIN junction the environment dresses the onset at the superconducting gap. In an SIS junction it dresses the pair-breaking threshold and redistributes spectral weight near the coherence peaks. The electronic density of states remains part of the elastic branch current, while the environment supplies the energy-exchange kernel.
+        The electronic density of states remains part of the elastic branch current, while the environment supplies the energy-exchange kernel. DCB is therefore not a modified electronic density of states, but an environmental dressing of tunneling through $P(E)$.
 
 
 
@@ -181,7 +183,7 @@
             \end{equation}
             where $A$ and $\nu$ are the amplitude and frequency of the applied microwave drive.
 
-            The resulting photon-assisted DCB current generalizes the branch-wise convolution in Eq.~\eqref{eq:stochastic:dcb-branch-convolution} by incorporating the additional photon sidebands,
+            The resulting photon-assisted DCB current generalizes the branch-wise convolution in Eq.~\eqref{eq:stochastic:dcb-total-current} by incorporating the additional photon sidebands,
             \begin{equation}
                 I(V_0) = \sum_{n=-\infty}^{\infty} J_n^2\!\left( \frac{eA}{h\nu}\right) \cdot I_0\!\left(V_0 - \frac{n h\nu}{e}\right)\,.
                 \label{eq:stochastic:padcb}
