@@ -35,11 +35,11 @@
         \begin{equation}
             J(t) = \frac{2}{R_\mathrm{Q}} \int_0^\infty
             \underbrace{\vphantom{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}\frac{\mathrm{Re}\,Z(\omega)}{\textstyle \omega}}_{\text{coupling}}
-            \biggl[
+            \left[
             \underbrace{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}_{\text{diffusion}}
             -
             \underbrace{\vphantom{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}\ima\sin(\omega t)}_{\text{winding}}
-            \biggr]\mathrm{d}\omega\,,
+            \right]\mathrm{d}\omega\,,
             \label{eq:stochastic:Jt}
         \end{equation}
         Here $R_\mathrm{Q}=h/(2e)^2$ is the superconducting resistance quantum. It sets the impedance scale for phase fluctuations coupled to Cooper-pair charge.
@@ -103,21 +103,14 @@
 
         The physical origin can be seen from a single electron crossing a junction with capacitance $C$. The transferred charge changes the electrostatic energy of the junction by an amount of order $E_\mathrm{C}=e^2/2C$. In a quantum circuit this energy bookkeeping is not external to the tunneling process. It is carried by voltage fluctuations of the environment and therefore by the same $P(E)$ kernel introduced above. A small low-energy weight of $P(E)$ means that small-energy tunneling events are unlikely, which appears experimentally as a zero-bias suppression in \textit{dI--dV}.
 
-        The environmental dressing is most cleanly written for directional tunneling branches. For a single-electron branch from electrode 1 to electrode 2,
-        \begin{equation}
-            I_{1\to 2}(V) = \int_{-\infty}^{\infty} P(\varepsilon)\, I_{1\to 2}^{(0)}\!\left(V - \frac{\varepsilon}{e}\right)\,\mathrm{d}\varepsilon\,.
-            \label{eq:stochastic:dcb-branch-convolution}
-        \end{equation}
-        Here $I_{1\to 2}^{(0)}$ is the corresponding elastic branch without environmental energy exchange. Equation~\eqref{eq:stochastic:dcb-branch-convolution} is therefore not a convolution of the already antisymmetric measured current. The total current is obtained only after dressing both directions,
-        \begin{equation}
-            I(V) = I_{1\to 2}(V) - I_{2\to 1}(V)\,,
-            \qquad
-            I_{2\to 1}(V) = \int_{-\infty}^{\infty} P(\varepsilon)\, I_{2\to 1}^{(0)}\!\left(-V - \frac{\varepsilon}{e}\right)\,\mathrm{d}\varepsilon\,.
+        The environmental dressing is most cleanly written for directional tunneling branches. The total current is obtained only after dressing both directions,
+        \begin{align}
+            I(V) &= I_{1\to 2}(V) - I_{2\to 1}(V)\,,\\
+            I_{1\to 2}(V) &= \int_{-\infty}^{\infty} P(\varepsilon)\, I_{1\to 2}^{(0)}\!\left(V - \frac{\varepsilon}{e}\right)\,\mathrm{d}\varepsilon\,,\\
+            I_{2\to 1}(V) &= \int_{-\infty}^{\infty} P(\varepsilon)\, I_{2\to 1}^{(0)}\!\left(-V - \frac{\varepsilon}{e}\right)\,\mathrm{d}\varepsilon\,.
             \label{eq:stochastic:dcb-total-current}
-        \end{equation}
-        This branch-wise form makes the voltage symmetry transparent. For a passive symmetric junction in equilibrium, the negative-bias current is the sign-reversed positive-bias current even though the zero-temperature kernel has support only for positive exchanged energy. The environment absorbs energy released by the favored tunneling direction in either voltage polarity.
-
-        For an ohmic $P(E)$ kernel, the resulting \textit{I--V} curves and differential conductance are shown in Fig.~\ref{fig:stochastic:dcb} for NIN, SIN, and SIS junctions. In an NIN junction the elastic branch is nearly featureless, so DCB appears primarily as a conductance dip around zero bias. In an SIN junction the environment dresses the onset at the superconducting gap. In an SIS junction it dresses the pair-breaking threshold and redistributes spectral weight near the coherence peaks. The electronic density of states remains part of the elastic branch current, while the environment supplies the energy-exchange kernel.
+        \end{align}
+        Here $I_{1\to 2}^{(0)}$ is the corresponding elastic branch without environmental energy exchange (Eq.~\ref{eq:micro:tunnel-1to2}). This branch-wise form makes the voltage symmetry transparent. For a passive symmetric junction in equilibrium, the negative-bias current is the sign-reversed positive-bias current even though the zero-temperature kernel has support only for positive exchanged energy. The environment absorbs energy released by the favored tunneling direction in either voltage polarity.
 
         \begin{figure}[t]
             \centering
@@ -151,6 +144,9 @@
                 }
             \label{fig:stochastic:dcb}
         \end{figure}
+
+        Figure~\ref{fig:stochastic:dcb} shows the resulting \textit{I--V} and \textit{dI--dV} curves for SIS, SIN, and NIN junctions in an ohmic environment. In an NIN junction the elastic branch is nearly featureless, so DCB appears primarily as a conductance dip around zero bias. In an SIN junction the environment dresses the onset at the superconducting gap. In an SIS junction it dresses the pair-breaking threshold and redistributes spectral weight near the coherence peaks. The electronic density of states remains part of the elastic branch current, while the environment supplies the energy-exchange kernel.
+
 
 
         %=========================================================
