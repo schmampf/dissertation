@@ -66,14 +66,28 @@
         In contrast, a strong electromagnetic environment produces large phase fluctuations and a broad energy-exchange spectrum. For an Ohmic impedance, a simple zero-temperature cutoff model gives
         \begin{equation}
             P_\mathrm{Ohmic}(E)
-            = P_0
-            \left(\frac{E}{E_\mathrm{c}}\right)^{2R/R_\mathrm{Q}-1}
+            = \frac{1}{E_\mathrm{c}\Gamma(\alpha)}
+            \left(\frac{E}{E_\mathrm{c}}\right)^{\alpha-1}
             \exp\!\left(-\frac{E}{E_\mathrm{c}}\right)\,,
-            \qquad
+            \quad
+            \alpha=\frac{2R}{R_\mathrm{Q}}\,,
+            \quad
             E>0\,.
             \label{eq:stochastic:pe-ohmic}
         \end{equation}
-        Here $E_\mathrm{c}=\hbar\omega_\mathrm{c}$ is the cutoff energy of the environment, and $P_0$ is fixed by the normalization of $P(E)$ for the chosen cutoff model. The power law is the Ohmic low-energy result. The exponential factor only regularizes the high-energy tail, reflecting that a real circuit behaves Ohmically over a finite bandwidth.
+
+        \begin{wrapfigure}[10]{r}{0.4\textwidth}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-.5em}
+            \import{theory/stochastic}{pe.pgf}
+            \vspace{-.5em}
+            \caption{
+                Ohmic $P(E)$, Eq.~\eqref{eq:stochastic:pe-ohmic}.
+                }
+            \label{fig:stochastic:pe-ohmic}
+        \end{wrapfigure}
+        Here $E_\mathrm{c}=\hbar\omega_\mathrm{c}$ is the cutoff energy of the environment. The function $\Gamma(\alpha)$ is the Euler Gamma function, the continuous extension of the factorial, and only normalizes $P(E)$. It should not be confused with the transition rates denoted by $\Gamma$ below. The power law is the Ohmic low-energy result. The exponential factor only regularizes the high-energy tail, reflecting that a real circuit behaves Ohmically over a finite bandwidth.
 
         At zero temperature this form has support only for $E>0$, because the environment can absorb energy but cannot emit energy from its ground state. At finite temperature, thermal modes add a negative-energy tail to $P(E)$, corresponding to energy emitted by the environment into the tunneling process. The full finite-temperature kernel is usually evaluated from Eq.~\eqref{eq:stochastic:pedef}. The low-energy suppression of $P(E)$ underlies dynamical Coulomb blockade and also sets the scale for incoherent Cooper-pair tunneling.
         
@@ -109,7 +123,36 @@
 
         DCB is not restricted to normal-metal junctions. In Eq.~\eqref{eq:stochastic:dcb-current-convolution}, the elastic current $I_0(V)$ contains the electrode density of states and Fermi occupations. For NIN junctions the density of states is approximately constant, for NIS junctions it contains the superconducting BCS form on one side, and for SIS junctions both electrodes contribute superconducting densities of states. The environment then dresses this elastic current rather than replacing the electronic tunneling model. In SIS junctions the single-electron current appears only above the pair-breaking threshold $eV \gtrsim 2\Delta$, but once quasiparticle states are available, the environmental suppression acts on the onset in the same way.
 
-        % TODO[THY-04]: Add a compact comparison figure showing the DCB suppression for $q=e$ and the corresponding ICPT response for $q=2e$.
+        \begin{figure}[t]
+            \centering
+            \subfigure[
+                \textit{I--V} of SIS Junction
+                ]{\import{theory/stochastic}{iv-sis.pgf}}
+            \hfill
+            \subfigure[
+                \textit{I--V} of SIN Junction
+                ]{\import{theory/stochastic}{iv-sin.pgf}}
+            \hfill
+            \subfigure[
+                \textit{I--V} of NIN Junction
+                ]{\import{theory/stochastic}{iv-nin.pgf}}
+            \\
+            \subfigure[
+                \textit{dI--dV} of SIS Junction
+                ]{\import{theory/stochastic}{didv-sis.pgf}}
+            \hfill
+            \subfigure[
+                \textit{dI--dV} of SIN Junction
+                ]{\import{theory/stochastic}{didv-sin.pgf}}
+            \hfill
+            \subfigure[
+                \textit{dI--dV} of NIN Junction
+                ]{\import{theory/stochastic}{didv-nin.pgf}}
+            \caption{
+                Here goes some caption
+                }
+            \label{fig:stochastic:dcb}
+        \end{figure}
 
 
         %=========================================================
