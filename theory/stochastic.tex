@@ -128,7 +128,7 @@
                 Mode weights
                 ]{\import{theory/stochastic}{pe-res-w.pgf}}
             \caption{
-                Energy-exchange probability for Ohmic and resonant electromagnetic environments. (a) The Ohmic kernel evolves from nearly elastic tunneling at small $R/R_\mathrm{Q}$ to a broad distribution with suppressed low-energy weight as the environmental resistance increases. (b) Coupling to a harmonic mode redistributes this kernel into replicas separated by the mode energy $\hbar\omega_0$. (c) The replica amplitudes follow the Poisson weights $e^{-\alpha_{0,q}}\alpha_{0,q}^n/n!$, so increasing the mode coupling $\alpha_{0,q}$ transfers weight from the elastic contribution to higher-order mode excitations.
+                Energy-exchange probability for Ohmic and resonant electromagnetic environments. (a) The Ohmic kernel evolves from nearly elastic tunneling at small $\alpha_q$ to a broad distribution with suppressed low-energy weight as the environmental resistance increases. (b) Coupling to a harmonic mode redistributes this kernel into replicas separated by the mode energy $\hbar\omega_0$. (c) The replica amplitudes follow the Poisson weights $e^{-\alpha_{0,q}}\alpha_{0,q}^n/n!$, so increasing the mode coupling $\alpha_{0,q}$ transfers weight from the elastic contribution to higher-order mode excitations.  Used $\alpha_{0, q}=1.0$ and  $\alpha_{q}=1.0$, if not stated otherwise by the legend.
                 }
             \label{fig:stochastic:pe}
         \end{figure}
@@ -143,18 +143,18 @@
     \label{subsec:stochastic:dcb}
     %=========================================================
 
-        Dynamical Coulomb blockade (DCB) describes the suppression of single-electron tunneling by the electromagnetic environment. In the microscopic tunnel description, the voltage bias fixes the electronic energy window and the current is determined by the density of states and occupations of the two electrodes. In DCB, a tunneling event must also exchange energy with the surrounding circuit. If the relevant environmental modes do not support the required energy balance, the event is suppressed.
+        Dynamical Coulomb blockade (DCB) is the single-electron, $q=e$, application of the general $P_q(E)$ framework. In the microscopic tunnel description, the voltage bias fixes the electronic energy window and the current is determined by the density of states and occupations of the two electrodes. In DCB, a tunneling event may also exchange energy with the surrounding circuit. The corresponding probability $P_e(E)$ modifies the available tunneling rates, and events are suppressed when the environment provides little weight at the required exchange energy.
 
-        The physical origin can be seen from a single electron crossing a junction with capacitance $C$. The transferred charge changes the electrostatic energy of the junction by an amount of order $E_\mathrm{C}=e^2/2C$. In a quantum circuit this energy bookkeeping is not external to the tunneling process. It is carried by voltage fluctuations of the environment and therefore by the same $P(E)$ kernel introduced above. A small low-energy weight of $P(E)$ means that small-energy tunneling events are unlikely, which appears experimentally as a zero-bias suppression in \textit{dI--dV}.
+        The physical origin can be seen from a single electron crossing a junction with capacitance $C$. The transferred charge changes the electrostatic energy of the junction by an amount of order $E_\mathrm{C}=e^2/2C$. In a quantum circuit this energy bookkeeping is not external to the tunneling process. It is carried by voltage fluctuations of the environment and therefore by the same $P_e(E)$ kernel introduced above. A small low-energy weight of $P_e(E)$ means that small-energy tunneling events are unlikely, which appears experimentally as a zero-bias suppression in \textit{dI--dV}.
 
         The environmental dressing is most cleanly written for directional tunneling branches. The total current is obtained only after dressing both directions,
         \begin{align}
             I(V) &= I_{1\to 2}(V) - I_{2\to 1}(V)\,,\\
-            I_{1\to 2}(V) &= \int_{-\infty}^{\infty} P(\varepsilon)\, I_{1\to 2}^{(0)}\!\left(V - \frac{\varepsilon}{e}\right)\,\mathrm{d}\varepsilon\,,\\
-            I_{2\to 1}(V) &= \int_{-\infty}^{\infty} P(\varepsilon)\, I_{2\to 1}^{(0)}\!\left(-V - \frac{\varepsilon}{e}\right)\,\mathrm{d}\varepsilon\,.
+            I_{1\to 2}(V) &= \int_{-\infty}^{\infty} P_e(\varepsilon)\, I_{1\to 2}^{(0)}\!\left(V - \frac{\varepsilon}{e}\right)\,\mathrm{d}\varepsilon\,,\\
+            I_{2\to 1}(V) &= \int_{-\infty}^{\infty} P_e(\varepsilon)\, I_{2\to 1}^{(0)}\!\left(-V - \frac{\varepsilon}{e}\right)\,\mathrm{d}\varepsilon\,.
             \label{eq:stochastic:dcb-total-current}
         \end{align}
-        Here $I_{i\to j}^{(0)}$ is the corresponding elastic branch without environmental energy exchange. It contains the electrode density of states, occupation factors, and tunneling matrix element for that direction, as in Eq.~\ref{eq:micro:tunnel-1to2}. This branch-wise form makes the voltage symmetry transparent. For a passive symmetric junction in equilibrium, the negative-bias current is the sign-reversed positive-bias current even though the zero-temperature kernel has support only for positive exchanged energy. The environment absorbs energy according to the favored tunneling direction in either voltage polarity.
+        Here $I_{i\to j}^{(0)}$ is the corresponding elastic branch without environmental energy exchange. It contains the electrode density of states, occupation factors, and tunneling matrix element for that direction, as in Eq.~\eqref{eq:micro:tunnel-1to2}. This branch-wise form makes the voltage symmetry transparent. For a passive symmetric junction in equilibrium, the negative-bias current is the sign-reversed positive-bias current even though the zero-temperature kernel has support only for positive exchanged energy. The environment absorbs energy according to the favored tunneling direction in either voltage polarity.
 
         Figure~\ref{fig:stochastic:dcb} shows the resulting \textit{I--V} and \textit{dI--dV} curves for NIN, SIN, and SIS junctions in an ohmic environment. The NIN panels isolate the zero-bias anomaly, while SIN and SIS show how the same environmental dressing reshapes superconducting thresholds.
 
@@ -186,48 +186,57 @@
             \caption{
                 DCB dressing of tunnel \textit{I--V} and \textit{dI--dV} curves for NIN, SIN, and SIS junctions.
                 The calculation uses the Ohmic kernel from Eq.~\eqref{eq:stochastic:pe-ohmic} with cutoff energy $E_\mathrm{c}=\Delta$.
-                Increasing $R/R_\mathrm{Q}$ deepens the NIN zero-bias conductance dip, broadens the SIN threshold, and redistributes spectral weight near the SIS pair-breaking onset.
+                Increasing the environmental coupling deepens the NIN zero-bias conductance dip, broadens the SIN threshold, and redistributes spectral weight near the SIS pair-breaking onset.
                 }
             \label{fig:stochastic:dcb}
         \end{figure}
 
-        The electronic density of states remains part of the elastic branch current, while the environment supplies the energy-exchange kernel. DCB is therefore not a modified electronic density of states, but an environmental dressing of tunneling through $P(E)$.
+        The electronic density of states remains part of the elastic branch current, while the environment supplies the energy-exchange kernel. DCB is therefore not a modified electronic density of states, but an environmental dressing of tunneling through $P_e(E)$.
 
+        Figure~\ref{fig:stochastic:dcb-resonant} shows the resulting \textit{I--V} and \textit{dI--dV} curves for an SIS junctions in a resonant environment. It shows satellite structures separated by approximately $\hbar\omega_0/e$ in voltage. These features originate from passive modes of the electromagnetic environment and should not be confused with photon-assisted DCB, which requires an externally applied microwave drive.
 
-
-        %=========================================================
-        \subsubsection*{Dynamical Coulomb Blockade with Environmental Resonances}
-        %=========================================================
-
-            If the impedance contains discrete resonances that originate from inductive elements or cavity modes, the real part of the impedance acquires sharp features at the corresponding frequencies. These features imprint themselves onto the $P(E)$ function, which develops additional weight at the energies of the environmental modes. The resulting \textit{I--V} and \textit{dI--dV} curves can therefore contain satellite structures at the corresponding voltages. These resonant features arise from the passive structure of the electromagnetic environment and should not be confused with photon-assisted dynamical Coulomb blockade, discussed below, which requires an externally applied microwave drive.
-
-            The simplest analytic case is a single harmonic mode at frequency $\omega_0$ added to an Ohmic background. A tunneling event linearly displaces this oscillator. For a mode initially in its ground state, the number of excited oscillator quanta is Poisson distributed, which gives
-            \begin{equation}
-                P_e(E) = e^{-\alpha_{0,e}} \sum_{n=0}^{\infty} \frac{\alpha_{0,e}^{\,n}}{n!}\, P_{\mathrm{Ohmic},e}(E - n\hbar\omega_0)\,,
-                \label{eq:stochastic:dcb-pe-resonance}
-            \end{equation}
-            Here $\alpha_{0,e}$ is the resonant-mode coupling for single-electron transfer. The shifted kernels describe tunneling events accompanied by the excitation of $n$ mode quanta. The Poisson weights are therefore not a generic property of any peak in $Z(\omega)$, but a consequence of a linearly coupled harmonic mode. Damping, thermal occupation, nonlinearities, or strong external driving modify the sideband weights and line shapes. In the measured current, this structured $P_e(E)$ dresses the same directional tunneling branches as in Eq.~\eqref{eq:stochastic:dcb-total-current}, producing satellites shifted by approximately $\hbar\omega_0/e$.
-
+        \begin{figure}[t]
+            \centering
+            \setcounter{subfigure}{0}
+            \subfigure[
+                \textit{I--V} for varying Ohmic coupling.
+                ]{\import{theory/stochastic}{dcb-res-iv-sis.pgf}}
+            \hfill
+            \setcounter{subfigure}{2}
+            \subfigure[
+                \textit{I--V} for varying resonant-mode coupling.
+                ]{\import{theory/stochastic}{dcb-resa-iv-sis.pgf}}
+            \\
+            \setcounter{subfigure}{1}
+            \subfigure[
+                \textit{dI--dV} for varying Ohmic coupling.
+                ]{\import{theory/stochastic}{dcb-res-didv-sis.pgf}}
+            \hfill
+            \setcounter{subfigure}{3}
+            \subfigure[
+                \textit{dI--dV} for varying resonant-mode coupling.
+                ]{\import{theory/stochastic}{dcb-resa-didv-sis.pgf}}
+            \caption{
+                Resonant dynamical Coulomb blockade of an SIS tunnel junction. (a,b) Increasing the Ohmic coupling suppresses low-energy tunneling and broadens the quasiparticle onset. (c,d) Increasing the resonant-mode coupling $\alpha_{0,e}$ transfers spectral weight from the elastic branch to inelastic satellites separated by $\hbar\omega_0/e$ in voltage. The resonant structures arise from passive environmental modes rather than an externally applied microwave drive.
+                Used $\alpha_{0, e}=1.0$ and  $\alpha_{e}=1.0$, if not stated otherwise by the legend.
+                }
+            \label{fig:stochastic:dcb-resonant}
+        \end{figure}
 
         %=========================================================
         \subsubsection*{Photon-Assisted Dynamical Coulomb Blockade}
         %=========================================================
 
-            In the presence of microwave irradiation, a tunneling electron may absorb or emit integer multiples of the photon energy $h\nu$. In the stochastic regime this photon-assisted tunneling does not arise from a coherent phase modulation as in the Tien--Gordon description, but from additional energy channels in the inelastic $P(E)$ process. The microwave field is treated as a classical voltage modulation superposed on stochastic environmental fluctuations. This treatment is appropriate when the applied drive contains many photons per cycle, so that quantum fluctuations of the field are negligible compared with the deterministic modulation.
-
-            A tunneling event may therefore exchange energy with both the environment and the microwave field. The corresponding probability is obtained by dressing the environmental probability with Bessel weights,
+            The photon-assisted tunneling mechanism and its Bessel weights are derived in Sec.~\ref{subsec:micro:pat}. For DCB, the same time-averaged dressing is applied to the complete undriven current $I_{\mathrm{DCB},0}(V)$, which already contains the environmental energy exchange described above. The resulting photon-assisted DCB current is
             \begin{equation}
-                P(E) = \sum_{n=-\infty}^{\infty} J_n^2\left(\frac{eA}{h\nu}\right)\, P_0(E - nh\nu)\,,
-                \label{eq:stochastic:pe-padcb}
-            \end{equation}
-            where $A$ and $\nu$ are the amplitude and frequency of the applied microwave drive.
-
-            The resulting photon-assisted DCB current generalizes the branch-wise convolution in Eq.~\eqref{eq:stochastic:dcb-total-current} by incorporating the additional photon sidebands,
-            \begin{equation}
-                I(V_0) = \sum_{n=-\infty}^{\infty} J_n^2\!\left( \frac{eA}{h\nu}\right) \cdot I_0\!\left(V_0 - \frac{n h\nu}{e}\right)\,.
+                I_\mathrm{PADCB}(V_0) = \sum_{n=-\infty}^{\infty} J_n^2\!\left(\frac{eA}{h\nu}\right) I_{\mathrm{DCB},0}\!\left(V_0 - \frac{nh\nu}{e}\right)\,.
                 \label{eq:stochastic:padcb}
             \end{equation}
-            Photon-assisted DCB therefore combines environmental energy exchange with photon-assisted processes in an incoherent manner. In contrast to coherent PAT in the microscopic Tien--Gordon picture, no phase-coherent sideband mixing occurs. Instead, microwaves redistribute weight among the inelastic channels of the $P(E)$ kernel. This produces microwave-induced replicas of the DCB-suppressed current without generating coherent Shapiro-like features.
+            This current-replica formulation is the standard result used for coherently driven tunnel junctions in the DCB regime~\cite{grabert_dynamical_2015,parlavecchio_fluctuation_2015,houle_photon-assisted_2019}. Here $A$ is the effective AC voltage amplitude across the junction after filtering and voltage division by the electromagnetic environment. The Bessel weights redistribute the complete static DCB characteristic into replicas separated by $h\nu/e$ in voltage.
+
+            Equation~\eqref{eq:stochastic:padcb} assumes weak tunneling, a coherent classical drive, and an environment whose response can be absorbed into the stationary DCB characteristic and the effective junction amplitude $A$. It neglects drive-induced changes of the DOS, heating, non-equilibrium electrode occupations, and nonlinear environmental backaction. 
+            
+            Houle et al. found that the conventional photo-assisted relations described the current and noise data separately, but not with one common AC amplitude. The amplitude required to fit the current differed from that inferred independently from photon-assisted noise. This unresolved inconsistency shows that the standard replica model does not capture all driven junction-environment dynamics and limits its use for quantitative microwave calibration~\cite{houle_photon-assisted_2019}.
 
             DCB constitutes the single-electron $q=e$ counterpart of incoherent Cooper-pair tunneling, which is discussed next. Whereas DCB suppresses the tunneling of individual electrons, the same environmental interaction enables incoherent $q=2e$ charge transfer in superconducting junctions. This forms the basis of incoherent Cooper-pair tunneling, discussed in the following section.
 
