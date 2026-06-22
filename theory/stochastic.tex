@@ -193,71 +193,14 @@
 
         The electronic density of states remains part of the elastic branch current, while the environment supplies the energy-exchange kernel. DCB is therefore not a modified electronic density of states, but an environmental dressing of tunneling through $P_e(E)$.
 
-        Figure~\ref{fig:stochastic:dcb-resonant} shows the resulting \textit{I--V} and \textit{dI--dV} curves for an SIS junctions in a resonant environment. It shows satellite structures separated by approximately $\hbar\omega_0/e$ in voltage. These features originate from passive modes of the electromagnetic environment and should not be confused with photon-assisted DCB, which requires an externally applied microwave drive.
-
-
-        \begin{landscape}
-            \begin{figure}[p]
-                \vspace{-1.5cm}
-                \centering
-
-                % Left figure
-                \begin{minipage}[t]{3.0in}
-                    \centering
-                    \subfigure[
-                        \textit{I--V} for varying Ohmic coupling.
-                        ]{\import{theory/stochastic}{dcb-res-iv-sis.pgf}}
-                    \hfill
-                    \subfigure[
-                        \textit{I--V} for varying resonant-mode coupling.
-                        ]{\import{theory/stochastic}{dcb-resa-iv-sis.pgf}}
-                    \medskip
-                    \subfigure[
-                        \textit{dI--dV} for varying Ohmic coupling.
-                        ]{\import{theory/stochastic}{dcb-res-didv-sis.pgf}}
-                    \hfill
-                    \subfigure[
-                        \textit{dI--dV} for varying resonant-mode coupling.
-                        ]{\import{theory/stochastic}{dcb-resa-didv-sis.pgf}}
-                    \caption{
-                        Resonant dynamical Coulomb blockade of an SIS tunnel junction. (a,c) Increasing the Ohmic coupling suppresses low-energy tunneling and broadens the quasiparticle onset. (b,d) Increasing the resonant-mode coupling $\alpha_{0,e}$ transfers spectral weight from the elastic branch to inelastic satellites separated by $\hbar\omega_0/e$ in voltage. Either $\alpha_{0, e}=1.0$ or $\alpha_{e}=1.0$ is fixed.
-                        }
-                    \label{fig:stochastic:dcb-resonant}
-                \end{minipage}
-                \hfill
-                \begin{minipage}[t]{3.0in}
-                    \centering
-                        \subfigure[
-                        \textit{I--V} for varying Ohmic coupling.
-                            ]{\import{theory/stochastic}{dcb-pat-ohm-iv-sis.pgf}}
-                        \hfill
-                        \subfigure[
-                            \textit{I--V} for varying microwave coupling.
-                            ]{\import{theory/stochastic}{dcb-pata-ohm-iv-sis.pgf}}
-                        \medskip
-                        \subfigure[
-                            \textit{dI--dV} for varying Ohmic coupling.
-                            ]{\import{theory/stochastic}{dcb-pat-ohm-didv-sis.pgf}}
-                        \hfill
-                        \subfigure[
-                            \textit{dI--dV} for varying microwave coupling.
-                            ]{\import{theory/stochastic}{dcb-pata-ohm-didv-sis.pgf}}
-                        \caption{
-                            Photon-assisted dynamical Coulomb blockade of an SIS tunnel junction. (a,c) Increasing the Ohmic coupling suppresses low-energy tunneling and broadens the quasiparticle onset. (b,d) Increasing the microwave coupling $\alpha_{\nu, e}$
-                            Either $\alpha_{\nu, e}=1.0$ or $\alpha_{e}=1.0$ is fixed.
-                            }
-                        \label{fig:stochastic:dcb-pat}
-                \end{minipage}
-            \end{figure}
-        \end{landscape}
-
         %=========================================================
         \subsubsection*{Photon-Assisted Dynamical Coulomb Blockade}
         %=========================================================
 
             The photon-assisted tunneling mechanism and its Bessel weights are derived in Sec.~\ref{subsec:micro:pat}. For DCB, the same time-averaged dressing is applied to the complete undriven current $I_{\mathrm{DCB},0}(V)$, which already contains the environmental energy exchange described above. The resulting photon-assisted DCB current is
             \begin{equation}
-                I_\mathrm{PADCB}(V_0) = \sum_{n=-\infty}^{\infty} J_n^2\!\left(\frac{eA}{h\nu}\right) I_{\mathrm{DCB},0}\!\left(V_0 - \frac{nh\nu}{e}\right)\,.
+                I_\mathrm{PADCB}(V_0) = \sum_{n=-\infty}^{\infty} J_n^2\!\left(\alpha_{\nu, q}\right) I_{\mathrm{DCB},0}\!\left(V_0 - \frac{nh\nu}{e}\right)\,,\qquad
+                \alpha_{\nu, q} = \frac{eA}{h\nu}\,.
                 \label{eq:stochastic:padcb}
             \end{equation}
             This current-replica formulation is the standard result used for coherently driven tunnel junctions in the DCB regime~\cite{grabert_dynamical_2015,parlavecchio_fluctuation_2015,houle_photon-assisted_2019}. Here $A$ is the effective AC voltage amplitude across the junction after filtering and voltage division by the electromagnetic environment. The Bessel weights redistribute the complete static DCB characteristic into replicas separated by $h\nu/e$ in voltage.
@@ -265,8 +208,65 @@
             Equation~\eqref{eq:stochastic:padcb} assumes weak tunneling, a coherent classical drive, and an environment whose response can be absorbed into the stationary DCB characteristic and the effective junction amplitude $A$. It neglects drive-induced changes of the DOS, heating, non-equilibrium electrode occupations, and nonlinear environmental backaction. 
             
             Houle et al. found that the conventional photo-assisted relations described the current and noise data separately, but not with one common AC amplitude. The amplitude required to fit the current differed from that inferred independently from photon-assisted noise. This unresolved inconsistency shows that the standard replica model does not capture all driven junction-environment dynamics and limits its use for quantitative microwave calibration~\cite{houle_photon-assisted_2019}.
+            
+            Figures~\ref{fig:stochastic:dcb-resonant} and~\ref{fig:stochastic:dcb-pat} compare passive resonant and photon-assisted DCB in an SIS junction. Both mechanisms generate satellites separated by the same energy quantum, $\hbar\omega_0=h\nu$, but their origin and weights differ. A resonant environment produces Poisson-weighted inelastic channels, while an external coherent drive produces Bessel-weighted replicas of the complete DCB current. At zero temperature, a passive mode can absorb energy but cannot emit it. Its satellites therefore occur on the higher-$|V|$ side of the SIS quasiparticle threshold. A coherent drive permits both photon absorption and stimulated emission, so PADCB produces replicas on both sides of the threshold, including subgap features. Finite temperature weakens this distinction because thermally occupied environmental modes can emit energy, with negative-energy weight constrained by detailed balance.
 
             DCB constitutes the single-electron $q=e$ counterpart of incoherent Cooper-pair tunneling, which is discussed next. Whereas DCB suppresses the tunneling of individual electrons, the same environmental interaction enables incoherent $q=2e$ charge transfer in superconducting junctions. This forms the basis of incoherent Cooper-pair tunneling, discussed in the following section.
+
+            \begin{landscape}
+                \begin{figure}[p]
+                    % \captionsetup{format=plain}%
+                    \vspace{-1.0cm}
+                    \centering
+
+                    % Left figure
+                    \begin{minipage}[t]{3.0in}
+                    \centering
+                    \subfigure[
+                        \textit{I--V}, varying $\alpha_e$.
+                        ]{\import{theory/stochastic}{dcb-res-iv-sis.pgf}}
+                    \hfill
+                    \subfigure[
+                        \textit{I--V}, varying $\alpha_{0,e}$.
+                        ]{\import{theory/stochastic}{dcb-resa-iv-sis.pgf}}
+                    \medskip
+                    \subfigure[
+                        \textit{dI--dV}, varying $\alpha_e$.
+                        ]{\import{theory/stochastic}{dcb-res-didv-sis.pgf}}
+                    \hfill
+                    \subfigure[
+                        \textit{dI--dV}, varying $\alpha_{0,e}$.
+                        ]{\import{theory/stochastic}{dcb-resa-didv-sis.pgf}}
+                    \caption{
+                        Resonant DCB in an SIS junction. (a,c) Increasing $\alpha_e$ at fixed $\alpha_{0,e}=1$ suppresses and broadens the quasiparticle features. (b,d) Increasing $\alpha_{0,e}$ at fixed $\alpha_e=1$ transfers weight to Poisson-weighted satellites spaced by $\hbar\omega_0/e$.
+                        }
+                        \label{fig:stochastic:dcb-resonant}
+                    \end{minipage}
+                    \hfill
+                    \begin{minipage}[t]{3.0in}
+                    \centering
+                        \subfigure[
+                        \textit{I--V}, varying $\alpha_e$.
+                            ]{\import{theory/stochastic}{dcb-pat-ohm-iv-sis.pgf}}
+                        \hfill
+                        \subfigure[
+                            \textit{I--V}, varying $\alpha_{\nu,e}$.
+                            ]{\import{theory/stochastic}{dcb-pata-ohm-iv-sis.pgf}}
+                        \medskip
+                        \subfigure[
+                            \textit{dI--dV}, varying $\alpha_e$.
+                            ]{\import{theory/stochastic}{dcb-pat-ohm-didv-sis.pgf}}
+                        \hfill
+                        \subfigure[
+                            \textit{dI--dV}, varying $\alpha_{\nu,e}$.
+                            ]{\import{theory/stochastic}{dcb-pata-ohm-didv-sis.pgf}}
+                        \caption{
+                            Photon-assisted DCB in an SIS junction. (a,c) Increasing $\alpha_e$ at fixed $\alpha_{\nu,e}=1$ strengthens environmental suppression. (b,d) Increasing $\alpha_{\nu,e}=eA/(h\nu)$ at fixed $\alpha_e=1$ creates Bessel-weighted replicas spaced by $h\nu/e$.
+                            }
+                            \label{fig:stochastic:dcb-pat}
+                    \end{minipage}
+                \end{figure}
+            \end{landscape}
 
 
     %=========================================================
