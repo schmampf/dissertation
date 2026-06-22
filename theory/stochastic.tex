@@ -269,82 +269,38 @@
 
 
     %=========================================================
-    \subsection{Incoherent Two-Electron Tunneling}
-    \label{subsec:stochastic:2e}
+    \subsection{Incoherent Cooper-Pair Tunneling}
+    \label{subsec:stochastic:icpt}
     %=========================================================
 
-        The DCB description above uses $P(E)$ at the level of a measurable single-junction current. For discrete two-electron processes it is more useful to work one level lower, with transition rates. In the stochastic regime, the superconducting phase can become randomized by the electromagnetic environment, suppressing phase-coherent Josephson tunneling, Andreev bound states, and multiple Andreev reflection. Nevertheless, the transfer of a charge $(2e)$ across a voltage-biased junction remains possible through inelastic tunneling events. These processes form a unified class of incoherent two-electron tunneling, in which the junction exchanges an energy $(2e)V$ with its environment. Their rates are governed by the same $P(E)$ kernel as in dynamical Coulomb blockade, but evaluated at the doubled energy scale associated with the transferred charge.
+        In a voltage-biased SIS junction, environmental phase fluctuations can suppress coherent Josephson transport while retaining discrete transfer of Cooper pairs with $q=2e$. The Josephson coupling energy then enters perturbatively at second order, and the environment supplies or absorbs the energy associated with each pair-transfer event.
 
-        Despite their different microscopic origins, incoherent Cooper-pair tunneling in SIS junctions and incoherent Andreev reflection at NS interfaces share the same universal structure:
+        The forward and backward ICPT rates follow directly from the charge-$2e$ kernel introduced in Sec.~\ref{subsec:stochastic:pe-theory},
         \begin{equation}
-            \Gamma_{2e}(V) = \int_{-\infty}^{\infty} P(E)\,F_{2e}(E,V)\,\mathrm{d}E\,,
-            \label{eq:stochastic:2e-general}
+            \Gamma_\mathrm{ICPT}(V) = \frac{\pi E_\mathrm{J}^{2}}{2\hbar}P_{2e}(\pm 2eV)\,.
+            \label{eq:stochastic:icpt-rates}
         \end{equation}
-        with the environment coupling to the charge $(2e)$ through the argument of the $P(E)$ function. The only distinction lies in the electronic prefactor $F_{2e}(E,V)$, which encodes the microscopic structure of the junction. ICPT in SIS junctions and IAR at NS interfaces are therefore described by the same charge-$(2e)$ energy-exchange kernel, with different electronic prefactors.
 
-        %=========================================================
-        \subsubsection*{Incoherent Cooper-Pair Tunneling}
-        %=========================================================
+        For an equilibrium environment, the current therefore also be written as
+        \begin{equation}
+            I_\mathrm{ICPT}(V)
+            = \frac{\pi eE_\mathrm{J}^{2}}{\hbar}\left[1-\exp(-2eV/k_\mathrm{B}T)\right]P_{2e}(2eV)\,.
+            \label{eq:stochastic:icpt-current-detailed-balance}
+        \end{equation}
 
-            In an SIS tunnel junction the coherent Josephson effect is suppressed once environmental phase fluctuations become strong enough that the phase-dependent part of the Cooper-pair tunneling amplitude averages to zero,
-            \begin{equation}
-                \left\langle \exp(\ima\phi(t))\right\rangle = 0\,.
-                \label{eq:stochastic:icpt-phase-average}
-            \end{equation}
-            The Josephson coupling energy $E_\mathrm{J}=\hbar I_\mathrm{C}/2e$ then no longer produces a DC supercurrent but enters the tunneling rate in second order. Since a Cooper pair of charge $(2e)$ is transferred between the two condensates, the corresponding electronic factor takes the simple form
-            \begin{equation}
-                F_\mathrm{ICPT}(E,V) = \frac{\pi E_\mathrm{J}^{2}}{2\hbar} \left(\delta(E-2eV) - \delta(E+2eV)\right)\,,
-                \label{eq:stochastic:icpt-F2e}
-            \end{equation}
-            Inserting Eq.~\eqref{eq:stochastic:icpt-F2e} into Eq.~\eqref{eq:stochastic:2e-general} yields the standard expression for the incoherent Cooper-pair tunneling rate. Multiplying by the transferred charge gives the ICPT current,
-            \begin{equation}
-                I_\mathrm{ICPT}(V)
-                = \frac{\pi E_\mathrm{J}^{2}}{\hbar}
-                \left(1 - \exp(-2eV/k_\mathrm{B}T)\right) P(2eV)\,.
-                \label{eq:stochastic:icpt-current}
-            \end{equation}
+        This perturbative description assumes weak $E_\mathrm{J}$, statistically independent pair-transfer events, and a linear equilibrium environment. It does not describe a phase-coherent DC Josephson current, Shapiro steps, or coherent multiple Andreev reflection.
 
-            The low-bias suppression of $I_\mathrm{ICPT}(V)$ is therefore governed by the behavior of $P(E)$ near $E=0$. For Ohmic environments this leads to the universal power law $I\propto V^{2R/R_\mathrm{Q}-1}$, analogous to the dynamical Coulomb blockade of single-electron tunneling but evaluated at the doubled charge $(2e)$.
+        A coherent microwave drive adds photon-assisted replicas of the stationary ICPT characteristic. Using the PAT result from Sec.~\ref{subsec:micro:pat}, the effective charge $2e$ gives
+        \begin{equation}
+            I_\mathrm{PAICPT}(V_0)
+            = \sum_{n=-\infty}^{\infty}J_n^2\!\left(\alpha_{\nu,2e}\right)
+            I_\mathrm{ICPT,0}\!\left(V_0-\frac{nh\nu}{2e}\right)\,,
+            \qquad \alpha_{\nu,2e}=\frac{2eA}{h\nu}\,.
+            \label{eq:stochastic:paicpt}
+        \end{equation}
+        The replica spacing and microwave coupling both reflect the transferred charge. This distinguishes photon-assisted ICPT from coherent Shapiro physics and has been observed directly in Josephson scanning tunneling microscopy~\cite{roychowdhury_microwave_2015}.
 
-
-        %=========================================================
-        \subsubsection*{Incoherent Andreev Reflection}
-        %=========================================================
-
-            At an NS interface, subgap transport is governed microscopically by Andreev reflection. An incoming electron from the normal electrode is retroreflected as a hole, while a Cooper pair is injected into the superconductor. In the coherent BTK description this process relies on well-defined electron-hole amplitudes. Once environmental phase fluctuations destroy coherence, Andreev reflection remains possible but becomes a stochastic, inelastic two-electron tunneling process.
-
-            In the tunneling limit, the coherent BTK structure collapses to a single effective second-order tunneling parameter, and the electronic factor becomes
-            \begin{equation}
-                F_\mathrm{IAR}(E,V) = \frac{\tau^2 G_0}{e^{2}} \left(f(E-eV) - f(E+eV)\right)\,,
-                \label{eq:stochastic:iar-F2e}
-            \end{equation}
-            where $f(E)$ is the Fermi function of the normal electrode. Inserting Eq.~\eqref{eq:stochastic:iar-F2e} into Eq.~\eqref{eq:stochastic:2e-general} gives the corresponding current,
-            \begin{equation}
-                I_\mathrm{IAR}(V) = \frac{2\tau^2 G_0}{e} \int_{-\infty}^{\infty} P(E)\,\left(f(E-eV)-f(E+eV)\right)\,\mathrm{d}E\,.
-                \label{eq:stochastic:iar-current}
-            \end{equation}
-
-            As in ICPT, low-bias IAR is suppressed by $P(E\to 0)$. The only difference between IAR and ICPT lies in the electronic factor: the normal metal provides the Fermi functions $f(E\pm eV)$, whereas ICPT involves only the condensate wave functions encoded in $E_\mathrm{J}^{2}$.
-
-            Finally, coherent Andreev reflection and multiple Andreev reflection do not survive as coherent SIS subgap mechanisms once the system enters the stochastic tunneling regime. In an SIS junction both electrodes possess gapped BCS densities of states, so no normal-metal continuum is available to support elastic electron-hole conversion inside the gap. Coherent Andreev reflection relies on well-defined electron and hole amplitudes with a fixed superconducting phase, and multiple Andreev reflection requires an extended sequence of correlated conversions. Strong environmental phase fluctuations make the amplitudes of successive conversion events uncorrelated. The remaining SIS subgap channel is therefore the incoherent transfer of a Cooper pair between the two condensates, described by ICPT.
-
-
-        %=========================================================
-        \subsubsection*{Photon-Assisted Incoherent Two-Electron Tunneling}
-        %=========================================================
-
-            When a microwave drive is applied, the phase remains randomized by the environment, so no Shapiro-like coherent interference occurs. Instead, the drive opens additional inelastic channels. The probability to exchange energy with both environment and microwave field becomes
-            \begin{equation}
-                P(E) = \sum_{n=-\infty}^{\infty} J_{n}^{2}\!\left(\frac{2eA}{h\nu}\right)P_{0}(E-nh\nu).
-                \label{eq:stochastic:pe-pa2e}
-            \end{equation}
-
-            Inserting Eq.~\ref{eq:stochastic:pe-pa2e} into the 2e tunneling rate yields the photon-assisted current,
-            \begin{equation}
-                I_{2e}(V_{0}) = \sum_{n=-\infty}^{\infty} J_{n}^{2}\!\left(\frac{2eA}{h\nu}\right)\, I_{2e,0}\!\left(V_{0}-\frac{nh\nu}{2e}\right),
-                \label{eq:stochastic:pa2e}
-            \end{equation}
-            where $I_{2e,0}(V)$ is either Eq.~\eqref{eq:stochastic:icpt-current} for ICPT or Eq.~\eqref{eq:stochastic:iar-current} for IAR, depending on the junction type. Thus photon-assisted ICPT and photon-assisted IAR share the same structure, while their electronic prefactors differ.
+        Incoherent Andreev reflection is a related but microscopically distinct $q=2e$ process at an NS interface. It describes second-order electron tunneling between a normal-metal continuum and a superconducting condensate rather than Cooper-pair tunneling between two condensates. Its environmental dressing is governed by the same $P_{2e}(E)$ because the net transferred charge is identical, while its electronic kernel contains the NS-interface matrix elements and normal-electrode occupations. We mention it for completeness, but it is not a central transport mechanism considered here.
 
 
     %=========================================================
@@ -401,7 +357,7 @@
                 \item \textbf{Quasiparticle tunneling} becomes possible only above the superconducting energy gap. Single-electron transitions $n\!\to\!n\pm1$ require an energy cost of at least $\Delta$ per broken pair, modifying the Coulomb blockade diagram into superconducting Coulomb diamonds.
                 \item \textbf{Parity effects} arise because the island prefers to host an even number of electrons. Near charge degeneracy, odd charge states acquire an additional energy cost of $\Delta$, which modifies the periodicity of the stability diagram and the accessible charge states at low temperature.
             \end{enumerate}
-            Together, these ingredients produce a device whose transport is governed not simply by sequential tunneling, but by competing single-electron and two-electron processes. In the stochastic tunneling limit, each transition is dressed by environmental energy exchange. The SSET therefore combines the mechanisms introduced above: DCB of quasiparticles, incoherent Cooper-pair tunneling, and, where NS interfaces are present, incoherent Andreev processes.
+            Together, these ingredients produce a device whose transport is governed not simply by sequential tunneling, but by competing single-electron and Cooper-pair processes. In the stochastic tunneling limit, each transition is dressed by environmental energy exchange. The SSET therefore combines DCB-dressed quasiparticle tunneling with ICPT between superconducting charge states.
 
         %=========================================================
         \subsubsection*{Transport Cycles in the SSET}
@@ -409,7 +365,7 @@
 
             % TODO[THY-04]: Specify the device-dependent transition energies and current operator for the SSET master equation used in the measurements.
 
-            The coexistence of quasiparticle and Cooper-pair processes gives rise to distinct transport cycles, including Josephson--quasiparticle (JQP) cycles, double Josephson--quasiparticle (DJQP) cycles, and subgap cycles involving incoherent Andreev reflection. These cycles arise when a sequence of energetically allowed transitions forms a closed loop in charge-state space, enabling a steady-state current through the device. In the stochastic regime, the rates of Cooper-pair steps are governed by ICPT, the quasiparticle steps follow the DCB-modified single-electron tunneling expression, and the cycle current is often set by the slowest transition.
+            Quasiparticle and Cooper-pair processes combine into transport cycles such as Josephson--quasiparticle (JQP) and double Josephson--quasiparticle (DJQP) cycles. These cycles arise when a sequence of energetically allowed transitions forms a closed loop in charge-state space, enabling a steady-state current through the device. In the stochastic regime, the rates of Cooper-pair steps are governed by ICPT, the quasiparticle steps follow the DCB-modified single-electron tunneling expression, and the cycle current is often set by the slowest transition.
 
             A quantitative description is obtained by writing a master equation for the charge-state occupations $p_n$,
             \begin{equation}
