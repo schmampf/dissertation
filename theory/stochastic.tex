@@ -195,33 +195,61 @@
 
         Figure~\ref{fig:stochastic:dcb-resonant} shows the resulting \textit{I--V} and \textit{dI--dV} curves for an SIS junctions in a resonant environment. It shows satellite structures separated by approximately $\hbar\omega_0/e$ in voltage. These features originate from passive modes of the electromagnetic environment and should not be confused with photon-assisted DCB, which requires an externally applied microwave drive.
 
-        \begin{figure}[t]
-            \centering
-            \setcounter{subfigure}{0}
-            \subfigure[
-                \textit{I--V} for varying Ohmic coupling.
-                ]{\import{theory/stochastic}{dcb-res-iv-sis.pgf}}
-            \hfill
-            \setcounter{subfigure}{2}
-            \subfigure[
-                \textit{I--V} for varying resonant-mode coupling.
-                ]{\import{theory/stochastic}{dcb-resa-iv-sis.pgf}}
-            \\
-            \setcounter{subfigure}{1}
-            \subfigure[
-                \textit{dI--dV} for varying Ohmic coupling.
-                ]{\import{theory/stochastic}{dcb-res-didv-sis.pgf}}
-            \hfill
-            \setcounter{subfigure}{3}
-            \subfigure[
-                \textit{dI--dV} for varying resonant-mode coupling.
-                ]{\import{theory/stochastic}{dcb-resa-didv-sis.pgf}}
-            \caption{
-                Resonant dynamical Coulomb blockade of an SIS tunnel junction. (a,b) Increasing the Ohmic coupling suppresses low-energy tunneling and broadens the quasiparticle onset. (c,d) Increasing the resonant-mode coupling $\alpha_{0,e}$ transfers spectral weight from the elastic branch to inelastic satellites separated by $\hbar\omega_0/e$ in voltage. The resonant structures arise from passive environmental modes rather than an externally applied microwave drive.
-                Used $\alpha_{0, e}=1.0$ and  $\alpha_{e}=1.0$, if not stated otherwise by the legend.
-                }
-            \label{fig:stochastic:dcb-resonant}
-        \end{figure}
+
+        \begin{landscape}
+            \begin{figure}[p]
+                \vspace{-1.5cm}
+                \centering
+
+                % Left figure
+                \begin{minipage}[t]{3.0in}
+                    \centering
+                    \subfigure[
+                        \textit{I--V} for varying Ohmic coupling.
+                        ]{\import{theory/stochastic}{dcb-res-iv-sis.pgf}}
+                    \hfill
+                    \subfigure[
+                        \textit{I--V} for varying resonant-mode coupling.
+                        ]{\import{theory/stochastic}{dcb-resa-iv-sis.pgf}}
+                    \medskip
+                    \subfigure[
+                        \textit{dI--dV} for varying Ohmic coupling.
+                        ]{\import{theory/stochastic}{dcb-res-didv-sis.pgf}}
+                    \hfill
+                    \subfigure[
+                        \textit{dI--dV} for varying resonant-mode coupling.
+                        ]{\import{theory/stochastic}{dcb-resa-didv-sis.pgf}}
+                    \caption{
+                        Resonant dynamical Coulomb blockade of an SIS tunnel junction. (a,c) Increasing the Ohmic coupling suppresses low-energy tunneling and broadens the quasiparticle onset. (b,d) Increasing the resonant-mode coupling $\alpha_{0,e}$ transfers spectral weight from the elastic branch to inelastic satellites separated by $\hbar\omega_0/e$ in voltage. Either $\alpha_{0, e}=1.0$ or $\alpha_{e}=1.0$ is fixed.
+                        }
+                    \label{fig:stochastic:dcb-resonant}
+                \end{minipage}
+                \hfill
+                \begin{minipage}[t]{3.0in}
+                    \centering
+                        \subfigure[
+                        \textit{I--V} for varying Ohmic coupling.
+                            ]{\import{theory/stochastic}{dcb-pat-ohm-iv-sis.pgf}}
+                        \hfill
+                        \subfigure[
+                            \textit{I--V} for varying microwave coupling.
+                            ]{\import{theory/stochastic}{dcb-pata-ohm-iv-sis.pgf}}
+                        \medskip
+                        \subfigure[
+                            \textit{dI--dV} for varying Ohmic coupling.
+                            ]{\import{theory/stochastic}{dcb-pat-ohm-didv-sis.pgf}}
+                        \hfill
+                        \subfigure[
+                            \textit{dI--dV} for varying microwave coupling.
+                            ]{\import{theory/stochastic}{dcb-pata-ohm-didv-sis.pgf}}
+                        \caption{
+                            Photon-assisted dynamical Coulomb blockade of an SIS tunnel junction. (a,c) Increasing the Ohmic coupling suppresses low-energy tunneling and broadens the quasiparticle onset. (b,d) Increasing the microwave coupling $\alpha_{\nu, e}$
+                            Either $\alpha_{\nu, e}=1.0$ or $\alpha_{e}=1.0$ is fixed.
+                            }
+                        \label{fig:stochastic:dcb-pat}
+                \end{minipage}
+            \end{figure}
+        \end{landscape}
 
         %=========================================================
         \subsubsection*{Photon-Assisted Dynamical Coulomb Blockade}
