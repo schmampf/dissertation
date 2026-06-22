@@ -21,9 +21,7 @@
 
     Strong phase fluctuations suppress phase memory over long times. Coherent Josephson and Andreev processes are then broadened or suppressed rather than being removed at a sharp boundary. In the limit where independent tunneling events dominate, their rates are governed by the energy exchanged with the electromagnetic environment. The crossover depends on the frequency-dependent impedance, junction parameters, temperature, and the transport process under consideration.
 
-    In this incoherent limit, charge transfer proceeds through discrete tunneling events. The environment can absorb or emit energy during each event, so the tunneling rates depend on both the electronic density of states and the impedance of the surrounding circuit. This interplay is described by \textit{P(E)} theory, which gives the probability density for energy exchange between a tunnel junction and its environment. 
-    
-    The following subsections apply this formalism to dynamical Coulomb blockade of single-electron tunneling, incoherent Cooper-pair tunneling and its photon-assisted counterpart, and the superconducting single-electron transistor.
+    In this incoherent limit, \textit{P(E)} theory describes the probability density for energy exchange between a discrete tunneling event and the electromagnetic environment. The following subsections construct this environmental kernel and apply it to dynamical Coulomb blockade of single-electron tunneling, incoherent Cooper-pair tunneling and its photon-assisted counterpart, and the superconducting single-electron transistor.
     
 
     %=========================================================
@@ -32,7 +30,7 @@
     \label{subsec:stochastic:pe-theory}
     %=========================================================
 
-        In the presence of strong phase fluctuations, charge transport through a tunnel junction occurs as a sequence of independent events. Each event may exchange energy with the surrounding circuit. The central object is therefore the probability density $P_q(E)$ for the environment to absorb or emit the energy $E$ during a process that transfers charge $q$.
+        In the presence of strong phase fluctuations, charge transport through a tunnel junction occurs as a sequence of independent events. The circuit impedance first determines the phase fluctuations, their correlation function defines the energy-exchange probability, and this probability dresses the electronic tunneling rate and measured current. The subscript $q$ indicates the charge transferred in one event.
 
         The environmental impedance sets the spectrum of voltage fluctuations. Since voltage fluctuations integrate into phase fluctuations, the impedance enters through the charge-dependent phase correlation function
         \begin{equation}
@@ -67,23 +65,24 @@
             I(V)=q\left[\Gamma_q^{\rightarrow}(V)-\Gamma_q^{\leftarrow}(V)\right]\,.
             \label{eq:stochastic:pe-rate-current}
         \end{equation}
-        In the following, the subscript $q$ is omitted from $P_q(E)$ when the transferred charge is fixed by the process under discussion.
+
+        This separation between $P_q(E)$ and $F_q(E,V)$ is central to the framework. The environment redistributes the energy available to a tunneling event, while the electrode DOS and occupations remain part of the electronic kernel. Environmental dressing therefore changes the measured \textit{I--V} and \textit{dI--dV} characteristics without redefining the underlying electronic DOS.
 
         %=========================================================
-        \subsubsection*{Low-Ohmic Environment}
+        \subsubsection*{Elastic Limit}
         %=========================================================
-            A low-Ohmic environment has an impedance much smaller than the relevant resistance quantum over the frequencies involved in tunneling. Its voltage and phase fluctuations are therefore weak, and the environment exchanges little energy with the transferred charge. The energy-exchange probability then approaches a delta function,
+            The elastic limit is the weak-coupling limit $\alpha_q\to0$ of the Ohmic family. When the impedance is much smaller than the relevant resistance quantum over the frequencies involved in tunneling, voltage and phase fluctuations are weak and the environment exchanges little energy with the transferred charge. The energy-exchange probability then approaches a delta function,
             \begin{equation}
                 P_\mathrm{low}(E) \approx \delta(E)\,, \qquad \mathrm{Re}\,Z(\omega) \ll R_q\,.
                 \label{eq:stochastic:pe-coherent}
             \end{equation}
-            The environment neither absorbs nor emits energy, so the rate reduces to the bare elastic rate. Equation~\eqref{eq:stochastic:pe-rate-current} then gives the corresponding elastic current. A finite but small impedance broadens the delta peak slightly and introduces weak inelastic corrections. The low-Ohmic regime therefore connects $P(E)$ theory continuously to the usual elastic tunneling description.
+            The environment neither absorbs nor emits energy, so the rate reduces to the bare elastic rate. Equation~\eqref{eq:stochastic:pe-rate-current} then gives the corresponding elastic current. A finite but small $\alpha_q$ broadens the delta peak and introduces weak inelastic corrections, connecting $P(E)$ theory continuously to the usual elastic tunneling description.
 
         %=========================================================
-        \subsubsection*{Ohmic Environment}
+        \subsubsection*{Finite Ohmic Coupling}
         %=========================================================
             
-            In contrast, a strong electromagnetic environment produces large phase fluctuations and a broad energy-exchange spectrum. For an Ohmic impedance, a simple zero-temperature cutoff model gives
+            As the Ohmic coupling increases, phase fluctuations broaden the elastic peak into a continuous energy-exchange spectrum. A simple zero-temperature cutoff model gives
             \begin{equation}
                 P_\mathrm{Ohmic}(E)
                 = \frac{1}{E_\mathrm{c}\Gamma(\alpha_q)}
@@ -128,12 +127,12 @@
                 Mode weights
                 ]{\import{theory/stochastic}{pe-res-w.pgf}}
             \caption{
-                Energy-exchange probability for Ohmic and resonant electromagnetic environments. (a) The Ohmic kernel evolves from nearly elastic tunneling at small $\alpha_q$ to a broad distribution with suppressed low-energy weight as the environmental resistance increases. (b) Coupling to a harmonic mode redistributes this kernel into replicas separated by the mode energy $\hbar\omega_0$. (c) The replica amplitudes follow the Poisson weights $e^{-\alpha_{0,q}}\alpha_{0,q}^n/n!$, so increasing the mode coupling $\alpha_{0,q}$ transfers weight from the elastic contribution to higher-order mode excitations.  Used $\alpha_{0, q}=1.0$ and  $\alpha_{q}=1.0$, if not stated otherwise by the legend.
+                Energy-exchange probability for Ohmic and resonant electromagnetic environments. (a) The Ohmic kernel evolves from nearly elastic tunneling at small $\alpha_q$ to a broad distribution with suppressed low-energy weight as the environmental resistance increases. (b) Coupling to a harmonic mode redistributes this kernel into replicas separated by the mode energy $\hbar\omega_0$. (c) The replica amplitudes follow the Poisson weights $e^{-\alpha_{0,q}}\alpha_{0,q}^n/n!$, so increasing the mode coupling $\alpha_{0,q}$ transfers weight from the elastic contribution to higher-order mode excitations. Unless indicated by the legend, $\alpha_q=\alpha_{0,q}=1$.
                 }
             \label{fig:stochastic:pe}
         \end{figure}
 
-        Figure~\ref{fig:stochastic:pe} compares these environmental regimes. The low-Ohmic limit is contained in the Ohmic family shown in Fig.~\ref{fig:stochastic:pe}(a). For $R/R_\mathrm{Q}\to 0$, $P(E)$ approaches the elastic peak of Eq.~\eqref{eq:stochastic:pe-coherent}. Increasing $R/R_\mathrm{Q}$ broadens the distribution and suppresses its low-energy weight according to Eq.~\eqref{eq:stochastic:pe-ohmic}. Figure~\ref{fig:stochastic:pe}(b) shows how coupling to a harmonic mode produces replicas of this Ohmic kernel at integer multiples of $\hbar\omega_0$. Their amplitudes are set by the Poisson weights shown in Fig.~\ref{fig:stochastic:pe}(c). Increasing $\alpha_{0,q}$ shifts probability from the elastic contribution at $n=0$ to tunneling processes that excite one or more mode quanta.
+        Figure~\ref{fig:stochastic:pe} compares these environmental regimes. The elastic limit is contained in the Ohmic family shown in Fig.~\ref{fig:stochastic:pe}(a). For $\alpha_q\to0$, $P(E)$ approaches the delta peak of Eq.~\eqref{eq:stochastic:pe-coherent}. Increasing $\alpha_q$ broadens the distribution and suppresses its low-energy weight according to Eq.~\eqref{eq:stochastic:pe-ohmic}. Figure~\ref{fig:stochastic:pe}(b) shows how coupling to a harmonic mode produces replicas of this Ohmic kernel at integer multiples of $\hbar\omega_0$. Their amplitudes are set by the Poisson weights shown in Fig.~\ref{fig:stochastic:pe}(c). Increasing $\alpha_{0,q}$ shifts probability from the elastic contribution at $n=0$ to tunneling processes that excite one or more mode quanta.
 
         The following subsections use the same kernel at three levels of description. DCB dresses a single-junction current by convolution with $P(E)$. Incoherent two-electron tunneling is most naturally written in terms of transition rates. The SSET then combines several such rates in a master equation for charge-state occupations.
 
@@ -143,7 +142,7 @@
     \label{subsec:stochastic:dcb}
     %=========================================================
 
-        Dynamical Coulomb blockade (DCB) is the single-electron, $q=e$, application of the general $P_q(E)$ framework. In the microscopic tunnel description, the voltage bias fixes the electronic energy window and the current is determined by the density of states and occupations of the two electrodes. In DCB, a tunneling event may also exchange energy with the surrounding circuit. The corresponding probability $P_e(E)$ modifies the available tunneling rates, and events are suppressed when the environment provides little weight at the required exchange energy.
+        Dynamical Coulomb blockade (DCB) is the $q=e$ application of the general $P_q(E)$ framework. The elastic electronic kernel is inherited from the microscopic tunnel description, while $P_e(E)$ accounts for energy exchanged with the surrounding circuit. Tunneling is suppressed when the environment provides little weight at the required exchange energy.
 
         The physical origin can be seen from a single electron crossing a junction with capacitance $C$. The transferred charge changes the electrostatic energy of the junction by an amount of order $E_\mathrm{C}=e^2/2C$. In a quantum circuit this energy bookkeeping is not external to the tunneling process. It is carried by voltage fluctuations of the environment and therefore by the same $P_e(E)$ kernel introduced above. A small low-energy weight of $P_e(E)$ means that small-energy tunneling events are unlikely, which appears experimentally as a zero-bias suppression in \textit{dI--dV}.
 
@@ -156,7 +155,7 @@
         \end{align}
         Here $I_{i\to j}^{(0)}$ is the corresponding elastic branch without environmental energy exchange. It contains the electrode density of states, occupation factors, and tunneling matrix element for that direction, as in Eq.~\eqref{eq:micro:tunnel-1to2}. This branch-wise form makes the voltage symmetry transparent. For a passive symmetric junction in equilibrium, the negative-bias current is the sign-reversed positive-bias current even though the zero-temperature kernel has support only for positive exchanged energy. The environment absorbs energy according to the favored tunneling direction in either voltage polarity.
 
-        Figure~\ref{fig:stochastic:dcb} shows the resulting \textit{I--V} and \textit{dI--dV} curves for NIN, SIN, and SIS junctions in an ohmic environment. The NIN panels isolate the zero-bias anomaly, while SIN and SIS show how the same environmental dressing reshapes superconducting thresholds.
+        Figure~\ref{fig:stochastic:dcb} compares \textit{I--V} and \textit{dI--dV} curves for NIN, NIS, and SIS junctions in an Ohmic environment. The NIN panels isolate the zero-bias anomaly, while NIS and SIS show how the same dressing reshapes superconducting thresholds.
 
         \begin{figure}[t]
             \centering
@@ -165,7 +164,7 @@
                 ]{\import{theory/stochastic}{dcb-ohm-iv-nin.pgf}}
             \hfill
             \subfigure[
-                SIN current
+                NIS current
                 ]{\import{theory/stochastic}{dcb-ohm-iv-sin.pgf}}
             \hfill
             \subfigure[
@@ -177,21 +176,21 @@
                 ]{\import{theory/stochastic}{dcb-ohm-didv-nin.pgf}}
             \hfill
             \subfigure[
-                SIN conductance
+                NIS conductance
                 ]{\import{theory/stochastic}{dcb-ohm-didv-sin.pgf}}
             \hfill
             \subfigure[
                 SIS conductance
                 ]{\import{theory/stochastic}{dcb-ohm-didv-sis.pgf}}
             \caption{
-                DCB dressing of tunnel \textit{I--V} and \textit{dI--dV} curves for NIN, SIN, and SIS junctions.
+                DCB dressing of tunnel \textit{I--V} and \textit{dI--dV} curves for NIN, NIS, and SIS junctions.
                 The calculation uses the Ohmic kernel from Eq.~\eqref{eq:stochastic:pe-ohmic} with cutoff energy $E_\mathrm{c}=\Delta$.
-                Increasing the environmental coupling deepens the NIN zero-bias conductance dip, broadens the SIN threshold, and redistributes spectral weight near the SIS pair-breaking onset.
+                Increasing the environmental coupling deepens the NIN zero-bias conductance dip, broadens the NIS threshold, and redistributes spectral weight near the SIS pair-breaking onset.
                 }
             \label{fig:stochastic:dcb}
         \end{figure}
 
-        The electronic density of states remains part of the elastic branch current, while the environment supplies the energy-exchange kernel. DCB is therefore not a modified electronic density of states, but an environmental dressing of tunneling through $P_e(E)$.
+        The same $P_e(E)$ kernel therefore produces different observable signatures because it dresses different electronic kernels in NIN, NIS, and SIS junctions. The normal junction isolates environmental suppression, while superconducting junctions additionally retain their DOS thresholds.
 
         %=========================================================
         \subsubsection*{Photon-Assisted Dynamical Coulomb Blockade}
@@ -199,8 +198,8 @@
 
             The photon-assisted tunneling mechanism and its Bessel weights are derived in Sec.~\ref{subsec:micro:pat}. For DCB, the same time-averaged dressing is applied to the complete undriven current $I_{\mathrm{DCB},0}(V)$, which already contains the environmental energy exchange described above. The resulting photon-assisted DCB current is
             \begin{equation}
-                I_\mathrm{PADCB}(V_0) = \sum_{n=-\infty}^{\infty} J_n^2\!\left(\alpha_{\nu, q}\right) I_{\mathrm{DCB},0}\!\left(V_0 - \frac{nh\nu}{e}\right)\,,\qquad
-                \alpha_{\nu, q} = \frac{eA}{h\nu}\,.
+                I_\mathrm{PADCB}(V_0) = \sum_{n=-\infty}^{\infty} J_n^2\!\left(\alpha_{\nu,e}\right) I_{\mathrm{DCB},0}\!\left(V_0 - \frac{nh\nu}{e}\right)\,,\qquad
+                \alpha_{\nu,e} = \frac{eA}{h\nu}\,.
                 \label{eq:stochastic:padcb}
             \end{equation}
             This current-replica formulation is the standard result used for coherently driven tunnel junctions in the DCB regime~\cite{grabert_dynamical_2015,parlavecchio_fluctuation_2015,houle_photon-assisted_2019}. Here $A$ is the effective AC voltage amplitude across the junction after filtering and voltage division by the electromagnetic environment. The Bessel weights redistribute the complete static DCB characteristic into replicas separated by $h\nu/e$ in voltage.
@@ -211,7 +210,7 @@
             
             Figures~\ref{fig:stochastic:dcb-resonant} and~\ref{fig:stochastic:dcb-pat} compare passive resonant and photon-assisted DCB in an SIS junction. Both mechanisms generate satellites separated by the same energy quantum, $\hbar\omega_0=h\nu$, but their origin and weights differ. A resonant environment produces Poisson-weighted inelastic channels, while an external coherent drive produces Bessel-weighted replicas of the complete DCB current. At zero temperature, a passive mode can absorb energy but cannot emit it. Its satellites therefore occur on the higher-$|V|$ side of the SIS quasiparticle threshold. A coherent drive permits both photon absorption and stimulated emission, so PADCB produces replicas on both sides of the threshold, including subgap features. Finite temperature weakens this distinction because thermally occupied environmental modes can emit energy, with negative-energy weight constrained by detailed balance.
 
-            DCB constitutes the single-electron $q=e$ counterpart of incoherent Cooper-pair tunneling, which is discussed next. Whereas DCB suppresses the tunneling of individual electrons, the same environmental interaction enables incoherent $q=2e$ charge transfer in superconducting junctions. This forms the basis of incoherent Cooper-pair tunneling, discussed in the following section.
+            DCB is the single-electron counterpart of the incoherent $q=2e$ charge transfer discussed in the following section. The same environmental interaction that suppresses individual-electron tunneling can enable inelastic Cooper-pair transfer.
 
             \begin{landscape}
                 \begin{figure}[p]
