@@ -132,9 +132,9 @@
             \label{fig:stochastic:pe}
         \end{figure}
 
-        Figure~\ref{fig:stochastic:pe} compares these environmental regimes. The elastic limit is contained in the Ohmic family shown in Fig.~\ref{fig:stochastic:pe}(a). For $\alpha_q\to0$, $P(E)$ approaches the delta peak of Eq.~\eqref{eq:stochastic:pe-coherent}. Increasing $\alpha_q$ broadens the distribution and suppresses its low-energy weight according to Eq.~\eqref{eq:stochastic:pe-ohmic}. Figure~\ref{fig:stochastic:pe}(b) shows how coupling to a harmonic mode produces replicas of this Ohmic kernel at integer multiples of $\hbar\omega_0$. Their amplitudes are set by the Poisson weights shown in Fig.~\ref{fig:stochastic:pe}(c). Increasing $\alpha_{0,q}$ shifts probability from the elastic contribution at $n=0$ to tunneling processes that excite one or more mode quanta.
+        Figure~\ref{fig:stochastic:pe} summarizes the continuous progression from elastic tunneling at $\alpha_q\to0$, through a broadened Ohmic kernel at finite $\alpha_q$, to a structured environment that redistributes this kernel into mode-assisted replicas. The same progression reappears below as zero-bias suppression, broadened thresholds, and resonant satellites in the measured transport characteristics.
 
-        The following subsections use the same kernel at three levels of description. DCB dresses a single-junction current by convolution with $P(E)$. Incoherent Cooper-pair tunneling is most naturally written in terms of transition rates. The SSET then combines several such rates in a master equation for charge-state occupations.
+        The following subsections specialize this charge-general framework. DCB applies $P_e(E)$ to stochastic single-electron transport, while ICPT applies $P_{2e}(E)$ to Cooper-pair transfer. The SSET then combines the corresponding single-electron and pair-transfer rates in a master equation for charge-state occupations.
 
 
     %=========================================================
@@ -204,13 +204,13 @@
             \end{equation}
             This current-replica formulation is the standard result used for coherently driven tunnel junctions in the DCB regime~\cite{grabert_dynamical_2015,parlavecchio_fluctuation_2015,houle_photon-assisted_2019}. Here $A$ is the effective AC voltage amplitude across the junction after filtering and voltage division by the electromagnetic environment. The Bessel weights redistribute the complete static DCB characteristic into replicas separated by $h\nu/e$ in voltage.
 
-            Equation~\eqref{eq:stochastic:padcb} assumes weak tunneling, a coherent classical drive, and an environment whose response can be absorbed into the stationary DCB characteristic and the effective junction amplitude $A$. It neglects drive-induced changes of the DOS, heating, non-equilibrium electrode occupations, and nonlinear environmental backaction. 
-            
-            Houle et al. found that the conventional photo-assisted relations described the current and noise data separately, but not with one common AC amplitude. The amplitude required to fit the current differed from that inferred independently from photon-assisted noise. This unresolved inconsistency shows that the standard replica model does not capture all driven junction-environment dynamics and limits its use for quantitative microwave calibration~\cite{houle_photon-assisted_2019}.
+            Equation~\eqref{eq:stochastic:padcb} assumes weak tunneling, a coherent classical drive, and an environment whose response can be absorbed into the stationary DCB characteristic and the effective junction amplitude $A$. It neglects drive-induced changes of the DOS, heating, non-equilibrium electrode occupations, and nonlinear environmental backaction.
+
+            The current and noise comparison by Houle et al. exposes the resulting limitation of the stationary-replica model. The conventional photo-assisted relations described both observables separately, but not with one common AC amplitude. The amplitude required to fit the current differed from that inferred independently from photon-assisted noise. This unresolved inconsistency shows that the model does not capture all driven junction-environment dynamics and limits its use for quantitative microwave calibration~\cite{houle_photon-assisted_2019}.
             
             Figures~\ref{fig:stochastic:dcb-resonant} and~\ref{fig:stochastic:dcb-pat} compare passive resonant and photon-assisted DCB in an SIS junction. Both mechanisms generate satellites separated by the same energy quantum, $\hbar\omega_0=h\nu$, but their origin and weights differ. A resonant environment produces Poisson-weighted inelastic channels, while an external coherent drive produces Bessel-weighted replicas of the complete DCB current. At zero temperature, a passive mode can absorb energy but cannot emit it. Its satellites therefore occur on the higher-$|V|$ side of the SIS quasiparticle threshold. A coherent drive permits both photon absorption and stimulated emission, so PADCB produces replicas on both sides of the threshold, including subgap features. Finite temperature weakens this distinction because thermally occupied environmental modes can emit energy, with negative-energy weight constrained by detailed balance.
 
-            DCB is the single-electron counterpart of the incoherent $q=2e$ charge transfer discussed in the following section. The same environmental interaction that suppresses individual-electron tunneling can enable inelastic Cooper-pair transfer.
+            DCB and ICPT are therefore two charge-specific consequences of the same environmental interaction. A small low-energy weight of $P_e(E)$ suppresses stochastic $q=e$ tunneling, while finite-energy weight in $P_{2e}(E)$ enables the inelastic $q=2e$ transfer discussed next.
 
             \begin{landscape}
                 \begin{figure}[p]
@@ -277,7 +277,7 @@
 
         The standard forward and backward ICPT rates follow directly from the charge-$2e$ kernel introduced in Sec.~\ref{subsec:stochastic:pe-theory}~\cite{ingold_charge_2005}.
         \begin{equation}
-            \Gamma_\mathrm{ICPT}^{\rightleftarrows}(V) = \frac{\pi E_\mathrm{J}^{2}}{2\hbar}P_{2e}(\pm 2eV)\,.
+            \Gamma_\mathrm{ICPT}^{\rightarrow/\leftarrow}(V) = \frac{\pi E_\mathrm{J}^{2}}{2\hbar}P_{2e}(\pm 2eV)\,.
             \label{eq:stochastic:icpt-rates}
         \end{equation}
         The upper sign describes forward pair transfer, while the lower sign describes backward transfer.
@@ -311,7 +311,7 @@
 
         Incoherent Andreev reflection is a related but microscopically distinct $q=2e$ process at an NS interface. It couples to the same $P_{2e}(E)$ kernel because the net transferred charge is identical, but its electronic kernel describes second-order electron tunneling between a normal-metal continuum and a superconducting condensate. We mention it for completeness, but it is not a central transport mechanism considered here.
 
-        In summary, ICPT is stochastic charge-$2e$ transfer whose static spectrum is governed by $P_{2e}(E)$. Passive resonances and applied microwaves both generate satellites with charge-$2e$ voltage spacing, but their weights have different origins. In the fully incoherent limit, the squared Bessel probabilities distinguish photon-assisted ICPT from the amplitude-level Bessel response of coherent Josephson transport. Incoherent Andreev reflection shares the environmental charge kernel, but not the microscopic electronic process.
+        In summary, $P_{2e}(E)$ governs stochastic Cooper-pair transfer and fixes the voltage spacing of its environmental and photon-assisted satellites. Squared Bessel weights characterize the fully incoherent microwave limit.
 
 
     %=========================================================
