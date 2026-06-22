@@ -134,7 +134,7 @@
 
         Figure~\ref{fig:stochastic:pe} compares these environmental regimes. The elastic limit is contained in the Ohmic family shown in Fig.~\ref{fig:stochastic:pe}(a). For $\alpha_q\to0$, $P(E)$ approaches the delta peak of Eq.~\eqref{eq:stochastic:pe-coherent}. Increasing $\alpha_q$ broadens the distribution and suppresses its low-energy weight according to Eq.~\eqref{eq:stochastic:pe-ohmic}. Figure~\ref{fig:stochastic:pe}(b) shows how coupling to a harmonic mode produces replicas of this Ohmic kernel at integer multiples of $\hbar\omega_0$. Their amplitudes are set by the Poisson weights shown in Fig.~\ref{fig:stochastic:pe}(c). Increasing $\alpha_{0,q}$ shifts probability from the elastic contribution at $n=0$ to tunneling processes that excite one or more mode quanta.
 
-        The following subsections use the same kernel at three levels of description. DCB dresses a single-junction current by convolution with $P(E)$. Incoherent two-electron tunneling is most naturally written in terms of transition rates. The SSET then combines several such rates in a master equation for charge-state occupations.
+        The following subsections use the same kernel at three levels of description. DCB dresses a single-junction current by convolution with $P(E)$. Incoherent Cooper-pair tunneling is most naturally written in terms of transition rates. The SSET then combines several such rates in a master equation for charge-state occupations.
 
 
     %=========================================================
@@ -275,32 +275,43 @@
 
         In a voltage-biased SIS junction, environmental phase fluctuations can suppress coherent Josephson transport while retaining discrete transfer of Cooper pairs with $q=2e$. The Josephson coupling energy then enters perturbatively at second order, and the environment supplies or absorbs the energy associated with each pair-transfer event.
 
-        The forward and backward ICPT rates follow directly from the charge-$2e$ kernel introduced in Sec.~\ref{subsec:stochastic:pe-theory},
+        The standard forward and backward ICPT rates follow directly from the charge-$2e$ kernel introduced in Sec.~\ref{subsec:stochastic:pe-theory}~\cite{ingold_charge_2005}.
         \begin{equation}
-            \Gamma_\mathrm{ICPT}(V) = \frac{\pi E_\mathrm{J}^{2}}{2\hbar}P_{2e}(\pm 2eV)\,.
+            \Gamma_\mathrm{ICPT}^{\rightleftarrows}(V) = \frac{\pi E_\mathrm{J}^{2}}{2\hbar}P_{2e}(\pm 2eV)\,.
             \label{eq:stochastic:icpt-rates}
         \end{equation}
+        The upper sign describes forward pair transfer, while the lower sign describes backward transfer.
 
-        For an equilibrium environment, the current therefore also be written as
+        For an equilibrium environment, the current can therefore be written as
         \begin{equation}
             I_\mathrm{ICPT}(V)
             = \frac{\pi eE_\mathrm{J}^{2}}{\hbar}\left[1-\exp(-2eV/k_\mathrm{B}T)\right]P_{2e}(2eV)\,.
             \label{eq:stochastic:icpt-current-detailed-balance}
         \end{equation}
 
-        This perturbative description assumes weak $E_\mathrm{J}$, statistically independent pair-transfer events, and a linear equilibrium environment. It does not describe a phase-coherent DC Josephson current, Shapiro steps, or coherent multiple Andreev reflection.
+        The voltage axis therefore samples the environmental kernel through $E=2eV$. For an Ohmic environment, its low-energy behavior determines the low-bias ICPT line shape. A resonant mode produces satellites whenever $2eV=n\hbar\omega_0$, so neighboring features are separated by $\hbar\omega_0/(2e)$ in voltage.
 
-        A coherent microwave drive adds photon-assisted replicas of the stationary ICPT characteristic. Using the PAT result from Sec.~\ref{subsec:micro:pat}, the effective charge $2e$ gives
-        \begin{equation}
-            I_\mathrm{PAICPT}(V_0)
-            = \sum_{n=-\infty}^{\infty}J_n^2\!\left(\alpha_{\nu,2e}\right)
-            I_\mathrm{ICPT,0}\!\left(V_0-\frac{nh\nu}{2e}\right)\,,
-            \qquad \alpha_{\nu,2e}=\frac{2eA}{h\nu}\,.
-            \label{eq:stochastic:paicpt}
-        \end{equation}
-        The replica spacing and microwave coupling both reflect the transferred charge. This distinguishes photon-assisted ICPT from coherent Shapiro physics and has been observed directly in Josephson scanning tunneling microscopy~\cite{roychowdhury_microwave_2015}.
+        This perturbative description assumes weak $E_\mathrm{J}$, statistically independent pair-transfer events, and a linear equilibrium environment.
 
-        Incoherent Andreev reflection is a related but microscopically distinct $q=2e$ process at an NS interface. It describes second-order electron tunneling between a normal-metal continuum and a superconducting condensate rather than Cooper-pair tunneling between two condensates. Its environmental dressing is governed by the same $P_{2e}(E)$ because the net transferred charge is identical, while its electronic kernel contains the NS-interface matrix elements and normal-electrode occupations. We mention it for completeness, but it is not a central transport mechanism considered here.
+        %=========================================================
+        \subsubsection*{Photon-Assisted Incoherent Cooper-Pair Tunneling}
+        %=========================================================
+
+            A coherent microwave drive adds photon-assisted replicas of the stationary ICPT characteristic. Using the PAT result from Sec.~\ref{subsec:micro:pat}, the effective charge $2e$ gives
+            \begin{equation}
+                I_\mathrm{PAICPT}(V_0)
+                = \sum_{n=-\infty}^{\infty}J_n^2\!\left(\alpha_{\nu,2e}\right)
+                I_\mathrm{ICPT}^{(0)}\!\left(V_0-\frac{nh\nu}{2e}\right)\,,
+                \qquad \alpha_{\nu,2e}=\frac{2eA}{h\nu}\,.
+                \label{eq:stochastic:paicpt}
+            \end{equation}
+            The squared Bessel factor is the probability for an incoherent pair-transfer event to exchange $|n|$ drive photons. The drive therefore redistributes the complete stationary ICPT characteristic into replicas separated by $h\nu/(2e)$. 
+            
+            This differs fundamentally from the coherent Josephson response in Sec.~\ref{subsec:macro:shapiro}. There, the Bessel coefficients enter linearly at the amplitude level, retain their phase and sign information, and determine frequency-locked Shapiro steps. The linear and squared Bessel dependences represent the fully coherent and fully incoherent limits, respectively. In the intermediate phase-diffusion regime, partial phase memory allows broadened Shapiro features and stochastic photon-assisted sidebands to coexist, so neither limiting expression alone describes the complete response. Both mechanisms exhibit the same voltage spacing because both transfer charge $2e$, but their Bessel dependence and spectral response distinguish probabilistic photon-assisted tunneling from coherent phase locking. Photon-assisted ICPT with this squared-Bessel dependence has been observed directly in Josephson scanning tunneling microscopy~\cite{roychowdhury_microwave_2015}.
+
+        Incoherent Andreev reflection is a related but microscopically distinct $q=2e$ process at an NS interface. It couples to the same $P_{2e}(E)$ kernel because the net transferred charge is identical, but its electronic kernel describes second-order electron tunneling between a normal-metal continuum and a superconducting condensate. We mention it for completeness, but it is not a central transport mechanism considered here.
+
+        In summary, ICPT is stochastic charge-$2e$ transfer whose static spectrum is governed by $P_{2e}(E)$. Passive resonances and applied microwaves both generate satellites with charge-$2e$ voltage spacing, but their weights have different origins. In the fully incoherent limit, the squared Bessel probabilities distinguish photon-assisted ICPT from the amplitude-level Bessel response of coherent Josephson transport. Incoherent Andreev reflection shares the environmental charge kernel, but not the microscopic electronic process.
 
 
     %=========================================================
