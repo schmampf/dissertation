@@ -315,110 +315,71 @@
 
 
     %=========================================================
-    \subsection{Superconducting Single-Electron Transistor}
+    \subsection{Superconducting Single-Electron Transistors}
     \label{subsec:stochastic:sset}
     %=========================================================
 
-        The superconducting single-electron transistor (SSET) combines Coulomb blockade on a small island with superconducting electrodes. The device contains two junctions in series and a capacitively coupled gate electrode. The island charge is therefore discrete, while quasiparticle tunneling, Cooper-pair tunneling, and parity effects all compete within the same stability diagram. This makes the SSET a natural device context for stochastic superconducting transport.
+        %=========================================================
+        \subsubsection*{Conventional Tunnel-Junction SETs}
+        %=========================================================
 
-        % TODO[THY-04]: Add an SSET schematic showing the two junctions, gate capacitance, charge states, and representative $n\to n\pm1$ and $n\to n\pm2$ transitions.
+            A conventional single-electron transistor consists of a small metallic island connected to source and drain electrodes by two tunnel junctions. A third electrode couples capacitively to the island and acts as a gate. The two tunnel barriers isolate the island sufficiently for its excess charge to become quantized, while the gate shifts the relative energies of the charge states. This geometry first provides the textbook setting for normal-state single-electron transport. Replacing the normal metals by superconductors gives the conventional superconducting single-electron transistor considered below.
 
-        \subsubsection*{Static Coulomb Blockade}
+            % TODO[THY-04]: Add one two-panel vector figure for the conventional two-tunnel-junction SET. Panel (a) should show the equivalent circuit with both tunnel junctions represented by $R_i\parallel C_i$, the island charge $ne$, the gate capacitance $C_\mathrm{G}$, the gate voltage $V_\mathrm{G}$, and the applied bias. Panel (b) should show a normal-state SET energy schematic in a blocked configuration and during an allowed sequential-tunneling cycle. Draw source, island, and drain electrochemical potentials, the two tunnel barriers, the gate-controlled addition energy, and arrows for the entrance and exit transitions. Make clear that the metallic island has a continuum of electronic states and that the vertical energy shift represents its electrochemical addition energy, not a discrete semiconductor level.
 
-            When a metallic island is isolated by tunnel junctions of capacitance $C_1$ and $C_2$, adding an excess electron requires the electrostatic charging energy 
+            Adding one electron to an isolated metallic island requires electrostatic energy. For junction capacitances $C_1$ and $C_2$ and gate capacitance $C_\mathrm{G}$, the characteristic charging energy is
             \begin{equation}
-                E_\mathrm{C} = e^2/(2C_\Sigma)\,, \qquad C_\Sigma = C_1 + C_2 + C_\mathrm{G}\,
+                E_\mathrm{C} = \frac{e^2}{2C_\Sigma}\,, \qquad C_\Sigma = C_1 + C_2 + C_\mathrm{G}\,.
                 \label{eq:stochastic:sset-charging-energy}
             \end{equation}
-            where $C_\mathrm{G}$ denotes the gate capacitance. 
 
-            Static Coulomb blockade requires suppression of both thermal activation and quantum charge fluctuations. Thermal fluctuations are suppressed when the charging energy exceeds the thermal energy, $E_\mathrm{C} \gg k_\mathrm{B}T$. Quantum charge fluctuations are suppressed in the tunneling limit, where the normal-state tunneling resistance is large compared with the relevant resistance quantum, $R_\mathrm{T}\gg R_\mathrm{Q}$. Only when both criteria are met does the island retain a well-defined integer charge. Adding or removing an electron is then energetically unfavorable and quantum mechanically rare.
-
-            This suppression of charge motion is known as static Coulomb blockade. The island is then characterized by well-defined charge states $n e$ and its electrostatic energy
+            Charge quantization requires thermal activation and quantum charge fluctuations to be weak. The thermal condition is $E_\mathrm{C}\gg k_\mathrm{B}T$. In the tunnel limit, each normal-state junction resistance must also be large compared with the von Klitzing resistance $R_\mathrm{K}=h/e^2$. The island can then be described by an integer excess-electron number $n$. A gate voltage induces the dimensionless offset charge $n_\mathrm{G}=C_\mathrm{G}V_\mathrm{G}/e$ and changes the electrostatic energy according to
             \begin{equation}
-                E_n(V_\mathrm{G}) = E_\mathrm{C} (n - n_\mathrm{G})^2,
+                E_n(V_\mathrm{G}) = E_\mathrm{C}\left(n-n_\mathrm{G}\right)^2\,.
                 \label{eq:stochastic:sset-electrostatic-energy}
             \end{equation}
-            with $n_\mathrm{G} = C_\mathrm{G}V_\mathrm{G}/e$ the dimensionless gate-induced charge. Degeneracy between two charge states occurs at half-integer values of $n_\mathrm{G}$.
 
-        %=========================================================
-        \subsubsection*{Normal-State SET}
-        %=========================================================
+            Neighboring charge states become degenerate at half-integer gate charge. Between these degeneracy points, one charge state has the lowest electrostatic energy and charge transfer onto or away from the island costs energy. This gate-controlled energy cost is the origin of static Coulomb blockade. \cite{grabert_single_2013}
 
-            A normal-state single-electron transistor consists of two tunnel junctions in series, each with tunneling resistance $R_{T,i}$ and capacitance $C_i$, and a metallic island between them. Transport occurs through sequential single-electron transitions $n\!\rightarrow n\pm1$ whenever the electrostatic energy decreases during the tunneling event.
+            In a normal-state SET, transport proceeds through sequential single-electron tunneling. An electron first crosses one junction and changes the island charge by one elementary charge. It subsequently leaves through the other junction and restores the initial island charge. A dc current results when the applied bias makes both steps energetically favorable. The gate controls their energy costs by shifting the charge-state energies. It can therefore open or close a complete transport cycle without carrying current through the gate itself.
 
-            Instead of writing the general condition $\Delta E<0$, it is more transparent to express the onset of conduction through the Coulomb-diamond boundaries. The island has electrostatic energy $E_n = E_\mathrm{C} (n - n_\mathrm{G})^2$, and a tunneling transition becomes energetically allowed when the applied bias provides enough energy to overcome the charging cost. In the symmetric idealization this yields the diamond edges
+            If either step costs more energy than the bias and thermal fluctuations can supply, the island remains trapped in its lowest-energy charge state and the sequential current is blocked. Conductance is largest near charge degeneracy and becomes periodic in gate-induced charge. Far from degeneracy, higher-order cotunneling can transfer charge through both junctions without populating the intermediate charge state. This residual process is weaker than sequential tunneling in the regime of large junction resistance. The normal-state SET thus establishes the electrostatic and kinetic framework used for the superconducting device. \cite{grabert_single_2013}
+
+            In a conventional SSET, the island and both leads are superconducting, while the two junctions remain in the tunnel limit. The electrostatic charge states remain those of the normal SET, but the superconducting gap changes which transitions are available. Quasiparticle tunneling changes the island charge by one elementary charge and requires occupied and empty quasiparticle states at the relevant energies. Cooper-pair tunneling changes the island charge by two elementary charges and connects charge states of the same parity. The measured current can therefore contain competing single-electron and pair-transfer cycles even though the circuit geometry is unchanged.
+
+            The superconducting island distinguishes even and odd electron number. An odd charge state contains an unpaired quasiparticle and therefore carries an additional free-energy cost governed by the gap. At sufficiently low temperature, this parity effect favors even charge states and can change the gate periodicity from one to two elementary charges. Nonequilibrium quasiparticles weaken this distinction and can restore single-electron periodicity. For the present purpose, it is sufficient to retain parity as an additional energy cost for odd charge states rather than develop a separate quasiparticle-population model.
+
+            Quasiparticle and Cooper-pair steps can combine into a JQP cycle. Here JQP denotes Josephson--quasiparticle transport. A Cooper pair first tunnels resonantly through one junction and changes the island charge by two elementary charges. Two subsequent quasiparticle transitions restore the initial island charge while transferring net charge through the device. Because the pair transition is resonant, the JQP cycle produces a localized feature as a function of bias and gate voltage. This is the only named SSET cycle required for the later discussion. \cite{grabert_single_2013}
+
+            Orthodox theory describes the island by classical charge-state probabilities and treats tunneling events through the two barriers as independent transitions. The electrostatic energy change of a transition includes the difference between the initial and final charge-state energies, together with the work supplied by the bias source. This energy change and the tunnel resistance determine the normal-state sequential-tunneling rate. In an SSET, the same charge-state framework is retained while the rates account for the superconducting density of states and Cooper-pair transfer.
+
+            Let $\Gamma_{n\rightarrow m}$ denote the total rate for all junction processes that change the island from charge state $n$ to charge state $m$. In the stationary state, probability flow into every charge state balances probability flow out of it,
             \begin{equation}
-                |eV| = 2E_\mathrm{C}\,\left|\,2n_\mathrm{G} - (2n+1)\,\right|,
-                \label{eq:stochastic:sset-diamond-edge}
-            \end{equation}
-            which delimit regions of blocked and allowed transport in the $(V,V_\mathrm{G})$ plane. Inside these diamonds no sequential tunneling is possible and the SET is in Coulomb blockade. On the diamond edges, neighboring charge states become degenerate and conductance peaks appear. Outside the diamonds, sequential single-electron tunneling provides a finite conductance.
-
-            Outside the Coulomb-blockaded region the SET behaves as two independent tunnel junctions in series. The sequential-tunneling conductance therefore approaches $G_{\mathrm{seq}} = (R_{T,1}+R_{T,2})^{-1}$, which reduces to $G_T/2$ for symmetric junctions.
-
-            Away from the degeneracy points, only higher-order cotunneling processes remain, and the conductance is strongly suppressed. This normal-state picture provides the electrostatic backbone for the superconducting device.
-
-        %=========================================================
-        \subsubsection*{Superconducting SET}
-        %=========================================================
-
-            When the leads and the island become superconducting, the SET acquires qualitatively new transport channels:
-            \begin{enumerate}
-                \item \textbf{Cooper-pair tunneling} connects neighboring even charge states $n\!\to\!n\pm2$. In the absence of phase coherence, these processes occur as ICPT with rates governed by the same $P(E)$ kernel that enters single-junction ICPT.
-                \item \textbf{Quasiparticle tunneling} becomes possible only above the superconducting energy gap. Single-electron transitions $n\!\to\!n\pm1$ require an energy cost of at least $\Delta$ per broken pair, modifying the Coulomb blockade diagram into superconducting Coulomb diamonds.
-                \item \textbf{Parity effects} arise because the island prefers to host an even number of electrons. Near charge degeneracy, odd charge states acquire an additional energy cost of $\Delta$, which modifies the periodicity of the stability diagram and the accessible charge states at low temperature.
-            \end{enumerate}
-            Together, these ingredients produce a device whose transport is governed not simply by sequential tunneling, but by competing single-electron and Cooper-pair processes. In the stochastic tunneling limit, each transition is dressed by environmental energy exchange. The SSET therefore combines DCB-dressed quasiparticle tunneling with ICPT between superconducting charge states.
-
-        %=========================================================
-        \subsubsection*{Transport Cycles in the SSET}
-        %=========================================================
-
-            % TODO[THY-04]: Specify the device-dependent transition energies and current operator for the SSET master equation used in the measurements.
-
-            Quasiparticle and Cooper-pair processes combine into transport cycles such as Josephson--quasiparticle (JQP) and double Josephson--quasiparticle (DJQP) cycles. These cycles arise when a sequence of energetically allowed transitions forms a closed loop in charge-state space, enabling a steady-state current through the device. In the stochastic regime, the rates of Cooper-pair steps are governed by ICPT, the quasiparticle steps follow the DCB-modified single-electron tunneling expression, and the cycle current is often set by the slowest transition.
-
-            A quantitative description is obtained by writing a master equation for the charge-state occupations $p_n$,
-            \begin{equation}
-                \dot{p}_n = \sum_m \left(\Gamma_{m\to n}p_m - \Gamma_{n\to m}p_n\right)\,, \qquad \sum_n p_n = 1\,.
+                0 = \sum_m \left(\Gamma_{m\to n}p_m-\Gamma_{n\to m}p_n\right)\,, \qquad \sum_n p_n=1\,.
                 \label{eq:stochastic:sset-master}
             \end{equation}
-            The steady-state solution $\dot{p}_n=0$ gives the occupation probabilities of the island charge states, and the measured current follows from the net rate of charge transfer through one junction. This master-equation viewpoint is the natural connection between the single-junction stochastic processes described above and gate-dependent SSET stability maps.
 
-    %=========================================================
-    \subsection{Coherent and Incoherent Transport in SSETs}
-    \label{subsec:stochastic:sset-coherent-incoherent}
-    %=========================================================
-
-        The discussion above describes the SSET in the tunneling limit, where charge states are well defined and transport is treated as a sequence of stochastic transitions. High-transmission SSETs can instead enter an intermediate regime in which Coulomb blockade, superconducting coherence, and finite-transmission Andreev processes coexist. This regime forms the frontier between the stochastic description developed in this section and the coherent mesoscopic description of Sec.~\ref{sec:meso}.
-
-        %=========================================================
-        \subsubsection*{Coherent Multiple Andreev Reflections in SSETs}
-        %=========================================================
-
-            In addition to incoherent processes described by the $P(E)$-framework, superconducting single-electron transistors can access a qualitatively different regime in which transport is governed by coherent multiple Andreev reflections (MAR). This regime appears when the electromagnetic environment is weak and the junction transparencies are sufficiently large so that the superconducting phase remains well defined over many successive electron-hole conversion events.
-
-            In a superconducting weak link with transmission $\tau\lesssim 1$, an electron incident at subgap energy undergoes repeated Andreev reflections at the two NS interfaces. These coherent trajectories gain energy in steps of $eV$ and allow charge transfer at bias voltages $eV<2\Delta$. The resulting MAR current produces characteristic subharmonic gap structures at
+            Solving this linear system gives the occupation probability $p_n$ of each charge state. The current can then be evaluated at either junction $i$ by summing all signed charge-transfer events through that junction,
             \begin{equation}
-                eV = \frac{2\Delta}{n}, \qquad n = 1,2,3,\ldots
-                \label{eq:stochastic:sset-mar-subharmonic}
+                I_i = \sum_n p_n\sum_{m\neq n}q_{i,n\to m}\,\Gamma_{i,n\to m}\,.
+                \label{eq:stochastic:sset-current}
             \end{equation}
-            which appear as step-like onsets in the current-voltage characteristics and as pronounced lines of enhanced conductance in the SSET stability diagram.
+            Here $q_{i,n\to m}$ is the signed charge transferred through junction $i$ during the transition, while $\Gamma_{i,n\to m}$ is its rate. Charge conservation gives the same stationary current through both junctions. The master equation is therefore not synonymous with orthodox theory. It is the more general population-balance method in which orthodox single-electron rates or additional superconducting rates can be used.
+
+            The rates determine which transport steps are energetically and microscopically possible, while the master equation determines how often their initial charge states are occupied. This separation connects the junction physics to the measured \textit{I--V}, \textit{dI--dV}, and gate-dependent transport maps. Environmental energy exchange can be included through dressed rates without changing the population-balance equation.
+
+            The orthodox description is controlled when both junctions remain in the tunnel limit, charge states are well defined, and memory between successive events can be neglected. It does not by itself describe a highly transmitting contact, strong quantum charge fluctuations, or coherent multiparticle transfer.
 
         %=========================================================
-        \subsubsection*{Experimental observations (Lorenz and Sprenger)}
+        \subsubsection*{Tunable and Hybrid SSETs}
         %=========================================================
 
-            Coherent MAR in aluminium SSETs was observed in detail by Lorenz, Sprenger, and co-workers. Their devices featured moderately transparent junctions and sufficiently low environmental damping that the phase remained coherent over several Andreev cycles. The resulting measurements showed subharmonic gap structure, MAR-induced steps in the $I(V)$ characteristics, and gate-dependent conductance features that combine superconducting coherence with Coulomb blockade. \cite{lorenz_sset_mar_2018,sprenger_sset_tunable_2019}
+            Replacing one tunnel junction by a mechanically tunable contact extends the SSET beyond the conventional tunnel limit. At low transmission, the contact still acts approximately as a tunnel barrier and the orthodox description provides the reference behavior. Increasing its transmission enables Andreev reflection and MAR, while also enhancing quantum charge fluctuations. The island can remain describable by charge-state probabilities over part of this crossover, but the transition rates must then include multiparticle transfer through the contact. The microscopic MAR mechanism and its transmission dependence are developed in Sec.~\ref{subsec:meso:mar}.
 
-        %=========================================================
-        \subsubsection*{Theoretical and hybrid-regime simulations (Sobral-Rey)}
-        %=========================================================
+            Lorenz and Sprenger studied all-superconducting SETs in which an oxide tunnel barrier and a tunable superconducting break junction define the island. Their measurements follow the device from weak coupling toward the atomic-contact regime. Coulomb blockade suppresses low-bias transport, while increasing contact transmission activates MAR contributions involving several elementary charges. They extend orthodox theory by adding MAR rates to the charge-state transitions and thereby reproduce the principal gate-dependent transport features. The approach also reveals where the tunnel-limit picture becomes incomplete, including a reduction of the effective charging energy toward strong coupling and transport features that cannot be assigned uniquely. \cite{lorenz_sset_mar_2018,sprenger_sset_tunable_2019}
 
-            More recently, Sobral-Rey and co-workers extended this picture by studying the interplay of Andreev reflection and Coulomb blockade in hybrid SSET devices. Their simulations and measurements demonstrate how Coulomb blockade modifies the subharmonic structure, and how the onset of higher-order Andreev processes depends on junction transparency, parity effects, and detuning from charge degeneracy. These results show that charging energy and superconductivity can coexist in a nontrivial way in the intermediate-transparency regime. \cite{sobral_rey_hybrid_sset_2024}
+            Sobral Rey uses a hybrid SSN SET to separate the roles of the two junctions more clearly. Here a superconducting island is connected to a superconducting lead by the tunable break junction and to a normal-metal lead by an oxide tunnel barrier. Multiparticle superconducting transport is therefore concentrated at the break junction, while the tunnel barrier predominantly provides single-quasiparticle transfer. This asymmetry reduces the number of competing transport cycles and makes JQP, Andreev, and MAR contributions easier to identify. Their simulations retain the stationary master equation for the island occupations and use charge-resolved MAR rates obtained from full counting statistics. \cite{sobral_rey_hybrid_sset_2024}
 
-        %=========================================================
-        \subsubsection*{Relation to the stochastic regime}
-        %=========================================================
+            The strong-coupling limit also shows why the textbook reference remains useful. A low-impedance superconducting contact can suppress charge quantization by pinning the island potential, while Coulomb-blockade signatures can return after the contact switches to a resistive state. The observed transport then reflects a competition between charging energy, superconducting multiparticle transport, and contact transmission rather than a simple disappearance of Coulomb blockade. \cite{sobral_rey_hybrid_sset_2024}
 
-            Coherent MAR processes rely on a well-defined superconducting phase and on the correlated nature of successive electron-hole conversions. Therefore, they lie outside the applicability of the $P(E)$ framework, which assumes statistically independent tunneling events. As environmental damping increases or the junction transparency is reduced, phase fluctuations destroy this coherence and MAR gives way to incoherent two-electron processes, ICPT in SIS junctions and IAR at NS interfaces. The intermediate SSET regime therefore marks the boundary between coherent mesoscopic transport and the stochastic tunneling limit discussed in this section.
+            The master equation and the microscopic junction theory have distinct roles in these extensions. The master equation balances the populations of island charge states. Quasiparticle, JQP, Andreev, and MAR theories provide the rates that connect those states. A coherent multiparticle process within one contact can therefore enter the population dynamics as a charge-resolved junction event, provided successive events remain statistically separable. At stronger coupling, charge states cease to be sharply defined and a population-only description becomes insufficient. This marks the limit of the rate framework rather than a change in the master equation itself.
