@@ -30,9 +30,9 @@
 %%   
 %%   \ifdefined\pdftexversion\else  % non-pdftex case.
 %%     \usepackage{fontspec}
-%%     \setmainfont{DejaVuSerif.ttf}[Path=\detokenize{/Users/oliver/Documents/.venv/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
-%%     \setsansfont{DejaVuSans.ttf}[Path=\detokenize{/Users/oliver/Documents/.venv/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
-%%     \setmonofont{DejaVuSansMono.ttf}[Path=\detokenize{/Users/oliver/Documents/.venv/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%     \setmainfont{DejaVuSerif.ttf}[Path=\detokenize{/Users/oliver/Documents/cryolab/.venv/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%     \setsansfont{DejaVuSans.ttf}[Path=\detokenize{/Users/oliver/Documents/cryolab/.venv/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
+%%     \setmonofont{DejaVuSansMono.ttf}[Path=\detokenize{/Users/oliver/Documents/cryolab/.venv/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
 %%   \fi
 %%   \makeatletter\@ifpackageloaded{underscore}{}{\usepackage[strings]{underscore}}\makeatother
 %%
@@ -86,31 +86,13 @@
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
 \pgfpathmoveto{\pgfqpoint{0.302703in}{0.318182in}}%
-\pgfpathlineto{\pgfqpoint{0.644378in}{0.318551in}}%
-\pgfpathlineto{\pgfqpoint{0.718276in}{0.319186in}}%
-\pgfpathlineto{\pgfqpoint{0.736551in}{0.319951in}}%
-\pgfpathlineto{\pgfqpoint{0.744497in}{0.320956in}}%
-\pgfpathlineto{\pgfqpoint{0.748470in}{0.322159in}}%
-\pgfpathlineto{\pgfqpoint{0.750854in}{0.323642in}}%
-\pgfpathlineto{\pgfqpoint{0.752443in}{0.325526in}}%
-\pgfpathlineto{\pgfqpoint{0.753238in}{0.327098in}}%
-\pgfpathlineto{\pgfqpoint{0.754032in}{0.329581in}}%
-\pgfpathlineto{\pgfqpoint{0.754827in}{0.334082in}}%
-\pgfpathlineto{\pgfqpoint{0.755622in}{0.344723in}}%
-\pgfpathlineto{\pgfqpoint{0.756416in}{0.396364in}}%
-\pgfpathlineto{\pgfqpoint{0.757211in}{0.629375in}}%
-\pgfpathlineto{\pgfqpoint{0.758005in}{0.667569in}}%
-\pgfpathlineto{\pgfqpoint{0.758800in}{0.677509in}}%
-\pgfpathlineto{\pgfqpoint{0.760389in}{0.685689in}}%
-\pgfpathlineto{\pgfqpoint{0.762773in}{0.691774in}}%
-\pgfpathlineto{\pgfqpoint{0.765951in}{0.697306in}}%
-\pgfpathlineto{\pgfqpoint{0.771514in}{0.705238in}}%
-\pgfpathlineto{\pgfqpoint{0.782638in}{0.719521in}}%
-\pgfpathlineto{\pgfqpoint{0.805681in}{0.747690in}}%
-\pgfpathlineto{\pgfqpoint{0.845411in}{0.795022in}}%
-\pgfpathlineto{\pgfqpoint{0.896265in}{0.854436in}}%
-\pgfpathlineto{\pgfqpoint{0.955065in}{0.921979in}}%
-\pgfpathlineto{\pgfqpoint{1.022605in}{0.998405in}}%
+\pgfpathlineto{\pgfqpoint{0.756416in}{0.318182in}}%
+\pgfpathlineto{\pgfqpoint{0.757211in}{0.689438in}}%
+\pgfpathlineto{\pgfqpoint{0.800914in}{0.742349in}}%
+\pgfpathlineto{\pgfqpoint{0.849384in}{0.799843in}}%
+\pgfpathlineto{\pgfqpoint{0.903416in}{0.862769in}}%
+\pgfpathlineto{\pgfqpoint{0.964600in}{0.932862in}}%
+\pgfpathlineto{\pgfqpoint{1.033730in}{1.010902in}}%
 \pgfpathlineto{\pgfqpoint{1.097297in}{1.081818in}}%
 \pgfpathlineto{\pgfqpoint{1.097297in}{1.081818in}}%
 \pgfusepath{stroke}%
