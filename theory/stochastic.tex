@@ -7,17 +7,17 @@
     
     The microscopic, macroscopic, and mesoscopic descriptions developed above emphasize different degrees of freedom of a superconducting weak link. The microscopic description treats quasiparticle spectra and tunneling densities of states. The macroscopic description treats the condensate phase as a collective dynamical variable. The mesoscopic description treats coherent scattering, Andreev reflection, and finite-transmission trajectories. The stochastic description adds the electromagnetic environment as an active transport degree of freedom. The surrounding impedance produces voltage fluctuations, absorbs and emits energy, and can therefore participate directly in a tunneling event.
 
-    The relevant crossover is governed by the conjugacy of the superconducting phase $\phi$ and the charge operator $Q$ on the junction,
+    The relevant crossover is governed by the conjugacy of the superconducting phase difference $\phi$ and the charge operator $Q$ on the junction,
     \begin{equation}
         \left[\phi, Q\right] = 2e\ima\,,
         \label{eq:stochastic:phase-charge}
     \end{equation}
-    implying that charge localization is accompanied by phase fluctuations. More generally, a tunneling process that transfers charge $q$ accumulates a phase fluctuation
+    implying that charge localization is accompanied by fluctuations of the condensate phase difference. More generally, the tunneling amplitude for a process that transfers charge $q$ accumulates the charge-dependent phase
     \begin{equation}
-        \delta \phi_q(t) = \frac{q}{\hbar}\int_0^t \delta V(t')\,\mathrm{d}t'\,.
+        \delta \vartheta_q(t) = \frac{q}{\hbar}\int_0^t \delta V(t')\,\mathrm{d}t'\,.
         \label{eq:stochastic:phase-fluctuation}
     \end{equation}
-    For Cooper-pair transfer, $q=2e$, this expression reduces to the phase fluctuation obtained from the AC Josephson relation in Eq.~\eqref{eq:macro:ac}. For single-electron tunneling, $q=e$, the same voltage fluctuations produce half the accumulated phase.
+    For Cooper-pair transfer, $q=2e$, $\vartheta_{2e}$ coincides with the fluctuating condensate phase difference obtained from the AC Josephson relation in Eq.~\eqref{eq:macro:ac}. For single-electron tunneling, $\vartheta_e$ is instead the phase accumulated by the single-electron tunneling amplitude. It is not a separate condensate phase.
 
     Strong phase fluctuations suppress phase memory over long times. Coherent Josephson and Andreev processes are then broadened or suppressed rather than being removed at a sharp boundary. In the limit where independent tunneling events dominate, their rates are governed by the energy exchanged with the electromagnetic environment. The crossover depends on the frequency-dependent impedance, junction parameters, temperature, and the transport process under consideration.
 
@@ -29,12 +29,19 @@
     \label{subsec:stochastic:pe-theory}
     %=========================================================
 
-        In the presence of strong phase fluctuations, charge transport through a tunnel junction occurs as a sequence of independent events. The circuit impedance first determines the phase fluctuations, their correlation function defines the energy-exchange probability, and this probability dresses the electronic tunneling rate and measured current. The subscript $q$ indicates the charge transferred in one event.
+        In the presence of strong phase fluctuations, charge transport through a tunnel junction occurs as a sequence of independent events. The circuit impedance first determines the phase fluctuations, their correlation function defines the energy-exchange probability, and this probability dresses the electronic tunneling rate and measured current. The subscript $q$ indicates the charge transferred in one event. Unless stated otherwise, the formulation of $P(E)$ theory in this subsection follows Ingold and Nazarov. \cite{ingold_charge_2005}
 
-        The environmental impedance sets the spectrum of voltage fluctuations. Since voltage fluctuations integrate into phase fluctuations, the impedance enters through the charge-dependent phase correlation function
+        The relevant impedance is the total impedance $Z_\mathrm{t}(\omega)$ seen by the junction rather than the impedance of an isolated circuit element. For a junction capacitance $C$ in parallel with an environmental impedance $Z_\mathrm{env}(\omega)$, it is
+        \begin{equation}
+            Z_\mathrm{t}(\omega)=\left[\ima\omega C+Z_\mathrm{env}^{-1}(\omega)\right]^{-1}\,.
+            \label{eq:stochastic:effective-impedance}
+        \end{equation}
+        The junction capacitance suppresses the high-frequency response and therefore supplies a physical cutoff. For a more complex circuit, $Z_\mathrm{t}(\omega)$ denotes the corresponding network impedance evaluated at the junction terminals.
+
+        The effective impedance sets the spectrum of voltage fluctuations. Since voltage fluctuations integrate into the tunneling phase, the impedance enters through the charge-dependent phase correlation function
         \begin{equation}
             J_q(t) = \frac{2}{R_q} \int_0^\infty
-            \underbrace{\vphantom{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}\frac{\mathrm{Re}\,Z(\omega)}{\textstyle \omega}}_{\text{coupling}}
+            \underbrace{\vphantom{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}\frac{\mathrm{Re}\,Z_\mathrm{t}(\omega)}{\textstyle \omega}}_{\text{coupling}}
             \left[
             \underbrace{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}_{\text{diffusion}}
             -
@@ -42,7 +49,7 @@
             \right]\mathrm{d}\omega\,,
             \label{eq:stochastic:Jt}
         \end{equation}
-        Here $R_q=h/q^2$ is the resistance quantum associated with the transferred charge. Thus $R_e=h/e^2$ for single-electron tunneling and $R_{2e}=h/(2e)^2=R_\mathrm{Q}$ for Cooper-pair transfer.
+        where $R_q=h/q^2$ is the resistance quantum associated with the transferred charge. Thus $R_e=h/e^2$ for single-electron tunneling and $R_{2e}=h/(2e)^2=R_\mathrm{Q}$ for Cooper-pair transfer.
 
         Equation~\eqref{eq:stochastic:Jt} can be read from left to right through the three annotated factors. The coupling factor gives the dissipative environmental spectrum seen by the junction. The division by frequency appears because phase is the time integral of voltage, which makes low-frequency noise especially effective. The diffusion factor is the real part of the correlator and describes loss of phase memory. The winding factor is the imaginary part and tracks the deterministic phase shift generated by the environment.
 
@@ -52,6 +59,13 @@
             \label{eq:stochastic:pedef}
         \end{equation}
         The result is a spectrum of allowed energy exchanges. A narrow peak near zero energy means that tunneling is nearly elastic. A broad or structured distribution means that the environment must participate, which produces suppressed onsets, shifted thresholds, and satellite features in measured \textit{I--V} and \textit{dI--dV} curves.
+
+        For a passive linear environment in thermal equilibrium, this probability density is nonnegative, normalized, and obeys detailed balance,
+        \begin{equation}
+            P_q(E)\geq0\,, \qquad \int_{-\infty}^{\infty}P_q(E)\,\mathrm{d}E=1\,, \qquad P_q(-E)=\exp\!\left(-\frac{E}{k_\mathrm{B}T}\right)P_q(E)\,.
+            \label{eq:stochastic:pe-equilibrium}
+        \end{equation}
+        Detailed balance fixes the relative probabilities for the environment to emit and absorb energy. A coherently driven or nonequilibrium environment does not generally satisfy this equilibrium relation and must be treated with an explicitly time-dependent or nonequilibrium kernel.
 
         The direct connection to transport is obtained by separating the environmental and electronic parts of the tunneling process. The general forward rate is
         \begin{equation}
@@ -72,7 +86,7 @@
         %=========================================================
             The elastic limit is the weak-coupling limit $\alpha_q\to0$ of the Ohmic family. When the impedance is much smaller than the relevant resistance quantum over the frequencies involved in tunneling, voltage and phase fluctuations are weak and the environment exchanges little energy with the transferred charge. The energy-exchange probability then approaches a delta function,
             \begin{equation}
-                P_\mathrm{low}(E) \approx \delta(E)\,, \qquad \mathrm{Re}\,Z(\omega) \ll R_q\,.
+                P_\mathrm{low}(E) \approx \delta(E)\,, \qquad \mathrm{Re}\,Z_\mathrm{t}(\omega) \ll R_q\,.
                 \label{eq:stochastic:pe-coherent}
             \end{equation}
             The environment neither absorbs nor emits energy, so the rate reduces to the bare elastic rate. Equation~\eqref{eq:stochastic:pe-rate-current} then gives the corresponding elastic current. A finite but small $\alpha_q$ broadens the delta peak and introduces weak inelastic corrections, connecting $P(E)$ theory continuously to the usual elastic tunneling description.
@@ -81,7 +95,7 @@
         \subsubsection*{Finite Ohmic Coupling}
         %=========================================================
             
-            As the Ohmic coupling increases, phase fluctuations broaden the elastic peak into a continuous energy-exchange spectrum. A simple zero-temperature cutoff model gives
+            As the Ohmic coupling increases, phase fluctuations broaden the elastic peak into a continuous energy-exchange spectrum. A simple zero-temperature cutoff model gives the normalized form
             \begin{equation}
                 P_\mathrm{Ohmic}(E)
                 = \frac{1}{E_\mathrm{c}\Gamma(\alpha_q)}
@@ -109,7 +123,7 @@
                 P_\mathrm{resonant}(E) = e^{-\alpha_{0,q}} \sum_{n=0}^{\infty} \frac{\alpha_{0,q}^{\,n}}{n!}\, P_\mathrm{Ohmic}(E - n\hbar\omega_0)\,,
                 \label{eq:stochastic:pe-resonance}
             \end{equation}
-            where $\alpha_{0,q}$ quantifies the coupling strength between charge $q$ and the resonant mode. The shifted kernels describe tunneling events accompanied by the excitation of $n$ mode quanta. The Poisson weights are therefore not a generic property of any peak in $Z(\omega)$, but a consequence of a linearly coupled harmonic mode. Damping, thermal occupation, nonlinearities, or strong external driving modify the sideband weights and line shapes. In the measured current, this structured $P_q(E)$ dresses the electronic kernel in Eq.~\eqref{eq:stochastic:pe-tunnel-rate} and produces satellites whose voltage spacing depends on the transferred charge.
+            where $\alpha_{0,q}$ quantifies the coupling strength between charge $q$ and the resonant mode. The shifted kernels describe tunneling events accompanied by the excitation of $n$ mode quanta. The Poisson weights are therefore not a generic property of any peak in $Z_\mathrm{t}(\omega)$, but a consequence of a linearly coupled harmonic mode. Damping, thermal occupation, nonlinearities, or strong external driving modify the sideband weights and line shapes. In the measured current, this structured $P_q(E)$ dresses the electronic kernel in Eq.~\eqref{eq:stochastic:pe-tunnel-rate} and produces satellites whose voltage spacing depends on the transferred charge.
 
                     
         \begin{figure}[t]
@@ -141,7 +155,7 @@
     \label{subsec:stochastic:dcb}
     %=========================================================
 
-        Dynamical Coulomb blockade (DCB) is the $q=e$ application of the general $P_q(E)$ framework. The elastic electronic kernel is inherited from the microscopic tunnel description, while $P_e(E)$ accounts for energy exchanged with the surrounding circuit. Tunneling is suppressed when the environment provides little weight at the required exchange energy.
+        Dynamical Coulomb blockade (DCB) is the $q=e$ application of the general $P_q(E)$ framework. The elastic electronic kernel is inherited from the microscopic tunnel description, while $P_e(E)$ accounts for energy exchanged with the surrounding circuit. Tunneling is suppressed when the environment provides little weight at the required exchange energy. \cite{ingold_charge_2005,falci_quasiparticle_1991}
 
         The physical origin can be seen from a single electron crossing a junction with capacitance $C$. The transferred charge changes the electrostatic energy of the junction by an amount of order $E_\mathrm{C}=e^2/2C$. In a quantum circuit this energy bookkeeping is not external to the tunneling process. It is carried by voltage fluctuations of the environment and therefore by the same $P_e(E)$ kernel introduced above. A small low-energy weight of $P_e(E)$ means that small-energy tunneling events are unlikely, which appears experimentally as a zero-bias suppression in \textit{dI--dV}.
 
@@ -318,7 +332,7 @@
     \label{subsec:stochastic:sset}
     %=========================================================
 
-        In this subsection, we introduce the superconducting single-electron transistor as a device in which charge quantization and superconducting transport act simultaneously. We first establish the conventional two-tunnel-junction SET and its normal-state transport cycle, then add the superconducting gap, parity, and Cooper-pair transfer. This textbook description leads naturally to the master equation for the island charge-state occupations. We finally use this framework to discuss how tunable and hybrid SSETs extend the available transport processes while retaining gate-dependent charging effects.
+        In this subsection, we introduce the superconducting single-electron transistor as a device in which charge quantization and superconducting transport act simultaneously. We first establish the conventional two-tunnel-junction SET and its normal-state transport cycle, then add the superconducting gap, parity, and Cooper-pair transfer. This textbook description leads naturally to the master equation for the island charge-state occupations. We finally use this framework to discuss how tunable and hybrid SSETs extend the available transport processes while retaining gate-dependent charging effects. \cite{grabert_single_2013}
 
         %=========================================================
         \subsubsection*{Conventional Tunnel-Junction SETs}
@@ -351,7 +365,7 @@
                 \label{eq:stochastic:sset-charging-energy}
             \end{equation}
 
-            At finite bias, the junction capacitances determine how strongly the applied voltage changes the island energy for tunneling through each junction. Unequal junction capacitances therefore produce different slopes for the corresponding transition features in gate--bias maps.
+            At finite bias, the junction capacitances determine how strongly the applied voltage changes the island energy for tunneling through each junction. A transport onset occurs when the initial and final free energies of one tunneling step become degenerate. The gate and bias dependence of this condition produces lines in a gate--bias map, whose slopes are fixed by the corresponding capacitance ratios. The transition rates and stationary occupations then determine the intensity along these lines.
 
             Charge quantization requires thermal activation and quantum charge fluctuations to be weak. The thermal condition is $E_\mathrm{C}\gg k_\mathrm{B}T$. In the tunnel limit, each normal-state junction resistance must also be large compared with the von Klitzing resistance $R_\mathrm{K}=h/e^2$. The island can then be described by an integer excess-electron number $n$. A gate voltage induces the dimensionless offset charge $n_\mathrm{G}=C_\mathrm{G}V_\mathrm{G}/e$ and changes the electrostatic energy according to
             \begin{equation}
@@ -371,7 +385,9 @@
 
             Quasiparticle and Cooper-pair steps can combine into a JQP cycle. Here JQP denotes Josephson--quasiparticle transport. A Cooper pair first tunnels resonantly through one junction and changes the island charge by two elementary charges. Two subsequent quasiparticle transitions restore the initial island charge while transferring net charge through the device. Because the pair transition is resonant, the JQP cycle produces a localized feature as a function of bias and gate voltage. \cite{grabert_single_2013}
 
-            For a quantitative description, we use orthodox theory. It describes the island by classical charge-state probabilities and treats tunneling events through the two barriers as independent transitions. For each junction and tunneling direction, the available transition energy is the initial free energy minus the final free energy, including the work supplied by the bias source. A positive available energy makes the transition possible at zero temperature. In the bare orthodox model, a transition with negative available energy instead requires thermal activation. Once the rates are dressed by $P(E)$, the electromagnetic environment can also supply or absorb energy during the transition. In a normal tunnel junction, the available energy and the tunnel resistance determine the sequential-tunneling rate. Each junction and tunneling direction therefore contributes a rate that enters the charge-state master equation. In an SSET, the same framework is retained while the rates also account for the superconducting density of states and Cooper-pair transfer.
+            Treating the resonant pair step as an incoherent rate is controlled when dephasing or lifetime broadening destroys coherence between the coupled charge states faster than the Josephson coupling can establish it. If $E_\mathrm{J}/\hbar$ becomes comparable to or larger than the relevant dephasing rate, the off-diagonal density-matrix elements must be retained. A generalized master equation is then required instead of the population-only equation introduced below.
+
+            For a quantitative description, we use orthodox theory. It describes the island by classical charge-state probabilities and treats tunneling events through the two barriers as independent transitions. For each junction and tunneling direction, the available transition energy is the initial free energy minus the final free energy, including the work supplied by the bias source. A positive available energy makes the transition possible at zero temperature. In the bare orthodox model, a transition with negative available energy instead requires thermal activation. Once the rates are dressed by $P(E)$, the electromagnetic environment can also supply or absorb energy during the transition. In a normal tunnel junction, the available energy and the tunnel resistance determine the sequential-tunneling rate. Each junction and tunneling direction therefore contributes a rate that enters the charge-state master equation. In an SSET, the same framework is retained while the rates also account for the superconducting density of states and incoherent Cooper-pair transfer. \cite{ingold_charge_2005,grabert_single_2013}
 
             Let $\Gamma_{n\rightarrow m}$ denote the total rate for all junction processes that change the island from charge state $n$ to charge state $m$. In the stationary state, probability flow into every charge state balances probability flow out of it,
             \begin{equation}
@@ -386,7 +402,7 @@
             \end{equation}
             Here $q_{i,n\to m}$ is the signed charge transferred through junction $i$ during the transition, while $\Gamma_{i,n\to m}$ is its rate. Charge conservation gives the same stationary current through both junctions. The master equation is therefore not synonymous with orthodox theory. It is the more general population-balance method in which orthodox single-electron rates or additional superconducting rates can be used.
 
-            The rates determine which transport steps are energetically and microscopically possible, while the master equation determines how often their initial charge states are occupied. This separation connects the junction physics to the measured \textit{I--V}, \textit{dI--dV}, and gate-dependent transport maps.
+            The rates determine which transport steps are energetically and microscopically possible, while the master equation determines how often their initial charge states are occupied. This separation connects the junction physics to the measured \textit{I--V}, \textit{dI--dV}, and gate-dependent transport maps. It provides the reference used to interpret gate-dependent onsets and transport cycles in the single-electron results.
 
             The orthodox description is controlled when both junctions remain in the tunnel limit, charge states are well defined, and memory between successive events can be neglected. It does not by itself describe a highly transmitting contact, strong quantum charge fluctuations, or coherent multiparticle transfer.
 
@@ -402,4 +418,4 @@
 
             The strong-coupling limit also shows why the textbook reference remains useful. A low-impedance superconducting contact can suppress charge quantization by pinning the island potential, while Coulomb-blockade signatures can return after the contact switches to a resistive state. The observed transport then reflects a competition between charging energy, superconducting multiparticle transport, and contact transmission rather than a simple disappearance of Coulomb blockade. \cite{sobral_rey_hybrid_sset_2024}
 
-            In summary, the charge-state master equation provides the common population framework for conventional, tunable, and hybrid SSETs. Device-specific quasiparticle, JQP, Andreev, and MAR theories provide the rates that connect the charge states. A coherent multiparticle process within one contact can enter this population dynamics as a charge-resolved junction event, provided successive events remain statistically separable. At stronger coupling, the island charge states cease to be sharply defined and the population-only description becomes insufficient.
+            In summary, the charge-state master equation provides the common population framework for conventional, tunable, and hybrid SSETs. Device-specific quasiparticle, JQP, Andreev, and MAR theories provide the rates that connect the charge states. A multiparticle process within one contact can enter this population dynamics as a charge-resolved junction event, provided successive events remain statistically separable and coherence between charge states is negligible. When coherent charge-state mixing becomes relevant, a generalized master equation must retain the corresponding off-diagonal density-matrix elements. At stronger coupling, the island charge states cease to be sharply defined and a charge-state description itself becomes insufficient.
