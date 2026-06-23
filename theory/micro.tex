@@ -48,7 +48,7 @@
 
         This reduction proceeds smoothly until $T_\mathrm{c}$ is reached. At $T=T_\mathrm{c}$, the order parameter vanishes continuously and superconductivity is lost. Figure~\ref{fig:micro:gap} shows the universal weak-coupling curve.
 
-        \begin{wrapfigure}[13]{r}{0.4\textwidth}
+        \begin{wrapfigure}[12]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
             \vspace{-1em}
@@ -131,7 +131,7 @@
                 Thermal kernel for varying $T/T_\mathrm{c}$.
                 ]{\import{theory/micro}{fermi-kernel.pgf}}
             \caption{
-                Dynes broadening modifies the superconducting DOS, while temperature broadens the occupation edge and thermal kernel.
+                Calculated superconducting DOS, Fermi distribution, and thermal kernel. Dynes broadening modifies the superconducting DOS, while temperature broadens the occupation edge and thermal kernel.
                 }
             \label{fig:micro:dos-fermi}
         \end{figure}
@@ -200,7 +200,7 @@
                 SIS junction
             ]{\import{theory/schema/semiconductor}{sis-qp.pdf_tex}}
             \caption{
-                Quasiparticle tunneling in NIN, NIS, and SIS junctions. Blue and grey denote filled and empty states, and arrows indicate quasiparticle transfer.
+                Energy schematics of quasiparticle tunneling in NIN, NIS, and SIS junctions. Blue and gray denote filled and empty states, and arrows indicate quasiparticle transfer.
             }
             \label{fig:micro:tunnel-current}
         \end{figure}
@@ -279,7 +279,7 @@
                     \textit{dI--dV} characteristics for varying $\gamma/\Delta_0$.
                     ]{\import{theory/micro}{tunnel-didv-gamma.pgf}}
                 \caption{
-                    Temperature and Dynes broadening of NIS (gray) and SIS (blue) \textit{I--V} and \textit{dI--dV} curves. The gray dashed line represents the NIN reference.
+                    Quasiparticle tunnling in SIS, NIS, and NIN junction. Temperature and Dynes broadening of NIS (gray) and SIS (blue) \textit{I--V} and \textit{dI--dV} curves. The gray dashed line represents the NIN reference.
                     }
                 \label{fig:micro:tunnel-iv-didv}
             \end{figure}
@@ -296,15 +296,16 @@
     \label{subsec:micro:pat}
     %=========================================================
 
-        \begin{wrapfigure}[14]{r}{0.4\textwidth}
+        \begin{wrapfigure}[15]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
             \vspace{-1em}
             \import{theory/schema/semiconductor}{sis-pat.pdf_tex}
-            \caption{Photon-assisted SIS tunneling. Exchange of $nh\nu$ shifts the threshold. Black and grey arrows show photon exchange and quasiparticle transfer.}
+            \caption{
+                Energy schematic of pho- ton-assisted tunneling in SIS junction. Exchange of $nh\nu$ shifts the threshold. Black and gray arrows show photon exchange and quasiparticle transfer.
+                }
             \label{fig:micro:pat:schematic}
         \end{wrapfigure}
-
         The static characteristics derived above define the reference current $I_0(V)$. Under microwave irradiation, a quasiparticle may absorb or emit $|n|$ photons while tunneling, changing its energy from $E_0$ to
         \begin{equation}
             E_n = E_0 + n h\nu \qquad (n\in\mathbb{Z})\,,
@@ -413,7 +414,7 @@
                 \textit{dI--dV} characteristics.
                 ]{\import{theory/micro}{pat-didv.pgf}}
             \caption{
-                Photon-assisted NIS (grey) and SIS (blue) spectra. Sidebands are separated by $h\nu/e$ and weighted by $J_n^2(eA/h\nu)$.
+                Photon-assisted NIS (gray) and SIS (blue) spectra. Sidebands are separated by $h\nu/e$ and weighted by $J_n^2(eA/h\nu)$.
                 }
             \label{fig:micro:pat}
         \end{figure}
