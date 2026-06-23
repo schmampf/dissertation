@@ -6,10 +6,9 @@ This repository contains the LaTeX source for my dissertation. The project is st
 
 `thesis.tex` is the main entry point. At the moment, it compiles only the theory chapter:
 
-- `\include{theory/theory}` is enabled
-- `methods/`, `results/`, and several `miscellaneous/` chapters exist but are currently commented out in `thesis.tex`
+- Theory close to be finished / ready for first pass to Elke.
+- Methods sent to Elke. Waiting for feedback.
 
-To compile additional parts, uncomment the relevant `\include{...}` lines in `thesis.tex`.
 
 ## Repository structure
 
@@ -17,7 +16,7 @@ To compile additional parts, uncomment the relevant `\include{...}` lines in `th
   Main file controlling the build and which chapters are included.
 
 - `header.tex`  
-  Central preamble: page geometry (A5), corporate design theme, math packages, plotting/graphics support, and `biblatex` configuration (`backend=biber`).
+  Central preamble: page geometry (A5), everything is now in accordance with A5. Dont change. For Prüfungsamt, enlarge manually to a4. Further includes: corporate design theme, math packages, plotting/graphics support, and `biblatex` configuration (`backend=biber`).
 
 - `theory/`  
   Theory chapter(s). Contains many Matplotlib-PGF figures (`.pgf`) and supporting graphics.  
@@ -28,15 +27,14 @@ To compile additional parts, uncomment the relevant `\include{...}` lines in `th
   - `theory/macro.tex` (macroscopic superconductivity / phase, Josephson relations, electrodynamics)
   - `theory/meso.tex` (mesoscopic superconducting transport perspective)
   - `theory/stochastic.tex` (stochastic/finite-temperature aspects; noise / fluctuations where applicable)
-  Additional / work-in-progress material:
-  - `theory/mesowave.tex` (microwave-driven transport notes / standalone draft)
-  - `todo.md` (central task tracker for unfinished sections and placeholders)
   
 - `methods/`  
   Experimental methods chapter scaffold. Notable files:
   - `methods/methods.tex` (chapter header)
   - `methods/sample.tex` (sample preparation section)
-  - `methods/appendix.tex` (step-by-step fabrication appendix-style content)
+  - `methods/setup.tex` (describes the physical setup)
+  - `methods/digital.tex` (describes the digital steps involved in data aquicition and evaluation)
+  - `methods/sampleappendix.tex` (step-by-step fabrication appendix-style content)
   Also contains many figure assets (PNG/PDF/SVG/PGF, and some `pdf_tex` exports).
 
 - `results/`  
@@ -52,4 +50,5 @@ To compile additional parts, uncomment the relevant `\include{...}` lines in `th
 
 The document uses `biblatex` with `biber`:
 
-- Default bibliography file: `My Library.bib`
+- Zotero bibliography file: `My Library.bib`
+- Local bibliography file: `local.bib`
