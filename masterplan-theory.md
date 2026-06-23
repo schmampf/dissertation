@@ -18,11 +18,13 @@ The theory chapter is complete when:
 
 ## Priority 1: Close the chapter-level argument
 
-- [ ] [THM-01] Add a final chapter synthesis after the stochastic section.
-  - Compare the microscopic, macroscopic, mesoscopic, and stochastic descriptions by degree of freedom, regime, inputs, observables, and failure conditions.
-  - Explain how the descriptions overlap rather than presenting them as mutually exclusive.
-  - End by mapping the theory directly onto the experimental chapters.
-  - Acceptance criterion: a reader can determine which model is used for a measured feature without searching through the chapter.
+- [ ] [THM-01] Add chapter-level model orientation and experimental mapping.
+  - Introduce the model hierarchy near the beginning of the chapter instead of adding a separate synthesis section at the end.
+  - Use the orientation table to map measured features to microscopic, macroscopic, mesoscopic, and stochastic descriptions.
+  - Explain that mesoscopic theory extends both the microscopic spectral description and the macroscopic phase description to finite transmission.
+  - Explain that stochastic theory is selected by loss of phase memory and can use microscopic or mesoscopic rates as inputs.
+  - Add only a short closing transition after the stochastic section if it is needed for flow.
+  - Acceptance criterion: a reader can determine which model is used for a measured feature before looking up the detailed theory.
 
 - [ ] [THM-02] Add a compact regime-selection table or decision diagram.
   - Include tunnel quasiparticles, Josephson phase dynamics, finite-transmission Andreev transport, environmental energy exchange, and charge-state transport.
@@ -62,7 +64,7 @@ The theory chapter is complete when:
   - Check $R_q$, phase factors, Bessel arguments, sideband shifts, and sign conventions.
   - Verify that Tien--Gordon, Shapiro, PAMAR, and $P(E)$ expressions use compatible voltage and frequency conventions.
 
-- [ ] [THM-09] Verify the boundary between coherent and incoherent descriptions.
+- [x] [THM-09] Verify the boundary between coherent and incoherent descriptions.
   - State when Josephson transport is treated coherently with phase dynamics and when Cooper-pair transfer is treated as an incoherent rate.
   - State when MAR/FCS rates may be inserted into a charge-state master equation.
   - Identify where dephasing, lifetime broadening, or environmental coupling invalidates a population-only treatment.
