@@ -31,17 +31,17 @@
 
         The circuit impedance determines the phase fluctuations, their correlation function defines the energy-exchange probability, and this probability dresses the tunneling rate and measured current. The subscript $q$ denotes the charge transferred in one event. Unless stated otherwise, the formulation follows Ingold and Nazarov. \cite{ingold_charge_2005}
 
-        The relevant impedance is the total impedance $Z_\mathrm{t}(\omega)$ seen by the junction rather than the impedance of an isolated circuit element. For a junction capacitance $C$ in parallel with an environmental impedance $Z_\mathrm{env}(\omega)$, it is
+        The relevant impedance is the effective impedance $Z(\omega)$ seen by the junction rather than the impedance of an isolated circuit element. For a junction capacitance $C$ in parallel with an environmental impedance $Z_\mathrm{env}(\omega)$, it is
         \begin{equation}
-            Z_\mathrm{t}(\omega)=\left[\ima\omega C+Z_\mathrm{env}^{-1}(\omega)\right]^{-1}\,.
+            Z(\omega)=\left[\ima\omega C+Z_\mathrm{env}^{-1}(\omega)\right]^{-1}\,.
             \label{eq:stochastic:effective-impedance}
         \end{equation}
-        The junction capacitance suppresses the high-frequency response and therefore supplies a physical cutoff. For a more complex circuit, $Z_\mathrm{t}(\omega)$ denotes the corresponding network impedance evaluated at the junction terminals.
+        The junction capacitance suppresses the high-frequency response and therefore supplies a physical cutoff. For a more complex circuit, $Z(\omega)$ denotes the corresponding network impedance evaluated at the junction terminals.
 
         The effective impedance sets the spectrum of voltage fluctuations. Since voltage fluctuations integrate into the tunneling phase, the impedance enters through the charge-dependent phase correlation function
         \begin{equation}
             J_q(t) = \frac{2}{R_q} \int_0^\infty
-            \underbrace{\vphantom{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}\frac{\mathrm{Re}\,Z_\mathrm{t}(\omega)}{\textstyle \omega}}_{\text{coupling}}
+            \underbrace{\vphantom{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}\frac{\mathrm{Re}\,Z(\omega)}{\textstyle \omega}}_{\text{coupling}}
             \left[
             \underbrace{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}_{\text{diffusion}}
             -
@@ -86,7 +86,7 @@
         %=========================================================
             The elastic limit is the weak-coupling limit $\alpha_q\to0$ of the Ohmic family. When the impedance is much smaller than the relevant resistance quantum over the frequencies involved in tunneling, voltage and phase fluctuations are weak and the environment exchanges little energy with the transferred charge. The energy-exchange probability then approaches a delta function,
             \begin{equation}
-                P_\mathrm{low}(E) \approx \delta(E)\,, \qquad \mathrm{Re}\,Z_\mathrm{t}(\omega) \ll R_q\,.
+                P_\mathrm{low}(E) \approx \delta(E)\,, \qquad \mathrm{Re}\,Z(\omega) \ll R_q\,.
                 \label{eq:stochastic:pe-coherent}
             \end{equation}
             The environment neither absorbs nor emits energy, so the rate reduces to the bare elastic rate. Equation~\eqref{eq:stochastic:pe-rate-current} then gives the corresponding elastic current. A finite but small $\alpha_q$ broadens the delta peak and introduces weak inelastic corrections, connecting $P(E)$ theory continuously to the usual elastic tunneling description.
@@ -123,7 +123,7 @@
                 P_\mathrm{resonant}(E) = e^{-\alpha_{0,q}} \sum_{n=0}^{\infty} \frac{\alpha_{0,q}^{\,n}}{n!}\, P_\mathrm{Ohmic}(E - n\hbar\omega_0)\,,
                 \label{eq:stochastic:pe-resonance}
             \end{equation}
-            where $\alpha_{0,q}$ quantifies the coupling strength between charge $q$ and the resonant mode. The shifted kernels describe tunneling events accompanied by the excitation of $n$ mode quanta. The Poisson weights are therefore not a generic property of any peak in $Z_\mathrm{t}(\omega)$, but a consequence of a linearly coupled harmonic mode. Damping, thermal occupation, nonlinearities, or strong external driving modify the sideband weights and line shapes. In the measured current, this structured $P_q(E)$ dresses the electronic kernel in Eq.~\eqref{eq:stochastic:pe-tunnel-rate} and produces satellites whose voltage spacing depends on the transferred charge.
+            where $\alpha_{0,q}$ quantifies the coupling strength between charge $q$ and the resonant mode. The shifted kernels describe tunneling events accompanied by the excitation of $n$ mode quanta. The Poisson weights are therefore not a generic property of any peak in $Z(\omega)$, but a consequence of a linearly coupled harmonic mode. Damping, thermal occupation, nonlinearities, or strong external driving modify the sideband weights and line shapes. In the measured current, this structured $P_q(E)$ dresses the electronic kernel in Eq.~\eqref{eq:stochastic:pe-tunnel-rate} and produces satellites whose voltage spacing depends on the transferred charge.
 
                     
         \begin{figure}[t]
