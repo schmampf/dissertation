@@ -21,7 +21,7 @@ This repository contains the LaTeX source for my dissertation. The project is st
 - `theory/`  
   Theory chapter(s). Contains many Matplotlib-PGF figures (`.pgf`) and supporting graphics.  
   Notable files:
-  - `theory/theory.tex` (chapter driver; currently included from `thesis.tex`)
+  - `theory/theory.tex` (chapter header)
   - `theory/basics.tex` (basic concepts / normal-state + mesoscopic preliminaries)
   - `theory/micro.tex` (microscopic superconductivity / BCS-level building blocks)
   - `theory/macro.tex` (macroscopic superconductivity / phase, Josephson relations, electrodynamics)
@@ -32,8 +32,8 @@ This repository contains the LaTeX source for my dissertation. The project is st
   Experimental methods chapter scaffold. Notable files:
   - `methods/methods.tex` (chapter header)
   - `methods/sample.tex` (sample preparation section)
-  - `methods/setup.tex` (describes the physical setup)
-  - `methods/digital.tex` (describes the digital steps involved in data aquicition and evaluation)
+  - `methods/setup.tex` (physical setup)
+  - `methods/digital.tex` (digital steps involved in data acquisition and evaluation)
   - `methods/sampleappendix.tex` (step-by-step fabrication appendix-style content)
   Also contains many figure assets (PNG/PDF/SVG/PGF, and some `pdf_tex` exports).
 
