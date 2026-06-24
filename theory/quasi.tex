@@ -2,7 +2,7 @@
 
 %=========================================================
 \section{Normal-State Description}
-\label{sec:quasi}
+\label{sec:normal-state}
 %=========================================================
     
     A normal-state \textit{I--V} characteristic provides the conductance of a junction, but it does not generally identify the microscopic paths that carry charge. This distinction is central to this thesis. A large incoherent conductor is described by a local conductivity and Ohm's law. A phase-coherent constriction is instead described by transmission channels. Its normal-state conductance fixes only the sum of their transmission probabilities, whereas superconducting subgap transport can resolve the individual channels.
@@ -11,7 +11,7 @@
 
     %=========================================================
     \subsection{Normal-State Quasiparticles}
-    \label{subsec:quasi:micro}
+    \label{subsec:quasi:normal-state-quasiparticles}
     %=========================================================
 
         At low temperature and low bias, transport involves states in a narrow energy window around the Fermi energy. The full many-electron and lattice problem is reduced to an effective normal-state single-particle Hamiltonian,
@@ -40,7 +40,6 @@
                 \qquad
                 v_\mathrm{F}
                 = \frac{\hbar k_\mathrm{F}}{m^\ast}\,.
-                \label{eq:quasi:parabolic}
             \end{equation}
             Here $E_\mathrm{F}$, $k_\mathrm{F}$, and $v_\mathrm{F}$ denote the Fermi energy, wave number, and velocity. The parabolic form approximates the band dispersion, not a constant dispersion near the Fermi surface.
 
@@ -50,18 +49,16 @@
                 = \frac{1}{2\pi^2}
                 \left(\frac{2m^\ast}{\hbar^2}\right)^{3/2}
                 \sqrt{E}\,,
-                \label{eq:quasi:n-dos}
             \end{equation}
             where $E$ is measured from the band edge. Low-temperature transport and weak-coupling superconductivity probe only a narrow window around $E_\mathrm{F}$. This window is on the meV scale, while $E_\mathrm{F}$ is on the eV scale. We therefore approximate the density of states within that window as
             \begin{equation}
                 N(E) \approx N_0 \equiv N(E_\mathrm{F})\,.
-                \label{eq:quasi:n-dos-approx}
             \end{equation}
             Thus, the constant approximation applies to the density of states near the Fermi level, not to the underlying band dispersion. \cite{gross_festkorperphysik_2014}
 
             This effective single-band model is sufficient for the aluminum electrodes and the minimal transport models used below. It does not describe strongly anisotropic, strongly correlated, or quantitative multiband conductors, which may require band-dependent velocities, densities of states, and scattering. Atomic contacts also retain orbital information through their transmission channels even when the electrodes are summarized by effective bulk parameters.
 
-            Aluminum is a nearly free-electron-like $sp$ metal with three valence electrons per atom. Its low-energy normal state is well represented by this approximation, with $m^\ast \simeq m$ as a useful estimate. Representative bulk free-electron parameters are $E_\mathrm{F}\approx11.7\,\mathrm{eV}$, $v_\mathrm{F}\approx2.0\times10^6\,\mathrm{m/s}$, and a Fermi wavelength of approximately $0.36\,\mathrm{nm}$. These are material estimates rather than parameters extracted from the devices studied in this thesis \cite{chauvin_josephson_2005,steinberg_quasi-particle_2008}.
+            Aluminum is a nearly free-electron-like $sp$ metal with three valence electrons per atom. Its low-energy normal-state regime is well represented by this approximation, with $m^\ast \simeq m$ as a useful estimate. Representative bulk free-electron parameters are $E_\mathrm{F}\approx11.7\,\mathrm{eV}$, $v_\mathrm{F}\approx2.0\times10^6\,\mathrm{m/s}$, and a Fermi wavelength of approximately $0.36\,\mathrm{nm}$. These are material estimates rather than parameters extracted from the devices studied in this thesis \cite{chauvin_josephson_2005,steinberg_quasi-particle_2008}.
 
         %=========================================================
         \subsubsection*{Diffusion, Conductivity, and Ohm's Law}
@@ -70,12 +67,10 @@
             Impurities, structural disorder, and phonons randomize the quasiparticle momentum. We characterize elastic transport by the mean free path $\ell_\mathrm{qp}$. On length scales much larger than $\ell_\mathrm{qp}$, repeated scattering produces diffusion. For an isotropic three-dimensional conductor, the diffusion constant is
             \begin{equation}
                 D = \frac{v_\mathrm{F}\ell_\mathrm{qp}}{3}\,.
-                \label{eq:quasi:diffusion-constant}
             \end{equation}
             The Einstein relation then connects diffusion to the normal-state conductivity,
             \begin{equation}
                 \sigma = e^2 N_0 D\,.
-                \label{eq:quasi:einstein-relation}
             \end{equation}
             Under the same isotropic parabolic-band assumptions, this expression is equivalent to the Drude conductivity. The electric field creates a small imbalance in the quasiparticle distribution, while elastic scattering limits the drift. The local response is $\vec{j}=\sigma\vec{E}$. This description assumes that the field, current density, and material parameters vary slowly on the scale of $\ell_\mathrm{qp}$. \cite{drude_zur_1900,gross_festkorperphysik_2014}
 
@@ -86,11 +81,10 @@
                 G = \sigma\,A/L\,,
                 \qquad
                 R = 1/G\,.
-                \label{eq:quasi:ohms-law}
             \end{equation}
             The measured normal-state resistance therefore combines material transport parameters with sample geometry. It provides the bulk reference for the coherent finite-conductor description introduced next. \cite{ohm_galvanische_1827}
 
-            The parameters $v_\mathrm{F}$, $N_0$, $\ell_\mathrm{qp}$, and $D$ summarize the low-energy normal state needed in this thesis. They do not specify a spectral lifetime or determine whether phase coherence survives across a finite device. That question requires comparing the conductor size with the relevant transport lengths.
+            The parameters $v_\mathrm{F}$, $N_0$, $\ell_\mathrm{qp}$, and $D$ summarize the low-energy normal-state properties needed in this thesis. They do not specify a spectral lifetime or determine whether phase coherence survives across a finite device. That question requires comparing the conductor size with the relevant transport lengths.
                 
     %=========================================================
     \subsection{Mesoscopic Transport Regimes}
@@ -132,12 +126,10 @@
             For diffusive motion the phase-coherence length is conveniently expressed in terms of the diffusion constant $D$ and a dephasing time $t_\phi$,
             \begin{equation}
                 \ell_\phi = \sqrt{D t_\phi}\,.
-                \label{eq:quasi:diffusive-coherence-length}
             \end{equation}
             At finite temperature, thermal averaging over an energy window $\sim k_\mathrm{B}T$ further reduces interference. A common characteristic thermal length is
             \begin{equation}
                 \ell_T = \sqrt{\hbar D / k_\mathrm{B}T}\,,
-                \label{eq:quasi:thermal-length}
             \end{equation}
             such that phase-coherent effects are most pronounced when $L \lesssim \min(\ell_\phi,\,\ell_T)$. Numerical prefactors in the definition of $\ell_T$ depend on the geometry and convention. \cite{bergmann_weak_1984,lee_disordered_1985}
 
@@ -163,7 +155,6 @@
             In the ballistic regime, the constriction is shorter than the elastic mean free path, $L \ll \ell_\mathrm{qp}$, so quasiparticles traverse the contact without momentum-randomizing scattering. If $L \lesssim \ell_\phi$, transport is phase coherent across the entire constriction. A characteristic ballistic coherence length may be estimated from the Fermi velocity and a dephasing time $t_\phi$,
             \begin{equation}
                 \ell_\phi = v_\mathrm{F} \, t_\phi\,.
-                \label{eq:quasi:ballistic-coherence-length}
             \end{equation}
             The numerical prefactor depends on the definition of the dephasing time.
 
@@ -172,14 +163,12 @@
             Linear scattering then gives
             \begin{equation}
                 \begin{pmatrix} B_1 \\ B_2 \end{pmatrix} = \mat{S}\,\begin{pmatrix} A_1 \\ A_2 \end{pmatrix}\,.
-                \label{eq:quasi:scatter-1}
             \end{equation}
 
             In the multi-mode case, $A_{1,2}$ and $B_{1,2}$ become vectors collecting all propagating modes in the corresponding lead. The scattering matrix decomposes into reflection blocks $\mat{r}$ and $\mat{r}'$ and transmission blocks $\mat{t}$ and $\mat{t}'$,
             \begin{equation}
                 \mat{S}
                 = \begin{pmatrix} \mat{r} & \mat{t}' \\ \mat{t} & \mat{r}' \end{pmatrix}\,.
-                \label{eq:quasi:scatter-2}
             \end{equation}
             For purely elastic normal-state scattering, $\mat{S}$ is unitary because probability current is conserved.
             
@@ -187,7 +176,6 @@
             \begin{equation}
                 \{\tau_i\} = \operatorname{eig}\!\left(\mat{t}^\dagger\,\mat{t}\right)\,,\quad 
                 \tau_i\in[0,1]\,.
-                \label{eq:quasi:tau_i}
             \end{equation}
             Choosing a basis of transmission eigenchannels diagonalizes $\mat{t}^\dagger\mat{t}$. This basis is unique up to unitary rotations within degenerate subspaces.
 
@@ -196,7 +184,6 @@
                 G_\mathrm{N} = G_0 \sum_{i=1}^N \tau_i\,,
                 \quad
                 G_0 = \frac{2e^2}{h}\,,
-                \label{eq:quasi:landauer}
             \end{equation}
             where $\tau_i$ are the transmission eigenvalues and $G_0$ is the conductance quantum\footnote{
                 Throughout this thesis the conductance quantum is defined as $G_0 \equiv 2e^2/h = 77.48\,\mu\mathrm{S}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = 12.9\,\mathrm{k\Omega}$.

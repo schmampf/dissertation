@@ -23,7 +23,6 @@
     The microscopic section described dissipative quasiparticle tunneling. The complementary coherent process is Cooper-pair tunneling, as depicted in Fig.~\ref{fig:macro:schematic}. Using the order-parameter convention of Eq.~\eqref{eq:micro:complex-delta}, the relevant variable is the phase difference
     \begin{equation}
         \phi = \phi_1 - \phi_2\,,
-        \label{eq:macro:phase-difference}
     \end{equation}
     which determines the supercurrent. Figure~\ref{fig:macro:delta-r} shows this phase-only approximation schematically.
 
@@ -40,11 +39,11 @@
             \captionsetup{format=plain}%
             \centering
             \subfigure[
-                Current-phase relation of a Josephson junction (Eq.~\ref{eq:macro:dc}).
+                Current-phase relation of a Josephson junction (Eq.~\ref{eq:macro:josephson-current-phase}).
             ]{\import{theory/macro}{josephson-iphi.pgf}}
             \hfill
             \subfigure[
-                Josephson current over time for a constant voltage $V_0 = \Delta_0/e$ (Eqs.~\ref{eq:macro:dc} and \ref{eq:macro:phi-t}).
+                Josephson current over time for a constant voltage $V_0 = \Delta_0/e$ (Eqs.~\ref{eq:macro:josephson-current-phase} and \ref{eq:macro:josephson-phase-evolution}).
             ]{\import{theory/macro}{josephson-it.pgf}}
             \subfigure[
                 Combined supercurrent and quasiparticle contribution to the \textit{I--V} characteristic.
@@ -67,7 +66,7 @@
         The DC Josephson effect is described by the sinusoidal current-phase relation (CPR)
         \begin{equation}
             I_\mathrm{J} = I_\mathrm{c}\sin\phi\,,
-            \label{eq:macro:dc}
+            \label{eq:macro:josephson-current-phase}
         \end{equation}
         where $I_\mathrm{c}$ denotes the critical current, as shown in Fig.~\ref{fig:macro:josephson}(a). This CPR states that a dissipationless supercurrent can flow at zero voltage, driven solely by the phase difference between the two superconductors. It is a direct consequence of coherent Cooper-pair tunneling \cite{josephson_possible_1962}.
 
@@ -75,7 +74,7 @@
         The AC~Josephson relation links the temporal evolution of the phase to the voltage across the junction,
         \begin{equation}
             \frac{\mathrm{d}\phi}{\mathrm{d}t} = \frac{2e}{\hbar}\,V_0\,,
-            \label{eq:macro:ac}
+            \label{eq:macro:josephson-voltage-phase}
         \end{equation}
         implying that a constant voltage causes the phase difference to increase uniformly in time \cite{josephson_possible_1962}.
 
@@ -83,7 +82,7 @@
         \begin{equation}
             \phi(t) = \phi_0 + 2\pi \nu_0t\,,\quad
             \nu_0 = \frac{2e}{h}\,V_0\,,
-            \label{eq:macro:phi-t}
+            \label{eq:macro:josephson-phase-evolution}
         \end{equation}
         which produces an oscillating supercurrent with frequency $\nu_0$ \cite{josephson_possible_1962}. Figure~\ref{fig:macro:josephson}(b) shows the time-dependent current together with the corresponding time scale $\Delta t = 1/\nu_0$ set by the Josephson frequency.
 
@@ -97,13 +96,12 @@
             \tanh\!\left(\frac{\Delta(T)}{2k_\mathrm{B}T}\right),
             \label{eq:macro:critical-current}
         \end{equation}
-        shown in Fig.~\ref{fig:macro:josephson}(d). It reflects the BCS temperature dependence of the superconducting gap from Eq.~\eqref{eq:micro:DeltaT} together with the thermal occupation of quasiparticle states. At zero temperature, the expression simplifies to $I_\mathrm{c} = (\pi/2)\,G_\mathrm{N}\Delta_0/e$ \cite{ambegaokar_tunneling_1963}.
+        shown in Fig.~\ref{fig:macro:josephson}(d). It reflects the BCS temperature dependence of the superconducting gap from Eq.~\eqref{eq:micro:gap-temperature} together with the thermal occupation of quasiparticle states. At zero temperature, the expression simplifies to $I_\mathrm{c} = (\pi/2)\,G_\mathrm{N}\Delta_0/e$ \cite{ambegaokar_tunneling_1963}.
 
         % Josephson Coupling Energy
         The strength of phase coupling in a Josephson junction is quantified by the Josephson energy
         \begin{equation}
             E_\mathrm{J}=\frac{\hbar I_\mathrm{c}}{2e}\,,
-            \label{eq:macro:josephson-energy}
         \end{equation}
         which sets the energetic stiffness of the phase and the robustness of coherent Cooper-pair tunneling. A large $E_\mathrm{J}$ corresponds to a well-defined phase, while a small $E_\mathrm{J}$ makes the junction susceptible to fluctuations \cite{tinkham_introduction_2004}.
 
@@ -119,17 +117,16 @@
 
         Under microwave irradiation, a Josephson junction develops quantized constant-voltage plateaus in its dc \textit{I--V} characteristic. These Shapiro steps, or the inverse AC Josephson effect, arise from frequency locking between the Josephson oscillation and the applied drive \cite{shapiro_josephson_1963}.
 
-        The microwave drive introduced in Sec.~\ref{subsec:micro:pat} modulates the superconducting phase. For coherent Cooper-pair transfer, the charge-dependent phase in Eq.~\eqref{eq:micro:pat:phase} is evaluated at $q=2e$ and contributes directly to the phase difference. The Josephson frequency $\nu_0$ then mixes with the external frequency $\nu$, and the phase takes the form
+        The microwave drive introduced in Sec.~\ref{subsec:micro:pat} modulates the superconducting phase. For coherent Cooper-pair transfer, the charge-dependent phase in Eq.~\eqref{eq:micro:pat-phase} is evaluated at $q=2e$ and contributes directly to the phase difference. The Josephson frequency $\nu_0$ then mixes with the external frequency $\nu$, and the phase takes the form
         \begin{equation}
             \phi(t)=\phi_0 + 2\pi\nu_0 t + \alpha\sin(2\pi\nu t)\,,
             \label{eq:macro:shapiro-phase}
         \end{equation}
         with $\alpha = \alpha_{2e} = 2eA/h\nu$ the dimensionless Cooper-pair drive strength.
 
-        Inserting this expression into Eq.~\eqref{eq:macro:dc} and expanding the phase modulation with Eq.~\eqref{eq:micro:pat:jacobi-anger} yields harmonics at frequencies $\nu_0 - n\nu$. Whenever $\nu_0 = n\nu$, the $n$-th harmonic becomes stationary and contributes a finite dc current. This produces quantized voltage plateaus at
+        Inserting this expression into Eq.~\eqref{eq:macro:josephson-current-phase} and expanding the phase modulation with Eq.~\eqref{eq:micro:pat-jacobi-anger} yields harmonics at frequencies $\nu_0 - n\nu$. Whenever $\nu_0 = n\nu$, the $n$-th harmonic becomes stationary and contributes a finite dc current. This produces quantized voltage plateaus at
         \begin{equation}
             V_n = \frac{nh\nu}{2e}\,,
-            \label{eq:macro:shapiro-step}
         \end{equation}
         known as Shapiro steps \cite{shapiro_josephson_1963}.
 
@@ -191,7 +188,6 @@
                 I_\mathrm{bias} = I_\mathrm{c}\sin(\phi)
                     + \frac{V}{R}
                     + C\frac{\mathrm{d}V}{\mathrm{d}t}\,.
-                \label{eq:macro:rcsj-ibias}
             \end{equation}
             This current balance defines the standard RCSJ model \cite{stewart_currentvoltage_1968,mccumber_effect_1968}.
 
@@ -200,7 +196,6 @@
                 I_\mathrm{bias}(t) = I_\mathrm{c}\sin\phi(t)
                     + I_\mathrm{qp}\!\big(V(t)\big)
                     + C\,\frac{\mathrm{d}V}{\mathrm{d}t}\,.
-                \label{eq:macro:rcsj-ibias-nonlinear}
             \end{equation}
             Together with the Josephson relation $V(t)=(\hbar/2e)\,\mathrm{d}\phi/\mathrm{d}t$, this yields a phase-dynamics equation with the same structure as Eq.~\eqref{eq:macro:rcsj-cpr}, but with a nonlinear damping term. For the remainder of this section we use the standard linear approximation $I_\mathrm{qp}(V)\approx V/R$.
             Here $I_\mathrm{bias}$ denotes the externally applied current, distinct from the Josephson supercurrent $I_\mathrm{J}$, the resistive current, and the capacitive displacement current.
@@ -242,7 +237,6 @@
             where the quality factor
             \begin{equation}
                 Q = \sqrt{\frac{2eI_\mathrm{c}R^2C}{\hbar}}
-                \label{eq:macro:rcsj-damping}
             \end{equation}
             quantifies the damping of the phase dynamics \cite{mccumber_effect_1968}.
 
@@ -259,7 +253,6 @@
                 -\partial u/\partial\phi = i - \sin\phi\,,
                 \quad
                 u = U/ E_\mathrm{J}\,,
-                \label{eq:macro:washboard-force}
             \end{equation}
             which yields
             \begin{equation}
@@ -343,7 +336,6 @@
                 = \sin\phi
                 + \frac{1}{Q}\,\frac{\mathrm{d}\phi}{\mathrm{d}t'}
                 + \frac{\mathrm{d}^2\phi}{\mathrm{d}t'^2}\,,
-                \label{eq:macro:rcsj-driven}
             \end{equation}
             This driven extension combines the RCSJ dynamics with the microwave locking observed by Shapiro \cite{shapiro_josephson_1963,stewart_currentvoltage_1968,mccumber_effect_1968}.
 
@@ -351,7 +343,6 @@
             \begin{equation}
                 u(\phi)
                 = -\cos\phi \;-\; i\,\phi - a'\phi\sin(\nu' t')\,.
-                \label{eq:macro:rcsj-washboard-potential}
             \end{equation}
 
             Weak damping makes the junction sensitive to residual oscillations, which can distort Shapiro steps and reduce their visibility under microwave irradiation.

@@ -25,7 +25,6 @@
         The potential $U(\vec r)$ represents confinement, tunnel barriers, and disorder. At the BCS mean-field level, superconductivity enters through the local pair potential introduced in Eq.~\eqref{eq:micro:complex-delta},
         \begin{equation}
             \Delta(\vec r)=|\Delta(\vec r)|e^{\ima\phi(\vec r)}\,,
-            \label{eq:meso:pair-potential}
         \end{equation}
         which appears here as the BdG matrix element coupling time-reversed electron and hole amplitudes. In the reduced Nambu basis, a quasiparticle mode is represented by
         \begin{equation}
@@ -35,7 +34,6 @@
                 u_k(\vec r)\\
                 v_k(\vec r)
             \end{pmatrix},
-            \label{eq:meso:nambu-spinor}
         \end{equation}
         where $u_k$ and $v_k$ are its electron-like and hole-like components.
 
@@ -47,22 +45,18 @@
                 \hat{H}_\mathrm{N}(\vec r) & \Delta(\vec r)\\
                 \Delta^\ast(\vec r) & -\hat{H}_\mathrm{N}^\ast(\vec r)
             \end{pmatrix},
-            \label{eq:meso:h-bdg}\\
             \hat{H}_\mathrm{BdG}(\vec r)\Psi_k(\vec r)
             &=E_k\Psi_k(\vec r)\,.
-            \label{eq:meso:BdG}
         \end{align}
         The off-diagonal pair potential mixes electron and hole amplitudes. Particle--hole symmetry relates every solution at $+E_k$ to a partner at $-E_k$ with exchanged electron and hole components. In the normal-state limit $\Delta\to0$, the two components decouple and recover the electron and hole sectors of Eq.~\eqref{eq:meso:h-n} \cite{bogoljubov_new_1958,de_gennes_superconductivity_1966}.
 
         For a homogeneous superconductor with uniform $\Delta=|\Delta|e^{\ima\phi}$, the modes are labeled by the wave vector $\vec q$. The quantity $\xi_{\vec q}=\hbar^2q^2/(2m^\ast)-\mu$ denotes the normal-state energy measured from the Fermi level. In terms of this energy, the bulk quasiparticle dispersion is
         \begin{equation}
             E_{\vec q}=\sqrt{\xi_{\vec q}^2+|\Delta|^2}\,.
-            \label{eq:meso:BdG-plane-wave}
         \end{equation}
         Scattering calculations instead fix the quasiparticle energy $E$ and use the inverse relation to distinguish electron-like and hole-like branches,
         \begin{equation}
             \xi_{\pm}(E)=\pm\sqrt{E^2-|\Delta|^2}\,,
-            \label{eq:meso:xi-branches}
         \end{equation}
         with corresponding BCS coherence factors
         \begin{equation}
@@ -121,7 +115,6 @@
             The Blonder--Tinkham--Klapwijk (BTK) model provides a quantitative scattering description of an NS interface with arbitrary transparency $\tau$. It yields the energy-resolved probabilities for Andreev reflection ($A$), normal reflection ($B$), and total quasiparticle transmission into the superconductor ($C$),
             \begin{equation}
                 A(E) + B(E) + C(E) = 1\,.
-                \label{eq:meso:btk-probabilities}
             \end{equation}
             This probability balance follows from current conservation in the BTK scattering problem \cite{blonder_transition_1982}.
 
@@ -136,7 +129,6 @@
                     B(E) &= bb^*\,,\quad
                     b= -\left(u_0^2-v_0^2\right)\left( (1-\tau) + \ima \sqrt{\tau(1-\tau)} \middle)\,\right/\,\tau d\,,
                 \end{aligned}
-                \label{eq:meso:btk-parameter}
             \end{equation}
             with $u_0$ and $v_0$ as coherence factors, given by Eq.~\eqref{eq:meso:coherence-factors} \cite{blonder_transition_1982,plecenik_finite-quasiparticle-lifetime_1994}.
 
@@ -184,7 +176,6 @@
         Andreev reflection becomes phase-coherent and spectrally quantized when two superconductors are connected by a mesoscopic weak link. In an SNS geometry, a subgap quasiparticle ($|E|<|\Delta|$) cannot escape into the superconducting continua and instead undergoes successive Andreev conversions at both interfaces, alternating between electron- and hole-like character as shown in Fig.~\ref{fig:meso:abs-schematics}. One cycle acquires the phase difference
         \begin{equation}
             \phi = \phi_1 - \phi_2\,.
-            \label{eq:meso:phase-difference}
         \end{equation}
         The resulting constructive-interference condition quantizes the motion into discrete subgap eigenstates localized around the junction, known as Andreev bound states (ABS) \cite{andreev_thermal_1964,ishii_josephson_1970,beenakker_quantum_1992}.
         
@@ -210,7 +201,6 @@
             \begin{equation}
                 r_\mathrm{A}(E) = e^{-\ima\phi_\mathrm{A}(E)}\,e^{-\ima\phi}\,,\qquad
                 \phi_\mathrm{A}(E)\equiv\arccos\!\left(E/|\Delta|\right)\,.
-                \label{eq:meso:andreev-leads}
             \end{equation}
             Here $\phi_\mathrm{A}(E)$ is the energy-dependent Andreev phase, while $\phi$ denotes the condensate phase of the electrode. For nonideal interfaces, finite backscattering reintroduces normal reflection and reduces the Andreev amplitude below unit \cite{andreev_thermal_1964,beenakker_quantum_1992}.
 
@@ -221,16 +211,14 @@
             The short-junction approximation requires the weak-link length $L$ to remain much smaller than the relevant superconducting coherence length, $L\ll\xi$. The clean-limit BCS coherence length of aluminum is
             \begin{equation}
                 \xi_{\mathrm{clean}, 0} = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\approx 2.4\,\mu\mathrm{m}\,.
-                \label{eq:meso:aluminum-clean-coherence-length}
             \end{equation}
             For a diffusive aluminum film, the corresponding zero-temperature decay length is
             \begin{equation}
                 \xi_{\mathrm{dirty},0}
                 = \sqrt{\frac{\hbar D}{\Delta_0}}\approx 67-111\,\mathrm{nm}\,.
-                \label{eq:meso:aluminum-dirty-coherence-length}
             \end{equation}
 
-            The parameters and source measurements entering the clean and dirty estimates are given in Secs.~\ref{subsec:quasi:micro} and \ref{subsec:micro:sc-gap}. These are representative bulk and film estimates rather than device-specific coherence lengths. Both greatly exceed an atomic-scale constriction, placing the contacts considered here in the short-junction limit \cite{scheer_conduction_1997}. The coherence lengths characterize superconducting propagation in clean or diffusive material. They do not determine whether transport through the constriction itself is ballistic or diffusive.
+            The parameters and source measurements entering the clean and dirty estimates are given in Secs.~\ref{subsec:quasi:normal-state-quasiparticles} and \ref{subsec:micro:superconducting-gap}. These are representative bulk and film estimates rather than device-specific coherence lengths. Both greatly exceed an atomic-scale constriction, placing the contacts considered here in the short-junction limit \cite{scheer_conduction_1997}. The coherence lengths characterize superconducting propagation in clean or diffusive material. They do not determine whether transport through the constriction itself is ballistic or diffusive.
 
             In the short-junction limit, quasiparticles acquire only a negligible energy-dependent propagation phase while traversing the weak link. Its normal-state scattering properties may therefore be treated as energy independent over the gap. Each channel is characterized by one transmission eigenvalue $\tau_i$, and its ABS spectrum depends only on $\tau_i$, the gap, and the phase difference. This leads to the universal short-junction spectrum below.
 
@@ -260,7 +248,6 @@
             For a single channel of transmission $\tau$, the constructive-interference condition reduces to the compact form
             \begin{equation}
                 \sin^2\!\phi_\mathrm{A}(E) = \tau\,\sin^2\!\left(\phi/2\right)\,,
-                \label{eq:meso:abs-quantization}
             \end{equation}
             which directly yields the familiar Andreev bound-state spectrum 
             \begin{equation}
@@ -274,7 +261,6 @@
             Equivalently, one may express the contribution of each ABS branch through its occupation, which yields the standard spin-degenerate relation
             \begin{equation}
                 I(\phi)=-2\pi \frac{G_0}{e} \frac{\partial E(\phi)}{\partial \phi}\,\tanh\!\left(\frac{E(\phi)}{2k_\mathrm{B}T}\right)\,.
-                \label{eq:meso:cpr-general}
             \end{equation}
             Here $E(\phi)>0$ denotes the positive-energy ABS spectrum, and the hyperbolic tangent accounts for thermal occupation \cite{beenakker_josephson_1991,beenakker_quantum_1992}.
 
@@ -297,12 +283,10 @@
             The corresponding current at $T=0$ follows from Eq.~\eqref{eq:meso:cpr-single},
             \begin{equation}
                 I(\phi)=\tfrac{\pi}{2}\tfrac{G_0}{e}|\Delta|\,\sin\!\left(\phi/2\right)\,\mathrm{sgn}\!\left(\cos\!\left(\phi/2\right)\right)\,.
-                \label{eq:meso:cpr-ballistic}
             \end{equation}
             At perfect transmission, the positive and negative equilibrium energies in Eq.~\eqref{eq:meso:abs-ballistic} meet in cusps at $\phi=\pi$. The underlying parity-resolved dispersions, proportional to $\pm|\Delta|\cos(\phi/2)$, cross at this phase. Any finite normal reflection opens an avoided crossing. The minimum positive ABS energy is
             \begin{equation}
                 E_\mathrm{min}\equiv E_+(\pi)=|\Delta|\sqrt{1-\tau}\,.
-                \label{eq:meso:abs-minimum-energy}
             \end{equation}
             Deviations from perfect transmission lift the zero-energy crossing and smooth the cusp in the equilibrium current. Finite temperature further rounds this feature through the occupation factor.
 
@@ -337,7 +321,6 @@
             For a conductor with many modes, the discrete channel sum may instead be represented by a continuous density of transmission eigenvalues $\rho(\tau)$,
             \begin{equation}
                 I(\phi,T)\simeq \int_0^1 \rho(\tau)\, I(\tau,\phi,T)\,\mathrm d\tau\,.
-                \label{eq:meso:cpr-multichannel-rho}
             \end{equation}
             Here $\rho(\tau)\,\mathrm d\tau$ gives the number of channels with transmissions in the interval $[\tau,\tau+\mathrm d\tau]$. It is therefore a channel density rather than a normalized probability distribution. Its conductance normalization is $G_\mathrm N=G_0\int_0^1 \rho(\tau)\,\tau\,\mathrm d\tau$ \cite{beenakker_josephson_1991,beenakker_quantum_1992}.
 
@@ -361,7 +344,6 @@
             Equation~\eqref{eq:meso:dmpk} gives the first Kulik--Omel'yanchuk (KO1) relation for a dirty diffusive contact. At $T=0$, the current is
             \begin{equation}
                 I_\mathrm{KO1}(\phi) = \pi \frac{G_\mathrm{N}}{e}|\Delta|\,\cos\!\left(\phi/2\right)\,\operatorname{artanh}\!\left(\sin\!\left(\phi/2\right)\right)\,.
-                \label{eq:meso:ko-1}
             \end{equation}
             Although $\operatorname{artanh}[\sin(\phi/2)]$ diverges as $\phi\to\pi$, the factor $\cos(\phi/2)$ vanishes more rapidly, such that $I_\mathrm{KO1}(\phi)\to0$ \cite{kulik_contribution_1975,golubov_current-phase_2004}.
 
@@ -369,7 +351,6 @@
             \begin{equation}
                 I_\mathrm{KO2}(\phi, T) = \pi\,\frac{G_\mathrm{N}}{e}\,\Delta(T)\,\sin\!\left(\frac{\phi}{2}\right)\,
                     \tanh\!\left(\frac{\Delta(T)\cos\!\left(\phi/2\right)}{2k_\mathrm{B}T}\right)\,.
-                \label{eq:meso:ko-2}
             \end{equation}
             This clean ballistic result is the KO2 reference limit \cite{kulik_contribution_1975,golubov_current-phase_2004}. Channels with finite normal reflection, $\tau_i<1$, are instead described by the general sum in Eq.~\eqref{eq:meso:cpr-multichannel}. KO1 and KO2 therefore provide many-channel reference limits rather than generic models of an individual atomic contact, whose discrete channel set $\{\tau_i\}$ should normally be retained.
 
@@ -390,12 +371,10 @@
             \begin{equation}
                 I(t)=\sum_{p\geq1}\sum_{n\in\mathbb{Z}} I_pJ_n(p\alpha)
                 \sin\!\left[p\phi_0+2\pi\left(p\nu_\mathrm{J}+n\nu\right)t\right]\,.
-                \label{eq:meso:shapiro-harmonic-expansion}
             \end{equation}
             The $p$-th CPR harmonic experiences the enlarged modulation $p\alpha$, and its $n$-photon locking contribution is weighted by $I_pJ_n(p\alpha)$ rather than by a squared Bessel function. A dc contribution appears when $p\nu_\mathrm{J}+n\nu=0$. Relabeling the sideband index gives the rational locking voltages
             \begin{equation}
                 V_{n/p}=\frac{n}{p}\frac{h\nu}{2e}\,,\qquad n\in\mathbb{Z},\quad p\in\mathbb{N}^+\,.
-                \label{eq:meso:shapiro-fractional}
             \end{equation}
             An appreciable second harmonic produces half-integer steps for odd $n$. Their visibility is expected to increase when highly transmitting channels contribute strongly to the supercurrent \cite{cuevas_subharmonic_2002,duprat_phase_2005,chauvin_superconducting_2006}.
 
@@ -478,11 +457,10 @@
                 \hat{H} &= \hat{H}_L + \hat{H}_R + \hat{H}_T(t)\,,\\
                 \hat{H}_T(t) &= \sum_\sigma \left( t\,e^{+\ima \phi(t)/2}\,\hat{c}^\dagger_{L\sigma}\hat{c}_{R\sigma}
                 + t\,e^{-\ima \phi(t)/2}\,\hat{c}^\dagger_{R\sigma}\hat{c}_{L\sigma}\right)\,.
-                \label{eq:ha:ht}
             \end{align}
             This local-hopping Hamiltonian is the starting point of the coherent channel-resolved MAR calculation \cite{cuevas_hamiltonian_1996}.
 
-            The phase factors in $\hat{H}_T(t)$ incorporate the dc voltage through the $q=2e$ phase of Eq.~\eqref{eq:micro:pat:phase}. The resulting time-periodic problem is solved with Keldysh Green functions in Nambu space and a Floquet representation in energy. For one channel, the calculation returns $I_\mathrm{HA}(V;\tau,T,\Delta,\gamma)$ from the transmission $\tau$, gap $\Delta$, temperature $T$, broadening $\gamma$, and voltage $V$.
+            The phase factors in $\hat{H}_T(t)$ incorporate the dc voltage through the $q=2e$ phase of Eq.~\eqref{eq:micro:pat-phase}. The resulting time-periodic problem is solved with Keldysh Green functions in Nambu space and a Floquet representation in energy. For one channel, the calculation returns $I_\mathrm{HA}(V;\tau,T,\Delta,\gamma)$ from the transmission $\tau$, gap $\Delta$, temperature $T$, broadening $\gamma$, and voltage $V$.
 
             Figure~\ref{fig:meso:mar-ha}(a) shows that increasing $\tau$ enhances the subgap current because successive traversals are less suppressed. The MAR thresholds remain fixed by Eq.~\eqref{eq:meso:mar-sgs}, but the structures overlap and the current approaches a smooth high-transmission response. Figure~\ref{fig:meso:mar-ha}(b) shows the same evolution in differential conductance, where thresholds appear as peaks or kinks. Above the gap, the curves retain a transmission-dependent excess current generated by Andreev processes.
 
@@ -495,7 +473,6 @@
                 I(V,\{\tau_i\},T,\Delta,\gamma)
                 =
                 \sum_i I(V,\tau_i,T,\Delta,\gamma)\,.
-                \label{eq:meso:channel-sum}
             \end{equation}
             Each transmission produces a characteristic \textit{I--V} and \textit{dI--dV} line shape because MAR probabilities depend differently on $\tau_i$. Their sum therefore remains sensitive to the mesoscopic pincode. This transmission sensitivity makes nonlinear SIS spectra a channel-resolved probe of atomic contacts \cite{cuevas_hamiltonian_1996,scheer_conduction_1997}.
 
@@ -588,7 +565,6 @@
             where $A$ is the effective microwave voltage amplitude at the junction, $m$ labels the effective charge order, and $n$ labels the photon sideband. The corresponding photon-assisted replicas of the MAR thresholds appear approximately at
             \begin{equation}
                 eV_{m,n}\simeq\frac{2|\Delta|}{m}\pm\frac{nh\nu}{m}\,.
-                \label{eq:meso:pamar-thresholds}
             \end{equation}
             The sideband spacing therefore scales as $h\nu/(me)$ in voltage. Photon-assisted MAR can identify the effective charge order associated with a subgap feature, complementing the dc charge resolution in Fig.~\ref{fig:meso:fcs-m} \cite{soerensen_microwave_1974,carrad_photon-assisted_2022}.
 
