@@ -25,6 +25,25 @@
     \label{subsec:stochastic:pe-theory}
     %=========================================================
 
+        \begin{figure}[t]
+            \centering
+            \subfigure[
+                Ohmic environment
+                ]{\import{theory/stochastic}{pe-ohm.pgf}}
+            \hfill
+            \subfigure[
+                Resonant environment
+                ]{\import{theory/stochastic}{pe-res.pgf}}
+            \hfill
+            \subfigure[
+                Mode weights
+                ]{\import{theory/stochastic}{pe-res-w.pgf}}
+            \caption{
+                Energy-exchange probability for Ohmic and resonant electromagnetic environments. (a) The Ohmic kernel evolves from nearly elastic tunneling at small $\alpha_q$ to a broad distribution with suppressed low-energy weight as the environmental resistance increases. (b) Coupling to a harmonic mode redistributes this kernel into replicas separated by the mode energy $\hbar\omega_0$. (c) The replica amplitudes follow the Poisson weights, so increasing the mode coupling $\alpha_{0,q}$ transfers weight from the elastic contribution to higher-order mode excitations. Unless indicated by the legend, $\alpha_q=\alpha_{0,q}=1$.
+                }
+            \label{fig:stochastic:pe}
+        \end{figure}
+        
         The circuit impedance determines the phase fluctuations, their correlation function defines the energy-exchange probability, and this probability dresses the tunneling rate and measured current. The label $q$ denotes the charge transferred in one event. We use the environmental-tunneling formulation of Falci \textit{et al.} and the conventions summarized by Ingold and Nazarov \cite{falci_quasiparticle_1991,ingold_charge_2005}.
 
         The relevant impedance is the effective impedance $Z(\omega)$ seen by the junction rather than the impedance of an isolated circuit element. For a junction capacitance $C$ in parallel with an environmental impedance $Z_\mathrm{env}(\omega)$, it is
@@ -119,33 +138,12 @@
             \end{equation}
             where $\alpha_{0,q}$ quantifies the coupling between charge $q$ and the resonant mode. The shifted kernels describe tunneling events accompanied by excitation of $n$ mode quanta. The Poisson weights are not a generic property of any peak in $Z(\omega)$, but a consequence of a linearly coupled harmonic mode. Damping, thermal occupation, nonlinearities, or strong driving modify the sideband weights and line shapes. In the measured current, this structured $P_q(E)$ dresses the electronic kernel in Eq.~\eqref{eq:stochastic:pe-tunnel-rate} and produces satellites whose voltage spacing depends on the transferred charge \cite{ingold_charge_2005}.
 
-                    
-        \begin{figure}[t]
-            \centering
-            \subfigure[
-                Ohmic environment
-                ]{\import{theory/stochastic}{pe-ohm.pgf}}
-            \hfill
-            \subfigure[
-                Resonant environment
-                ]{\import{theory/stochastic}{pe-res.pgf}}
-            \hfill
-            \subfigure[
-                Mode weights
-                ]{\import{theory/stochastic}{pe-res-w.pgf}}
-            \caption{
-                Energy-exchange probability for Ohmic and resonant electromagnetic environments. (a) The Ohmic kernel evolves from nearly elastic tunneling at small $\alpha_q$ to a broad distribution with suppressed low-energy weight as the environmental resistance increases. (b) Coupling to a harmonic mode redistributes this kernel into replicas separated by the mode energy $\hbar\omega_0$. (c) The replica amplitudes follow the Poisson weights, so increasing the mode coupling $\alpha_{0,q}$ transfers weight from the elastic contribution to higher-order mode excitations. Unless indicated by the legend, $\alpha_q=\alpha_{0,q}=1$.
-                }
-            \label{fig:stochastic:pe}
-        \end{figure}
-
         Figure~\ref{fig:stochastic:pe} connects elastic, Ohmic, and mode-assisted energy exchange to the zero-bias suppression, broadened thresholds, and resonant satellites discussed below.
 
         The following subsections specialize this charge-general framework. DCB applies $P_e(E)$ to stochastic single-electron transport, while ICPT applies $P_{2e}(E)$ to Cooper-pair transfer. The SSET then combines the corresponding single-electron and pair-transfer rates in a master equation for charge-state occupations.
 
 
     %=========================================================
-    \newpage
     \subsection{Dynamical Coulomb Blockade}
     \label{subsec:stochastic:dcb}
     %=========================================================
@@ -155,10 +153,11 @@
             \centering
             \vspace{-1.0em}
             \import{theory/schema/semiconductor}{sis-pat-emit.pdf_tex}
-            \caption{Environmental energy absorption in DCB for an SIS junction.}
+            \vspace{-.5em}
+            \caption{Environmental energy absorption in SIS junctions.}
             \label{fig:stochastic:dcb-schematic}
         \end{wrapfigure}
-        Dynamical Coulomb blockade (DCB) applies $P_e(E)$ to the elastic electronic kernel from the microscopic tunnel description. Figure~\ref{fig:stochastic:dcb-schematic} shows the energy balance for an SIS tunneling event. The electron creates quasiparticle excitations in the electrodes, and any energy not carried by the final electronic states must be absorbed by the environment. If $P_e(E)$ is small at the required absorption energy $E_\mathrm{abs}$, this channel is suppressed \cite{falci_quasiparticle_1991,ingold_charge_2005}.
+        Dynamical Coulomb blockade (DCB) applies $P_e(E)$ to the elastic electronic kernel from the microscopic tunnel description. Figure~\ref{fig:stochastic:dcb-schematic} shows the energy balance for an SIS tunneling event. The electron creates quasiparticle excitations in the electrodes, and any energy not carried by the final electronic states must be absorbed by the environment. If $P_e(E)$ is small at the required absorption energy, this channel is suppressed \cite{falci_quasiparticle_1991,ingold_charge_2005}.
 
         A single electron crossing a junction with capacitance $C$ changes its electrostatic energy by an amount of order $E_\mathrm{C}=e^2/2C$. The environment carries this energy through its voltage fluctuations. Small low-energy weight in $P_e(E)$ therefore appears as a zero-bias suppression in \textit{dI--dV} \cite{falci_quasiparticle_1991,ingold_charge_2005}.
 
