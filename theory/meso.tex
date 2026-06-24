@@ -14,7 +14,7 @@
     \label{subsec:meso:bdg}
     %=========================================================
 
-        The Bogoliubov--de~Gennes (BdG) formalism is the real-space mean-field extension of BCS theory for spatially inhomogeneous superconducting structures. Here its role is not to rederive superconductivity, but to define the coupled electron--hole scattering states from which Andreev reflection, Andreev bound states, and multiple Andreev reflection follow. We consider spin-singlet \textit{s}-wave pairing without spin-dependent fields, for which the problem separates into two equivalent $2\times2$ electron--hole blocks. \cite{bardeen_microscopic_1957,bogoljubov_new_1958,nambu_quasi-particles_1960,de_gennes_superconductivity_1966}
+        The Bogoliubov--de~Gennes (BdG) formalism is the real-space mean-field extension of BCS theory for spatially inhomogeneous superconducting structures. Here its role is not to rederive superconductivity, but to define the coupled electron--hole scattering states from which Andreev reflection, Andreev bound states, and multiple Andreev reflection follow. We consider spin-singlet \textit{s}-wave pairing without spin-dependent fields, for which the problem separates into two equivalent $2\times2$ electron--hole blocks. \cite{bardeen_theory_1957,bogoljubov_new_1958,nambu_quasi-particles_1960,de_gennes_superconductivity_1966}
 
         We use the effective normal-state Hamiltonian introduced in Eq.~\eqref{eq:quasi:normal-hamiltonian}, with energies measured relative to the chemical potential,
         \begin{equation}
@@ -52,7 +52,7 @@
             &=E_k\Psi_k(\vec r)\,.
             \label{eq:meso:BdG}
         \end{align}
-        The off-diagonal pair potential mixes electron and hole amplitudes. Particle--hole symmetry relates every solution at $+E_k$ to a partner at $-E_k$ with exchanged electron and hole components. In the normal-state limit $\Delta\to0$, the two components decouple and recover the electron and hole sectors of Eq.~\eqref{eq:meso:h-n}.
+        The off-diagonal pair potential mixes electron and hole amplitudes. Particle--hole symmetry relates every solution at $+E_k$ to a partner at $-E_k$ with exchanged electron and hole components. In the normal-state limit $\Delta\to0$, the two components decouple and recover the electron and hole sectors of Eq.~\eqref{eq:meso:h-n} \cite{bogoljubov_new_1958,de_gennes_superconductivity_1966}.
 
         For a homogeneous superconductor with uniform $\Delta=|\Delta|e^{\ima\phi}$, the modes are labeled by the wave vector $\vec q$. The quantity $\xi_{\vec q}=\hbar^2q^2/(2m^\ast)-\mu$ denotes the normal-state energy measured from the Fermi level. In terms of this energy, the bulk quasiparticle dispersion is
         \begin{equation}
@@ -72,9 +72,9 @@
             \end{aligned}
             \label{eq:meso:coherence-factors}
         \end{equation}
-        These factors set the relative electron and hole content of the scattering states. When broadening is introduced in the BTK model below, the square roots are evaluated with the complex energy argument $|E|+\ima\gamma$, and the physical solution is selected by the propagation or decay boundary condition. At $\gamma=0$ and $|E|<|\Delta|$, $\xi_\pm$ is imaginary, so the bulk solutions are evanescent.
+        These factors set the relative electron and hole content of the scattering states \cite{bardeen_theory_1957,bogoljubov_new_1958}. When broadening is introduced in the BTK model below, the square roots are evaluated with the complex energy argument $|E|+\ima\gamma$, and the physical solution is selected by the propagation or decay boundary condition. At $\gamma=0$ and $|E|<|\Delta|$, $\xi_\pm$ is imaginary, so the bulk solutions are evanescent.
 
-        The BdG formalism supplies the amplitudes and phases needed for superconducting scattering, but it does not specify the interface or contact geometry. Because homogeneous superconductors have no propagating subgap states, ordinary transmission below the gap is replaced by coherent electron--hole conversion at an NS interface. This conversion is introduced as Andreev reflection below. The same framework also reproduces the BCS density of states in Eq.~\eqref{eq:micro:dos-bcs}. \cite{andreev_thermal_1964,blonder_transition_1982,beenakker_quantum_1992}
+        The BdG formalism supplies the amplitudes and phases needed for superconducting scattering, but it does not specify the interface or contact geometry. Because homogeneous superconductors have no propagating subgap states, ordinary transmission below the gap is replaced by coherent electron--hole conversion at an NS interface. This conversion is introduced as Andreev reflection below. The same framework also reproduces the BCS density of states in Eq.~\eqref{eq:micro:dos-bcs}. \cite{andreev_thermal_1964,de_gennes_superconductivity_1966}
     
 
     %=========================================================
@@ -123,6 +123,7 @@
                 A(E) + B(E) + C(E) = 1\,.
                 \label{eq:meso:btk-probabilities}
             \end{equation}
+            This probability balance follows from current conservation in the BTK scattering problem \cite{blonder_transition_1982}.
 
             To incorporate finite quasiparticle lifetimes phenomenologically, we follow Pleceník \textit{et al.} and replace the quasiparticle energy by the complex argument $E \rightarrow |E| + \ima\gamma$ \cite{plecenik_finite-quasiparticle-lifetime_1994}.
 
@@ -137,7 +138,7 @@
                 \end{aligned}
                 \label{eq:meso:btk-parameter}
             \end{equation}
-            with $u_0$ and $v_0$ as coherence factors, given by Eq.~\eqref{eq:meso:coherence-factors}.
+            with $u_0$ and $v_0$ as coherence factors, given by Eq.~\eqref{eq:meso:coherence-factors} \cite{blonder_transition_1982,plecenik_finite-quasiparticle-lifetime_1994}.
 
             The probabilities determine how the NS current separates into single-particle and Andreev contributions. It is useful to collect these contributions into the energy-resolved BTK transport kernels
             \begin{equation}
@@ -158,7 +159,7 @@
                 \end{aligned}
                 \label{eq:meso:btk-iv}
             \end{equation}
-            The prefactor uses $G_0=2e^2/h$, so spin degeneracy is included in the conductance quantum. Increasing the transparency enhances the weight of Andreev processes, leading to a pronounced subgap conductance and a gradual reduction of the coherence-peak height. In the tunneling limit ($\tau \ll 1$), Eq.~\eqref{eq:meso:btk-iv} reduces to the conventional quasiparticle-tunneling expression, while for $\tau \approx 1$ the transport approaches the Andreev limit, where charge is transferred predominantly in units of $2e$.
+            The prefactor uses $G_0=2e^2/h$, so spin degeneracy is included in the conductance quantum. Increasing the transparency enhances the weight of Andreev processes, leading to a pronounced subgap conductance and a gradual reduction of the coherence-peak height. In the tunneling limit ($\tau \ll 1$), Eq.~\eqref{eq:meso:btk-iv} reduces to the conventional quasiparticle-tunneling expression, while for $\tau \approx 1$ the transport approaches the Andreev limit, where charge is transferred predominantly in units of $2e$ \cite{blonder_transition_1982}.
 
             Figure~\ref{fig:meso:btk} summarizes the BTK description across the transparency range. Panels (c) and (d) show the transport kernels $\rho_{\mathrm{1e}}(E)$ and $\rho_{\mathrm{2e}}(E)$ from Eq.~\eqref{eq:meso:btk-dos}. In the tunneling regime ($\tau\ll 1$), the response is dominated by the single-particle channel and shows coherence peaks at $|E|\approx\Delta$. With increasing transparency, spectral weight transfers to the Andreev channel, enhancing subgap conductance and reducing the peak height in \textit{I--V} and \textit{dI--dV}.
 
@@ -185,7 +186,7 @@
             \phi = \phi_1 - \phi_2\,.
             \label{eq:meso:phase-difference}
         \end{equation}
-        The resulting constructive-interference condition quantizes the motion into discrete subgap eigenstates localized around the junction, known as Andreev bound states (ABS) \cite{andreev_thermal_1964,kulik_effect_1969,ishii_josephson_1970}.
+        The resulting constructive-interference condition quantizes the motion into discrete subgap eigenstates localized around the junction, known as Andreev bound states (ABS) \cite{andreev_thermal_1964,ishii_josephson_1970,beenakker_quantum_1992}.
         
         These ABS form the microscopic origin of the dc Josephson effect in short mesoscopic junctions. Their phase-dependent energies $E_n(\phi)$ determine the equilibrium supercurrent through their occupation \cite{beenakker_josephson_1991, beenakker_quantum_1992}.
 
@@ -203,7 +204,7 @@
             \begin{equation}
                 \delta k = \frac{k_\mathrm{e} - k_\mathrm{h}}{2} \approx \frac{k_\mathrm{F}}{2}\frac{E}{E_\mathrm{F}}\,,
             \end{equation}
-            implying that the Andreev-reflected hole retraces the incoming trajectory up to corrections of order $E/E_\mathrm{F}$.
+            implying that the Andreev-reflected hole retraces the incoming trajectory up to corrections of order $E/E_\mathrm{F}$ \cite{andreev_thermal_1964,de_gennes_superconductivity_1966}.
 
             In the Andreev limit of a clean, specular, and highly transparent NS interface with negligible normal reflection, subgap conversion occurs with approximately unit probability. The corresponding electron-to-hole reflection amplitude can then be written as a pure phase factor,
             \begin{equation}
@@ -211,25 +212,25 @@
                 \phi_\mathrm{A}(E)\equiv\arccos\!\left(E/|\Delta|\right)\,.
                 \label{eq:meso:andreev-leads}
             \end{equation}
-            Here $\phi_\mathrm{A}(E)$ is the energy-dependent Andreev phase, while $\phi$ denotes the condensate phase of the electrode. For nonideal interfaces, finite backscattering reintroduces normal reflection and reduces the Andreev amplitude below unit.
+            Here $\phi_\mathrm{A}(E)$ is the energy-dependent Andreev phase, while $\phi$ denotes the condensate phase of the electrode. For nonideal interfaces, finite backscattering reintroduces normal reflection and reduces the Andreev amplitude below unit \cite{andreev_thermal_1964,beenakker_quantum_1992}.
 
         %=========================================================
         \subsubsection*{Short-Junction Limit}
         %=========================================================
 
-            The short-junction approximation requires the weak-link length $L$ to remain much smaller than the relevant superconducting coherence length, $L\ll\xi$. In clean aluminum, the BCS coherence length is
+            The short-junction approximation requires the weak-link length $L$ to remain much smaller than the relevant superconducting coherence length, $L\ll\xi$. The clean-limit BCS coherence length of aluminum is
             \begin{equation}
-                \xi_{\mathrm{clean}, 0} = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\approx 1-2\,\mu\mathrm{m}\,.
+                \xi_{\mathrm{clean}, 0} = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\approx 2.4\,\mu\mathrm{m}\,.
                 \label{eq:meso:aluminum-clean-coherence-length}
             \end{equation}
             For a diffusive aluminum film, the corresponding zero-temperature decay length is
             \begin{equation}
                 \xi_{\mathrm{dirty},0}
-                = \sqrt{\frac{\hbar D}{\Delta_0}}\approx 100-300\,\mathrm{nm}\,.
+                = \sqrt{\frac{\hbar D}{\Delta_0}}\approx 67-111\,\mathrm{nm}\,.
                 \label{eq:meso:aluminum-dirty-coherence-length}
             \end{equation}
 
-            Both coherence lengths greatly exceed the length of the atomic constrictions considered here, placing these contacts in the short-junction limit. These coherence lengths characterize superconducting propagation in clean or diffusive material. They do not determine whether transport through the constriction itself is ballistic or diffusive. \cite{tinkham_introduction_2004,steinberg_quasi-particle_2008}
+            The parameters and source measurements entering the clean and dirty estimates are given in Secs.~\ref{subsec:quasi:micro} and \ref{subsec:micro:sc-gap}. These are representative bulk and film estimates rather than device-specific coherence lengths. Both greatly exceed an atomic-scale constriction, placing the contacts considered here in the short-junction limit \cite{scheer_conduction_1997}. The coherence lengths characterize superconducting propagation in clean or diffusive material. They do not determine whether transport through the constriction itself is ballistic or diffusive.
 
             In the short-junction limit, quasiparticles acquire only a negligible energy-dependent propagation phase while traversing the weak link. Its normal-state scattering properties may therefore be treated as energy independent over the gap. Each channel is characterized by one transmission eigenvalue $\tau_i$, and its ABS spectrum depends only on $\tau_i$, the gap, and the phase difference. This leads to the universal short-junction spectrum below.
 
@@ -266,7 +267,7 @@
                 E_{\pm}(\phi)=\pm|\Delta|\sqrt{1-\tau\sin^2\!\left(\phi/2\right)}\,.
                 \label{eq:meso:abs-spectrum}
             \end{equation}
-            Figure~\ref{fig:meso:abs}(a) shows these spectra for different transmissions. In the tunneling regime, the levels remain close to the gap edges and depend weakly on phase. Increasing $\tau$ strengthens the phase dispersion and lowers the positive-energy branch near $\phi=\pi$.
+            This universal spectrum applies to a short single-channel junction with energy-independent normal scattering \cite{beenakker_josephson_1991,beenakker_quantum_1992}. Figure~\ref{fig:meso:abs}(a) shows these spectra for different transmissions. In the tunneling regime, the levels remain close to the gap edges and depend weakly on phase. Increasing $\tau$ strengthens the phase dispersion and lowers the positive-energy branch near $\phi=\pi$.
 
             The phase dependence of the ABS spectrum implies that these states carry a nondissipative supercurrent. In equilibrium, the current follows from the derivative of the junction free energy with respect to phase.
 
@@ -275,7 +276,7 @@
                 I(\phi)=-2\pi \frac{G_0}{e} \frac{\partial E(\phi)}{\partial \phi}\,\tanh\!\left(\frac{E(\phi)}{2k_\mathrm{B}T}\right)\,.
                 \label{eq:meso:cpr-general}
             \end{equation}
-            Here $E(\phi)>0$ denotes the positive-energy ABS spectrum, and the hyperbolic tangent accounts for thermal occupation.
+            Here $E(\phi)>0$ denotes the positive-energy ABS spectrum, and the hyperbolic tangent accounts for thermal occupation \cite{beenakker_josephson_1991,beenakker_quantum_1992}.
 
             Inserting Eq.~\eqref{eq:meso:abs-spectrum} yields
             \begin{equation}
@@ -284,7 +285,7 @@
                 \tanh\!\left(\frac{|\Delta|\sqrt{1-\tau\sin^2\!\left(\phi/2\right)}}{2k_\mathrm{B}T}\right)\,.
                 \label{eq:meso:cpr-single}
             \end{equation}
-            In the zero-temperature limit, $\tanh\!\left(E/2k_\mathrm{B}T\right)\to 1$ and the current is set solely by the phase dispersion of the occupied negative-energy branch. Figure~\ref{fig:meso:abs}(b) shows that increasing $\tau$ drives the current--phase relation away from a sinusoidal form and shifts its maximum towards $\phi=\pi$.
+            In the zero-temperature limit, $\tanh\!\left(E/2k_\mathrm{B}T\right)\to 1$ and the current is set solely by the phase dispersion of the occupied negative-energy branch \cite{beenakker_josephson_1991}. Figure~\ref{fig:meso:abs}(b) shows that increasing $\tau$ drives the current--phase relation away from a sinusoidal form and shifts its maximum towards $\phi=\pi$.
 
             In the tunneling limit ($\tau\ll 1$), the current--phase relation becomes sinusoidal and reduces to the standard Josephson form discussed in Sec.~\ref{sec:macro}. In the same limit, the critical current is consistent with the Ambegaokar--Baratoff result when expressed in terms of the normal-state resistance.
 
@@ -350,7 +351,7 @@
                     }
                 \label{fig:meso:ko-rho}
             \end{wrapfigure}
-            In the dirty short-contact limit, the transmission eigenvalues of a quasi-one-dimensional diffusive wire follow the Dorokhov--Mello--Pereyra--Kumar (DMPK) distribution \cite{dorokhov_transmission_1982},
+            In the metallic diffusive limit, the transmission eigenvalues of a quasi-one-dimensional wire follow the bimodal Dorokhov--Mello--Pereyra--Kumar (DMPK) distribution \cite{dorokhov_transmission_1982,beenakker_random-matrix_1997},
             \begin{equation}
                 \rho(\tau) = \frac{G_\mathrm{N}}{G_0} \frac{1}{2\tau \sqrt{1-\tau}}\,,\quad 0<\tau<1\,,
                 \label{eq:meso:dmpk}
@@ -362,7 +363,7 @@
                 I_\mathrm{KO1}(\phi) = \pi \frac{G_\mathrm{N}}{e}|\Delta|\,\cos\!\left(\phi/2\right)\,\operatorname{artanh}\!\left(\sin\!\left(\phi/2\right)\right)\,.
                 \label{eq:meso:ko-1}
             \end{equation}
-            Although $\operatorname{artanh}[\sin(\phi/2)]$ diverges as $\phi\to\pi$, the factor $\cos(\phi/2)$ vanishes more rapidly, such that $I_\mathrm{KO1}(\phi)\to0$.
+            Although $\operatorname{artanh}[\sin(\phi/2)]$ diverges as $\phi\to\pi$, the factor $\cos(\phi/2)$ vanishes more rapidly, such that $I_\mathrm{KO1}(\phi)\to0$ \cite{kulik_contribution_1975,golubov_current-phase_2004}.
 
             In the complementary clean ballistic limit, all modes are perfectly transmitting, $\tau_i=1$. Summing the ballistic single-channel result gives the second Kulik--Omel'yanchuk relation (KO2),
             \begin{equation}
@@ -370,7 +371,7 @@
                     \tanh\!\left(\frac{\Delta(T)\cos\!\left(\phi/2\right)}{2k_\mathrm{B}T}\right)\,.
                 \label{eq:meso:ko-2}
             \end{equation}
-            Channels with finite normal reflection, $\tau_i<1$, are instead described by the general sum in Eq.~\eqref{eq:meso:cpr-multichannel}. KO1 and KO2 therefore provide many-channel reference limits rather than generic models of an individual atomic contact, whose discrete channel set $\{\tau_i\}$ should normally be retained \cite{kulik_contribution_1975,golubov_current-phase_2004}.
+            This clean ballistic result is the KO2 reference limit \cite{kulik_contribution_1975,golubov_current-phase_2004}. Channels with finite normal reflection, $\tau_i<1$, are instead described by the general sum in Eq.~\eqref{eq:meso:cpr-multichannel}. KO1 and KO2 therefore provide many-channel reference limits rather than generic models of an individual atomic contact, whose discrete channel set $\{\tau_i\}$ should normally be retained.
 
             Figure~\ref{fig:meso:abs-ko} compares the current--phase relations and critical currents for the Ambegaokar--Baratoff, KO1, and KO2 limits. In each case, $I_\mathrm{c}(T)$ is found by maximizing $I(\phi,T)$ over phase with a BCS-like gap $\Delta(T)$. The channel set or its continuum density determines the observable current--phase relation and critical current, connecting microscopic transmission eigenvalues to equilibrium measurements.
 
@@ -396,14 +397,14 @@
                 V_{n/p}=\frac{n}{p}\frac{h\nu}{2e}\,,\qquad n\in\mathbb{Z},\quad p\in\mathbb{N}^+\,.
                 \label{eq:meso:shapiro-fractional}
             \end{equation}
-            An appreciable second harmonic produces half-integer steps for odd $n$. Their visibility is expected to increase when highly transmitting channels contribute strongly to the supercurrent \cite{duprat_phase_2005,cuevas_subharmonic_2002,chauvin_superconducting_2006}.
+            An appreciable second harmonic produces half-integer steps for odd $n$. Their visibility is expected to increase when highly transmitting channels contribute strongly to the supercurrent \cite{cuevas_subharmonic_2002,duprat_phase_2005,chauvin_superconducting_2006}.
 
             In an ideal overdamped junction whose response at $V_{n/p}$ is dominated by one CPR harmonic, the full locking interval in dc current is approximately
             \begin{equation}
                 \Delta I_{n/p}\simeq2\left|I_pJ_n(p\alpha)\right|\,.
                 \label{eq:meso:shapiro-fractional-width}
             \end{equation}
-            The factor of two is the full interval obtained by varying the phase offset $\phi_0$. For $p=1$, Eq.~\eqref{eq:meso:shapiro-fractional-width} reduces to the familiar integer-step modulation $\Delta I_n\simeq2|I_1J_n(\alpha)|$. The oscillations and zeros of $J_n(p\alpha)$ predict suppression and revival of a fractional plateau as the microwave amplitude is varied.
+            The factor of two is the full interval obtained by varying the phase offset $\phi_0$. For $p=1$, Eq.~\eqref{eq:meso:shapiro-fractional-width} reduces to the familiar integer-step modulation $\Delta I_n\simeq2|I_1J_n(\alpha)|$. The oscillations and zeros of $J_n(p\alpha)$ predict suppression and revival of a fractional plateau as the microwave amplitude is varied \cite{duprat_phase_2005}.
 
             Equation~\eqref{eq:meso:shapiro-fractional-width} is a single-dominant-harmonic estimate, not a general addition rule. Several pairs $(p,n)$ can correspond to the same reduced rational voltage, and their phase-dependent contributions can interfere. Realistic plateau widths require driven RSJ or RCSJ dynamics and also depend on damping, capacitance, temperature, noise, calibration of $A$, and nonequilibrium ABS occupation. Fractional steps alone are therefore not evidence for a $4\pi$-periodic Josephson effect.
 
@@ -417,12 +418,12 @@
     \label{subsec:meso:mar}
     %=========================================================
 
-        Multiple Andreev reflection (MAR) is the microscopic mechanism of subgap transport in voltage-biased SNS weak links and short superconducting point contacts. The energy-ladder picture fixes the voltage scales used throughout this section. For $|eV|<2|\Delta|$, a quasiparticle cannot directly enter the continuum of the opposite electrode. Instead, successive Andreev conversions alternate its electron- and hole-like character while each traversal changes its energy by $eV$, as illustrated for several orders in Fig.~\ref{fig:meso:mar-schematic}. In the trajectory picture of Klapwijk, Blonder, and Tinkham (KBT), the threshold for a process requiring $m$ energy increments is \cite{klapwijk_explanation_1982}
+        Multiple Andreev reflection (MAR) is the microscopic mechanism of subgap transport in voltage-biased SNS weak links and short superconducting point contacts. The energy-ladder picture fixes the voltage scales used throughout this section. For $|eV|<2|\Delta|$, a quasiparticle cannot directly enter the continuum of the opposite electrode. Instead, successive Andreev conversions alternate its electron- and hole-like character while each traversal changes its energy by $eV$, as illustrated for several orders in Fig.~\ref{fig:meso:mar-schematic}. In the trajectory picture of Klapwijk, Blonder, and Tinkham (KBT), the threshold for a process requiring $m$ energy increments is
         \begin{equation}
             eV_m=\frac{2|\Delta|}{m}\,,\qquad m\in\mathbb{N}^+\,.
             \label{eq:meso:mar-sgs}
         \end{equation}
-        We refer to these voltages as MAR thresholds. Here $m$ denotes the threshold order of the idealized energy-ladder process. The MAR thresholds generate the subharmonic-gap structure observed as slope changes in \textit{I--V} and peaks or kinks in \textit{dI--dV}. The same integer is related to the effective charge order in a charge-resolved description, but the two should not be identified without qualification because several MAR processes can contribute at a given bias.
+        We refer to these voltages as MAR thresholds. Here $m$ denotes the threshold order of the idealized energy-ladder process. The MAR thresholds generate the subharmonic-gap structure observed as slope changes in \textit{I--V} and peaks or kinks in \textit{dI--dV} \cite{klapwijk_explanation_1982,octavio_subharmonic_1983}. The same integer is related to the effective charge order in a charge-resolved description, but the two should not be identified without qualification because several MAR processes can contribute at a given bias.
 
         \begin{figure}[t]
             \centering
@@ -447,7 +448,7 @@
 
         The semiclassical OTBK model provides a historical quantitative realization of this ladder picture \cite{octavio_subharmonic_1983}. Short atomic contacts remain phase coherent, so we use the channel-resolved Hamiltonian approach of Cuevas \textit{et al.} for quantitative transport across the full transmission range.
 
-        At high transmission, the same dynamics can be viewed through the ABS spectrum. A dc bias drives the phase through the avoided crossing near $\phi=\pi$, where nonadiabatic Landau--Zener transitions can change the ABS branch occupation. This two-level picture is useful for a nearly ballistic channel, while the coherent transport model below treats the complete MAR current at arbitrary transmission.
+        At high transmission, the same dynamics can be viewed through the ABS spectrum. A dc bias drives the phase through the avoided crossing near $\phi=\pi$, where nonadiabatic Landau--Zener transitions can change the ABS branch occupation. This two-level picture is useful for a nearly ballistic channel, while the coherent transport model below treats the complete MAR current at arbitrary transmission \cite{averin_ac_1995}.
 
         %=========================================================
         \subsubsection*{Coherent Channel-Resolved Transport}
@@ -479,6 +480,7 @@
                 + t\,e^{-\ima \phi(t)/2}\,\hat{c}^\dagger_{R\sigma}\hat{c}_{L\sigma}\right)\,.
                 \label{eq:ha:ht}
             \end{align}
+            This local-hopping Hamiltonian is the starting point of the coherent channel-resolved MAR calculation \cite{cuevas_hamiltonian_1996}.
 
             The phase factors in $\hat{H}_T(t)$ incorporate the dc voltage through the $q=2e$ phase of Eq.~\eqref{eq:micro:pat:phase}. The resulting time-periodic problem is solved with Keldysh Green functions in Nambu space and a Floquet representation in energy. For one channel, the calculation returns $I_\mathrm{HA}(V;\tau,T,\Delta,\gamma)$ from the transmission $\tau$, gap $\Delta$, temperature $T$, broadening $\gamma$, and voltage $V$.
 
@@ -495,7 +497,7 @@
                 \sum_i I(V,\tau_i,T,\Delta,\gamma)\,.
                 \label{eq:meso:channel-sum}
             \end{equation}
-            Each transmission produces a characteristic \textit{I--V} and \textit{dI--dV} line shape because MAR probabilities depend differently on $\tau_i$. Their sum therefore remains sensitive to the mesoscopic pincode. This transmission sensitivity makes nonlinear SIS spectra a channel-resolved probe of atomic contacts \cite{scheer_conduction_1997}.
+            Each transmission produces a characteristic \textit{I--V} and \textit{dI--dV} line shape because MAR probabilities depend differently on $\tau_i$. Their sum therefore remains sensitive to the mesoscopic pincode. This transmission sensitivity makes nonlinear SIS spectra a channel-resolved probe of atomic contacts \cite{cuevas_hamiltonian_1996,scheer_conduction_1997}.
 
             The normal-state conductance constrains only the total transmission, so different mesoscopic pincodes can have the same $G_\mathrm{N}$. Their nonlinear SIS spectra can nevertheless differ and can be fitted to extract the pincode within the coherent short-contact model. Channels with the same transmission produce identical spectral contributions and cannot be distinguished individually. The fitting procedure is described in the methods section.
 
@@ -503,12 +505,12 @@
         \subsubsection*{Charge-Resolved Multiple Andreev Reflection}
         %=========================================================
 
-            To connect dc MAR to charge transfer, we use the current decomposition provided by full counting statistics. Full counting statistics provides a process-resolved extension of the coherent MAR calculation \cite{cuevas_full_2003}. We use it only to decompose the dc current into contributions associated with transfer of an effective charge $q=me$,
+            To connect dc MAR to charge transfer, we use the current decomposition provided by full counting statistics. Full counting statistics provides a process-resolved extension of the coherent MAR calculation \cite{levitov_charge_1993,levitov_electron_1996,cuevas_full_2003}. We use it only to decompose the dc current into contributions associated with transfer of an effective charge $q=me$,
             \begin{equation}
                 I(V)=\sum_{m=1}^{\infty} I_m(V)\,.
                 \label{eq:meso:fcs-decomposition}
             \end{equation}
-            The index $m$ now labels effective charge order rather than the threshold order used in Eq.~\eqref{eq:meso:mar-sgs}. The two meanings are physically connected because lower voltages require longer Andreev sequences and permit larger charge transfers, but several $I_m$ can coexist at the same bias.
+            The index $m$ now labels effective charge order rather than the threshold order used in Eq.~\eqref{eq:meso:mar-sgs}. The two meanings are physically connected because lower voltages require longer Andreev sequences and permit larger charge transfers, but several $I_m$ can coexist at the same bias \cite{cuevas_full_2003}.
 
             Figure~\ref{fig:meso:fcs} shows this redistribution for three transmissions. Near the gap edge, low-order processes carry most of the current. Lower bias requires larger transfer orders, although these processes are strongly suppressed in the tunneling regime. As $\tau$ increases, repeated traversal becomes more probable and several charge-transfer orders acquire appreciable weight.
 
@@ -588,7 +590,7 @@
                 eV_{m,n}\simeq\frac{2|\Delta|}{m}\pm\frac{nh\nu}{m}\,.
                 \label{eq:meso:pamar-thresholds}
             \end{equation}
-            The sideband spacing therefore scales as $h\nu/(me)$ in voltage. Photon-assisted MAR can identify the effective charge order associated with a subgap feature, complementing the dc charge resolution in Fig.~\ref{fig:meso:fcs-m}.
+            The sideband spacing therefore scales as $h\nu/(me)$ in voltage. Photon-assisted MAR can identify the effective charge order associated with a subgap feature, complementing the dc charge resolution in Fig.~\ref{fig:meso:fcs-m} \cite{soerensen_microwave_1974,carrad_photon-assisted_2022}.
 
             Equation~\eqref{eq:meso:pamar-current} is a practical dressing of dc FCS components, not a replacement for the full double-Floquet theory. It neglects coherent two-frequency interference, microwave-induced changes of ABS occupation, heating, environmental energy exchange, and current-biased phase dynamics. Within these limits, it provides an interpretable model for connecting microwave-induced sidebands to the charge-resolved MAR processes used in this thesis.
 
