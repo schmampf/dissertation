@@ -96,24 +96,24 @@
             \begin{figure}[t]
                 \centering
                 \setcounter{subfigure}{0}
-                \subfigure[Schematic of single-particle process]{\import{theory/schema/semiconductor}{ns-qp.pdf_tex}}
+                \subfigure[Schematic of $\mathrm{1e}$ process.]{\import{theory/schema/semiconductor}{ns-qp.pdf_tex}}
                 \hfill
                 \setcounter{subfigure}{2}
-                \subfigure[Spectral weight of single-particle process]{\import{theory/meso}{btk-1e-dos.pgf}}
+                \subfigure[Spectral weight of $\mathrm{1e}$.]{\import{theory/meso}{btk-1e-dos.pgf}}
                 \hfill
                 \setcounter{subfigure}{4}
-                \subfigure[All-particle \textit{I--V} characteristic]{\import{theory/meso}{btk-iv.pgf}}
+                \subfigure[All-particle \textit{I--V} curve.]{\import{theory/meso}{btk-iv.pgf}}
                 \\
                 \setcounter{subfigure}{1}
-                \subfigure[Schematic of two-particle process]{\import{theory/schema/semiconductor}{ns-ar.pdf_tex}}
+                \subfigure[Schematic of $\mathrm{2e}$-process.]{\import{theory/schema/semiconductor}{ns-ar.pdf_tex}}
                 \hfill
                 \setcounter{subfigure}{3}
-                \subfigure[Spectral weight of two-particle process]{\import{theory/meso}{btk-2e-dos.pgf}}
+                \subfigure[Spectral weight of $\mathrm{2e}$.]{\import{theory/meso}{btk-2e-dos.pgf}}
                 \hfill
                 \setcounter{subfigure}{5}
-                \subfigure[All-particle \textit{dI--dV} characteristics]{\import{theory/meso}{btk-didv.pgf}}
+                \subfigure[All-particle \textit{dI--dV} curve.]{\import{theory/meso}{btk-didv.pgf}}
                 \caption{
-                    BTK schematics and spectral weights of the single-particle (1e) and two-particle (2e) channels and the corresponding \textit{I--V} and \textit{dI--dV} characteristics for various channel transparencies $\tau$. Increasing $\tau$ shifts spectral weight from quasiparticle transmission to Andreev processes, leading to enhanced subgap conductance and reduced coherence-peak height.
+                    BTK energy schematics and calculated spectral weights of the single-particle ($\mathrm{1e}$) and two-particle ($\mathrm{2e}$) channels and the corresponding \textit{I--V} and \textit{dI--dV} curves for various channel transparencies $\tau$. Increasing $\tau$ shifts spectral weight from quasiparticle transmission to Andreev processes, leading to enhanced subgap conductance and reduced coherence-peak height.
                     }
                 \label{fig:meso:btk}
             \end{figure}
@@ -321,8 +321,8 @@
                     Critical Current $I_\mathrm{c}(T)$
                     ]{\import{theory/meso}{ko-ic.pgf}}
                 \caption{
-                    Equilibrium current--phase relation and critical current of three canonical short-junction reference limits.
-                    (a) The tunnel-junction result is sinusoidal, whereas KO--1 for a diffusive contact and KO--2 for a clean ballistic contact are progressively more skewed towards $\phi=\pi$.
+                    Equilibrium current--phase relation and critical current of three canonical short-junction reference limits, Ambegaokar-Baratoff (AB) and Kulik--Omel'yanchuk (KO1 \& KO2).
+                    (a) The AB result is sinusoidal CPR, whereas KO1 for a diffusive contact and KO2 for a clean ballistic contact are progressively more skewed towards $\phi=\pi$.
                     (b) The corresponding critical currents follow from maximizing each current--phase relation with respect to $\phi$ using a BCS-like gap $\Delta(T)$.
                     }
                 \label{fig:meso:abs-ko}
@@ -357,22 +357,22 @@
             \end{equation}
             as shown in Fig.~\ref{fig:meso:ko-rho}. Its bimodal form represents a large population of almost-closed channels together with almost-open channels that contribute strongly to transport.
 
-            Equation~\eqref{eq:meso:dmpk} gives the first Kulik--Omel'yanchuk (KO--1) relation for a dirty diffusive contact. At $T=0$, the current is
+            Equation~\eqref{eq:meso:dmpk} gives the first Kulik--Omel'yanchuk (KO1) relation for a dirty diffusive contact. At $T=0$, the current is
             \begin{equation}
                 I_\mathrm{KO1}(\phi) = \pi \frac{G_\mathrm{N}}{e}|\Delta|\,\cos\!\left(\phi/2\right)\,\operatorname{artanh}\!\left(\sin\!\left(\phi/2\right)\right)\,.
                 \label{eq:meso:ko-1}
             \end{equation}
             Although $\operatorname{artanh}[\sin(\phi/2)]$ diverges as $\phi\to\pi$, the factor $\cos(\phi/2)$ vanishes more rapidly, such that $I_\mathrm{KO1}(\phi)\to0$.
 
-            In the complementary clean ballistic limit, all modes are perfectly transmitting, $\tau_i=1$. Summing the ballistic single-channel result gives the second Kulik--Omel'yanchuk relation (KO--2),
+            In the complementary clean ballistic limit, all modes are perfectly transmitting, $\tau_i=1$. Summing the ballistic single-channel result gives the second Kulik--Omel'yanchuk relation (KO2),
             \begin{equation}
                 I_\mathrm{KO2}(\phi, T) = \pi\,\frac{G_\mathrm{N}}{e}\,\Delta(T)\,\sin\!\left(\frac{\phi}{2}\right)\,
                     \tanh\!\left(\frac{\Delta(T)\cos\!\left(\phi/2\right)}{2k_\mathrm{B}T}\right)\,.
                 \label{eq:meso:ko-2}
             \end{equation}
-            Channels with finite normal reflection, $\tau_i<1$, are instead described by the general sum in Eq.~\eqref{eq:meso:cpr-multichannel}. KO--1 and KO--2 therefore provide many-channel reference limits rather than generic models of an individual atomic contact, whose discrete channel set $\{\tau_i\}$ should normally be retained \cite{kulik_contribution_1975,golubov_current-phase_2004}.
+            Channels with finite normal reflection, $\tau_i<1$, are instead described by the general sum in Eq.~\eqref{eq:meso:cpr-multichannel}. KO1 and KO2 therefore provide many-channel reference limits rather than generic models of an individual atomic contact, whose discrete channel set $\{\tau_i\}$ should normally be retained \cite{kulik_contribution_1975,golubov_current-phase_2004}.
 
-            Figure~\ref{fig:meso:abs-ko} compares the current--phase relations and critical currents for the Ambegaokar--Baratoff, KO--1, and KO--2 limits. In each case, $I_\mathrm{c}(T)$ is found by maximizing $I(\phi,T)$ over phase with a BCS-like gap $\Delta(T)$. The channel set or its continuum density determines the observable current--phase relation and critical current, connecting microscopic transmission eigenvalues to equilibrium measurements.
+            Figure~\ref{fig:meso:abs-ko} compares the current--phase relations and critical currents for the Ambegaokar--Baratoff, KO1, and KO2 limits. In each case, $I_\mathrm{c}(T)$ is found by maximizing $I(\phi,T)$ over phase with a BCS-like gap $\Delta(T)$. The channel set or its continuum density determines the observable current--phase relation and critical current, connecting microscopic transmission eigenvalues to equilibrium measurements.
 
         %=========================================================
         \subsubsection*{Fractional Shapiro Steps}
@@ -456,11 +456,11 @@
             \begin{figure}[t]
                 \centering
                 \subfigure[
-                    Total \textit{I--V} characteristic
+                    MAR \textit{I--V} characteristic
                     ]{\import{theory/meso}{ha-iv.pgf}}
                 \hfill
                 \subfigure[
-                    Total \textit{dI--dV} characteristic
+                    MAR \textit{dI--dV} characteristic
                     ]{\import{theory/meso}{ha-didv.pgf}}
                 \caption{
                     Coherent MAR transport through a short single-channel contact at selected transmissions.
@@ -554,10 +554,10 @@
                     ]{\import{theory/meso}{fcs-didv-m-inv.pgf}}
                 \caption{
                         Charge-resolved MAR current and differential conductance for selected single-channel transmissions.
-                        (a,c) show $I_m(V)$ and its differential conductance on the voltage axis.
+                        (a,c) show charge-resolved \textit{I--V} and \textit{dI--dV}.
                         (b,d) show the same components on the inverse-voltage axis, where integer positions correspond to the MAR thresholds $eV_m=2|\Delta|/m$.
-                        Colored curves resolve the effective charge order $m$.
-                        Shading corresponds to different transmissions $\tau$.
+                        Increasing transmission enhances the contribution of higher-order charge transfer.
+                        Colored curves resolve the effective charge order $m$. Color lightness corresponds to different transmissions $\tau$.
                     }
                 \label{fig:meso:fcs-m}
             \end{figure}
