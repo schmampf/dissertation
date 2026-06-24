@@ -5,11 +5,11 @@
 \label{sec:micro}
 %=========================================================
 
-    The microscopic description begins with Bardeen--Cooper--Schrieffer (BCS) theory. An effective phonon-mediated attraction allows electrons near the Fermi surface to form Cooper pairs with opposite momentum and spin. The resulting condensate has a complex pairing order parameter whose magnitude sets the quasiparticle gap. This section focuses on spectral properties and tunnel-limit quasiparticle current. Phase-dependent Cooper-pair transport is introduced in the macroscopic description, while finite-transmission electron--hole processes are treated in the mesoscopic description. \cite{cooper_bound_1956,bardeen_microscopic_1957}
+    The microscopic description begins with Bardeen--Cooper--Schrieffer (BCS) theory. An effective phonon-mediated attraction allows electrons near the Fermi surface to form Cooper pairs with opposite momentum and spin. The resulting condensate has a complex pairing order parameter whose magnitude sets the quasiparticle gap. This section focuses on spectral properties and tunnel-limit quasiparticle current. Phase-dependent Cooper-pair transport is introduced in the macroscopic description, while finite-transmission electron--hole processes are treated in the mesoscopic description. \cite{cooper_bound_1956,bardeen_theory_1957}
 
     We work in the weak-coupling limit, where the attractive interaction acts only within a narrow energy shell around the Fermi surface. Only electrons near the Fermi level participate in pairing, while the rest of the electronic structure remains essentially unchanged. Aluminum is a representative weak-coupling \textit{s}-wave BCS superconductor and provides the material parameters used throughout this chapter.\footnote{
-        Here and in the following, ``\textit{s}-wave'' refers to the isotropic angular dependence of the superconducting order parameter on the Fermi surface. It should not be confused with atomic \textit{s} orbitals. Aluminum has predominantly \textit{s}-hybridized conduction states, while its Cooper-pair wave function is \textit{s}-wave in the sense of isotropic pairing symmetry.
-    }
+        Here and in the following, ``\textit{s}-wave'' refers to the isotropic angular dependence of the superconducting order parameter on the Fermi surface. It should not be confused with atomic \textit{s} orbitals. Aluminum has predominantly \textit{sp}-hybridized conduction states, while its Cooper-pair wave function is \textit{s}-wave in the sense of isotropic pairing symmetry.
+    } \cite{bardeen_theory_1957,tinkham_introduction_2004}
 
     The superconducting order parameter is the complex pairing amplitude
     
@@ -33,18 +33,18 @@
             \Delta_0 \approx 1.764\, k_\mathrm{B} T_\mathrm{c}\,,
             \label{eq:micro:Delta0}
         \end{equation}
-            which holds for all weak-coupling BCS superconductors.
+            which holds for all weak-coupling BCS superconductors \cite{bardeen_theory_1957}.
 
-        For aluminum, the characteristic superconducting scales are, to good approximation,
+        Representative bulk aluminum values are
         \begin{equation}
             \Delta_0 \approx 180\,\mu\mathrm{eV}\,,
             \qquad
             T_\mathrm{c} \approx 1.2\,\mathrm{K}\,.
             \label{eq:micro:aluminum-scales}
         \end{equation}
-        These values set the energy, voltage, and temperature scales of the aluminum junctions considered throughout this thesis. Unless stated otherwise, all following figures use these values. \cite{tinkham_introduction_2004,murray_material_2021}
+        The gap is consistent with early aluminum tunneling measurements and with the weak-coupling ratio in Eq.~\eqref{eq:micro:Delta0} \cite{giaever_study_1961,tinkham_introduction_2004}. These are reference material values, not parameters extracted from a particular device. Thin-film disorder, thickness, and fabrication can shift both $\Delta_0$ and $T_\mathrm{c}$. Unless stated otherwise, the following figures use the representative values in Eq.~\eqref{eq:micro:aluminum-scales}.
 
-        The superconducting gap is temperature dependent. At $T=0$, electrons within the pairing shell form a condensate with a well-defined order parameter. Increasing temperature breaks an increasing fraction of Cooper pairs, reducing both the order-parameter magnitude and the minimum quasiparticle excitation energy $\Delta(T)$. Breaking one Cooper pair creates two quasiparticles and therefore requires at least $2\Delta(T)$.
+        The superconducting gap is temperature dependent. At $T=0$, electrons within the pairing shell form a condensate with a well-defined order parameter. Increasing temperature breaks an increasing fraction of Cooper pairs, reducing both the order-parameter magnitude and the minimum quasiparticle excitation energy $\Delta(T)$. Breaking one Cooper pair creates two quasiparticles and therefore requires at least $2\Delta(T)$ \cite{bardeen_theory_1957}.
 
         This reduction proceeds smoothly until $T_\mathrm{c}$ is reached. At $T=T_\mathrm{c}$, the order parameter vanishes continuously and superconductivity is lost. Figure~\ref{fig:micro:gap} shows the universal weak-coupling curve.
 
@@ -64,7 +64,7 @@
                 \right),
             \label{eq:micro:DeltaT}
         \end{equation}
-        which reproduces the numerical result with high accuracy throughout the full temperature range. \cite{muhlschlegel_thermodynamischen_1959}
+        which provides a convenient interpolation of the numerical weak-coupling result \cite{muhlschlegel_thermodynamischen_1959,tinkham_introduction_2004}.
 
         At low temperature, the gap directly sets the approximate quasiparticle onset in tunnel spectroscopy: $|eV|=\Delta(T)$ for an NIS junction and $|eV|=2\Delta(T)$ for an SIS junction with identical electrodes.
 
@@ -89,7 +89,7 @@
                 \right.\,.
             \label{eq:micro:dos-bcs}
         \end{equation}       
-        This expression diverges at the gap edges due to the flattening of the Bogoliubov quasiparticle dispersion. Within mean-field BCS theory this DOS is strictly sharp. Temperature changes the occupations through the Fermi--Dirac distribution, not the DOS itself.
+        This expression diverges at the gap edges due to the flattening of the Bogoliubov quasiparticle dispersion. Within mean-field BCS theory this DOS is strictly sharp. Temperature changes the occupations through the Fermi--Dirac distribution, not the DOS itself \cite{bardeen_theory_1957,tinkham_introduction_2004}.
 
         Real superconductors, however, do not exhibit perfectly sharp coherence peaks. A widely used phenomenological description is Dynes broadening, introduced through the substitution $E \rightarrow E + \ima\gamma$,
         \begin{equation}
@@ -100,14 +100,14 @@
                 \right)\right|\,.
             \label{eq:micro:dos-dynes}
         \end{equation}
-        The Dynes parameter\footnote{Throughout this work we distinguish between the Dynes broadening parameter $\gamma$, which enters the quasiparticle DOS in the microscopic tunneling description, and the tunneling rates $\Gamma$ that appear in the stochastic description of incoherent charge transfer. These quantities refer to different physical mechanisms.} $\gamma$ parametrizes finite subgap spectral weight and smeared coherence peaks. Similar line shapes can arise from finite lifetimes, spatial inhomogeneity, pair breaking, or nonequilibrium effects. A fitted value of $\gamma$ therefore does not identify one mechanism by itself. \cite{dynes_direct_1978}
+        The Dynes parameter\footnote{Throughout this work we distinguish between the Dynes broadening parameter $\gamma$, which enters the quasiparticle DOS in the microscopic tunneling description, and the tunneling rates $\Gamma$ that appear in the stochastic description of incoherent charge transfer. These quantities refer to different physical mechanisms.} $\gamma$ parametrizes finite subgap spectral weight and smeared coherence peaks \cite{dynes_direct_1978}. Similar line shapes can arise from finite lifetimes and other nonideal spectral effects, so a fitted value of $\gamma$ does not identify one microscopic mechanism by itself \cite{plecenik_finite-quasiparticle-lifetime_1994}.
 
         The DOS specifies the available single-particle states, whereas the Fermi--Dirac distribution determines their occupation. The equilibrium occupation is
         \begin{equation}
             f(E) = \frac{1}{1+\exp\!\left(\frac{E}{k_\mathrm{B}T}\right)}\,,
             \label{eq:micro:fermi-dirac}
         \end{equation}
-        which reduces to the step function $\theta(-E)$ as $T\to 0$.
+        which reduces to the step function $\theta(-E)$ as $T\to 0$ \cite{gross_festkorperphysik_2014}.
 
         For future application, we can define the thermal broadening kernel
         \begin{equation}
@@ -146,7 +146,7 @@
 
         Tunneling spectroscopy probes the quasiparticle excitation spectrum through the overlap of available states and occupations. We consider electrodes separated by a thin insulating barrier in the low-transmission limit and use a momentum-averaged tunneling matrix element. The quasiparticle current is then an incoherent single-particle transfer process. \cite{bardeen_tunnelling_1961,giaever_electron_1960,giaever_study_1961}
 
-        The tunnel barriers used in this thesis are formed by controlled oxidation between two aluminum depositions. The resulting Al--AlO$_x$--Al junctions operate in the low-transmission regime. Their barrier thickness and interface quality determine the normal-state conductance, channel transparencies, and subgap leakage \cite{niemeyer_observation_1976,dolan_offset_1977,sprenger_interplay_2019,sobral-rey_interplay_2022}.
+        % The tunnel barriers used in this thesis are formed by controlled oxidation between two aluminum depositions. Double-angle evaporation with an intermediate oxidation step produces the Al--AlO$_x$--Al overlap junction \cite{dolan_offset_1977,sprenger_interplay_2019}. The tunnel-limit assumption is assessed experimentally from the normal-state resistance and the absence of resolvable high-transmission subgap features.
         
         % %=========================================================
         % \subsubsection*{General Tunnel Junction}
@@ -164,7 +164,7 @@
                 I(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^\infty N_1(E)\, N_2(E+eV)\, \left(f_1(E)-f_2(E+eV)\right)\mathrm{d}E\,,
                 \label{eq:micro:tunnel}
             \end{equation}
-            where $N_1$ and $N_2$ are the relative DOS factors defined above.
+            where $N_1$ and $N_2$ are the relative DOS factors defined above \cite{bardeen_tunnelling_1961,giaever_study_1961}.
 
             For numerical evaluation, it is useful to express the current through a convolution\footnote{
                 Throughout this thesis, we define convolution as $\left(f\otimes g\right)(x)=\int_{-\infty}^{\infty}f(E)g(E+x)\,\mathrm{d}E$.
@@ -184,7 +184,7 @@
 
             Throughout this section we adopt the asymmetric voltage convention, in which the applied bias shifts only the quasiparticle energies of electrode 2, $E \to E+eV$. This gauge choice leaves the physics unchanged and keeps the microscopic expressions compact.
 
-            Depending on the electronic state of the electrodes, Eq.~\eqref{eq:micro:tunnel} describes the three configurations in Fig.~\ref{fig:micro:tunnel-current}. Here, $N$ denotes a normal electrode, I the insulating barrier, and S a superconducting electrode. An NIN junction provides an Ohmic reference for $G_\mathrm{N}$. An NIS junction probes the superconducting DOS with an approximately flat normal electrode. An SIS junction probes the overlap of two gapped densities of states, shifting the quasiparticle threshold to $|eV|=2\Delta$ for identical electrodes.
+            Depending on the electronic state of the electrodes, Eq.~\eqref{eq:micro:tunnel} describes the three configurations in Fig.~\ref{fig:micro:tunnel-current}. Here, $N$ denotes a normal electrode, I the insulating barrier, and S a superconducting electrode. An NIN junction provides an Ohmic reference for $G_\mathrm{N}$. An NIS junction probes the superconducting DOS with an approximately flat normal electrode. An SIS junction probes the overlap of two gapped densities of states, shifting the quasiparticle threshold to $|eV|=2\Delta$ for identical electrodes \cite{giaever_electron_1960,giaever_study_1961}.
 
         \begin{figure}[t]
             \centering
@@ -231,7 +231,7 @@
 
             % dI/dV NIS case
             In the NIS case, the \textit{dI--dV} characteristic probes the superconducting DOS through its convolution with the thermal broadening kernel from Eq.~\eqref{eq:micro:fermi-kernel}. This kernel sets the energy resolution\footnote{
-                A commonly used estimate is $\delta E \approx 3.5\,k_\mathrm{B}T$. At 30\,mK (typical for a dilution refrigerator), this corresponds to about 10\,\textmu eV, whereas at 300\,mK (He$_\text{3}$ cryostat) the resolution is limited to about 100\,\textmu eV. The relevant temperature is the electronic temperature, which can exceed the cryostat base temperature due to imperfect filtering, finite electron-phonon coupling, or microwave leakage.
+                The full width at half maximum of $K_\mathrm{T}(E)$ is approximately $3.5\,k_\mathrm{B}T$. At 30\,mK this corresponds to about 10\,\textmu eV, whereas at 300\,mK it is about 90\,\textmu eV. The relevant temperature is the electronic temperature, which can exceed the cryostat base temperature due to imperfect filtering, finite electron--phonon coupling, or microwave leakage.
             } in NIS tunnel spectroscopy. Temperature broadens the measured \textit{dI--dV} response without changing the equilibrium DOS. As $T\to0$, \textit{dI--dV} becomes directly proportional to the superconducting DOS.
 
             Differentiating Eq.~\eqref{eq:micro:tunnel-nis} with respect to $V$ acts only on $f(E+eV)$ because both $N_{\mathrm{S}}(E)$ and $f(E)$ are independent of bias. The chain rule produces the thermal broadening kernel at $E+eV$. Using the particle-hole symmetry of $N_\mathrm{S}(E)$ and the even symmetry of $K_\mathrm{T}(E)$ gives
@@ -311,7 +311,7 @@
             E_n = E_0 + n h\nu \qquad (n\in\mathbb{Z})\,,
             \label{eq:micro:pat-En}
         \end{equation}
-        where $n>0$ corresponds to absorption and $n<0$ to emission. These energy exchanges open additional tunneling channels and shift the static thresholds by integer multiples of $h\nu/e$, as illustrated in Fig.~\ref{fig:micro:pat:schematic}. We describe this sideband picture through the phase generated by a harmonic voltage before deriving the Tien--Gordon current.
+        where $n>0$ corresponds to absorption and $n<0$ to emission. These energy exchanges open additional tunneling channels and shift the static thresholds by integer multiples of $h\nu/e$, as illustrated in Fig.~\ref{fig:micro:pat:schematic}. We describe this sideband picture through the phase generated by a harmonic voltage before deriving the Tien--Gordon current \cite{tien_multiphoton_1963}.
 
         %=========================================================
         \subsubsection*{Harmonic Drive and Sideband Formation}
@@ -358,7 +358,7 @@
             \exp\!\left(\pm\ima n\,2\pi\nu t\right)\,.
             \label{eq:micro:pat:jacobi-anger}
         \end{equation}
-        This expansion produces the energy-shifted channels introduced above, with amplitudes set by the Bessel coefficients $J_n(\alpha_q)$. Figure~\ref{fig:micro:pat:drive} summarizes the drive and resulting sideband amplitudes.
+        This expansion produces the energy-shifted channels introduced above, with amplitudes set by the Bessel coefficients $J_n(\alpha_q)$ \cite{noauthor_dlmf_nodate}. Figure~\ref{fig:micro:pat:drive} summarizes the drive and resulting sideband amplitudes.
 
         \begin{figure}[t]
             \centering
@@ -388,7 +388,7 @@
             h\nu_\mathrm{pb} = 2\Delta_0\,.
             \label{eq:micro:pat:pair-breaking}
         \end{equation}
-        For aluminum, this corresponds to $\nu_\mathrm{pb}\approx87\,\mathrm{GHz}$. The experimental setup transmitted frequencies up to approximately $20\,\mathrm{GHz}$, below this threshold. Direct single-photon pair breaking is therefore excluded, although heating, multiphoton absorption, and nonequilibrium quasiparticle generation may still occur. \cite{tinkham_introduction_2004,murray_material_2021}
+        Using the representative gap in Eq.~\eqref{eq:micro:aluminum-scales} gives $\nu_\mathrm{pb}\approx87\,\mathrm{GHz}$ \cite{bardeen_theory_1957,tinkham_introduction_2004}. The installed microwave paths transmitted frequencies up to approximately $20\,\mathrm{GHz}$, as established from microwave-induced changes in measured \textit{dI--dV} spectra \cite{raif_electronic_2024}. This experimental upper frequency is below the representative single-photon threshold. Direct single-photon pair breaking is therefore excluded within this estimate, although heating, multiphoton absorption, and nonequilibrium quasiparticle generation may still occur.
 
         %=========================================================
         \subsubsection*{Tien--Gordon Quasiparticle Tunneling}
@@ -402,7 +402,7 @@
                     I_0\!\left(V_0 - \frac{n h\nu}{e}\right)\,,
             \label{eq:micro:pat-iv}
         \end{equation}
-        where $I_0(V)$ is the static current derived above. Each term contributes a replica of the static characteristic shifted by $n h\nu/e$ and weighted by the sideband probability $J_n^2(\alpha_e)$. \cite{tien_multiphoton_1963}
+        where $I_0(V)$ is the static current derived above. Each term contributes a replica of the static characteristic shifted by $n h\nu/e$ and weighted by the sideband probability $J_n^2(\alpha_e)$ \cite{tien_multiphoton_1963}.
 
         \begin{figure}[t]
             \centering
