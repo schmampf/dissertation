@@ -3,184 +3,32 @@
 \section{Tunnel Barrier}
 \label{sec:results:tunnelbarrier}
 %=========================================================
-
-    The tunnel barrier serves as a controlled reference system for the analysis of microwave-driven superconducting transport. Compared with atomic contacts, it has a simpler and well-established transport theory, while still producing data with the same practical complications: finite temperature, broadening, microwave-induced replicas, voltage offsets, amplitude calibration, and multidimensional parameter dependence. It therefore provides a useful intermediate step between the theoretical description of photon-assisted tunneling and the more complex behavior of superconducting atomic contacts.
-
-    This chapter has several purposes. First, it introduces how the measured data are read and interpreted. Even for a tunnel barrier, the relevant data sets are multidimensional: current and differential conductance depend on bias voltage, microwave frequency, microwave power, temperature, and magnetic field. The tunnel barrier provides a comparatively transparent system in which these dependences can be separated and connected to specific physical mechanisms.
-
-    Second, the tunnel barrier allows a direct comparison with established theory. In the absence of microwave irradiation, the quasiparticle current is described by the convolution of superconducting densities of states with thermally broadened Fermi functions. Under microwave irradiation, photon-assisted tunneling can be modeled using the Tien--Gordon approach. The agreement and deviations between measurement and model provide a quantitative test of the experimental setup and the analysis procedure.
-
-    Third, the tunnel barrier is used as a calibration tool. The thermal broadening of the quasiparticle onset gives access to the effective electronic temperature, while the microwave-induced sidebands provide a calibration of the local ac voltage amplitude at the junction. At the same time, systematic uncertainties such as voltage offsets, voltage scaling errors, and residual broadening can be identified more reliably than in atomic contacts, where several transport processes overlap.
-
-    Finally, the tunnel barrier reveals that even a nominally simple system, whose basic transport theory has been established for decades, can still exhibit previously unresolved effects when investigated with sufficient precision. In particular, we observe a frequency-dependent rectification signal that cannot be understood from the elementary quasiparticle tunneling picture alone. We attribute this behavior to the influence of a physically coupled electromagnetic resonator, which modifies the local microwave environment of the junction. The observation of this effect required high-precision measurements, long and systematic parameter sweeps, and a detailed multidimensional data analysis. In this sense, the tunnel barrier is not only a calibration sample, but also demonstrates that even the simplest superconducting junctions can reveal additional physics beyond the standard description when studied in sufficient detail.
-
-
-
-
-
-    % This section is the reference dataset of the thesis. I analyzed a superconducting tunnel barrier in a regime without supercurrent. I used this dataset to connect measurement, processing, and model comparison in one complete workflow.
-
-    % \begin{landscape}
-    % \vspace*{-.3in}
-    %     \begin{center}
-    %         \captionsetup{type=figure}
-    %         \subfigure[\textit{I--V}]{%
-    %             \parbox[t]{2.1in}{%
-    %                 \centering
-    %                 \import{results/tunnelbarrier/1_raw_iv/}{main.pgf}%
-    %             }%
-    %         }%
-    %         \hfill%
-    %         \subfigure[\textit{dI--dV}]{%
-    %             \parbox[t]{2.1in}{%
-    %                 \centering
-    %                 \import{results/tunnelbarrier/1_raw_didv/}{main.pgf}%
-    %             }%
-    %         }%
-    %         \hfill%
-    %         \subfigure[\textit{dV--dI}]{%
-    %             \parbox[t]{2.1in}{%
-    %                 \centering
-    %                 \import{results/tunnelbarrier/1_raw_dvdi/}{main.pgf}%
-    %             }%
-    %         }
-    %         \vspace{-.1in}
-    %         \captionof{figure}{Experimental tunnel-barrier spectroscopy under microwave irradiation at $\nu=13.6\,\mathrm{GHz}$. The three columns show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} maps as a function of dc bias or dc current and output amplitude $A_\mathrm{out}$. Each column combines heatmap, surface, and waterfall views of the same data to show both the global map structure and the evolution of individual traces with irradiation. The spectra remain in the tunnel regime over the full amplitude range; photon-assisted sideband structure develops with increasing drive, while no supercurrent branch is observed.}
-    %         \label{fig:tb:irradiation-exp}
-    %     \end{center}
-    % \end{landscape}
-
-    % %=========================================================
-    % \subsection{Device and Measurement Window}
-    % \label{subsec:results:tb:device}
-    % %=========================================================
-
-    %     I used dataset \texttt{OI-25c-09 2025-05-02 unbroken stripline irradiation studies 0} from cooldown folder \texttt{25 04 OI-25c-09}. The analyzed subset corresponds to \texttt{vna\_amplitudes\_13.6000GHz}. The device was operated in the tunnel regime and I did not observe a supercurrent branch in the measured \textit{I--V} characteristics.
-
-    %     The dc bias window was set to $V \in [-1.84, 1.84]\,\mathrm{mV}$ with 801 points. The inverse map used $I \in [-30, 30]\,\mathrm{nA}$ with 601 points. The applied microwave frequency was $\nu = 13.6\,\mathrm{GHz}$. The output amplitude axis contained 141 traces in the range $A_\mathrm{out}\approx 0$ to $705\,\mathrm{mV}$.
-
-    %     I selected this dataset as the chapter anchor because it combines high signal quality with stable setup conditions from the late stage of the project. It is therefore the cleanest benchmark for tunnel-barrier spectroscopy in this thesis.
-
-    % %=========================================================
-    % \subsection{Acquisition and Data Treatment}
-    % \label{subsec:results:tb:processing}
-    % %=========================================================
-
-    %     I processed each up-sweep trace with a symmetric offset correction in voltage and current. First, I upsampled raw tuples $(V,I)$ by a factor of ten. Then I scanned offset candidates $V_\mathrm{off}\in[-45,45]\,\mathrm{\mu V}$ and $I_\mathrm{off}\in[-0.35,0.35]\,\mathrm{nA}$. For each candidate I computed an antisymmetry metric and chose the minimum:
-    %     \begin{equation}
-    %         \left\langle\left|G(V)-G(-V)\right|\right\rangle,
-    %         \qquad
-    %         \left\langle\left|R(I)-R(-I)\right|\right\rangle.
-    %     \end{equation}
-    %     This gave one optimal $(V_\mathrm{off}, I_\mathrm{off})$ pair per amplitude trace.
-
-    %     After offset correction I rebinned to fixed axes and computed experimental maps for $I(V)$, $\mathrm{d}I/\mathrm{d}V$, $V(I)$, and $\mathrm{d}V/\mathrm{d}I$. I normalized conductance with the fitted normal conductance scale $G_\mathrm{N}=\tau_0 G_0$.
-
-    %     I then used calibrated effective microwave amplitude and effective electronic temperature:
-    %     \begin{equation}
-    %         A_\mathrm{cal} = A_0 + \eta A_\mathrm{out},
-    %         \quad
-    %         \eta = 2.173\times10^{-3},
-    %         \quad
-    %         A_0 = -6.2\,\mathrm{\mu V},
-    %     \end{equation}
-    %     \begin{equation}
-    %         T_\mathrm{cal}
-    %         = \max\!\left(T_\mathrm{base},\, T_\mathrm{off} + \alpha T_\mathrm{exp}\right),
-    %         \quad
-    %         T_\mathrm{base}=80.6\,\mathrm{mK},
-    %         \quad
-    %         T_\mathrm{off}=-0.685\,\mathrm{K},
-    %         \quad
-    %         \alpha=2.6811.
-    %     \end{equation}
-    %     % TODO[TBR-02]: Insert one raw-to-processed trace figure and one offset-map figure.
-
-    % %=========================================================
-    % \subsection{Temperature-Dependent Spectroscopy}
-    % \label{subsec:results:tb:temperature}
-    % %=========================================================
-
-    %     I extracted effective temperature information from per-trace fits and from the calibration relation above. In the low-power reference trace, the Dynes-based fit returned
-    %     \begin{equation}
-    %         T = 0.236(100)\,\mathrm{K},
-    %         \quad
-    %         \Delta = 0.19556(47)\,\mathrm{mV},
-    %         \quad
-    %         \Gamma = 0.00402(6)\,\mathrm{mV},
-    %         \quad
-    %         \tau = 0.18876(2).
-    %     \end{equation}
-
-    %     At finite irradiation, unconstrained trace-by-trace temperature estimates became unstable in the lowest range. I therefore used $T_\mathrm{cal}$ with a hard lower bound at $T_\mathrm{base}$. This gave a monotonic and physically consistent temperature scale for the map analysis.
-
-    %     The resulting trend was consistent with the tunnel-spectroscopy expectation from Sec.~\ref{subsec:micro:dos} and Sec.~\ref{subsec:micro:tunnel-current}. Increasing effective temperature broadened the spectral features and reduced coherence-peak sharpness in \textit{dI--dV}.
-    %     % TODO[TBR-03]: Add final temperature-series figure set and compact parameter table.
-
-    % %=========================================================
-    % \subsection{Microwave-Amplitude Dependence}
-    % \label{subsec:results:tb:microwave}
-    % %=========================================================
-
-    %     The central observable in this dataset is the amplitude dependence of \textit{I--V} and \textit{dI--dV}. With increasing irradiation, sideband replicas emerged at voltage offsets consistent with PAT. The expected spacing was $h\nu/e \approx 56\,\mathrm{\mu V}$ at $\nu=13.6\,\mathrm{GHz}$\footnote{$h/e \approx 4.136\,\mathrm{\mu V/GHz}$, so $h\nu/e \approx 4.136\times 13.6\,\mathrm{\mu V} \approx 56\,\mathrm{\mu V}$.}. The measured sideband structure followed this scale.
-
-    %     I used the normalized representation
-    %     \begin{equation}
-    %         \frac{eV}{\Delta_0},
-    %         \qquad
-    %         \frac{eA}{h\nu},
-    %         \qquad
-    %         \frac{1}{G_\mathrm{N}}\frac{\mathrm{d}I}{\mathrm{d}V},
-    %     \end{equation}
-    %     to compare experiment, fitted map, and forward simulation on the same grid.
-
-    %     Across the full amplitude range, the spectra remained consistent with tunnel-barrier transport. I did not observe signatures of a supercurrent branch or phase-locked Josephson dynamics in this dataset.
-    %     % TODO[TBR-04]: Insert amplitude-map figures for \textit{I--V} and \textit{dI--dV}.
-
-    % %=========================================================
-    % \subsection{Model Comparison and Scope}
-    % \label{subsec:results:tb:model}
-    % %=========================================================
-
-    %     I compared the data to the minimal microscopic tunnel model with Dynes broadening and photon-assisted tunneling (\texttt{dynes+pat}). I fixed global parameters
-    %     \begin{equation}
-    %         \tau_0 = 0.1887759(8),
-    %         \quad
-    %         \Delta_0 = 0.19345(10)\,\mathrm{mV},
-    %         \quad
-    %         \Gamma_0 = 0.005067(223)\,\mathrm{mV},
-    %         \quad
-    %         \nu = 13.6\,\mathrm{GHz},
-    %     \end{equation}
-    %     and fitted $(T,A)$ per trace.
-
-    %     Representative fitted amplitudes agreed well with the calibrated scale:
-    %     \begin{center}
-    %         \begin{tabular}{ccc}
-    %             \hline
-    %             $A_\mathrm{out}$ (mV) & $A_\mathrm{fit}$ (mV) & $T_\mathrm{fit}$ (K) \\
-    %             \hline
-    %             0   & 0.0000 & 0.2360 \\
-    %             100 & 0.2140 & 0.0068 \\
-    %             250 & 0.5419 & 0.0061 \\
-    %             400 & 0.8504 & 0.0018 \\
-    %             \hline
-    %         \end{tabular}
-    %     \end{center}
-    %     These trace-level temperatures illustrate why I used the calibrated temperature map with a finite base floor for the final simulation.
-
-    %     The model reproduced the main sideband positions and the global evolution of \textit{dI--dV} over amplitude. The model scope is intentionally limited to tunnel-regime quasiparticle transport with PAT. It does not include supercurrent dynamics, finite-transmission channel physics, or atomic-contact effects.
-    %     % TODO[TBR-05]: Insert final exp-fit and exp-sim comparison panels.
-
-    % %=========================================================
-    % \subsection{Takeaways for the Remaining Results}
-    % \label{subsec:results:tb:takeaway}
-    % %=========================================================
-
-    %     This dataset established three practical baselines for the remaining results chapters.
-    %     \begin{itemize}
-    %         \item It provided the highest-quality benchmark for tunnel-regime microwave spectroscopy in this thesis.
-    %         \item It validated the full processing chain, from symmetry-based offset correction to calibrated map comparison.
-    %         \item It fixed reference energy and broadening scales $(\Delta_0,\Gamma_0,\tau_0)$ that I used as starting values in later analyses.
-    %     \end{itemize}
-    %     % TODO[TBR-06]: Finalize figure references after inserting the complete figure set.
+    \begin{landscape}
+    \vspace*{-.3in}
+        \begin{center}
+            \captionsetup{type=figure}
+            \subfigure[\textit{I--V}]{%
+                \parbox[t]{2.1in}{%
+                    \centering
+                    \import{results/tunnelbarrier/1_raw_iv/}{main.pgf}%
+                }%
+            }%
+            \hfill%
+            \subfigure[\textit{dI--dV}]{%
+                \parbox[t]{2.1in}{%
+                    \centering
+                    \import{results/tunnelbarrier/1_raw_didv/}{main.pgf}%
+                }%
+            }%
+            \hfill%
+            \subfigure[\textit{dV--dI}]{%
+                \parbox[t]{2.1in}{%
+                    \centering
+                    \import{results/tunnelbarrier/1_raw_dvdi/}{main.pgf}%
+                }%
+            }
+            \vspace{-.1in}
+            \captionof{figure}{Experimental tunnel-barrier spectroscopy under microwave irradiation at $\nu=13.6\,\mathrm{GHz}$. The three columns show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} maps as a function of dc bias or dc current and output amplitude $A_\mathrm{out}$. Each column combines heatmap, surface, and waterfall views of the same data to show both the global map structure and the evolution of individual traces with irradiation. The spectra remain in the tunnel regime over the full amplitude range; photon-assisted sideband structure develops with increasing drive, while no supercurrent branch is observed.}
+            \label{fig:tb:irradiation-exp}
+        \end{center}
+    \end{landscape}
