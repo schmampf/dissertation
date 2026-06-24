@@ -7,7 +7,7 @@
     
     A normal-state \textit{I--V} characteristic provides the conductance of a junction, but it does not generally identify the microscopic paths that carry charge. This distinction is central to this thesis. A large incoherent conductor is described by a local conductivity and Ohm's law. A phase-coherent constriction is instead described by transmission channels. Its normal-state conductance fixes only the sum of their transmission probabilities, whereas superconducting subgap transport can resolve the individual channels.
 
-    This section introduces the minimal normal-state framework for that distinction. We reduce the electronic structure to an effective single-band Hamiltonian and low-energy Fermi-surface parameters. We then connect elastic scattering to diffusion, conductivity, and measured resistance. Finally, we organize finite conductors by their characteristic length scales and introduce the scattering description used for atomic contacts. The goal is a controlled link between material parameters and the \textit{I--V} and \textit{dI--dV} observables used later. \cite{ashcroft_solid_2012,gross_festkorperphysik_2014}
+    This section introduces the minimal normal-state framework for that distinction. We reduce the electronic structure to an effective single-band Hamiltonian and low-energy Fermi-surface parameters. We then connect elastic scattering to diffusion, conductivity, and measured resistance. Finally, we organize finite conductors by their characteristic length scales and introduce the scattering description used for atomic contacts. The goal is a controlled link between material parameters and the \textit{I--V} and \textit{dI--dV} observables used later. \cite{gross_festkorperphysik_2014}
 
     %=========================================================
     \subsection{Normal-State Quasiparticles}
@@ -21,10 +21,10 @@
             + U(\vec{r})-\mu\,,
             \label{eq:quasi:normal-hamiltonian}
         \end{equation}
-        where energies are measured relative to the chemical potential $\mu$. The effective mass $m^\ast$ summarizes the relevant band curvature and interaction-induced renormalization. The potential $U(\vec{r})$ includes the effective lattice background, confinement, barriers, and disorder. In a homogeneous reference system, its constant contribution is absorbed into $\mu$. Equation~\eqref{eq:quasi:normal-hamiltonian} is not a first-principles many-body Hamiltonian because ionic motion, screening, and the mean-field action of other electrons are already absorbed into effective parameters. \cite{ashcroft_solid_2012}
+        where energies are measured relative to the chemical potential $\mu$. The effective mass $m^\ast$ summarizes the relevant band curvature and interaction-induced renormalization. The potential $U(\vec{r})$ includes the effective lattice background, confinement, barriers, and disorder. In a homogeneous reference system, its constant contribution is absorbed into $\mu$. Equation~\eqref{eq:quasi:normal-hamiltonian} is not a first-principles many-body Hamiltonian because ionic motion, screening, and the mean-field action of other electrons are already absorbed into effective parameters. \cite{gross_festkorperphysik_2014}
         % The same normal-state operator later forms the diagonal part of the Bogoliubov--de~Gennes Hamiltonian.
 
-        We refer to the low-energy excitations described by Eq.~\eqref{eq:quasi:normal-hamiltonian} as normal-state electronic quasiparticles. They carry charge $-e$ and spin $1/2$, but their effective parameters are dressed by the lattice and Fermi sea. They are distinct from Bogoliubov quasiparticles, which are coherent electron--hole superpositions introduced after superconducting pairing. This distinction also separates the effective band parameters used here from the spectral lifetime broadening discussed later for the superconducting density of states. \cite{landau_theory_1956,ashcroft_solid_2012}
+        We refer to the low-energy excitations described by Eq.~\eqref{eq:quasi:normal-hamiltonian} as normal-state electronic quasiparticles. They carry charge $-e$ and spin $1/2$, but their effective parameters are dressed by the lattice and Fermi sea. They are distinct from Bogoliubov quasiparticles, which are coherent electron--hole superpositions introduced after superconducting pairing. This distinction also separates the effective band parameters used here from the spectral lifetime broadening discussed later for the superconducting density of states. \cite{landau_theory_1956,gross_festkorperphysik_2014}
 
         %=========================================================
         \subsubsection*{Effective Single-Band Approximation}
@@ -57,7 +57,7 @@
                 N(E) \approx N_0 \equiv N(E_\mathrm{F})\,.
                 \label{eq:quasi:n-dos-approx}
             \end{equation}
-            Thus, the constant approximation applies to the density of states near the Fermi level, not to the underlying band dispersion. \cite{ashcroft_solid_2012}
+            Thus, the constant approximation applies to the density of states near the Fermi level, not to the underlying band dispersion. \cite{gross_festkorperphysik_2014}
 
             This effective single-band model is sufficient for the aluminum electrodes and the minimal transport models used below. It does not describe strongly anisotropic, strongly correlated, or quantitative multiband conductors, which may require band-dependent velocities, densities of states, and scattering. Atomic contacts also retain orbital information through their transmission channels even when the electrodes are summarized by effective bulk parameters.
 
@@ -77,7 +77,7 @@
                 \sigma = e^2 N_0 D\,.
                 \label{eq:quasi:einstein-relation}
             \end{equation}
-            Under the same isotropic parabolic-band assumptions, this expression is equivalent to the Drude conductivity. The electric field creates a small imbalance in the quasiparticle distribution, while elastic scattering limits the drift. The local response is $\vec{j}=\sigma\vec{E}$. This description assumes that the field, current density, and material parameters vary slowly on the scale of $\ell_\mathrm{qp}$. \cite{drude_zur_1900,ashcroft_solid_2012}
+            Under the same isotropic parabolic-band assumptions, this expression is equivalent to the Drude conductivity. The electric field creates a small imbalance in the quasiparticle distribution, while elastic scattering limits the drift. The local response is $\vec{j}=\sigma\vec{E}$. This description assumes that the field, current density, and material parameters vary slowly on the scale of $\ell_\mathrm{qp}$. \cite{drude_zur_1900,gross_festkorperphysik_2014}
 
             For a homogeneous wire of length $L$ and cross-sectional area $A$, integration of the local relation gives Ohm's law,
             \begin{equation}
@@ -101,7 +101,7 @@
 
         The phase-coherence length $\ell_\phi$ is set by inelastic and dephasing processes such as electron--electron and electron--phonon scattering. It quantifies how far a quasiparticle retains a well-defined quantum phase. At finite temperature, thermal averaging further limits observable interference on the scale $\ell_T$.
 
-        In macroscopic conductors, where $L \gg \ell_\mathrm{qp}$ and $L \gg \ell_\phi$, quasiparticles scatter many times and lose phase coherence before crossing the sample. Transport is then described by bulk drift diffusion. When $L \lesssim \ell_\phi$, phase coherence extends across the conductor and quantum interference becomes observable. The mean free path distinguishes ballistic transport for $L \ll \ell_\mathrm{qp}$ from phase-coherent diffusive transport for $\ell_\mathrm{qp} \ll L \lesssim \ell_\phi$. Figure~\ref{fig:quasi:meso} summarizes this hierarchy. \cite{ashcroft_solid_2012,gross_festkorperphysik_2014}
+        In macroscopic conductors, where $L \gg \ell_\mathrm{qp}$ and $L \gg \ell_\phi$, quasiparticles scatter many times and lose phase coherence before crossing the sample. Transport is then described by bulk drift diffusion. When $L \lesssim \ell_\phi$, phase coherence extends across the conductor and quantum interference becomes observable. The mean free path distinguishes ballistic transport for $L \ll \ell_\mathrm{qp}$ from phase-coherent diffusive transport for $\ell_\mathrm{qp} \ll L \lesssim \ell_\phi$. Figure~\ref{fig:quasi:meso} summarizes this hierarchy. \cite{gross_festkorperphysik_2014,beenakker_random-matrix_1997}
 
         \begin{figure}
             \centering
