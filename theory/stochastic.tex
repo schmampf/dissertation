@@ -4,7 +4,7 @@
 \section{Stochastic Description}
 \label{sec:stochastic}
 %=========================================================
-    
+
     The stochastic description adds the electromagnetic environment as an active degree of freedom. It produces voltage fluctuations and exchanges energy with tunneling charges. The relevant crossover is governed by the conjugacy of the superconducting phase difference $\phi$ and the junction charge operator $Q$,
     \begin{equation}
         \left[\phi, Q\right] = 2e\ima\,,
@@ -18,7 +18,7 @@
     Strong phase fluctuations suppress phase memory. They broaden coherent Josephson and Andreev processes. When independent tunneling events dominate, their rates are governed by energy exchange with the environment. This crossover depends on the frequency-dependent impedance, junction parameters, temperature, and transferred charge.
 
     In this incoherent limit, \textit{P(E)} theory gives the probability density for energy exchange between a discrete tunneling event and the environment. We first construct this environmental kernel, then apply it to dynamical Coulomb blockade of single-electron tunneling, incoherent Cooper-pair tunneling and its photon-assisted counterpart, and superconducting single-electron transistors.
-    
+
 
     %=========================================================
     \subsection[P(E)--Theory]{\textit{P(E)}--Theory}
@@ -43,7 +43,7 @@
                 }
             \label{fig:stochastic:pe}
         \end{figure}
-        
+
         The circuit impedance determines the phase fluctuations, their correlation function defines the energy-exchange probability, and this probability dresses the tunneling rate and measured current. The label $q$ denotes the charge transferred in one event. We use the environmental-tunneling formulation of Falci \textit{et al.} and the conventions summarized by Ingold and Nazarov \cite{falci_quasiparticle_1991,ingold_charge_2005}.
 
         The relevant impedance is the effective impedance $Z(\omega)$ seen by the junction rather than the impedance of an isolated circuit element. For a junction capacitance $C$ in parallel with an environmental impedance $Z_\mathrm{env}(\omega)$, it is
@@ -108,7 +108,7 @@
         %=========================================================
         \subsubsection*{Finite Ohmic Coupling}
         %=========================================================
-            
+
             As the Ohmic coupling increases, phase fluctuations broaden the elastic peak into a continuous energy-exchange spectrum. A simple zero-temperature cutoff model gives the normalized form
             \begin{equation}
                 P_\mathrm{Ohmic}(E)
@@ -221,7 +221,7 @@
             Equation~\eqref{eq:stochastic:padcb} assumes weak tunneling, a coherent classical drive, and an environment whose response can be absorbed into the stationary DCB characteristic and effective amplitude $A$. It neglects drive-induced changes of the DOS, heating, nonequilibrium electrode occupations, and nonlinear environmental backaction.
 
             Houle \textit{et al.} found that current and photon-assisted noise required different effective AC amplitudes. The stationary-replica model therefore misses part of the driven junction-environment dynamics and is limited as a quantitative microwave calibration~\cite{houle_photon-assisted_2019}.
-            
+
             Figures~\ref{fig:stochastic:dcb-resonant} and~\ref{fig:stochastic:dcb-pat} compare passive resonant and photon-assisted DCB in an SIS junction. Both generate satellites separated by $\hbar\omega_0=h\nu$, but passive modes produce Poisson-weighted inelastic channels and coherent drives produce Bessel-weighted current replicas. At zero temperature, passive-mode satellites lie on the higher-$|V|$ side of the quasiparticle threshold because the mode can only absorb energy. A coherent drive permits absorption and stimulated emission, creating replicas on both sides. Thermal mode occupation weakens this distinction through detailed balance.
 
             DCB and ICPT are two charge-specific consequences of the same environmental interaction. Small low-energy weight in $P_e(E)$ suppresses stochastic $q=e$ tunneling, while finite-energy weight in $P_{2e}(E)$ enables the inelastic $q=2e$ transfer discussed next.
@@ -332,7 +332,7 @@
                 \qquad \alpha_{\nu,2e}=\frac{2eA}{h\nu}\,.
             \end{equation}
             The squared Bessel factor is the probability for an incoherent pair-transfer event to exchange $|n|$ drive photons, producing replicas separated by $h\nu/(2e)$ \cite{falci_quasiparticle_1991,roychowdhury_microwave_2015}.
-            
+
             This differs from the coherent Josephson response in Sec.~\ref{subsec:macro:shapiro}, where Bessel coefficients enter linearly at the amplitude level and determine frequency-locked Shapiro steps. Linear and squared Bessel dependences describe the coherent and incoherent limits. In the intermediate phase-diffusion regime, broadened Shapiro features and stochastic sidebands can coexist, so neither limit is complete. Their common spacing reflects the transferred charge $2e$, while the weights distinguish probabilistic tunneling from phase locking. Photon-assisted ICPT with squared-Bessel weights has been observed in Josephson scanning tunneling microscopy~\cite{roychowdhury_microwave_2015}.
 
         Incoherent Andreev reflection is a related but microscopically distinct $q=2e$ process at an NS interface. It couples to the same $P_{2e}(E)$ kernel because the net transferred charge is identical, but its electronic kernel describes second-order electron tunneling between a normal-metal continuum and a superconducting condensate. We mention it for completeness, but it is not a central transport mechanism here.

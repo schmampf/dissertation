@@ -171,7 +171,7 @@ The theory chapter is complete when:
   - Confirm namespace consistency.
   - Remove unused labels and repair ambiguous label tails.
 
-- [ ] [THM-28] Run a source-format audit.
+- [x] [THM-28] Run a source-format audit.
   - Keep each prose paragraph on one physical source line.
   - Preserve section separators and indentation.
   - Remove trailing whitespace and accidental formatting inconsistencies.

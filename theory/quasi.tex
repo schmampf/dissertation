@@ -4,7 +4,7 @@
 \section{Normal-State Description}
 \label{sec:normal-state}
 %=========================================================
-    
+
     A normal-state \textit{I--V} characteristic provides the conductance of a junction, but it does not generally identify the microscopic paths that carry charge. This distinction is central to this thesis. A large incoherent conductor is described by a local conductivity and Ohm's law. A phase-coherent constriction is instead described by transmission channels. Its normal-state conductance fixes only the sum of their transmission probabilities, whereas superconducting subgap transport can resolve the individual channels.
 
     This section introduces the minimal normal-state framework for that distinction. We reduce the electronic structure to an effective single-band Hamiltonian and low-energy Fermi-surface parameters. We then connect elastic scattering to diffusion, conductivity, and measured resistance. Finally, we organize finite conductors by their characteristic length scales and introduce the scattering description used for atomic contacts. The goal is a controlled link between material parameters and the \textit{I--V} and \textit{dI--dV} observables used later. \cite{gross_festkorperphysik_2014}
@@ -85,7 +85,7 @@
             The measured normal-state resistance therefore combines material transport parameters with sample geometry. It provides the bulk reference for the coherent finite-conductor description introduced next. \cite{ohm_galvanische_1827}
 
             The parameters $v_\mathrm{F}$, $N_0$, $\ell_\mathrm{qp}$, and $D$ summarize the low-energy normal-state properties needed in this thesis. They do not specify a spectral lifetime or determine whether phase coherence survives across a finite device. That question requires comparing the conductor size with the relevant transport lengths.
-                
+
     %=========================================================
     \subsection{Mesoscopic Transport Regimes}
     \label{subsec:quasi:meso}
@@ -140,7 +140,7 @@
         %=========================================================
         \subsubsection*{Ballistic Transport and Scattering Formalism}
         %=========================================================
-            
+
             \begin{wrapfigure}[14]{r}{0.4\textwidth}
                 \captionsetup{format=plain}%
                 \centering
@@ -159,7 +159,7 @@
             The numerical prefactor depends on the definition of the dephasing time.
 
             Ballistic transport is naturally formulated as an elastic scattering problem. A finite region connects ideal leads in which electronic modes propagate without dissipation. We denote the incoming amplitudes in the left and right leads by $A_1$ and $A_2$, and the outgoing amplitudes by $B_1$ and $B_2$, as shown in Fig.~\ref{fig:quasi:scatter}.
-            
+
             Linear scattering then gives
             \begin{equation}
                 \begin{pmatrix} B_1 \\ B_2 \end{pmatrix} = \mat{S}\,\begin{pmatrix} A_1 \\ A_2 \end{pmatrix}\,.
@@ -171,10 +171,10 @@
                 = \begin{pmatrix} \mat{r} & \mat{t}' \\ \mat{t} & \mat{r}' \end{pmatrix}\,.
             \end{equation}
             For purely elastic normal-state scattering, $\mat{S}$ is unitary because probability current is conserved.
-            
+
             The central quantities governing transport are then the transmission eigenvalues
             \begin{equation}
-                \{\tau_i\} = \operatorname{eig}\!\left(\mat{t}^\dagger\,\mat{t}\right)\,,\quad 
+                \{\tau_i\} = \operatorname{eig}\!\left(\mat{t}^\dagger\,\mat{t}\right)\,,\quad
                 \tau_i\in[0,1]\,.
             \end{equation}
             Choosing a basis of transmission eigenchannels diagonalizes $\mat{t}^\dagger\mat{t}$. This basis is unique up to unitary rotations within degenerate subspaces.

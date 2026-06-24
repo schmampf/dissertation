@@ -12,13 +12,12 @@
     } \cite{bardeen_theory_1957,tinkham_introduction_2004}
 
     The superconducting order parameter is the complex pairing amplitude
-    
     \begin{equation}
         \Delta(\vec{r}) = \left|\Delta\right| e^{\ima\phi(\vec{r})}\,.
         \label{eq:micro:complex-delta}
     \end{equation}
     Its magnitude represents the pairing strength, while its phase encodes macroscopic phase coherence. In the Bogoliubov--de~Gennes formalism, $\Delta(\vec{r})$ couples electron and hole amplitudes as a pairing potential. We postpone this connection to the mesoscopic treatment in Sec.~\ref{subsec:meso:bdg}. \cite{bogoljubov_new_1958,de_gennes_boundary_1964,de_gennes_superconductivity_1966}
-    
+
     For the tunnel-spectroscopy model developed here, only the magnitude $|\Delta|$ enters the quasiparticle spectrum. We therefore treat $\Delta$ as a spatially uniform scalar. Phase-dependent transport and spatial variations of the order parameter require additional descriptions introduced later in this chapter.
 
     The following subsections introduce the temperature dependence of the superconducting gap, the superconducting DOS and its phenomenological broadening, and the tunnel-current expressions that connect these quantities to spectroscopy. The final subsection introduces the common electromagnetic-drive convention and extends the static tunnel model to photon-assisted transport.
@@ -81,7 +80,7 @@
 
         Pairing correlations reorganize this otherwise flat spectrum. In the ideal BCS limit, a gap of width $2\Delta$ opens around the Fermi level, and spectral weight is redistributed from the gap interior to the gap edges. The resulting normalized DOS is
         \begin{equation}
-            \frac{N_\mathrm{S}(E)}{N_0} = 
+            \frac{N_\mathrm{S}(E)}{N_0} =
                 \left\{
                 \begin{array}{@{}r@{\quad}l@{}}
                     0 & (|E| < \Delta)\\
@@ -89,7 +88,7 @@
                 \end{array}
                 \right.\,.
             \label{eq:micro:dos-bcs}
-        \end{equation}       
+        \end{equation}
         This expression diverges at the gap edges due to the flattening of the Bogoliubov quasiparticle dispersion. Within mean-field BCS theory this DOS is strictly sharp. Temperature changes the occupations through the Fermi--Dirac distribution, not the DOS itself \cite{bardeen_theory_1957,tinkham_introduction_2004}.
 
         Real superconductors, however, do not exhibit perfectly sharp coherence peaks. A widely used phenomenological description is Dynes broadening, introduced through the substitution $E \rightarrow E + \ima\gamma$,
@@ -137,7 +136,7 @@
 
         Dynes broadening modifies the phenomenological DOS itself, whereas temperature broadens the energy window sampled by a transport measurement. This distinction is the main observable consequence for fitting measured line shapes.
 
-    
+
     %=========================================================
     \subsection{Tunnel Current}
     \label{subsec:micro:tunnel-current}
@@ -146,7 +145,7 @@
         Tunneling spectroscopy probes the quasiparticle excitation spectrum through the overlap of available states and occupations. We consider electrodes separated by a thin insulating barrier in the low-transmission limit and use a momentum-averaged tunneling matrix element. The quasiparticle current is then an incoherent single-particle transfer process. \cite{bardeen_tunnelling_1961,giaever_electron_1960,giaever_study_1961}
 
         % The tunnel barriers used in this thesis are formed by controlled oxidation between two aluminum depositions. Double-angle evaporation with an intermediate oxidation step produces the Al--AlO$_x$--Al overlap junction \cite{dolan_offset_1977,sprenger_interplay_2019}. The tunnel-limit assumption is assessed experimentally from the normal-state resistance and the absence of resolvable high-transmission subgap features.
-        
+
         % %=========================================================
         % \subsubsection*{General Tunnel Junction}
         % %=========================================================
@@ -218,8 +217,10 @@
             \end{equation}
             showing that an NIN junction is the Ohmic reference for the tunneling limit.
 
-            % NIS case
-            \subsubsection*{NIS Tunnel Junction}
+        %=========================================================
+        \subsubsection*{NIS Tunnel Junction}
+        %=========================================================
+
             In a junction between a normal metal and a superconductor, the normal electrode provides a flat DOS, so the current is sensitive to the superconducting quasiparticle spectrum,
             \begin{equation}
                 I_\mathrm{NIS}(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^{\infty} N_\mathrm{S}(E) \left(f(E) - f(E + eV)\right) \mathrm{d}E\,.
