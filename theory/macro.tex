@@ -119,10 +119,10 @@
 
         The microwave drive introduced in Sec.~\ref{subsec:micro:pat} modulates the superconducting phase. For coherent Cooper-pair transfer, the charge-dependent phase in Eq.~\eqref{eq:micro:pat-phase} is evaluated at $q=2e$ and contributes directly to the phase difference. The Josephson frequency $\nu_0$ then mixes with the external frequency $\nu$, and the phase takes the form
         \begin{equation}
-            \phi(t)=\phi_0 + 2\pi\nu_0 t + \alpha\sin(2\pi\nu t)\,,
+            \phi(t)=\phi_0 + 2\pi\nu_0 t + \alpha_{\nu,2e}\sin(2\pi\nu t)\,,
             \label{eq:macro:shapiro-phase}
         \end{equation}
-        with $\alpha = \alpha_{2e} = 2eA/h\nu$ the dimensionless Cooper-pair drive strength.
+        with $\alpha_{\nu,2e} = 2eA/h\nu$ the dimensionless Cooper-pair drive strength.
 
         Inserting this expression into Eq.~\eqref{eq:macro:josephson-current-phase} and expanding the phase modulation with Eq.~\eqref{eq:micro:pat-jacobi-anger} yields harmonics at frequencies $\nu_0 - n\nu$. Whenever $\nu_0 = n\nu$, the $n$-th harmonic becomes stationary and contributes a finite dc current. This produces quantized voltage plateaus at
         \begin{equation}
@@ -130,11 +130,11 @@
         \end{equation}
         known as Shapiro steps \cite{shapiro_josephson_1963}.
 
-        In the ideal voltage-driven sinusoidal model, the amplitude of each dc locking contribution is governed by the Bessel factor $J_n(\alpha)$ \cite{shapiro_josephson_1963,barone_physics_1982}. In contrast to the Tien--Gordon description of quasiparticle tunneling, the Bessel functions appear here without being squared because the Josephson current depends linearly on the phase modulation rather than on a transition probability. To retain the spectroscopy language used for quasiparticle transport, we represent the microwave response phenomenologically as shifted replicas of a static Josephson \textit{I--V} characteristic,
+        In the ideal voltage-driven sinusoidal model, the amplitude of each dc locking contribution is governed by the Bessel factor $J_n(\alpha_{\nu,2e})$ \cite{shapiro_josephson_1963,barone_physics_1982}. In contrast to the Tien--Gordon description of quasiparticle tunneling, the Bessel functions appear here without being squared because the Josephson current depends linearly on the phase modulation rather than on a transition probability. To retain the spectroscopy language used for quasiparticle transport, we represent the microwave response phenomenologically as shifted replicas of a static Josephson \textit{I--V} characteristic,
         \begin{equation}
             I(V_0)
                 = \sum_{n=-\infty}^{\infty}
-                    J_n(\alpha)\,
+                    J_n(\alpha_{\nu,2e})\,
                     I_{0}\!\left(V_0 - \frac{nh\nu}{2e}\right),
             \label{eq:macro:shapiro-iv}
         \end{equation}

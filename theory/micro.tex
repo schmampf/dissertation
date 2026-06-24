@@ -146,43 +146,39 @@
 
         % The tunnel barriers used in this thesis are formed by controlled oxidation between two aluminum depositions. Double-angle evaporation with an intermediate oxidation step produces the Al--AlO$_x$--Al overlap junction \cite{dolan_offset_1977,sprenger_interplay_2019}. The tunnel-limit assumption is assessed experimentally from the normal-state resistance and the absence of resolvable high-transmission subgap features.
 
-        % %=========================================================
-        % \subsubsection*{General Tunnel Junction}
-        % %=========================================================
+        In the expressions below, $N_i(E)$ is the DOS relative to the constant normal-state value of electrode $i$. Thus, a normal electrode has $N_i(E)=1$. The constant DOS scales, junction geometry, and tunneling matrix element are absorbed into the normal-state conductance $G_\mathrm{N}$.
 
-            In the expressions below, $N_i(E)$ is the DOS relative to the constant normal-state value of electrode $i$. Thus, a normal electrode has $N_i(E)=1$. The constant DOS scales, junction geometry, and tunneling matrix element are absorbed into the normal-state conductance $G_\mathrm{N}$.
+        Under these conditions, the microscopic current flowing from electrode 1 to electrode 2 is proportional to the number of occupied states at energy $E$ in electrode 1 and the number of empty states at energy $E+eV$ in electrode 2,
+        \begin{equation}
+            I_{1\to2}(V)  = \frac{G_\mathrm{N}}{e} \int_{-\infty}^\infty \left(N_1(E) f_1(E) \right)\cdot \left(N_2(E+eV)\left(1-f_2(E+eV)\right)\right)\mathrm{d}E\,,
+            \label{eq:micro:tunnel-1to2}
+        \end{equation}
+        where $V$ is the externally applied bias voltage. The reverse process $2\to1$ is described by an analogous expression. Subtracting the two contributions yields the measurable tunnel current
+        \begin{equation}
+            I(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^\infty N_1(E)\, N_2(E+eV)\, \left(f_1(E)-f_2(E+eV)\right)\mathrm{d}E\,,
+            \label{eq:micro:tunnel}
+        \end{equation}
+        where $N_1$ and $N_2$ are the relative DOS factors defined above \cite{bardeen_tunnelling_1961,giaever_study_1961}.
 
-            Under these conditions, the microscopic current flowing from electrode 1 to electrode 2 is proportional to the number of occupied states at energy $E$ in electrode 1 and the number of empty states at energy $E+eV$ in electrode 2,
-            \begin{equation}
-                I_{1\to2}(V)  = \frac{G_\mathrm{N}}{e} \int_{-\infty}^\infty \left(N_1(E) f_1(E) \right)\cdot \left(N_2(E+eV)\left(1-f_2(E+eV)\right)\right)\mathrm{d}E\,,
-                \label{eq:micro:tunnel-1to2}
-            \end{equation}
-            where $V$ is the externally applied bias voltage. The reverse process $2\to1$ is described by an analogous expression. Subtracting the two contributions yields the measurable tunnel current
-            \begin{equation}
-                I(V) = \frac{G_\mathrm{N}}{e} \int_{-\infty}^\infty N_1(E)\, N_2(E+eV)\, \left(f_1(E)-f_2(E+eV)\right)\mathrm{d}E\,,
-                \label{eq:micro:tunnel}
-            \end{equation}
-            where $N_1$ and $N_2$ are the relative DOS factors defined above \cite{bardeen_tunnelling_1961,giaever_study_1961}.
+        For numerical evaluation, it is useful to express the current through a convolution\footnote{
+            Throughout this thesis, we define convolution as $\left(f\otimes g\right)(x)=\int_{-\infty}^{\infty}f(E)g(E+x)\,\mathrm{d}E$.
+            }
+        \begin{equation}
+            I(V)
+            = G_\mathrm{N}/e\,
+            \left[
+                \left(N_1f_1\right)\otimes\left(N_2(1-f_2)\right)
+                -
+                \left(N_1(1-f_1)\right)\otimes\left(N_2f_2\right)
+            \right](eV)\,.
+            \label{eq:micro:tunnel-conv}
+        \end{equation}
 
-            For numerical evaluation, it is useful to express the current through a convolution\footnote{
-                Throughout this thesis, we define convolution as $\left(f\otimes g\right)(x)=\int_{-\infty}^{\infty}f(E)g(E+x)\,\mathrm{d}E$.
-                }
-            \begin{equation}
-                I(V)
-                = G_\mathrm{N}/e\,
-                \left[
-                    \left(N_1f_1\right)\otimes\left(N_2(1-f_2)\right)
-                    -
-                    \left(N_1(1-f_1)\right)\otimes\left(N_2f_2\right)
-                \right](eV)\,.
-                \label{eq:micro:tunnel-conv}
-            \end{equation}
+        The densities of states $N_1(E)$ and $N_2(E)$ specify where electrons may tunnel, while the Fermi--Dirac distributions specify which states are occupied. The factor $f_1(E)-f_2(E+eV)$ encodes the bias-induced occupation imbalance. The tunnel current therefore links quasiparticle spectra directly to the measurable \textit{I--V} characteristic.
 
-            The densities of states $N_1(E)$ and $N_2(E)$ specify where electrons may tunnel, while the Fermi--Dirac distributions specify which states are occupied. The factor $f_1(E)-f_2(E+eV)$ encodes the bias-induced occupation imbalance. The tunnel current therefore links quasiparticle spectra directly to the measurable \textit{I--V} characteristic.
+        Throughout this section we adopt the asymmetric voltage convention, in which the applied bias shifts only the quasiparticle energies of electrode 2, $E \to E+eV$. This gauge choice leaves the physics unchanged and keeps the microscopic expressions compact.
 
-            Throughout this section we adopt the asymmetric voltage convention, in which the applied bias shifts only the quasiparticle energies of electrode 2, $E \to E+eV$. This gauge choice leaves the physics unchanged and keeps the microscopic expressions compact.
-
-            Depending on the electronic state of the electrodes, Eq.~\eqref{eq:micro:tunnel} describes the three configurations in Fig.~\ref{fig:micro:tunnel-current}. Here, $N$ denotes a normal electrode, I the insulating barrier, and S a superconducting electrode. An NIN junction provides an Ohmic reference for $G_\mathrm{N}$. An NIS junction probes the superconducting DOS with an approximately flat normal electrode. An SIS junction probes the overlap of two gapped densities of states, shifting the quasiparticle threshold to $|eV|=2\Delta$ for identical electrodes \cite{giaever_electron_1960,giaever_study_1961}.
+        Depending on the electronic state of the electrodes, Eq.~\eqref{eq:micro:tunnel} describes the three configurations in Fig.~\ref{fig:micro:tunnel-current}. Here, $N$ denotes a normal electrode, I the insulating barrier, and S a superconducting electrode. An NIN junction provides an Ohmic reference for $G_\mathrm{N}$. An NIS junction probes the superconducting DOS with an approximately flat normal electrode. An SIS junction probes the overlap of two gapped densities of states, shifting the quasiparticle threshold to $|eV|=2\Delta$ for identical electrodes \cite{giaever_electron_1960,giaever_study_1961}.
 
         \begin{figure}[t]
             \centering
@@ -335,21 +331,21 @@
         \begin{align}
             U_q(t)
             &= \exp\!\left[-\ima\phi_{q,0}(t)\right]
-            \exp\!\left[-\ima\alpha_q\sin(2\pi\nu t)\right]\,,
+            \exp\!\left[-\ima\alpha_{\nu, q}\sin(2\pi\nu t)\right]\,,\\
             \phi_{q,0}(t)
             &= \frac{qV_0t}{\hbar}\,,
             \qquad
-            \alpha_q = \frac{qA}{h\nu}\,.
+            \alpha_{\nu, q} = \frac{qA}{h\nu}\,.
         \end{align}
         The oscillatory phase is expanded with the Jacobi--Anger identity,
         \begin{equation}
-            \exp\!\left[\pm\ima\alpha_q\sin(2\pi\nu t)\right]
+            \exp\!\left[\pm\ima\alpha_{\nu, q}\sin(2\pi\nu t)\right]
             = \sum_{n=-\infty}^{\infty}
-            J_n(\alpha_q)\,
+            J_n(\alpha_{\nu, q})\,
             \exp\!\left(\pm\ima n\,2\pi\nu t\right)\,.
             \label{eq:micro:pat-jacobi-anger}
         \end{equation}
-        This expansion produces the energy-shifted channels introduced above, with amplitudes set by the Bessel coefficients $J_n(\alpha_q)$ \cite{noauthor_dlmf_nodate}. Figure~\ref{fig:micro:pat-drive} summarizes the drive and resulting sideband amplitudes.
+        This expansion produces the energy-shifted channels introduced above, with amplitudes set by the Bessel coefficients $J_n(\alpha_{\nu, q})$ \cite{noauthor_dlmf_nodate}. Figure~\ref{fig:micro:pat-drive} summarizes the drive and resulting sideband amplitudes.
 
         \begin{figure}[t]
             \centering
@@ -366,7 +362,7 @@
             ]{\import{theory/basics}{mw-ReU.pgf}}
             \hfill
             \subfigure[
-                Sideband amplitudes $J_n(\alpha_q)$.
+                Sideband amplitudes $J_n(\alpha_{\nu, q})$.
             ]{\import{theory/basics}{mw-Jn.pgf}}
             \caption{
                 Harmonic voltage, charge-transfer phase, phase factor, and sideband amplitudes. The parameters are $q=e$, and $eV_0=eA=0.5\,\Delta_0$.
@@ -384,7 +380,7 @@
         \subsubsection*{Tien--Gordon Quasiparticle Tunneling}
         %=========================================================
 
-        We now specialize to quasiparticle tunneling with $q=e$ and $\alpha_e=eA/(h\nu)$. Applying $U_e(t)$ to the quasiparticle tunneling amplitude and averaging the tunneling probability over one drive period gives the Tien--Gordon current
+        We now specialize to quasiparticle tunneling with $q=e$. Applying $U_e(t)$ to the quasiparticle tunneling amplitude and averaging the tunneling probability over one drive period gives the Tien--Gordon current
         \begin{equation}
             I_\mathrm{PAT}(V_0)
                 = \sum_{n=-\infty}^{\infty}
@@ -392,7 +388,7 @@
                     I_0\!\left(V_0 - \frac{n h\nu}{e}\right)\,,
             \label{eq:micro:pat-iv}
         \end{equation}
-        where $I_0(V)$ is the static current derived above. Each term contributes a replica of the static characteristic shifted by $n h\nu/e$ and weighted by the sideband probability $J_n^2(\alpha_e)$ \cite{tien_multiphoton_1963}.
+        where $I_0(V)$ is the static current derived above. Each term contributes a replica of the static characteristic shifted by $n h\nu/e$ and weighted by the sideband probability $J_n^2(\alpha_{\nu,e})$ \cite{tien_multiphoton_1963}.
 
         \begin{figure}[t]
             \centering
