@@ -16,7 +16,7 @@
         \import{theory/macro}{delta-r.pgf}
         \vspace{-1.5em}
         \caption{
-            Spatial profile of $\Delta_1$ and $\Delta_2$ across a SIS tunnel junction.
+            Schematic spatial profile of $\Delta_1$ and $\Delta_2$ in SIS junction.
             }
         \label{fig:macro:delta-r}
     \end{wrapfigure}
@@ -143,18 +143,18 @@
         \end{equation}
         where $I_0(V_0)$ denotes the static Josephson \textit{I--V} curve in the absence of microwaves. Equation~\eqref{eq:macro:shapiro-iv} is a spectroscopy-oriented ansatz that displays the step positions and Bessel-weighted evolution in a form analogous to photon-assisted tunneling. It is not the general dynamical solution of a driven junction. The phase-locking dynamics and damping are treated with the RCSJ model below.
 
-        \begin{wrapfigure}[12]{r}{0.4\textwidth}
+        \begin{wrapfigure}[10]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
-            \vspace{-1.5em}
+            \vspace{-1.0em}
             \import{theory/macro}{shapiro-ideal.pgf}
-            \vspace{-1.5em}
+            \vspace{-2.0em}
             \caption{
                 Microwave-driven transport in a Josephson junction.
                 }
             \label{fig:macro:shapiro-iv}
         \end{wrapfigure}
-        Quasiparticle tunneling occurs in parallel with the phase-driven supercurrent. Under microwave irradiation, Shapiro steps and PAT can therefore appear simultaneously. As illustrated in Fig.~\ref{fig:macro:shapiro-iv}, their interplay produces structure in both the \textit{I--V} and differential conductance characteristics. The step spacing measures the applied frequency, while the step visibility depends on damping and fluctuations.
+        Quasiparticle tunneling occurs in parallel with the phase-driven supercurrent. Under microwave irradiation, Shapiro steps and PAT can therefore appear simultaneously. As illustrated in Fig.~\ref{fig:macro:shapiro-iv}, their interplay produces replicas in \textit{I--V} near zero bias and for energies twice the gap. The step spacing measures the applied frequency, while the step visibility depends on damping and fluctuations.
 
 
     %=========================================================
@@ -172,7 +172,7 @@
             \vspace{-.5em}
             \import{theory/schema/rcsj}{rcsj-model.pdf_tex}
             \caption{
-                RCSJ model of a real Josephson junction.
+                RCSJ circuit of a real Josephson junction.
             }
             \label{fig:macro:rcsj}
         \end{wrapfigure}
@@ -297,10 +297,6 @@
         \subsubsection*{Retrapping Dynamics}
         %=========================================================
 
-            After the phase escapes into the running state, the junction develops a finite average voltage and the phase accelerates down the tilted washboard potential. When the bias current is reduced, the junction does not immediately return to the zero-voltage state. The phase continues to move until enough kinetic energy has dissipated for it to fall back into a metastable minimum. The return current is the retrapping current $I_\mathrm{R}$.
-
-            In contrast to the switching current, which is set by escape from a minimum, the retrapping current reflects how efficiently damping removes kinetic energy accumulated during the running state. Thermal and current noise smooth this transition, producing a broadened return to the superconducting branch rather than a sharp jump. \cite{barone_physics_1982,tinkham_introduction_2004,stewart_currentvoltage_1968,mccumber_effect_1968}
-
             \begin{wrapfigure}[17]{r}{0.4\textwidth}
                 \captionsetup{format=plain}%
                 \centering
@@ -311,6 +307,10 @@
                 }
                 \label{fig:macro:rcsj-iv}
             \end{wrapfigure}
+            After the phase escapes into the running state, the junction develops a finite average voltage and the phase accelerates down the tilted washboard potential. When the bias current is reduced, the junction does not immediately return to the zero-voltage state. The phase continues to move until enough kinetic energy has dissipated for it to fall back into a metastable minimum. The return current is the retrapping current $I_\mathrm{R}$.
+
+            In contrast to the switching current, which is set by escape from a minimum, the retrapping current reflects how efficiently damping removes kinetic energy accumulated during the running state. Thermal and current noise smooth this transition, producing a broadened return to the superconducting branch rather than a sharp jump. \cite{barone_physics_1982,tinkham_introduction_2004,stewart_currentvoltage_1968,mccumber_effect_1968}
+
             Figure~\ref{fig:macro:rcsj-iv} shows a representative phenomenological \textit{I--V} trace. It highlights the finite slope of the supercurrent branch, the switching transition at $I_\mathrm{SW}$, and the return at $I_\mathrm{R}$. These currents are prescribed observables in the plotted characteristic rather than outputs of the deterministic equation above.
 
             In the ideal overdamped limit ($Q\ll 1$), the phase has essentially no inertia and relocks as soon as stable minima reappear. Switching and retrapping therefore occur at similar currents in the deterministic model. Experimentally, stochastic fluctuations, frequency-dependent environmental damping, or heating can still produce distinct observed values of $I_\mathrm{SW}$ and $I_\mathrm{R}$. The overdamped regime is the relevant limit for the atomic aluminum contact studied in this work.
@@ -321,6 +321,21 @@
         \subsubsection*{Shapiro Steps in the RCSJ Model}
         %=========================================================
 
+            \begin{figure}
+                \centering
+                \subfigure[
+                    Underdamped junction ($Q\gg 1$), switching current parameter $I_\mathrm{SW}=0.5\,I_\mathrm{c}$.
+                    ]{\import{theory/macro/}{shapiro-under.pgf}}
+                \hfill
+                \subfigure[
+                    Overdamped junction ($Q\ll 1$), switching current parameter $I_\mathrm{SW}=0.2\,I_\mathrm{c}$.
+                    ]{\import{theory/macro/}{shapiro-over.pgf}}
+                \caption{
+                    Phenomenological microwave-driven dc transport based on the static switching and retrapping characteristic, rather than a deterministic RCSJ solution.
+                    }
+                \label{fig:macro:rcsj-shapiro-iv}
+            \end{figure}
+            
             In the driven RCSJ model, Shapiro steps arise through frequency locking between the intrinsic Josephson oscillation and an external microwave drive. We describe the drive as an applied ac current with amplitude $a$ and frequency $\nu$. With $t'=\omega_\mathrm{p}t$, $i=I_\mathrm{bias}/I_\mathrm{c}$, $a'=a/I_\mathrm{c}$, and $\nu'=\nu/\nu_\mathrm{p}$, the normalized RCSJ equation becomes
             \begin{equation}
                 i + a'\sin(\nu' t')
@@ -342,19 +357,5 @@
             In the overdamped regime, damping suppresses inertial phase oscillations and stabilizes the frequency-locked state, yielding clean Shapiro steps. Thermal fluctuations can broaden the step edges when a stochastic current source is included.
 
             Figure~\ref{fig:macro:rcsj-shapiro-iv} applies the irradiation response to the phenomenological static characteristic of Fig.~\ref{fig:macro:rcsj-iv}. It shows the resulting \textit{I--V} characteristics in the underdamped and overdamped limits.
-            \begin{figure}
-                \centering
-                \subfigure[
-                    Underdamped junction ($Q\gg 1$), switching current parameter $I_\mathrm{SW}=0.5\,I_\mathrm{c}$.
-                    ]{\import{theory/macro/}{shapiro-under.pgf}}
-                \hfill
-                \subfigure[
-                    Overdamped junction ($Q\ll 1$), switching current parameter $I_\mathrm{SW}=0.2\,I_\mathrm{c}$.
-                    ]{\import{theory/macro/}{shapiro-over.pgf}}
-                \caption{
-                    Phenomenological microwave-driven dc transport based on the static switching and retrapping characteristic in Fig.~\ref{fig:macro:rcsj-iv}.
-                    }
-                \label{fig:macro:rcsj-shapiro-iv}
-            \end{figure}
 
             The RCSJ framework connects ideal Josephson step positions to measured \textit{I--V} characteristics, where damping, noise, and capacitive dynamics shape the visibility and stability of Shapiro steps.
