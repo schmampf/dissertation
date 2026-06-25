@@ -24,7 +24,7 @@
 
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.5\textwidth]{results/samples/OI-25c-09.png}
+            \includegraphics[width=0.5\textwidth]{tunnelbarrier/samples/OI-25c-09.png}
             \caption{SEM Image of TB1 (OI-25c-09)}
             \label{fig:tunnelbarrier:image-TB1}
         \end{figure}
@@ -48,21 +48,90 @@
                     \subfigure[\textit{I--V}]{%
                         \parbox[t]{2.1in}{%
                             \centering
-                            \import{tunnelbarrier/highres/amp_raw_iv/}{main.pgf}%
+                            % \import{tunnelbarrier/highres/amp_raw_iv/}{main.pgf}%
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_raw_iv/main.pdf}%
                         }%
                     }%
                     \hfill%
                     \subfigure[\textit{dI--dV}]{%
                         \parbox[t]{2.1in}{%
                             \centering
-                            \import{tunnelbarrier/highres/amp_raw_didv/}{main.pgf}%
+                            % \import{tunnelbarrier/highres/amp_raw_didv/}{main.pgf}%
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_raw_didv/main.pdf}%
                         }%
                     }%
                     \hfill%
                     \subfigure[\textit{dV--dI}]{%
                         \parbox[t]{2.1in}{%
                             \centering
-                            \import{tunnelbarrier/highres/amp_raw_dvdi/}{main.pgf}%
+                            % \import{tunnelbarrier/highres/amp_raw_dvdi/}{main.pgf}%
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_raw_dvdi/main.pdf}%
+                        }%
+                    }
+                    \vspace{-.1in}
+                    \captionof{figure}{Experimental tunnel-barrier spectroscopy under microwave irradiation at $\nu=13.6\,\mathrm{GHz}$. The three columns show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} maps as a function of dc bias or dc current and output amplitude $A_\mathrm{out}$. Each column combines heatmap, surface, and waterfall views of the same data to show both the global map structure and the evolution of individual traces with irradiation. The spectra remain in the tunnel regime over the full amplitude range; photon-assisted sideband structure develops with increasing drive, while no supercurrent branch is observed.}
+                    \label{fig:tb:irradiation-exp}
+                \end{center}
+            \end{landscape}
+
+            \begin{landscape}
+            \vspace*{-.3in}
+                \begin{center}
+                    \captionsetup{type=figure}
+                    \subfigure[\textit{I--V}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            % \import{tunnelbarrier/highres/amp_cal_iv/}{main.pgf}%
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_cal_iv/main.pdf}%
+                        }%
+                    }%
+                    \hfill%
+                    \subfigure[\textit{dI--dV}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            % \import{tunnelbarrier/highres/amp_cal_didv/}{main.pgf}%
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_cal_didv/main.pdf}%
+                        }%
+                    }%
+                    \hfill%
+                    \subfigure[\textit{dV--dI}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            % \import{tunnelbarrier/highres/amp_cal_dvdi/}{main.pgf}%
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_cal_dvdi/main.pdf}%
+                        }%
+                    }
+                    \vspace{-.1in}
+                    \captionof{figure}{Experimental tunnel-barrier spectroscopy under microwave irradiation at $\nu=13.6\,\mathrm{GHz}$. The three columns show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} maps as a function of dc bias or dc current and output amplitude $A_\mathrm{out}$. Each column combines heatmap, surface, and waterfall views of the same data to show both the global map structure and the evolution of individual traces with irradiation. The spectra remain in the tunnel regime over the full amplitude range; photon-assisted sideband structure develops with increasing drive, while no supercurrent branch is observed.}
+                    \label{fig:tb:irradiation-exp}
+                \end{center}
+            \end{landscape}
+
+            \begin{landscape}
+            \vspace*{-.3in}
+                \begin{center}
+                    \captionsetup{type=figure}
+                    \subfigure[\textit{I--V}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            % \import{tunnelbarrier/highres/amp_sim_iv/}{main.pgf}%
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_sim_iv/main.pdf}%
+                        }%
+                    }%
+                    \hfill%
+                    \subfigure[\textit{dI--dV}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            % \import{tunnelbarrier/highres/amp_sim_didv/}{main.pgf}%
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_sim_didv/main.pdf}%
+                        }%
+                    }%
+                    \hfill%
+                    \subfigure[\textit{dV--dI}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            % \import{tunnelbarrier/highres/amp_sim_dvdi/}{main.pgf}%
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_sim_dvdi/main.pdf}%
                         }%
                     }
                     \vspace{-.1in}
@@ -102,13 +171,14 @@
 
     %=========================================================
     \subsection{Rectification and Asymmetry}
+    \label{sec:tb:asym}
     %=========================================================
         Sample: TB2 (OI-24d-09)
         Setup: as discribed in P. Raif + Gate line
         
         \begin{figure}[H]
             \centering
-            \includegraphics[width=0.5\textwidth]{results/samples/OI-24d-09.png}
+            \includegraphics[width=0.5\textwidth]{tunnelbarrier/samples/OI-24d-09.png}
             \caption{SEM Image of TB2 (OI-24d-09)}
             \label{fig:tunnelbarrier:image-TB2}
         \end{figure}
@@ -137,25 +207,4 @@
             coupling, temperature, asymmetry
             \begin{itemize}
                 \item those three vs. nu
-            \end{itemize}
-
-
-
-    %=========================================================
-    \subsection[Appendix]{Magnetic field Measurements on Tunnel Barrier}
-    %=========================================================
-
-        %=========================================================
-        \subsection{Suppression of Superconductivity in TB1}
-        %=========================================================
-            \begin{itemize}
-                \item Bmap
-            \end{itemize}
-
-        %=========================================================
-        \subsection{PAT in partly suppressed TB2}
-        %=========================================================
-            \begin{itemize}
-                \item 12.1GHz, Antenna, 20mT
-                \item 12.1GHz, Antenna, 30mT
             \end{itemize}
