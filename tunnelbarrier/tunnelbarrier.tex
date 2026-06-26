@@ -29,6 +29,20 @@
             \label{fig:tb:highres:image-TB1}
         \end{figure}
 
+        Show heare a normal iv and how well the fit fits.
+
+        \begin{wrapfigure}[13]{r}{0.4\textwidth}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-1.5em}
+            \import{tunnelbarrier/highres/amp_18.3GHz}{fit.pgf}
+            \caption{
+                    put caption here!
+                }
+            \label{fig:tb:highres:TB1-IV}
+        \end{wrapfigure}
+
+
         %=========================================================
         \subsection{Amplitude Calibration}
         %=========================================================
@@ -170,7 +184,8 @@
         %=========================================================
         \subsection{Temperature Calibration}
         %=========================================================
-            \begin{wrapfigure}[13]{r}{0.4\textwidth}
+
+            \begin{wrapfigure}[13]{r}{1.7in}
                 \captionsetup{format=plain}%
                 \centering
                 \vspace{-1.5em}
@@ -180,6 +195,48 @@
                     }
                 \label{fig:tb:highres:Tfit}
             \end{wrapfigure}
+
+            The sample was heated through a heater, bath temperature was measured next to the sample. However, through fitting the IV curve with BCS theory, while keeping Factors, such as Delta0 GN and gamma fixed. One can obtain the acutal sample temperature $T_\mathrm{sample}$.
+
+            Plotting those two temperature against each other like in fig \ref{fig:tb:highres:Tfit}, one can observe a linear Dependency and two plateau. The first one, most likely indicates the base temperature, while the second one is due to the fact, that the fit fails upon reaching the critical Temperature. So we can deduct the critical Temperature of the TB1 directly from the saturation level of the plateau to the right.
+            \begin{equation}
+                T_{\mathrm{c}}^{\mathrm{(TB1)}} = 1.263\,\mathrm{K}
+            \end{equation}
+
+            Excluding the second plateau, one can model the beehaviour with:
+            \begin{equation}
+                T_\mathrm{sample}(T_\mathrm{bath}) = \mathrm{max}\left( T_\mathrm{base}, \alpha_T\,T_\mathrm{bath} + T_\mathrm{off}\right)
+            \end{equation}
+            $T_base$ is the minimum electronic temperature, $alpha$ is the coupling between the bath and the electrons. $T_off$ is the temperature difference between bath and sample.
+
+            I obtain the values
+            \begin{align*}
+                T_\mathrm{base} &= 0.289(6)\,\mathrm{K}\\
+                T_\mathrm{off} &= -0.069(2)\,\mathrm{K}\\
+                \alpha_T &= 0.980(2)
+            \end{align*}
+
+            \begin{wrapfigure}[13]{r}{1.5in}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-1.5em}
+                \import{tunnelbarrier/highres/temperature}{heater.pgf}
+                \caption{
+                        Heater power over bath temperature.
+                    }
+                \label{fig:tb:highres:Theater}
+            \end{wrapfigure}
+
+            Since the measurement, was done by measuring constantly IVs and increasing the heater power consequently after each sweep. there might be a constant offset between bath and sample, and a coupling different than 1, due to its poor termal coupling. The sample just has contact to the bath via the stamp slash pushing rod and the two counter rods.
+            This leads to a non-equilibrium state of the sample, what explains the differences
+
+            The heater power was increased, such, that it follows a linear temoperature increase. Basically
+            \begin{equation}
+                P_\mathrm{heater} \propto T_\mathrm{bath}^{5/2}
+            \end{equation}
+            do we now why? I dont. Any speculations?
+
+            However, finally we can map the ivs over a linear sample temperature and get beautiful plots, that contain the whole map. Shown in fig. \ref{fig:tb:highres:tcal}. where we measure from 0.02-1.26K and measure the IVs. We see a beautiful collapse of the gap, but also a zero bias peak in conductance, as the theory predicts shown in fig \ref{fig:tb:highres:tsim}.
 
 
             \begin{landscape}
@@ -217,11 +274,38 @@
                 \end{center}
             \end{landscape}
 
-            T-Map, Junction doesn't see bath temperature.
-            \begin{itemize}
-                \item Exp over lab units
-                \item Tbath vs. Tsample
-            \end{itemize}
+
+            \begin{landscape}
+            \vspace*{-.3in}
+                \begin{center}
+                    \captionsetup{type=figure}
+                    \subfigure[\textit{I--V}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/sim_iv/main.pdf}%
+                        }%
+                    }%
+                    \hfill%
+                    \subfigure[\textit{dI--dV}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/sim_didv/main.pdf}%
+                        }%
+                    }%
+                    \hfill%
+                    \subfigure[\textit{dV--dI}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/sim_dvdi/main.pdf}%
+                        }%
+                    }
+                    \vspace{-.1in}
+                    \captionof{figure}{
+                        put caption here!
+                        }
+                    \label{fig:tb:highres:tsim}
+                \end{center}
+            \end{landscape}
 
         %=========================================================
         \subsection{Frequency Dependency}
