@@ -29,7 +29,33 @@
             \label{fig:tb:highres:image-TB1}
         \end{figure}
 
-        Show heare a normal iv and how well the fit fits.
+
+        \begin{figure}
+            \centering
+            \subfigure[
+                \textit{I--V}
+                ]{\import{tunnelbarrier/highres/single_iv}{fit-iv.pgf}}
+            \hfill
+            \subfigure[
+                \textit{dI--dV}
+                ]{\import{tunnelbarrier/highres/single_iv}{fit-didv.pgf}}
+            \hfill
+            \subfigure[
+                \textit{dV--dI}
+                ]{\import{tunnelbarrier/highres/single_iv}{fit-dvdi.pgf}}
+            \caption{
+            something
+            }
+            \label{fig:tb:highres:single-iv}
+        \end{figure}
+
+        %=========================================================
+        \subsection{Parameter Extraction}
+        \label{subsec:tb:highres:parameter-extraction}
+        %=========================================================
+
+
+        Show here a normal iv and how well the fit fits.
 
         \begin{wrapfigure}[13]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
@@ -42,9 +68,141 @@
             \label{fig:tb:highres:TB1-IV}
         \end{wrapfigure}
 
+        %=========================================================
+        \subsection{Temperature Calibration}
+        \label{subsec:tb:highres:temperature-calibration}
+        %=========================================================
+
+            \begin{wrapfigure}[13]{r}{1.7in}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-1.5em}
+                \import{tunnelbarrier/highres/temperature}{fit.pgf}
+                \caption{
+                        Temperature calibration of TB1. The thermometer temperature $T_\mathrm{bath}$ is compared with the effective sample temperature $T_\mathrm{sample}$ extracted from fits to the measured \textit{I--V} curves.
+                    }
+                \label{fig:tb:highres:Tfit}
+            \end{wrapfigure}
+
+            The sample holder was heated locally while a thermometer mounted next to the sample recorded the bath temperature $T_\mathrm{bath}$. For each temperature point, I fitted the measured \textit{I--V} curve with the SIS BCS/Dynes model. The normal conductance $G_\mathrm{N}$, the zero-temperature gap $\Delta_0$, and the Dynes broadening $\gamma$ were kept fixed, while the temperature $T$ was extracted from the fit. I therefore use the fitted value as an effective transport temperature $T_\mathrm{sample}$. It should not be identified automatically with the absolute lattice temperature of the sample holder.
+
+            Figure~\ref{fig:tb:highres:Tfit} compares $T_\mathrm{sample}$ with $T_\mathrm{bath}$. The low-temperature plateau gives the effective base-temperature floor of the transport measurement. Between the two plateaus, the data follow an approximately linear calibration curve. The high-temperature saturation marks the loss of reliable superconducting fit sensitivity close to the critical temperature. I therefore use the saturation scale as an estimate for the critical temperature of TB1,
+            \begin{equation}
+                T_{\mathrm{c}}^{\mathrm{(TB1)}} = 1.263\,\mathrm{K}
+                \label{eq:tb:highres:critical-temperature}
+            \end{equation}
+
+            Excluding the high-temperature saturation regime, I model the calibration as
+            \begin{equation}
+                T_\mathrm{sample}(T_\mathrm{bath}) = \mathrm{max}\left( T_\mathrm{base}, \alpha_T\,T_\mathrm{bath} + T_\mathrm{off}\right).
+                \label{eq:tb:highres:temperature-calibration}
+            \end{equation}
+            Here $T_\mathrm{base}$ is the minimum effective transport temperature, $\alpha_T$ is the slope relating thermometer and fitted temperature in the linear regime, and $T_\mathrm{off}$ is the extrapolated temperature offset between both axes.
+
+            I obtain
+            \begin{align*}
+                T_\mathrm{base} &= 0.289(6)\,\mathrm{K}\\
+                T_\mathrm{off} &= -0.069(2)\,\mathrm{K}\\
+                \alpha_T &= 0.980(2)
+            \end{align*}
+
+            \begin{wrapfigure}[13]{r}{1.5in}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-1.5em}
+                \import{tunnelbarrier/highres/temperature}{heater.pgf}
+                \caption{
+                        Heater power $P_\mathrm{heater}$ as a function of thermometer temperature $T_\mathrm{bath}$ during the temperature sweep.
+                    }
+                \label{fig:tb:highres:Theater}
+            \end{wrapfigure}
+
+            The temperature series was acquired by repeatedly measuring \textit{I--V} curves while stepping the heater power between sweeps. The heater, sample holder, thermometer, and junction are not perfectly thermally equivalent. Finite thermal resistance along the pushing rod, stamp, and counter rods can therefore produce offsets and temperature gradients during the sweep. For this reason, the calibrated axis used below is the fitted effective sample temperature $T_\mathrm{sample}$ from Eq.~\eqref{eq:tb:highres:temperature-calibration}, rather than the raw thermometer temperature.
+
+            The heater protocol was chosen to produce an approximately linear increase of the calibrated temperature. Empirically, the applied heater power followed the trend
+            \begin{equation}
+                P_\mathrm{heater} \propto T_\mathrm{bath}^{5/2}.
+                \label{eq:tb:highres:heater-power-scaling}
+            \end{equation}
+            I use this relation only as a description of the applied heating protocol, not as a microscopic thermal model of the sample stage.
+
+            With this calibration, the temperature series can be plotted on an approximately linear effective sample-temperature axis. Figure~\ref{fig:tb:highres:tcal} shows the measured maps up to about $1.26\,\mathrm{K}$, where the superconducting gap closes. The calibrated maps show the thermal broadening of the quasiparticle features, the collapse of the gap at the transition, and an enhanced zero-bias conductance near the high-temperature end of the sweep. The corresponding SIS BCS/Dynes simulation in Fig.~\ref{fig:tb:highres:tsim} provides the model comparison for the same temperature evolution.
+
+
+            \begin{landscape}
+            \vspace*{-.3in}
+                \begin{center}
+                    \captionsetup{type=figure}
+                    \subfigure[\textit{I--V}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            % \import{tunnelbarrier/highres/amp_cal_iv/}{main.pgf}%
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/cal_iv/main.pdf}%
+                        }%
+                    }%
+                    \hfill%
+                    \subfigure[\textit{dI--dV}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            % \import{tunnelbarrier/highres/amp_cal_didv/}{main.pgf}%
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/cal_didv/main.pdf}%
+                        }%
+                    }%
+                    \hfill%
+                    \subfigure[\textit{dV--dI}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            % \import{tunnelbarrier/highres/amp_cal_dvdi/}{main.pgf}%
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/cal_dvdi/main.pdf}%
+                        }%
+                    }
+                    \vspace{-.1in}
+                    \captionof{figure}{
+                        Temperature-dependent transport maps of TB1 after calibration of the effective sample temperature. The panels show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response on the calibrated $T_\mathrm{sample}$ axis.
+                        }
+                    \label{fig:tb:highres:tcal}
+                \end{center}
+            \end{landscape}
+
+
+            \begin{landscape}
+            \vspace*{-.3in}
+                \begin{center}
+                    \captionsetup{type=figure}
+                    \subfigure[\textit{I--V}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/sim_iv/main.pdf}%
+                        }%
+                    }%
+                    \hfill%
+                    \subfigure[\textit{dI--dV}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/sim_didv/main.pdf}%
+                        }%
+                    }%
+                    \hfill%
+                    \subfigure[\textit{dV--dI}]{%
+                        \parbox[t]{2.1in}{%
+                            \centering
+                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/sim_dvdi/main.pdf}%
+                        }%
+                    }
+                    \vspace{-.1in}
+                    \captionof{figure}{
+                        SIS BCS/Dynes simulation corresponding to the calibrated temperature sweep. The panels show the simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response using the same effective temperature axis as Fig.~\ref{fig:tb:highres:tcal}.
+                        }
+                    \label{fig:tb:highres:tsim}
+                \end{center}
+            \end{landscape}
+
+            The temperature calibration therefore connects the heater sweep to the effective temperature that controls the tunnel spectra. It enables a direct comparison between the measured maps and temperature-dependent tunnel-junction theory. The comparison captures the main superconducting temperature evolution, while remaining deviations should be interpreted within the limits of an effective-temperature description, thermal gradients across the sample assembly, and possible non-equilibrium heating.
+
 
         %=========================================================
         \subsection{Amplitude Calibration}
+        \label{subsec:tb:highres:amplitude-calibration}
         %=========================================================
 
 
@@ -181,134 +339,10 @@
                 \item Exp over reduced units
             \end{itemize}
 
-        %=========================================================
-        \subsection{Temperature Calibration}
-        %=========================================================
-
-            \begin{wrapfigure}[13]{r}{1.7in}
-                \captionsetup{format=plain}%
-                \centering
-                \vspace{-1.5em}
-                \import{tunnelbarrier/highres/temperature}{fit.pgf}
-                \caption{
-                        put caption here!
-                    }
-                \label{fig:tb:highres:Tfit}
-            \end{wrapfigure}
-
-            The sample was heated through a heater, bath temperature was measured next to the sample. However, through fitting the IV curve with BCS theory, while keeping Factors, such as Delta0 GN and gamma fixed. One can obtain the acutal sample temperature $T_\mathrm{sample}$.
-
-            Plotting those two temperature against each other like in fig \ref{fig:tb:highres:Tfit}, one can observe a linear Dependency and two plateau. The first one, most likely indicates the base temperature, while the second one is due to the fact, that the fit fails upon reaching the critical Temperature. So we can deduct the critical Temperature of the TB1 directly from the saturation level of the plateau to the right.
-            \begin{equation}
-                T_{\mathrm{c}}^{\mathrm{(TB1)}} = 1.263\,\mathrm{K}
-            \end{equation}
-
-            Excluding the second plateau, one can model the beehaviour with:
-            \begin{equation}
-                T_\mathrm{sample}(T_\mathrm{bath}) = \mathrm{max}\left( T_\mathrm{base}, \alpha_T\,T_\mathrm{bath} + T_\mathrm{off}\right)
-            \end{equation}
-            $T_base$ is the minimum electronic temperature, $alpha$ is the coupling between the bath and the electrons. $T_off$ is the temperature difference between bath and sample.
-
-            I obtain the values
-            \begin{align*}
-                T_\mathrm{base} &= 0.289(6)\,\mathrm{K}\\
-                T_\mathrm{off} &= -0.069(2)\,\mathrm{K}\\
-                \alpha_T &= 0.980(2)
-            \end{align*}
-
-            \begin{wrapfigure}[13]{r}{1.5in}
-                \captionsetup{format=plain}%
-                \centering
-                \vspace{-1.5em}
-                \import{tunnelbarrier/highres/temperature}{heater.pgf}
-                \caption{
-                        Heater power over bath temperature.
-                    }
-                \label{fig:tb:highres:Theater}
-            \end{wrapfigure}
-
-            Since the measurement, was done by measuring constantly IVs and increasing the heater power consequently after each sweep. there might be a constant offset between bath and sample, and a coupling different than 1, due to its poor termal coupling. The sample just has contact to the bath via the stamp slash pushing rod and the two counter rods.
-            This leads to a non-equilibrium state of the sample, what explains the differences
-
-            The heater power was increased, such, that it follows a linear temoperature increase. Basically
-            \begin{equation}
-                P_\mathrm{heater} \propto T_\mathrm{bath}^{5/2}
-            \end{equation}
-            do we now why? I dont. Any speculations?
-
-            However, finally we can map the ivs over a linear sample temperature and get beautiful plots, that contain the whole map. Shown in fig. \ref{fig:tb:highres:tcal}. where we measure from 0.02-1.26K and measure the IVs. We see a beautiful collapse of the gap, but also a zero bias peak in conductance, as the theory predicts shown in fig \ref{fig:tb:highres:tsim}.
-
-
-            \begin{landscape}
-            \vspace*{-.3in}
-                \begin{center}
-                    \captionsetup{type=figure}
-                    \subfigure[\textit{I--V}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            % \import{tunnelbarrier/highres/amp_cal_iv/}{main.pgf}%
-                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/cal_iv/main.pdf}%
-                        }%
-                    }%
-                    \hfill%
-                    \subfigure[\textit{dI--dV}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            % \import{tunnelbarrier/highres/amp_cal_didv/}{main.pgf}%
-                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/cal_didv/main.pdf}%
-                        }%
-                    }%
-                    \hfill%
-                    \subfigure[\textit{dV--dI}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            % \import{tunnelbarrier/highres/amp_cal_dvdi/}{main.pgf}%
-                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/cal_dvdi/main.pdf}%
-                        }%
-                    }
-                    \vspace{-.1in}
-                    \captionof{figure}{
-                        put caption here!
-                        }
-                    \label{fig:tb:highres:tcal}
-                \end{center}
-            \end{landscape}
-
-
-            \begin{landscape}
-            \vspace*{-.3in}
-                \begin{center}
-                    \captionsetup{type=figure}
-                    \subfigure[\textit{I--V}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/sim_iv/main.pdf}%
-                        }%
-                    }%
-                    \hfill%
-                    \subfigure[\textit{dI--dV}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/sim_didv/main.pdf}%
-                        }%
-                    }%
-                    \hfill%
-                    \subfigure[\textit{dV--dI}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/temperature/sim_dvdi/main.pdf}%
-                        }%
-                    }
-                    \vspace{-.1in}
-                    \captionof{figure}{
-                        put caption here!
-                        }
-                    \label{fig:tb:highres:tsim}
-                \end{center}
-            \end{landscape}
 
         %=========================================================
         \subsection{Frequency Dependency}
+        \label{subsec:tb:highres:frequency-dependency}
         %=========================================================
 
             coupling, temperature, asymmetry
