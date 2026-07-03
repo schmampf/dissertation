@@ -345,6 +345,26 @@
 
             Taken together, the cold electrical environment defines the sample-side measurement conditions. The cold reference resistors determine the current readout, the filtered and thermalized wiring limits electrical noise and electronic heating, and the microwave lines provide reproducible but not absolutely calibrated irradiation.
 
+            \begin{wrapfigure}[13]{r}{1.5in}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-1.5em}
+                \import{tunnelbarrier/highres/temperature}{heater.pgf}
+                \caption{
+                        Heater power $P_\mathrm{heater}$ as a function of thermometer temperature $T_\mathrm{bath}$ during the temperature sweep.
+                    }
+                \label{fig:tb:highres:Theater}
+            \end{wrapfigure}
+
+            The temperature series was acquired by repeatedly measuring \textit{I--V} curves while stepping the heater power between sweeps. The heater, sample holder, thermometer, and junction are not perfectly thermally equivalent. Finite thermal resistance along the pushing rod, stamp, and counter rods can therefore produce offsets and temperature gradients during the sweep. For this reason, the calibrated axis used below is the fitted effective sample temperature $T_\mathrm{sample}$ from Eq.~\eqref{eq:tb:highres:temperature-calibration}, rather than the raw thermometer temperature.
+
+            The heater protocol was chosen to produce an approximately linear increase of the calibrated temperature. Empirically, the applied heater power followed the trend
+            \begin{equation}
+                P_\mathrm{heater} \propto T_\mathrm{bath}^{5/2}.
+                \label{eq:tb:highres:heater-power-scaling}
+            \end{equation}
+            I use this relation only as a description of the applied heating protocol, not as a microscopic thermal model of the sample stage.
+
     %=========================================================
     \newpage
     \subsection{Instrumentation and Grounding}
