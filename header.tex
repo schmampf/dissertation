@@ -136,6 +136,129 @@
     
     % => Either import or input works. Don't know the difference yet.
 
+    \newif\ifusepgffigures
+
+    \NewDocumentCommand{\transportmissinggraphic}{m}{%
+        \fbox{%
+            \parbox[c][1.8in][c]{0.9\linewidth}{%
+                \centering
+                \scriptsize Missing figure\\
+                \texttt{\detokenize{#1}}%
+            }%
+        }%
+    }
+
+    \NewDocumentCommand{\transportpanelgraphic}{m}{%
+        \ifusepgffigures
+            \IfFileExists{#1/main.pgf}{%
+                \import{#1/}{main.pgf}%
+            }{%
+                \IfFileExists{#1/main.pdf}{%
+                    \includegraphics[width=\linewidth]{#1/main.pdf}%
+                }{%
+                    \transportmissinggraphic{#1/main.pgf}%
+                }%
+            }%
+        \else
+            \IfFileExists{#1/main.pdf}{%
+                \includegraphics[width=\linewidth]{#1/main.pdf}%
+            }{%
+                \IfFileExists{#1/main.pgf}{%
+                    \import{#1/}{main.pgf}%
+                }{%
+                    \transportmissinggraphic{#1/main.pdf}%
+                }%
+            }%
+        \fi
+    }
+
+    \NewDocumentCommand{\transportpanels}{m m}{%
+        \subfigure[\textit{I--V}]{%
+            \parbox[t]{2.1in}{%
+                \centering
+                \transportpanelgraphic{#1/#2_iv}%
+            }%
+        }%
+        \hfill%
+        \subfigure[\textit{dI--dV}]{%
+            \parbox[t]{2.1in}{%
+                \centering
+                \transportpanelgraphic{#1/#2_didv}%
+            }%
+        }%
+        \hfill%
+        \subfigure[\textit{dV--dI}]{%
+            \parbox[t]{2.1in}{%
+                \centering
+                \transportpanelgraphic{#1/#2_dvdi}%
+            }%
+        }%
+    }
+
+    \NewDocumentCommand{\transportlandscapefigure}{O{-.3in} m m O{-.1in} +m m}{%
+        \begin{landscape}
+        \vspace*{#1}
+            \begin{center}
+                \captionsetup{type=figure}
+                \transportpanels{#2}{#3}
+                \vspace{#4}
+                \captionof{figure}{
+                    #5
+                    }
+                \label{#6}
+            \end{center}
+        \end{landscape}
+    }
+
+    \NewDocumentCommand{\singlefitpanelgraphic}{m m}{%
+        \ifusepgffigures
+            \IfFileExists{#1/#2.pgf}{%
+                \import{#1}{#2.pgf}%
+            }{%
+                \IfFileExists{#1/#2.pdf}{%
+                    \includegraphics{#1/#2.pdf}%
+                }{%
+                    \transportmissinggraphic{#1/#2.pgf}%
+                }%
+            }%
+        \else
+            \IfFileExists{#1/#2.pdf}{%
+                \includegraphics{#1/#2.pdf}%
+            }{%
+                \IfFileExists{#1/#2.pgf}{%
+                    \import{#1}{#2.pgf}%
+                }{%
+                    \transportmissinggraphic{#1/#2.pdf}%
+                }%
+            }%
+        \fi
+    }
+
+    \NewDocumentCommand{\singlefitpanels}{m}{%
+        \subfigure[\textit{I--V}]{%
+            \singlefitpanelgraphic{#1}{iv}%
+        }%
+        \hfill%
+        \subfigure[\textit{dI--dV}]{%
+            \singlefitpanelgraphic{#1}{didv}%
+        }%
+        \hfill%
+        \subfigure[\textit{dV--dI}]{%
+            \singlefitpanelgraphic{#1}{dvdi}%
+        }%
+    }
+
+    \NewDocumentCommand{\singlefitfigure}{O{t} m +m m}{%
+        \begin{figure}[#1]
+            \centering
+            \singlefitpanels{#2}
+            \caption{
+                #3
+            }
+            \label{#4}
+        \end{figure}
+    }
+
 
 %%% Python-Code %%%
     % for python code
