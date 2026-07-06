@@ -6,9 +6,9 @@
     \begin{itemize}
         \item Intro to TB
         \item foremost relevant theory: micro
-        \item however, dcb might play a role
         \item didactic start to methods.
         \item least complicated system
+        \item however, dcb might play a role
         \item rectification and asymmetry
         \item bruder, was los?
     \end{itemize}
@@ -19,7 +19,6 @@
     \section{High-Resolution Characterization}
     \label{sec:tb:highres}
     %=========================================================
-
 
         \begin{wrapfigure}[9]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
@@ -42,13 +41,34 @@
         Assuming symetrical electrodes and neglicable magnetic field, I obtained the following values, fitting the \textit{I--V},
         \begin{align}
             G_\mathrm{N} &= 0.1894994(35)\,G_0 = 14.68259(27)\,\mu\mathrm{S}\\
-            R_\mathrm{N} &= 5.27706(10)\,R_0= 68.108(13)\,\mathrm{k}\Omega\\
+            R_\mathrm{N} &= 5.27706(10)\,R_0 = 68.108(13)\,\mathrm{k}\Omega\\
             T &= 214(12)\,\mathrm{mK}\\
             \Delta_0 &= 194.800(45)\,\mu\mathrm{eV}\\
             \gamma &= 1.1282(37)\,\mu\mathrm{eV}\\
             \sigma_V &= 10.314(10)\,\mu\mathrm{V}\,.
             \label{eq:tb:highres-parameter}
         \end{align}
+
+        These values, and the once corresponding to the shown figure below are listed in table~\ref{table:tunnel-barrier}.
+        \begin{table}
+            \centering
+            \footnotesize
+            \begin{tabular}{r|l|l|l|l}
+                Figures & \ref{fig:tb:highres:single-iv} & \ref{fig:tb:highres:temperature:single-iv}, \ref{fig:tb:highres:temperature:fit}, \ref{fig:tb:highres:temperature:cal}, \ref{fig:tb:highres:temperature:sim} & \ref{fig:tb:highres:amp18.3GHz:single-iv}, \ref{fig:tb:highres:amp18.3GHz:fit}, \ref{fig:tb:highres:amp18.3GHz:exp}, \ref{fig:tb:highres:amp18.3GHz:cal}, \ref{fig:tb:highres:amp18.3GHz:sim}& \ref{fig:tb:highres:highA-fit}, \ref{fig:tb:highres:highA-cal}, \ref{fig:tb:highres:highA-sim} \\\hline
+                $G_\mathrm{N}\ (G_0)$ & $0.1894994(35)$ & $0.187225(35)$ & $0.1891906(73)$ & $0.1889329(27)$ \\
+                $T_\mathrm{sample}\ (\mathrm{K})$ & $0.215(13)$ & $0.6148(34)$ & $0.243(30)$ & $0.223(59)$ \\
+                $\Delta_0\ (\mathrm{meV})$ & $0.194800(45)$ & $0.19448(16)$ & $0.19526(16)$ & $0.19585(24)$ \\
+                $\gamma\ (\mathrm{meV})$ & $0.0011282(38)$ & $0.00553(12)$ & $0.001289(14)$ & $0.002079(43)$ \\
+                $\sigma_V\ (\mathrm{mV})$ & $0.010315(10)$ & $0.02132(31)$ & $0.015756(45)$ & $0.01424(12)$ \\
+                $\nu\ (\mathrm{GHz})$ & -- & -- & $18.3$ & $13.6$ \\
+                $A\ (\mathrm{mV})$ & -- & -- & $0.121793(40)$ & $0.324881(47)$ \\
+                $\eta$ & -- & -- & $0.00081196(26)$ & $0.00216587(31)$ \\
+                $A_\mathrm{out}\ (\mathrm{mV})$ & -- & -- & $150$ & $150$ \\
+                $T_\mathrm{bath}\ (\mathrm{K})$ & $0.033$ & $0.697$ & $0.063$ & $0.187$
+            \end{tabular}
+            \caption{parameters, obtained by fitting.}
+            \label{table:tunnel-barrier}
+        \end{table}
 
         As one can observe the height of the coherence peaks doesnt get covered by the fit in full height. In the dI--dV one can also observe some minor deviations.
         
@@ -58,26 +78,11 @@
 
         The temperature is hard to estimate from an SIS Junction. Especially for temperature way below the critical temperature. Even though we apparently reach electronic temperatures as low as 214mK, we have to cautious with this number.
 
-        Summarizing the question if the electronic temperature is real or not, we look into temperature study to understand the electronic temperature better and measure the critical temperature in the next subsection
+        Summarizing the question if the electronic temperature is real or not, we look into temperature study to understand the electronic temperature better and measure the critical temperature in the next subsection.
 
-        \begin{figure}[t]
-            \centering
-            \subfigure[
-                \textit{I--V}
-                ]{\import{tunnelbarrier/highres/single_iv}{fit-iv.pgf}}
-            \hfill
-            \subfigure[
-                \textit{dI--dV}
-                ]{\import{tunnelbarrier/highres/single_iv}{fit-didv.pgf}}
-            \hfill
-            \subfigure[
-                \textit{dV--dI}
-                ]{\import{tunnelbarrier/highres/single_iv}{fit-dvdi.pgf}}
-            \caption{
-            Typical measured \textit{I--V} curve for TB1. \textit{dI--dV} and \textit{dV--dI} are numerical derivatives of the \textit{I--V} curve. \textit{I--V} is fitted with the BCS tunnel theory for an SIS junction.
-            }
-            \label{fig:tb:highres:single-iv}
-        \end{figure}
+        \singlefitfigure{tunnelbarrier/highres/single_iv}{
+        Typical measured \textit{I--V} curve for TB1. \textit{dI--dV} and \textit{dV--dI} are numerical derivatives of the \textit{I--V} curve. \textit{I--V} is fitted with the BCS tunnel theory for an SIS junction. Tbath = 0.0330400168316832
+        }{fig:tb:highres:single-iv}
 
 
         %=========================================================
@@ -85,13 +90,17 @@
         \label{subsec:tb:highres:temperature-calibration}
         %=========================================================
 
+            \singlefitfigure{tunnelbarrier/highres/temperature/single-fit}{
+                Tbath = 0.697499659340659 K
+            }{fig:tb:highres:temperature:single-iv}
+
             The sample holder was heated locally while a thermometer mounted next to the sample recorded the bath temperature $T_\mathrm{bath}$. For each temperature point, I fitted the measured \textit{I--V} curve with the SIS BCS/Dynes model.
             All parameters but the temperature, are hold fixed. I therefore use the fitted value as an effective electronic sample transport temperature $T_\mathrm{sample}$. It should not be identified automatically with the absolute lattice temperature of the sample holder.
 
-            Figure~\ref{fig:tb:highres:Tfit} compares $T_\mathrm{sample}$ with the measured $T_\mathrm{bath}$. The data shows two plateaus, and in between a linear dependency. The low-temperature plateau gives the effective base-temperature $T_\mathrm{base}$ floor of the transport measurement. The high-temperature saturation marks the loss of reliable superconducting fit sensitivity close to the critical temperature $T_\mathrm{c}$. I therefore use the meadian of the saturation as an estimate for the critical temperature. The mean value of the lower plateau is assumed to be the base temperature. The data in between is fitted by a linear fit.
+            Figure~\ref{fig:tb:highres:Tfit} compares $T_\mathrm{sample}$ with the measured $T_\mathrm{bath}$. The data shows two plateaus, and in between a linear dependency. The low-temperature plateau gives the effective base-temperature $T_\mathrm{base}$ floor of the transport measurement. The high-temperature saturation marks the loss of reliable superconducting fit sensitivity close to the critical temperature $T_\mathrm{c}$. I therefore use the median of the saturation as an estimate for the critical temperature. The mean value of the lower plateau is assumed to be the base temperature. The data in between is fitted by a linear fit.
             \begin{equation}
                 T_\mathrm{sample}(T_\mathrm{bath}) = \alpha_T\,T_\mathrm{bath} + T_\mathrm{off}\,.
-                \label{eq:tb:highres:temperature-calibration}
+                \label{eq:tb:highres:temperature:calibration}
             \end{equation}
             Here $\alpha_T$ is the slope relating thermometer and fitted temperature in the linear regime, and $T_\mathrm{off}$ is the extrapolated temperature offset between both axes.
 
@@ -103,7 +112,7 @@
                 \caption{
                         Temperature calibration of TB1, showing sample over bath temperature.
                     }
-                \label{fig:tb:highres:Tfit}
+                \label{fig:tb:highres:temperature:fit}
             \end{wrapfigure}
             I obtain
             \begin{align*}
@@ -113,85 +122,80 @@
                 \alpha_T &= 0.9910(20)
             \end{align*}
 
+            the critical temperature deducted from the zero temperature gap is $1.274$K, so the obtained critical temperature is well within the uncertainty. 
+
+            The lower plateau might be due to uncertainties of the fit. especially for low temperatures the shape of the IV changes just so slightly, so i expect high errors in that region. However, we can also expect a finite electronic temperature seen by the electrodes, that differ from the bath temperature. This is a well known effect. For now i assume that this base temperature, corresopond to the lowest electronic temperature. 
+
+            alpha beeing close to 1 is the expected behaviour, since we assume direct coupling between bath and sample.
+
             I think the offset temperature is due to the fact, that the iv is not measured in thermal equilibrium. Meaning, upon reaching the aimed temperature, the iv curve is measured, and for the next temparture is aimed already. so most likely not enough equilibration time for the sample reaching the same temperature as the bath.
 
-            With this calibration, the temperature series can be mapped on an approximately linear effective sample-temperature axis. Figure~\ref{fig:tb:highres:tcal} shows the measured maps up to $T_\mathrm{c}$, where the superconducting gap closes. The calibrated maps show the thermal the collapse of the gap at the transition, and an enhanced zero-bias conductance near the high-temperature end of the sweep. The corresponding SIS BCS/Dynes simulation in Fig.~\ref{fig:tb:highres:tsim} provides the model comparison for the same temperature evolution. Keep in mind, that we now can simulate the whole measured temperature series with just 4 fixed parameters.
+            With this calibration, the temperature series can be mapped on a linear effective sample-temperature axis. Figure~\ref{fig:tb:highres:tcal} shows the measured maps up to $T_\mathrm{c}$, where the superconducting gap closes. The calibrated maps shows the collapse of the gap at the transition, the reducing of the peak height at two delta and an enhanced zero-bias conductance near the high-temperature end of the sweep. 
+            
+            The figure represents three different representations of the very same dataset. On the x axis i usually show the voltage or current in reduced units. on the y axis i show axes like temperature or microwave amplitude. here, i also use reduced units in most cases. On the z axis i didstinguish between current, differential conductance or differential resistance. Again mostly in reduced units.
 
-            \begin{landscape}
-                \begin{center}
-                    \captionsetup{type=figure}
-                    \subfigure[\textit{I--V}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            % \import{tunnelbarrier/highres/temperature/cal_iv/}{main.pgf}%
-                            \includegraphics{tunnelbarrier/highres/temperature/cal_iv/main.pdf}%
-                        }%
-                    }%
-                    \hfill%
-                    \subfigure[\textit{dI--dV}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            % \import{tunnelbarrier/highres/temperature/cal_didv/}{main.pgf}%
-                            \includegraphics{tunnelbarrier/highres/temperature/cal_didv/main.pdf}%
-                        }%
-                    }%
-                    \hfill%
-                    \subfigure[\textit{dV--dI}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            % \import{tunnelbarrier/highres/temperature/cal_dvdi/}{main.pgf}%
-                            \includegraphics{tunnelbarrier/highres/temperature/cal_dvdi/main.pdf}%
-                        }%
+            The first column shows the IV characteristic, the second one the dI--dV caracteristic. this data is obtained by taking the numerical derivative. the third panel is a little different. For that we remap the voltage data on a linear current axis and take the derivative. Usually in literature one can find either dI--dV over voltage or dV--dI over current. Mostly depending on the bias. However in this thesis we show both for maximum tranparency. 
+
+            Row wise, we first show about five curves, so one can really see the line shape. Since the I--V are usually symmetrical, we usually skip the negative voltages branch. 
+            
+            below is a surface plot. here I show the many curves measured, between the five shown above. Here i also introduce a color mapping. the highest values are attributed to white, the lowest to black and in between different shades of blue. The plot limits in z correspond to black and white. With that I can give a good feeling of the 3dimensionsal landscape.
+
+            In the lowest row, we have a false color plot. This map is especially good to see features change position. e.g. the closing of the gap. however the shrinking of the coherence peak is not covered well.
+
+            The surface is hard to interpret totally, so we show cuts in the yplane and a top view as false color map. with the cuts we can see the lineshape in great detail and in the false colromap we can see the position of features evolving.
+
+            So in the end, i will now frequently use, the same nine panels to show a single dataset.            
+
+            in the surface plot of the iv you can see one darker stripe, this is due to averaging multiple IVs for that corresponding temperature during the mapping.
+            
+            The corresponding SIS BCS/Dynes simulation in Fig.~\ref{fig:tb:highres:tsim} provides the model comparison for the same temperature evolution. Keep in mind, that we now can simulate the whole measured temperature series with just 4 fixed parameters. 
+
+            The simulation and the calibrated map are in great accordance. Leaving me to believe that we did a decent job with calibrating the temperature axis. This also holds true for the low temperature end. This isn't shown to highlight the evolving features for higher temperatures.
+
+            After understanding the temperature depending behaviour, we can face the tunnel barrier under microwave irradiation.
+
+            \begin{wrapfigure}[13]{r}{1.5in}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-1.5em}
+                \import{tunnelbarrier/highres/temperature}{heater.pgf}
+                \caption{
+                        Heater power $P_\mathrm{heater}$ as a function of thermometer temperature $T_\mathrm{bath}$ during the temperature sweep.
                     }
-                    \vspace{0em}
-                    \captionof{figure}{
-                        Temperature-dependent transport maps of TB1 after calibration of the effective sample temperature. The panels show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response on the calibrated $T_\mathrm{sample}$ axis.
-                        }
-                    \label{fig:tb:highres:tcal}
-                \end{center}
-            \end{landscape}
+                \label{fig:tb:highres:temperature:heater}
+            \end{wrapfigure}
 
-            \begin{landscape}
-                \begin{center}
-                    \captionsetup{type=figure}
-                    \subfigure[\textit{I--V}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            % \import{tunnelbarrier/highres/temperature/sim_iv/}{main.pgf}%
-                            \includegraphics{tunnelbarrier/highres/temperature/sim_iv/main.pdf}%
-                        }%
-                    }%
-                    \hfill%
-                    \subfigure[\textit{dI--dV}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            % \import{tunnelbarrier/highres/temperature/sim_didv/}{main.pgf}%
-                            \includegraphics{tunnelbarrier/highres/temperature/sim_didv/main.pdf}%
-                        }%
-                    }%
-                    \hfill%
-                    \subfigure[\textit{dV--dI}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            % \import{tunnelbarrier/highres/temperature/sim_dvdi/}{main.pgf}%
-                            \includegraphics{tunnelbarrier/highres/temperature/sim_dvdi/main.pdf}%
-                        }%
-                    }
-                    \vspace{0em}
-                    \captionof{figure}{
-                        SIS BCS/Dynes simulation. The panels show the simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response using the same effective temperature axis as Fig.~\ref{fig:tb:highres:tcal}. Simulation parameter as in Eq.~\ref{eq:tb:highres-parameter}.
-                        }
-                    \label{fig:tb:highres:tsim}
-                \end{center}
-            \end{landscape}
+            \transportlandscapefigure[0em]{tunnelbarrier/highres/temperature}{cal}[0em]{
+                Temperature-dependent transport maps of TB1 after calibration of the effective sample temperature. The panels show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response on the calibrated $T_\mathrm{sample}$ axis.
+            }{fig:tb:highres:temperature:cal}
 
+            \transportlandscapefigure[0em]{tunnelbarrier/highres/temperature}{sim}[0em]{
+                SIS BCS/Dynes simulation. The panels show the simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response using the same effective temperature axis as Fig.~\ref{fig:tb:highres:temperature:cal}. Simulation parameter as in Eq.~\ref{eq:tb:highres-parameter}.
+            }{fig:tb:highres:temperature:sim}
+
+  
 
         %=========================================================
         \subsection{Amplitude Calibration}
         \label{subsec:tb:highres:amplitude-calibration}
         %=========================================================
 
-            When we start applying microwaves at a fixed frequencies and increasing amplitues, we expect to see 
+            \singlefitfigure{tunnelbarrier/highres/amp_18.3GHz/single-fit}{
+                Aout = 150mV, $eta=0.000811955279028426 \pm 2.63720437845526E-07$, Tbath = 0.06299
+            }{fig:tb:highres:amp18.3GHz:single-iv}
+
+
+            \singlefitfigure{tunnelbarrier/highres/amp_13.6GHz/single-fit}{
+                Aout = 150mV, $eta = 0.00216587378305257 \pm 3.10827452235359E-07$, Tbath=0.186777920792079
+            }{fig:tb:highres:amp13.6GHz:single-iv}
+
+
+            Next we study the behaviour of the tunnel barrier under microwave irradiation.
+            Since i dont observe a supercurrent i dont expect any form of shapiro steps or incohrenet tunneling of cooper pairs. Instead i expect to observe photon-assisted tunneling.
+
+            Figure \ref{fig:tb:highres:amp18.3GHz:exp} shows a measuremnt at 18.3 GHz. This dataset uses standard units. on the y axis is the output amplitude of the network analyzer, assuming a 50 Ohm end-impedance.
+
+            In differential conductance we observe replicas of the two delta peaks. This is in accordance with the Tien Gordon model discussed in section \ref{sec:micro:pat}. 
 
             \begin{wrapfigure}[13]{r}{0.4\textwidth}
                 \captionsetup{format=plain}%
@@ -199,173 +203,61 @@
                 \vspace{-1.5em}
                 \import{tunnelbarrier/highres/amp_18.3GHz}{fit.pgf}
                 \caption{
-                        put caption here!
+                        eta = 0.0008387229272526747
                     }
-                \label{fig:tb:highres:Afit}
+                \label{fig:tb:highres:amp18.3GHz:fit}
             \end{wrapfigure}
 
-    %         High-Res 18.3 GHz
-    %         \begin{itemize}
-    %             \item Exp over lab units
-    %             \item Exp over reduced units
-    %             \item Aout vs. A
-    %             \item Simulation
-    %         \end{itemize}
+            If we keep all the values fixed, expect the effective amplitude, seen by the junction, we can obtain this effective amplitude. Figure \ref{fig:tb:highres:amp18.3GHz:fit} show those obtained effective amplitudes over the nominal output amplitude of the vna. We observe more or less a linear dependency, however for higher nominal output amplitudes, we observe a higher slope. Also around 300mV, we can see an aprupt change in the amplitude. this is due to the fact, that the vna, switches internal source amplification and apparently is not well enough calibrated. 
 
-            \begin{landscape}
-            \vspace*{-.3in}
-                \begin{center}
-                    \captionsetup{type=figure}
-                    \subfigure[\textit{I--V}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            % \import{tunnelbarrier/highres/amp_raw_iv/}{main.pgf}%
-                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_18.3GHz/raw_iv/main.pdf}%
-                        }%
-                    }%
-                    \hfill%
-                    \subfigure[\textit{dI--dV}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            % \import{tunnelbarrier/highres/amp_raw_didv/}{main.pgf}%
-                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_18.3GHz/raw_didv/main.pdf}%
-                        }%
-                    }%
-                    \hfill%
-                    \subfigure[\textit{dV--dI}]{%
-                        \parbox[t]{2.1in}{%
-                            \centering
-                            % \import{tunnelbarrier/highres/amp_raw_dvdi/}{main.pgf}%
-                            \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_18.3GHz/raw_dvdi/main.pdf}%
-                        }%
+            The slope is equivalent to the coupling parameter $\eta$. The median slope is
+            \begin{equation}
+                \eta = 0.008(12)\,.
+            \end{equation}
+
+            However in the end, we can map those effective amplitudes on a linear axis, and have a look on the calibrated dataset over reduced units. on the yaxis we normalice the amplitude over the photon energy, so in the end its some kind of number of pphotons, that get absorbed/emitted during a tunnling event.
+
+            Figures \ref{fig:tb:highres:amp18.3GHz:exp} and \ref{fig:tb:highres:amp18.3GHz:cal} show, the measured and calibrated dataset, while \ref{fig:tb:highres:amp18.3GHz:sim} shows the corresponding simulation in reduced units.
+
+            Figure \ref{fig:tb:highres:amp13.6GHz:cal} and \ref{fig:tb:highres:amp13.6GHz:sim} shows the calibrated measurement and corresponding simulation for 13.6GHz. Since the microwave lines have different transparencies for different frequencies, at a frequency of 13.6 GHz the effective Amplitude was way higher. In this two figures one can observe replicas corresponding to an electron absorbing or emitting up to at least 25 photons per single tunnel event. 
+
+            Check tunneling time of a single electron in SIS.
+
+            This shows the insane measurement resolution of the setup. This range is not shown in literature yet. Kot et al showed pat up to 12 photons. To my knowledge this is PAT in a sis junction with the highest amplitude yet.
+
+            Since we now understood the general behaviour of the superconducting tunnel barrier under microwave irradiation, with its fairly easy theory as a control experiment in order to understand also the quality of the build setup. We look now into a similar experiment, where we cannot discribe a similar tunnel abrrier with the plain BCS and Tien Grodon model.
+
+            \begin{wrapfigure}[13]{r}{0.4\textwidth}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-1.5em}
+                \import{tunnelbarrier/highres/amp_13.6GHz}{fit.pgf}
+                \caption{
+                        eta = 0.00215061235206838
                     }
-                    \vspace{-.1in}
-                    \captionof{figure}{
-                        put caption here!
-                        }
-                    \label{fig:tb:highres:exp}
-                \end{center}
-            \end{landscape}
+                \label{fig:tb:highres:amp13.6GHz:fit}
+            \end{wrapfigure}
 
-            % \begin{landscape}
-            % \vspace*{-.3in}
-            %     \begin{center}
-            %         \captionsetup{type=figure}
-            %         \subfigure[\textit{I--V}]{%
-            %             \parbox[t]{2.1in}{%
-            %                 \centering
-            %                 % \import{tunnelbarrier/highres/amp_cal_iv/}{main.pgf}%
-            %                 \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_18.3GHz/cal_iv/main.pdf}%
-            %             }%
-            %         }%
-            %         \hfill%
-            %         \subfigure[\textit{dI--dV}]{%
-            %             \parbox[t]{2.1in}{%
-            %                 \centering
-            %                 % \import{tunnelbarrier/highres/amp_cal_didv/}{main.pgf}%
-            %                 \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_18.3GHz/cal_didv/main.pdf}%
-            %             }%
-            %         }%
-            %         \hfill%
-            %         \subfigure[\textit{dV--dI}]{%
-            %             \parbox[t]{2.1in}{%
-            %                 \centering
-            %                 % \import{tunnelbarrier/highres/amp_cal_dvdi/}{main.pgf}%
-            %                 \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_18.3GHz/cal_dvdi/main.pdf}%
-            %             }%
-            %         }
-            %         \vspace{-.1in}
-            %         \captionof{figure}{
-            %             put caption here!
-            %             }
-            %         \label{fig:tb:highres:cal}
-            %     \end{center}
-            % \end{landscape}
+            \transportlandscapefigure{tunnelbarrier/highres/amp_18.3GHz}{exp}{
+                put caption here!
+            }{fig:tb:highres:nu_13.6GHz:exp}
 
-            % \begin{landscape}
-            % \vspace*{-.3in}
-            %     \begin{center}
-            %         \captionsetup{type=figure}
-            %         \subfigure[\textit{I--V}]{%
-            %             \parbox[t]{2.1in}{%
-            %                 \centering
-            %                 % \import{tunnelbarrier/highres/amp_sim_iv/}{main.pgf}%
-            %                 \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_18.3GHz/sim_iv/main.pdf}%
-            %             }%
-            %         }%
-            %         \hfill%
-            %         \subfigure[\textit{dI--dV}]{%
-            %             \parbox[t]{2.1in}{%
-            %                 \centering
-            %                 % \import{tunnelbarrier/highres/amp_sim_didv/}{main.pgf}%
-            %                 \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_18.3GHz/sim_didv/main.pdf}%
-            %             }%
-            %         }%
-            %         \hfill%
-            %         \subfigure[\textit{dV--dI}]{%
-            %             \parbox[t]{2.1in}{%
-            %                 \centering
-            %                 % \import{tunnelbarrier/highres/amp_sim_dvdi/}{main.pgf}%
-            %                 \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_18.3GHz/sim_dvdi/main.pdf}%
-            %             }%
-            %         }
-            %         \vspace{-.1in}
-            %         \captionof{figure}{
-            %             put caption here!
-            %             }
-            %         \label{fig:tb:highres:sim}
-            %     \end{center}
-            % \end{landscape}
+            \transportlandscapefigure{tunnelbarrier/highres/amp_18.3GHz}{cal}{
+                put caption here!
+            }{fig:tb:highres:nu_13.6GHz:cal}
 
-    %     %=========================================================
-    %     \subsection{High Amplitudes}
-    %     %=========================================================
+            \transportlandscapefigure{tunnelbarrier/highres/amp_18.3GHz}{sim}{
+                put caption here!
+            }{fig:tb:highres:nu_13.6GHz:sim}
 
-    %         % \begin{landscape}
-    %         % \vspace*{-.3in}
-    %         %     \begin{center}
-    %         %         \captionsetup{type=figure}
-    %         %         \subfigure[\textit{I--V}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 % \import{tunnelbarrier/highres/amp_cal_iv/}{main.pgf}%
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_13.6GHz/cal_iv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dI--dV}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 % \import{tunnelbarrier/highres/amp_cal_didv/}{main.pgf}%
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_13.6GHz/cal_didv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dV--dI}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 % \import{tunnelbarrier/highres/amp_cal_dvdi/}{main.pgf}%
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/highres/amp_13.6GHz/cal_dvdi/main.pdf}%
-    %         %             }%
-    %         %         }
-    %         %         \vspace{-.1in}
-    %         %         \captionof{figure}{
-    %         %             put caption here!
-    %         %             }
-    %         %         \label{fig:tb:highres:cal}
-    %         %     \end{center}
-    %         % \end{landscape}
+            \transportlandscapefigure{tunnelbarrier/highres/amp_13.6GHz}{cal}[0em]{
+                check 123!
+            }{fig:tb:highres:nu_18.3GHz:cal}
 
-    %     %=========================================================
-    %     \subsection{Frequency Dependency}
-    %     \label{subsec:tb:highres:frequency-dependency}
-    %     %=========================================================
+            \transportlandscapefigure{tunnelbarrier/highres/amp_13.6GHz}{sim}{
+                put caption here!
+            }{fig:tb:highres:nu_18.3GHz:sim}
 
-    %         coupling, temperature, asymmetry
-    %         \begin{itemize}
-    %             \item those three vs. nu
-    %             \item both dIdV heatmaps for reference?
-    %         \end{itemize}
 
     % %=========================================================
     % \section{Rectification and Asymmetry}
@@ -385,197 +277,29 @@
     %     \subsection{Irradiation Study}
     %     %=========================================================
 
-    %         % \begin{landscape}
-    %         % \vspace*{-.3in}
-    %         %     \begin{center}
-    %         %         \captionsetup{type=figure}
-    %         %         \subfigure[\textit{I--V}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.75GHz/cal_iv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dI--dV}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.75GHz/cal_didv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dV--dI}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.75GHz/cal_dvdi/main.pdf}%
-    %         %             }%
-    %         %         }
-    %         %         \vspace{-.1in}
-    %         %         \captionof{figure}{
-    %         %             put caption here!
-    %         %             }
-    %         %         \label{fig:tb:asym:irradiation-7.75GHz}
-    %         %     \end{center}
-    %         % \end{landscape}
+    %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.75GHz}{cal}{
+    %         %     put caption here!
+    %         % }{fig:tb:asym:irradiation-7.75GHz}
 
-    %         % \begin{landscape}
-    %         % \vspace*{-.3in}
-    %         %     \begin{center}
-    %         %         \captionsetup{type=figure}
-    %         %         \subfigure[\textit{I--V}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.87GHz/cal_iv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dI--dV}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.87GHz/cal_didv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dV--dI}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.87GHz/cal_dvdi/main.pdf}%
-    %         %             }%
-    %         %         }
-    %         %         \vspace{-.1in}
-    %         %         \captionof{figure}{
-    %         %             put caption here!
-    %         %             }
-    %         %         \label{fig:tb:asym:irradiation-7.87GHz}
-    %         %     \end{center}
-    %         % \end{landscape}
+    %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.87GHz}{cal}{
+    %         %     put caption here!
+    %         % }{fig:tb:asym:irradiation-7.87GHz}
 
-    %         % \begin{landscape}
-    %         % \vspace*{-.3in}
-    %         %     \begin{center}
-    %         %         \captionsetup{type=figure}
-    %         %         \subfigure[\textit{I--V}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.89GHz/cal_iv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dI--dV}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.89GHz/cal_didv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dV--dI}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.89GHz/cal_dvdi/main.pdf}%
-    %         %             }%
-    %         %         }
-    %         %         \vspace{-.1in}
-    %         %         \captionof{figure}{
-    %         %             put caption here!
-    %         %             }
-    %         %         \label{fig:tb:asym:irradiation-7.89GHz}
-    %         %     \end{center}
-    %         % \end{landscape}
+    %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.89GHz}{cal}{
+    %         %     put caption here!
+    %         % }{fig:tb:asym:irradiation-7.89GHz}
 
-    %         % \begin{landscape}
-    %         % \vspace*{-.3in}
-    %         %     \begin{center}
-    %         %         \captionsetup{type=figure}
-    %         %         \subfigure[\textit{I--V}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.91GHz/cal_iv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dI--dV}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.91GHz/cal_didv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dV--dI}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.91GHz/cal_dvdi/main.pdf}%
-    %         %             }%
-    %         %         }
-    %         %         \vspace{-.1in}
-    %         %         \captionof{figure}{
-    %         %             put caption here!
-    %         %             }
-    %         %         \label{fig:tb:asym:irradiation-7.91GHz}
-    %         %     \end{center}
-    %         % \end{landscape}
+    %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.91GHz}{cal}{
+    %         %     put caption here!
+    %         % }{fig:tb:asym:irradiation-7.91GHz}
 
-    %         % \begin{landscape}
-    %         % \vspace*{-.3in}
-    %         %     \begin{center}
-    %         %         \captionsetup{type=figure}
-    %         %         \subfigure[\textit{I--V}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.96GHz/cal_iv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dI--dV}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.96GHz/cal_didv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dV--dI}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_7.96GHz/cal_dvdi/main.pdf}%
-    %         %             }%
-    %         %         }
-    %         %         \vspace{-.1in}
-    %         %         \captionof{figure}{
-    %         %             put caption here!
-    %         %             }
-    %         %         \label{fig:tb:asym:irradiation-7.96GHz}
-    %         %     \end{center}
-    %         % \end{landscape}
+    %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{cal}{
+    %         %     put caption here!
+    %         % }{fig:tb:asym:irradiation-7.96GHz}
 
-    %         % \begin{landscape}
-    %         % \vspace*{-.3in}
-    %         %     \begin{center}
-    %         %         \captionsetup{type=figure}
-    %         %         \subfigure[\textit{I--V}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_8.05GHz/cal_iv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dI--dV}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_8.05GHz/cal_didv/main.pdf}%
-    %         %             }%
-    %         %         }%
-    %         %         \hfill%
-    %         %         \subfigure[\textit{dV--dI}]{%
-    %         %             \parbox[t]{2.1in}{%
-    %         %                 \centering
-    %         %                 \includegraphics[width=\linewidth]{tunnelbarrier/asym/irradiation/nu_8.05GHz/cal_dvdi/main.pdf}%
-    %         %             }%
-    %         %         }
-    %         %         \vspace{-.1in}
-    %         %         \captionof{figure}{
-    %         %             put caption here!
-    %         %             }
-    %         %         \label{fig:tb:asym:irradiation-8.05GHz}
-    %         %     \end{center}
-    %         % \end{landscape}
+    %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_8.05GHz}{cal}{
+    %         %     put caption here!
+    %         % }{fig:tb:asym:irradiation-8.05GHz}
 
     %         \begin{landscape}
     %             \begin{center}
