@@ -45,6 +45,11 @@
             \frac{E_\mathrm{J}}{k_\mathrm{B}} &= \frac{\hbar I_\mathrm{c}}{2e k_\mathrm{B}} \approx 0.11\,\mathrm{K}\,.
             \label{eq:tb:highres:josephson-estimate}
         \end{align}
+        
+        \singlefitfigure{tunnelbarrier/highres/single_iv}{
+        Typical measured \textit{I--V} curve for TB1. \textit{dI--dV} and \textit{dV--dI} are numerical derivatives of the \textit{I--V} curve. \textit{I--V} is fitted with the BCS tunnel theory for an SIS junction. Tbath = 0.0330400168316832
+        }{fig:tb:highres:single-iv}
+
 
         This Josephson energy is comparable to or smaller than the effective electronic temperature extracted below. It is also small compared with plausible charging-energy scales of the barrier region. The capacitance of TB1 was not measured independently, but the lithographic overlap is of order $50\times100\,\mathrm{nm^2}$. A parallel-plate estimate with an aluminum-oxide thickness of $1{-}2\,\mathrm{nm}$ and $\epsilon_\mathrm{r}\approx8{-}10$ gives $C_\mathrm{TB}\sim0.2{-}0.4\,\mathrm{fF}$, corresponding to $E_\mathrm{c}/k_\mathrm{B}=e^2/(2Ck_\mathrm{B})\sim2{-}5\,\mathrm{K}$. Related MCBJ-SET devices give comparable scales: Sprenger extracted individual junction capacitances of order $100\,\mathrm{aF}$, while Sobral Rey found total island capacitances of order $1\,\mathrm{fF}$ from Coulomb-diamond analyses. The Lorenz--Sprenger--Scheer MCBJ-SET geometry used an oxide-barrier overlap of roughly $50\times50\,\mathrm{nm^2}$ and provides the same order-of-magnitude reference for the tunnel-barrier area \cite{sprenger_herstellung_2016,lorenz_sset_mar_2018,sobral-rey_interplay_2022,sobral_rey_hybrid_sset_2024}. Even allowing for stray capacitance that increases the effective capacitance to several femtofarads, the charging scale remains comparable to or larger than $E_\mathrm{J}$. The unengineered break-junction microwave environment can therefore wash out the dc phase relation through thermal, charging, voltage-noise, and environmental phase fluctuations. The electrodes remain superconducting, but the phase difference across the barrier is not stiff enough to produce a resolvable zero-voltage branch \cite{ambegaokar_tunneling_1963,tinkham_introduction_2004,grabert_single_2013}.
 
@@ -63,10 +68,6 @@
         The electronic temperature is difficult to estimate from an SIS junction far below the critical temperature because the spectrum changes only weakly in that regime. Although the base-temperature fit gives values as low as $214\,\mathrm{mK}$, I treat this number as an effective transport temperature rather than an absolute thermometer reading.
 
         The next subsection therefore uses a controlled temperature sweep to test this effective-temperature interpretation, determine the critical temperature, and establish the visualization format used for the later microwave-amplitude maps.
-
-        \singlefitfigure{tunnelbarrier/highres/single_iv}{
-        Typical measured \textit{I--V} curve for TB1. \textit{dI--dV} and \textit{dV--dI} are numerical derivatives of the \textit{I--V} curve. \textit{I--V} is fitted with the BCS tunnel theory for an SIS junction. Tbath = 0.0330400168316832
-        }{fig:tb:highres:single-iv}
 
         \begin{figure}
             \centering
