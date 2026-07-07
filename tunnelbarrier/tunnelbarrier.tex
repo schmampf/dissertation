@@ -27,7 +27,7 @@
             \includegraphics[width=0.9\linewidth]{tunnelbarrier/samples/OI-25c-09.png}
             \vspace{-.5em}
             \caption{
-                    SEM image of TB1. The $70\,\mathrm{nm}$ lower Al layer was oxidized at $4\,\mathrm{mbar}$ for $2:15\,\mathrm{min}$. The angled top layer corresponds to $92\,\mathrm{nm}$ Al, and the barrier overlap is about $50\times100\,\mathrm{nm^2}$.
+                    SEM image of TB1. The $70\,\mathrm{nm}$ lower Al layer was oxidized in-situ at $4\,\mathrm{mbar}$ for $2$:$15\,\mathrm{min}$. The angled top layer corresponds to $92\,\mathrm{nm}$ Al, and the barrier overlap is about $50\times100\,\mathrm{nm^2}$.
                 }
             \label{fig:tb:highres:image-TB1}
         \end{wrapfigure}
@@ -102,22 +102,12 @@
 
             The sample holder was heated locally while a thermometer next to the device recorded the bath temperature $T_\mathrm{bath}$. For each temperature point, I fitted the measured \textit{I--V} curve with the SIS BCS model and extracted the fitted temperature $T_\mathrm{fit}$. I use $T_\mathrm{bath}$ for the thermometer reading and $T_\mathrm{fit}$ for the effective electronic transport temperature required by the tunnel model. For this sweep, I used the static reference parameters in the temperature column of Table~\ref{table:tunnelbarrier:highres}. Only $T_\mathrm{fit}$ varied point by point. The calibration therefore tests how the fitted SIS response relates the externally controlled bath-temperature axis to an effective transport-temperature axis.
 
-            \begin{wrapfigure}[17]{r}{1.6in}
-                \captionsetup{format=plain}%
-                \centering
-                \vspace{-0.5em}
-                \import{tunnelbarrier/highres/temperature}{fit.pgf}
-                \caption{
-                        Temperature calibration of TB1. The plot shows the low-temperature plateau, the linear fit region, and the high-temperature saturation near $T_\mathrm{c}$.
-                    }
-                \label{fig:tb:highres:temperature:fit}
-            \end{wrapfigure}
-
             Figure~\ref{fig:tb:highres:temperature:fit} compares $T_\mathrm{fit}$ with $T_\mathrm{bath}$. The calibration curve has three regimes: a base plateau, an almost linear middle region, and saturation at high bath temperature. I identify the base plateau with the effective temperature floor $T_\mathrm{base}$ of the transport measurement. The high-temperature saturation marks the loss of reliable superconducting fit sensitivity close to the critical temperature $T_\mathrm{c}$. I therefore use the median of the saturation as an estimate for $T_\mathrm{c}$ and fit the middle region with
             \begin{equation}
                 T_\mathrm{fit}(T_\mathrm{bath}) = \alpha_T\,T_\mathrm{bath} + T_\mathrm{off}\,.
                 \label{eq:tb:highres:temperature:calibration}
             \end{equation}
+
             Here $\alpha_T$ is the slope relating thermometer and fitted temperature in the linear regime, and $T_\mathrm{off}$ is the extrapolated temperature offset between both axes. This procedure gives
             \begin{equation}
                 \begin{aligned}
@@ -128,6 +118,17 @@
                 \end{aligned}
                 \label{eq:tb:highres:temperature:parameters}
             \end{equation}
+
+            \begin{wrapfigure}[17]{r}{1.6in}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-0.5em}
+                \import{tunnelbarrier/highres/temperature}{fit.pgf}
+                \caption{
+                        Temperature calibration of TB1. The plot shows the low-temperature plateau, the linear fit region, and the high-temperature saturation near $T_\mathrm{c}$.
+                    }
+                \label{fig:tb:highres:temperature:fit}
+            \end{wrapfigure}
 
             The critical temperature inferred from the zero-temperature gap is about $1.274\,\mathrm{K}$, so the value obtained from the temperature sweep agrees within the uncertainty. The slope $\alpha_T$ is close to unity, as expected when the thermometer and electronic transport temperature follow each other in the intermediate region. The negative offset may result from limited equilibration after each heater setpoint change, because I waited only a few seconds before recording the next \textit{I--V} curve.
 
@@ -250,23 +251,23 @@
             }{fig:tb:highres:amp13.6GHz:sim}
 
 
-    % %=========================================================
-    % \section{Rectification and Asymmetry}
-    % \label{sec:tb:asym}
-    % %=========================================================
-    %     Sample: TB2 (OI-24d-09)
-    %     Setup: as discribed in P. Raif + Gate line
+    %=========================================================
+    \section{Rectification and Asymmetry}
+    \label{sec:tb:asym}
+    %=========================================================
+        Sample: TB2 (OI-24d-09)
+        Setup: as discribed in P. Raif + Gate line
         
-        % \begin{figure}[H]
-        %     \centering
-        %     \includegraphics[width=0.5\textwidth]{tunnelbarrier/samples/OI-24d-09.png}
-        %     \caption{SEM Image of TB2 (OI-24d-09), 60+77, 3.4mbar, 3min}
-        %     \label{fig:tunnelbarrier:image-TB2}
-        % \end{figure}
+        \begin{figure}[H]
+            \centering
+            \includegraphics[width=0.5\textwidth]{tunnelbarrier/samples/OI-24d-09.png}
+            \caption{SEM Image of TB2 (OI-24d-09), 60+77, 3.4mbar, 3min}
+            \label{fig:tunnelbarrier:image-TB2}
+        \end{figure}
 
-    %     %=========================================================
-    %     \subsection{Irradiation Study}
-    %     %=========================================================
+        %=========================================================
+        \subsection{Irradiation Study}
+        %=========================================================
 
     %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.75GHz}{cal}{
     %         %     put caption here!
@@ -292,71 +293,71 @@
     %         %     put caption here!
     %         % }{fig:tb:asym:irradiation-8.05GHz}
 
-    %         \begin{landscape}
-    %             \begin{center}
-    %                 \includegraphics{tunnelbarrier/asym/irradiation/iv.pdf}
-    %                 \vspace{-.1in}
-    %                 \captionof{figure}{
-    %                     put caption here!
-    %                     }
-    %                 \label{fig:tb:asym:irradiation-iv}
-    %             \end{center}
-    %         \end{landscape}
+            \begin{landscape}
+                \begin{center}
+                    \includegraphics{tunnelbarrier/asym/irradiation/iv.pdf}
+                    \vspace{-.1in}
+                    \captionof{figure}{
+                        put caption here!
+                        }
+                    \label{fig:tb:asym:irradiation-iv}
+                \end{center}
+            \end{landscape}
 
-    %         \begin{landscape}
-    %             \begin{center}
-    %                 \includegraphics{tunnelbarrier/asym/irradiation/iv-img.pdf}
-    %                 \vspace{-.1in}
-    %                 \captionof{figure}{
-    %                     put caption here!
-    %                     }
-    %                 \label{fig:tb:asym:irradiation-iv-img}
-    %             \end{center}
-    %         \end{landscape}
+            \begin{landscape}
+                \begin{center}
+                    \includegraphics{tunnelbarrier/asym/irradiation/iv-img.pdf}
+                    \vspace{-.1in}
+                    \captionof{figure}{
+                        put caption here!
+                        }
+                    \label{fig:tb:asym:irradiation-iv-img}
+                \end{center}
+            \end{landscape}
 
-    %         \begin{landscape}
-    %             \begin{center}
-    %                 \includegraphics{tunnelbarrier/asym/irradiation/didv.pdf}
-    %                 \vspace{-.1in}
-    %                 \captionof{figure}{
-    %                     put caption here!
-    %                     }
-    %                 \label{fig:tb:asym:irradiation-didv}
-    %             \end{center}
-    %         \end{landscape}
+            \begin{landscape}
+                \begin{center}
+                    \includegraphics{tunnelbarrier/asym/irradiation/didv.pdf}
+                    \vspace{-.1in}
+                    \captionof{figure}{
+                        put caption here!
+                        }
+                    \label{fig:tb:asym:irradiation-didv}
+                \end{center}
+            \end{landscape}
 
-    %         \begin{landscape}
-    %             \begin{center}
-    %                 \import{tunnelbarrier/asym/irradiation/}{didv-img.pgf}
-    %                 \vspace{-.1in}
-    %                 \captionof{figure}{
-    %                     put caption here!
-    %                     }
-    %                 \label{fig:tb:asym:irradiation-didv-img}
-    %             \end{center}
-    %         \end{landscape}
+            \begin{landscape}
+                \begin{center}
+                    \import{tunnelbarrier/asym/irradiation/}{didv-img.pgf}
+                    \vspace{-.1in}
+                    \captionof{figure}{
+                        put caption here!
+                        }
+                    \label{fig:tb:asym:irradiation-didv-img}
+                \end{center}
+            \end{landscape}
             
-    %         \begin{landscape}
-    %             \begin{center}
-    %                 \includegraphics{tunnelbarrier/asym/irradiation/dvdi.pdf}
-    %                 \vspace{-.1in}
-    %                 \captionof{figure}{
-    %                     put caption here!
-    %                     }
-    %                 \label{fig:tb:asym:irradiation-dvdi}
-    %             \end{center}
-    %         \end{landscape}
+            \begin{landscape}
+                \begin{center}
+                    \includegraphics{tunnelbarrier/asym/irradiation/dvdi.pdf}
+                    \vspace{-.1in}
+                    \captionof{figure}{
+                        put caption here!
+                        }
+                    \label{fig:tb:asym:irradiation-dvdi}
+                \end{center}
+            \end{landscape}
 
-    %         \begin{landscape}
-    %             \begin{center}
-    %                 \includegraphics{tunnelbarrier/asym/irradiation/dvdi-img.pdf}
-    %                 \vspace{-.1in}
-    %                 \captionof{figure}{
-    %                     put caption here!
-    %                     }
-    %                 \label{fig:tb:asym:irradiation-dvdi-img}
-    %             \end{center}
-    %         \end{landscape}
+            \begin{landscape}
+                \begin{center}
+                    \includegraphics{tunnelbarrier/asym/irradiation/dvdi-img.pdf}
+                    \vspace{-.1in}
+                    \captionof{figure}{
+                        put caption here!
+                        }
+                    \label{fig:tb:asym:irradiation-dvdi-img}
+                \end{center}
+            \end{landscape}
 
     %     %=========================================================
     %     \subsection{Antenna vs. Stripline}
