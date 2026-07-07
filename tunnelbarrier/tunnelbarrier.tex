@@ -20,14 +20,14 @@
     \label{sec:tb:highres}
     %=========================================================
 
-        \begin{wrapfigure}[12]{r}{0.4\textwidth}
+        \begin{wrapfigure}[14]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
             \vspace{-1.5em}
             \includegraphics[width=0.9\linewidth]{tunnelbarrier/samples/OI-25c-09.png}
             \vspace{-.5em}
             \caption{
-                    SEM image of TB1. overlap of about $50\times100\,\mathrm{nm^2}$. 80nm + 100nm?
+                    SEM image of TB1. The $70\,\mathrm{nm}$ lower Al layer was oxidized at $4\,\mathrm{mbar}$ for $2:15\,\mathrm{min}$. The angled top layer corresponds to $92\,\mathrm{nm}$ Al, and the barrier overlap is about $50\times100\,\mathrm{nm^2}$.
                 }
             \label{fig:tb:highres:image-TB1}
         \end{wrapfigure}
@@ -48,7 +48,7 @@
         The estimated critical current is large enough to be observable in principle, but the thermal energy $E_\mathrm{T}$ is of the same order and already about twice as large as $E_\mathrm{J}$.
         
         \singlefitfigure{tunnelbarrier/highres/single_iv}{
-        Typical measured \textit{I--V} curve for TB1. \textit{dI--dV} and \textit{dV--dI} are numerical derivatives of the \textit{I--V} curve. \textit{I--V} is fitted with the BCS tunnel theory for an SIS junction. Tbath = 0.0330400168316832
+        Representative static transport trace of TB1 at $T_\mathrm{bath}=33\,\mathrm{mK}$. The panels show the measured \textit{I--V} curve and the numerically derived \textit{dI--dV} and \textit{dV--dI} responses. The \textit{I--V} curve is fitted with the SIS BCS/Dynes model, with the extracted parameters listed in Table~\ref{table:tunnelbarrier:highres}.
         }{fig:tb:highres:single-iv}
 
         The capacitance of TB1 was not measured independently, so I estimate only an order of magnitude. Using the same geometrical parallel-plate approximation as Lorenz et al. for the present lithographic overlap gives $C_\mathrm{TB}\sim0.2{-}0.4\,\mathrm{fF}$. This is consistent with related MCBJ-SET estimates by Susanne Sprenger, who found junction capacitances of about $0.1\,\mathrm{fF}$, and Laura Sobral Rey, who found total island capacitances of about $1.2\,\mathrm{fF}$ \cite{sprenger_herstellung_2016,lorenz_sset_mar_2018,sobral-rey_interplay_2022,sobral_rey_hybrid_sset_2024}.
@@ -79,7 +79,7 @@
             \label{table:tunnelbarrier:highres}
         \end{figure}
         
-        The fitted gap $\Delta_0\approx195\,\mu\mathrm{eV}$ is slightly larger than the representative aluminum value of about $180\,\mu\mathrm{eV}$ used in Sec.~\ref{subsec:micro:superconducting-gap}. I do not interpret this difference as unusual. Thin-film aluminum commonly shows sample-dependent shifts of both $\Delta_0$ and $T_\mathrm{c}$ due to thickness, disorder, and fabrication conditions, and the weak-coupling estimate from $\Delta_0$ gives $T_\mathrm{c}\approx1.28\,\mathrm{K}$, consistent with the temperature calibration below \cite{giaever_study_1961,tinkham_introduction_2004}. The normal-state conductance $G_\mathrm{N}\simeq0.19\,G_0$ places TB1 in the tunnel limit, so BCS/Dynes quasiparticle tunneling and Tien--Gordon photon-assisted tunneling are the appropriate minimal models.
+        The fitted gap $\Delta_0\approx195\,\mu\mathrm{eV}$ is slightly larger than the representative aluminum value of about $180\,\mu\mathrm{eV}$ used in Sec.~\ref{subsec:micro:superconducting-gap}. I do not interpret this difference as unusual. Thin-film aluminum commonly shows sample-dependent shifts of both $\Delta_0$ and $T_\mathrm{c}$ due to thickness, disorder, and fabrication conditions, and the weak-coupling estimate from $\Delta_0$ gives $T_\mathrm{c}\approx1.274\,\mathrm{K}$, consistent with the temperature calibration below \cite{giaever_study_1961,tinkham_introduction_2004}. The normal-state conductance $G_\mathrm{N}\simeq0.19\,G_0$ places TB1 in the tunnel limit, so BCS/Dynes quasiparticle tunneling and Tien--Gordon photon-assisted tunneling are the appropriate minimal models.
 
         The fitted electronic temperature $T_\mathrm{fit}$ is difficult to estimate from an SIS junction far below the critical temperature because the spectrum changes only weakly in that regime. Although the fit gives values as low as $215(13)\,\mathrm{mK}$, I treat this number with caution.
 
@@ -95,111 +95,75 @@
         %=========================================================
 
             \singlefitfigure{tunnelbarrier/highres/temperature/single-fit}{
-                Tbath = 0.697499659340659 K
+                Representative \textit{I--V} fit from the temperature-calibration sweep at $T_\mathrm{bath}=697\,\mathrm{mK}$. The SIS BCS/Dynes fit is used to extract the effective transport temperature $T_\mathrm{fit}$ for this bath-temperature point.
             }{fig:tb:highres:temperature:single-iv}
 
-            The sample holder was heated locally while a thermometer mounted next to the sample recorded the bath temperature $T_\mathrm{bath}$. For each temperature point, I fitted the measured \textit{I--V} curve with the SIS BCS/Dynes model. I distinguish this thermometer temperature from the temperature parameter $T_\mathrm{fit}$ obtained from the transport fit. The former is measured at the sample holder, while the latter describes the thermal broadening required by the model. I therefore interpret $T_\mathrm{fit}$ as an effective electronic transport temperature, not as an independent measurement of the lattice temperature of the sample.
-            All parameters but the temperature are held fixed during this calibration.
+            The sample holder was heated locally while a thermometer next to the device recorded the bath temperature $T_\mathrm{bath}$. For each temperature point, I fitted the measured \textit{I--V} curve with the SIS BCS/Dynes model and extracted the fitted temperature $T_\mathrm{fit}$. I use $T_\mathrm{bath}$ for the thermometer reading and $T_\mathrm{fit}$ for the effective electronic transport temperature required by the tunnel model. The fixed static parameters are the zero-temperature gap $\Delta_0$, the normal-state conductance $G_\mathrm{N}$, the Dynes broadening $\gamma$, and the voltage broadening $\sigma_V$ from Table~\ref{table:tunnelbarrier:highres}. The calibration therefore tests how the fitted SIS response maps the externally controlled bath-temperature axis onto an effective transport-temperature axis.
 
-            Figure~\ref{fig:tb:highres:temperature:fit} compares $T_\mathrm{fit}$ with the measured $T_\mathrm{bath}$. The data shows two plateaus, and in between a linear dependency. The low-temperature plateau gives the effective base-temperature $T_\mathrm{base}$ floor of the transport measurement. The high-temperature saturation marks the loss of reliable superconducting fit sensitivity close to the critical temperature $T_\mathrm{c}$. I therefore use the median of the saturation as an estimate for the critical temperature. The mean value of the lower plateau is assumed to be the base temperature. The data in between is fitted by a linear fit.
-            \begin{equation}
-                T_\mathrm{fit}(T_\mathrm{bath}) = \alpha_T\,T_\mathrm{bath} + T_\mathrm{off}\,.
-                \label{eq:tb:highres:temperature:calibration}
-            \end{equation}
-            Here $\alpha_T$ is the slope relating thermometer and fitted temperature in the linear regime, and $T_\mathrm{off}$ is the extrapolated temperature offset between both axes.
-
-            \begin{wrapfigure}[13]{r}{1.6in}
+            \begin{wrapfigure}[17]{r}{1.6in}
                 \captionsetup{format=plain}%
                 \centering
                 \vspace{-0.5em}
                 \import{tunnelbarrier/highres/temperature}{fit.pgf}
                 \caption{
-                        Temperature calibration of TB1, showing sample over bath temperature.
+                        Temperature calibration of TB1. The plot shows the low-temperature plateau, the linear fit region, and the high-temperature saturation near $T_\mathrm{c}$.
                     }
                 \label{fig:tb:highres:temperature:fit}
             \end{wrapfigure}
-            I obtain
-            \begin{align*}
-                T_\mathrm{c} &= 1.267(17)\,\mathrm{K}\\
-                T_\mathrm{base} &= 0.295(15)\,\mathrm{K}\\
-                T_\mathrm{off} &= -0.0778(20)\,\mathrm{K}\\
-                \alpha_T &= 0.9910(20)
-            \end{align*}
 
-            the critical temperature deducted from the zero temperature gap is $1.274$K, so the obtained critical temperature is well within the uncertainty. 
+            Figure~\ref{fig:tb:highres:temperature:fit} compares $T_\mathrm{fit}$ with $T_\mathrm{bath}$. The calibration curve has three regimes: a base plateau, an almost linear middle region, and saturation at high bath temperature. I identify the base plateau with the effective temperature floor $T_\mathrm{base}$ of the transport measurement. The high-temperature saturation marks the loss of reliable superconducting fit sensitivity close to the critical temperature $T_\mathrm{c}$. I therefore use the median of the saturation as an estimate for $T_\mathrm{c}$ and fit the middle region with
+            \begin{equation}
+                T_\mathrm{fit}(T_\mathrm{bath}) = \alpha_T\,T_\mathrm{bath} + T_\mathrm{off}\,.
+                \label{eq:tb:highres:temperature:calibration}
+            \end{equation}
+            Here $\alpha_T$ is the slope relating thermometer and fitted temperature in the linear regime, and $T_\mathrm{off}$ is the extrapolated temperature offset between both axes. This procedure gives
+            \begin{equation}
+                \begin{aligned}
+                    T_\mathrm{c} &= 1.267(17)\,\mathrm{K}\\
+                    T_\mathrm{base} &= 0.295(15)\,\mathrm{K}\\
+                    T_\mathrm{off} &= -0.0778(20)\,\mathrm{K}\\
+                    \alpha_T &= 0.9910(20)
+                \end{aligned}
+                \label{eq:tb:highres:temperature:parameters}
+            \end{equation}
 
-            The lower plateau might be due to uncertainties of the fit. especially for low temperatures the shape of the IV changes just so slightly, so i expect high errors in that region. However, we can also expect a finite electronic temperature seen by the electrodes, that differ from the bath temperature. This is a well known effect. For now i assume that this base temperature, corresopond to the lowest electronic temperature. 
+            The critical temperature inferred from the zero-temperature gap is about $1.274\,\mathrm{K}$, so the value obtained from the temperature sweep agrees within the uncertainty. The slope $\alpha_T$ is close to unity, as expected when the thermometer and electronic transport temperature follow each other in the intermediate region. The negative offset may result from limited equilibration after each heater setpoint change, because I waited only a few seconds before recording the next \textit{I--V} curve.
 
-            alpha beeing close to 1 is the expected behaviour, since we assume direct coupling between bath and sample.
+            The low-temperature plateau should not be read as a direct thermometer measurement. Far below $T_\mathrm{c}$, an SIS spectrum changes only weakly with temperature, so the fit has limited sensitivity to small changes in $T_\mathrm{fit}$. In addition, residual radiation, imperfect line thermalization, and bias dissipation can produce a real electronic temperature floor above the thermometer reading. I therefore interpret $T_\mathrm{base}$ as the lowest effective transport temperature resolved by this calibration.
 
-            I think the offset temperature is due to the fact, that the iv is not measured in thermal equilibrium. Meaning, upon reaching the aimed temperature, the iv curve is measured, and for the next temparture is aimed already. so most likely not enough equilibration time for the sample reaching the same temperature as the bath.
+            With this calibration, I remap the measured temperature series from the recorded $T_\mathrm{bath}$ coordinate to the corresponding effective $T_\mathrm{fit}$ coordinate. The transport data themselves are unchanged, but each trace is placed at the fitted transport temperature. Figure~\ref{fig:tb:highres:temperature:cal} shows the remapped maps up to the superconducting transition. The gap closes near $T_\mathrm{c}$, the coherence peaks at the gap edge shrink, and the zero-bias conductance increases near the high-temperature end of the sweep.
 
-            With this calibration, the temperature series can be mapped on a linear effective sample-temperature axis. Figure~\ref{fig:tb:highres:temperature:cal} shows the measured maps up to $T_\mathrm{c}$, where the superconducting gap closes. The calibrated maps shows the collapse of the gap at the transition, the reducing of the peak height at two delta and an enhanced zero-bias conductance near the high-temperature end of the sweep. 
-            
-            The figure represents three different representations of the very same dataset. On the x axis i usually show the voltage or current in reduced units. on the y axis i show axes like temperature or microwave amplitude. here, i also use reduced units in most cases. On the z axis i didstinguish between current, differential conductance or differential resistance. Again mostly in reduced units.
+            This figure also introduces the transport-landscape format used throughout the experimental results chapter. The three columns show the same dataset as \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI}. The top row shows representative traces, which preserve the detailed line shape. The middle row shows the full sweep as a surface, which gives a three-dimensional view of the measured response. The bottom row shows the same sweep as a false-color map, which makes the motion of spectral features easier to follow. Surface height and map color use the same value range, so both views can be compared directly. I show both derivative representations because \textit{dI--dV} is natural for voltage-biased gap features, while \textit{dV--dI} on a current axis remains useful when comparing to current-biased views. The same nine-panel layout is reused below for the microwave-amplitude maps.
 
-            The first column shows the IV characteristic, the second one the dI--dV caracteristic. this data is obtained by taking the numerical derivative. the third panel is a little different. For that we remap the voltage data on a linear current axis and take the derivative. Usually in literature one can find either dI--dV over voltage or dV--dI over current. Mostly depending on the bias. However in this thesis we show both for maximum tranparency. 
+            The corresponding SIS BCS simulation in Fig.~\ref{fig:tb:highres:temperature:sim} uses the same calibrated $T_\mathrm{fit}$ axis and the fixed static parameters listed in Table~\ref{table:tunnelbarrier:highres}. The simulation reproduces the robust trends of the measurement, namely the gap closing, the reduction of the coherence-peak height, and the increase in zero-bias conductance. This agreement supports using the calibrated transport-temperature axis for the later microwave analysis.
 
-            Row wise, we first show about five curves, so one can really see the line shape. Since the I--V are usually symmetrical, we usually skip the negative voltages branch. 
-            
-            below is a surface plot. here I show the many curves measured, between the five shown above. Here i also introduce a color mapping. the highest values are attributed to white, the lowest to black and in between different shades of blue. The plot limits in z correspond to black and white. With that I can give a good feeling of the 3dimensionsal landscape.
-
-            In the lowest row, we have a false color plot. This map is especially good to see features change position. e.g. the closing of the gap. however the shrinking of the coherence peak is not covered well.
-
-            The surface is hard to interpret totally, so we show cuts in the yplane and a top view as false color map. with the cuts we can see the lineshape in great detail and in the false colromap we can see the position of features evolving.
-
-            So in the end, i will now frequently use, the same nine panels to show a single dataset.            
-
-            in the surface plot of the iv you can see one darker stripe, this is due to averaging multiple IVs for that corresponding temperature during the mapping.
-            
-            The corresponding SIS BCS/Dynes simulation in Fig.~\ref{fig:tb:highres:temperature:sim} provides the model comparison for the same temperature evolution. Keep in mind, that we now can simulate the whole measured temperature series with just 4 fixed parameters. 
-
-            The simulation and the calibrated map are in great accordance. Leaving me to believe that we did a decent job with calibrating the temperature axis. This also holds true for the low temperature end. This isn't shown to highlight the evolving features for higher temperatures.
-
-            After understanding the temperature depending behaviour, we can face the tunnel barrier under microwave irradiation.
-
-            \begin{wrapfigure}[13]{r}{1.5in}
-                \captionsetup{format=plain}%
-                \centering
-                \vspace{-1.5em}
-                \import{tunnelbarrier/highres/temperature}{heater.pgf}
-                \caption{
-                        Heater power $P_\mathrm{heater}$ as a function of thermometer temperature $T_\mathrm{bath}$ during the temperature sweep.
-                    }
-                \label{fig:tb:highres:temperature:heater}
-            \end{wrapfigure}
+            With the temperature axis fixed, I next use photon-assisted sidebands to calibrate the microwave amplitude.
 
             \transportlandscapefigure[0em]{tunnelbarrier/highres/temperature}{cal}[0em]{
-                Temperature-dependent transport maps of TB1 after calibration of the fitted temperature. The panels show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response on the calibrated $T_\mathrm{fit}$ axis.
+                Temperature-dependent transport maps of TB1 on the calibrated $T_\mathrm{fit}$ axis. The three columns show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response, while the rows show representative traces, a surface view, and a false-color map of the same data. A darker stripe in the \textit{I--V} surface originates from averaging multiple \textit{I--V} curves at the corresponding temperature point.
             }{fig:tb:highres:temperature:cal}
 
             \transportlandscapefigure[0em]{tunnelbarrier/highres/temperature}{sim}[0em]{
-                SIS BCS/Dynes simulation. The panels show the simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response using the same effective temperature axis as Fig.~\ref{fig:tb:highres:temperature:cal}. Simulation parameters are listed in Table~\ref{table:tunnelbarrier:highres}.
+                SIS BCS simulation of the temperature sweep. The panels show the simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response using the same temperature axis as Fig.~\ref{fig:tb:highres:temperature:cal}. The fixed static parameters are listed in Table~\ref{table:tunnelbarrier:highres}.
             }{fig:tb:highres:temperature:sim}
-
-  
 
         %=========================================================
         \subsection{Amplitude Calibration}
         \label{subsec:tb:highres:amplitude-calibration}
         %=========================================================
 
+            Next i want to discuss three points here: PAT is the right theory, the fit is not quantitavily. Fitted amplitude used for mapping.
+
+            why tb1 is the right reference junction? clear qp onsets. no sc. -> clean pat expected  Sec.~\ref{subsec:micro:pat}.
+
+            the measurement at nu=18.3 Ghz is shown in fig:tb:highres:amp18.3GHz:exp. in laboratory units. The vertical axis is the nominal output amplitude of the network analyzer, assuming a $50\,\Omega$ termination.
+
+            fitting strategy. all parameter fixed, except amplitude. fixed parameter from fit in this figure. numbers in table.
             \singlefitfigure{tunnelbarrier/highres/amp_18.3GHz/single-fit}{
                 Aout = 150mV, $eta=0.000811955279028426 \pm 2.63720437845526E-07$, Tbath = 0.06299
             }{fig:tb:highres:amp18.3GHz:single-iv}
 
-
-            \singlefitfigure{tunnelbarrier/highres/amp_13.6GHz/single-fit}{
-                Aout = 150mV, $eta = 0.00216587378305257 \pm 3.10827452235359E-07$, Tbath=0.186777920792079
-            }{fig:tb:highres:amp13.6GHz:single-iv}
-
-
-            I next used the same tunnel barrier as a microwave test structure. Because the static measurements show no measurable supercurrent, I do not expect Shapiro steps or incoherent Cooper-pair tunneling to dominate the response. The relevant process is instead photon-assisted quasiparticle tunneling. This makes TB1 a clean reference case because the microwave response can be compared directly to the Tien--Gordon model without first disentangling it from coherent Josephson transport.
-
-            Figure~\ref{fig:tb:highres:amp18.3GHz:exp} shows a measurement at $18.3\,\mathrm{GHz}$ in laboratory units. The vertical axis is the nominal output amplitude of the network analyzer, assuming a $50\,\Omega$ termination.
-
-            In differential conductance, the main $2\Delta$ coherence peaks are accompanied by replicas shifted by integer multiples of $h\nu/e$. This is the expected photon-assisted tunneling pattern from the Tien--Gordon model discussed in Sec.~\ref{subsec:micro:pat}.
-
+            the fitted amplitude over output amoplitude of the vna is shown in
             \begin{wrapfigure}[13]{r}{0.4\textwidth}
                 \captionsetup{format=plain}%
                 \centering
@@ -210,25 +174,22 @@
                     }
                 \label{fig:tb:highres:amp18.3GHz:fit}
             \end{wrapfigure}
-
-            To calibrate the microwave axis, I kept the static junction parameters fixed and fitted only the effective microwave amplitude at the junction. Figure~\ref{fig:tb:highres:amp18.3GHz:fit} shows the resulting effective amplitude as a function of the nominal VNA output amplitude. The relation is approximately linear over most of the sweep, but the slope increases at larger output amplitudes. Around $300\,\mathrm{mV}$ nominal output amplitude, the fitted amplitude changes abruptly. I attribute this discontinuity to an internal source-amplification switch in the VNA.
-
-            The slope is equivalent to the coupling parameter $\eta$. The median slope is
+            here we see a general linear behaviour, that we can describe with
             \begin{equation}
                 \eta = 0.008(12)\,.
-            \end{equation}
+            \end{equation}            
+            and sharp drop at around 300mV. this is due to internal amplification stages of the vna. high end tail also deviates from the linear slope, this is due to???
+
+            Now we can use this to mapp the data over a calibrated axis. as shown in figure fig:tb:highres:amp18.3GHz:cal. 
+            compare with simulation in fig:tb:highres:amp18.3GHz:sim.
 
             This calibration converts the nominal source setting into the reduced drive amplitude $eA/h\nu$. On this axis, the vertical coordinate is directly connected to the photon order that can contribute to one tunneling event. The calibrated maps therefore turn a hardware-dependent amplitude sweep into a model-level comparison between measured and simulated photon-assisted spectra.
 
-            Figures~\ref{fig:tb:highres:amp18.3GHz:exp} and \ref{fig:tb:highres:amp18.3GHz:cal} show the same $18.3\,\mathrm{GHz}$ dataset before and after amplitude calibration, while Fig.~\ref{fig:tb:highres:amp18.3GHz:sim} shows the corresponding simulation in reduced units. The calibrated measurement and simulation reproduce the sideband positions and the redistribution of spectral weight with increasing drive amplitude.
+            13.6 GHz high-order PAT, at least 25 photons, not yet shown in literature to your knowledge.
 
-            Figures~\ref{fig:tb:highres:amp13.6GHz:cal} and \ref{fig:tb:highres:amp13.6GHz:sim} show the calibrated measurement and simulation for $13.6\,\mathrm{GHz}$. At this frequency the microwave path couples more strongly to the junction, so the effective amplitude is substantially larger for the same nominal output setting. The larger reduced amplitude reveals replicas corresponding to absorption or emission of at least 25 photons during a single quasiparticle tunneling event.
-
-            TODO[TB-HIGHRES-TUNNELING-TIME] Check whether an estimate of the quasiparticle tunneling time is useful here, and whether it can be stated without overinterpreting the PAT order.
-
-            This high photon order is the main resolution benchmark of the section. The sidebands remain visible far beyond the order commonly reported for superconducting tunnel junctions. Kot et al. resolved photon-assisted tunneling up to 12 photons, while the present SIS data reach at least the 25-photon range \cite{kot_microwave-assisted_2020}. To my knowledge, this is the highest photon order resolved in photon-assisted quasiparticle tunneling through an SIS junction.
-
-            The high-resolution tunnel-barrier data therefore serve two purposes. They validate the calibration and visualization workflow on the easiest superconducting microwave system in this thesis, and they demonstrate that the setup resolves photon-assisted structure deep into the multiphoton regime. With this reference established, the next step is to study a related tunnel-barrier experiment where the plain BCS plus Tien--Gordon description is no longer sufficient.
+            \singlefitfigure{tunnelbarrier/highres/amp_13.6GHz/single-fit}{
+                Aout = 150mV, $eta = 0.00216587378305257 \pm 3.10827452235359E-07$, Tbath=0.186777920792079
+            }{fig:tb:highres:amp13.6GHz:single-iv}
 
             \begin{wrapfigure}[13]{r}{0.4\textwidth}
                 \captionsetup{format=plain}%
@@ -240,6 +201,15 @@
                     }
                 \label{fig:tb:highres:amp13.6GHz:fit}
             \end{wrapfigure}
+
+            TODO[TB-HIGHRES-TUNNELING-TIME] Check whether an estimate of the quasiparticle tunneling time is useful here, and whether it can be stated without overinterpreting the PAT order.
+
+            This high photon order is the main resolution benchmark of the section. The sidebands remain visible far beyond the order commonly reported for superconducting tunnel junctions. Kot et al. resolved photon-assisted tunneling up to 12 photons, while the present SIS data reach at least the 25-photon range \cite{kot_microwave-assisted_2020}. To my knowledge, this is the highest photon order resolved in photon-assisted quasiparticle tunneling through an SIS junction.
+
+            The high-resolution tunnel-barrier data therefore serve two purposes. They validate the calibration and visualization workflow on the easiest superconducting microwave system in this thesis, and they demonstrate that the setup resolves photon-assisted structure deep into the multiphoton regime. With this reference established, the next step is to study a related tunnel-barrier experiment where the plain BCS plus Tien--Gordon description is no longer sufficient.
+
+            final takeaway: calibration reference plus resolution benchmark
+
 
             \transportlandscapefigure{tunnelbarrier/highres/amp_18.3GHz}{exp}{
                 put caption here!
@@ -269,12 +239,12 @@
     %     Sample: TB2 (OI-24d-09)
     %     Setup: as discribed in P. Raif + Gate line
         
-    %     \begin{figure}[H]
-    %         \centering
-    %         \includegraphics[width=0.5\textwidth]{tunnelbarrier/samples/OI-24d-09.png}
-    %         \caption{SEM Image of TB2 (OI-24d-09)}
-    %         \label{fig:tunnelbarrier:image-TB2}
-    %     \end{figure}
+        % \begin{figure}[H]
+        %     \centering
+        %     \includegraphics[width=0.5\textwidth]{tunnelbarrier/samples/OI-24d-09.png}
+        %     \caption{SEM Image of TB2 (OI-24d-09), 60+77, 3.4mbar, 3min}
+        %     \label{fig:tunnelbarrier:image-TB2}
+        % \end{figure}
 
     %     %=========================================================
     %     \subsection{Irradiation Study}
