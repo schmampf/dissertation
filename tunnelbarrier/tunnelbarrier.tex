@@ -188,10 +188,10 @@
 
             Figures~\ref{fig:tb:highres:amp18.3GHz:cal} and \ref{fig:tb:highres:amp18.3GHz:sim} compare the calibrated $18.3\,\mathrm{GHz}$ measurement with the corresponding simulation. The agreement shows the two parts of the calibration at the same time. The sidebands appear at the expected voltage offsets, and their contrast evolves as expected from the redistribution of spectral weight over the Bessel sidebands.
 
-            here we need to press the hype button, that we clearly demonstrate high order photon energies.
+            The $18.3\,\mathrm{GHz}$ sweep established the calibration method. I then used the $13.6\,\mathrm{GHz}$ sweep to test how far this calibrated PAT picture remains resolved at larger reduced drive. This frequency is favorable for high-order sidebands because the microwave coupling to TB1 was stronger and the photon energy was smaller. For a comparable nominal source range, both effects increase $\alpha_{\nu,e}=eA/h\nu$ and therefore push spectral weight into higher Bessel sidebands.
 
             \singlefitfigure{tunnelbarrier/highres/amp_13.6GHz/single-fit}{
-                Representative photon-assisted tunneling fit at $\nu=13.6\,\mathrm{GHz}$ and $A_\mathrm{out}=150\,\mathrm{mV}$. The \textit{I--V} curve was measured at $T_\mathrm{bath}=187(1)\,\mathrm{mK}$. Extracted parameter can be found in Table~\ref{table:tunnelbarrier:highres}.
+                Representative photon-assisted tunneling fit at $\nu=13.6\,\mathrm{GHz}$ and $A_\mathrm{out}=150\,\mathrm{mV}$. The \textit{I--V} curve was measured at $T_\mathrm{bath}=187(1)\,\mathrm{mK}$. The static SIS parameters were fixed as in the $18.3\,\mathrm{GHz}$ calibration, and the fitted microwave coupling is listed in Table~\ref{table:tunnelbarrier:highres}.
             }{fig:tb:highres:amp13.6GHz:single-iv}
 
             \begin{wrapfigure}[13]{r}{0.4\textwidth}
@@ -200,20 +200,25 @@
                 \vspace{-1.5em}
                 \import{tunnelbarrier/highres/amp_13.6GHz}{fit.pgf}
                 \caption{
-                    Microwave-amplitude calibration at $\nu=13.6\,\mathrm{GHz}$. 
+                    Microwave-amplitude calibration at $\nu=13.6\,\mathrm{GHz}$. The fitted coupling is larger than at $18.3\,\mathrm{GHz}$, so the same nominal source range reaches a larger reduced drive amplitude.
                     }
                 \label{fig:tb:highres:amp13.6GHz:fit}
             \end{wrapfigure}
             
-            The fitted coupling 
+            The fitted calibration curve in Fig.~\ref{fig:tb:highres:amp13.6GHz:fit} gives
             \begin{equation}
-                \eta \approx 21.5\times10^{-4}\,,
+                \eta_{13.6\,\mathrm{GHz}}\approx2.15\times10^{-3}\,.
+                \label{eq:tb:highres:amplitude:eta13}
             \end{equation}
-            is larger than at $18.3\,\mathrm{GHz}$, so the same nominal source range reaches a larger reduced drive amplitude.
+            This is about a factor of 2.6 larger than the fitted coupling at $18.3\,\mathrm{GHz}$. Together with the lower photon energy, this makes the $13.6\,\mathrm{GHz}$ dataset the high-amplitude benchmark of the section.
+
+            Figures~\ref{fig:tb:highres:amp13.6GHz:cal} and \ref{fig:tb:highres:amp13.6GHz:sim} show the result in calibrated units. The SIS coherence peak acts as a sharp energy marker, and the microwave drive creates many photon-shifted copies of this marker separated by $h\nu/e$. The data resolve these replicas to at least the 25-photon range. This is the strongest result of the section because it requires three things at once: strong microwave coupling at the junction, enough voltage resolution to separate closely spaced photon replicas, and enough spectral stability that the underlying SIS feature remains identifiable after its weight has been redistributed over many sidebands.
+
+            The calibrated axis is essential for this claim. In nominal VNA units, the high-order structure would only show that the source setting was large. On the $\alpha_{\nu,e}$ axis, the same structure can be read as a PAT redistribution over many Bessel channels with weights $J_n^2(\alpha_{\nu,e})$. The high photon order therefore does not mean that every tunneling event absorbed exactly 25 photons. It means that photon-shifted tunneling channels with order numbers up to at least $|n|\approx25$ remained visible in the measured quasiparticle spectrum.
+
+            This interpretation also sets the limits of the result. I do not use the photon order to infer a quasiparticle tunneling time or traversal time. The PAT order labels energy-shifted channels in a driven tunneling probability, not a directly timed sequence of absorption events. The calibration is also local to this device, frequency, and antenna configuration. Heating and nonequilibrium quasiparticle generation may still contribute at high drive, even though the dominant visible structure remains organized by the Tien--Gordon sideband pattern.
 
             TODO[TB-HIGHRES-TUNNELING-TIME] Check whether an estimate of the quasiparticle tunneling time is useful here, and whether it can be stated without overinterpreting the PAT order.
-
-            The $13.6\,\mathrm{GHz}$ data provide the high-order benchmark of the section. Because the coupling was larger and the photon energy was smaller, the same nominal source range reached a substantially larger $\alpha_{\nu,e}$. Figures~\ref{fig:tb:highres:amp13.6GHz:cal} and \ref{fig:tb:highres:amp13.6GHz:sim} show that sidebands remained resolvable to at least the 25-photon range. This is the strongest result of the section for two reasons. The measurement resolved many closely spaced replicas of the same SIS density-of-states feature, and the calibrated amplitude axis showed that their appearance followed the expected multiphoton redistribution rather than an arbitrary source-power scale.
 
             This photon order is far beyond the range usually shown for superconducting tunnel junctions. Kot et al. resolved photon-assisted tunneling up to 12 photons, while the present SIS data reach at least the 25-photon range \cite{kot_microwave-assisted_2020}. To my knowledge, this photon order has not been shown before for photon-assisted quasiparticle tunneling in an SIS junction.
 
@@ -232,11 +237,11 @@
             }{fig:tb:highres:amp18.3GHz:sim}
 
             \transportlandscapefigure{tunnelbarrier/highres/amp_13.6GHz}{cal}[0em]{
-                Calibrated amplitude sweep of TB1 at $\nu=13.6\,\mathrm{GHz}$. The microwave coupling is stronger than at $\nu=18.3\,\mathrm{GHz}$, so the same nominal output range reaches a larger reduced drive amplitude. The map resolves photon-assisted replicas to at least the 25-photon range. Parameters can be found in Table~\ref{table:tunnelbarrier:highres}.
+                Calibrated amplitude sweep of TB1 at $\nu=13.6\,\mathrm{GHz}$. The microwave coupling is stronger than at $\nu=18.3\,\mathrm{GHz}$, and the lower photon energy increases the reduced drive amplitude for the same ac voltage. The map resolves photon-assisted replicas to at least the 25-photon range. Parameters can be found in Table~\ref{table:tunnelbarrier:highres}.
             }{fig:tb:highres:amp13.6GHz:cal}
 
             \transportlandscapefigure{tunnelbarrier/highres/amp_13.6GHz}{sim}[0em]{
-                Tien--Gordon simulation of the calibrated $13.6\,\mathrm{GHz}$ sweep. The static SIS parameters are fixed to Table~\ref{table:tunnelbarrier:highres}. The calculated multiphoton sidebands provide the model reference for the high-order structures visible in Fig.~\ref{fig:tb:highres:amp13.6GHz:cal}.
+                Tien--Gordon simulation of the calibrated $13.6\,\mathrm{GHz}$ sweep. The static SIS parameters are fixed to Table~\ref{table:tunnelbarrier:highres}. The calculated multiphoton sidebands provide the model reference for the high-order structures visible in Fig.~\ref{fig:tb:highres:amp13.6GHz:cal}, without assigning a deterministic photon-count history to individual tunneling events.
             }{fig:tb:highres:amp13.6GHz:sim}
 
 
