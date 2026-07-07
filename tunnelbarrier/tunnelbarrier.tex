@@ -25,38 +25,56 @@
             \centering
             \vspace{-1.5em}
             \includegraphics[width=0.9\linewidth]{tunnelbarrier/samples/OI-25c-09.png}
+            \vspace{-.5em}
             \caption{
-                    SEM Picture of TB1.
+                    SEM image of TB1.
                 }
             \label{fig:tb:highres:image-TB1}
         \end{wrapfigure}
-        In this Section we will take a look at sample TB1\footnote{In the Labbooks TB1 is called `OI-25c-09'}. The sample is fabricated like described in Section~\ref{section:sample-preparation}. Irradiation experiments are performed with the antenna. The setup as described in Section~\ref{sec:methods:setup} is used. An SEM Picture of the sample is shown in Fig.~\ref{fig:tb:highres:image-TB1}. All measurements leave the break junction unbroken. A typical \textit{I--V} curve is shown in Fig.~\ref{fig:tb:highres:single-iv}. 
 
-        First noticable thing is, although we have an SIS Junction, we do not observe a Supercurrent. Discuss here in depth, what might prevent a supercurrent in a conventional tunnel barrier.
+        This section starts with the simplest microwave-driven superconducting junction available in this thesis. The goal is to understand one device as completely as possible before moving to junctions where additional mechanisms complicate the interpretation. TB1 is an SIS tunnel barrier without an observable supercurrent. Its static spectra are therefore expected to be described by quasiparticle tunneling in BCS electrodes, and its microwave response should follow photon-assisted tunneling as introduced in Sec.~\ref{subsec:micro:pat}.
 
-        However we still learn stuff about the superconducting properties of the diodes, such as the gap size, critical temperature and critical field, as discussed in the Appendix. We can also learn about conductance of the tunnel barrier.
+        I used this device as a reference system for three connected questions. First, I determined how well the unirradiated \textit{I--V} curve constrains the tunnel-junction parameters. Second, I used controlled heating to calibrate the temperature axis and to introduce the transport-landscape visualization used throughout the chapter. Third, I drove the same junction with microwaves and used the calibrated amplitude axis to test how far photon-assisted sidebands can be resolved. The high-amplitude data show sidebands up to very high photon order and therefore provide a direct benchmark for the spectral resolution and microwave coupling of the setup.
 
-        Can we conduct the resistivity or the thickness of the oxide?
+        The sample TB1\footnote{In the lab book TB1 is called `OI-25c-09'.} was fabricated as described in Sec.~\ref{section:sample-preparation}. Irradiation experiments were performed with the antenna in the setup described in Sec.~\ref{sec:methods:setup}. An SEM image of the sample is shown in Fig.~\ref{fig:tb:highres:image-TB1}. All measurements discussed here were taken with the break junction unbroken. 
         
-        Assuming symetrical electrodes and neglicable magnetic field, I obtained the following values, fitting the \textit{I--V},
+        A typical \textit{I--V} curve is shown in Fig.~\ref{fig:tb:highres:single-iv}. The quasiparticle onset appears at approximately $2\Delta/e$, as expected for an SIS junction. I do not observe a supercurrent, even though both electrodes are superconducting. This does not imply that the Josephson coupling is exactly zero. Using the Ambegaokar--Baratoff estimate with $\Delta=195\,\mu\mathrm{eV}$ and $R_\mathrm{N}=68.1\,\mathrm{k}\Omega$ gives
         \begin{align}
-            G_\mathrm{N} &= 0.1894994(35)\,G_0 = 14.68259(27)\,\mu\mathrm{S}\\
-            R_\mathrm{N} &= 5.27706(10)\,R_0 = 68.108(13)\,\mathrm{k}\Omega\\
-            T &= 214(12)\,\mathrm{mK}\\
-            \Delta_0 &= 194.800(45)\,\mu\mathrm{eV}\\
-            \gamma &= 1.1282(37)\,\mu\mathrm{eV}\\
-            \sigma_V &= 10.314(10)\,\mu\mathrm{V}\,.
-            \label{eq:tb:highres-parameter}
+            I_\mathrm{c}R_\mathrm{N} &\approx \frac{\pi\Delta}{2e} \approx 306\,\mu\mathrm{V}\,, &
+            I_\mathrm{c} &\approx 4.5\,\mathrm{nA}\,, &
+            \frac{E_\mathrm{J}}{k_\mathrm{B}} &= \frac{\hbar I_\mathrm{c}}{2e k_\mathrm{B}} \approx 0.11\,\mathrm{K}\,.
+            \label{eq:tb:highres:josephson-estimate}
         \end{align}
 
-        These values, and the once corresponding to the shown figure below are listed in table~\ref{table:tunnel-barrier}.
-        \begin{table}
+        This Josephson energy is comparable to or smaller than the effective electronic temperature extracted below. It is also small compared with plausible charging-energy scales of the barrier region. The capacitance of TB1 was not measured independently, but the lithographic overlap is of order $50\times100\,\mathrm{nm^2}$. A parallel-plate estimate with an aluminum-oxide thickness of $1{-}2\,\mathrm{nm}$ and $\epsilon_\mathrm{r}\approx8{-}10$ gives $C_\mathrm{TB}\sim0.2{-}0.4\,\mathrm{fF}$, corresponding to $E_\mathrm{c}/k_\mathrm{B}=e^2/(2Ck_\mathrm{B})\sim2{-}5\,\mathrm{K}$. Related MCBJ-SET devices give comparable scales: Sprenger extracted individual junction capacitances of order $100\,\mathrm{aF}$, while Sobral Rey found total island capacitances of order $1\,\mathrm{fF}$ from Coulomb-diamond analyses. The Lorenz--Sprenger--Scheer MCBJ-SET geometry used an oxide-barrier overlap of roughly $50\times50\,\mathrm{nm^2}$ and provides the same order-of-magnitude reference for the tunnel-barrier area \cite{sprenger_herstellung_2016,lorenz_sset_mar_2018,sobral-rey_interplay_2022,sobral_rey_hybrid_sset_2024}. Even allowing for stray capacitance that increases the effective capacitance to several femtofarads, the charging scale remains comparable to or larger than $E_\mathrm{J}$. The unengineered break-junction microwave environment can therefore wash out the dc phase relation through thermal, charging, voltage-noise, and environmental phase fluctuations. The electrodes remain superconducting, but the phase difference across the barrier is not stiff enough to produce a resolvable zero-voltage branch \cite{ambegaokar_tunneling_1963,tinkham_introduction_2004,grabert_single_2013}.
+
+        This absence is important for the interpretation below because it removes Shapiro steps and coherent Cooper-pair tunneling from the expected microwave response. The microwave data can therefore be treated primarily as photon-assisted quasiparticle tunneling.
+
+        The lack of a supercurrent does not prevent us from learning about the junction. The quasiparticle branch still gives access to the superconducting gap, the effective electronic temperature, the normal-state conductance, and the lifetime broadening. Together with the temperature and field studies discussed in the appendix, these measurements establish the basic superconducting properties of the electrodes.
+        
+        Assuming symmetric electrodes and negligible magnetic field, I obtained the parameters listed in Table~\ref{table:tunnelbarrier:highres} for the datasets used in this section.
+
+        The BCS/Dynes fit captures the gap position and the overall line shape, but it does not reproduce the full height of the coherence peaks. The \textit{dI--dV} curve also shows small systematic deviations near the gap edge.
+        
+        Fits without voltage noise produced artifacts around $\Delta/e$. In those fits the Dynes parameter had to account for too much gap-edge rounding, which increased the modeled subgap current around $\Delta/e$ beyond the measured value.
+
+        I therefore use both finite quasiparticle lifetime and voltage broadening as phenomenological broadening channels. The finite lifetime rounds the coherence peaks, while the voltage broadening accounts for residual bias noise and averaging during the voltage sweep.
+
+        The electronic temperature is difficult to estimate from an SIS junction far below the critical temperature because the spectrum changes only weakly in that regime. Although the base-temperature fit gives values as low as $214\,\mathrm{mK}$, I treat this number as an effective transport temperature rather than an absolute thermometer reading.
+
+        The next subsection therefore uses a controlled temperature sweep to test this effective-temperature interpretation, determine the critical temperature, and establish the visualization format used for the later microwave-amplitude maps.
+
+        \singlefitfigure{tunnelbarrier/highres/single_iv}{
+        Typical measured \textit{I--V} curve for TB1. \textit{dI--dV} and \textit{dV--dI} are numerical derivatives of the \textit{I--V} curve. \textit{I--V} is fitted with the BCS tunnel theory for an SIS junction. Tbath = 0.0330400168316832
+        }{fig:tb:highres:single-iv}
+
+        \begin{figure}
             \centering
             \footnotesize
             \begin{tabular}{r|l|l|l|l}
-                Figures & \ref{fig:tb:highres:single-iv} & \ref{fig:tb:highres:temperature:single-iv}, \ref{fig:tb:highres:temperature:fit}, \ref{fig:tb:highres:temperature:cal}, \ref{fig:tb:highres:temperature:sim} & \ref{fig:tb:highres:amp18.3GHz:single-iv}, \ref{fig:tb:highres:amp18.3GHz:fit}, \ref{fig:tb:highres:amp18.3GHz:exp}, \ref{fig:tb:highres:amp18.3GHz:cal}, \ref{fig:tb:highres:amp18.3GHz:sim}& \ref{fig:tb:highres:highA-fit}, \ref{fig:tb:highres:highA-cal}, \ref{fig:tb:highres:highA-sim} \\\hline
+                Figures & \ref{fig:tb:highres:single-iv} & \ref{fig:tb:highres:temperature:single-iv}, \ref{fig:tb:highres:temperature:fit}, \ref{fig:tb:highres:temperature:cal}, \ref{fig:tb:highres:temperature:sim} & \ref{fig:tb:highres:amp18.3GHz:single-iv}, \ref{fig:tb:highres:amp18.3GHz:fit}, \ref{fig:tb:highres:amp18.3GHz:exp}, \ref{fig:tb:highres:amp18.3GHz:cal}, \ref{fig:tb:highres:amp18.3GHz:sim}& \ref{fig:tb:highres:amp13.6GHz:single-iv}, \ref{fig:tb:highres:amp13.6GHz:fit}, \ref{fig:tb:highres:amp13.6GHz:cal}, \ref{fig:tb:highres:amp13.6GHz:sim} \\\hline
                 $G_\mathrm{N}\ (G_0)$ & $0.1894994(35)$ & $0.187225(35)$ & $0.1891906(73)$ & $0.1889329(27)$ \\
-                $T_\mathrm{sample}\ (\mathrm{K})$ & $0.215(13)$ & $0.6148(34)$ & $0.243(30)$ & $0.223(59)$ \\
+                $T_\mathrm{fit}\ (\mathrm{K})$ & $0.215(13)$ & $0.6148(34)$ & $0.243(30)$ & $0.223(59)$ \\
                 $\Delta_0\ (\mathrm{meV})$ & $0.194800(45)$ & $0.19448(16)$ & $0.19526(16)$ & $0.19585(24)$ \\
                 $\gamma\ (\mathrm{meV})$ & $0.0011282(38)$ & $0.00553(12)$ & $0.001289(14)$ & $0.002079(43)$ \\
                 $\sigma_V\ (\mathrm{mV})$ & $0.010315(10)$ & $0.02132(31)$ & $0.015756(45)$ & $0.01424(12)$ \\
@@ -67,22 +85,8 @@
                 $T_\mathrm{bath}\ (\mathrm{K})$ & $0.033$ & $0.697$ & $0.063$ & $0.187$
             \end{tabular}
             \caption{parameters, obtained by fitting.}
-            \label{table:tunnel-barrier}
-        \end{table}
-
-        As one can observe the height of the coherence peaks doesnt get covered by the fit in full height. In the dI--dV one can also observe some minor deviations.
-        
-        Attempts to fit the IV without voltage noise, leads to odd artifacts at around Delta, since due to a higher gamma attributing to the rounding of the gap edge, subgap currents at 1 times Delta are way higher.
-
-        finite quasipatricle lifetime, are rounding the coherence peaks.
-
-        The temperature is hard to estimate from an SIS Junction. Especially for temperature way below the critical temperature. Even though we apparently reach electronic temperatures as low as 214mK, we have to cautious with this number.
-
-        Summarizing the question if the electronic temperature is real or not, we look into temperature study to understand the electronic temperature better and measure the critical temperature in the next subsection.
-
-        \singlefitfigure{tunnelbarrier/highres/single_iv}{
-        Typical measured \textit{I--V} curve for TB1. \textit{dI--dV} and \textit{dV--dI} are numerical derivatives of the \textit{I--V} curve. \textit{I--V} is fitted with the BCS tunnel theory for an SIS junction. Tbath = 0.0330400168316832
-        }{fig:tb:highres:single-iv}
+            \label{table:tunnelbarrier:highres}
+        \end{figure}
 
 
         %=========================================================
@@ -94,12 +98,12 @@
                 Tbath = 0.697499659340659 K
             }{fig:tb:highres:temperature:single-iv}
 
-            The sample holder was heated locally while a thermometer mounted next to the sample recorded the bath temperature $T_\mathrm{bath}$. For each temperature point, I fitted the measured \textit{I--V} curve with the SIS BCS/Dynes model.
-            All parameters but the temperature, are hold fixed. I therefore use the fitted value as an effective electronic sample transport temperature $T_\mathrm{sample}$. It should not be identified automatically with the absolute lattice temperature of the sample holder.
+            The sample holder was heated locally while a thermometer mounted next to the sample recorded the bath temperature $T_\mathrm{bath}$. For each temperature point, I fitted the measured \textit{I--V} curve with the SIS BCS/Dynes model. I distinguish this thermometer temperature from the temperature parameter $T_\mathrm{fit}$ obtained from the transport fit. The former is measured at the sample holder, while the latter describes the thermal broadening required by the model. I therefore interpret $T_\mathrm{fit}$ as an effective electronic transport temperature, not as an independent measurement of the lattice temperature of the sample.
+            All parameters but the temperature are held fixed during this calibration.
 
-            Figure~\ref{fig:tb:highres:Tfit} compares $T_\mathrm{sample}$ with the measured $T_\mathrm{bath}$. The data shows two plateaus, and in between a linear dependency. The low-temperature plateau gives the effective base-temperature $T_\mathrm{base}$ floor of the transport measurement. The high-temperature saturation marks the loss of reliable superconducting fit sensitivity close to the critical temperature $T_\mathrm{c}$. I therefore use the median of the saturation as an estimate for the critical temperature. The mean value of the lower plateau is assumed to be the base temperature. The data in between is fitted by a linear fit.
+            Figure~\ref{fig:tb:highres:temperature:fit} compares $T_\mathrm{fit}$ with the measured $T_\mathrm{bath}$. The data shows two plateaus, and in between a linear dependency. The low-temperature plateau gives the effective base-temperature $T_\mathrm{base}$ floor of the transport measurement. The high-temperature saturation marks the loss of reliable superconducting fit sensitivity close to the critical temperature $T_\mathrm{c}$. I therefore use the median of the saturation as an estimate for the critical temperature. The mean value of the lower plateau is assumed to be the base temperature. The data in between is fitted by a linear fit.
             \begin{equation}
-                T_\mathrm{sample}(T_\mathrm{bath}) = \alpha_T\,T_\mathrm{bath} + T_\mathrm{off}\,.
+                T_\mathrm{fit}(T_\mathrm{bath}) = \alpha_T\,T_\mathrm{bath} + T_\mathrm{off}\,.
                 \label{eq:tb:highres:temperature:calibration}
             \end{equation}
             Here $\alpha_T$ is the slope relating thermometer and fitted temperature in the linear regime, and $T_\mathrm{off}$ is the extrapolated temperature offset between both axes.
@@ -130,7 +134,7 @@
 
             I think the offset temperature is due to the fact, that the iv is not measured in thermal equilibrium. Meaning, upon reaching the aimed temperature, the iv curve is measured, and for the next temparture is aimed already. so most likely not enough equilibration time for the sample reaching the same temperature as the bath.
 
-            With this calibration, the temperature series can be mapped on a linear effective sample-temperature axis. Figure~\ref{fig:tb:highres:tcal} shows the measured maps up to $T_\mathrm{c}$, where the superconducting gap closes. The calibrated maps shows the collapse of the gap at the transition, the reducing of the peak height at two delta and an enhanced zero-bias conductance near the high-temperature end of the sweep. 
+            With this calibration, the temperature series can be mapped on a linear effective sample-temperature axis. Figure~\ref{fig:tb:highres:temperature:cal} shows the measured maps up to $T_\mathrm{c}$, where the superconducting gap closes. The calibrated maps shows the collapse of the gap at the transition, the reducing of the peak height at two delta and an enhanced zero-bias conductance near the high-temperature end of the sweep. 
             
             The figure represents three different representations of the very same dataset. On the x axis i usually show the voltage or current in reduced units. on the y axis i show axes like temperature or microwave amplitude. here, i also use reduced units in most cases. On the z axis i didstinguish between current, differential conductance or differential resistance. Again mostly in reduced units.
 
@@ -148,7 +152,7 @@
 
             in the surface plot of the iv you can see one darker stripe, this is due to averaging multiple IVs for that corresponding temperature during the mapping.
             
-            The corresponding SIS BCS/Dynes simulation in Fig.~\ref{fig:tb:highres:tsim} provides the model comparison for the same temperature evolution. Keep in mind, that we now can simulate the whole measured temperature series with just 4 fixed parameters. 
+            The corresponding SIS BCS/Dynes simulation in Fig.~\ref{fig:tb:highres:temperature:sim} provides the model comparison for the same temperature evolution. Keep in mind, that we now can simulate the whole measured temperature series with just 4 fixed parameters. 
 
             The simulation and the calibrated map are in great accordance. Leaving me to believe that we did a decent job with calibrating the temperature axis. This also holds true for the low temperature end. This isn't shown to highlight the evolving features for higher temperatures.
 
@@ -166,11 +170,11 @@
             \end{wrapfigure}
 
             \transportlandscapefigure[0em]{tunnelbarrier/highres/temperature}{cal}[0em]{
-                Temperature-dependent transport maps of TB1 after calibration of the effective sample temperature. The panels show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response on the calibrated $T_\mathrm{sample}$ axis.
+                Temperature-dependent transport maps of TB1 after calibration of the fitted temperature. The panels show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response on the calibrated $T_\mathrm{fit}$ axis.
             }{fig:tb:highres:temperature:cal}
 
             \transportlandscapefigure[0em]{tunnelbarrier/highres/temperature}{sim}[0em]{
-                SIS BCS/Dynes simulation. The panels show the simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response using the same effective temperature axis as Fig.~\ref{fig:tb:highres:temperature:cal}. Simulation parameter as in Eq.~\ref{eq:tb:highres-parameter}.
+                SIS BCS/Dynes simulation. The panels show the simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} response using the same effective temperature axis as Fig.~\ref{fig:tb:highres:temperature:cal}. Simulation parameters are listed in Table~\ref{table:tunnelbarrier:highres}.
             }{fig:tb:highres:temperature:sim}
 
   
@@ -190,12 +194,11 @@
             }{fig:tb:highres:amp13.6GHz:single-iv}
 
 
-            Next we study the behaviour of the tunnel barrier under microwave irradiation.
-            Since i dont observe a supercurrent i dont expect any form of shapiro steps or incohrenet tunneling of cooper pairs. Instead i expect to observe photon-assisted tunneling.
+            I next used the same tunnel barrier as a microwave test structure. Because the static measurements show no measurable supercurrent, I do not expect Shapiro steps or incoherent Cooper-pair tunneling to dominate the response. The relevant process is instead photon-assisted quasiparticle tunneling. This makes TB1 a clean reference case because the microwave response can be compared directly to the Tien--Gordon model without first disentangling it from coherent Josephson transport.
 
-            Figure \ref{fig:tb:highres:amp18.3GHz:exp} shows a measuremnt at 18.3 GHz. This dataset uses standard units. on the y axis is the output amplitude of the network analyzer, assuming a 50 Ohm end-impedance.
+            Figure~\ref{fig:tb:highres:amp18.3GHz:exp} shows a measurement at $18.3\,\mathrm{GHz}$ in laboratory units. The vertical axis is the nominal output amplitude of the network analyzer, assuming a $50\,\Omega$ termination.
 
-            In differential conductance we observe replicas of the two delta peaks. This is in accordance with the Tien Gordon model discussed in section \ref{sec:micro:pat}. 
+            In differential conductance, the main $2\Delta$ coherence peaks are accompanied by replicas shifted by integer multiples of $h\nu/e$. This is the expected photon-assisted tunneling pattern from the Tien--Gordon model discussed in Sec.~\ref{subsec:micro:pat}.
 
             \begin{wrapfigure}[13]{r}{0.4\textwidth}
                 \captionsetup{format=plain}%
@@ -208,24 +211,24 @@
                 \label{fig:tb:highres:amp18.3GHz:fit}
             \end{wrapfigure}
 
-            If we keep all the values fixed, expect the effective amplitude, seen by the junction, we can obtain this effective amplitude. Figure \ref{fig:tb:highres:amp18.3GHz:fit} show those obtained effective amplitudes over the nominal output amplitude of the vna. We observe more or less a linear dependency, however for higher nominal output amplitudes, we observe a higher slope. Also around 300mV, we can see an aprupt change in the amplitude. this is due to the fact, that the vna, switches internal source amplification and apparently is not well enough calibrated. 
+            To calibrate the microwave axis, I kept the static junction parameters fixed and fitted only the effective microwave amplitude at the junction. Figure~\ref{fig:tb:highres:amp18.3GHz:fit} shows the resulting effective amplitude as a function of the nominal VNA output amplitude. The relation is approximately linear over most of the sweep, but the slope increases at larger output amplitudes. Around $300\,\mathrm{mV}$ nominal output amplitude, the fitted amplitude changes abruptly. I attribute this discontinuity to an internal source-amplification switch in the VNA.
 
             The slope is equivalent to the coupling parameter $\eta$. The median slope is
             \begin{equation}
                 \eta = 0.008(12)\,.
             \end{equation}
 
-            However in the end, we can map those effective amplitudes on a linear axis, and have a look on the calibrated dataset over reduced units. on the yaxis we normalice the amplitude over the photon energy, so in the end its some kind of number of pphotons, that get absorbed/emitted during a tunnling event.
+            This calibration converts the nominal source setting into the reduced drive amplitude $eA/h\nu$. On this axis, the vertical coordinate is directly connected to the photon order that can contribute to one tunneling event. The calibrated maps therefore turn a hardware-dependent amplitude sweep into a model-level comparison between measured and simulated photon-assisted spectra.
 
-            Figures \ref{fig:tb:highres:amp18.3GHz:exp} and \ref{fig:tb:highres:amp18.3GHz:cal} show, the measured and calibrated dataset, while \ref{fig:tb:highres:amp18.3GHz:sim} shows the corresponding simulation in reduced units.
+            Figures~\ref{fig:tb:highres:amp18.3GHz:exp} and \ref{fig:tb:highres:amp18.3GHz:cal} show the same $18.3\,\mathrm{GHz}$ dataset before and after amplitude calibration, while Fig.~\ref{fig:tb:highres:amp18.3GHz:sim} shows the corresponding simulation in reduced units. The calibrated measurement and simulation reproduce the sideband positions and the redistribution of spectral weight with increasing drive amplitude.
 
-            Figure \ref{fig:tb:highres:amp13.6GHz:cal} and \ref{fig:tb:highres:amp13.6GHz:sim} shows the calibrated measurement and corresponding simulation for 13.6GHz. Since the microwave lines have different transparencies for different frequencies, at a frequency of 13.6 GHz the effective Amplitude was way higher. In this two figures one can observe replicas corresponding to an electron absorbing or emitting up to at least 25 photons per single tunnel event. 
+            Figures~\ref{fig:tb:highres:amp13.6GHz:cal} and \ref{fig:tb:highres:amp13.6GHz:sim} show the calibrated measurement and simulation for $13.6\,\mathrm{GHz}$. At this frequency the microwave path couples more strongly to the junction, so the effective amplitude is substantially larger for the same nominal output setting. The larger reduced amplitude reveals replicas corresponding to absorption or emission of at least 25 photons during a single quasiparticle tunneling event.
 
-            Check tunneling time of a single electron in SIS.
+            TODO[TB-HIGHRES-TUNNELING-TIME] Check whether an estimate of the quasiparticle tunneling time is useful here, and whether it can be stated without overinterpreting the PAT order.
 
-            This shows the insane measurement resolution of the setup. This range is not shown in literature yet. Kot et al showed pat up to 12 photons. To my knowledge this is PAT in a sis junction with the highest amplitude yet.
+            This high photon order is the main resolution benchmark of the section. The sidebands remain visible far beyond the order commonly reported for superconducting tunnel junctions. Kot et al. resolved photon-assisted tunneling up to 12 photons, while the present SIS data reach at least the 25-photon range \cite{kot_microwave-assisted_2020}. To my knowledge, this is the highest photon order resolved in photon-assisted quasiparticle tunneling through an SIS junction.
 
-            Since we now understood the general behaviour of the superconducting tunnel barrier under microwave irradiation, with its fairly easy theory as a control experiment in order to understand also the quality of the build setup. We look now into a similar experiment, where we cannot discribe a similar tunnel abrrier with the plain BCS and Tien Grodon model.
+            The high-resolution tunnel-barrier data therefore serve two purposes. They validate the calibration and visualization workflow on the easiest superconducting microwave system in this thesis, and they demonstrate that the setup resolves photon-assisted structure deep into the multiphoton regime. With this reference established, the next step is to study a related tunnel-barrier experiment where the plain BCS plus Tien--Gordon description is no longer sufficient.
 
             \begin{wrapfigure}[13]{r}{0.4\textwidth}
                 \captionsetup{format=plain}%
@@ -240,23 +243,23 @@
 
             \transportlandscapefigure{tunnelbarrier/highres/amp_18.3GHz}{exp}{
                 put caption here!
-            }{fig:tb:highres:nu_13.6GHz:exp}
+            }{fig:tb:highres:amp18.3GHz:exp}
 
             \transportlandscapefigure{tunnelbarrier/highres/amp_18.3GHz}{cal}{
                 put caption here!
-            }{fig:tb:highres:nu_13.6GHz:cal}
+            }{fig:tb:highres:amp18.3GHz:cal}
 
             \transportlandscapefigure{tunnelbarrier/highres/amp_18.3GHz}{sim}{
                 put caption here!
-            }{fig:tb:highres:nu_13.6GHz:sim}
+            }{fig:tb:highres:amp18.3GHz:sim}
 
             \transportlandscapefigure{tunnelbarrier/highres/amp_13.6GHz}{cal}[0em]{
                 check 123!
-            }{fig:tb:highres:nu_18.3GHz:cal}
+            }{fig:tb:highres:amp13.6GHz:cal}
 
             \transportlandscapefigure{tunnelbarrier/highres/amp_13.6GHz}{sim}{
                 put caption here!
-            }{fig:tb:highres:nu_18.3GHz:sim}
+            }{fig:tb:highres:amp13.6GHz:sim}
 
 
     % %=========================================================
