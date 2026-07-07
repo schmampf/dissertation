@@ -27,7 +27,7 @@
             \includegraphics[width=0.9\linewidth]{tunnelbarrier/samples/OI-25c-09.png}
             \vspace{-.5em}
             \caption{
-                    SEM image of TB1.
+                    SEM image of TB1. overlap of about $50\times100\,\mathrm{nm^2}$.
                 }
             \label{fig:tb:highres:image-TB1}
         \end{wrapfigure}
@@ -38,20 +38,22 @@
 
         The sample TB1\footnote{In the lab book TB1 is called `OI-25c-09'.} was fabricated as described in Sec.~\ref{section:sample-preparation}. Irradiation experiments were performed with the antenna in the setup described in Sec.~\ref{sec:methods:setup}. An SEM image of the sample is shown in Fig.~\ref{fig:tb:highres:image-TB1}. All measurements discussed here were taken with the break junction unbroken. 
         
-        A typical \textit{I--V} curve is shown in Fig.~\ref{fig:tb:highres:single-iv}. The quasiparticle onset appears at approximately $2\Delta/e$, as expected for an SIS junction. I do not observe a supercurrent, even though both electrodes are superconducting. This does not imply that the Josephson coupling is exactly zero. Using the Ambegaokar--Baratoff estimate with $\Delta=195\,\mu\mathrm{eV}$ and $R_\mathrm{N}=68.1\,\mathrm{k}\Omega$ gives
+        A typical \textit{I--V} curve is shown in Fig.~\ref{fig:tb:highres:single-iv}. The quasiparticle onset appears at approximately $2\Delta/e$, as expected for an SIS junction. I do not observe a supercurrent, even though both electrodes are superconducting. This does not imply that the Josephson coupling is exactly zero. Using the Ambegaokar--Baratoff estimate (Eq.~\ref{eq:macro:critical-current}\&\ref{eq:macro:josephson-energy}) with parameters from table~\ref{table:tunnelbarrier:highres}, leads to
         \begin{align}
-            I_\mathrm{c}R_\mathrm{N} &\approx \frac{\pi\Delta}{2e} \approx 306\,\mu\mathrm{V}\,, &
             I_\mathrm{c} &\approx 4.5\,\mathrm{nA}\,, &
-            \frac{E_\mathrm{J}}{k_\mathrm{B}} &= \frac{\hbar I_\mathrm{c}}{2e k_\mathrm{B}} \approx 0.11\,\mathrm{K}\,.
+            E_\mathrm{J} &\approx 9.3\,\mu\mathrm{eV}\,, &
+            E_\mathrm{T} &\approx 18.5\,\mu\mathrm{eV}\,.
             \label{eq:tb:highres:josephson-estimate}
         \end{align}
+        The estimated critical current is large enough to be observable in principle, but the thermal energy $E_\mathrm{T}$ is of the same order and already about twice as large as $E_\mathrm{J}$.
         
         \singlefitfigure{tunnelbarrier/highres/single_iv}{
         Typical measured \textit{I--V} curve for TB1. \textit{dI--dV} and \textit{dV--dI} are numerical derivatives of the \textit{I--V} curve. \textit{I--V} is fitted with the BCS tunnel theory for an SIS junction. Tbath = 0.0330400168316832
         }{fig:tb:highres:single-iv}
 
+        The capacitance of TB1 was not measured independently, so I estimate only an order of magnitude. Using the same geometrical parallel-plate approximation as Lorenz et al. for the present lithographic gives $C_\mathrm{TB}\sim0.2{-}0.4\,\mathrm{fF}$. This is consistent with related MCBJ-SET estimates by Susanne Sprenger, who found junction capacitances of about $0.1\,\mathrm{fF}$, and Laura Sobral Rey, who found total island capacitances of about $1.2\,\mathrm{fF}$ \cite{sprenger_herstellung_2016,lorenz_sset_mar_2018,sobral-rey_interplay_2022,sobral_rey_hybrid_sset_2024}.
 
-        This Josephson energy is comparable to or smaller than the effective electronic temperature extracted below. It is also small compared with plausible charging-energy scales of the barrier region. The capacitance of TB1 was not measured independently, but the lithographic overlap is of order $50\times100\,\mathrm{nm^2}$. A parallel-plate estimate with an aluminum-oxide thickness of $1{-}2\,\mathrm{nm}$ and $\epsilon_\mathrm{r}\approx8{-}10$ gives $C_\mathrm{TB}\sim0.2{-}0.4\,\mathrm{fF}$, corresponding to $E_\mathrm{c}/k_\mathrm{B}=e^2/(2Ck_\mathrm{B})\sim2{-}5\,\mathrm{K}$. Related MCBJ-SET devices give comparable scales: Sprenger extracted individual junction capacitances of order $100\,\mathrm{aF}$, while Sobral Rey found total island capacitances of order $1\,\mathrm{fF}$ from Coulomb-diamond analyses. The Lorenz--Sprenger--Scheer MCBJ-SET geometry used an oxide-barrier overlap of roughly $50\times50\,\mathrm{nm^2}$ and provides the same order-of-magnitude reference for the tunnel-barrier area \cite{sprenger_herstellung_2016,lorenz_sset_mar_2018,sobral-rey_interplay_2022,sobral_rey_hybrid_sset_2024}. Even allowing for stray capacitance that increases the effective capacitance to several femtofarads, the charging scale remains comparable to or larger than $E_\mathrm{J}$. The unengineered break-junction microwave environment can therefore wash out the dc phase relation through thermal, charging, voltage-noise, and environmental phase fluctuations. The electrodes remain superconducting, but the phase difference across the barrier is not stiff enough to produce a resolvable zero-voltage branch \cite{ambegaokar_tunneling_1963,tinkham_introduction_2004,grabert_single_2013}.
+        The corresponding charging energy (Eq.~\ref{eq:stochastic:charging-energy}) is $E_\mathrm{c}\sim170{-}430\,\mu\mathrm{eV}$ for the parallel-plate capacitance range. Even allowing for stray capacitance that increases the effective capacitance to several femtofarads, the charging scale remains comparable to or larger than the Josephson energy. The unengineered break-junction microwave environment can therefore wash out the dc phase relation through thermal, charging, voltage-noise, and environmental phase fluctuations. The electrodes remain superconducting, but the phase difference across the barrier is not stiff enough to produce a resolvable zero-voltage branch \cite{ambegaokar_tunneling_1963,tinkham_introduction_2004,grabert_single_2013}.
 
         This absence is important for the interpretation below because it removes Shapiro steps and coherent Cooper-pair tunneling from the expected microwave response. The microwave data can therefore be treated primarily as photon-assisted quasiparticle tunneling.
 
