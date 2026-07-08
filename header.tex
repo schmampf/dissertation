@@ -195,7 +195,7 @@
         }%
     }
 
-    \NewDocumentCommand{\transportlandscapefigure}{O{-.3in} m m O{-.1in} +m m}{%
+    \NewDocumentCommand{\transportlandscapefigure}{O{-.3in} m m O{0em} +m m}{%
         \begin{landscape}
         \vspace*{#1}
             \begin{center}
@@ -206,6 +206,40 @@
                     #5
                     }
                 \label{#6}
+            \end{center}
+        \end{landscape}
+    }
+
+    \NewDocumentCommand{\landscapepgffigure}{O{0em} m m +m m}{%
+        \begin{landscape}
+            \begin{center}
+                \captionsetup{type=figure}
+                \ifusepgffigures
+                    \IfFileExists{#2/#3.pgf}{%
+                        \import{#2/}{#3.pgf}%
+                    }{%
+                        \IfFileExists{#2/#3.pdf}{%
+                            \includegraphics{#2/#3.pdf}%
+                        }{%
+                            \transportmissinggraphic{#2/#3.pgf}%
+                        }%
+                    }%
+                \else
+                    \IfFileExists{#2/#3.pdf}{%
+                        \includegraphics{#2/#3.pdf}%
+                    }{%
+                        \IfFileExists{#2/#3.pgf}{%
+                            \import{#2/}{#3.pgf}%
+                        }{%
+                            \transportmissinggraphic{#2/#3.pdf}%
+                        }%
+                    }%
+                \fi
+                \vspace{#1}
+                \captionof{figure}{
+                    #4
+                    }
+                \label{#5}
             \end{center}
         \end{landscape}
     }
