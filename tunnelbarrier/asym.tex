@@ -1,0 +1,127 @@
+% !TEX root = ../thesis.tex
+%=========================================================
+\section{Rectification and Asymmetry}
+\label{sec:tb:asym}
+%=========================================================
+    Sample: TB2 (OI-24d-09)
+    Setup: as discribed in P. Raif + Gate line
+    
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{tunnelbarrier/samples/OI-24d-09.png}
+        \caption{SEM Image of TB2 (OI-24d-09), 60+77, 3.4mbar, 3min}
+        \label{fig:tunnelbarrier:image-TB2}
+    \end{figure}
+
+    \singlefitfigure{tunnelbarrier/asym/irradiation/single-fit}{
+        caption here
+    }{fig:tb:asym:irradiation:single-iv}
+
+    %=========================================================
+    \subsection{Irradiation Study}
+    %=========================================================
+
+    \begin{align}
+        \mathcal{A}_I &= \frac{I(V)+I(-V)}{I(V)-I(-V)} \\
+        \tfrac{\mathrm{d}I}{\mathrm{d}V}
+    \end{align}
+
+    \begin{figure}
+        \centering
+        \subfigure{\import{tunnelbarrier/asym/irradiation/rectcal}{iv.pgf}}
+        \hfill
+        \subfigure{\import{tunnelbarrier/asym/irradiation/rectcal}{didv.pgf}}
+        \hfill
+        \subfigure{\import{tunnelbarrier/asym/irradiation/rectcal}{dvdi.pgf}}
+        \caption{
+            Calculated superconducting DOS, Fermi distribution, and thermal kernel. Dynes broadening modifies the superconducting DOS, while temperature broadens the occupation edge and thermal kernel.
+            }
+        \label{fig:tb:asym:rect-cal}
+    \end{figure}
+
+
+    \begin{figure}
+        \centering
+        \footnotesize
+        \begin{tabular}{r|l}
+            Figures & \ref{fig:tb:asym:rect-cal} \\\hline
+            $G_\mathrm{N}\ (G_0)$ & $0.092301(45)$\\
+            $T_\mathrm{fit}\ (\mathrm{K})$ & $0.442(19)$ \\
+            $\Delta_0\ (\mathrm{meV})$ & $0.20214(38)$ \\
+            $\gamma\ (\mathrm{meV})$ & $0.00552(34)$ \\
+            $\sigma_V\ (\mathrm{mV})$ & $0.04079(79)$ \\
+            $T_\mathrm{bath}\ (\mathrm{K})$ & $0.079(1)$
+        \end{tabular}
+        \caption{
+            caption
+        }
+        \label{table:tunnelbarrier:asym}
+    \end{figure}
+
+
+        \landscapepgffigure{tunnelbarrier/asym/irradiation/iv}{main}{
+            put caption here!
+        }{fig:tb:asym:irradiation-iv}
+
+        \landscapepgffigure{tunnelbarrier/asym/irradiation/iv-img}{main}{
+            put caption here!
+        }{fig:tb:asym:irradiation-iv-img}
+
+        \landscapepgffigure{tunnelbarrier/asym/irradiation/didv}{main}{
+            put caption here!
+        }{fig:tb:asym:irradiation-didv}
+
+        \landscapepgffigure{tunnelbarrier/asym/irradiation/didv-img}{main}{
+            put caption here!
+        }{fig:tb:asym:irradiation-didv-img}
+        
+        \landscapepgffigure{tunnelbarrier/asym/irradiation/dvdi}{main}{
+            put caption here!
+        }{fig:tb:asym:irradiation-dvdi}
+
+        \landscapepgffigure{tunnelbarrier/asym/irradiation/dvdi-img}{main}{
+            put caption here!
+        }{fig:tb:asym:irradiation-dvdi-img}
+
+
+% %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.75GHz}{cal}{
+% %         %     put caption here!
+% %         % }{fig:tb:asym:irradiation-7.75GHz}
+
+% %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.87GHz}{cal}{
+% %         %     put caption here!
+% %         % }{fig:tb:asym:irradiation-7.87GHz}
+
+% %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.89GHz}{cal}{
+% %         %     put caption here!
+% %         % }{fig:tb:asym:irradiation-7.89GHz}
+
+% %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.91GHz}{cal}{
+% %         %     put caption here!
+% %         % }{fig:tb:asym:irradiation-7.91GHz}
+
+% %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{cal}{
+% %         %     put caption here!
+% %         % }{fig:tb:asym:irradiation-7.96GHz}
+
+% %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_8.05GHz}{cal}{
+% %         %     put caption here!
+% %         % }{fig:tb:asym:irradiation-8.05GHz}
+
+% %     %=========================================================
+% %     \subsection{Antenna vs. Stripline}
+% %     %=========================================================
+% %         was genau will ih damit sagen?
+% %         \begin{itemize}
+% %             \item 7.9 GHz Antenne in Lab Units
+% %             \item 7.9 GHz Stripline in Lab Units
+% %         \end{itemize}
+
+% %     %=========================================================
+% %     \subsection{Frequency Dependency}
+% %     %=========================================================
+
+% %         coupling, temperature, asymmetry
+% %         \begin{itemize}
+% %             \item those three vs. nu
+% %         \end{itemize}
