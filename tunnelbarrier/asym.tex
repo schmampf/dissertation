@@ -3,125 +3,158 @@
 \section{Rectification and Asymmetry}
 \label{sec:tb:asym}
 %=========================================================
-    Sample: TB2 (OI-24d-09)
-    Setup: as discribed in P. Raif + Gate line
-    
-    \begin{figure}[H]
+
+    \begin{wrapfigure}[14]{r}{40mm}
+        \captionsetup{format=plain}%
         \centering
-        \includegraphics[width=0.5\textwidth]{tunnelbarrier/samples/OI-24d-09.png}
-        \caption{SEM Image of TB2 (OI-24d-09), 60+77, 3.4mbar, 3min}
-        \label{fig:tunnelbarrier:image-TB2}
-    \end{figure}
+        \vspace{-1.5em}
+        {
+            \fontsize{7}{9}\selectfont
+            \import{tunnelbarrier/samples}{TB2.pdf_tex}
+        }
+        \vspace{-.5em}
+        \caption{
+            SEM Image of TB2 (OI-24d-09), 60+77, 3.4mbar, 3min
+        }
+        \label{fig:tb:asym:image-TB2}
+    \end{wrapfigure}
+
+    The device investigated here it TB2 (OI-24d-09). Due to problems with collapsing resist masks during shadow evaporation, the finger was displaced slightly in order to reduce free standing length of the resist. The Setup as discribed in Patrick Raif is used for this measurements. The main difference is the filtering in the lines. We are not using the commercial thermalizer and filter, instead we use a train of copper powder filters and steel capillarry cables. The reference resistor is moved already to cold temperatures in oposition of martin prestel. The antenna is again used for these measurements.
+
+    Disclaimer: I found an asymmetry with great Rectification during amplitude sweeps for frequencies between 7.78 and 8.05 GHz. This is a lot of data and hard to break down. So in the end of this section, i will show sequences of false color maps and sequences of curves at fixed amplitudes. 
+    
+    A great start to get a visual impression of the phenomen is to check figures fig:tb:asym:irradiation-iv to fig:tb:asym:irradiation-dvdi-img. Here we can see in the beginning and end of the sequence a normal proper behaviour, as we would expect it for BCS / PAT at rather low frequencies, as discussed in the previous section.
+
+    We can observe the replicas left and right of the 2 Delta peaks in the differential conductance. However, for larger amplitudes, the distance between the replicas of the peak start to close again. This is due to high electronic temperatures of the junction. 
+
+    However if we think of two V shaped PAT branches, one beeing at positive the other at negative 2Delta, one can understnad it as two Vs with increasing slope over frequency, since in this reduced plots the slope should be equal to $h\nu$. However at some point it seems like another 
+    
 
     \singlefitfigure{tunnelbarrier/asym/irradiation/single-fit}{
         caption here
     }{fig:tb:asym:irradiation:single-iv}
 
-    %=========================================================
-    \subsection{Irradiation Study}
-    %=========================================================
-
-    \begin{align}
-        \mathcal{A}_I &= \frac{I(V)+I(-V)}{I(V)-I(-V)} \\
-        \tfrac{\mathrm{d}I}{\mathrm{d}V}
-    \end{align}
-
-    \begin{figure}
-        \centering
-        \subfigure{\import{tunnelbarrier/asym/irradiation/rectcal}{iv.pgf}}
-        \hfill
-        \subfigure{\import{tunnelbarrier/asym/irradiation/rectcal}{didv.pgf}}
-        \hfill
-        \subfigure{\import{tunnelbarrier/asym/irradiation/rectcal}{dvdi.pgf}}
-        \caption{
-            Calculated superconducting DOS, Fermi distribution, and thermal kernel. Dynes broadening modifies the superconducting DOS, while temperature broadens the occupation edge and thermal kernel.
-            }
-        \label{fig:tb:asym:rect-cal}
-    \end{figure}
-
-
-    \begin{figure}
+    \begin{wrapfigure}[14]{r}{0.4\textwidth}
+        \captionsetup{format=plain}%
         \centering
         \footnotesize
         \begin{tabular}{r|l}
-            Figures & \ref{fig:tb:asym:rect-cal} \\\hline
-            $G_\mathrm{N}\ (G_0)$ & $0.092301(45)$\\
-            $T_\mathrm{fit}\ (\mathrm{K})$ & $0.442(19)$ \\
-            $\Delta_0\ (\mathrm{meV})$ & $0.20214(38)$ \\
-            $\gamma\ (\mathrm{meV})$ & $0.00552(34)$ \\
-            $\sigma_V\ (\mathrm{mV})$ & $0.04079(79)$ \\
-            $T_\mathrm{bath}\ (\mathrm{K})$ & $0.079(1)$
+            Figures & \ref{fig:tb:asym:irradiation:single-iv} \\\hline
+            $G_\mathrm{N}\ (G_0)$ & $0.0927461(83)$\\
+            $T_\mathrm{fit}\ (\mathrm{K})$ & $0.534(41)$ \\
+            $\Delta_0\ (\mathrm{meV})$ & $0.2031(10)$ \\
+            $\gamma\ (\mathrm{meV})$ & $0.0055(17)$ \\
+            $\sigma_V\ (\mathrm{mV})$ & $0.0410(37)$ \\
+            $\nu\ (\mathrm{GHz})$ & $7.78$ \\
+            $A\ (\mathrm{mV})$ & $0.1059(12)$ \\
+            $\eta\ (10^{-4})$ & $5.294(61)$ \\
+            $A_\mathrm{out}\ (\mathrm{mV})$& $200$ \\
+            $T_\mathrm{bath}\ (\mathrm{K})$ & $0.277(1)$
         \end{tabular}
         \caption{
             caption
         }
         \label{table:tunnelbarrier:asym}
+    \end{wrapfigure}
+    \begin{align}
+        \mathcal{A}_I &= \frac{\int \left( I(V) - (-I(-V)) \right)\mathrm{d}V}{\int \left|I(V) + (-I(-V)) \right|\mathrm{d}V} \\
+        \mathcal{A}_{\mathrm{d}I/\mathrm{d}V} &= \frac{\int \left(\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) - \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right)\mathrm{d}V}{\int \left|\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) + \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right|\mathrm{d}V} \\
+        \mathcal{A}_{\mathrm{d}V/\mathrm{d}I} &= \frac{\int \left(\tfrac{\mathrm{d}V}{\mathrm{d}I}(I) - \tfrac{\mathrm{d}V}{\mathrm{d}I}(-I) \right)\mathrm{d}I}{\int \left|\tfrac{\mathrm{d}V}{\mathrm{d}I}(I) + \tfrac{\mathrm{d}V}{\mathrm{d}I}(-I) \right|\mathrm{d}I}
+    \end{align}
+
+    \begin{figure}
+        \centering
+        \subfigure{\import{tunnelbarrier/asym/irradiation/rect}{iv.pgf}}
+        \hfill
+        \subfigure{\import{tunnelbarrier/asym/irradiation/rect}{didv.pgf}}
+        \hfill
+        \subfigure{\import{tunnelbarrier/asym/irradiation/rect}{dvdi.pgf}}
+        \\
+        \subfigure{\import{tunnelbarrier/asym/irradiation/control-img}{eta.pgf}}
+        \hfill
+        \subfigure{\import{tunnelbarrier/asym/irradiation/control-img}{Tfit.pgf}}
+        \hfill
+        \subfigure{\import{tunnelbarrier/asym/irradiation/control-img}{Tbath.pgf}}
+        \caption{
+            Caption here.
+            }
+        \label{fig:tb:asym:control-img}
+    \end{figure}
+
+    \begin{figure}
+        \centering
+        \subfigure{\import{tunnelbarrier/asym/irradiation/frequency}{eta.pgf}}
+        \hfill
+        \subfigure{\import{tunnelbarrier/asym/irradiation/frequency}{etaT.pgf}}
+        \hfill
+        \subfigure{\import{tunnelbarrier/asym/irradiation/frequency}{rect.pgf}}
+        \caption{
+            Caption here.
+            }
+        \label{fig:tb:asym:frequency}
     \end{figure}
 
 
-        \landscapepgffigure{tunnelbarrier/asym/irradiation/iv}{main}{
-            put caption here!
-        }{fig:tb:asym:irradiation-iv}
+    Eta could be reproduced in other frequency depending measurement at fixed Aout.
 
-        \landscapepgffigure{tunnelbarrier/asym/irradiation/iv-img}{main}{
-            put caption here!
-        }{fig:tb:asym:irradiation-iv-img}
+    % control figures
 
-        \landscapepgffigure{tunnelbarrier/asym/irradiation/didv}{main}{
-            put caption here!
-        }{fig:tb:asym:irradiation-didv}
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Afit_Aout}{
+        put caption here!
+    }{fig:tb:asym:control-Afit_Aout}
 
-        \landscapepgffigure{tunnelbarrier/asym/irradiation/didv-img}{main}{
-            put caption here!
-        }{fig:tb:asym:irradiation-didv-img}
-        
-        \landscapepgffigure{tunnelbarrier/asym/irradiation/dvdi}{main}{
-            put caption here!
-        }{fig:tb:asym:irradiation-dvdi}
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tfit_Aout}{
+        put caption here!
+    }{fig:tb:asym:control-Tfit_Aout}
 
-        \landscapepgffigure{tunnelbarrier/asym/irradiation/dvdi-img}{main}{
-            put caption here!
-        }{fig:tb:asym:irradiation-dvdi-img}
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tbath_Aout}{
+        put caption here!
+    }{fig:tb:asym:control-Tbath_Aout}
 
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tfit_Afit}{
+        put caption here!
+    }{fig:tb:asym:control-Tfit_Afit}
 
-% %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.75GHz}{cal}{
-% %         %     put caption here!
-% %         % }{fig:tb:asym:irradiation-7.75GHz}
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tbath_Afit}{
+        put caption here!
+    }{fig:tb:asym:control-Tbath_Afit}
 
-% %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.87GHz}{cal}{
-% %         %     put caption here!
-% %         % }{fig:tb:asym:irradiation-7.87GHz}
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tfit_Tbath}{
+        put caption here!
+    }{fig:tb:asym:control-Tfit_Tbath}
 
-% %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.89GHz}{cal}{
-% %         %     put caption here!
-% %         % }{fig:tb:asym:irradiation-7.89GHz}
+    % sequence figures
 
-% %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.91GHz}{cal}{
-% %         %     put caption here!
-% %         % }{fig:tb:asym:irradiation-7.91GHz}
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/iv}{main}{
+        put caption here!
+    }{fig:tb:asym:sequence-iv}
 
-% %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{cal}{
-% %         %     put caption here!
-% %         % }{fig:tb:asym:irradiation-7.96GHz}
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/iv-img}{main}{
+        put caption here!
+    }{fig:tb:asym:sequence-iv-img}
 
-% %         % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_8.05GHz}{cal}{
-% %         %     put caption here!
-% %         % }{fig:tb:asym:irradiation-8.05GHz}
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/didv}{main}{
+        put caption here!
+    }{fig:tb:asym:sequence-didv}
 
-% %     %=========================================================
-% %     \subsection{Antenna vs. Stripline}
-% %     %=========================================================
-% %         was genau will ih damit sagen?
-% %         \begin{itemize}
-% %             \item 7.9 GHz Antenne in Lab Units
-% %             \item 7.9 GHz Stripline in Lab Units
-% %         \end{itemize}
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/didv-img}{main}{
+        put caption here!
+    }{fig:tb:asym:sequence-didv-img}
+    
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/dvdi}{main}{
+        put caption here!
+    }{fig:tb:asym:sequence-dvdi}
 
-% %     %=========================================================
-% %     \subsection{Frequency Dependency}
-% %     %=========================================================
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/dvdi-img}{main}{
+        put caption here!
+    }{fig:tb:asym:sequence-dvdi-img}
 
-% %         coupling, temperature, asymmetry
-% %         \begin{itemize}
-% %             \item those three vs. nu
-% %         \end{itemize}
+    % 3d figures
+
+    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{cal}{
+        put caption here!
+    }{fig:tb:asym:nu_7.96GHz:cal}
+
+    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{sim}{
+        put caption here!
+    }{fig:tb:asym:nu_7.96GHz:sim}
