@@ -59,7 +59,7 @@
             $\sigma_V\ (\mathrm{mV})$ & $0.010315(10)$ & $0.02132(31)$ & $0.015756(45)$ & $0.01424(12)$ \\
             $\nu\ (\mathrm{GHz})$ & -- & -- & $18.3$ & $13.6$ \\
             $A\ (\mathrm{mV})$ & -- & -- & $0.121793(40)$ & $0.324881(47)$ \\
-            $\eta\ (10^{-4})$ & -- & -- & $8.4$ & $21.5$ \\
+            $\eta\ (10^{-4})$ & -- & -- & $8.38(3)$ & $21.50(1)$ \\
             $A_\mathrm{out}\ (\mathrm{mV})$ & -- & -- & $150$ & $150$ \\
             $T_\mathrm{bath}\ (\mathrm{K})$ & $0.033(1)$ & $0.697(1)$ & $0.063(1)$ & $0.187(1)$
         \end{tabular}
@@ -69,7 +69,7 @@
     
     The fitted gaps cluster near $\Delta_0\approx195\,\mu\mathrm{eV}$, slightly larger than the representative aluminum value of about $180\,\mu\mathrm{eV}$ used in Sec.~\ref{subsec:micro:superconducting-gap}. I do not interpret this difference as unusual. Thin-film aluminum commonly shows sample-dependent shifts of both $\Delta_0$ and $T_\mathrm{c}$ due to thickness, disorder, and fabrication conditions, and the weak-coupling estimate from $\Delta_0$ gives $T_\mathrm{c}\approx1.274\,\mathrm{K}$, consistent with the temperature calibration below \cite{giaever_study_1961,tinkham_introduction_2004}. The normal-state conductance remains near $G_\mathrm{N}\simeq0.19\,G_0$ in all reference fits, which places TB1 in the tunnel limit. BCS quasiparticle tunneling and Tien--Gordon photon-assisted tunneling are therefore the appropriate minimal models for the measurement blocks in this section.
 
-    The fitted electronic temperature $T_\mathrm{fit}$ is difficult to estimate from an SIS junction far below the critical temperature because the spectrum changes only weakly in that regime. Although the static fit gives $T_\mathrm{fit}=215(13)\,\mathrm{mK}$, the temperature calibration in Sec.~\ref{subsec:tb:highres:temperature-calibration} shows a low-temperature fit plateau near $T_\mathrm{base}=295(15)\,\mathrm{mK}$. I therefore use the single-trace value only as a weakly constrained model parameter and return to its physical meaning below.
+    The fitted electronic temperature $T_\mathrm{fit}$ is difficult to estimate from an SIS junction far below the critical temperature because the spectrum changes only weakly in that regime. Although the static fit gives $T_\mathrm{fit}=215(13)\,\mathrm{mK}$, the temperature calibration in Sec.~\ref{subsec:tb:highres:temperature-calibration} shows a low-temperature fit plateau near $T_\mathrm{base}=282(2)\,\mathrm{mK}$. I therefore use the single-trace value only as a weakly constrained model parameter and return to its physical meaning below.
 
     The remaining two fit parameters describe phenomenological broadening. The Dynes parameter $\gamma$ accounts for finite quasiparticle lifetime and other mechanisms that broaden the superconducting density of states itself, while $\sigma_V$ describes effective voltage broadening from residual bias noise and averaging during the voltage sweep. I keep both because they affect the fit differently. Increasing $\gamma$ alone can round the gap edge, but it also increases the modeled subgap conductance. The additional voltage broadening allows the gap-edge width to be reproduced without assigning all residual rounding to the density of states.
 
@@ -88,9 +88,9 @@
 
         The sample holder was heated locally while a thermometer next to the device recorded the bath temperature $T_\mathrm{bath}$. For each temperature point, I fitted the measured \textit{I--V} curve with the SIS BCS model and extracted the fitted temperature $T_\mathrm{fit}$. I use $T_\mathrm{bath}$ for the thermometer reading and $T_\mathrm{fit}$ for the effective electronic transport temperature required by the tunnel model. For this sweep, I used the static reference parameters in the temperature column of Table~\ref{table:tunnelbarrier:highres}. Only $T_\mathrm{fit}$ varied point by point. The calibration therefore tests how the fitted SIS response relates the externally controlled bath-temperature axis to an effective transport-temperature axis.
 
-        Figure~\ref{fig:tb:highres:temperature:fit} compares $T_\mathrm{fit}$ with $T_\mathrm{bath}$. The calibration curve has three regimes: a base plateau, an almost linear middle region, and saturation at high bath temperature. I identify the base plateau with the effective temperature floor $T_\mathrm{base}$ of the transport measurement. The high-temperature saturation marks the loss of reliable superconducting fit sensitivity close to the critical temperature $T_\mathrm{c}$. I therefore use the median of the saturation as an estimate for $T_\mathrm{c}$ and fit the middle region with
+        Figure~\ref{fig:tb:highres:temperature:fit} compares $T_\mathrm{fit}$ with $T_\mathrm{bath}$. The calibration curve has three regimes: a base plateau, an almost linear middle region, and saturation at high bath temperature. I describe all three regimes with a clipped affine calibration,
         \begin{equation}
-            T_\mathrm{fit}(T_\mathrm{bath}) = \alpha_T\,T_\mathrm{bath} + T_\mathrm{off}\,.
+            T_\mathrm{cal}(T_\mathrm{bath}) = \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_\mathrm{bath}^{(\mathrm{fit})} T_\mathrm{bath}+T_\mathrm{off}\right)\right]\,.
             \label{eq:tb:highres:temperature:calibration}
         \end{equation}
 
@@ -106,17 +106,17 @@
         \end{wrapfigure}
 
 
-        Here $\alpha_T$ is the slope relating thermometer and fitted temperature in the linear regime, and $T_\mathrm{off}$ is the extrapolated temperature offset between both axes. This procedure gives
+        Here $T_\mathrm{base}$ is the effective temperature floor, $T_\mathrm{c}$ is the upper saturation temperature, $\eta_\mathrm{bath}^{(\mathrm{fit})}$ is the slope relating thermometer and fitted temperature in the intermediate regime, and $T_\mathrm{off}$ is the extrapolated temperature offset between both axes. This avoids manually excluding the plateau and saturation points: the full sweep is described with the same mapping, while the lower and upper bounds encode the weak temperature sensitivity far below and close to $T_\mathrm{c}$. This procedure gives
         \begin{equation}
             \begin{aligned}
-                T_\mathrm{c} &= 1.267(17)\,\mathrm{K}\,,\\
-                T_\mathrm{base} &= 0.295(15)\,\mathrm{K}\,,\\
-                T_\mathrm{off} &= -0.0778(20)\,\mathrm{K}\,,\\
-                \alpha_T &= 0.9910(20)\,.
+                T_\mathrm{c} &= 1.256(26)\,\mathrm{K}\,,\\
+                T_\mathrm{base} &= 0.2819(17)\,\mathrm{K}\,,\\
+                T_\mathrm{off} &= -0.0929(36)\,\mathrm{K}\,,\\
+                \eta_\mathrm{bath}^{(\mathrm{fit})} &= 1.0023(40)\,.
             \end{aligned}
             \label{eq:tb:highres:temperature:parameters}
         \end{equation}
-        The critical temperature inferred from the zero-temperature gap is about $1.274\,\mathrm{K}$, so the value obtained from the temperature sweep agrees within the uncertainty. The slope $\alpha_T$ is close to unity, as expected when the thermometer and electronic transport temperature follow each other in the intermediate region. The negative offset may result from limited equilibration after each heater setpoint change, because I waited only a few seconds before recording the next \textit{I--V} curve.
+        The critical temperature inferred from the zero-temperature gap is about $1.274\,\mathrm{K}$, so the value obtained from the temperature sweep agrees within the uncertainty. The slope $\eta_\mathrm{bath}^{(\mathrm{fit})}$ is close to unity, as expected when the thermometer and electronic transport temperature follow each other in the intermediate region. The negative offset may result from limited equilibration after each heater setpoint change, because I waited only a few seconds before recording the next \textit{I--V} curve.
 
         The low-temperature plateau should not be read as a direct thermometer measurement. Far below $T_\mathrm{c}$, an SIS spectrum changes only weakly with temperature, so the fit has limited sensitivity to small changes in $T_\mathrm{fit}$. In addition, residual radiation, imperfect line thermalization, and bias dissipation can produce a real electronic temperature floor above the thermometer reading. I therefore interpret $T_\mathrm{base}$ as the lowest effective transport temperature resolved by this calibration.
 
@@ -171,7 +171,7 @@
 
         Figure~\ref{fig:tb:highres:amp18.3GHz:fit} shows the pointwise fitted amplitudes as a function of nominal VNA output. These fitted amplitudes are the values used to remap the sweep to the reduced PAT coordinate. I fit them again with a linear relation only to compare the effective coupling between measurement blocks. Over the main part of the sweep, this comparison fit gives
         \begin{equation}
-            A = \eta A_\mathrm{out}\,,\qquad \eta\approx8.4\times10^{-4}\,.
+            A = \eta A_\mathrm{out}\,,\qquad \eta\approx8.38(3)\times10^{-4}\,.
             \label{eq:tb:highres:amp18.3GHz:eta}
         \end{equation}
         The abrupt feature around $A_\mathrm{out}\approx300\,\mathrm{mV}$ is not a change of junction physics. It is consistent with a change in the internal source-amplification state of the network analyzer. At the largest source settings the fitted amplitudes also deviated from a single linear slope, which I treated as a limit of using the VNA output as a microwave power coordinate.
@@ -187,7 +187,7 @@
         
         The fitted amplitude values in Fig.~\ref{fig:tb:highres:amp13.6GHz:fit} are again used directly for the remapped axis. A secondary linear fit to these values gives the comparison slope
         \begin{equation}
-            \eta\approx21.5\times10^{-4}\,.
+            \eta\approx21.50(1)\times10^{-4}\,.
             \label{eq:tb:highres:amp13.6GHz:eta}
         \end{equation}
         At the highest source settings, Fig.~\ref{fig:tb:highres:amp13.6GHz:fit} shows a plateau because the VNA reached its maximum available output power. The coupling is about a factor of 2.6 larger than the fitted coupling at $18.3\,\mathrm{GHz}$. The $\eta$ values listed in Table~\ref{table:tunnelbarrier:highres} are therefore summary slopes from these secondary fits, not the calibration inputs used to remap the transport landscapes. Together with the lower photon energy, the larger comparison slope makes the $13.6\,\mathrm{GHz}$ amplitude sweep the high-amplitude benchmark of the section.
