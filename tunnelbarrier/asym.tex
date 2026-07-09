@@ -4,7 +4,7 @@
 \label{sec:tb:asym}
 %=========================================================
 
-    \begin{wrapfigure}[14]{r}{40mm}
+    \begin{wrapfigure}[13]{r}{40mm}
         \captionsetup{format=plain}%
         \centering
         \vspace{-1.5em}
@@ -12,34 +12,30 @@
             \fontsize{7}{9}\selectfont
             \import{tunnelbarrier/samples}{TB2.pdf_tex}
         }
-        \vspace{-.5em}
+        \vspace{-1.5em}
         \caption{
-            SEM Image of TB2 (OI-24d-09), 60+77, 3.4mbar, 3min
+            SEM image of TB1. The $60\,\mathrm{nm}$ lower Al layer was oxidized in-situ at $3.4\,\mathrm{mbar}$ for $3\,\mathrm{min}$. The angled top layer corresponds to $77\,\mathrm{nm}$ Al.
         }
         \label{fig:tb:asym:image-TB2}
     \end{wrapfigure}
 
-    The device investigated here it TB2 (OI-24d-09). Due to problems with collapsing resist masks during shadow evaporation, the finger was displaced slightly in order to reduce free standing length of the resist. The Setup as discribed in Patrick Raif is used for this measurements. The main difference is the filtering in the lines. We are not using the commercial thermalizer and filter, instead we use a train of copper powder filters and steel capillarry cables. The reference resistor is moved already to cold temperatures in oposition of martin prestel. The antenna is again used for these measurements.
+    The device investigated here it TB2\footnote{In the lab book TB2 is called `OI-24d-09'.}. A prominent difference of the sample in comparison with TB1 (Sec.~\ref{sec:tb:highres}), is the finger position. I moved it to the left, in order reduce the free standing length of the evaporation mask. Since the mask was regularly collapsing during evaporation. The aluminum layers are ever so slighty thinner. Also the oxidation pressure and time vary slightly, however i expect an oxide barrier of similar quality to TB1. Another major difference is that the shadow of the break junction is still connected. This is due to less undercut in the evaporation mask.
 
-    Disclaimer: I found an asymmetry with great Rectification during amplitude sweeps for frequencies between 7.78 and 8.05 GHz. This is a lot of data and hard to break down. So in the end of this section, i will show sequences of false color maps and sequences of curves at fixed amplitudes. 
-    
-    A great start to get a visual impression of the phenomen is to check figures fig:tb:asym:irradiation-iv to fig:tb:asym:irradiation-dvdi-img. Here we can see in the beginning and end of the sequence a normal proper behaviour, as we would expect it for BCS / PAT at rather low frequencies, as discussed in the previous section.
+    Why did i do the measurement?
+    - measurement was done before highres as reference. however, wasnt a reference since it did symmetric stuff we didnt understand.
+    - the setup wasnt that optimized as for the highres measurements, so it also lacks in spectrum quality.
 
-    We can observe the replicas left and right of the 2 Delta peaks in the differential conductance. However, for larger amplitudes, the distance between the replicas of the peak start to close again. This is due to high electronic temperatures of the junction. 
+    As for TB1 I observe a clear quasiparticle onset and no supercurrent. 
 
-    However if we think of two V shaped PAT branches, one beeing at positive the other at negative 2Delta, one can understnad it as two Vs with increasing slope over frequency, since in this reduced plots the slope should be equal to $h\nu$. However at some point it seems like another 
-    
-
-    \singlefitfigure{tunnelbarrier/asym/irradiation/single-fit}{
-        caption here
-    }{fig:tb:asym:irradiation:single-iv}
-
-    \begin{wrapfigure}[14]{r}{0.4\textwidth}
+    \begin{wraptable}[10]{r}{0.4\textwidth}
         \captionsetup{format=plain}%
         \centering
+        \caption{
+            caption
+        }
         \footnotesize
         \begin{tabular}{r|l}
-            Figures & \ref{fig:tb:asym:irradiation:single-iv} \\\hline
+            % Figures & \ref{fig:tb:asym:irradiation:single-iv} \\\hline
             $G_\mathrm{N}\ (G_0)$ & $0.0927461(83)$\\
             $T_\mathrm{fit}\ (\mathrm{K})$ & $0.534(41)$ \\
             $\Delta_0\ (\mathrm{meV})$ & $0.2031(10)$ \\
@@ -47,20 +43,77 @@
             $\sigma_V\ (\mathrm{mV})$ & $0.0410(37)$ \\
             $\nu\ (\mathrm{GHz})$ & $7.78$ \\
             $A\ (\mathrm{mV})$ & $0.1059(12)$ \\
-            $\eta\ (10^{-4})$ & $5.294(61)$ \\
+            % $\eta\ (10^{-4})$ & $5.294(61)$ \\
             $A_\mathrm{out}\ (\mathrm{mV})$& $200$ \\
             $T_\mathrm{bath}\ (\mathrm{K})$ & $0.277(1)$
         \end{tabular}
-        \caption{
-            caption
-        }
         \label{table:tunnelbarrier:asym}
-    \end{wrapfigure}
+    \end{wraptable}
+    we can again obtain all the relevant parameters of TB2, shown in table~\ref{table:tunnelbarrier:asym} by fitting a single iv curve, shown in fig.~\ref{fig:tb:asym:irradiation:single-iv}. These curves are not corrected with the additional offset algorithm, discussed in Sec.~\ref{subsec:methods:digital:analysis}.
+    
+    \singlefitfigure{tunnelbarrier/asym/irradiation/single-fit}{
+        Representative transport trace of TB2. The panels show the measured \textit{I--V} curve and the numerically derived \textit{dI--dV} and \textit{dV--dI} responses. The \textit{I--V} curve is fitted with the SIS BCS model, with the extracted parameters listed in Table~\ref{table:tunnelbarrier:asym}.
+    }{fig:tb:asym:irradiation:single-iv}
+
+    In comparison to TB1, TB2's normal state conductivity is about half. The gap size is similar and the temperature is elevated for this specific iv. The rounding parameters $\gamma$ and $\sigma_V$ are significant higher. this is because of a slightly worse version of the setup.
+
+    The Setup as discribed in Patrick Raif and Martin Prestel is used for this measurements. The main difference is the filtering in the lines. We are not using the commercial thermalizer and filter, instead we use a train of copper powder filters and steel capillarry cables. The reference resistor is moved already to cold temperatures in oposition of martin prestel. The antenna is again used for these measurements.
+
+    For some frequencies at higher microwave-amplitudes an asymmetry in the iv could be observed, as shown in fig.~\ref{fig:tb:asym:irradiation:single-asym}. The exact same IV was measured in up- and down sweep and overlap better than i can show two curves on top of each other. I define a bias depending rectification as 
     \begin{align}
-        \mathcal{A}_I &= \frac{\int \left( I(V) - (-I(-V)) \right)\mathrm{d}V}{\int \left|I(V) + (-I(-V)) \right|\mathrm{d}V} \\
-        \mathcal{A}_{\mathrm{d}I/\mathrm{d}V} &= \frac{\int \left(\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) - \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right)\mathrm{d}V}{\int \left|\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) + \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right|\mathrm{d}V} \\
-        \mathcal{A}_{\mathrm{d}V/\mathrm{d}I} &= \frac{\int \left(\tfrac{\mathrm{d}V}{\mathrm{d}I}(I) - \tfrac{\mathrm{d}V}{\mathrm{d}I}(-I) \right)\mathrm{d}I}{\int \left|\tfrac{\mathrm{d}V}{\mathrm{d}I}(I) + \tfrac{\mathrm{d}V}{\mathrm{d}I}(-I) \right|\mathrm{d}I}
+        \chi_I(V) &= \frac{ I(V) - (-I(-V))}{\left|I(V) + (-I(-V)) \right|}\,,\\
+        \chi_{\mathrm{d}I/\mathrm{d}V}(V) &= \frac{\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) - \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V)}{\left|\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) + \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right|}\,,\\
+        \chi_{\mathrm{d}V/\mathrm{d}I}(I) &= \frac{\tfrac{\mathrm{d}V}{\mathrm{d}I}(I) - \tfrac{\mathrm{d}V}{\mathrm{d}I}(-I)}{\left|\tfrac{\mathrm{d}V}{\mathrm{d}I}(I) + \tfrac{\mathrm{d}V}{\mathrm{d}I}(-I) \right|}\,.
+        \label{eq:tb:asm:rect-chi}
     \end{align}
+    The I--V curve shown in Fig.~\ref{fig:tb:asym:irradiation:single-asym} has a rectification, up to $\chi_I = 0.254$. The full amplitude sweep at this frequency is shown in Fig.~\ref{tunnelbarrier/asym/irradiation/nu_7.97GHz}.
+
+    \begin{figure}
+        \centering
+        \subfigure[
+            \textit{I--V}
+            ]{\import{tunnelbarrier/asym/irradiation/single-asym}{iv.pgf}}
+        \hfill
+        \subfigure[
+            \textit{dI--dV}
+            ]{\import{tunnelbarrier/asym/irradiation/single-asym}{didv.pgf}}
+        \hfill
+        \subfigure[
+            \textit{dV--dI}
+            ]{\import{tunnelbarrier/asym/irradiation/single-asym}{dvdi.pgf}}
+        \\
+        \subfigure[
+            Rectification of \textit{I--V}
+            ]{\import{tunnelbarrier/asym/irradiation/single-asym-rect}{iv.pgf}}
+        \hfill
+        \subfigure[
+            Rectification of \textit{dI--dV}
+            ]{\import{tunnelbarrier/asym/irradiation/single-asym-rect}{didv.pgf}}
+        \hfill
+        \subfigure[
+            Rectification of \textit{dV--dI}
+            ]{\import{tunnelbarrier/asym/irradiation/single-asym-rect}{dvdi.pgf}}
+        \caption{
+            Representative asymmetric transport trace of TB2. Panels a-c show positive and negative branch of the measured \textit{I--V} curve and the numerically derived \textit{dI--dV} and \textit{dV--dI} responses. Panels d-f show their corresponding rectification $\chi$, as defined in Eq.~\eqref{eq:tb:asm:rect-chi}. Measurement was done at $\nu=7.97\,\mathrm{GHz}$, $A_\mathrm{out}=720\,\mathrm{mV}$ and $T_\mathrm{bath}=917(1)\,\mathrm{mK}$.
+            }
+        \label{fig:tb:asym:irradiation:single-asym}
+    \end{figure}
+
+    In order to understnad this symmetric behaviour under microwave irradiation better, I did amplitude sweeps for frequencies from 7.75-8.05\,GHz in steps of 50 MHz. Figures \ref{fig:tb:asym:sequence-iv}, \ref{fig:tb:asym:sequence-didv}, \& \ref{fig:tb:asym:sequence-dvdi} show the curves at chosen calibrated microwave amplitudes in many panels corresponding to the frequencies. Figures~\ref{fig:tb:asym:sequence-iv-img}, \ref{fig:tb:asym:sequence-didv-img}, \& \ref{fig:tb:asym:sequence-dvdi-img} show corresponding false calor maps.
+
+    If we take a look at the didv false color maps, and use our wild imagination, on can think about two blue flames. And apparently there is some wind, so they get smaller but also get scewed to one side. the wind changes direction as we increase the frequency and the scewing changes sign. However, when the scewing passes from left to right, it appears as a thrid flame is appearing and changing from left to right. In the end of the seqeunce the wind settles and we are back in out BCS PAT world, where nothing ordinary happens.
+
+    Calibration in this case is more difficult, since non-symmetrical IV are not exactly fittable with the BCS SIS model. So a remapping approach like for TB1 will likely fail. However, when performing the fits non the less, and by fitting the slope of Afit over Aout. For that i calculated the ratio Afit over Aout for each curve. As expected the values for asymmetric ivs differ a lot, however in each amplide sweep there is enough symmetric curves to have decently extracted coupling parameter by taking the median. The amplitude sweep is then calibrated with this extracted coupling parameter. In figure\ref{fig:tb:asym:control-Afit_Aout} The extracted Afit and the extracted coupling paramter are displayed.
+    
+    With the calibration done, we can give each I--V a rectification value $\mathcal{A}$ as defined like
+    \begin{align}
+        \mathcal{A}_I &= \frac{\int \left( I(V) - (-I(-V)) \right)\mathrm{d}V}{\int \left|I(V) + (-I(-V)) \right|\mathrm{d}V}\,, \\
+        \mathcal{A}_{\mathrm{d}I/\mathrm{d}V} &= \frac{\int \left(\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) - \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right)\mathrm{d}V}{\int \left|\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) + \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right|\mathrm{d}V} \,,\\
+        \mathcal{A}_{\mathrm{d}V/\mathrm{d}I} &= \frac{\int \left(\tfrac{\mathrm{d}V}{\mathrm{d}I}(I) - \tfrac{\mathrm{d}V}{\mathrm{d}I}(-I) \right)\mathrm{d}I}{\int \left|\tfrac{\mathrm{d}V}{\mathrm{d}I}(I) + \tfrac{\mathrm{d}V}{\mathrm{d}I}(-I) \right|\mathrm{d}I}\,.
+        \label{eq:tb:asm:rect-A}
+    \end{align}
+
+    We can look at this recification numbers over microwave amplitude and frequncy in Figure~\ref{fig:tb:asym:control-img}. Here we learn that the recification for the IV is greater for higher amplitudes and is negative for lower frequencies and positive for higher frequencies. The rectification of dI--dV follows the rectification of the iv. However for the didv the sign of the  rectification seem to be inverse. For low Amplitudes there is a lot of noise as well. The overall shape seem to be reliable for all three rectifications.
 
     \begin{figure}
         \centering
@@ -69,59 +122,99 @@
         \subfigure{\import{tunnelbarrier/asym/irradiation/rect}{didv.pgf}}
         \hfill
         \subfigure{\import{tunnelbarrier/asym/irradiation/rect}{dvdi.pgf}}
-        \\
+        \hfill
         \subfigure{\import{tunnelbarrier/asym/irradiation/control-img}{eta.pgf}}
         \hfill
-        \subfigure{\import{tunnelbarrier/asym/irradiation/control-img}{Tfit.pgf}}
-        \hfill
         \subfigure{\import{tunnelbarrier/asym/irradiation/control-img}{Tbath.pgf}}
+        \hfill
+        \subfigure{\import{tunnelbarrier/asym/irradiation/control-img}{Tfit.pgf}}
         \caption{
             Caption here.
             }
         \label{fig:tb:asym:control-img}
     \end{figure}
+    
+    Apparently this phenomen is frequency depending. I calculated the mean value of the rectifications over the amplitude and plotted them in fig.~\ref{fig:tb:asym:frequency} (a-c). In order to check if bath temperature, fitted temperature or applied or fitted amplitude are influencing the rectification I fitted their respective coupling by
+    \begin{align}
+        A_\mathrm{fit} &= \eta_{A_\mathrm{out}}^{(A_\mathrm{fit})}\, A_\mathrm{out}\,,\\
+        T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{A_\mathrm{out}}^{(T_\mathrm{fit})}\, A_\mathrm{out}+T_\mathrm{off}\right)\right]\,,\\
+        T_\mathrm{bath} &= \eta_{A_\mathrm{out}}^{(T_\mathrm{bath})}\, A_\mathrm{out}+ \mathrm{const.}\,,\\
+        T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{A_\mathrm{fit}}^{(T_\mathrm{fit})}\, A_\mathrm{fit}+T_\mathrm{off}\right)\right]\,,\\
+        T_\mathrm{bath} &= \eta_{A_\mathrm{fit}}^{(T_\mathrm{bath})}\, A_\mathrm{fit}+ \mathrm{const.}\,,\\
+        T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{T_\mathrm{bath}}^{(T_\mathrm{fit})}\, T_\mathrm{bath}+T_\mathrm{off}\right)\right]\,.
+    \end{align}
+
+    With that calibration I found clusters for critical and base temperature at
+    \begin{align}
+        T_\mathrm{c}= 1.35 & &
+        T_\mathrm{base} = 0.5\,.
+    \end{align}
+
+    The coupling can be checked in Figures~\ref{fig:tb:asym:control-Afit_Aout} \ref{fig:tb:asym:control-Tfit_Aout} \ref{fig:tb:asym:control-Tbath_Aout} \ref{fig:tb:asym:control-Tfit_Afit} \ref{fig:tb:asym:control-Tbath_Afit} \ref{fig:tb:asym:control-Tfit_Tbath} and their frequency dependece in displayed in Panel (d) - (i) in figure \ref{fig:tb:asym:frequency}. While most of the couplings are, neither correlating, nor anticorrelating. However the coupling of the bath temperature follows the rough outline of the applied and fitted amplitude.
 
     \begin{figure}
         \centering
-        \subfigure{\import{tunnelbarrier/asym/irradiation/frequency}{eta.pgf}}
+        \subfigure[
+            caption
+        ]{\import{tunnelbarrier/asym/irradiation/frequency}{rectI.pgf}}
         \hfill
-        \subfigure{\import{tunnelbarrier/asym/irradiation/frequency}{etaT.pgf}}
+        \subfigure[
+            caption
+        ]{\import{tunnelbarrier/asym/irradiation/frequency}{rectdG.pgf}}
         \hfill
-        \subfigure{\import{tunnelbarrier/asym/irradiation/frequency}{rect.pgf}}
+        \subfigure[
+            caption
+        ]{\import{tunnelbarrier/asym/irradiation/frequency}{rectdR.pgf}}
+        \\
+        \subfigure[
+            caption
+        ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Afit_Aout.pgf}}
+        \hfill
+        \subfigure[
+            caption
+        ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tfit_Aout.pgf}}
+        \hfill
+        \subfigure[
+            caption
+        ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tbath_Aout.pgf}}
+        \\
+        \subfigure[
+            caption
+        ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tfit_Tbath.pgf}}
+        \hfill
+        \subfigure[
+            caption
+        ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tfit_Afit.pgf}}
+        \hfill
+        \subfigure[
+            caption
+        ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tbath_Afit.pgf}}
+        \\
         \caption{
             Caption here.
             }
         \label{fig:tb:asym:frequency}
     \end{figure}
 
+    With that we can start speculating about stuff.
 
-    Eta could be reproduced in other frequency depending measurement at fixed Aout.
+    What might be the effect?
+    Check for resonances in the holder?
 
-    % control figures
+    What might be the application?
 
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Afit_Aout}{
+    VEry wyld speculation. MASER? did i found it? microwave controllable superconductivity based tunnel diode?
+
+
+    % 3d figures
+
+    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.97GHz}{cal}{
         put caption here!
-    }{fig:tb:asym:control-Afit_Aout}
+    }{fig:tb:asym:nu_7.97GHz:cal}
 
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tfit_Aout}{
+    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{sim}{
         put caption here!
-    }{fig:tb:asym:control-Tfit_Aout}
-
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tbath_Aout}{
-        put caption here!
-    }{fig:tb:asym:control-Tbath_Aout}
-
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tfit_Afit}{
-        put caption here!
-    }{fig:tb:asym:control-Tfit_Afit}
-
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tbath_Afit}{
-        put caption here!
-    }{fig:tb:asym:control-Tbath_Afit}
-
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tfit_Tbath}{
-        put caption here!
-    }{fig:tb:asym:control-Tfit_Tbath}
+    }{fig:tb:asym:nu_7.96GHz:sim}
 
     % sequence figures
 
@@ -149,12 +242,28 @@
         put caption here!
     }{fig:tb:asym:sequence-dvdi-img}
 
-    % 3d figures
+    % control figures
 
-    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{cal}{
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Afit_Aout}{
         put caption here!
-    }{fig:tb:asym:nu_7.96GHz:cal}
+    }{fig:tb:asym:control-Afit_Aout}
 
-    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{sim}{
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tfit_Aout}{
         put caption here!
-    }{fig:tb:asym:nu_7.96GHz:sim}
+    }{fig:tb:asym:control-Tfit_Aout}
+
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tbath_Aout}{
+        put caption here!
+    }{fig:tb:asym:control-Tbath_Aout}
+
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tfit_Afit}{
+        put caption here!
+    }{fig:tb:asym:control-Tfit_Afit}
+
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tbath_Afit}{
+        put caption here!
+    }{fig:tb:asym:control-Tbath_Afit}
+
+    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tfit_Tbath}{
+        put caption here!
+    }{fig:tb:asym:control-Tfit_Tbath}
