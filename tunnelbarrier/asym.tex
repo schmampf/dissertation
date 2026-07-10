@@ -4,6 +4,11 @@
 \label{sec:tb:asym}
 %=========================================================
 
+%=========================================================
+\subsubsection*{Static Transport and Reference Parameters}
+\label{subsec:tb:asym:static}
+%=========================================================
+
     \begin{wrapfigure}[13]{r}{40mm}
         \captionsetup{format=plain}%
         \centering
@@ -62,6 +67,11 @@
 
     For the microwave-amplitude sweeps, I held the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$ fixed at the values obtained from the representative fit. I then allowed $T_\mathrm{fit}$ and $A_\mathrm{fit}$ to vary for each irradiated trace. This procedure follows the analysis of TB1 and provides a common reference for comparing the different drive frequencies. Unlike TB1, however, TB2 developed a pronounced bias asymmetry under microwave irradiation. The symmetric SIS plus Tien--Gordon model cannot reproduce this response, so the extracted $T_\mathrm{fit}$ and $A_\mathrm{fit}$ should be interpreted as effective comparison parameters rather than as a complete physical description of the asymmetric curves.
 
+%=========================================================
+\subsubsection*{Motivating Asymmetric Response}
+\label{subsec:tb:asym:representative}
+%=========================================================
+
     The departure from the symmetric SIS response became pronounced at selected frequencies and sufficiently large microwave amplitudes. Figure~\ref{fig:tb:asym:irradiation:single-asym} shows a representative trace at $\nu=7.97\,\mathrm{GHz}$. To compare the two bias polarities, I reflected the negative-bias branch about the origin and plotted it together with the positive-bias branch. The two branches differ substantially in the quasiparticle-onset region and remain separated at larger bias. The corresponding \textit{dI--dV} and \textit{dV--dI} curves show that the asymmetry is associated with a redistribution and displacement of the spectral features rather than with a constant current or voltage offset.
 
     I recorded the same trace with increasing and decreasing bias. The two sweep directions overlapped within the experimental resolution. The asymmetry is therefore reproducible and does not originate from sweep-direction hysteresis on the measurement timescale.
@@ -108,6 +118,43 @@
         \label{fig:tb:asym:irradiation:single-asym}
     \end{figure}
 
+    This trace creates a calibration problem. For TB1, each irradiated curve could be fitted with the symmetric SIS plus Tien--Gordon model and remapped using its individual $A_\mathrm{fit}$. For TB2, the extracted $A_\mathrm{fit}$ becomes model-dependent precisely where the rectification is strongest. A pointwise remapping would therefore imprint the failure of the symmetric model onto the calibrated amplitude axis.
+
+%=========================================================
+\subsubsection*{Effective Microwave-Amplitude Calibration}
+\label{subsec:tb:asym:amplitude-calibration}
+%=========================================================
+
+    I nevertheless fitted every complete signed \textit{I--V} curve with the symmetric SIS plus Tien--Gordon model and extracted $A_\mathrm{fit}$ and $T_\mathrm{fit}$. For asymmetric curves, these values are effective fit parameters because the model cannot reproduce both bias branches simultaneously. I therefore did not use the individual $A_\mathrm{fit}$ values as the remapped amplitude coordinate.
+
+    Instead, I determined one effective coupling coefficient for each frequency. For every nonzero source amplitude in a frequency sweep, I evaluated $A_\mathrm{fit}/A_\mathrm{out}$. The ratio at $A_\mathrm{out}=0$ is undefined and entered the evaluation as \texttt{NaN}. All remaining ratios were included without rejection based on fit quality or asymmetry. I defined the frequency-dependent coupling as
+    \begin{equation}
+        \eta(\nu)=\operatorname*{median}_{A_\mathrm{out}>0}\!\left(\frac{A_\mathrm{fit}}{A_\mathrm{out}}\right)
+        \label{eq:tb:asym:amplitude-coupling}
+    \end{equation}
+    and assigned the calibrated amplitude
+    \begin{equation}
+        A_\mathrm{cal}=\eta(\nu)A_\mathrm{out}
+        \label{eq:tb:asym:calibrated-amplitude}
+    \end{equation}
+    to each curve. The median reduces the influence of scattered fits in the asymmetric region, while the symmetric parts of each sweep provide the amplitude scale. This procedure yields a common effective comparison axis but does not constitute an independent measurement of the ac voltage across the junction.
+
+    \begin{figure}[t]
+        \centering
+        \import{tunnelbarrier/asym/irradiation/control}{Afit_Aout.pgf}
+        \caption{
+            Effective microwave-amplitude calibration of TB2 at selected frequencies. The points show $A_\mathrm{fit}$ obtained from the complete signed \textit{I--V} curves. The lines show the frequency-dependent effective coupling used to define $A_\mathrm{cal}$ in Eq.~\eqref{eq:tb:asym:calibrated-amplitude}. Deviations from the lines are largest where the bias asymmetry prevents a quantitative symmetric-model fit.
+        }
+        \label{fig:tb:asym:control-Afit_Aout}
+    \end{figure}
+
+    Frequencies with weaker coupling do not reach the full displayed $A_\mathrm{cal}$ range. The corresponding gray regions in the maps indicate that no data are available there. With this effective amplitude coordinate established, I now compare how the measured transport evolves across the investigated frequency interval.
+
+%=========================================================
+\subsubsection*{Frequency-Dependent Transport Response}
+\label{subsec:tb:asym:transport}
+%=========================================================
+
     The representative trace establishes the presence of microwave-induced rectification at one operating point. To determine whether the effect was isolated or evolved systematically, I measured microwave-amplitude sweeps from $7.75$ to $8.05\,\mathrm{GHz}$ in steps of $50\,\mathrm{MHz}$. Figures~\ref{fig:tb:asym:sequence-iv}, \ref{fig:tb:asym:sequence-didv}, and \ref{fig:tb:asym:sequence-dvdi} compare the resulting \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} landscapes at selected frequencies. In each figure, panel a shows the full amplitude dependence as a false-color map, while panel b compares selected positive- and negative-bias traces.
 
     % sequence figures
@@ -120,7 +167,7 @@
             Selected \textit{I--V} curves
         ]{\import{tunnelbarrier/asym/irradiation/iv}{main.pgf}}
         \caption{
-            \textit{I--V} Curves for selected freqeuncies. In (a) one sees the false color map and in (b) curves for selected amplitudes are shown.
+            Frequency-dependent \textit{I--V} response of TB2 on the effective calibrated-amplitude axis. Panel a shows false-color maps for selected frequencies. Panel b compares the positive- and negative-bias branches at selected amplitudes. Gray regions indicate calibrated amplitudes outside the measured range.
         }
         \label{fig:tb:asym:sequence-iv}
     \end{figure}
@@ -134,7 +181,7 @@
             Selected \textit{dI--dV} curves
         ]{\import{tunnelbarrier/asym/irradiation/didv}{main.pgf}}
         \caption{
-            caption
+            Frequency-dependent \textit{dI--dV} response of TB2 on the effective calibrated-amplitude axis. Panel a shows the evolution of the quasiparticle-onset ridges as false-color maps. Panel b compares the reflected bias branches at selected amplitudes and reveals the frequency-dependent reversal of their unequal spectral evolution.
         }
         \label{fig:tb:asym:sequence-didv}
     \end{figure}
@@ -148,29 +195,30 @@
             Selected \textit{dV--dI} curves
         ]{\import{tunnelbarrier/asym/irradiation/dvdi}{main.pgf}}
         \caption{
-            caption
+            Frequency-dependent \textit{dV--dI} response of TB2 on the effective calibrated-amplitude axis. Panel a shows the full amplitude evolution as false-color maps. Panel b compares selected reflected bias branches. The narrow high-resistance features make this representation more sensitive to derivative noise.
         }
         \label{fig:tb:asym:sequence-dvdi}
     \end{figure}
 
 
-    If we take a look at the didv false color maps, and use our wild imagination, on can think about two blue flames. And apparently there is some wind, so they get smaller but also get scewed to one side. the wind changes direction as we increase the frequency and the scewing changes sign. However, when the scewing passes from left to right, it appears as a thrid flame is appearing and changing from left to right. In the end of the seqeunce the wind settles and we are back in out BCS PAT world, where nothing ordinary happens.
+    The \textit{dI--dV} maps provide the clearest view of the spectral evolution. At the lowest and highest frequencies, the two quasiparticle-onset ridges remain approximately symmetric. At intermediate frequencies, one ridge is suppressed and displaced relative to the other, and the direction of this deformation reverses across the investigated frequency interval. Near the reversal, an additional conductance feature appears between the two main ridges. The \textit{I--V} and \textit{dV--dI} representations show the same systematic amplitude and frequency dependence, although the narrow resistance features make the latter more sensitive to noise.
 
-    The bias asymmetry prevents the pointwise amplitude remapping used for TB1. I nevertheless fitted every complete signed \textit{I--V} curve with the symmetric SIS plus Tien--Gordon model and extracted $A_\mathrm{fit}$ and $T_\mathrm{fit}$. For asymmetric curves, these values are effective fit parameters because the model cannot reproduce both bias branches simultaneously. I therefore did not use the individual $A_\mathrm{fit}$ values as the remapped amplitude coordinate.
+    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.97GHz}{cal}{
+        Calibrated transport landscape of TB2 at $\nu=7.97\,\mathrm{GHz}$. The three columns show the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses as selected traces, surfaces, and false-color maps. The vertical axis uses the effective calibrated amplitude defined in Eq.~\eqref{eq:tb:asym:calibrated-amplitude}.
+    }{fig:tb:asym:nu_7.97GHz:cal}
 
-    Instead, I determined one effective coupling coefficient for each frequency. For every nonzero source amplitude in a frequency sweep, I evaluated $A_\mathrm{fit}/A_\mathrm{out}$. The ratio at $A_\mathrm{out}=0$ is undefined and entered the evaluation as \texttt{NaN}. All remaining ratios were included without rejection based on fit quality or asymmetry. I defined the frequency-dependent coupling as
-    \begin{equation}
-        \eta(\nu)=\operatorname*{median}_{A_\mathrm{out}>0}\!\left(\frac{A_\mathrm{fit}}{A_\mathrm{out}}\right)
-        \label{eq:tb:asym:amplitude-coupling}
-    \end{equation}
-    and assigned the calibrated amplitude
-    \begin{equation}
-        A_\mathrm{cal}=\eta(\nu)A_\mathrm{out}
-        \label{eq:tb:asym:calibrated-amplitude}
-    \end{equation}
-    to each curve. The median reduces the influence of scattered fits in the asymmetric region, while the symmetric parts of each sweep provide the amplitude scale. This procedure yields a common effective comparison axis but does not constitute an independent measurement of the ac voltage across the junction. Frequencies with weaker coupling do not reach the full displayed $A_\mathrm{cal}$ range. The corresponding gray regions in the maps indicate that no data are available there.
+    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{sim}{
+        Symmetric SIS plus Tien--Gordon reference calculation at $\nu=7.96\,\mathrm{GHz}$. The simulation shows the response expected from bias-symmetric photon-assisted quasiparticle tunneling and provides a model reference for the asymmetric measurement.
+    }{fig:tb:asym:nu_7.96GHz:sim}
 
-    Independently of the amplitude calibration, I assign each transport curve a signed integrated asymmetry $\mathcal{A}$,
+    The calibrated landscapes establish that the symmetry breaking evolves systematically with both microwave amplitude and frequency. The symmetric calculation reproduces the overall photon-assisted redistribution of spectral weight but not the unequal evolution of the two bias branches. I next quantify this difference over the complete data set.
+
+%=========================================================
+\subsubsection*{Rectification Analysis}
+\label{subsec:tb:asym:rectification}
+%=========================================================
+
+    The local quantity $\chi$ identifies the bias regions in which the representative trace becomes asymmetric. To compare all measured curves without selecting a particular bias point, I assign each transport curve a signed integrated asymmetry $\mathcal{A}$,
     \begin{align}
         \mathcal{A}_I &= \frac{\int \left[I(V)+I(-V)\right]\mathrm{d}V}{\int \left|I(V)-I(-V)\right|\mathrm{d}V}\,, \\
         \mathcal{A}_{\mathrm{d}I/\mathrm{d}V} &= \frac{\int \left(\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) - \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right)\mathrm{d}V}{\int \left|\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) + \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right|\mathrm{d}V} \,,\\
@@ -179,7 +227,7 @@
     \end{align}
     The integrations use the common symmetric bias interval available for the two reflected branches. In contrast to the local quantity $\chi$, $\mathcal{A}$ summarizes the signed asymmetry of an entire curve. Positive and negative contributions can therefore cancel.
 
-    Figure~\ref{fig:tb:asym:control-img} shows $\mathcal{A}$ as a function of frequency and calibrated amplitude. The magnitude of the \textit{I--V} asymmetry generally increases with amplitude and changes sign across the investigated frequency interval. The \textit{dI--dV} asymmetry follows the same broad frequency dependence, while the \textit{dV--dI} asymmetry has the opposite sign. The derivative measures are noisy at low amplitude because their normalization becomes small, but the large-amplitude structure is consistent across the three transport representations.
+    Figure~\ref{fig:tb:asym:rectification-map} shows $\mathcal{A}$ as a function of frequency and calibrated amplitude. The magnitude of the \textit{I--V} asymmetry generally increases with amplitude and changes sign across the investigated frequency interval. The \textit{dI--dV} asymmetry follows the same broad frequency dependence, while the \textit{dV--dI} asymmetry has the opposite sign. The derivative measures are noisy at low amplitude because their normalization becomes small, but the large-amplitude structure is consistent across the three transport representations.
 
     \begin{figure}[t]
         \centering
@@ -194,22 +242,10 @@
         \subfigure[
             Rectification $\mathcal{A}_{\mathrm{d}V/\mathrm{d}I}$
         ]{\import{tunnelbarrier/asym/irradiation/rect}{dvdi.pgf}}
-        \\
-        \subfigure[
-            $A_\mathrm{fit}/A_\mathrm{out}\ (10^3)$
-        ]{\import{tunnelbarrier/asym/irradiation/control-img}{Afit_Aout.pgf}}
-        \hfill
-        \subfigure[
-            $T_\mathrm{fit}/A_\mathrm{out}\ (\mathrm{K}/\mathrm{V})$
-        ]{\import{tunnelbarrier/asym/irradiation/control-img}{Tfit_Aout.pgf}}
-        \hfill
-        \subfigure[
-            $T_\mathrm{bath}/A_\mathrm{out}\ (\mathrm{K}/\mathrm{V})$
-        ]{\import{tunnelbarrier/asym/irradiation/control-img}{Tbath_Aout.pgf}}
         \caption{
-            Frequency- and amplitude-dependent asymmetry of TB2 and corresponding control quantities. Panels a--c show the signed integrated asymmetry $\mathcal{A}$ of the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses. Panels d--f show the pointwise ratios $A_\mathrm{fit}/A_\mathrm{out}$, $T_\mathrm{fit}/A_\mathrm{out}$, and $T_\mathrm{bath}/A_\mathrm{out}$. The calibrated amplitude is defined by Eq.~\eqref{eq:tb:asym:calibrated-amplitude}. Gray regions indicate amplitudes for which no measurement is available at the corresponding frequency.
+            Frequency- and amplitude-dependent rectification of TB2. The panels show the signed integrated asymmetry $\mathcal{A}$ of the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses. The calibrated amplitude is defined by Eq.~\eqref{eq:tb:asym:calibrated-amplitude}. Gray regions indicate amplitudes for which no measurement is available at the corresponding frequency.
             }
-        \label{fig:tb:asym:control-img}
+        \label{fig:tb:asym:rectification-map}
     \end{figure}
     
     To compare the frequency dependence on a single axis, I averaged each asymmetry measure over the same calibrated-amplitude interval. I evaluated the average by integration rather than by an arithmetic mean to account for the uneven spacing of the $A_\mathrm{cal}$ points,
@@ -219,7 +255,12 @@
     \end{equation}
     where $X$ denotes $I$, $\mathrm{d}I/\mathrm{d}V$, or $\mathrm{d}V/\mathrm{d}I$. Panels a--c of Fig.~\ref{fig:tb:asym:frequency} show the resulting averages.
 
-    I then used separate diagnostic fits to test whether the frequency dependence of the asymmetry follows the microwave coupling or sample heating. For each frequency, I fitted the relations
+%=========================================================
+\subsubsection*{Coupling and Heating Controls}
+\label{subsec:tb:asym:controls}
+%=========================================================
+
+    I used separate diagnostic fits to test whether the frequency dependence of the asymmetry follows the microwave coupling or sample heating. For each frequency, I fitted the relations
     \begin{align}
         A_\mathrm{fit} &= \eta_{A_\mathrm{out}}^{(A_\mathrm{fit})}\, A_\mathrm{out}\,,\\
         T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{A_\mathrm{out}}^{(T_\mathrm{fit})}\, A_\mathrm{out}+T_\mathrm{off}\right)\right]\,,\\
@@ -236,44 +277,63 @@
     \end{align}
     I used these estimates as the bounds in the clipped temperature relations. They are empirical parameters of the diagnostic fits and are not independent measurements of the electronic base temperature or superconducting critical temperature.
 
-    The individual diagnostic fits are shown in Figs.~\ref{fig:tb:asym:control-Afit_Aout}, \ref{fig:tb:asym:control-Tfit_Aout}, \ref{fig:tb:asym:control-Tbath_Aout}, \ref{fig:tb:asym:control-Tfit_Afit}, \ref{fig:tb:asym:control-Tbath_Afit}, and \ref{fig:tb:asym:control-Tfit_Tbath}. Panels d--i of Fig.~\ref{fig:tb:asym:frequency} summarize their fitted slopes as functions of frequency. Most slopes neither correlate nor anticorrelate clearly with the amplitude-averaged asymmetry. The bath-heating slopes show the most similar broad frequency dependence, but this comparison alone does not establish heating as the cause of the rectification.
+    Figure~\ref{fig:tb:asym:control-map} shows the pointwise amplitude and temperature ratios. The individual diagnostic fits are shown in Figs.~\ref{fig:tb:asym:control-Afit_Aout}, \ref{fig:tb:asym:control-Tfit_Aout}, \ref{fig:tb:asym:control-Tbath_Aout}, \ref{fig:tb:asym:control-Tfit_Afit}, \ref{fig:tb:asym:control-Tbath_Afit}, and \ref{fig:tb:asym:control-Tfit_Tbath}. Panels d--i of Fig.~\ref{fig:tb:asym:frequency} summarize their fitted slopes as functions of frequency.
 
     \begin{figure}[t]
         \centering
         \subfigure[
-            caption
+            $A_\mathrm{fit}/A_\mathrm{out}\ (10^3)$
+        ]{\import{tunnelbarrier/asym/irradiation/control-img}{Afit_Aout.pgf}}
+        \hfill
+        \subfigure[
+            $T_\mathrm{fit}/A_\mathrm{out}\ (\mathrm{K}/\mathrm{V})$
+        ]{\import{tunnelbarrier/asym/irradiation/control-img}{Tfit_Aout.pgf}}
+        \hfill
+        \subfigure[
+            $T_\mathrm{bath}/A_\mathrm{out}\ (\mathrm{K}/\mathrm{V})$
+        ]{\import{tunnelbarrier/asym/irradiation/control-img}{Tbath_Aout.pgf}}
+        \caption{
+            Frequency- and amplitude-dependent control quantities. The panels show the pointwise ratios $A_\mathrm{fit}/A_\mathrm{out}$, $T_\mathrm{fit}/A_\mathrm{out}$, and $T_\mathrm{bath}/A_\mathrm{out}$. Gray regions indicate amplitudes for which no measurement is available at the corresponding frequency.
+        }
+        \label{fig:tb:asym:control-map}
+    \end{figure}
+
+    \begin{figure}[t]
+        \centering
+        \subfigure[
+            $\langle\mathcal{A}_I\rangle_{A_\mathrm{cal}}$
         ]{\import{tunnelbarrier/asym/irradiation/frequency}{rectI.pgf}}
         \hfill
         \subfigure[
-            caption
+            $\langle\mathcal{A}_{\mathrm{d}I/\mathrm{d}V}\rangle_{A_\mathrm{cal}}$
         ]{\import{tunnelbarrier/asym/irradiation/frequency}{rectdG.pgf}}
         \hfill
         \subfigure[
-            caption
+            $\langle\mathcal{A}_{\mathrm{d}V/\mathrm{d}I}\rangle_{A_\mathrm{cal}}$
         ]{\import{tunnelbarrier/asym/irradiation/frequency}{rectdR.pgf}}
         \\
         \subfigure[
-            caption
+            $\eta_{A_\mathrm{out}}^{(A_\mathrm{fit})}$
         ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Afit_Aout.pgf}}
         \hfill
         \subfigure[
-            caption
+            $\eta_{A_\mathrm{out}}^{(T_\mathrm{fit})}$
         ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tfit_Aout.pgf}}
         \hfill
         \subfigure[
-            caption
+            $\eta_{A_\mathrm{out}}^{(T_\mathrm{bath})}$
         ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tbath_Aout.pgf}}
         \\
         \subfigure[
-            caption
+            $\eta_{T_\mathrm{bath}}^{(T_\mathrm{fit})}$
         ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tfit_Tbath.pgf}}
         \hfill
         \subfigure[
-            caption
+            $\eta_{A_\mathrm{fit}}^{(T_\mathrm{fit})}$
         ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tfit_Afit.pgf}}
         \hfill
         \subfigure[
-            caption
+            $\eta_{A_\mathrm{fit}}^{(T_\mathrm{bath})}$
         ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tbath_Afit.pgf}}
         \\
         \caption{
@@ -282,79 +342,17 @@
         \label{fig:tb:asym:frequency}
     \end{figure}
 
-    With that we can start speculating about stuff.
-    Resonances with the sample holder
-    thermal nonequilibrium, since the island gets heated?
+    Most diagnostic slopes neither correlate nor anticorrelate clearly with the amplitude-averaged asymmetry. The bath-heating slopes show the most similar broad frequency dependence, but this comparison alone does not establish heating as the cause of the rectification. Uniform heating changes the quasiparticle spectrum but cannot by itself break bias symmetry.
 
-    What might be the effect?
-    Check for resonances in the holder?
+    \clearpage
 
-    What might be the application?
+%=========================================================
+\subsubsection*{Interpretation and Model Limits}
+\label{subsec:tb:asym:interpretation}
+%=========================================================
 
-    VEry wyld speculation. MASER? did i found it? microwave controllable superconductivity based tunnel diode?
+    The measurements establish a reproducible microwave-induced breaking of bias symmetry in TB2. Any microscopic explanation must account simultaneously for its onset at elevated drive, its narrow frequency dependence, and the reversal of its direction across the investigated interval. Heating may enhance the response by modifying the quasiparticle distribution, but an additional symmetry-breaking element is required.
 
+    Several features of the experiment could provide such an element. The connected shadow electrode makes the device geometry less symmetric than that of TB1 and may permit unequal electromagnetic coupling or nonequilibrium heating of the two electrodes. A resonance of the sample holder, antenna, or wiring could account for the narrow frequency dependence and could change the local microwave field across the resonance. The present measurements do not distinguish a junction-intrinsic nonequilibrium mechanism from rectification produced by the asymmetric electromagnetic environment.
 
-    3d figures
-
-    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.97GHz}{cal}{
-        put caption here!
-    }{fig:tb:asym:nu_7.97GHz:cal}
-
-    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{sim}{
-        put caption here!
-    }{fig:tb:asym:nu_7.96GHz:sim}
-
-    % control figures
-    \begin{figure}[t]
-        \centering
-        \import{tunnelbarrier/asym/irradiation/control}{Afit_Aout.pgf}
-        \caption{
-            $Afit_Aout$
-        }
-        \label{fig:tb:asym:control-Afit_Aout}
-    \end{figure}
-
-    \begin{figure}[t]
-        \centering
-        \import{tunnelbarrier/asym/irradiation/control}{Tfit_Aout.pgf}
-        \caption{
-            $Tfit_Aout$
-        }
-        \label{fig:tb:asym:control-Tfit_Aout}
-    \end{figure}
-
-    \begin{figure}[t]
-        \centering
-        \import{tunnelbarrier/asym/irradiation/control}{Tbath_Aout.pgf}
-        \caption{
-            $Tbath_Aout$
-        }
-        \label{fig:tb:asym:control-Tbath_Aout}
-    \end{figure}
-
-    \begin{figure}[t]
-        \centering
-        \import{tunnelbarrier/asym/irradiation/control}{Tfit_Afit.pgf}
-        \caption{
-            $Tfit_Afit$
-        }
-        \label{fig:tb:asym:control-Tfit_Afit}
-    \end{figure}
-
-    \begin{figure}[t]
-        \centering
-        \import{tunnelbarrier/asym/irradiation/control}{Tbath_Afit.pgf}
-        \caption{
-            $Tbath_Afit$
-        }
-        \label{fig:tb:asym:control-Tbath_Afit}
-    \end{figure}
-
-    \begin{figure}[t]
-        \centering
-        \import{tunnelbarrier/asym/irradiation/control}{Tfit_Tbath.pgf}
-        \caption{
-            $Tfit_Tbath$
-        }
-        \label{fig:tb:asym:control-Tfit_Tbath}
-    \end{figure}
+    The scope of this section is therefore limited to establishing and quantifying the rectification and testing its most direct correlations. The data do not support a unique microscopic model or a device-level application. Further measurements of the microwave environment, electrode temperatures, magnetic-field dependence, and nominally identical junctions would be required to identify the mechanism.
