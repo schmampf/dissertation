@@ -25,7 +25,7 @@
 
     The static transport response initially supported this expectation. TB2 showed a clear quasiparticle onset and no resolved supercurrent, and its \textit{I--V} curve could be described by the same SIS model used for TB1. Under microwave irradiation, however, the transport became strongly bias asymmetric within a narrow frequency range. The purpose of this section is therefore to characterize this unexpected rectification, establish its dependence on microwave amplitude and frequency, and test whether it correlates with microwave coupling or sample heating. The available measurements constrain possible explanations but do not identify a unique microscopic mechanism.
 
-    \begin{wraptable}[10]{r}{0.4\textwidth}
+    \begin{wraptable}[10]{r}{40mm}
         \captionsetup{format=plain}%
         \centering
         \footnotesize
@@ -49,6 +49,7 @@
         \end{tabular}
         \label{table:tunnelbarrier:asym}
     \end{wraptable}
+
     I used the representative \textit{I--V} curve in Fig.~\ref{fig:tb:asym:irradiation:single-iv} to determine the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$. The fit also returned the trace-dependent fitted temperature $T_\mathrm{fit}$ and effective microwave amplitude $A_\mathrm{fit}$ for this curve. The corresponding values and measurement conditions are listed in Table~\ref{table:tunnelbarrier:asym}. I did not apply the additional offset-correction algorithm discussed in Sec.~\ref{subsec:methods:digital:analysis} to these data.
     
     \singlefitfigure{tunnelbarrier/asym/irradiation/single-fit}{
@@ -61,16 +62,22 @@
 
     For the microwave-amplitude sweeps, I held the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$ fixed at the values obtained from the representative fit. I then allowed $T_\mathrm{fit}$ and $A_\mathrm{fit}$ to vary for each irradiated trace. This procedure follows the analysis of TB1 and provides a common reference for comparing the different drive frequencies. Unlike TB1, however, TB2 developed a pronounced bias asymmetry under microwave irradiation. The symmetric SIS plus Tien--Gordon model cannot reproduce this response, so the extracted $T_\mathrm{fit}$ and $A_\mathrm{fit}$ should be interpreted as effective comparison parameters rather than as a complete physical description of the asymmetric curves.
 
-    For some frequencies at higher microwave-amplitudes an asymmetry in the iv could be observed, as shown in fig.~\ref{fig:tb:asym:irradiation:single-asym}. The exact same IV was measured in up- and down sweep and overlap better than i can show two curves on top of each other. I define a bias depending rectification as 
+    The departure from the symmetric SIS response became pronounced at selected frequencies and sufficiently large microwave amplitudes. Figure~\ref{fig:tb:asym:irradiation:single-asym} shows a representative trace at $\nu=7.97\,\mathrm{GHz}$. To compare the two bias polarities, I reflected the negative-bias branch about the origin and plotted it together with the positive-bias branch. The two branches differ substantially in the quasiparticle-onset region and remain separated at larger bias. The corresponding \textit{dI--dV} and \textit{dV--dI} curves show that the asymmetry is associated with a redistribution and displacement of the spectral features rather than with a constant current or voltage offset.
+
+    I recorded the same trace with increasing and decreasing bias. The two sweep directions overlapped within the experimental resolution. The asymmetry is therefore reproducible and does not originate from sweep-direction hysteresis on the measurement timescale.
+
+    To quantify the effect locally, I define normalized bias-asymmetry parameters for the three transport representations,
     \begin{align}
-        \chi_I(V) &= \frac{ I(V) - (-I(-V))}{\left|I(V) + (-I(-V)) \right|}\,,\\
+        \chi_I(V) &= \frac{I(V)+I(-V)}{\left|I(V)-I(-V)\right|}\,,\\
         \chi_{\mathrm{d}I/\mathrm{d}V}(V) &= \frac{\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) - \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V)}{\left|\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) + \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right|}\,,\\
         \chi_{\mathrm{d}V/\mathrm{d}I}(I) &= \frac{\tfrac{\mathrm{d}V}{\mathrm{d}I}(I) - \tfrac{\mathrm{d}V}{\mathrm{d}I}(-I)}{\left|\tfrac{\mathrm{d}V}{\mathrm{d}I}(I) + \tfrac{\mathrm{d}V}{\mathrm{d}I}(-I) \right|}\,.
-        \label{eq:tb:asm:rect-chi}
+        \label{eq:tb:asym:rect-chi}
     \end{align}
-    The I--V curve shown in Fig.~\ref{fig:tb:asym:irradiation:single-asym} has a rectification, up to $\chi_I = 0.254$. The full amplitude sweep at this frequency is shown in Fig.~\ref{tunnelbarrier/asym/irradiation/nu_7.97GHz}.
+    All three quantities vanish for an ideally bias-symmetric transport response. Their signs indicate which bias branch has the larger response, while their magnitudes quantify the relative difference between the branches. Because the normalization can become small, particularly in the derivative representations, I use $\chi$ primarily to identify the bias regions in which the symmetry breaking occurs rather than as a globally averaged measure.
 
-    \begin{figure}
+    For the representative trace in Fig.~\ref{fig:tb:asym:irradiation:single-asym}, the local current asymmetry reached $\chi_I=0.254$. The largest values occurred in the voltage range where the positive- and negative-bias quasiparticle onsets evolved differently. This establishes that the microwave response cannot be described by a single bias-symmetric SIS plus Tien--Gordon curve. The full amplitude sweep at this frequency is shown in Fig.~\ref{fig:tb:asym:nu_7.97GHz:cal}.
+
+    \begin{figure}[t]
         \centering
         \subfigure[
             \textit{I--V}
@@ -85,23 +92,23 @@
             ]{\import{tunnelbarrier/asym/irradiation/single-asym}{dvdi.pgf}}
         \\
         \subfigure[
-            Rectification of \textit{I--V}
+            Asymmetry of \textit{I--V}
             ]{\import{tunnelbarrier/asym/irradiation/single-asym-rect}{iv.pgf}}
         \hfill
         \subfigure[
-            Rectification of \textit{dI--dV}
+            Asymmetry of \textit{dI--dV}
             ]{\import{tunnelbarrier/asym/irradiation/single-asym-rect}{didv.pgf}}
         \hfill
         \subfigure[
-            Rectification of \textit{dV--dI}
+            Asymmetry of \textit{dV--dI}
             ]{\import{tunnelbarrier/asym/irradiation/single-asym-rect}{dvdi.pgf}}
         \caption{
-            Representative asymmetric transport trace of TB2. Panels a-c show positive and negative branch of the measured \textit{I--V} curve and the numerically derived \textit{dI--dV} and \textit{dV--dI} responses. Panels d-f show their corresponding rectification $\chi$, as defined in Eq.~\eqref{eq:tb:asm:rect-chi}. Measurement was done at $\nu=7.97\,\mathrm{GHz}$, $A_\mathrm{out}=720\,\mathrm{mV}$ and $T_\mathrm{bath}=917(1)\,\mathrm{mK}$.
+            Representative asymmetric transport trace of TB2. Panels a--c compare the positive-bias branch with the negative-bias branch reflected about the origin for the measured \textit{I--V} curve and the numerically derived \textit{dI--dV} and \textit{dV--dI} responses. Panels d--f show the corresponding local normalized asymmetry defined in Eq.~\eqref{eq:tb:asym:rect-chi}. The trace was measured at $\nu=7.97\,\mathrm{GHz}$, $A_\mathrm{out}=720\,\mathrm{mV}$, and $T_\mathrm{bath}=917(1)\,\mathrm{mK}$.
             }
         \label{fig:tb:asym:irradiation:single-asym}
     \end{figure}
 
-    In order to understnad this symmetric behaviour under microwave irradiation better, I did amplitude sweeps for frequencies from 7.75-8.05\,GHz in steps of 50 MHz. Figures \ref{fig:tb:asym:sequence-iv}, \ref{fig:tb:asym:sequence-didv}, \& \ref{fig:tb:asym:sequence-dvdi} show the \textit{I--V}, \textit{dI--dV} and \textit{dV--dI} for selected frequencies. Panels (a) show false color maps and panels (b) show curves for selected amplitudes.
+    The representative trace establishes the presence of microwave-induced rectification at one operating point. To determine whether the effect was isolated or evolved systematically, I measured microwave-amplitude sweeps from $7.75$ to $8.05\,\mathrm{GHz}$ in steps of $50\,\mathrm{MHz}$. Figures~\ref{fig:tb:asym:sequence-iv}, \ref{fig:tb:asym:sequence-didv}, and \ref{fig:tb:asym:sequence-dvdi} compare the resulting \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} landscapes at selected frequencies. In each figure, panel a shows the full amplitude dependence as a false-color map, while panel b compares selected positive- and negative-bias traces.
 
     % sequence figures
     \begin{figure}[t]
