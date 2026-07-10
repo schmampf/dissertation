@@ -156,19 +156,32 @@
 
     If we take a look at the didv false color maps, and use our wild imagination, on can think about two blue flames. And apparently there is some wind, so they get smaller but also get scewed to one side. the wind changes direction as we increase the frequency and the scewing changes sign. However, when the scewing passes from left to right, it appears as a thrid flame is appearing and changing from left to right. In the end of the seqeunce the wind settles and we are back in out BCS PAT world, where nothing ordinary happens.
 
-    Calibration in this case is more difficult, since non-symmetrical IV are not exactly fittable with the BCS SIS model. So a remapping approach like for TB1 will likely fail. However, when performing the fits non the less, and by fitting the slope of Afit over Aout. For that i calculated the ratio Afit over Aout for each curve. As expected the values for asymmetric ivs differ a lot, however in each amplide sweep there is enough symmetric curves to have decently extracted coupling parameter by taking the median. The amplitude sweep is then calibrated with this extracted coupling parameter. In figure\ref{fig:tb:asym:control-Afit_Aout} The extracted Afit and the extracted coupling paramter are displayed.
-    
-    With the calibration done, we can give each I--V a rectification value $\mathcal{A}$ as defined like
+    The bias asymmetry prevents the pointwise amplitude remapping used for TB1. I nevertheless fitted every complete signed \textit{I--V} curve with the symmetric SIS plus Tien--Gordon model and extracted $A_\mathrm{fit}$ and $T_\mathrm{fit}$. For asymmetric curves, these values are effective fit parameters because the model cannot reproduce both bias branches simultaneously. I therefore did not use the individual $A_\mathrm{fit}$ values as the remapped amplitude coordinate.
+
+    Instead, I determined one effective coupling coefficient for each frequency. For every nonzero source amplitude in a frequency sweep, I evaluated $A_\mathrm{fit}/A_\mathrm{out}$. The ratio at $A_\mathrm{out}=0$ is undefined and entered the evaluation as \texttt{NaN}. All remaining ratios were included without rejection based on fit quality or asymmetry. I defined the frequency-dependent coupling as
+    \begin{equation}
+        \eta(\nu)=\operatorname*{median}_{A_\mathrm{out}>0}\!\left(\frac{A_\mathrm{fit}}{A_\mathrm{out}}\right)
+        \label{eq:tb:asym:amplitude-coupling}
+    \end{equation}
+    and assigned the calibrated amplitude
+    \begin{equation}
+        A_\mathrm{cal}=\eta(\nu)A_\mathrm{out}
+        \label{eq:tb:asym:calibrated-amplitude}
+    \end{equation}
+    to each curve. The median reduces the influence of scattered fits in the asymmetric region, while the symmetric parts of each sweep provide the amplitude scale. This procedure yields a common effective comparison axis but does not constitute an independent measurement of the ac voltage across the junction. Frequencies with weaker coupling do not reach the full displayed $A_\mathrm{cal}$ range. The corresponding gray regions in the maps indicate that no data are available there.
+
+    Independently of the amplitude calibration, I assign each transport curve a signed integrated asymmetry $\mathcal{A}$,
     \begin{align}
-        \mathcal{A}_I &= \frac{\int \left( I(V) - (-I(-V)) \right)\mathrm{d}V}{\int \left|I(V) + (-I(-V)) \right|\mathrm{d}V}\,, \\
+        \mathcal{A}_I &= \frac{\int \left[I(V)+I(-V)\right]\mathrm{d}V}{\int \left|I(V)-I(-V)\right|\mathrm{d}V}\,, \\
         \mathcal{A}_{\mathrm{d}I/\mathrm{d}V} &= \frac{\int \left(\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) - \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right)\mathrm{d}V}{\int \left|\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) + \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right|\mathrm{d}V} \,,\\
         \mathcal{A}_{\mathrm{d}V/\mathrm{d}I} &= \frac{\int \left(\tfrac{\mathrm{d}V}{\mathrm{d}I}(I) - \tfrac{\mathrm{d}V}{\mathrm{d}I}(-I) \right)\mathrm{d}I}{\int \left|\tfrac{\mathrm{d}V}{\mathrm{d}I}(I) + \tfrac{\mathrm{d}V}{\mathrm{d}I}(-I) \right|\mathrm{d}I}\,.
-        \label{eq:tb:asm:rect-A}
+        \label{eq:tb:asym:rect-A}
     \end{align}
+    The integrations use the common symmetric bias interval available for the two reflected branches. In contrast to the local quantity $\chi$, $\mathcal{A}$ summarizes the signed asymmetry of an entire curve. Positive and negative contributions can therefore cancel.
 
-    We can look at this recification numbers over microwave amplitude and frequncy in Figure~\ref{fig:tb:asym:control-img}. Here we learn that the recification for the IV is greater for higher amplitudes and is negative for lower frequencies and positive for higher frequencies. The rectification of dI--dV follows the rectification of the iv. However for the didv the sign of the  rectification seem to be inverse. For low Amplitudes there is a lot of noise as well. The overall shape seem to be reliable for all three rectifications.
+    Figure~\ref{fig:tb:asym:control-img} shows $\mathcal{A}$ as a function of frequency and calibrated amplitude. The magnitude of the \textit{I--V} asymmetry generally increases with amplitude and changes sign across the investigated frequency interval. The \textit{dI--dV} asymmetry follows the same broad frequency dependence, while the \textit{dV--dI} asymmetry has the opposite sign. The derivative measures are noisy at low amplitude because their normalization becomes small, but the large-amplitude structure is consistent across the three transport representations.
 
-    \begin{figure}
+    \begin{figure}[t]
         \centering
         \subfigure[
             Rectification $\mathcal{A}_I$
@@ -194,12 +207,19 @@
             $T_\mathrm{bath}/A_\mathrm{out}\ (\mathrm{K}/\mathrm{V})$
         ]{\import{tunnelbarrier/asym/irradiation/control-img}{Tbath_Aout.pgf}}
         \caption{
-            Caption here.
+            Frequency- and amplitude-dependent asymmetry of TB2 and corresponding control quantities. Panels a--c show the signed integrated asymmetry $\mathcal{A}$ of the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses. Panels d--f show the pointwise ratios $A_\mathrm{fit}/A_\mathrm{out}$, $T_\mathrm{fit}/A_\mathrm{out}$, and $T_\mathrm{bath}/A_\mathrm{out}$. The calibrated amplitude is defined by Eq.~\eqref{eq:tb:asym:calibrated-amplitude}. Gray regions indicate amplitudes for which no measurement is available at the corresponding frequency.
             }
         \label{fig:tb:asym:control-img}
     \end{figure}
     
-    Apparently this phenomen is frequency depending. I calculated the mean value of the rectifications over the amplitude and plotted them in fig.~\ref{fig:tb:asym:frequency} (a-c). In order to check if bath temperature, fitted temperature or applied or fitted amplitude are influencing the rectification I fitted their respective coupling by
+    To compare the frequency dependence on a single axis, I averaged each asymmetry measure over the same calibrated-amplitude interval. I evaluated the average by integration rather than by an arithmetic mean to account for the uneven spacing of the $A_\mathrm{cal}$ points,
+    \begin{equation}
+        \left\langle\mathcal{A}_X\right\rangle_{A_\mathrm{cal}}=\frac{1}{A_\mathrm{cal,max}-A_\mathrm{cal,min}}\int_{A_\mathrm{cal,min}}^{A_\mathrm{cal,max}}\mathcal{A}_X(A_\mathrm{cal})\,\mathrm{d}A_\mathrm{cal}\,,
+        \label{eq:tb:asym:amplitude-averaged-rectification}
+    \end{equation}
+    where $X$ denotes $I$, $\mathrm{d}I/\mathrm{d}V$, or $\mathrm{d}V/\mathrm{d}I$. Panels a--c of Fig.~\ref{fig:tb:asym:frequency} show the resulting averages.
+
+    I then used separate diagnostic fits to test whether the frequency dependence of the asymmetry follows the microwave coupling or sample heating. For each frequency, I fitted the relations
     \begin{align}
         A_\mathrm{fit} &= \eta_{A_\mathrm{out}}^{(A_\mathrm{fit})}\, A_\mathrm{out}\,,\\
         T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{A_\mathrm{out}}^{(T_\mathrm{fit})}\, A_\mathrm{out}+T_\mathrm{off}\right)\right]\,,\\
@@ -209,15 +229,16 @@
         T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{T_\mathrm{bath}}^{(T_\mathrm{fit})}\, T_\mathrm{bath}+T_\mathrm{off}\right)\right]\,.
     \end{align}
 
-    With that calibration I found clusters for critical and base temperature at
+    The fitted-temperature data formed empirical lower and upper clusters near
     \begin{align}
-        T_\mathrm{c}= 1.35 & &
-        T_\mathrm{base} = 0.5\,.
+        T_\mathrm{base}&\approx0.47(1)\,\mathrm{K}\,, &
+        T_\mathrm{c}&\approx1.29(1)\,\mathrm{K}\,.
     \end{align}
+    I used these estimates as the bounds in the clipped temperature relations. They are empirical parameters of the diagnostic fits and are not independent measurements of the electronic base temperature or superconducting critical temperature.
 
-    The coupling can be checked in Figures~\ref{fig:tb:asym:control-Afit_Aout} \ref{fig:tb:asym:control-Tfit_Aout} \ref{fig:tb:asym:control-Tbath_Aout} \ref{fig:tb:asym:control-Tfit_Afit} \ref{fig:tb:asym:control-Tbath_Afit} \ref{fig:tb:asym:control-Tfit_Tbath} and their frequency dependece in displayed in Panel (d) - (i) in figure \ref{fig:tb:asym:frequency}. While most of the couplings are, neither correlating, nor anticorrelating. However the coupling of the bath temperature follows the rough outline of the applied and fitted amplitude.
+    The individual diagnostic fits are shown in Figs.~\ref{fig:tb:asym:control-Afit_Aout}, \ref{fig:tb:asym:control-Tfit_Aout}, \ref{fig:tb:asym:control-Tbath_Aout}, \ref{fig:tb:asym:control-Tfit_Afit}, \ref{fig:tb:asym:control-Tbath_Afit}, and \ref{fig:tb:asym:control-Tfit_Tbath}. Panels d--i of Fig.~\ref{fig:tb:asym:frequency} summarize their fitted slopes as functions of frequency. Most slopes neither correlate nor anticorrelate clearly with the amplitude-averaged asymmetry. The bath-heating slopes show the most similar broad frequency dependence, but this comparison alone does not establish heating as the cause of the rectification.
 
-    \begin{figure}
+    \begin{figure}[t]
         \centering
         \subfigure[
             caption
@@ -256,7 +277,7 @@
         ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tbath_Afit.pgf}}
         \\
         \caption{
-            Caption here.
+            Frequency dependence of the integrated asymmetry and diagnostic coupling coefficients. Panels a--c show the amplitude-averaged asymmetry defined in Eq.~\eqref{eq:tb:asym:amplitude-averaged-rectification}. Panels d--i show the slopes extracted from the amplitude- and temperature-correlation fits. Similar frequency dependence indicates correlation only and does not establish a causal mechanism.
             }
         \label{fig:tb:asym:frequency}
     \end{figure}
@@ -308,7 +329,7 @@
         \caption{
             $Tbath_Aout$
         }
-        \label{fig:tb:asym:control-Afit_Aout}
+        \label{fig:tb:asym:control-Tbath_Aout}
     \end{figure}
 
     \begin{figure}[t]
