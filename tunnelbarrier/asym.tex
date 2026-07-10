@@ -157,59 +157,7 @@
 
     The representative trace establishes the presence of microwave-induced rectification at one operating point. To determine whether the effect was isolated or evolved systematically, I measured microwave-amplitude sweeps from $7.75$ to $8.05\,\mathrm{GHz}$ in steps of $50\,\mathrm{MHz}$. Figures~\ref{fig:tb:asym:sequence-iv}, \ref{fig:tb:asym:sequence-didv}, and \ref{fig:tb:asym:sequence-dvdi} compare the resulting \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} landscapes at selected frequencies. In each figure, panel a shows the full amplitude dependence as a false-color map, while panel b compares selected positive- and negative-bias traces.
 
-    % sequence figures
-    \begin{figure}[t]
-        \centering
-        \subfigure[
-            \textit{I--V} false color map
-        ]{\import{tunnelbarrier/asym/irradiation/iv-img}{main.pgf}}
-        \subfigure[
-            Selected \textit{I--V} curves
-        ]{\import{tunnelbarrier/asym/irradiation/iv}{main.pgf}}
-        \caption{
-            Frequency-dependent \textit{I--V} response of TB2 on the effective calibrated-amplitude axis. Panel a shows false-color maps for selected frequencies. Panel b compares the positive- and negative-bias branches at selected amplitudes. Gray regions indicate calibrated amplitudes outside the measured range.
-        }
-        \label{fig:tb:asym:sequence-iv}
-    \end{figure}
-
-    \begin{figure}[t]
-        \centering
-        \subfigure[
-            \textit{dI--dV} false color map
-        ]{\import{tunnelbarrier/asym/irradiation/didv-img}{main.pgf}}
-        \subfigure[
-            Selected \textit{dI--dV} curves
-        ]{\import{tunnelbarrier/asym/irradiation/didv}{main.pgf}}
-        \caption{
-            Frequency-dependent \textit{dI--dV} response of TB2 on the effective calibrated-amplitude axis. Panel a shows the evolution of the quasiparticle-onset ridges as false-color maps. Panel b compares the reflected bias branches at selected amplitudes and reveals the frequency-dependent reversal of their unequal spectral evolution.
-        }
-        \label{fig:tb:asym:sequence-didv}
-    \end{figure}
-
-    \begin{figure}[t]
-        \centering
-        \subfigure[
-            \textit{dV--dI} false color map
-        ]{\import{tunnelbarrier/asym/irradiation/dvdi-img}{main.pgf}}
-        \subfigure[
-            Selected \textit{dV--dI} curves
-        ]{\import{tunnelbarrier/asym/irradiation/dvdi}{main.pgf}}
-        \caption{
-            Frequency-dependent \textit{dV--dI} response of TB2 on the effective calibrated-amplitude axis. Panel a shows the full amplitude evolution as false-color maps. Panel b compares selected reflected bias branches. The narrow high-resistance features make this representation more sensitive to derivative noise.
-        }
-        \label{fig:tb:asym:sequence-dvdi}
-    \end{figure}
-
-
     The \textit{dI--dV} maps provide the clearest view of the spectral evolution. At the lowest and highest frequencies, the two quasiparticle-onset ridges remain approximately symmetric. At intermediate frequencies, one ridge is suppressed and displaced relative to the other, and the direction of this deformation reverses across the investigated frequency interval. Near the reversal, an additional conductance feature appears between the two main ridges. The \textit{I--V} and \textit{dV--dI} representations show the same systematic amplitude and frequency dependence, although the narrow resistance features make the latter more sensitive to noise.
-
-    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.97GHz}{cal}{
-        Calibrated transport landscape of TB2 at $\nu=7.97\,\mathrm{GHz}$. The three columns show the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses as selected traces, surfaces, and false-color maps. The vertical axis uses the effective calibrated amplitude defined in Eq.~\eqref{eq:tb:asym:calibrated-amplitude}.
-    }{fig:tb:asym:nu_7.97GHz:cal}
-
-    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{sim}{
-        Symmetric SIS plus Tien--Gordon reference calculation at $\nu=7.96\,\mathrm{GHz}$. The simulation shows the response expected from bias-symmetric photon-assisted quasiparticle tunneling and provides a model reference for the asymmetric measurement.
-    }{fig:tb:asym:nu_7.96GHz:sim}
 
     The calibrated landscapes establish that the symmetry breaking evolves systematically with both microwave amplitude and frequency. The symmetric calculation reproduces the overall photon-assisted redistribution of spectral weight but not the unequal evolution of the two bias branches. I next quantify this difference over the complete data set.
 
@@ -344,8 +292,6 @@
 
     Most diagnostic slopes neither correlate nor anticorrelate clearly with the amplitude-averaged asymmetry. The bath-heating slopes show the most similar broad frequency dependence, but this comparison alone does not establish heating as the cause of the rectification. Uniform heating changes the quasiparticle spectrum but cannot by itself break bias symmetry.
 
-    \clearpage
-
 %=========================================================
 \subsubsection*{Interpretation and Model Limits}
 \label{subsec:tb:asym:interpretation}
@@ -353,6 +299,72 @@
 
     The measurements establish a reproducible microwave-induced breaking of bias symmetry in TB2. Any microscopic explanation must account simultaneously for its onset at elevated drive, its narrow frequency dependence, and the reversal of its direction across the investigated interval. Heating may enhance the response by modifying the quasiparticle distribution, but an additional symmetry-breaking element is required.
 
-    Several features of the experiment could provide such an element. The connected shadow electrode makes the device geometry less symmetric than that of TB1 and may permit unequal electromagnetic coupling or nonequilibrium heating of the two electrodes. A resonance of the sample holder, antenna, or wiring could account for the narrow frequency dependence and could change the local microwave field across the resonance. The present measurements do not distinguish a junction-intrinsic nonequilibrium mechanism from rectification produced by the asymmetric electromagnetic environment.
+    The island provides an internal degree of freedom that is absent from a model of an isolated SIS junction. Although the break-junction constriction remained closed and therefore strongly coupled the island to one lead, the island retained finite capacitances to the oxide tunnel barrier, the break-junction electrode, and the gate structures. Its microwave potential could consequently differ in amplitude and phase from the externally applied drive. A frequency-dependent voltage division or a resonance of this local circuit could account for the narrow frequency range of the rectification and for the reversal of its direction.
 
-    The scope of this section is therefore limited to establishing and quantifying the rectification and testing its most direct correlations. The data do not support a unique microscopic model or a device-level application. Further measurements of the microwave environment, electrode temperatures, magnetic-field dependence, and nominally identical junctions would be required to identify the mechanism.
+    The island may also develop a nonequilibrium quasiparticle distribution under strong irradiation. Energy absorbed locally need not be described completely by either $T_\mathrm{bath}$ or the effective $T_\mathrm{fit}$ obtained from a symmetric SIS fit. Unequal energy relaxation through the intact break junction and the oxide tunnel barrier could produce an island distribution that differs from that of the macroscopic counterelectrode. In combination with an asymmetric microwave potential, this provides a possible route to bias-dependent transport.
+
+    I do not interpret the present data as evidence for conventional island Coulomb blockade. The intact break junction provides a low-impedance connection that should weaken charge quantization, and I did not measure the gate dependence in this experiment. The relevant island physics is therefore more likely to involve microwave voltage division, quasiparticle nonequilibrium, or transient charge imbalance than stationary SET charge states.
+
+    The connected shadow electrode and the external microwave environment provide further possible sources of asymmetry. A resonance of the sample holder, antenna, or wiring could change the local microwave field across the investigated frequency interval. The present measurements do not distinguish a junction-intrinsic island mechanism from rectification produced by the asymmetric electromagnetic environment.
+
+    From an engineering perspective, TB2 can be viewed as a pump-controlled superconducting diode. The microwave drive activates the asymmetric response and tunes both its magnitude and direction. The narrow frequency dependence and sign reversal are particularly attractive for frequency discrimination. At a fixed dc operating point, the rectified output could provide a signed error signal that indicates whether the applied microwave frequency lies below or above the zero crossing. Such a response could support cryogenic resonance tracking, frequency stabilization, or in situ monitoring of the local microwave environment.
+
+    The amplitude dependence also suggests operation as a threshold detector or microwave-controlled polarity switch. A fixed-bias readout could indicate when the local microwave drive exceeds the onset of the asymmetric regime, while a change of frequency could reverse the preferred current direction. The nonlinear response may additionally permit mixing or envelope detection when two microwave tones are applied. These functions would be useful near cryogenic sensors or quantum circuits because the conversion from a microwave control signal to a dc output occurs directly at the sample stage.
+
+    The present measurements do not yet demonstrate a passive microwave detector. Such an application would require a zero-bias photocurrent or an open-circuit photovoltage, neither of which was measured here. Bias-asymmetric dc transport also does not by itself imply nonreciprocal microwave propagation, so the device cannot be identified as an isolator without forward and reverse scattering measurements. A practical assessment would require the responsivity, noise-equivalent power, bandwidth, response time, dissipation, and device-to-device reproducibility, together with an independent calibration of the microwave power delivered to the junction.
+
+    The scope of this section is therefore limited to establishing and quantifying the rectification and testing its most direct correlations. Distinguishing the possible mechanisms would require independent control of the island potential, gate-dependent measurements, and a characterization of the microwave transfer function. Comparing the response before and after opening the break junction would provide a particularly direct test of whether the island and its coupling to the intact contact are essential. Magnetic-field dependence and measurements of nominally identical junctions would provide complementary checks.
+
+    For completeness, Figs.~\ref{fig:tb:asym:sequence-iv}, \ref{fig:tb:asym:sequence-didv}, and \ref{fig:tb:asym:sequence-dvdi} show the selected frequency sweeps in the three transport representations. Figures~\ref{fig:tb:asym:nu_7.97GHz:cal} and \ref{fig:tb:asym:nu_7.96GHz:sim} provide the corresponding detailed measured and simulated transport landscapes.
+
+    % sequence figures
+    \begin{figure}[t]
+        \centering
+        \subfigure[
+            \textit{I--V} false color map
+        ]{\import{tunnelbarrier/asym/irradiation/iv-img}{main.pgf}}
+        \subfigure[
+            Selected \textit{I--V} curves
+        ]{\import{tunnelbarrier/asym/irradiation/iv}{main.pgf}}
+        \caption{
+            Frequency-dependent \textit{I--V} response of TB2 on the effective calibrated-amplitude axis. Panel a shows false-color maps for selected frequencies. Panel b compares the positive- and negative-bias branches at selected amplitudes. Gray regions indicate calibrated amplitudes outside the measured range.
+        }
+        \label{fig:tb:asym:sequence-iv}
+    \end{figure}
+
+    \begin{figure}[t]
+        \centering
+        \subfigure[
+            \textit{dI--dV} false color map
+        ]{\import{tunnelbarrier/asym/irradiation/didv-img}{main.pgf}}
+        \subfigure[
+            Selected \textit{dI--dV} curves
+        ]{\import{tunnelbarrier/asym/irradiation/didv}{main.pgf}}
+        \caption{
+            Frequency-dependent \textit{dI--dV} response of TB2 on the effective calibrated-amplitude axis. Panel a shows the evolution of the quasiparticle-onset ridges as false-color maps. Panel b compares the reflected bias branches at selected amplitudes and reveals the frequency-dependent reversal of their unequal spectral evolution.
+        }
+        \label{fig:tb:asym:sequence-didv}
+    \end{figure}
+
+    \begin{figure}[t]
+        \centering
+        \subfigure[
+            \textit{dV--dI} false color map
+        ]{\import{tunnelbarrier/asym/irradiation/dvdi-img}{main.pgf}}
+        \subfigure[
+            Selected \textit{dV--dI} curves
+        ]{\import{tunnelbarrier/asym/irradiation/dvdi}{main.pgf}}
+        \caption{
+            Frequency-dependent \textit{dV--dI} response of TB2 on the effective calibrated-amplitude axis. Panel a shows the full amplitude evolution as false-color maps. Panel b compares selected reflected bias branches. The narrow high-resistance features make this representation more sensitive to derivative noise.
+        }
+        \label{fig:tb:asym:sequence-dvdi}
+    \end{figure}
+
+    % 3D Figures
+    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.97GHz}{cal}{
+        Calibrated transport landscape of TB2 at $\nu=7.97\,\mathrm{GHz}$. The three columns show the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses as selected traces, surfaces, and false-color maps. The vertical axis uses the effective calibrated amplitude defined in Eq.~\eqref{eq:tb:asym:calibrated-amplitude}.
+    }{fig:tb:asym:nu_7.97GHz:cal}
+
+    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{sim}{
+        Symmetric SIS plus Tien--Gordon reference calculation at $\nu=7.96\,\mathrm{GHz}$. The simulation shows the response expected from bias-symmetric photon-assisted quasiparticle tunneling and provides a model reference for the asymmetric measurement.
+    }{fig:tb:asym:nu_7.96GHz:sim}
