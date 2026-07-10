@@ -31,10 +31,11 @@
         \captionsetup{format=plain}%
         \centering
         \footnotesize
+        \vspace{-2.5em}
         \caption{
-            Static reference parameters and microwave calibration values.
+            Static parameters and microwave calibration values.
         }
-        \vspace{-2em}
+        \vspace{.5em}
         \begin{tabular}{r|l}
             % Figures & \ref{fig:tb:asym:irradiation:single-iv} \\\hline
             $G_\mathrm{N}\ (G_0)$ & $0.0927461(83)$\\
@@ -43,22 +44,24 @@
             $\gamma\ (\mathrm{meV})$ & $0.0055(17)$ \\
             $\sigma_V\ (\mathrm{mV})$ & $0.0410(37)$ \\
             $\nu\ (\mathrm{GHz})$ & $7.78$ \\
-            $A\ (\mathrm{mV})$ & $0.1059(12)$ \\
+            $A_\mathrm{fit}\ (\mathrm{mV})$ & $0.1059(12)$ \\
             % $\eta\ (10^{-4})$ & $5.294(61)$ \\
             $A_\mathrm{out}\ (\mathrm{mV})$& $200$ \\
             $T_\mathrm{bath}\ (\mathrm{K})$ & $0.277(1)$
         \end{tabular}
         \label{table:tunnelbarrier:asym}
     \end{wraptable}
-    we can again obtain all the relevant parameters of TB2, shown in table~\ref{table:tunnelbarrier:asym} by fitting a single iv curve, shown in fig.~\ref{fig:tb:asym:irradiation:single-iv}. These curves are not corrected with the additional offset algorithm, discussed in Sec.~\ref{subsec:methods:digital:analysis}.
+    I used the representative \textit{I--V} curve in Fig.~\ref{fig:tb:asym:irradiation:single-iv} to determine the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$. The fit also returned the trace-dependent fitted temperature $T_\mathrm{fit}$ and effective microwave amplitude $A_\mathrm{fit}$ for this curve. The corresponding values and measurement conditions are listed in Table~\ref{table:tunnelbarrier:asym}. I did not apply the additional offset-correction algorithm discussed in Sec.~\ref{subsec:methods:digital:analysis} to these data.
     
     \singlefitfigure{tunnelbarrier/asym/irradiation/single-fit}{
         Representative transport trace of TB2. The panels show the measured \textit{I--V} curve and the numerically derived \textit{dI--dV} and \textit{dV--dI} responses. The \textit{I--V} curve is fitted with the SIS BCS model, with the extracted parameters listed in Table~\ref{table:tunnelbarrier:asym}.
     }{fig:tb:asym:irradiation:single-iv}
 
-    In comparison to TB1, TB2's normal state conductivity is about half. The gap size is similar and the temperature is elevated for this specific iv. The rounding parameters $\gamma$ and $\sigma_V$ are significant higher. this is because of a slightly worse version of the setup.
+    Compared with TB1, TB2 had approximately half the normal-state conductance, while its fitted superconducting gap remained similar. The representative trace had a higher $T_\mathrm{fit}$ and showed stronger spectral rounding, reflected in the larger fitted values of $\gamma$ and $\sigma_V$. I attribute the reduced spectral resolution primarily to the earlier measurement setup and its less effective filtering. The fit alone, however, cannot distinguish instrumental broadening from intrinsic broadening of the junction.
 
-    The Setup as discribed in Patrick Raif and Martin Prestel is used for this measurements. The main difference is the filtering in the lines. We are not using the commercial thermalizer and filter, instead we use a train of copper powder filters and steel capillarry cables. The reference resistor is moved already to cold temperatures in oposition of martin prestel. The antenna is again used for these measurements.
+    I performed these measurements with the setup described by Patrick Raif and Martin Prestel, with several changes to the low-temperature wiring. Instead of the commercial thermalizer and filter, I used a sequence of copper-powder filters and stainless-steel capillaries. The reference resistor was already located at low temperature, in contrast to the configuration used by Martin Prestel. Microwave irradiation was again applied through the antenna.
+
+    For the microwave-amplitude sweeps, I held the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$ fixed at the values obtained from the representative fit. I then allowed $T_\mathrm{fit}$ and $A_\mathrm{fit}$ to vary for each irradiated trace. This procedure follows the analysis of TB1 and provides a common reference for comparing the different drive frequencies. Unlike TB1, however, TB2 developed a pronounced bias asymmetry under microwave irradiation. The symmetric SIS plus Tien--Gordon model cannot reproduce this response, so the extracted $T_\mathrm{fit}$ and $A_\mathrm{fit}$ should be interpreted as effective comparison parameters rather than as a complete physical description of the asymmetric curves.
 
     For some frequencies at higher microwave-amplitudes an asymmetry in the iv could be observed, as shown in fig.~\ref{fig:tb:asym:irradiation:single-asym}. The exact same IV was measured in up- and down sweep and overlap better than i can show two curves on top of each other. I define a bias depending rectification as 
     \begin{align}
@@ -112,7 +115,7 @@
             Selected \textit{I--V} curves
         ]{\import{tunnelbarrier/asym/irradiation/iv}{main.pgf}}
         \caption{
-            caption
+            \textit{I--V} Curves for selected freqeuncies. In (a) one sees the false color map and in (b) curves for selected amplitudes are shown.
         }
         \label{fig:tb:asym:sequence-iv}
     \end{figure}
@@ -254,6 +257,8 @@
     \end{figure}
 
     With that we can start speculating about stuff.
+    Resonances with the sample holder
+    thermal nonequilibrium, since the island gets heated?
 
     What might be the effect?
     Check for resonances in the holder?
@@ -263,67 +268,67 @@
     VEry wyld speculation. MASER? did i found it? microwave controllable superconductivity based tunnel diode?
 
 
-    % 3d figures
+    3d figures
 
-    % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.97GHz}{cal}{
-    %     put caption here!
-    % }{fig:tb:asym:nu_7.97GHz:cal}
+    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.97GHz}{cal}{
+        put caption here!
+    }{fig:tb:asym:nu_7.97GHz:cal}
 
-    % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{sim}{
-    %     put caption here!
-    % }{fig:tb:asym:nu_7.96GHz:sim}
+    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{sim}{
+        put caption here!
+    }{fig:tb:asym:nu_7.96GHz:sim}
 
-    % % control figures
-    % \begin{figure}[t]
-    %     \centering
-    %     \import{tunnelbarrier/asym/irradiation/control}{Afit_Aout.pgf}
-    %     \caption{
-    %         $Afit_Aout$
-    %     }
-    %     \label{fig:tb:asym:control-Afit_Aout}
-    % \end{figure}
+    % control figures
+    \begin{figure}[t]
+        \centering
+        \import{tunnelbarrier/asym/irradiation/control}{Afit_Aout.pgf}
+        \caption{
+            $Afit_Aout$
+        }
+        \label{fig:tb:asym:control-Afit_Aout}
+    \end{figure}
 
-    % \begin{figure}[t]
-    %     \centering
-    %     \import{tunnelbarrier/asym/irradiation/control}{Tfit_Aout.pgf}
-    %     \caption{
-    %         $Tfit_Aout$
-    %     }
-    %     \label{fig:tb:asym:control-Tfit_Aout}
-    % \end{figure}
+    \begin{figure}[t]
+        \centering
+        \import{tunnelbarrier/asym/irradiation/control}{Tfit_Aout.pgf}
+        \caption{
+            $Tfit_Aout$
+        }
+        \label{fig:tb:asym:control-Tfit_Aout}
+    \end{figure}
 
-    % \begin{figure}[t]
-    %     \centering
-    %     \import{tunnelbarrier/asym/irradiation/control}{Tbath_Aout.pgf}
-    %     \caption{
-    %         $Tbath_Aout$
-    %     }
-    %     \label{fig:tb:asym:control-Afit_Aout}
-    % \end{figure}
+    \begin{figure}[t]
+        \centering
+        \import{tunnelbarrier/asym/irradiation/control}{Tbath_Aout.pgf}
+        \caption{
+            $Tbath_Aout$
+        }
+        \label{fig:tb:asym:control-Afit_Aout}
+    \end{figure}
 
-    % \begin{figure}[t]
-    %     \centering
-    %     \import{tunnelbarrier/asym/irradiation/control}{Tfit_Afit.pgf}
-    %     \caption{
-    %         $Tfit_Afit$
-    %     }
-    %     \label{fig:tb:asym:control-Tfit_Afit}
-    % \end{figure}
+    \begin{figure}[t]
+        \centering
+        \import{tunnelbarrier/asym/irradiation/control}{Tfit_Afit.pgf}
+        \caption{
+            $Tfit_Afit$
+        }
+        \label{fig:tb:asym:control-Tfit_Afit}
+    \end{figure}
 
-    % \begin{figure}[t]
-    %     \centering
-    %     \import{tunnelbarrier/asym/irradiation/control}{Tbath_Afit.pgf}
-    %     \caption{
-    %         $Tbath_Afit$
-    %     }
-    %     \label{fig:tb:asym:control-Tbath_Afit}
-    % \end{figure}
+    \begin{figure}[t]
+        \centering
+        \import{tunnelbarrier/asym/irradiation/control}{Tbath_Afit.pgf}
+        \caption{
+            $Tbath_Afit$
+        }
+        \label{fig:tb:asym:control-Tbath_Afit}
+    \end{figure}
 
-    % \begin{figure}[t]
-    %     \centering
-    %     \import{tunnelbarrier/asym/irradiation/control}{Tfit_Tbath.pgf}
-    %     \caption{
-    %         $Tfit_Tbath$
-    %     }
-    %     \label{fig:tb:asym:control-Tfit_Tbath}
-    % \end{figure}
+    \begin{figure}[t]
+        \centering
+        \import{tunnelbarrier/asym/irradiation/control}{Tfit_Tbath.pgf}
+        \caption{
+            $Tfit_Tbath$
+        }
+        \label{fig:tb:asym:control-Tfit_Tbath}
+    \end{figure}
