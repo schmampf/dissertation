@@ -30,10 +30,11 @@
     \begin{wraptable}[10]{r}{0.4\textwidth}
         \captionsetup{format=plain}%
         \centering
-        \caption{
-            caption
-        }
         \footnotesize
+        \caption{
+            Static reference parameters and microwave calibration values.
+        }
+        \vspace{-2em}
         \begin{tabular}{r|l}
             % Figures & \ref{fig:tb:asym:irradiation:single-iv} \\\hline
             $G_\mathrm{N}\ (G_0)$ & $0.0927461(83)$\\
@@ -99,7 +100,51 @@
         \label{fig:tb:asym:irradiation:single-asym}
     \end{figure}
 
-    In order to understnad this symmetric behaviour under microwave irradiation better, I did amplitude sweeps for frequencies from 7.75-8.05\,GHz in steps of 50 MHz. Figures \ref{fig:tb:asym:sequence-iv}, \ref{fig:tb:asym:sequence-didv}, \& \ref{fig:tb:asym:sequence-dvdi} show the curves at chosen calibrated microwave amplitudes in many panels corresponding to the frequencies. Figures~\ref{fig:tb:asym:sequence-iv-img}, \ref{fig:tb:asym:sequence-didv-img}, \& \ref{fig:tb:asym:sequence-dvdi-img} show corresponding false calor maps.
+    In order to understnad this symmetric behaviour under microwave irradiation better, I did amplitude sweeps for frequencies from 7.75-8.05\,GHz in steps of 50 MHz. Figures \ref{fig:tb:asym:sequence-iv}, \ref{fig:tb:asym:sequence-didv}, \& \ref{fig:tb:asym:sequence-dvdi} show the \textit{I--V}, \textit{dI--dV} and \textit{dV--dI} for selected frequencies. Panels (a) show false color maps and panels (b) show curves for selected amplitudes.
+
+    % sequence figures
+    \begin{figure}[t]
+        \centering
+        \subfigure[
+            \textit{I--V} false color map
+        ]{\import{tunnelbarrier/asym/irradiation/iv-img}{main.pgf}}
+        \subfigure[
+            Selected \textit{I--V} curves
+        ]{\import{tunnelbarrier/asym/irradiation/iv}{main.pgf}}
+        \caption{
+            caption
+        }
+        \label{fig:tb:asym:sequence-iv}
+    \end{figure}
+
+    \begin{figure}[t]
+        \centering
+        \subfigure[
+            \textit{dI--dV} false color map
+        ]{\import{tunnelbarrier/asym/irradiation/didv-img}{main.pgf}}
+        \subfigure[
+            Selected \textit{dI--dV} curves
+        ]{\import{tunnelbarrier/asym/irradiation/didv}{main.pgf}}
+        \caption{
+            caption
+        }
+        \label{fig:tb:asym:sequence-didv}
+    \end{figure}
+
+    \begin{figure}[t]
+        \centering
+        \subfigure[
+            \textit{dV--dI} false color map
+        ]{\import{tunnelbarrier/asym/irradiation/dvdi-img}{main.pgf}}
+        \subfigure[
+            Selected \textit{dV--dI} curves
+        ]{\import{tunnelbarrier/asym/irradiation/dvdi}{main.pgf}}
+        \caption{
+            caption
+        }
+        \label{fig:tb:asym:sequence-dvdi}
+    \end{figure}
+
 
     If we take a look at the didv false color maps, and use our wild imagination, on can think about two blue flames. And apparently there is some wind, so they get smaller but also get scewed to one side. the wind changes direction as we increase the frequency and the scewing changes sign. However, when the scewing passes from left to right, it appears as a thrid flame is appearing and changing from left to right. In the end of the seqeunce the wind settles and we are back in out BCS PAT world, where nothing ordinary happens.
 
@@ -117,17 +162,29 @@
 
     \begin{figure}
         \centering
-        \subfigure{\import{tunnelbarrier/asym/irradiation/rect}{iv.pgf}}
+        \subfigure[
+            Rectification $\mathcal{A}_I$
+        ]{\import{tunnelbarrier/asym/irradiation/rect}{iv.pgf}}
         \hfill
-        \subfigure{\import{tunnelbarrier/asym/irradiation/rect}{didv.pgf}}
+        \subfigure[
+            Rectification $\mathcal{A}_{\mathrm{d}I/\mathrm{d}V}$
+        ]{\import{tunnelbarrier/asym/irradiation/rect}{didv.pgf}}
         \hfill
-        \subfigure{\import{tunnelbarrier/asym/irradiation/rect}{dvdi.pgf}}
+        \subfigure[
+            Rectification $\mathcal{A}_{\mathrm{d}V/\mathrm{d}I}$
+        ]{\import{tunnelbarrier/asym/irradiation/rect}{dvdi.pgf}}
+        \\
+        \subfigure[
+            $A_\mathrm{fit}/A_\mathrm{out}\ (10^3)$
+        ]{\import{tunnelbarrier/asym/irradiation/control-img}{Afit_Aout.pgf}}
         \hfill
-        \subfigure{\import{tunnelbarrier/asym/irradiation/control-img}{eta.pgf}}
+        \subfigure[
+            $T_\mathrm{fit}/A_\mathrm{out}\ (\mathrm{K}/\mathrm{V})$
+        ]{\import{tunnelbarrier/asym/irradiation/control-img}{Tfit_Aout.pgf}}
         \hfill
-        \subfigure{\import{tunnelbarrier/asym/irradiation/control-img}{Tbath.pgf}}
-        \hfill
-        \subfigure{\import{tunnelbarrier/asym/irradiation/control-img}{Tfit.pgf}}
+        \subfigure[
+            $T_\mathrm{bath}/A_\mathrm{out}\ (\mathrm{K}/\mathrm{V})$
+        ]{\import{tunnelbarrier/asym/irradiation/control-img}{Tbath_Aout.pgf}}
         \caption{
             Caption here.
             }
@@ -208,62 +265,65 @@
 
     % 3d figures
 
-    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.97GHz}{cal}{
-        put caption here!
-    }{fig:tb:asym:nu_7.97GHz:cal}
+    % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.97GHz}{cal}{
+    %     put caption here!
+    % }{fig:tb:asym:nu_7.97GHz:cal}
 
-    \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{sim}{
-        put caption here!
-    }{fig:tb:asym:nu_7.96GHz:sim}
+    % \transportlandscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{sim}{
+    %     put caption here!
+    % }{fig:tb:asym:nu_7.96GHz:sim}
 
-    % sequence figures
+    % % control figures
+    % \begin{figure}[t]
+    %     \centering
+    %     \import{tunnelbarrier/asym/irradiation/control}{Afit_Aout.pgf}
+    %     \caption{
+    %         $Afit_Aout$
+    %     }
+    %     \label{fig:tb:asym:control-Afit_Aout}
+    % \end{figure}
 
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/iv}{main}{
-        put caption here!
-    }{fig:tb:asym:sequence-iv}
+    % \begin{figure}[t]
+    %     \centering
+    %     \import{tunnelbarrier/asym/irradiation/control}{Tfit_Aout.pgf}
+    %     \caption{
+    %         $Tfit_Aout$
+    %     }
+    %     \label{fig:tb:asym:control-Tfit_Aout}
+    % \end{figure}
 
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/iv-img}{main}{
-        put caption here!
-    }{fig:tb:asym:sequence-iv-img}
+    % \begin{figure}[t]
+    %     \centering
+    %     \import{tunnelbarrier/asym/irradiation/control}{Tbath_Aout.pgf}
+    %     \caption{
+    %         $Tbath_Aout$
+    %     }
+    %     \label{fig:tb:asym:control-Afit_Aout}
+    % \end{figure}
 
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/didv}{main}{
-        put caption here!
-    }{fig:tb:asym:sequence-didv}
+    % \begin{figure}[t]
+    %     \centering
+    %     \import{tunnelbarrier/asym/irradiation/control}{Tfit_Afit.pgf}
+    %     \caption{
+    %         $Tfit_Afit$
+    %     }
+    %     \label{fig:tb:asym:control-Tfit_Afit}
+    % \end{figure}
 
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/didv-img}{main}{
-        put caption here!
-    }{fig:tb:asym:sequence-didv-img}
-    
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/dvdi}{main}{
-        put caption here!
-    }{fig:tb:asym:sequence-dvdi}
+    % \begin{figure}[t]
+    %     \centering
+    %     \import{tunnelbarrier/asym/irradiation/control}{Tbath_Afit.pgf}
+    %     \caption{
+    %         $Tbath_Afit$
+    %     }
+    %     \label{fig:tb:asym:control-Tbath_Afit}
+    % \end{figure}
 
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/dvdi-img}{main}{
-        put caption here!
-    }{fig:tb:asym:sequence-dvdi-img}
-
-    % control figures
-
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Afit_Aout}{
-        put caption here!
-    }{fig:tb:asym:control-Afit_Aout}
-
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tfit_Aout}{
-        put caption here!
-    }{fig:tb:asym:control-Tfit_Aout}
-
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tbath_Aout}{
-        put caption here!
-    }{fig:tb:asym:control-Tbath_Aout}
-
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tfit_Afit}{
-        put caption here!
-    }{fig:tb:asym:control-Tfit_Afit}
-
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tbath_Afit}{
-        put caption here!
-    }{fig:tb:asym:control-Tbath_Afit}
-
-    \landscapepgffigure{tunnelbarrier/asym/irradiation/control}{Tfit_Tbath}{
-        put caption here!
-    }{fig:tb:asym:control-Tfit_Tbath}
+    % \begin{figure}[t]
+    %     \centering
+    %     \import{tunnelbarrier/asym/irradiation/control}{Tfit_Tbath.pgf}
+    %     \caption{
+    %         $Tfit_Tbath$
+    %     }
+    %     \label{fig:tb:asym:control-Tfit_Tbath}
+    % \end{figure}

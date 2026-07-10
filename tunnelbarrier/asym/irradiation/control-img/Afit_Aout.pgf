@@ -80,7 +80,7 @@
 \pgfpathrectangle{\pgfqpoint{0.220000in}{0.240000in}}{\pgfqpoint{1.090000in}{0.990000in}}%
 \pgfusepath{clip}%
 \pgfsys@transformcm{1.090000}{0.000000}{0.000000}{0.990000}{0.220000in}{0.240000in}%
-\pgftext[left,bottom]{\includegraphics[interpolate=false,width=1.000000in,height=1.000000in]{iv-img0.png}}%
+\pgftext[left,bottom]{\includegraphics[interpolate=false,width=1.000000in,height=1.000000in]{Afit_Aout-img0.png}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -422,7 +422,7 @@
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsys@transformshift{0.546667in}{1.293333in}%
-\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.763333in,height=0.063333in]{iv-img1.png}}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.763333in,height=0.063333in]{Afit_Aout-img1.png}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -439,7 +439,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.781827in}{1.355600in}%
+\pgfsys@transformshift{0.801333in}{1.355600in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -447,7 +447,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.781827in,y=1.431989in,,bottom]{\color{textcolor}{\sffamily\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}0.0}}%
+\pgftext[x=0.801333in,y=1.431989in,,bottom]{\color{textcolor}{\sffamily\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}0.5}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetbuttcap%
@@ -464,7 +464,7 @@
 \pgfusepath{stroke,fill}%
 }%
 \begin{pgfscope}%
-\pgfsys@transformshift{1.235022in}{1.355600in}%
+\pgfsys@transformshift{1.225222in}{1.355600in}%
 \pgfsys@useobject{currentmarker}{}%
 \end{pgfscope}%
 \end{pgfscope}%
@@ -472,7 +472,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.235022in,y=1.431989in,,bottom]{\color{textcolor}{\sffamily\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}0.1}}%
+\pgftext[x=1.225222in,y=1.431989in,,bottom]{\color{textcolor}{\sffamily\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}1.0}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
