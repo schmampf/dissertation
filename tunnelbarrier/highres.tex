@@ -47,9 +47,10 @@
 
     In principle, one static \textit{I--V} fit would define the junction parameters for all later analysis. In practice, the extracted static parameters varied slightly between measurement blocks. I attribute these differences to slow experimental drifts, not to a different junction. I therefore used a representative static reference fit for each measurement block listed in Table~\ref{table:tunnelbarrier:highres}. Within each measurement block, the corresponding static parameters were then held fixed while the intended calibration parameter was extracted, namely $T_\mathrm{fit}$ for the temperature sweep and the effective microwave amplitude $A_\mathrm{fit}$ for the microwave-amplitude sweeps.
 
-    \begin{figure}
+    \begin{table}
         \centering
         \footnotesize
+        \caption{Static reference parameters and microwave calibration values by measurement block. Each column corresponds to the listed figure group and collects the parameters from the representative single \textit{I--V} fit used for that measurement block. The small differences between columns reflect block-to-block drift and changing broadening or temperature conditions, while the values remain consistent with the same SIS tunnel junction.}
         \begin{tabular}{r|l|l|l|l}
             Figures & \ref{fig:tb:highres:single-iv} & \ref{fig:tb:highres:temperature:single-iv}, \ref{fig:tb:highres:temperature:fit}, \ref{fig:tb:highres:temperature:cal}, \ref{fig:tb:highres:temperature:sim} & \ref{fig:tb:highres:amp18.3GHz:single-iv}, \ref{fig:tb:highres:amp18.3GHz:fit}, \ref{fig:tb:highres:amp18.3GHz:exp}, \ref{fig:tb:highres:amp18.3GHz:cal}, \ref{fig:tb:highres:amp18.3GHz:sim}& \ref{fig:tb:highres:amp13.6GHz:single-iv}, \ref{fig:tb:highres:amp13.6GHz:fit}, \ref{fig:tb:highres:amp13.6GHz:cal}, \ref{fig:tb:highres:amp13.6GHz:sim} \\\hline
             $G_\mathrm{N}\ (G_0)$ & $0.1894994(35)$ & $0.187225(35)$ & $0.1891906(73)$ & $0.1889329(27)$ \\
@@ -63,9 +64,8 @@
             $A_\mathrm{out}\ (\mathrm{mV})$ & -- & -- & $150$ & $150$ \\
             $T_\mathrm{bath}\ (\mathrm{K})$ & $0.033(1)$ & $0.697(1)$ & $0.063(1)$ & $0.187(1)$
         \end{tabular}
-        \caption{Static reference parameters and microwave calibration values by measurement block. Each column corresponds to the listed figure group and collects the parameters from the representative single \textit{I--V} fit used for that measurement block. The small differences between columns reflect block-to-block drift and changing broadening or temperature conditions, while the values remain consistent with the same SIS tunnel junction.}
         \label{table:tunnelbarrier:highres}
-    \end{figure}
+    \end{table}
     
     The fitted gaps cluster near $\Delta_0\approx195\,\mu\mathrm{eV}$, slightly larger than the representative aluminum value of about $180\,\mu\mathrm{eV}$ used in Sec.~\ref{subsec:micro:superconducting-gap}. I do not interpret this difference as unusual. Thin-film aluminum commonly shows sample-dependent shifts of both $\Delta_0$ and $T_\mathrm{c}$ due to thickness, disorder, and fabrication conditions, and the weak-coupling estimate from $\Delta_0$ gives $T_\mathrm{c}\approx1.274\,\mathrm{K}$, consistent with the temperature calibration below \cite{giaever_study_1961,tinkham_introduction_2004}. The normal-state conductance remains near $G_\mathrm{N}\simeq0.19\,G_0$ in all reference fits, which places TB1 in the tunnel limit. BCS quasiparticle tunneling and Tien--Gordon photon-assisted tunneling are therefore the appropriate minimal models for the measurement blocks in this section.
 
