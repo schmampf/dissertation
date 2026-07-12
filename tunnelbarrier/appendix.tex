@@ -1,6 +1,21 @@
 
-\section{Control Plots for TB2}
+%=========================================================
+\section{Coupling and Heating for TB2}
+\label{sec:tb:asym:control-plots}
+%=========================================================
 
+    I used the following diagnostic relations to compare microwave coupling and heating across the investigated frequencies:
+    \begin{align}
+        A_\mathrm{fit} &= \eta_{A_\mathrm{out}}^{(A_\mathrm{fit})}\, A_\mathrm{out}\,,\\
+        T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{A_\mathrm{out}}^{(T_\mathrm{fit})}\, A_\mathrm{out}+T_\mathrm{off}\right)\right]\,,\\
+        T_\mathrm{bath} &= \eta_{A_\mathrm{out}}^{(T_\mathrm{bath})}\, A_\mathrm{out}+ \mathrm{const.}\,,\\
+        T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{A_\mathrm{fit}}^{(T_\mathrm{fit})}\, A_\mathrm{fit}+T_\mathrm{off}\right)\right]\,,\\
+        T_\mathrm{bath} &= \eta_{A_\mathrm{fit}}^{(T_\mathrm{bath})}\, A_\mathrm{fit}+ \mathrm{const.}\,,\\
+        T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{T_\mathrm{bath}}^{(T_\mathrm{fit})}\, T_\mathrm{bath}+T_\mathrm{off}\right)\right]\,.
+        \label{eq:tb:asym:diagnostic-couplings}
+    \end{align}
+
+    The fitted-temperature data formed empirical lower and upper clusters near $T_\mathrm{base}\approx0.47(1)\,\mathrm{K}$ and $T_\mathrm{c}\approx1.29(1)\,\mathrm{K}$. I used these values as the bounds in the clipped temperature relations. The coefficients $\eta$ quantify correlations between the respective coordinates and do not by themselves identify a causal coupling mechanism.
 
     \begin{figure}[t]
         \centering
@@ -50,7 +65,6 @@
 %=========================================================
 \section{Magnetotransport in Tunnel Barriers}
 %=========================================================
-
 
     %=========================================================
     \subsection{Suppression of Superconductivity in TB1}
