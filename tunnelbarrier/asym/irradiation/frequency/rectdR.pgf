@@ -1182,7 +1182,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.095155in, y=0.212514in, left, base,rotate=90.000000]{\color{textcolor}{\sffamily\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\langle \mathcal{A}_{\mathrm{d}V/\mathrm{d}I}\, \rangle_{A_\mathrm{out}}\ (10^{-2})$}}%
+\pgftext[x=0.072917in, y=0.292374in, left, base,rotate=90.000000]{\color{textcolor}{\sffamily\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\langle \mathcal{A}_{\mathrm{d}V/\mathrm{d}I}\, \rangle_{A_\mathrm{cal}}\ (\%)$}}%
 \end{pgfscope}%
 \end{pgfpicture}%
 \makeatother%
