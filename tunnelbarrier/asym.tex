@@ -65,7 +65,7 @@
 
     I performed these measurements with the setup described by Patrick Raif and Martin Prestel, with several changes to the low-temperature wiring. Instead of the commercial thermalizer and filter, I used a sequence of copper-powder filters and stainless-steel capillaries. The reference resistor was already located at low temperature, in contrast to the configuration used by Martin Prestel. Microwave irradiation was again applied through the antenna.
 
-    For the microwave-amplitude sweeps, I held the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$ fixed at the values obtained from the representative fit. I then allowed $T_\mathrm{fit}$ and $A_\mathrm{fit}$ to vary for each irradiated trace. This procedure follows the analysis of TB1 and provides a common reference for comparing the different drive frequencies. Unlike TB1, however, TB2 developed a pronounced bias asymmetry under microwave irradiation. The symmetric SIS plus Tien--Gordon model cannot reproduce this response, so the extracted $T_\mathrm{fit}$ and $A_\mathrm{fit}$ should be interpreted as effective comparison parameters rather than as a complete physical description of the asymmetric curves.
+    For the microwave-amplitude sweeps, I held the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$ fixed at the values obtained from the representative fit. I held $\nu$ at the nominal applied frequency. I then allowed $T_\mathrm{fit}$ and $A_\mathrm{fit}$ to vary for each irradiated trace. This procedure follows the analysis of TB1 and provides a common reference for comparing the different drive frequencies. Unlike TB1, however, TB2 developed a pronounced bias asymmetry under microwave irradiation. The symmetric SIS plus Tien--Gordon model cannot reproduce this response, so the extracted $T_\mathrm{fit}$ and $A_\mathrm{fit}$ should be interpreted as effective comparison parameters rather than as a complete physical description of the asymmetric curves.
 
 %=========================================================
 \subsubsection*{Motivating Asymmetric Response}
@@ -208,25 +208,9 @@
 \label{subsec:tb:asym:controls}
 %=========================================================
 
-    I used separate diagnostic fits to test whether the frequency dependence of the asymmetry follows the microwave coupling or sample heating. For each frequency, I fitted the relations
-    \begin{align}
-        A_\mathrm{fit} &= \eta_{A_\mathrm{out}}^{(A_\mathrm{fit})}\, A_\mathrm{out}\,,\\
-        T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{A_\mathrm{out}}^{(T_\mathrm{fit})}\, A_\mathrm{out}+T_\mathrm{off}\right)\right]\,,\\
-        T_\mathrm{bath} &= \eta_{A_\mathrm{out}}^{(T_\mathrm{bath})}\, A_\mathrm{out}+ \mathrm{const.}\,,\\
-        T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{A_\mathrm{fit}}^{(T_\mathrm{fit})}\, A_\mathrm{fit}+T_\mathrm{off}\right)\right]\,,\\
-        T_\mathrm{bath} &= \eta_{A_\mathrm{fit}}^{(T_\mathrm{bath})}\, A_\mathrm{fit}+ \mathrm{const.}\,,\\
-        T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{T_\mathrm{bath}}^{(T_\mathrm{fit})}\, T_\mathrm{bath}+T_\mathrm{off}\right)\right]\,.
-    \end{align}
+    I used separate diagnostic fits to test whether the frequency dependence of the asymmetry follows the microwave coupling or sample heating. These fits compare the effective amplitude, fitted temperature, and bath temperature against the available amplitude and temperature coordinates. Their definitions and the corresponding control plots are collected in Sec.~\ref{sec:tb:asym:control-plots}.
 
-    The fitted-temperature data formed empirical lower and upper clusters near
-    \begin{align}
-        T_\mathrm{base}&\approx0.47(1)\,\mathrm{K}\,, &
-        T_\mathrm{c}&\approx1.29(1)\,\mathrm{K}\,.
-        \label{eq:tb:asym:T-base-critical}
-    \end{align}
-    I used these estimates as the bounds in the clipped temperature relations. They are empirical parameters of the diagnostic fits and are not independent measurements of the electronic base temperature or superconducting critical temperature.
-
-    Figure~\ref{fig:tb:asym:control-map} shows the pointwise amplitude and temperature ratios. The individual diagnostic fits are shown in Figs.~\ref{fig:tb:asym:control-Afit_Aout}, \ref{fig:tb:asym:control-Tfit_Aout}, \ref{fig:tb:asym:control-Tbath_Aout}, \ref{fig:tb:asym:control-Tfit_Afit}, \ref{fig:tb:asym:control-Tbath_Afit}, and \ref{fig:tb:asym:control-Tfit_Tbath}. Panels d--i of Fig.~\ref{fig:tb:asym:frequency} summarize their fitted slopes as functions of frequency.
+    Figure~\ref{fig:tb:asym:control-map} shows the pointwise amplitude and temperature ratios. Panels d--i of Fig.~\ref{fig:tb:asym:frequency} summarize the slopes extracted from the diagnostic fits as functions of frequency. The clipped temperature fits use empirical lower and upper bounds. These bounds stabilize the comparison across frequencies but are not independent measurements of the electronic base temperature or superconducting critical temperature.
 
     \begin{figure}[t]
         \centering
@@ -306,7 +290,7 @@
 
     I do not interpret the present data as evidence for conventional island Coulomb blockade. The intact break junction provides a low-impedance connection that should weaken charge quantization. In addition, I measured the unirradiated transport response over a wide range of dc gate voltages and observed no systematic gate dependence. This null result shows that the static junction response was not measurably charge sensitive under the investigated conditions, consistent with strong coupling of the island to the lead. It does not determine whether the microwave-induced asymmetric response is gate dependent because I did not repeat the gate sweep under irradiation. The relevant role of the island may therefore still be dynamical and involve microwave voltage division, quasiparticle nonequilibrium, or transient charge imbalance.
 
-    The connected shadow electrode and the external microwave environment provide further possible sources of asymmetry. A resonance of the sample holder, antenna, or wiring could change the local microwave field across the investigated frequency interval. At $7.97\,\mathrm{GHz}$, the free-space wavelength is $\lambda_0=c/\nu\approx37.6\,\mathrm{mm}$, close to the approximately $38\,\mathrm{mm}$ diameter of the shielding cup. This geometric correspondence makes a package-scale electromagnetic mode plausible, but it does not identify a specific cavity resonance. The eigenfrequencies also depend on the cup height, lid, dielectric loading, bond wires, and electrical feedthroughs. The present measurements do not distinguish a junction-intrinsic island mechanism from rectification produced by this asymmetric electromagnetic environment.
+    The connected shadow electrode and the external microwave environment provide further possible sources of asymmetry. A resonance of the sample holder, antenna, or wiring could change the local microwave field across the investigated frequency interval. At $7.97\,\mathrm{GHz}$, the free-space wavelength is $\lambda_0=c/\nu\approx37.6\,\mathrm{mm}$, close to the approximately $38\,\mathrm{mm}$ diameter of the shielding cup. This geometric correspondence makes a package-scale electromagnetic mode plausible, but it does not identify a specific cavity resonance. The present measurements do not distinguish a junction-intrinsic island mechanism from rectification produced by this asymmetric electromagnetic environment.
 
     Magnetic-field-dependent maps of the unirradiated transport provided an additional characterization of the static device. I observed no unexpected field-dependent features beyond the conventional evolution of the superconducting response. This null result provides no evidence for an additional flux-sensitive state in the unirradiated junction. It does not determine the magnetic-field dependence of the microwave-induced rectification because I did not repeat the field maps in the irradiated asymmetric regime.
 
