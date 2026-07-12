@@ -341,9 +341,14 @@
 
             The thermometer and heater lines are filtered and thermalized for the same reason as the transport lines. They connect room-temperature electronics to the millikelvin stage and can therefore act as thermal and electrical noise channels. Their voltage-noise requirements are less restrictive than those of the transport lines, but they still have to be well anchored to avoid parasitic heating. The heater line is connected separately to the Bluefors cabling\footnote{LEMO, \texttt{FGG.0S.302.ZLAT}.}. I therefore treat the thermometer and heater wiring as part of the cryogenic wiring system, not as auxiliary cabling outside the measurement environment.
 
-            The temperature readout therefore provides a local sample-holder thermometer. Controlled heating and temperature-dependent \textit{I--V} curves provide consistency checks, while the electronic temperature has to be inferred from transport data whenever it matters quantitatively.
+            I calibrated the heating protocol empirically by recording the steady sample-holder temperature $T_\mathrm{sample}$ for a series of applied heater powers $P_\mathrm{heater}$. Here, $T_\mathrm{sample}$ denotes the temperature obtained from the factory-calibrated resistance curve of the ruthenium-oxide thermometer. It is therefore the local thermometer reading used by the control software and by the PID loop. The heater power denotes the electrical power dissipated in the manganin heater. Figure~\ref{fig:methods:setup:thermometry:heater-calibration} shows the resulting relation for the temperature sweep used in this thesis.
 
-            Taken together, the cold electrical environment defines the sample-side measurement conditions. The cold reference resistors determine the current readout, the filtered and thermalized wiring limits electrical noise and electronic heating, and the microwave lines provide reproducible but not absolutely calibrated irradiation.
+            Because the thermal conductance between the sample holder and the mixing chamber increases with temperature, equally spaced power setpoints do not produce equally spaced temperatures. I therefore selected the heater setpoints from the empirical relation
+            \begin{equation}
+                P_\mathrm{heater} \approx 0.11 \times T_\mathrm{sample}^{5/2}.
+                \label{eq:methods:setup:heater-power-scaling}
+            \end{equation}
+            This choice produced an approximately uniform temperature axis for repeated \textit{I--V} sweeps. Equation~\eqref{eq:methods:setup:heater-power-scaling} is a calibration of the applied setpoints for this assembly, not a microscopic model of its thermal conductance. It can change after remounting the sample holder or modifying the thermal links and must then be measured again.
 
             \begin{wrapfigure}[13]{r}{1.5in}
                 \captionsetup{format=plain}%
@@ -351,19 +356,14 @@
                 \vspace{-1.5em}
                 \import{tunnelbarrier/highres/temperature}{heater.pgf}
                 \caption{
-                        Heater power $P_\mathrm{heater}$ as a function of thermometer temperature $T_\mathrm{bath}$ during the temperature sweep.
+                        Applied heater power $P_\mathrm{heater}$ as a function of the sample-holder temperature $T_\mathrm{sample}$. The line shows the empirical power law used to choose the heater setpoints.
                     }
-                \label{fig:tb:highres:temperature:heater}
+                \label{fig:methods:setup:thermometry:heater-calibration}
             \end{wrapfigure}
+            
+            The heater, thermometer, sample holder, and junction are not perfectly thermally equivalent. Finite thermal resistance along the pushing rod, stamp, and counter rods can produce temperature gradients, and the junction electrons can remain warmer than the thermometer. From the setup and control perspective, I denote the local thermometer reading by $T_\mathrm{sample}$. In the later transport analysis, the same recorded quantity is denoted by $T_\mathrm{bath}$ to distinguish it from the effective electronic temperature $T_\mathrm{fit}$ inferred from the transport spectrum. Thus, $T_\mathrm{sample}$ and $T_\mathrm{bath}$ refer to the same thermometer channel, while $T_\mathrm{fit}$ is a model-dependent quantity.
 
-            The temperature series was acquired by repeatedly measuring \textit{I--V} curves while stepping the heater power between sweeps. The heater, sample holder, thermometer, and junction are not perfectly thermally equivalent. Finite thermal resistance along the pushing rod, stamp, and counter rods can therefore produce offsets and temperature gradients during the sweep. For this reason, the calibrated axis used below is the fitted effective sample temperature $T_\mathrm{sample}$ from Eq.~\eqref{eq:tb:highres:temperature-calibration}, rather than the raw thermometer temperature.
-
-            The heater protocol was chosen to produce an approximately linear increase of the calibrated temperature. Empirically, the applied heater power followed the trend
-            \begin{equation}
-                P_\mathrm{heater} \propto T_\mathrm{bath}^{5/2}.
-                \label{eq:tb:highres:heater-power-scaling}
-            \end{equation}
-            I use this relation only as a description of the applied heating protocol, not as a microscopic thermal model of the sample stage.
+            The temperature readout therefore provides a calibrated local sample-holder temperature, while controlled heating and temperature-dependent \textit{I--V} curves provide consistency checks on the electronic response. Taken together, the cold electrical environment defines the sample-side measurement conditions. The cold reference resistors determine the current readout, the filtered and thermalized wiring limits electrical noise and electronic heating, and the microwave lines provide reproducible but not absolutely calibrated irradiation.
 
     %=========================================================
     \newpage
