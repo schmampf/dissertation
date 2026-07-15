@@ -1,5 +1,5 @@
 % !TEX root = ../thesis.tex
-
+\newpage
 %=========================================================
 \section{Experimental Setup}
 \label{sec:methods:setup}
@@ -355,7 +355,7 @@
 
             I calibrated the heating protocol empirically by recording the steady sample-holder temperature $T_\mathrm{sample}$ for a series of applied heater powers $P_\mathrm{heater}$. Here, $T_\mathrm{sample}$ denotes the temperature obtained from the factory-calibrated resistance curve of the ruthenium-oxide thermometer. It is therefore the local thermometer reading used by the control software and by the PID loop. The heater power denotes the electrical power dissipated in the manganin heater. Figure~\ref{fig:methods:setup:thermometry:heater-calibration} shows the resulting relation for the temperature sweep used in this thesis.
 
-            \begin{wrapfigure}[13]{r}{1.5in}
+            \begin{wrapfigure}[14]{r}{1.5in}
                 \captionsetup{format=plain}%
                 \centering
                 \vspace{-.5em}
@@ -369,7 +369,7 @@
 
             Because the thermal conductance between the sample holder and the mixing chamber increases with temperature, equally spaced power setpoints do not produce equally spaced temperatures. I therefore selected the heater setpoints from the empirical relation
             \begin{equation}
-                P_\mathrm{heater} \approx 0.11 \cdot T_\mathrm{sample}^{5/2}\,.
+                P_\mathrm{heater} \approx 0.11\,\mathrm{uW/K}^{5/2} \cdot T_\mathrm{sample}^{5/2}\,.
                 \label{eq:methods:setup:heater-power-scaling}
             \end{equation}
             This choice produced an approximately uniform temperature axis for repeated \textit{I--V} sweeps. Equation~\eqref{eq:methods:setup:heater-power-scaling} is a calibration of the applied setpoints for this assembly, not a microscopic model of its thermal conductance. It can change after remounting the sample holder or modifying the thermal links and must then be measured again.
