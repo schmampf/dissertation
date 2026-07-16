@@ -1,0 +1,59 @@
+% !TEX root = ../thesis.tex
+
+%=========================================================
+\section{Atomic Contacts}
+\label{sec:atomic-contacts}
+%=========================================================
+
+    \begin{wrapfigure}[13]{r}{40mm}
+        \captionsetup{format=plain}%
+        \centering
+        \vspace{-1.5em}
+        {
+            \fontsize{7}{9}\selectfont
+            \import{tunnelbarrier/samples}{AC.pdf_tex}
+        }
+        \vspace{-1.5em}
+        \caption{
+            SEM image of sample `AC'. $80\,\mathrm{nm}$ of Al.
+        }
+        \label{fig:ac:image-AC}
+    \end{wrapfigure}
+
+    Mesurements were performed on sample AC, shown in Fig \ref{fig:ac:image-AC}. Also known as PR-22e-09. Setup used as in Patrick Raif and Martin Presel. Data aquisition as described in Sec. \ref{sec:methods:ditigal}. All microwave irradiation experiments shown in this section are done in corporation with Patrikc Raif during his Master's Thesis.
+
+    We did a lot of characterization of the unbroken device, shown in Patrick Raif. However no effects of microwave irradiation has been measured. 
+    
+    % tunnel limit
+    The samples gap and critical temperature are 
+    \begin{align}
+        G_\mathrm{N} = 0.0138(1)\,G_0\, &&
+        \Delta_0 = 188.5(5)\,\mathrm{ueV}\,\\
+        \mu_0H_\mathrm{c} = 28(1)\,\mathrm{mT}\, &&
+        T_\mathrm{c} = 1.21(1)\,\mathrm{K}\,.
+    \end{align}
+    Critical temperature infered by Delta is $1.24$, whats close enough.
+    The gap could be estimated by the fits in \ref{sec:ac:pincode}, and their clustering value. Measurements in the tunnel limit, that could be fitted with the bcs theory confirm this gap. The critcal temperature is retrieved by a temperature study on the same contact in the tunnel limit.
+    
+    % josephson Junction 
+    The sample in the unbroken state was characterized with Patrick and is described in \cite{raif_electronic_2024}. The order parameter in the unbroken state were found to be
+    \begin{align}
+        G_\mathrm{N} \geq 550\,G_0\,, &&
+        I_\mathrm{sw} = 1.075(5)\,\mathrm{mA}\,, \\
+        I_\mathrm{rt} = 0.595(5)\,\mathrm{mA}\,, &&
+        \mu_0H_\mathrm{c} = 9.9(1)\,\mathrm{mT}\,.
+    \end{align}
+    Critical- / Switching current and normal state conductance strongly depend the state of the break junction.
+
+
+    \transportlandscapefigure{atomic_contact/550G0/magnetic-field}{cal}{
+        bla blab la
+    }{fig:ac:500G0:magnetic-field}
+
+    \transportlandscapefigure{atomic_contact/0.05G0/magnetic-field}{cal}{
+        bla blab la
+    }{fig:ac:0.05G0:magnetic-field}
+
+    \transportlandscapefigure{atomic_contact/0.05G0/temperature}{cal}{
+        bla blab la
+    }{fig:ac:0.05G0:temperature}
