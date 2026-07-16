@@ -188,69 +188,118 @@
 
 %%% A5 Title Page %%%
 
+    % \newkeycommand{\thesistitlepageafive}[language=english][1]{
+
+    %     \def\lanUser{
+    %         \commandkey{language}
+    %         }%	
+    %     % Verwende Serifenlose Schrift auf der Titelseite
+    %     \begin{sffamily}%
+    %         % Dokumenten Titel
+    %         \begin{textblock*}{\textwidth}(2cm, 4cm)%
+    %             \selectfontsize{16pt}%
+    %             \centering%
+    %             \textbf{Microwave-Driven Transport in Mesoscopic Superconducting Junctions from Tunnel Barriers to Atomic Contacts}%
+    %         \end{textblock*}%
+
+    %         % Art der Arbeit, z.b. Bachelorarbeit, Masterarbeit, ...
+    %         \begin{textblock*}{\textwidth}(2cm, 7cm)%
+    %             \selectfontsize{12pt}%
+    %             \centering%
+    %             \textbf{Doctoral Thesis}\\%
+    %             \vskip 2pt%
+    %             by\\%
+    %             \vskip 2pt%
+    %             \textbf{Oliver Aschenbrenner}\\%
+    %             \vskip 2pt%
+    %             at the%
+    %         \end{textblock*}%
+            
+    %         % Unversität Konstanz Logo
+    %         \begin{textblock*}{\textwidth}(2cm, 9.5cm)%
+    %             \centering\includegraphics[width=0.75\textwidth]{utilities/uni logo/UniKonstanz_Logo_Optimum.pdf}%
+    %         \end{textblock*}%
+
+    %         % Uni-Sektion und Fachebereich
+    %         \begin{textblock*}{\textwidth}(2cm, 14cm)%
+    %             \selectfontsize{12pt}%
+    %             \centering%
+    %             Faculty of Science\\%
+    %             \vskip 2pt%
+    %             Department of Physics%
+    %         \end{textblock*}%
+
+    %         % Gutachter (Deutsch, English)
+    %         \begin{textblock*}{\textwidth}(2cm, 16cm)%
+    %             \selectfontsize{12pt}%
+    %             \centering%
+    %             \begin{tabular}{ll}%
+    %                 1. Reviewer: & Prof. Dr. Elke Scheer\\[2pt]%
+    %                 2. Reviewer: & Prof. Dr Angelo Di Bernardo%
+    %             \end{tabular}%
+    %         \end{textblock*}%
+
+    %         % Konstanz, Jahr (Deutsch, English)
+    %         \begin{textblock*}{\textwidth}(2cm, 18cm)%
+    %             \selectfontsize{12pt}%
+    %             \centering%
+    %             Konstanz, 2026%
+    %         \end{textblock*}%
+
+    %         % \newpage%
+    %         % \thispagestyle{empty}%
+    %         % \newpage%
+    %     \end{sffamily}%	
+    %     % \newpage%
+    %     \thispagestyle{empty} $ $%
+    %     \newpage%
+    % }%
+
+
     \newkeycommand{\thesistitlepageafive}[language=english][1]{
 
         \def\lanUser{
             \commandkey{language}
             }%	
-        % Verwende Serifenlose Schrift auf der Titelseite
         \begin{sffamily}%
-            % Dokumenten Titel
-            \begin{textblock*}{\textwidth}(2cm, 4cm)%
+            \begin{textblock*}{\textwidth}(2cm, 3cm)%
+                \setstretch{1.15}
                 \selectfontsize{16pt}%
                 \centering%
-                \textbf{Microwave-Driven Transport in Mesoscopic Superconducting Junctions from Tunnel Barriers to Atomic Contacts}%
+                \textbf{\underline{Microwave-Driven Transport in\\Mesoscopic Superconducting Junctions\\from Tunnel Barriers to Atomic Contacts}}%
             \end{textblock*}%
 
-            % Art der Arbeit, z.b. Bachelorarbeit, Masterarbeit, ...
-            \begin{textblock*}{\textwidth}(2cm, 7cm)%
+            \begin{textblock*}{\textwidth}(2cm, 6.5cm)%
+                \doublespacing
                 \selectfontsize{12pt}%
                 \centering%
-                \textbf{Doctoral Thesis}\\%
-                \vskip 2pt%
-                by\\%
-                \vskip 2pt%
-                \textbf{Oliver Aschenbrenner}\\%
-                \vskip 2pt%
-                at the%
-            \end{textblock*}%
-            
-            % Unversität Konstanz Logo
-            \begin{textblock*}{\textwidth}(2cm, 9.5cm)%
-                \centering\includegraphics[width=0.75\textwidth]{utilities/uni logo/UniKonstanz_Logo_Optimum.pdf}%
+                \textbf{
+                    Dissertation zur Erlangung des\\
+                    akademischen Grades eines\\
+                    Dokotrs der Naturwissenschaften\\
+                    Dr. rer. nat.\\
+                }
             \end{textblock*}%
 
-            % Uni-Sektion und Fachebereich
-            \begin{textblock*}{\textwidth}(2cm, 14cm)%
-                \selectfontsize{12pt}%
+            \begin{textblock*}{\textwidth}(2cm, 10.5cm)%
+                \setstretch{1.15}
+                \selectfontsize{11pt}%
                 \centering%
-                Faculty of Science\\%
-                \vskip 2pt%
-                Department of Physics%
+                vorgelegt von\\
+                Aschenbrenner, Oliver\\
+                \vspace{1em}
+                an der\\
+                \vspace{1em}
+                \includegraphics[width=0.5\textwidth]{utilities/uni logo/UniKonstanz_Logo_Optimum.pdf}%
+                \vspace{2.5em}
+                Mathematische-Naturwissenschaftliche Sektion\\%
+                Fachbereich Physik%
             \end{textblock*}%
-
-            % Gutachter (Deutsch, English)
-            \begin{textblock*}{\textwidth}(2cm, 16cm)%
-                \selectfontsize{12pt}%
-                \centering%
-                \begin{tabular}{ll}%
-                    1. Reviewer: & Prof. Dr. Elke Scheer\\[2pt]%
-                    2. Reviewer: & Prof. Dr Angelo Di Bernardo%
-                \end{tabular}%
-            \end{textblock*}%
-
-            % Konstanz, Jahr (Deutsch, English)
-            \begin{textblock*}{\textwidth}(2cm, 18cm)%
-                \selectfontsize{12pt}%
-                \centering%
-                Konstanz, 2026%
-            \end{textblock*}%
-
-            % \newpage%
-            % \thispagestyle{empty}%
-            % \newpage%
         \end{sffamily}%	
-        % \newpage%
-        \thispagestyle{empty} $ $%
         \newpage%
+        \thispagestyle{empty} $ $
+        \newpage%
+        \thispagestyle{empty} $ $
+        Konstanz, 2026
+        \newpage
     }%
