@@ -5,24 +5,36 @@
     \label{sec:ac:pincode}
     %=========================================================
 
-    The objective of this section is to reproduce the channel-resolved analysis introduced by Scheer et al. for superconducting aluminum atomic contacts \cite{scheer_conduction_1997}. I formed atomic contacts with a mechanically controlled break junction, measured their nonlinear superconducting \textit{I--V} characteristics, and fitted the multiple-Andreev-reflection spectrum as a sum of independent transport channels. This procedure assigns a mesoscopic pincode \(\{\tau_i\}\) to each stable contact configuration. I first validate the extraction for representative spectra and then use it to follow the individual transmission channels during the opening of the contact.
-    
-    The mesoscopic pincode \(\{\tau_i\}\) describes the transmission eigenvalues of the atomic contact, as introduced in Sec.~\ref{subsec:quasi:meso}. Its channel-dependent MAR spectrum is discussed in Sec.~\ref{subsec:meso:mar}. I extracted the pincode using the fitting procedure described in Sec.~\ref{subsec:methods:digital:analysis}.
+    In this section, I reproduce the channel-resolved measurement introduced by Scheer et al. for superconducting aluminum atomic contacts \cite{scheer_conduction_1997}. After breaking the mechanically controlled break junction, I recorded nonlinear superconducting \textit{I--V} characteristics while opening the contact in small displacement steps. I represented the measured current as a sum of independent MAR contributions and extracted the transmission eigenvalues \(\{\tau_i\}\), referred to as the mesoscopic pincode. This procedure assigns a best-fit pincode to each stable measured contact state and makes it possible to follow the individual channels throughout an opening trace.
 
-    After characterization of the unbroken sample, the break junction can be broken and atomic contacts might form. By measuring spectra over small changes in displacements, one can obtain the mesoscopic pincode.
-
-    Figure \ref{fig:ac:pincode:fits} shows representative fits of taken I--V spectra at positions $\Delta x$. Those units are arbitrary motor positions and not calibrated. However i assume it as an proportional axis to the real displacement. For those fits I assume those values statically:
-    \begin{align}
-        T = 0\,\mathrm{K}\,, &&
-        \gamma = 1\,\mathrm{neV}\,.
-    \end{align}
-    gap and noise cluster around:
+    The physical basis of the extraction is introduced in Secs.~\ref{subsec:quasi:meso} and \ref{subsec:meso:mar}, and the numerical fitting procedure is described in Sec.~\ref{subsec:methods:digital:analysis}. The normal-state conductance constrains only the sum $G_\mathrm{N}/G_0=\sum_i\tau_i$. The nonlinear subgap spectrum provides the additional information required to separate the individual transmissions because different values of $\tau_i$ produce distinct MAR contributions. In the final fits, I fixed the temperature and Dynes broadening to $T=0$ and $\gamma=0$. I allowed the zero-temperature gap $\Delta_0$ and the effective voltage broadening $\sigma_V$ to vary independently for each spectrum together with the channel transmissions. The fitted values of $\Delta_0$ and $\sigma_V$ formed narrow clusters around
     \begin{align}
         \Delta_0 = 188.5(5)\,\mathrm{ueV}\,, &&
         \sigma_V = 26(1)\,\mathrm{ueV}\,.
     \end{align}
 
+    Figure \ref{fig:ac:pincode:fits} validates the extraction for six representative contact states. The displacement $\Delta x$ is given in arbitrary motor units. It is monotonic and assumed to be proportional to the relative electrode displacement, but it is not calibrated as an absolute distance. The same best-fit pincode reproduces both the measured \textit{I--V} characteristic and its differential conductance. The agreement extends across contact states with different conductance and different numbers of resolved channels. It therefore tests the channel-dependent subgap structure rather than only the total normal-state conductance.
+
     \begin{figure}[t]
+        \centering
+        \import{atomic_contact/breaking}{pincode.pgf}
+        \caption{
+            Contact-resolved evolution of the mesoscopic pincode during opening. The upper panel shows the normal-state conductance $G_\mathrm{N}/G_0$, and the lower panel shows the extracted channel transmissions $\{\tau_i\}$. Vertical lines separate the successive contact configurations (a)--(f). Abrupt conductance changes coincide with a reorganization of the transmission channels, whereas the channels evolve continuously within configurations. The six representative spectra and their MAR fits are shown in Fig.~\ref{fig:ac:pincode:fits}.
+        }
+        \label{fig:ac:pincode}
+    \end{figure}
+
+    Figure \ref{fig:ac:pincode} extends the extraction from these examples to the complete opening trace. Configurations (a) and (b) require more than three channels to reproduce the MAR spectrum. They are therefore incompatible with the simple three-channel picture of a one-atom aluminum contact and indicate a wider, few-atom constriction. The channel count alone does not determine the exact number of atoms. Configurations (c)--(e) contain no more than three dominant channels and are consistent with a one-atom contact. Configuration (c) has one dominant channel and two channels of comparable lower transmission. At the transition to configuration (d), the conductance falls below $G_0$, but two principal channels remain. Configuration (e) is likewise dominated by two channels. The final transition into configuration (f) marks the tunnel regime, where the fitted transmissions fall below the resolution of the extraction.
+
+    The channel decomposition reveals changes that are hidden in $G_\mathrm{N}$ alone. Within configurations (d) and (e), the conductance rises gradually toward the end of each plateau. This increase is carried mainly by the most transmissive channel, while the second channel becomes less transmissive. The pincode therefore changes through a redistribution between channels rather than through a uniform increase of all transmissions. At the boundaries between configurations, several channels instead change discontinuously. These two forms of evolution reproduce the principal phenomenology reported in the original experiment, including the simultaneous evolution of several channels along tilted plateaus and the presence of more than one channel below $G_0$ \cite{scheer_conduction_1997}.
+
+    Following Scheer et al., I associate the discontinuities with atomic rearrangements and the continuous evolution within a configuration with elastic deformation of the contact \cite{scheer_conduction_1997}. This interpretation is consistent with the transport data, but the measurement does not determine the atomic geometry directly. Later work connected the channel structure of one-atom contacts to chemical valence. For aluminum, a dominant channel with mixed $sp_z$ character and two transverse channels derived mainly from the $p_x$ and $p_y$ orbitals provide a microscopic explanation for the occurrence of three channels \cite{scheer_signature_1998}. I use this result as context for the observed channel count, but I do not assign an orbital character to an individual fitted channel.
+
+    The complete measured transport landscape is shown in Fig.~\ref{fig:ac:pincode:cal}, and its reconstruction from the extracted pincodes is shown in Fig.~\ref{fig:ac:pincode:sim}.
+
+    In summary, I established an experimental and numerical workflow for assigning a mesoscopic pincode to each stable measured contact state. The representative fits validate the channel decomposition, and the reconstructed transport landscape shows that the extracted pincodes capture the systematic evolution of the MAR spectrum throughout the opening trace. The reported transmissions are best-fit values on a grid with spacing $0.001$. This spacing defines the numerical resolution and is not a statistical confidence interval. A full uncertainty analysis and a microscopic reconstruction of the atomic geometry are outside the scope of this section.
+
+    \begin{figure}
         \centering
         \subfigure[
             \textit{I--V}
@@ -36,25 +48,10 @@
         \label{fig:ac:pincode:fits}
     \end{figure}
 
-    \begin{figure}[t]
-        \centering
-        \import{atomic_contact/breaking}{pincode.pgf}
-        \caption{
-            Contact-resolved evolution of the mesoscopic pincode during opening. The upper panel shows the normal-state conductance $G_\mathrm{N}/G_0$, and the lower panel shows the extracted channel transmissions $\{\tau_i\}$. Vertical lines separate the successive contact configurations (a)--(f). Abrupt conductance changes coincide with a reorganization of the transmission channels, whereas the channels evolve continuously within configurations. The six representative spectra and their MAR fits are shown in Fig.~\ref{fig:ac:pincode:fits}.
-        }
-        \label{fig:ac:pincode}
-    \end{figure}
-
-    Figure \ref{fig:ac:pincode} summarizes the pincodes extracted from the complete opening trace. Configurations (a)--(c) belong to the high-conductance part of the opening and are separated by abrupt atomic rearrangements. Configuration (c) is carried by three resolved channels, with one dominant channel and two channels of comparable lower transmission. The transition to configuration (d) reduces the conductance to below $G_0$ and leaves two principal channels. A further rearrangement produces configuration (e), which is likewise dominated by two channels. After the final transition to configuration (f), the contact enters the tunnel regime and no finite-transmission channel is resolved by the MAR fit.
-
-    The channel decomposition reveals information that is hidden in the total conductance. Within configurations (d) and (e), $G_\mathrm{N}$ increases gradually toward the end of each plateau. This increase is mainly carried by the most transmissive channel, while the transmission of the second channel decreases. The smooth redistribution within each labeled interval contrasts with the simultaneous jumps of several channels at its boundaries. I therefore associate the boundaries with changes of atomic configuration and the evolution within a configuration with continuous deformation of the contact.
-
-    The complete measured transport landscape is shown in Fig.~\ref{fig:ac:pincode:cal}, and its reconstruction from the extracted pincodes is shown in Fig.~\ref{fig:ac:pincode:sim}.
-
     \transportlandscapefigure{atomic_contact/breaking}{cal}{
         Measured transport landscape during the opening of the atomic contact. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics are shown as waterfall, surface, and color-map representations as functions of bias voltage and relative displacement $\Delta x$. Abrupt changes along the displacement axis separate distinct atomic configurations, while the evolving subgap structure provides the information used for the channel-resolved MAR analysis.
     }{fig:ac:pincode:cal}
 
     \transportlandscapefigure{atomic_contact/breaking}{sim}{
-        Transport landscape reconstructed from the extracted mesoscopic pincodes. The simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics use the best-fit channel transmissions at each relative displacement $\Delta x$ and the global model parameters stated in the text. The reconstruction reproduces the principal displacement-dependent MAR structures of the measured landscape in Fig.~\ref{fig:ac:pincode:cal}, demonstrating that the contact evolution can be represented by a sequence of channel-resolved pincodes.
+        Transport landscape reconstructed from the extracted mesoscopic pincodes. The simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics use the best-fit channel transmissions, gap, and effective voltage broadening for each relative displacement $\Delta x$, with $T=\gamma=0$. The reconstruction reproduces the principal displacement-dependent MAR structures of the measured landscape in Fig.~\ref{fig:ac:pincode:cal}, demonstrating that the contact evolution can be represented by a sequence of channel-resolved pincodes.
     }{fig:ac:pincode:sim}
