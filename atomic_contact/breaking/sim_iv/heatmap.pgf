@@ -273,7 +273,7 @@
 \pgfpathrectangle{\pgfqpoint{0.000000in}{0.000000in}}{\pgfqpoint{1.850000in}{1.850000in}}%
 \pgfusepath{clip}%
 \pgfsys@transformshift{0.113209in}{0.208488in}%
-\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.679444in,height=0.641111in]{\detokenize{atomic_contact/breaking/sim_didv/heatmap-img0.png}}}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.679444in,height=0.641111in]{\detokenize{atomic_contact/breaking/sim_iv/heatmap-img0.png}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%

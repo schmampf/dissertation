@@ -10,7 +10,8 @@
     The physical basis of the extraction is introduced in Secs.~\ref{subsec:quasi:meso} and \ref{subsec:meso:mar}, and the numerical fitting procedure is described in Sec.~\ref{subsec:methods:digital:analysis}. The normal-state conductance constrains only the sum $G_\mathrm{N}/G_0=\sum_i\tau_i$. The nonlinear subgap spectrum provides the additional information required to separate the individual transmissions because different values of $\tau_i$ produce distinct MAR contributions. In the final fits, I fixed the temperature and Dynes broadening to $T=0$ and $\gamma=0$. I allowed the zero-temperature gap $\Delta_0$ and the effective voltage broadening $\sigma_V$ to vary independently for each spectrum together with the channel transmissions. The fitted values of $\Delta_0$ and $\sigma_V$ formed narrow clusters around
     \begin{align}
         \Delta_0 = 188.5(5)\,\mathrm{ueV}\,, &&
-        \sigma_V = 26(1)\,\mathrm{ueV}\,.
+        \sigma_V = 26(1)\,\mathrm{uV}\,.
+        \label{fig:ac:pincode:parameter}
     \end{align}
 
     Figure \ref{fig:ac:pincode:fits} validates the extraction for six representative contact states. The displacement $\Delta x$ is given in arbitrary motor units. It is monotonic and assumed to be proportional to the relative electrode displacement, but it is not calibrated as an absolute distance. The same best-fit pincode reproduces both the measured \textit{I--V} characteristic and its differential conductance. The agreement extends across contact states with different conductance and different numbers of resolved channels. It therefore tests the channel-dependent subgap structure rather than only the total normal-state conductance.
@@ -53,5 +54,5 @@
     }{fig:ac:pincode:cal}
 
     \transportlandscapefigure{atomic_contact/breaking}{sim}{
-        Transport landscape reconstructed from the extracted mesoscopic pincodes. The simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics use the best-fit channel transmissions, gap, and effective voltage broadening for each relative displacement $\Delta x$, with $T=\gamma=0$. The reconstruction reproduces the principal displacement-dependent MAR structures of the measured landscape in Fig.~\ref{fig:ac:pincode:cal}, demonstrating that the contact evolution can be represented by a sequence of channel-resolved pincodes.
+        Transport landscape reconstructed from the extracted mesoscopic pincodes. The simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics use the best-fit channel transmissions, $T=\gamma=0$ and the parameter of Eq.~\eqref{fig:ac:pincode:parameter} for each relative displacement $\Delta x$. The reconstruction reproduces the principal displacement-dependent MAR structures of the measured landscape in Fig.~\ref{fig:ac:pincode:cal}, demonstrating that the contact evolution can be represented by a sequence of channel-resolved pincodes.
     }{fig:ac:pincode:sim}
