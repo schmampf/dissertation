@@ -19,3 +19,5 @@ thesis.zip
 
 # pack a zip, containing all commited files
 # git archive -o thesis.zip HEAD
+
+*/Aschenbrenner.png
