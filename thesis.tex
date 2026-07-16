@@ -20,8 +20,8 @@
     %=========================================================
     %%% Pre Body %%%
     %=========================================================
-        % \thesistitlepageafive{} % A5, change details in MyKonstanz.sty
-        % \blankpage \blankpage % for printing version
+        % \include{miscellaneous/titelpage.tex}
+        % \include{miscellaneous/empty-page.tex}
 
         \clearpage 
         \pagenumbering{Roman}
@@ -30,7 +30,7 @@
         %     % - Abstract
         %     % - Zusammenfassung
 
-        % \include{miscellaneous/inspirational}
+        \include{miscellaneous/inspirational}
         %     % - kann man sich noch überlegen
 
         % \tableofcontents
@@ -45,10 +45,10 @@
         %     % - zum Schluss. Ich hoffe auf AI
 
         % \include{theory/theory}
-            \include{theory/quasi.tex}
+            % \include{theory/quasi.tex}
         %     \include{theory/micro.tex}
         %     \include{theory/macro.tex}
-            \include{theory/meso.tex}
+            % \include{theory/meso.tex}
         %     \include{theory/stochastic.tex}
         %     % - liegt bei Elke
         %     % - PAT Schmetaic updaten
@@ -56,7 +56,7 @@
         % \include{methods/methods}
         %     \include{methods/sample.tex}
         %     \include{methods/setup.tex}
-            \include{methods/digital.tex}
+            % \include{methods/digital.tex}
         %     % - liegt bei Elke
         %     % - Rref, Fomblin number
 
@@ -65,7 +65,7 @@
         %     % - consistency coherence / 2 Delta peaks
 
         % \include{atomic_contact/atomic-contact}
-        \include{atomic_contact/pincode}
+        % \include{atomic_contact/pincode}
 
 
         % \include{miscellaneous/conclusion} % TODO
@@ -83,7 +83,7 @@
         %     \include{atomic_contact/appendix}
 
         % \addcontentsline{toc}{chapter}{References}
-        \printbibliography[title={References}]
+        % \printbibliography[title={References}]
         %     % - braucht kein issue, month, lieber DOI
         %     % - Alle Autoren & Titel
         %     % - Journal + Volume (kein issue)
@@ -93,8 +93,9 @@
 
         % \include{miscellaneous/acknowledgement}
         %     % - ich will noch upper zitieren
-    %=========================================================
+
         % \include{miscellaneous/eidestattliche-versicherung}
+    %=========================================================
 \end{document}
 
 % 13.-17.7. Breaking / Pincode
