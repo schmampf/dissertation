@@ -20,8 +20,8 @@
     %=========================================================
     %%% Pre Body %%%
     %=========================================================
-        % \thesistitlepageafive{} % A5 
-        % change details in MyKonstanz.sty
+        % \thesistitlepageafive{} % A5, change details in MyKonstanz.sty
+        % \blankpage \blankpage % for printing version
 
         \clearpage 
         \pagenumbering{Roman}
@@ -64,6 +64,7 @@
         % \include{tunnelbarrier/asym}
         %     % - consistency coherence / 2 Delta peaks
 
+        % \include{atomic_contact/atomic-contact}
         \include{atomic_contact/pincode}
 
 
@@ -82,7 +83,7 @@
         %     \include{atomic_contact/appendix}
 
         % \addcontentsline{toc}{chapter}{References}
-        % \printbibliography[title={References}]
+        \printbibliography[title={References}]
         %     % - braucht kein issue, month, lieber DOI
         %     % - Alle Autoren & Titel
         %     % - Journal + Volume (kein issue)
@@ -93,7 +94,7 @@
         % \include{miscellaneous/acknowledgement}
         %     % - ich will noch upper zitieren
     %=========================================================
-
+        % \include{miscellaneous/eidestattliche-versicherung}
 \end{document}
 
 % 13.-17.7. Breaking / Pincode
