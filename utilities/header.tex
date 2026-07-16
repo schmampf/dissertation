@@ -71,6 +71,17 @@
     % books, theses, and other entry types when the bibliography data provides them.
     \ExecuteBibliographyOptions[article]{giveninits=true}
 
+    % The standard style forces URLs to be printed for online entries. Keep the
+    % URL available for the clickable title and print only its access date below.
+    \ExecuteBibliographyOptions[online]{url=true}
+    \renewbibmacro*{urldate}{%
+        \printtext{\bibstring{urlseen}\addspace
+            \mkdayzeros{\thefield{urlday}}/\mkmonthzeros{\thefield{urlmonth}}/\mkyearzeros{\thefield{urlyear}}}%
+    }
+    \renewbibmacro*{url+urldate}{%
+        \iffieldundef{urlyear}{}{\usebibmacro{urldate}}%
+    }
+
     % Link the displayed title to the URL, or to the DOI when no URL is available.
     % The address itself is intentionally not printed in the bibliography.
     \newcommand{\bibtitlelink}[1]{%
