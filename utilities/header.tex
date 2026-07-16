@@ -53,6 +53,8 @@
     
     \usepackage{coffeestains}
 
+    \usepackage{fontawesome5}
+
 %%% bibliography %%%
     \RequirePackage{etex}
     \usepackage[
@@ -114,6 +116,16 @@
     % uneven means in header
     % \headFoot{9} % for analog version
     \headFoot{11} % for digital version
+
+    % Preserve the capitalization supplied by chapter and section titles in
+    % running headers instead of converting marks to uppercase.
+    \providecommand*{\MakeMarkcase}[1]{#1}
+    \renewcommand*{\chaptermark}[1]{%
+        \markboth{\chaptermarkformat #1}{\chaptermarkformat #1}%
+    }
+    \renewcommand*{\sectionmark}[1]{%
+        \markright{\sectionmarkformat #1}%
+    }
 
     % For blank page
         \usepackage{afterpage}
@@ -377,3 +389,6 @@
     \hyphenation{Bei-spiel}
     \hyphenation{Am-be-ga-o-kar}
     \hyphenation{fer-mi-o-nic}
+
+
+\newcommand{\githubicon}{\textcolor{seeblau100}{\faGithub}}
