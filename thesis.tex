@@ -6,22 +6,22 @@
 \addbibresource{local.bib}
 
 \usepgffigurestrue % compile pgf figures
-% \usepgffiguresfalse % use precompiled pdf figures
+\usepgffiguresfalse % use precompiled pdf figures
 
 \begin{document}
 
     %=========================================================
     %%% Pre Body %%%
     %=========================================================
-    % \include{miscellaneous/titelpage.tex}
-    % \include{miscellaneous/empty-page.tex}
+    \include{miscellaneous/titelpage.tex}
+    \include{miscellaneous/empty-page.tex}
 
     \clearpage 
     \pagenumbering{Roman}
 
-    % \include{miscellaneous/abstract}
-    % \include{miscellaneous/inspirational}
-    % \tableofcontents
+    \include{miscellaneous/abstract.tex}
+    \include{miscellaneous/inspirational.tex}
+    \tableofcontents
 
     %=========================================================
     %%% main body %%%
@@ -29,10 +29,10 @@
     \clearpage 
     \pagenumbering{arabic}
 
-    % \include{miscellaneous/introduction}
+    \include{miscellaneous/introduction.tex}
 
     %=========================================================
-    \include{theory/theory}
+    \include{theory/theory.tex}
     %=========================================================
         \include{theory/quasi.tex}
         \include{theory/micro.tex}
@@ -40,32 +40,32 @@
         \include{theory/meso.tex}
         \include{theory/stochastic.tex}
         % - liegt bei Elke
-        % - PAT Schmetaic updaten
+        % - PAT Schematic updaten
 
     %=========================================================
-    \include{methods/methods}
+    \include{methods/methods.tex}
     %=========================================================
         \include{methods/sample.tex}
         \include{methods/setup.tex}
         \include{methods/digital.tex}
-        \include{methods/sampleappendix.tex}
+        % \include{methods/sampleappendix.tex}
         % - liegt bei Elke
         % - Rref, Fomblin number
 
-    % %=========================================================
-    % % Results
-    % %=========================================================
-    % \include{tunnelbarrier/highres}
-    % \include{tunnelbarrier/asym}
-    %     % - consistency coherence / 2 Delta peaks
-    %     \include{tunnelbarrier/appendix}
+    %=========================================================
+    % Results
+    %=========================================================
+    \include{tunnelbarrier/highres.tex}
+    \include{tunnelbarrier/asym.tex}
+        % - consistency coherence / 2 Delta peaks
+    % \include{tunnelbarrier/appendix.tex}
 
-    % \include{atomic_contact/atomic-contact}
-    % \include{atomic_contact/pincode}
-    %     \include{atomic_contact/appendix}
+    \include{atomic_contact/atomic-contact.tex}
+    \include{atomic_contact/pincode.tex}
+    % \include{atomic_contact/appendix.tex}
 
 
-    % \include{miscellaneous/conclusion} 
+    \include{miscellaneous/conclusion.tex} 
 
     %=========================================================
     %%% Post Body %%%
@@ -73,12 +73,15 @@
     \clearpage
     \pagenumbering{roman}
 
+
     % %=========================================================
-    % \include{miscellaneous/appendix}
+    \include{miscellaneous/appendix.tex}
     % %=========================================================
-    %     \include{methods/sampleappendix.tex}
-    %     \include{tunnelbarrier/appendix}
-    %     \include{atomic_contact/appendix}
+        \include{methods/sampleappendix.tex}
+        \include{tunnelbarrier/appendix.tex}
+        \include{atomic_contact/appendix.tex}
+
+    \include{miscellaneous/software.tex}
 
     \addcontentsline{toc}{chapter}{References}
     \printbibliography[title={References}]
@@ -89,8 +92,8 @@
     %     % - year (kein month)
     %     % - url wenn als link hinterlegen \href[title]{url}
 
-    \include{miscellaneous/acknowledgement}
-    \include{miscellaneous/eidestattliche-versicherung}
+    \include{miscellaneous/acknowledgement.tex}
+    \include{miscellaneous/eidestattliche-versicherung.tex}
 \end{document}
 
 % 13.-17.7. Breaking / Pincode
