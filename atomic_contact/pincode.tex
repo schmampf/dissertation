@@ -31,28 +31,25 @@
             \textit{dI--dV}
         ]{\includegraphics{atomic_contact/breaking/didvs.pdf}}        
         \caption{
-            Representative channel-resolved MAR fits during the opening of the atomic contact. (a)~Measured \textit{I--V} characteristics and best-fit multichannel MAR curves. (b)~The corresponding normalized differential conductance. Each panel gives the relative displacement $\Delta x$ and the extracted mesoscopic pincode $\{\tau_i\}$. The fits reproduce the contact-dependent subgap structure with between one and three resolved channels. The transmissions are best-fit values on a grid with spacing $0.01$. This spacing is the numerical resolution and not a statistical confidence interval.
+            Representative channel-resolved MAR fits during the opening of the atomic contact. (a)~Measured \textit{I--V} characteristics and best-fit multichannel MAR curves. (b)~The corresponding normalized differential conductance. Each panel gives the relative displacement $\Delta x$ and the extracted mesoscopic pincode $\{\tau_i\}$. The fits reproduce the contact-dependent subgap structure with up to 9 resolved channels.
         }
         \label{fig:ac:pincode:fits}
     \end{figure}
 
-    \begin{wrapfigure}[18]{r}{1.7in}
-        \captionsetup{format=plain}%
+    \begin{figure}[t]
         \centering
-        % \vspace{-1.5em}
         \import{atomic_contact/breaking}{pincode.pgf}
-        % \vspace{-1.5em}
         \caption{
-            Normal-state conductance $G_\mathrm{N}/G_0$ and extracted channel transmissions $\tau_i$ during contact opening. Vertical lines mark changes between atomic configurations.
+            Contact-resolved evolution of the mesoscopic pincode during opening. The upper panel shows the normal-state conductance $G_\mathrm{N}/G_0$, and the lower panel shows the extracted channel transmissions $\{\tau_i\}$. Vertical lines separate the successive contact configurations (a)--(f). Abrupt conductance changes coincide with a reorganization of the transmission channels, whereas the channels evolve continuously within configurations. The six representative spectra and their MAR fits are shown in Fig.~\ref{fig:ac:pincode:fits}.
         }
         \label{fig:ac:pincode}
-    \end{wrapfigure}
+    \end{figure}
 
-    The retrieved pincode has an uncertainty of $0.01$, Since the preacalculated grid doesnt allow for higher resolution. Figure \ref{fig:ac:pincode} show the results of all the taken ivs. We can observe the normal conductance and the contributions of single channels.
+    Figure \ref{fig:ac:pincode} summarizes the pincodes extracted from the complete opening trace. Configurations (a)--(c) belong to the high-conductance part of the opening and are separated by abrupt atomic rearrangements. Configuration (c) is carried by three resolved channels, with one dominant channel and two channels of comparable lower transmission. The transition to configuration (d) reduces the conductance to below $G_0$ and leaves two principal channels. A further rearrangement produces configuration (e), which is likewise dominated by two channels. After the final transition to configuration (f), the contact enters the tunnel regime and no finite-transmission channel is resolved by the MAR fit.
 
-    The normal conductance result in plateaus. However the last two plateus increase in conductance towards their end. From the single channels we see, that a single channel contribution rises and the other two channels lower their contribution, we attribute this to ...
+    The channel decomposition reveals information that is hidden in the total conductance. Within configurations (d) and (e), $G_\mathrm{N}$ increases gradually toward the end of each plateau. This increase is mainly carried by the most transmissive channel, while the transmission of the second channel decreases. The smooth redistribution within each labeled interval contrasts with the simultaneous jumps of several channels at its boundaries. I therefore associate the boundaries with changes of atomic configuration and the evolution within a configuration with continuous deformation of the contact.
 
-    The full waterfall plot of this measurement is found in \ref{fig:ac:pincode:cal} and the corresponding simulation can be found in \ref{fig:ac:pincode:fit}.
+    The complete measured transport landscape is shown in Fig.~\ref{fig:ac:pincode:cal}, and its reconstruction from the extracted pincodes is shown in Fig.~\ref{fig:ac:pincode:sim}.
 
     \transportlandscapefigure{atomic_contact/breaking}{cal}{
         Measured transport landscape during the opening of the atomic contact. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics are shown as waterfall, surface, and color-map representations as functions of bias voltage and relative displacement $\Delta x$. Abrupt changes along the displacement axis separate distinct atomic configurations, while the evolving subgap structure provides the information used for the channel-resolved MAR analysis.
