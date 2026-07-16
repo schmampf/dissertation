@@ -2,100 +2,95 @@
 %%% Main File %%%
 %=========================================================
 \documentclass[fontsize=9pt, rgb]{scrreport} 
-% document class scrreprt % 11pt for dinA4
-
-\input{header.tex} % import all packages and pre-definitions
+\input{utilities/header.tex} % import all packages and pre-definitions
+\addbibresource{local.bib}
 
 \usepgffigurestrue % compile pgf figures
-\usepgffiguresfalse % use precompiled pdf figures
-
-%=========================================================
-%%% Library %%%
-%=========================================================
-\addbibresource{My Library.bib}
-\addbibresource{local.bib}
+% \usepgffiguresfalse % use precompiled pdf figures
 
 \begin{document}
 
     %=========================================================
     %%% Pre Body %%%
     %=========================================================
-        % \include{miscellaneous/titelpage.tex}
-        % \include{miscellaneous/empty-page.tex}
+    % \include{miscellaneous/titelpage.tex}
+    % \include{miscellaneous/empty-page.tex}
 
-        \clearpage 
-        \pagenumbering{Roman}
+    \clearpage 
+    \pagenumbering{Roman}
 
-        % \include{miscellaneous/abstract}
-        %     % - Abstract
-        %     % - Zusammenfassung
-
-        \include{miscellaneous/inspirational}
-        %     % - kann man sich noch überlegen
-
-        % \tableofcontents
+    % \include{miscellaneous/abstract}
+    % \include{miscellaneous/inspirational}
+    % \tableofcontents
 
     %=========================================================
     %%% main body %%%
     %=========================================================
-        \clearpage 
-        \pagenumbering{arabic}
+    \clearpage 
+    \pagenumbering{arabic}
 
-        % \include{miscellaneous/introduction} % TODO
-        %     % - zum Schluss. Ich hoffe auf AI
+    % \include{miscellaneous/introduction}
 
-        % \include{theory/theory}
-            % \include{theory/quasi.tex}
-        %     \include{theory/micro.tex}
-        %     \include{theory/macro.tex}
-            % \include{theory/meso.tex}
-        %     \include{theory/stochastic.tex}
-        %     % - liegt bei Elke
-        %     % - PAT Schmetaic updaten
+    %=========================================================
+    \include{theory/theory}
+    %=========================================================
+        \include{theory/quasi.tex}
+        \include{theory/micro.tex}
+        \include{theory/macro.tex}
+        \include{theory/meso.tex}
+        \include{theory/stochastic.tex}
+        % - liegt bei Elke
+        % - PAT Schmetaic updaten
 
-        % \include{methods/methods}
-        %     \include{methods/sample.tex}
-        %     \include{methods/setup.tex}
-            % \include{methods/digital.tex}
-        %     % - liegt bei Elke
-        %     % - Rref, Fomblin number
+    %=========================================================
+    \include{methods/methods}
+    %=========================================================
+        \include{methods/sample.tex}
+        \include{methods/setup.tex}
+        \include{methods/digital.tex}
+        \include{methods/sampleappendix.tex}
+        % - liegt bei Elke
+        % - Rref, Fomblin number
 
-        % \include{tunnelbarrier/highres}
-        % \include{tunnelbarrier/asym}
-        %     % - consistency coherence / 2 Delta peaks
+    % %=========================================================
+    % % Results
+    % %=========================================================
+    % \include{tunnelbarrier/highres}
+    % \include{tunnelbarrier/asym}
+    %     % - consistency coherence / 2 Delta peaks
+    %     \include{tunnelbarrier/appendix}
 
-        % \include{atomic_contact/atomic-contact}
-        % \include{atomic_contact/pincode}
+    % \include{atomic_contact/atomic-contact}
+    % \include{atomic_contact/pincode}
+    %     \include{atomic_contact/appendix}
 
 
-        % \include{miscellaneous/conclusion} % TODO
-        %     % - nach Results.
+    % \include{miscellaneous/conclusion} 
 
     %=========================================================
     %%% Post Body %%%
     %=========================================================
-        \clearpage
-        \pagenumbering{roman}
+    \clearpage
+    \pagenumbering{roman}
 
-        % \include{miscellaneous/appendix} % TODO
-        %     \include{methods/sampleappendix.tex}
-        %     \include{tunnelbarrier/appendix}
-        %     \include{atomic_contact/appendix}
+    % %=========================================================
+    % \include{miscellaneous/appendix}
+    % %=========================================================
+    %     \include{methods/sampleappendix.tex}
+    %     \include{tunnelbarrier/appendix}
+    %     \include{atomic_contact/appendix}
 
-        % \addcontentsline{toc}{chapter}{References}
-        % \printbibliography[title={References}]
-        %     % - braucht kein issue, month, lieber DOI
-        %     % - Alle Autoren & Titel
-        %     % - Journal + Volume (kein issue)
-        %     % - page / article number
-        %     % - year (kein month)
-        %     % - url wenn als link hinterlegen \href[title]{url}
+    \addcontentsline{toc}{chapter}{References}
+    \printbibliography[title={References}]
+    %     % - braucht kein issue, month, lieber DOI
+    %     % - Alle Autoren & Titel
+    %     % - Journal + Volume (kein issue)
+    %     % - page / article number
+    %     % - year (kein month)
+    %     % - url wenn als link hinterlegen \href[title]{url}
 
-        % \include{miscellaneous/acknowledgement}
-        %     % - ich will noch upper zitieren
-
-        % \include{miscellaneous/eidestattliche-versicherung}
-    %=========================================================
+    \include{miscellaneous/acknowledgement}
+    \include{miscellaneous/eidestattliche-versicherung}
 \end{document}
 
 % 13.-17.7. Breaking / Pincode
