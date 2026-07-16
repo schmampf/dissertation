@@ -55,8 +55,46 @@
 
 %%% bibliography %%%
     \RequirePackage{etex}
-    \usepackage[backend=biber, sorting=none, maxbibnames=99]{biblatex}
+    \usepackage[
+        backend=biber,
+        sorting=none,
+        maxbibnames=20,
+        minbibnames=20,
+        doi=false,
+        url=false,
+        isbn=false,
+        eprint=false
+    ]{biblatex}
     \usepackage{csquotes} % Bibtex and language stuff
+
+    % Abbreviate given names in journal articles. Retain full given names in
+    % books, theses, and other entry types when the bibliography data provides them.
+    \ExecuteBibliographyOptions[article]{giveninits=true}
+
+    % Link the displayed title to the URL, or to the DOI when no URL is available.
+    % The address itself is intentionally not printed in the bibliography.
+    \newcommand{\bibtitlelink}[1]{%
+        \iffieldundef{url}{%
+            \iffieldundef{doi}{#1}{\href{https://doi.org/\thefield{doi}}{#1}}%
+        }{%
+            \href{\thefield{url}}{#1}%
+        }%
+    }
+    \DeclareFieldFormat{title}{\bibtitlelink{#1}\isdot}
+    \DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{\mkbibquote{\bibtitlelink{#1}\isdot}}
+    \DeclareFieldFormat[book,collection,manual,proceedings,report]{title}{\mkbibemph{\bibtitlelink{#1}\isdot}}
+
+    % Retain the year, but omit finer date information and journal issue numbers.
+    \AtEveryBibitem{%
+        \clearfield{month}%
+        \clearfield{day}%
+        \ifentrytype{article}{%
+            \clearfield{number}%
+            \clearfield{issue}%
+            \clearfield{note}%
+            \clearfield{addendum}%
+        }{}%
+    }
 
 %%% basic settings %%%
 
