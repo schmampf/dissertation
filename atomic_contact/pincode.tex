@@ -1,50 +1,12 @@
 % !TEX root = ../thesis.tex
 
-%=========================================================
-\section{Atomic Contacts}
-\label{sec:atomic-contacts}
-%=========================================================
-
-    \begin{wrapfigure}[13]{r}{40mm}
-        \captionsetup{format=plain}%
-        \centering
-        \vspace{-1.5em}
-        {
-            \fontsize{7}{9}\selectfont
-            \import{tunnelbarrier/samples}{AC.pdf_tex}
-        }
-        \vspace{-1.5em}
-        \caption{
-            SEM image of sample `AC'. $80\,\mathrm{nm}$ of Al.
-        }
-        \label{fig:ac:image-AC}
-    \end{wrapfigure}
-
-    Mesurements were performed on sample AC, shown in Fig \ref{fig:ac:image-AC}. Also known as PR-22e-09. Setup used as in Patrick Raif and Martin Presel. Data aquisition as described in Sec. \ref{sec:methods:ditigal}. All microwave irradiation experiments shown in this section are done in corporation with Patrikc Raif during his Master's Thesis.
-
-    We did a lot of characterization of the unbroken device, shown in Patrick Raif. However no effects of microwave irradiation has been measured. 
-    
-    The samples gap and critical temperature are 
-    \begin{align}
-        \Delta_0 = 189(1)\,\mathrm{ueV}\, &&
-        T_\mathrm{c} = 1.2\,\mathrm{K}\,.
-    \end{align}
-    The gap could be estimated by the fits, and their clustering value. Measurements in the tunnel limit, that could be fitted with the bcs theory confirm this gap. The critcal temperature is retrieved by a temperature study on the same caontact in the tunnel limit.
-    
-    The sample in the unbroken state was characterized with Patrick and is described in \cite{raif_electronic_2024}. The order parameter in the unbroken state were found to be
-    \begin{align}
-        I_\mathrm{c} = 10.0\,\mathrm{nA}\,, &&
-        G_\mathrm{N} = 100.0\,G_0\,, &&
-        \mu_0H_\mathrm{c} = 100\,\mathrm{mT}\,.
-    \end{align}
-    Critical- / Switching current and normal state conductance strongly depend the state of the break junction.
-
     %=========================================================
     \subsection{The Mesoscopic Pincode}
     \label{sec:ac:pincode}
     %=========================================================
-    
 
+    The objective of this section is to reproduce the channel-resolved analysis introduced by Scheer et al. for superconducting aluminum atomic contacts \cite{scheer_conduction_1997}. I formed atomic contacts with a mechanically controlled break junction, measured their nonlinear superconducting \textit{I--V} characteristics, and fitted the multiple-Andreev-reflection spectrum as a sum of independent transport channels. This procedure assigns a mesoscopic pincode \(\{\tau_i\}\) to each stable contact configuration. I first validate the extraction for representative spectra and then use it to follow the individual transmission channels during the opening of the contact.
+    
     The mesoscopic pincode \(\{\tau_i\}\) describes the transmission eigenvalues of the atomic contact, as introduced in Sec.~\ref{subsec:quasi:meso}. Its channel-dependent MAR spectrum is discussed in Sec.~\ref{subsec:meso:mar}. I extracted the pincode using the fitting procedure described in Sec.~\ref{subsec:methods:digital:analysis}.
 
     After characterization of the unbroken sample, the break junction can be broken and atomic contacts might form. By measuring spectra over small changes in displacements, one can obtain the mesoscopic pincode.
@@ -54,8 +16,7 @@
         T = 0\,\mathrm{K}\,, &&
         \gamma = 1\,\mathrm{neV}\,.
     \end{align}
-
-    
+    gap and noise cluster around:
     \begin{align}
         \Delta_0 = 188.5(5)\,\mathrm{ueV}\,, &&
         \sigma_V = 26(1)\,\mathrm{ueV}\,.
@@ -70,19 +31,19 @@
             \textit{dI--dV}
         ]{\includegraphics{atomic_contact/breaking/didvs.pdf}}        
         \caption{
-            The retrieved pincode has an uncertainty of $0.01$, Since the preacalculated grid doesnt allow for higher resolution. Figure  show the results of all the taken ivs. We can observe the normal conductance and the contributions of single channels.
+            Representative channel-resolved MAR fits during the opening of the atomic contact. (a)~Measured \textit{I--V} characteristics and best-fit multichannel MAR curves. (b)~The corresponding normalized differential conductance. Each panel gives the relative displacement $\Delta x$ and the extracted mesoscopic pincode $\{\tau_i\}$. The fits reproduce the contact-dependent subgap structure with between one and three resolved channels. The transmissions are best-fit values on a grid with spacing $0.01$. This spacing is the numerical resolution and not a statistical confidence interval.
         }
         \label{fig:ac:pincode:fits}
     \end{figure}
 
-    \begin{wrapfigure}[13]{r}{1.7in}
+    \begin{wrapfigure}[18]{r}{1.7in}
         \captionsetup{format=plain}%
         \centering
         % \vspace{-1.5em}
         \import{atomic_contact/breaking}{pincode.pgf}
         % \vspace{-1.5em}
         \caption{
-            bla
+            Normal-state conductance $G_\mathrm{N}/G_0$ and extracted channel transmissions $\tau_i$ during contact opening. Vertical lines mark changes between atomic configurations.
         }
         \label{fig:ac:pincode}
     \end{wrapfigure}
@@ -94,9 +55,9 @@
     The full waterfall plot of this measurement is found in \ref{fig:ac:pincode:cal} and the corresponding simulation can be found in \ref{fig:ac:pincode:fit}.
 
     \transportlandscapefigure{atomic_contact/breaking}{cal}{
-        bla blab la
+        Measured transport landscape during the opening of the atomic contact. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics are shown as waterfall, surface, and color-map representations as functions of bias voltage and relative displacement $\Delta x$. Abrupt changes along the displacement axis separate distinct atomic configurations, while the evolving subgap structure provides the information used for the channel-resolved MAR analysis.
     }{fig:ac:pincode:cal}
 
     \transportlandscapefigure{atomic_contact/breaking}{sim}{
-        bla blab la
+        Transport landscape reconstructed from the extracted mesoscopic pincodes. The simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics use the best-fit channel transmissions at each relative displacement $\Delta x$ and the global model parameters stated in the text. The reconstruction reproduces the principal displacement-dependent MAR structures of the measured landscape in Fig.~\ref{fig:ac:pincode:cal}, demonstrating that the contact evolution can be represented by a sequence of channel-resolved pincodes.
     }{fig:ac:pincode:sim}
