@@ -11,6 +11,17 @@
 % \legend[2mm][1mm]{seeblau}       % 2mm x 1mm
 
 \usepackage{xparse}
+\usepackage{newunicodechar}
+% Render caron characters as composite T1 accents. This preserves the correct
+% Unicode names in Biber while avoiding unavailable glyphs in Latin Modern Sans.
+\newunicodechar{Š}{\v{S}}
+\newunicodechar{š}{\v{s}}
+\newunicodechar{ň}{\v{n}}
+\newunicodechar{č}{\v{c}}
+\DeclareRobustCommand{\BibScaron}{\v{S}}
+\DeclareRobustCommand{\Bibscaron}{\v{s}}
+\DeclareRobustCommand{\Bibncaron}{\v{n}}
+\DeclareRobustCommand{\Bibccaron}{\v{c}}
 \NewDocumentCommand{\legend}{O{1.5mm} O{1.5mm} m}{%
   \textcolor{#3}{\rule{#1}{#2}}%
 }
@@ -68,6 +79,9 @@
         eprint=false
     ]{biblatex}
     \usepackage{csquotes} % Bibtex and language stuff
+
+    % Use the same font size as the main body for all bibliography entries.
+    \renewcommand*{\bibfont}{\normalsize}
 
     % Abbreviate given names in journal articles. Retain full given names in
     % books, theses, and other entry types when the bibliography data provides them.
