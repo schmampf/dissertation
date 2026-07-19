@@ -16,6 +16,8 @@
     \end{align}
     Their values could be infered by mean values. Figure \ref{fig:ac:pincode:fits} validates the extraction for six representative contact states. The same best-fit pincode reproduces both the measured \textit{I--V} characteristic and its differential conductance. The agreement extends across contact states with different conductance and different numbers of resolved channels. It therefore tests the channel-dependent subgap structure rather than only the total normal-state conductance.
 
+    The complete measured transport landscape is shown in Fig.~\ref{fig:ac:pincode:cal}, and its reconstruction from the extracted pincodes is shown in Fig.~\ref{fig:ac:pincode:sim}.The reported transmissions are best-fit values on a grid with spacing $0.001$. This spacing defines the numerical resolution and is not a statistical confidence interval. A full uncertainty analysis and a microscopic reconstruction of the atomic geometry are outside the scope of this section.
+
     % position calibration
     \begin{wrapfigure}[10]{r}{40mm}
         \captionsetup{format=plain}%
@@ -85,26 +87,27 @@
 
     The trace thus separates two forms of contact evolution. The discontinuities between configurations reorganize several transmissions simultaneously and are consistent with atomic rearrangements. The continuous evolution within a configuration is instead consistent with elastic deformation of a metastable atomic structure \cite{scheer_conduction_1997}. Channel identities can be followed continuously within such a configuration, but they cannot be matched uniquely across a discontinuity. The final transition at $x=0$ produces configuration (f), where a single weak channel enters the tunnel geometry shown in Fig.~\ref{fig:ac:pincode:config}(e) and its conductance subsequently decays exponentially. The proposed sequence from a few-atom constriction through a symmetric monomer or dimer and an off-center contact to the tunnel regime is consistent with the channel evolution, but it is not a unique reconstruction of the atomic geometry. This combination of tilted plateaus, simultaneous channel evolution, and more than one channel below $G_0$ reproduces the principal phenomenology reported for aluminum atomic contacts \cite{scheer_conduction_1997}.
 
-
     % histogram stuff
-    \begin{wrapfigure}[13]{r}{40mm}
+    The relevant reference for an aluminum atomic contact is the tight-binding model developed by Cuevas, Levy Yeyati, and Mart{\'i}n-Rodero \cite{cuevas_microscopic_1998}. For an ideal one-atom contact oriented along the transport axis, the model gives three conducting channels. One nondegenerate channel with mixed $sp_z$ character is widely transmitting, while two weaker channels derived mainly from the transverse $p_x$ and $p_y$ orbitals are degenerate by rotational symmetry. After random atomic displacements are introduced, this degeneracy is lifted but the separation into two channel populations remains robust. The calculated distributions place the dominant channel approximately in the interval $0.6\lesssim\tau\lesssim0.9$ and the two weaker channels approximately in $0.1\lesssim\tau\lesssim0.3$. The fourth combination of the aluminum $s$ and $p$ orbitals remains essentially closed. This orbital interpretation was subsequently extended across different metals and connected the number of conducting channels to chemical valence \cite{scheer_signature_1998}.
+
+    Cuevas et al. later calculated how these channels evolve under elastic deformation of a one-atom contact \cite{cuevas_evolution_1998}. This calculation does not give a second statistical distribution. Instead, it shows that the channel transmissions depend systematically on the distance between the central atom and its neighbors. Near the compact equilibrium geometry, the two transverse channels can each have transmissions of order $0.3$. During elongation their overlap decreases particularly strongly and their transmissions move toward zero, while the remaining $sp_z$-derived channel approaches unit transmission. The weak-channel population should therefore not be assigned a geometry-independent center near $0.2$. A mode closer to $0.3$ is compatible with compact or only weakly elongated one-atom configurations, whereas weight below $0.2$ is expected as the same contact is stretched toward rupture.
+    
+    \begin{wrapfigure}[11]{r}{40mm}
         \captionsetup{format=plain}%
         \centering
         \vspace{-1em}
         \import{atomic_contact/breaking}{histogram.pgf}
         \vspace{-.5em}
         \caption{
-            Distribution of the fitted channel transmissions.
+            Distribution of the fitted transmissions, of Fig.~\ref{fig:ac:pincode}.
         }
         \label{fig:ac:pincode:histogram}
     \end{wrapfigure}
 
-    Here we can talk bout bimodality, that we obviously see in the histogram.
+    Figure \ref{fig:ac:pincode:histogram} collects all transmissions extracted along the opening trace. With a favorable interpretation, two broad populations can be recognized. The large low-transmission population has a shoulder or mode near $\tau\approx0.3$, while the smaller high-transmission population extends through approximately $0.6$ to $0.9$. This structure is qualitatively consistent with the weak transverse channels and the dominant $sp_z$-derived channel predicted by the tight-binding model. In particular, the position near $0.3$ is plausible for compact or weakly elongated one-atom configurations in the deformation calculation. The broad tail toward lower transmission is also expected because the transverse channels are suppressed as the contact is stretched. The strong accumulation near $\tau=0$ additionally contains channels that close during stretching and the final approach to the tunnel regime. Several intermediate peaks arise because the histogram combines successive, correlated states from the few-atom, symmetric, and off-center configurations rather than an ensemble restricted to equivalent one-atom contacts. I therefore interpret the apparent bimodality and the low-transmission mode near $0.3$ as suggestive evidence for the orbital-derived channel populations and their deformation predicted for aluminum, but not as a quantitative measurement of a theoretical distribution.
 
 
-    The complete measured transport landscape is shown in Fig.~\ref{fig:ac:pincode:cal}, and its reconstruction from the extracted pincodes is shown in Fig.~\ref{fig:ac:pincode:sim}.
-
-    In summary, I established an experimental and numerical workflow for assigning a mesoscopic pincode to each stable measured contact state. The representative fits validate the channel decomposition, and the reconstructed transport landscape shows that the extracted pincodes capture the systematic evolution of the MAR spectrum throughout the opening trace. The reported transmissions are best-fit values on a grid with spacing $0.001$. This spacing defines the numerical resolution and is not a statistical confidence interval. A full uncertainty analysis and a microscopic reconstruction of the atomic geometry are outside the scope of this section.
+    In summary, I established an experimental and numerical workflow for assigning a mesoscopic pincode to each stable measured contact state. The representative fits validate the channel decomposition, and the reconstructed transport landscape shows that the extracted pincodes capture the systematic evolution of the MAR spectrum throughout the opening trace.
 
     % full page figure section
     \clearpage
@@ -113,14 +116,14 @@
         \subfigure[
             \textit{I--V}
         ]{
-            % \import{atomic_contact/breaking}{ivs.pgf}
-            \includegraphics{atomic_contact/breaking/ivs.pdf}
+            \import{atomic_contact/breaking}{ivs.pgf}
+            % \includegraphics{atomic_contact/breaking/ivs.pdf}
         }
         \subfigure[
             \textit{dI--dV}
         ]{
-            % \import{atomic_contact/breaking}{didvs.pgf}
-            \includegraphics{atomic_contact/breaking/didvs.pdf}
+            \import{atomic_contact/breaking}{didvs.pgf}
+            % \includegraphics{atomic_contact/breaking/didvs.pdf}
             }        
         \caption{
             Representative channel-resolved MAR fits during contact opening. The measured \textit{I--V} characteristics and normalized \textit{dI--dV} spectra are compared with the best-fit multichannel model. Each trace is labeled by its relative displacement $\Delta x$ and extracted pincode $\{\tau_i\}$. The agreement across the subgap structure validates the decomposition into as many as nine resolved channels.
