@@ -2529,13 +2529,13 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.298667in, y=2.249380in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}       $\,0.139, 0.001, 0.001\}$}}%
+\pgftext[x=0.298667in, y=2.249380in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}       $\,0.139\}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.354667in,y=1.458000in,right,bottom]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\Delta x = -5.11$$\,\mathring{\mathrm{A}}$}}%
+\pgftext[x=1.354667in,y=1.458000in,right,bottom]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$x = -5.11$$\,\mathring{\mathrm{A}}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
@@ -4989,19 +4989,13 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.472000in, y=2.342690in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}       $\,0.360, 0.337, 0.171, $}}%
+\pgftext[x=1.472000in, y=2.342690in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}       $\,0.360, 0.337, 0.171\}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=1.472000in, y=2.249380in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}       $\,0.001, 0.001, 0.001\}$}}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=2.528000in,y=1.458000in,right,bottom]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\Delta x = -4.99$$\,\mathring{\mathrm{A}}$}}%
+\pgftext[x=2.528000in,y=1.458000in,right,bottom]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$x = -4.99$$\,\mathring{\mathrm{A}}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
@@ -7449,25 +7443,13 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.645333in, y=2.439500in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\tau=\{0.808, 0.313, 0.304, $}}%
+\pgftext[x=2.645333in,y=2.502000in,left,top]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\tau=\{0.808, 0.313, 0.304\}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.645333in, y=2.342690in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}       $\,0.001, 0.001, 0.001, $}}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=2.645333in, y=2.249380in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}       $\,0.001, 0.001, 0.001\}$}}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=3.701333in,y=1.458000in,right,bottom]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\Delta x = -4.65$$\,\mathring{\mathrm{A}}$}}%
+\pgftext[x=3.701333in,y=1.458000in,right,bottom]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$x = -4.65$$\,\mathring{\mathrm{A}}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
@@ -9969,25 +9951,13 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.298667in, y=1.279500in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\tau=\{0.375, 0.194, 0.046, $}}%
+\pgftext[x=0.298667in,y=1.342000in,left,top]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\tau=\{0.375, 0.194, 0.046\}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.298667in, y=1.182690in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}       $\,0.001, 0.001, 0.001, $}}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=0.298667in, y=1.089380in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}       $\,0.001, 0.001, 0.001\}$}}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=1.354667in,y=0.298000in,right,bottom]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\Delta x = -3.59$$\,\mathring{\mathrm{A}}$}}%
+\pgftext[x=1.354667in,y=0.298000in,right,bottom]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$x = -3.59$$\,\mathring{\mathrm{A}}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
@@ -12481,7 +12451,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.528000in,y=0.298000in,right,bottom]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\Delta x = -1.24$$\,\mathring{\mathrm{A}}$}}%
+\pgftext[x=2.528000in,y=0.298000in,right,bottom]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$x = -1.24$$\,\mathring{\mathrm{A}}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
@@ -14966,25 +14936,13 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.645333in, y=1.279500in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\tau=\{0.404, 0.147, 0.001, $}}%
+\pgftext[x=2.645333in,y=1.342000in,left,top]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\tau=\{0.404, 0.147\}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=2.645333in, y=1.182690in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}       $\,0.001, 0.001, 0.001, $}}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=2.645333in, y=1.089380in, left, base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}       $\,0.001, 0.001, 0.001\}$}}%
-\end{pgfscope}%
-\begin{pgfscope}%
-\definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
-\pgfsetstrokecolor{textcolor}%
-\pgfsetfillcolor{textcolor}%
-\pgftext[x=3.701333in,y=0.298000in,right,bottom]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\Delta x = -0.64$$\,\mathring{\mathrm{A}}$}}%
+\pgftext[x=3.701333in,y=0.298000in,right,bottom]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$x = -0.64$$\,\mathring{\mathrm{A}}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
