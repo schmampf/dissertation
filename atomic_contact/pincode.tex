@@ -5,9 +5,9 @@
     \label{sec:ac:pincode}
     %=========================================================
 
-    In this section, I reproduce the channel-resolved measurement introduced by Scheer et al. for superconducting aluminum atomic contacts \cite{scheer_conduction_1997}. After breaking the mechanically controlled break junction, I recorded nonlinear superconducting \textit{I--V} characteristics while opening the contact in small displacement steps. I represented the measured current as a sum of independent MAR contributions and extracted the transmission eigenvalues \(\{\tau_i\}\), referred to as the mesoscopic pincode. This procedure assigns a best-fit pincode to each stable measured contact state and makes it possible to follow the individual channels throughout an opening trace.
+    How does a metallic contact form as its narrowest constriction is reduced to only a few atoms? At this scale, the normal-state conductance no longer provides a direct measure of a continuous contact area. It constrains only the sum $G_\mathrm{N}/G_0=\sum_i\tau_i$ and therefore does not reveal how the current is distributed among the individual transmission channels. The channel-resolved measurement introduced by Scheer et al. provides a way to access this additional information through the nonlinear superconducting transport of an atomic contact \cite{scheer_conduction_1997}. In this section, I reproduced this measurement to follow how the transmission channels evolved while an aluminum contact was opened. The extracted set of transmission eigenvalues \(\{\tau_i\}\) is referred to as the mesoscopic pincode.
 
-    The physical basis of the extraction is introduced in Secs.~\ref{subsec:quasi:meso} and \ref{subsec:meso:mar}, and the numerical fitting procedure is described in Sec.~\ref{subsec:methods:digital:analysis}. The normal-state conductance constrains only the sum $G_\mathrm{N}/G_0=\sum_i\tau_i$. The nonlinear subgap spectrum provides the additional information required to separate the individual transmissions because different values of $\tau_i$ produce distinct MAR contributions. In the final fits, I fixed the temperature and Dynes broadening to $T=0$ and $\gamma=0$. I allowed the zero-temperature gap $\Delta_0$ and the effective voltage broadening $\sigma_V$ to vary independently for each spectrum together with the channel transmissions. The fitted values of $\Delta_0$ and $\sigma_V$ formed narrow clusters around
+    After breaking the mechanically controlled break junction, I recorded superconducting \textit{I--V} characteristics while opening the contact in small displacement steps. I represented the measured current as a sum of independent MAR contributions and assigned a best-fit pincode to each stable contact state. Different values of $\tau_i$ produce distinct MAR contributions, so the nonlinear subgap spectrum contains information that is absent from $G_\mathrm{N}$ alone. The physical basis of this extraction is introduced in Secs.~\ref{subsec:quasi:meso} and \ref{subsec:meso:mar}, and the numerical fitting procedure is described in Sec.~\ref{subsec:methods:digital:analysis}. In the final fits, I fixed the temperature and Dynes broadening to $T=0$ and $\gamma=0$. I allowed the zero-temperature gap $\Delta_0$ and the effective voltage broadening $\sigma_V$ to vary independently for each spectrum together with the channel transmissions. The fitted values of $\Delta_0$ and $\sigma_V$ formed narrow clusters around
     \begin{align}
         \Delta_0 = 188.5(5)\,\mathrm{ueV}\,, &&
         \sigma_V = 26(1)\,\mathrm{uV}\,.
@@ -25,7 +25,61 @@
         \label{fig:ac:pincode}
     \end{figure}
 
-    Figure \ref{fig:ac:pincode} extends the extraction from these examples to the complete opening trace. Configurations (a) and (b) require more than three channels to reproduce the MAR spectrum. They are therefore incompatible with the simple three-channel picture of a one-atom aluminum contact and indicate a wider, few-atom constriction. The channel count alone does not determine the exact number of atoms. Configurations (c)--(e) contain no more than three dominant channels and are consistent with a one-atom contact. Configuration (c) has one dominant channel and two channels of comparable lower transmission. At the transition to configuration (d), the conductance falls below $G_0$, but two principal channels remain. Configuration (e) is likewise dominated by two channels. The final transition into configuration (f) marks the tunnel regime, where the fitted transmissions fall below the resolution of the extraction.
+    \begin{wrapfigure}[13]{r}{40mm}
+        \captionsetup{format=plain}%
+        \centering
+        \vspace{-1em}
+        \import{atomic_contact/breaking}{tunneling.pgf}
+        \vspace{-.5em}
+        \caption{
+            The conductance decays exponentially in the tunneling limit (plateau f in Fig.~\ref{fig:ac:pincode}).
+        }
+        \label{fig:ac:pincode:tunneling}
+    \end{wrapfigure}
+
+    \begin{wrapfigure}[13]{r}{40mm}
+        \captionsetup{format=plain}%
+        \centering
+        \vspace{-1em}
+        \import{atomic_contact/breaking}{histogram.pgf}
+        \vspace{-.5em}
+        \caption{
+            Transmission histogram
+        }
+        \label{fig:ac:pincode:histogram}
+    \end{wrapfigure}
+
+    Figure \ref{fig:ac:pincode} extends the extraction from these examples to the complete opening trace. Configurations (a) and (b) require more than three channels to reproduce the MAR spectrum. They are therefore incompatible with the simple three-channel picture of a one-atom aluminum contact and indicate a wider, few-atom constriction. The channel count alone does not determine the exact number of atoms. Configurations (c)--(e) contain no more than three dominant channels and are consistent with a one-atom contact. Configuration (c) provides the clearest example of this picture: one dominant channel and two weaker channels of comparable transmission are consistent with an axial channel of mixed $sp_z$ character and an approximately degenerate pair of transverse channels derived mainly from the $p_x$ and $p_y$ orbitals. At the transition to configuration (d), the conductance falls below $G_0$, but two principal channels remain. Configuration (e) is likewise dominated by two channels. The final transition into configuration (f) marks the tunnel regime, where the fitted transmissions fall below the resolution of the extraction.
+
+
+    \begin{figure}
+        \centering
+        \subfigure[
+            2 atoms
+        ]{\import{theory/schema/atomic-contact}{atomic-contact_01.pdf_tex}}
+        \hfill
+        \subfigure[
+            Monomer
+        ]{\import{theory/schema/atomic-contact}{atomic-contact_02.pdf_tex}}
+        \hfill
+        \subfigure[
+            Dimere
+        ]{\import{theory/schema/atomic-contact}{atomic-contact_03.pdf_tex}}
+        \hfill
+        \subfigure[
+            shifted dimere
+        ]{\import{theory/schema/atomic-contact}{atomic-contact_04.pdf_tex}}
+        \hfill
+        \subfigure[
+            tunnel
+        ]{\import{theory/schema/atomic-contact}{atomic-contact_05.pdf_tex}}
+        \hfill
+        \caption{
+            caption
+        }
+        \label{fig:ac:pincode:config}
+    \end{figure}
+
 
     The channel decomposition reveals changes that are hidden in $G_\mathrm{N}$ alone. Within configurations (d) and (e), the conductance rises gradually toward the end of each plateau. This increase is carried mainly by the most transmissive channel, while the second channel becomes less transmissive. The pincode therefore changes through a redistribution between channels rather than through a uniform increase of all transmissions. At the boundaries between configurations, several channels instead change discontinuously. These two forms of evolution reproduce the principal phenomenology reported in the original experiment, including the simultaneous evolution of several channels along tilted plateaus and the presence of more than one channel below $G_0$ \cite{scheer_conduction_1997}.
 
@@ -39,10 +93,16 @@
         \centering
         \subfigure[
             \textit{I--V}
-        ]{\includegraphics{atomic_contact/breaking/ivs.pdf}}
+        ]{
+            \import{atomic_contact/breaking}{ivs.pgf}
+            % \includegraphics{atomic_contact/breaking/ivs.pdf}
+        }
         \subfigure[
             \textit{dI--dV}
-        ]{\includegraphics{atomic_contact/breaking/didvs.pdf}}        
+        ]{
+            % \import{atomic_contact/breaking}{didvs.pgf}
+            \includegraphics{atomic_contact/breaking/didvs.pdf}
+            }        
         \caption{
             Representative channel-resolved MAR fits during the opening of the atomic contact. (a)~Measured \textit{I--V} characteristics and best-fit multichannel MAR curves. (b)~The corresponding normalized differential conductance. Each panel gives the relative displacement $\Delta x$ and the extracted mesoscopic pincode $\{\tau_i\}$. The fits reproduce the contact-dependent subgap structure with up to 9 resolved channels.
         }
