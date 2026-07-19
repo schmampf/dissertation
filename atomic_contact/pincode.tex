@@ -5,18 +5,20 @@
     \label{sec:ac:pincode}
     %=========================================================
 
-    How does a metallic contact form as its narrowest constriction is reduced to only a few atoms? At this scale, the normal-state conductance no longer provides a direct measure of a continuous contact area. It constrains only the sum of tranismission and therefore does not reveal how the current is distributed among the individual transmission channels. The channel-resolved measurement introduced by Scheer et al. provides a way to access this additional information through the nonlinear superconducting transport of an atomic contact \cite{scheer_conduction_1997}. In this section, I reproduced this measurement to follow how the transmission channels evolved while an aluminum contact was opened. The extracted set of transmission eigenvalues \(\{\tau_i\}\) is referred to as the mesoscopic pincode.
+    How does a metallic contact form as its narrowest constriction is reduced to only a few atoms? At this scale, the normal-state conductance no longer provides a direct measure of a continuous contact area. It constrains only the sum of transmissions and therefore does not reveal how the current is distributed among the individual transmission channels. The channel-resolved measurement introduced by Scheer et al. provides a way to access this additional information through the nonlinear superconducting transport of an atomic contact \cite{scheer_conduction_1997}. In this section, I reproduced this measurement to follow how the transmission channels evolved while an aluminum contact was opened. The extracted set of transmission eigenvalues \(\{\tau_i\}\) is referred to as the mesoscopic pincode.
 
     % fitting
-    I recorded superconducting \textit{I--V} characteristics while opening a high transmissive contact in small motor steps. I represented the measured current as a sum of independent MAR contributions and assigned a best-fit pincode to each stable contact state. Different values of $\tau_i$ produce distinct MAR contributions, so the nonlinear subgap spectrum contains information that is absent from $G_\mathrm{N}$ alone. The physical basis of this extraction is introduced in Secs.~\ref{subsec:quasi:meso} and \ref{subsec:meso:mar}, and the numerical fitting procedure is described in Sec.~\ref{subsec:methods:digital:analysis}. In the final fits, I fixed the temperature and Dynes broadening to $T=0$ and $\gamma=0$. I allowed the zero-temperature gap $\Delta_0$ and the effective voltage broadening $\sigma_V$ to vary independently for each spectrum together with the channel transmissions. The fitted values of $\Delta_0$ and $\sigma_V$ formed narrow clusters at
+    I recorded superconducting \textit{I--V} characteristics while opening a highly transmitting contact in small motor steps. I represented the measured current as a sum of independent MAR contributions and assigned a best-fit pincode to each stable contact state. Different values of $\tau_i$ produce distinct MAR contributions, so the nonlinear subgap spectrum contains information that is absent from $G_\mathrm{N}$ alone. The physical basis of this extraction is introduced in Secs.~\ref{subsec:quasi:meso} and \ref{subsec:meso:mar}, and the numerical fitting procedure is described in Sec.~\ref{subsec:methods:digital:analysis}. The model assumes a short coherent contact with energy-independent normal-state transmissions. It therefore extracts the effective transmission eigenvalues that reproduce the measured dc MAR spectrum. It does not describe inelastic transport inside the contact, energy-dependent scattering, or the atomic orbitals and geometry that produce those eigenvalues.
+
+    In the final fits, I fixed the temperature and Dynes broadening to $T=0$ and $\gamma=0$. Thermal and lifetime broadening were therefore not determined separately. Instead, I convolved the calculated voltage dependence with a Gaussian of width $\sigma_V$, which represents the combined experimental voltage resolution and any unresolved spectral smearing. I initially allowed the zero-temperature gap $\Delta_0$ and $\sigma_V$ to vary independently for every spectrum together with the channel transmissions. Although the pincode changed substantially during opening, both nuisance parameters remained concentrated around
     \begin{align}
         \Delta_0 = 188.5(5)\,\mathrm{ueV}\,, &&
         \sigma_V = 25(1)\,\mathrm{uV}\,.
-        \label{fig:ac:pincode:parameter}
+        \label{eq:ac:pincode:parameter}
     \end{align}
-    Their values could be infered by mean values. Figure \ref{fig:ac:pincode:fits} validates the extraction for six representative contact states. The same best-fit pincode reproduces both the measured \textit{I--V} characteristic and its differential conductance. The agreement extends across contact states with different conductance and different numbers of resolved channels. It therefore tests the channel-dependent subgap structure rather than only the total normal-state conductance.
+    Here, the values in parentheses quantify the spread of the fitted values across the trace, not the statistical uncertainty of an individual fit. The clustering is physically reasonable because $\Delta_0$ is set by the aluminum electrodes and $\sigma_V$ mainly by the measurement chain, whereas the changing atomic configuration primarily affects $\{\tau_i\}$. It also shows that the evolution assigned to the channels is not accompanied by a systematic drift of the gap or the effective resolution. I therefore used the cluster means as common parameters for the final channel extraction. This reduces correlations between spectral width, feature position, and the fitted transmissions, while retaining the contact-dependent pincode as the quantity of interest.
 
-    The complete measured transport landscape is shown in Fig.~\ref{fig:ac:pincode:cal}, and its reconstruction from the extracted pincodes is shown in Fig.~\ref{fig:ac:pincode:sim}.The reported transmissions are best-fit values on a grid with spacing $0.001$. This spacing defines the numerical resolution and is not a statistical confidence interval. A full uncertainty analysis and a microscopic reconstruction of the atomic geometry are outside the scope of this section.
+    Figure \ref{fig:ac:pincode:fits} shows six representative contact states. The same best-fit pincode reproduces the measured \textit{I--V} characteristic and the corresponding differential conductance across states with different conductances and different numbers of resolved channels. This comparison tests the MAR line shape over the full bias range, rather than only the sum $G_\mathrm{N}/G_0=\sum_i\tau_i$. The reported transmissions are best-fit values on a grid with spacing $0.001$. This spacing is the numerical sampling resolution and not a confidence interval. Nearly equal channels cannot be distinguished by their identity, and sufficiently weak channels can fall below the sensitivity of the spectrum. The fitted channel count should consequently be understood as the number of contributions resolved within this model and data quality, not as an exact count of atomic orbitals. A full statistical uncertainty analysis and a unique microscopic reconstruction of the contact geometry are outside the scope of this section.
 
     % position calibration
     \begin{wrapfigure}[10]{r}{40mm}
@@ -92,12 +94,12 @@
 
     Cuevas et al. later calculated how these channels evolve under elastic deformation of a one-atom contact \cite{cuevas_evolution_1998}. This calculation does not give a second statistical distribution. Instead, it shows that the channel transmissions depend systematically on the distance between the central atom and its neighbors. Near the compact equilibrium geometry, the two transverse channels can each have transmissions of order $0.3$. During elongation their overlap decreases particularly strongly and their transmissions move toward zero, while the remaining $sp_z$-derived channel approaches unit transmission. The weak-channel population should therefore not be assigned a geometry-independent center near $0.2$. A mode closer to $0.3$ is compatible with compact or only weakly elongated one-atom configurations, whereas weight below $0.2$ is expected as the same contact is stretched toward rupture.
     
-    \begin{wrapfigure}[11]{r}{40mm}
+    \begin{wrapfigure}[10]{r}{40mm}
         \captionsetup{format=plain}%
         \centering
-        \vspace{-1em}
+        \vspace{-1.5em}
         \import{atomic_contact/breaking}{histogram.pgf}
-        \vspace{-.5em}
+        \vspace{-.75em}
         \caption{
             Distribution of the fitted transmissions, of Fig.~\ref{fig:ac:pincode}.
         }
@@ -119,6 +121,7 @@
             \import{atomic_contact/breaking}{ivs.pgf}
             % \includegraphics{atomic_contact/breaking/ivs.pdf}
         }
+        \\
         \subfigure[
             \textit{dI--dV}
         ]{
@@ -131,10 +134,10 @@
         \label{fig:ac:pincode:fits}
     \end{figure}
 
-    % \transportlandscapefigure{atomic_contact/breaking}{cal}{
-    %     Measured transport landscape during contact opening. Waterfall, surface, and color-map representations show the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics as functions of bias voltage and relative displacement $\Delta x$. Abrupt changes separate stable contact configurations, while the evolving subgap structure provides the information used for the channel-resolved MAR analysis.
-    % }{fig:ac:pincode:cal}
+    \transportlandscapefigure{atomic_contact/breaking}{cal}{
+        Measured transport landscape during contact opening. Waterfall, surface, and color-map representations show the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics as functions of bias voltage and displacement $x$. Abrupt changes separate stable contact configurations, while the evolving subgap structure provides the information used for the channel-resolved MAR analysis.
+    }{fig:ac:pincode:cal}
 
-    % \transportlandscapefigure{atomic_contact/breaking}{sim}{
-    %     Transport landscape reconstructed from the extracted mesoscopic pincodes. The simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics use the best-fit channel transmissions, $T=\gamma=0$, and the fitted parameters in Eq.~\eqref{fig:ac:pincode:parameter} at each relative displacement $\Delta x$. The reconstruction captures the principal displacement-dependent MAR structures of the measured landscape in Fig.~\ref{fig:ac:pincode:cal}.
-    % }{fig:ac:pincode:sim}
+    \transportlandscapefigure{atomic_contact/breaking}{sim}{
+        Transport landscape reconstructed from the extracted mesoscopic pincodes. The simulated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics use the best-fit channel transmissions, $T=\gamma=0$, and the fitted parameters in Eq.~\eqref{eq:ac:pincode:parameter} at each displacement $x$. The reconstruction captures the principal displacement-dependent MAR structures of the measured landscape in Fig.~\ref{fig:ac:pincode:cal}.
+    }{fig:ac:pincode:sim}
