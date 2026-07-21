@@ -9,84 +9,78 @@
 
 \begin{document}
 
-    %=========================================================
-    %%% Pre Body %%%
-    %=========================================================
     % \include{miscellaneous/titelpage.tex}
     % \include{miscellaneous/empty-page.tex}
 
-    \clearpage 
-    \pagenumbering{Roman}
+    %=========================================================
+    %%% Pre Body %%%
+    %=========================================================
+        \clearpage \pagenumbering{Roman}
 
-    % \include{miscellaneous/abstract.tex}
-    % \include{miscellaneous/inspirational.tex}
-    \tableofcontents
+        % \include{miscellaneous/abstract.tex}
+        % \include{miscellaneous/inspirational.tex}
+        \tableofcontents
 
     %=========================================================
     %%% main body %%%
     %=========================================================
-    \clearpage 
-    \pagenumbering{arabic}
+        \clearpage \pagenumbering{arabic}
 
-    % \include{miscellaneous/introduction.tex}
+        % \include{miscellaneous/introduction.tex}
 
-    % %=========================================================
-    % \include{theory/theory.tex}
-    % %=========================================================
-    %     \include{theory/quasi.tex}
-    %     \include{theory/micro.tex}
-    %     \include{theory/macro.tex}
-    %     \include{theory/meso.tex}
-    %     \include{theory/stochastic.tex}
-    %     % - Elkes Korrekturen einpflegen
-    %     % - PAT Schematic updaten
+        % %=========================================================
+        % \include{theory/theory.tex}
+        % %=========================================================
+        %     \include{theory/quasi.tex}
+        %     \include{theory/micro.tex}
+        %     \include{theory/macro.tex}
+        %     \include{theory/meso.tex}
+        %     \include{theory/stochastic.tex}
+        %     % - Elkes Korrekturen einpflegen
+        %     % - PAT Schematic updaten
 
-    % %=========================================================
-    % \include{methods/methods.tex}
-    % %=========================================================
-    %     \include{methods/sample.tex}
-    %     \include{methods/setup.tex}
-    %     \include{methods/digital.tex}
-    %     \include{methods/sampleappendix.tex}
-    %     % - Elkes Korrekturen einpflegen
-    %     % - Rref, Fomblin number
+        % %=========================================================
+        % \include{methods/methods.tex}
+        % %=========================================================
+        %     \include{methods/sample.tex}
+        %     \include{methods/setup.tex}
+        %     \include{methods/digital.tex}
+        %     \include{methods/sampleappendix.tex}
+        %     % - Elkes Korrekturen einpflegen
+        %     % - Rref, Fomblin number
 
-    % %=========================================================
-    % \include{miscellaneous/results.tex}
-    % %=========================================================
-    %     \include{tunnelbarrier/tunnelbarrier.tex}
-    %     \include{tunnelbarrier/highres.tex}
-    %     \include{tunnelbarrier/asym.tex}
-    %         % - consistency coherence / 2 Delta peaks
+        % %=========================================================
+        % \include{miscellaneous/results.tex}
+        % %=========================================================
+        %     \include{tunnelbarrier/tunnelbarrier.tex}
+        %     \include{tunnelbarrier/highres.tex}
+        %     \include{tunnelbarrier/asym.tex}
+        %         % - consistency coherence / 2 Delta peaks
 
-    %     \include{atomic_contact/atomic-contact.tex}
-    %     \include{atomic_contact/pincode.tex}
-    %     \include{atomic_contact/tunneling.tex}
+        %     \include{atomic_contact/atomic-contact.tex}
+        %     \include{atomic_contact/pincode.tex}
+        %     \include{atomic_contact/tunneling.tex}
 
-
-    % \include{miscellaneous/conclusion.tex} 
+        % \include{miscellaneous/conclusion.tex} 
 
     %=========================================================
     %%% Post Body %%%
     %=========================================================
-    \clearpage
-    \pagenumbering{roman}
+        \clearpage \pagenumbering{roman}
 
-    %=========================================================
-    % Appendix
-    %=========================================================
-    \appendix
-        \include{methods/sampleappendix.tex}
-        \include{tunnelbarrier/appendix.tex}
-        \include{atomic_contact/appendix.tex}
+        \input{miscellaneous/references.tex}
 
-    % \include{miscellaneous/software.tex}
+        %=========================================================
+        \appendix
+        \useappendixchapterstyle
+        %=========================================================
+            \include{appendices/software.tex}
+            \include{appendices/sample-fabrication.tex}
+            \include{appendices/tunnel-barrier.tex}
+            \include{appendices/magneto-transport.tex}
 
-    % \addcontentsline{toc}{chapter}{References}
-    % \printbibliography[title={References}]
-
-    % \include{miscellaneous/acknowledgement.tex}
-    % \include{miscellaneous/eidestattliche-versicherung.tex}
+        % \include{miscellaneous/acknowledgement.tex}
+        % \include{miscellaneous/eidestattliche-versicherung.tex}
 \end{document}
 
 % 13.-17.7. Breaking / Pincode
