@@ -1,0 +1,140 @@
+
+%=========================================================
+\subsection{PAMAR and ICPT}
+\label{subsec:ac:low-transmission}
+%=========================================================
+
+
+    \subsubsection*{Coupling Parameter}
+
+        \begin{wrapfigure}[14]{r}{1.6in}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-0.5em}
+            \import{atomic_contact/1.8G0/15.0GHz_stripline}{eta_fit.pgf}
+            \caption{
+                    chi of eta
+                }
+            \label{eq:ac:low-transmission:eta}
+        \end{wrapfigure}
+
+        \begin{align}
+            \nu = 15.0\,\mathrm{GHz}\, &&
+            \eta = 0.010246\,.
+        \end{align}
+
+        \begin{table}
+            \centering
+            \caption{coupling parameter of all available measurements}
+            \label{table:ac:coupling-parameter}
+            \begin{tabular}{c|c|c|c}
+                $G_\mathrm{N}\,(G_0)$ & $\nu\,(\mathrm{GHz})$ & $\eta_\mathrm{antenna}\ (10^{-3})$ & $\eta_\mathrm{stripline}\ (10^{-3})$ \\\hline
+                0.05  & 15.0 &  -         &  5.803(1)  \\
+                0.78  &  7.8 &  9.680(19) &  8.403(9)  \\
+                      & 15.0 &  6.556(13) &  7.085(13) \\
+                      & 19.3 &  5.677(15) &  7.763(18) \\
+                0.9   & 15.0 &  -         &  7.785(12) \\
+                1.763 & 15.0 &  6.643(17) &  6.179(16) \\
+                1.9   &  7.8 &  9.188(11) &  6.148(6)  \\
+                      & 15.0 &  5.146(7)  &  5.293(6)  \\
+                      & 19.3 &  3.633(16) &  4.924(14) \\
+                2.1   &  7.8 & 10.580(10) &  7.120(7)  \\
+                      & 15.0 &  6.465(11) &  6.939(11) \\
+                      & 19.3 &  5.758(19) &  7.521(22) \\
+                2.4   &  7.8 &  -         &  6.079(7)  \\
+                      & 15.0 &  -         &  5.230(12) \\
+                      & 19.3 &  -         &  5.421(15) \\
+                4.3   &  7.8 &  -         &  7.645(11) \\
+                      & 15.0 &  -         &  7.345(16) \\
+                      & 19.3 &  -         &  7.472(17) \\
+                3.6   &  7.8 &  -         &  5.409(3)  \\
+                      & 15.0 &  -         &  5.081(6)  \\
+                      & 19.3 &  -         &  5.100(7)  \\
+                30.0  &  7.8 &  9.855(10) &  7.913(8)  \\
+                      & 15.0 &  7.455(9)  &  7.602(9)  \\
+                      & 19.3 & 78.30(11)  & 79.77(10) 
+
+            \end{tabular}
+        \end{table}
+
+    \subsubsection*{Mesoscopic Pincode}
+
+        With following parameter
+        \begin{align}
+            \Delta_0 = 189.5\,\mathrm{ueV}\,, &&
+            \sigma_V = 16.0\,\mathrm{uV}\,, &&
+            T = 0\,\mathrm{K}\, &&
+            \gamma = 1\,\mathrm{neV}.
+            \label{eq:ac:low-transmission:parameter}
+        \end{align}
+
+        \singlefitfigure{atomic_contact/1.8G0/15.0GHz_stripline/mar_fit}{
+            Representative \textit{I--V} 
+        }{fig:ac:low-transmission:mar-fit}
+
+        Pincode could be extracted
+        \begin{align}
+            \{\tau_i\} = \{0.514, 0.402, 0.326, 0.295, 0.226\}\,, &&
+            G_\mathrm{N} = 1.763\,G_0\,.
+            \label{eq:ac:low-transmission:pincode}
+        \end{align}
+
+
+        \begin{table}
+            \centering
+            \caption{coupling parameter}
+            \label{table:ac:pincodes}
+            \begin{tabular}{r|l}
+                $G_\mathrm{N}\,(G_0)$ & $\{\tau_i\}$ \\\hline
+                $0.050$ & $\{0.045, 0.001, 0.001, 0.001, 0.001, 0.001\}$ \\ % 0.05 G0
+                $0.794$ & $\{0.682, 0.112\}$\\ % 0.8 G0
+                $0.926$ & $\{0.767, 0.159\}$\\ % 0.9 G0
+                $1.757$ & $\{0.517, 0.399, 0.332, 0.305, 0.204\}$\\ % 1.8 G0
+                $2.035$ & $\{0.988, 0.655, 0.272, 0.120\}$\\ % 1.9 G0
+                $1.992$ & $\{0.780, 0.672, 0.266, 0.263, 0.011\}$ \\ % 2.1 G0
+                $1.987$ & $\{0.996, 0.410, 0.251, 0.246, 0.080\}$ \\ % 2.4 G0
+                $3.159$ & $\{\}$ \\ % 3.6 G0
+                $4.3$   & $\{\}$ \\ % 4.3 G0
+                $30.0$  & - %% % 43.0 G0
+
+            \end{tabular}
+        \end{table}
+
+
+    \subsubsection*{Supercurrent}
+
+        \begin{equation}
+            Z(\omega) = \frac{R_\mathrm{eff}}{1+ \ima\omega R_\mathrm{eff}C_\mathrm{eff}}\,,
+            \label{eq:ac:low-transmission:impedance}
+        \end{equation}
+
+        \begin{align}
+            I_\mathrm{c} = 7.76(14)\,\mathrm{nA}\,, &&
+            R_\mathrm{eff} = 3.32(5)\,\mathrm{k\Omega}\,, &&
+            C_\mathrm{eff} = 2.02(10)\,\mathrm{fF}\,.
+        \end{align}
+
+        \begin{figure}
+            \centering
+            \subfigure[bla]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{iv.pgf}}
+            \hfill
+            \subfigure[bla]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{PE.pgf}}
+            \hfill
+            \subfigure[bla]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{Zv.pgf}}
+            \caption{bal}
+            \label{eq:ac:low-transmission:supercurrent}
+        \end{figure}
+
+
+%=========================================================
+\subsection{High-Transmission Channels Regime}
+\label{subsec:ac:low-transmission}
+%=========================================================
+
+    % 2.4 G0
+    Pincode could be extracted
+    \begin{align}
+        \{\tau_i\} = \{0.996, 0.410,  0.251, 0.246, 0.080\}\,, &&
+        G_\mathrm{N} = 1.987\,G_0\,.
+        \label{eq:ac:low-transmission:pincode}
+    \end{align}
