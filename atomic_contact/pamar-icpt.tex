@@ -1,11 +1,73 @@
 
 %=========================================================
-\subsection{PAMAR and ICPT}
-\label{subsec:ac:low-transmission}
+\subsection{Photon-Assisted Transport}
+\label{subsec:ac:photon-assisted-transport}
 %=========================================================
 
+    In this section we want to look at two representative but rather opposing contacts. Contact 1 has a leading channel with low-transmission and contact 2 has a leading channel with very high transmission.
+
+    The fit for the first contact i want to discuss, is shown in \ref{fig:ac:contact1:mar-fit}. We can observe a finite zero bias peak, which cannot be represented by the MAR theory, so for now we ignore the datapoints around it.
+    The extracted pincode is
+    \begin{align}
+        \{\tau_i\} = \{0.517, 0.399, 0.332, 0.305, 0.204\}\,, &&
+        G_\mathrm{N} = 1.757\,G_0\,.
+        \label{eq:ac:contact1:pincode}
+    \end{align}
+
+    \singlefitfigure{atomic_contact/1.8G0/15.0GHz_stripline/mar_fit}{
+        Representative \textit{I--V} of contact 1.
+    }{fig:ac:contact1:mar-fit}
+
+    The pincodes for all the contacts, that are irradiated are found in \ref{table:ac:pincodes} in the appendix \ref{appendix:coupling-and-pincode}.
+
+    \subsubsection*{Cooper pair transport}
+
+        Next, we want to analyze zero bias feature. We will later see that we observe incoherent Cooper pair tuneling (ICPT). For now we assume it, and see what we can get from the $P(E)$ formalism.
+
+        Figure \ref{fig:ac:contact1:supercurrent}(a) shows the measured data points around zero bias. Assuming ICPT, we can get P(E) shown in fig \ref{fig:ac:contact1:supercurrent}(b) directly from formula \ref{eq:stochastic:icpt:current}. We assume 0 temperature. Meaning no energy is absorbed, just emitted by the junction. with formulas \ref{eq:stochastic:pe-definition} and \ref{eq:stochastic:phase-correlation} we can get a impedance depending on frequency, as shown in fig \ref{fig:ac:contact1:supercurrent}(c).
+
+        \begin{figure}
+            \centering
+            \subfigure[bla]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{iv.pgf}}
+            \hfill
+            \subfigure[bla]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{pe.pgf}}
+            \hfill
+            \subfigure[bla]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{zv.pgf}}
+            \caption{bal}
+            \label{fig:ac:contact1:supercurrent}
+        \end{figure}
+
+        with the impedance spectrum we can assume a minimal circuit to effectively describe the spectrum. For the junction we assume a parallel capacity and resistance. So the impedance is given by 
+        \begin{equation}
+            Z(\omega) = \frac{R_\mathrm{eff}}{1+ \ima\omega R_\mathrm{eff}C_\mathrm{eff}}\,,
+            \label{eq:ac:photon-assisted-transport:impedance}
+        \end{equation}
+
+        Forwarding this model through the P(E) theory, one can fit the critical current and those effective circuit variables
+        \begin{align}
+            I_\mathrm{c} = 7.76(14)\,\mathrm{nA}\,, &&
+            R_\mathrm{eff} = 3.32(5)\,\mathrm{k\Omega}\,, &&
+            C_\mathrm{eff} = 2.02(10)\,\mathrm{fF}\,.
+            \label{eq:ac:contact1:icpt-parameter}
+        \end{align}
+
+        We'll continue with the missing coupling paramter, to connect the measured irradiation maps with the real amplitude at the junction.
 
     \subsubsection*{Coupling Parameter}
+
+        For atomic contacts we yet use another ansatz to solve the problem of a calibrated amplitude at the junction. We take advantage of, that the maps are usually dominated by single quasiparticle processes. So we can take the unirradiated curve as input for the tien gordon modell, and get a good appproximation of the coupling parameter.
+
+        To determine the coupling parameter, one can use the Tien Gordon Model as in Eq.~\eqref{eq:micro:pat-iv}. The same formula holds true for the conductance. This is specially helpfull, since we get rid of excess current, that might change and can track the PAT features, that are mostly dominant. by plugging in different etas we can minimize the deviation of the whole measuremnt set
+        \begin{align}
+            G_\mathrm{test}\!\left(\eta, A_\mathrm{out}, V\right) 
+            &= \sum_{n=-\infty}^{\infty}
+                        J_n^2\!\left(\frac{q\eta A_\mathrm{out}}{h\nu}\right)
+                        G_\mathrm{exp}\!\left(V - \frac{n h\nu}{q}, A=0\right)\,,
+            \label{eq:ac:photon-assisted-transport:coupling:dG}\\
+            \chi^2\!(\eta) &= \left\langle\left(G_\mathrm{test}\!(\eta, A_\mathrm{out}, V)-G_\mathrm{exp}\!(A_\mathrm{out}, V)\right)^2\right\rangle_{(A_\mathrm{out}, V)}\,.
+            \label{eq:ac:photon-assisted-transport:coupling:chi}
+        \end{align}
+        normally maps get dominated by the PAT feature so $q=e$, however sometimes by cooper-pair transport, then we have to use $q=2e$.
 
         \begin{wrapfigure}[14]{r}{1.6in}
             \captionsetup{format=plain}%
@@ -13,128 +75,207 @@
             \vspace{-0.5em}
             \import{atomic_contact/1.8G0/15.0GHz_stripline}{eta_fit.pgf}
             \caption{
-                    chi of eta
+                    chi of eta, contact1, stirpline at 15GHz
                 }
-            \label{eq:ac:low-transmission:eta}
+            \label{fig:ac:contact1:eta}
         \end{wrapfigure}
-
+        For contact1, we get a coupling parameter for the stripline of 
         \begin{align}
             \nu = 15.0\,\mathrm{GHz}\, &&
             \eta = 0.010246\,.
+            \label{eq:ac:contact1:eta}
         \end{align}
+        Figure \ref{eq:ac:contact1:eta} shows the calculated $\chi$ over a long strech and shows a clear global minimum.
 
-        \begin{table}
-            \centering
-            \caption{coupling parameter of all available measurements}
-            \label{table:ac:coupling-parameter}
-            \begin{tabular}{c|c|c|c}
-                $G_\mathrm{N}\,(G_0)$ & $\nu\,(\mathrm{GHz})$ & $\eta_\mathrm{antenna}\ (10^{-3})$ & $\eta_\mathrm{stripline}\ (10^{-3})$ \\\hline
-                0.05  & 15.0 &  -         &  5.803(1)  \\
-                0.78  &  7.8 &  9.680(19) &  8.403(9)  \\
-                      & 15.0 &  6.556(13) &  7.085(13) \\
-                      & 19.3 &  5.677(15) &  7.763(18) \\
-                0.9   & 15.0 &  -         &  7.785(12) \\
-                1.763 & 15.0 &  6.643(17) &  6.179(16) \\
-                1.9   &  7.8 &  9.188(11) &  6.148(6)  \\
-                      & 15.0 &  5.146(7)  &  5.293(6)  \\
-                      & 19.3 &  3.633(16) &  4.924(14) \\
-                2.1   &  7.8 & 10.580(10) &  7.120(7)  \\
-                      & 15.0 &  6.465(11) &  6.939(11) \\
-                      & 19.3 &  5.758(19) &  7.521(22) \\
-                2.4   &  7.8 &  -         &  6.079(7)  \\
-                      & 15.0 &  -         &  5.230(12) \\
-                      & 19.3 &  -         &  5.421(15) \\
-                4.3   &  7.8 &  -         &  7.645(11) \\
-                      & 15.0 &  -         &  7.345(16) \\
-                      & 19.3 &  -         &  7.472(17) \\
-                3.6   &  7.8 &  -         &  5.409(3)  \\
-                      & 15.0 &  -         &  5.081(6)  \\
-                      & 19.3 &  -         &  5.100(7)  \\
-                30.0  &  7.8 &  9.855(10) &  7.913(8)  \\
-                      & 15.0 &  7.455(9)  &  7.602(9)  \\
-                      & 19.3 & 78.30(11)  & 79.77(10) 
+        A summary of all the coupling parameter is shown in table \ref{table:ac:coupling-parameter} in the appendix \ref{appendix:coupling-and-pincode}
 
-            \end{tabular}
-        \end{table}
+    \subsubsection*{Photon-Assisted Multiple Andreev Reflection}
 
-    \subsubsection*{Mesoscopic Pincode}
+        With all the calibration done, the complete Transport Landscape is shown in figure \ref{fig:ac:contact1:cal}. Here those landscape plots are getting hard to understand and way to crowded with structure and i switch to either line cuts and differential conductance maps.
 
-        With following parameter
-        \begin{align}
-            \Delta_0 = 189.5\,\mathrm{ueV}\,, &&
-            \sigma_V = 16.0\,\mathrm{uV}\,, &&
-            T = 0\,\mathrm{K}\, &&
-            \gamma = 1\,\mathrm{neV}.
-            \label{eq:ac:low-transmission:parameter}
-        \end{align}
+        First we can take a look at fig \ref{fig:ac:contact1:sim-img}(a) showing dIdV map. in didv we observe a prominent feature creating replicates starting at V=2Delta. we identivy this with quasiparticle tunneling as known from before as photon-assisted tunneling. We can also observe the MAR2 peak at V=Delta from which replicas evolve.
 
-        \singlefitfigure{atomic_contact/1.8G0/15.0GHz_stripline/mar_fit}{
-            Representative \textit{I--V} 
-        }{fig:ac:low-transmission:mar-fit}
-
-        Pincode could be extracted
-        \begin{align}
-            \{\tau_i\} = \{0.514, 0.402, 0.326, 0.295, 0.226\}\,, &&
-            G_\mathrm{N} = 1.763\,G_0\,.
-            \label{eq:ac:low-transmission:pincode}
-        \end{align}
-
-
-        \begin{table}
-            \centering
-            \caption{coupling parameter}
-            \label{table:ac:pincodes}
-            \begin{tabular}{r|l}
-                $G_\mathrm{N}\,(G_0)$ & $\{\tau_i\}$ \\\hline
-                $0.050$ & $\{0.045, 0.001, 0.001, 0.001, 0.001, 0.001\}$ \\ % 0.05 G0
-                $0.794$ & $\{0.682, 0.112\}$\\ % 0.8 G0
-                $0.926$ & $\{0.767, 0.159\}$\\ % 0.9 G0
-                $1.757$ & $\{0.517, 0.399, 0.332, 0.305, 0.204\}$\\ % 1.8 G0
-                $2.035$ & $\{0.988, 0.655, 0.272, 0.120\}$\\ % 1.9 G0
-                $1.992$ & $\{0.780, 0.672, 0.266, 0.263, 0.011\}$ \\ % 2.1 G0
-                $1.987$ & $\{0.996, 0.410, 0.251, 0.246, 0.080\}$ \\ % 2.4 G0
-                $3.159$ & $\{\}$ \\ % 3.6 G0
-                $4.3$   & $\{\}$ \\ % 4.3 G0
-                $30.0$  & - %% % 43.0 G0
-
-            \end{tabular}
-        \end{table}
-
-
-    \subsubsection*{Supercurrent}
-
-        \begin{equation}
-            Z(\omega) = \frac{R_\mathrm{eff}}{1+ \ima\omega R_\mathrm{eff}C_\mathrm{eff}}\,,
-            \label{eq:ac:low-transmission:impedance}
-        \end{equation}
-
-        \begin{align}
-            I_\mathrm{c} = 7.76(14)\,\mathrm{nA}\,, &&
-            R_\mathrm{eff} = 3.32(5)\,\mathrm{k\Omega}\,, &&
-            C_\mathrm{eff} = 2.02(10)\,\mathrm{fF}\,.
-        \end{align}
 
         \begin{figure}
             \centering
-            \subfigure[bla]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{iv.pgf}}
-            \hfill
-            \subfigure[bla]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{PE.pgf}}
-            \hfill
-            \subfigure[bla]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{Zv.pgf}}
-            \caption{bal}
-            \label{eq:ac:low-transmission:supercurrent}
+            \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{didvs.pgf}
+            \caption{
+                bla
+            }
+            \label{fig:ac:contact1:sim-img}
         \end{figure}
 
 
-%=========================================================
-\subsection{High-Transmission Channels Regime}
-\label{subsec:ac:low-transmission}
-%=========================================================
+        We also observe the icpt feature evolve. We will talk about this in a minute.
 
-    % 2.4 G0
-    Pincode could be extracted
-    \begin{align}
-        \{\tau_i\} = \{0.996, 0.410,  0.251, 0.246, 0.080\}\,, &&
-        G_\mathrm{N} = 1.987\,G_0\,.
-        \label{eq:ac:low-transmission:pincode}
-    \end{align}
+        In order to understand this, we need the unified tien gordon equation (Eq.~\ref{eq:meso:pamar-current}).
+
+        The first obvious test is, if the charge resolved currents from Full counting statistics could provide us with those. As one can easily see, this doesn't work out very well unfortunately. as shown in figure \ref{fig:ac:contact1:sim-img}(c).
+
+        if we look at the charge resolved pamar contributions in figure \ref{fig:ac:contact1:pamarm}(a). It becomes obvious, that not just the dominant positive conductance gets replicated, but also the nearby negative conductance.
+        
+        \begin{figure}[t]
+            \centering
+            \subfigure[
+                FCS
+                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{fcsm.pgf}}
+            \subfigure[
+                weighted
+                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{pamarm.pgf}}
+            \caption{
+                bla
+            }
+            \label{fig:ac:contact1:pamarm}
+        \end{figure}
+
+        From here on we need to think about what $I_m$ might actually be. We should think about it such, that it is the transport dominating that threshold, given by the MAR thresholds \eqref{eq:meso:mar-sgs}.
+
+        i define weights such:
+        \begin{align}
+            w_m(V)=\exp\!\left(-\left(\frac{2\Delta_0/|eV|-m}{2}\right)^2\right)\,,&&
+            \sum_{m=0}^M w_m(V) + w_\infty(V)\overset{!}{=}1\,.
+        \end{align}
+
+        Notice, that the weights are gaussian distributions on the inverse voltage scale. $w_\infty$ denotes the region of higher orders and might remain unused. $w_0$ is artificially created here and is merged into $w_1$, since quasiparticle transport is dominant at $eV>2\Delta$.
+
+        With these weights i can define:
+        \begin{align}
+            \mathrm{d}G_m\!(V) &= w_m(V) \cdot \mathrm{d}G\!(V)\,, &&
+            \mathrm{d}G\!(V) := \tfrac{\mathrm{d}I}{\mathrm{d}V}\!(V)\,, \\
+            I_m\!(V) &= \int \mathrm{d}V \mathrm{d}G_m\!(V)\,, &&
+            I_m\!(0) \overset{!}{=} 0 \, .
+        \end{align}
+        as shown in \ref{fig:ac:pamar-weights}.
+
+        \begin{figure}[t]
+            \centering
+            \subfigure[
+                $w(V)$
+            ]{\import{atomic_contact/pamar-weights}{V.pgf}}
+            \hfill
+            \subfigure[
+                $w(V^{-1})$
+            ]{\import{atomic_contact/pamar-weights}{1_V.pgf}}
+            \caption{
+                bla
+            }
+            \label{fig:ac:pamar-weights}
+        \end{figure}
+
+        why use differential conductance you might ask and not the current?
+        \begin{align}
+            \mathrm{d}G_m = w_m \cdot \mathrm{d}G + I \cdot \tfrac{\mathrm{d}}{\mathrm{d}V}w_m\!(V)
+        \end{align}
+        Here the derivative of the weight adds up another term.
+
+        With the unified tien gordon equation we can simulate the map as shown in \ref{fig:ac:contact1:sim-img}(e).
+
+        The pamar contributions by threshold are shown in figure \ref{fig:ac:contact1:pamarm}(b).
+
+
+    \subsubsection*{Photon Assisted Incoherent Cooper Pair Tunneling}
+
+        Now we can take a closer look at the replicas caused by the zero bias peak. A direct test if the zero bias peak is caused by phase coherent shapiro peaks or incoherent cooper pair tunneling, is to check the amplitude of the replicas.
+
+        one would expect a simple bessel like behavior for shapiro steps \ref{eq:macro:shapiro-iv} and a bessel square behaviour, as in \ref{eq:stochastic:icpt:current}.
+
+        Cuts along the amplitude axis highlight the icpt like behavior as shown in fig \ref{fig:ac:contact1:didv-cuts}(a).
+
+        Overall we can check for single line cuts as shown in fig \ref{fig:ac:contact1:didv-cuts}(a) are validating our theory against the experiment.
+
+        However for high amplitudes the line shape is not reproduced adequatly, however this deviations are minor and we can confidently claim a good overall agreement. (for contact1)
+
+        \begin{figure}[t]
+            \centering
+            \subfigure[
+                dIdV(A)
+            ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{amplitude-cuts.pgf}}
+            \subfigure[
+                dIdV(V)
+            ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{voltage-cuts.pgf}}
+            \caption{
+                test
+            }
+            \label{fig:ac:contact1:didv-cuts}
+        \end{figure}
+
+
+        \singlefitfigure{atomic_contact/2.4G0/15.0GHz_stripline/mar_fit}{
+            Representative \textit{I--V} of contact 2.
+        }{fig:ac:contact2:mar-fit}
+        
+        
+        \begin{figure}[t]
+            \centering
+            \subfigure[
+                exp
+                ]{\import{atomic_contact/2.4G0/15.0GHz_stripline/didv-img}{dGexp.pgf}}
+            \subfigure[
+                sim
+                ]{\import{atomic_contact/2.4G0/15.0GHz_stripline/didv-img}{dGpamar.pgf}}
+            \caption{
+                bla
+            }
+            \label{fig:ac:contact2:comparison}
+        \end{figure}
+
+        
+
+    
+    % at the end of the section since unfortunatly full page figures
+
+    % \begin{figure}
+    %     \centering
+    %     \subfigure[
+    %         test
+    %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{exp.pgf}}
+    %     \hfill
+    %     \subfigure[
+    %         test
+    %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{sim.pgf}}
+    %     \\
+    %     \subfigure[
+    %         test
+    %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{fcspamar.pgf}}
+    %     \hfill
+    %     \subfigure[
+    %         test
+    %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{pamar.pgf}}
+    %     \\
+    %     \subfigure[
+    %         test
+    %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{sp.pgf}}
+    %     \hfill
+    %     \subfigure[
+    %         test
+    %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{icpt.pgf}}
+        
+    %     \caption{
+    %         bla
+    %     }
+    %     \label{fig:ac:contact1:sim-img}
+    % \end{figure}
+
+        % \begin{figure}
+        %     \centering
+        %     \subfigure[
+        %         test
+        %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{exp.pgf}}
+        %     \hfill
+        %     \subfigure[
+        %         test
+        %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/dvdi-img}{exp.pgf}}
+        %     \caption{
+        %         bla
+        %     }
+        %     \label{fig:ac:contact1:exp-img}
+        % \end{figure}
+
+    
+    \transportlandscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{cal}{
+        some text
+    }{fig:ac:contact1:cal}
+
+    \transportlandscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{sim}{
+        some text
+    }{fig:ac:contact1:sim}
