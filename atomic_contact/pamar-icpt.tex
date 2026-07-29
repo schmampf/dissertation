@@ -219,58 +219,35 @@
             \label{fig:ac:contact2:comparison}
         \end{figure}
 
+        \begin{figure}[t]
+            \centering
+            \subfigure[
+                didv
+                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGcomp.pgf}}
+            \hfill
+            \subfigure[
+                dvdi
+                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcomp.pgf}}
+            \caption{
+                bla
+            }
+            \label{fig:ac:contact1:comparison}
+        \end{figure}
+
         
 
     
     % at the end of the section since unfortunatly full page figures
 
-    % \begin{figure}
-    %     \centering
-    %     \subfigure[
-    %         test
-    %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{exp.pgf}}
-    %     \hfill
-    %     \subfigure[
-    %         test
-    %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{sim.pgf}}
-    %     \\
-    %     \subfigure[
-    %         test
-    %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{fcspamar.pgf}}
-    %     \hfill
-    %     \subfigure[
-    %         test
-    %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{pamar.pgf}}
-    %     \\
-    %     \subfigure[
-    %         test
-    %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{sp.pgf}}
-    %     \hfill
-    %     \subfigure[
-    %         test
-    %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{icpt.pgf}}
-        
-    %     \caption{
-    %         bla
-    %     }
-    %     \label{fig:ac:contact1:sim-img}
-    % \end{figure}
 
-        % \begin{figure}
-        %     \centering
-        %     \subfigure[
-        %         test
-        %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{exp.pgf}}
-        %     \hfill
-        %     \subfigure[
-        %         test
-        %     ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/dvdi-img}{exp.pgf}}
-        %     \caption{
-        %         bla
-        %     }
-        %     \label{fig:ac:contact1:exp-img}
-        % \end{figure}
-
+    \begin{figure}[t]
+        \centering
+        \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{voltage-cuts-m.pgf}
+        \caption{
+            test
+        }
+        \label{fig:ac:contact1:iv-cuts}
+    \end{figure}
     
     \transportlandscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{cal}{
         some text
@@ -279,3 +256,11 @@
     \transportlandscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{sim}{
         some text
     }{fig:ac:contact1:sim}
+
+    \transportlandscapefigure{atomic_contact/2.4G0/15.0GHz_stripline}{cal}{
+        some text
+    }{fig:ac:contact2:cal}
+
+    \transportlandscapefigure{atomic_contact/2.4G0/15.0GHz_stripline}{sim}{
+        some text
+    }{fig:ac:contact2:sim}
