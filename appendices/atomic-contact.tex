@@ -1,0 +1,73 @@
+% !TEX root = ../thesis.tex
+%=========================================================
+\chapter{Coupling and Pincodes of AC}
+\label{appendix:coupling-and-pincode}
+%=========================================================
+
+        as in the mesoscopic pincode subsection, we assume minimal temperature and dynes-parameter
+        \begin{align}
+            T = 0\,\mathrm{K}\, &&
+            \gamma = 1\,\mathrm{neV}.
+            \label{eq:ac:photon-assisted-transport:assumptions}
+        \end{align}
+
+        For the pincodes of the irradiated junctions, the gap and voltage noice parameter are kept free.
+
+        Here they cluster around
+        \begin{align}
+            \Delta_0 = 190.4(8)\,\mathrm{ueV}\,, &&
+            \sigma_V = 10(4)\,\mathrm{uV}\,.
+            \label{eq:ac:photon-assisted-transport:parameter}
+        \end{align}
+
+        \begin{table}[t]
+            \centering
+            \caption{mesoscopic pincodes}
+            \label{table:ac:pincodes}
+            \begin{tabular}{r|l|l|l}
+                $G_\mathrm{N}\,(G_0)$ & $\Delta_0\,(\mathrm{ueV})$ & $\sigma_V\,(\mathrm{uV})$ & $\{\tau_i\}$ \\\hline
+                $0.050$ & $192.0$ & $19.5$ & $\{0.045, 0.001, 0.001, 0.001, 0.001, 0.001\}$ \\ % 0.05 G0
+                $0.794$ & $190.5$ & $12.5$ & $\{0.682, 0.112\}$\\ % 0.8 G0
+                $0.926$ & $190.5$ &  $9.0$ & $\{0.767, 0.159\}$\\ % 0.9 G0
+                $1.757$ & $189.5$ &  $8.0$ & $\{0.517, 0.399, 0.332, 0.305, 0.204\}$\\ % 1.8 G0
+                $1.987$ & $191.0$ & $11.5$ & $\{0.996, 0.410, 0.251, 0.246, 0.080\}$ \\ % 2.4 G0
+                $1.992$ & $190.5$ & $10.5$ & $\{0.780, 0.672, 0.266, 0.263, 0.011\}$ \\ % 2.1 G0
+                $2.035$ & $189.5$ &  $4.5$ & $\{0.988, 0.655, 0.272, 0.120\}$\\ % 1.9 G0
+                $2.819$ & $190.5$ & $8.0$ & $\{0.834, 0.747, 0.444, 0.383, 0.269, 0.142\}$ \\ % 4.3 G0
+                $2.822$ & $190.5$ & $8.0$ & $\{0.846, 0.735, 0.504, 0.289, 0.284, 0.164\}$ \\ % 3.6 G0
+                $30.0$  & -       & -     & $\{...\}$ % 43.0 G0
+            \end{tabular}
+        \end{table}
+
+        \begin{table}[t]
+            \centering
+            \caption{coupling parameter of all available measurements}
+            \label{table:ac:coupling-parameter}
+            \begin{tabular}{c|c|c|c|c}
+                $G_\mathrm{N}\,(G_0)$ & $m$ & $\nu\,(\mathrm{GHz})$ & $\eta_\mathrm{antenna}\ (10^{-3})$ & $\eta_\mathrm{stripline}\ (10^{-3})$ \\\hline
+                0.050 & 1 & 15.0 &  -         &  5.803(1)  \\
+                0.794 & 1 &  7.8 &  9.680(19) &  8.403(9)  \\
+                      & 1 & 15.0 &  6.556(13) &  7.085(13) \\
+                      & 1 & 19.3 &  5.677(15) &  7.763(18) \\
+                0.926 & 1 & 15.0 &  -         &  7.785(12) \\
+                1.757 & 1 & 15.0 &  6.643(17) &  6.179(16) \\
+                1.987 & 1 &  7.8 &  -         &  6.079(7)  \\
+                      & 1 & 15.0 &  -         &  5.230(12) \\
+                      & 1 & 19.3 &  -         &  5.421(15) \\
+                1.992 & 1 &  7.8 & 10.580(10) &  7.120(7)  \\
+                      & 1 & 15.0 &  6.465(11) &  6.939(11) \\
+                      & 1 & 19.3 &  5.758(19) &  7.521(22) \\
+                2.035 & 1 &  7.8 &  9.188(11) &  6.148(6)  \\
+                      & 1 & 15.0 &  5.146(7)  &  5.293(6)  \\
+                      & 1 & 19.3 &  3.633(16) &  4.924(14) \\
+                2.819 & 1 &  7.8 &  -         &  7.645(11) \\
+                      & 1 & 15.0 &  -         &  7.345(16) \\
+                      & 1 & 19.3 &  -         &  7.472(17) \\
+                2.822 & 1 &  7.8 &  -         &  5.409(3)  \\
+                      & 1 & 15.0 &  -         &  5.081(6)  \\
+                      & 1 & 19.3 &  -         &  5.100(7)  \\
+                30.0  & 2 &  7.8 &  8.108(4)  &  6.566(3)  \\
+                      & 2 & 15.0 &  4.365(3)  &  4.384(3)  \\
+                      & 2 & 19.3 &  4.200(9)  &  5.682(10) 
+            \end{tabular}
+        \end{table}
