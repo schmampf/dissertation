@@ -1,0 +1,305 @@
+
+%=========================================================
+\subsection{Subharmonic}
+\label{subsec:ac:subharmonic}
+%=========================================================
+
+    \singlefitfigure{atomic_contact/43.0G0/19.3GHz_antenna/mar_fit}{
+        Representative \textit{I--V} of contact 3.
+    }{fig:ac:contact1:mar-fit}
+
+    \begin{wrapfigure}[14]{r}{1.6in}
+        \captionsetup{format=plain}%
+        \centering
+        \vspace{-0.5em}
+        \import{atomic_contact/43.0G0/15.0GHz_stripline}{rs_fit.pgf}
+        \caption{
+                Rs fit
+            }
+        \label{fig:ac:contact3:rs-fit}
+    \end{wrapfigure}
+
+    \begin{wrapfigure}[14]{r}{1.6in}
+        \captionsetup{format=plain}%
+        \centering
+        \vspace{-0.5em}
+        \import{atomic_contact/43.0G0/19.3GHz_antenna}{amplitude-cut.pgf}
+        \caption{
+                Rs fit
+            }
+        \label{fig:ac:contact3:amplitude-cut}
+    \end{wrapfigure}
+
+    \begin{figure}[t]
+        \centering
+        \subfigure[
+            didv
+            ]{\import{atomic_contact/43.0G0/19.3GHz_antenna/didv-img}{dGcomp.pgf}}
+        \hfill
+        \subfigure[
+            dvdi
+            ]{\import{atomic_contact/43.0G0/19.3GHz_antenna/didv-img}{dRcomp.pgf}}
+        \caption{
+            bla
+        }
+        \label{fig:ac:contact3:comparison}
+    \end{figure}
+
+
+    \transportlandscapefigure{atomic_contact/43.0G0/19.3GHz_antenna}{cal}{
+        some text
+    }{fig:ac:contact2:cal}
+
+    \transportlandscapefigure{atomic_contact/43.0G0/19.3GHz_antenna}{sim}{
+        some text
+    }{fig:ac:contact2:sim}
+
+%     I tried various models to aquire some pincode. Obviously I cant fit individual channels with 
+
+%     Modelling of the unirradiated current–voltage characteristic
+% The unirradiated current–voltage characteristic of the high-conductance contact exhibits three distinct classes of features: a zero-voltage supercurrent branch extending to approximately \(404\,\mathrm{nA}\), pronounced subgap structures near the expected multiple-Andreev-reflection voltages, and abrupt voltage changes under current bias. Several models were tested to determine whether these features can be described by a common microscopic transport picture.
+% Before fitting, the measured voltage was corrected for a series resistance of
+% \[
+% R_{\mathrm s}=12.58\,\Omega
+% \]and a small voltage offset. The resulting normal-state conductance is approximately \(29\,G_0\), and the superconducting gap inferred from the outer subgap structure is
+% \[
+% \Delta=0.1895\,\mathrm{meV}.
+% \]The raw measurement was retained as a parametric trace \(\{I(t),V(t)\}\). To obtain single-valued representations, the trace was upsampled in acquisition order and separately binned as \(I(V)\) and \(V(I)\). The differential quantities were then calculated as
+% \[
+% \frac{dI}{dV}=\nabla_V I(V)
+% \]and
+% \[
+% \frac{dV}{dI}=\nabla_I V(I).
+% \]This distinction is important because the voltage jumps observed under current bias correspond to skipped voltage intervals. When represented as \(I(V)\), these intervals appear as approximately constant-current sections with \(dI/dV\simeq0\).
+% Conventional MAR fits
+% The first model was the standard short-junction MAR theory with energy-independent transmission eigenvalues,
+% \[
+% I_{\mathrm{MAR}}(V)
+% =
+% \sum_i I_{\mathrm{MAR}}(V,\tau_i).
+% \]Individual pincodes, randomly generated transmission sets, grouped transmissions, and a Dorokhov–Mello–Pereyra–Kumar-type transmission distribution were tested. None provided a satisfactory global description when the full IV, including the zero-voltage branch, was fitted.
+% This failure does not imply the absence of MAR. The positions of the measured subgap structures are approximately consistent with
+% \[
+% V_n=\frac{2\Delta}{ne},
+% \]particularly for \(n=2,3,4\). Instead, the difficulty arises because stationary voltage-biased MAR does not contain a zero-voltage Josephson branch and because the inversion of a strongly nonlinear \(I(V)\) into the current-biased \(V(I)\) emphasizes small discrepancies near the MAR steps.
+% Fits based on a small number of individually optimized channels were additionally limited by the large conductance of the contact. For example, an early 12-channel fit converged near
+% \[
+% \sum_i\tau_i\simeq11.5,
+% \]which is substantially below the measured conductance of approximately \(29\,G_0\). The contact therefore cannot be represented adequately by a small atomic pincode.
+% Separate ABS and MAR contributions
+% A model in which an additional Andreev-bound-state contribution was added to the MAR current was also tested but did not improve the description sufficiently. Such an additive construction is problematic conceptually: Andreev bound states determine the equilibrium current–phase relation and also participate in the MAR process. Treating ABS transport and MAR as unrelated parallel currents can therefore double-count related microscopic processes.
+% The ABS description was subsequently retained only for constructing the nonsinusoidal current–phase relation,
+% \[
+% I_s(\phi),
+% \]rather than as an independent conductance contribution.
+% Overdamped RSJ model with nonlinear MAR dissipation
+% The first combined Josephson–MAR model used an overdamped, quasistatic phase average. For a fixed bias current, the dissipative current was written as
+% \[
+% I_{\mathrm{qp}}(\phi)
+% =
+% I_{\mathrm{bias}}-I_s(\phi),
+% \]and the instantaneous voltage was obtained by inverting the stationary MAR relation,
+% \[
+% V(\phi)
+% =
+% I_{\mathrm{MAR}}^{-1}
+% \left[
+% I_{\mathrm{bias}}-I_s(\phi)
+% \right].
+% \]The average junction voltage is then
+% \[
+% \overline V^{-1}
+% =
+% \left\langle
+% \frac{1}{V(\phi)}
+% \right\rangle_\phi .
+% \]This model combines a nonsinusoidal ABS current–phase relation with nonlinear MAR dissipation. It correctly generates a zero-voltage interval but predicts a continuous low-voltage running state outside the critical current. The experiment instead jumps directly from the zero-voltage state to a finite-voltage MAR branch.
+% Even after optimizing the transmission distribution and suppressing the theoretical ABS critical current by an empirical scale factor, the overdamped model gave a voltage root-mean-square error of approximately
+% \[
+% \operatorname{RMSE}_V\simeq36.8\,\mu\mathrm V.
+% \]It was therefore rejected as a quantitative description of the measurement.
+% Distributional MAR fit
+% To avoid the ill-conditioned optimization of many individual pincodes, the MAR current was expressed as a non-negative linear combination over a dense transmission grid,
+% \[
+% I_{\mathrm{MAR}}(V)
+% =
+% \int_0^1 \rho(\tau)
+% I_{\mathrm{MAR}}(V,\tau)\,d\tau.
+% \]Because the MAR current is linear in the number of channels at each transmission, the optimal transmission density could be obtained through non-negative linear inversion while imposing the measured normal conductance.
+% The resulting distribution was strongly bimodal. It could be compressed into two effective groups without a significant loss of accuracy:
+% \[
+% N_1=25.1,\qquad \tau_1=0.527,
+% \]\[
+% N_2=15.5,\qquad \tau_2=0.969.
+% \]The corresponding conductance is
+% \[
+% G_N
+% =
+% N_1\tau_1+N_2\tau_2
+% =
+% 28.22\,G_0.
+% \]The stationary MAR running branches were reproduced with a current RMSE of approximately
+% \[
+% \operatorname{RMSE}_{I(V)}
+% =
+% 7.46\,\mathrm{nA}.
+% \]The noninteger multiplicities are effective weights of the transmission distribution and should not be interpreted as a literal atomic pincode.
+% Hysteretic branch-selection model
+% The measured zero-voltage branch was next treated separately from the dissipative MAR branch. The simplest branch-selection model was
+% \[
+% V(I)=
+% \begin{cases}
+% 0,
+% &
+% |I|\le I_{\mathrm{sw}},\\[4pt]
+% I_{\mathrm{MAR}}^{-1}(I),
+% &
+% |I|>I_{\mathrm{sw}},
+% \end{cases}
+% \]with
+% \[
+% I_{\mathrm{sw}}=404\,\mathrm{nA}.
+% \]This model assumes that the junction remains phase locked until the observed switching boundary and then enters the stationary MAR running state. It does not attempt to describe the switching dynamics microscopically.
+% The resulting voltage RMSE was
+% \[
+% \operatorname{RMSE}_{V(I)}
+% =
+% 3.80\,\mu\mathrm V,
+% \]an order-of-magnitude improvement over the overdamped phase-average model. This result shows that the measured running branches are largely compatible with conventional MAR, while the low-voltage phase-running states predicted by the overdamped model are not experimentally occupied.
+% Phenomenological MAR-threshold switching model
+% The two-group MAR curve still connected the structures near approximately \(535\), \(670\), and \(865\,\mathrm{nA}\) more smoothly than observed. As a diagnostic, localized antisymmetric corrections were added:
+% \[
+% \delta V_k(I)
+% =
+% \operatorname{sgn}(I)
+% A_kx_k e^{-x_k^2/2},
+% \qquad
+% x_k=\frac{|I|-I_k}{w_k}.
+% \]These terms sharpen a transition locally but vanish away from it. The fitted centers were
+% \[
+% I_4\simeq535\,\mathrm{nA},
+% \qquad
+% I_3\simeq669\,\mathrm{nA},
+% \qquad
+% I_2\simeq865\,\mathrm{nA},
+% \]and occurred close to the \(n=4,3,2\) MAR voltage regions. The strongest correction was associated with the \(n=3\) feature and had an amplitude of approximately \(9\,\mu\mathrm V\).
+% The complete voltage RMSE decreased from \(3.81\) to
+% \[
+% 3.47\,\mu\mathrm V,
+% \]while the local RMSE around the \(n=3\) feature decreased from approximately
+% \[
+% 4.42\,\mu\mathrm V
+% \quad\text{to}\quad
+% 2.27\,\mu\mathrm V.
+% \]Although this model demonstrated a correlation between the voltage jumps and the MAR thresholds, it is not microscopic. The fitted corrections merely parameterize the residuals. It was therefore not retained as the preferred physical interpretation.
+% Time-dependent nonlinear RCSJ–MAR model
+% To test whether the voltage jumps could arise dynamically, a stateful current-swept RCSJ model was implemented:
+% \[
+% \dot\phi=\frac{2e}{\hbar}V,
+% \]\[
+% C\dot V
+% =
+% I_{\mathrm{bias}}(t)
+% -I_s(\phi)
+% -I_{\mathrm{MAR}}^{\mathrm{dc}}(V).
+% \]The current–phase relation was constructed from the ABS contributions of the fitted transmission groups. The measured descending current sweep was reproduced numerically, and the final phase and voltage at one current point were used as the initial state at the next point. This allowed hysteresis, retrapping, and coexistence of dynamical attractors.
+% The best fit yielded
+% \[
+% C\simeq0.67\,\mathrm{fF},
+% \qquad
+% I_c\simeq345\,\mathrm{nA},
+% \]corresponding to
+% \[
+% \beta_c\simeq0.15.
+% \]However, the model produced numerous finite-voltage attractors and plateaus that are absent from the experiment. Its voltage RMSE was approximately
+% \[
+% \operatorname{RMSE}_{V(I)}
+% =
+% 33.6\,\mu\mathrm V.
+% \]Increasing the transient and averaging times did not remove these states, demonstrating that they were not numerical averaging artifacts.
+% The central approximation of this model is
+% \[
+% I_{\mathrm{diss}}(t)
+% \approx
+% I_{\mathrm{MAR}}^{\mathrm{dc}}[V(t)].
+% \]This approximation is not generally valid. MAR is a history-dependent coherent process involving repeated Andreev reflections and nonequilibrium quasiparticle occupations. A stationary DC MAR current therefore cannot necessarily be used as an instantaneous damping law. The poor fit indicates that this local-in-time RCSJ–MAR construction is not appropriate for the present contact.
+% Joint fit of \(I(V)\), \(V(I)\), and their derivatives
+% Finally, a stationary MAR model was optimized simultaneously against all four measured representations:
+% \[
+% I(V),\qquad
+% V(I),\qquad
+% \frac{dI}{dV},\qquad
+% \frac{dV}{dI}.
+% \]The cost function was constructed as
+% \[
+% \chi^2
+% =
+% \chi^2_{I(V)}
+% +
+% \chi^2_{V(I)}
+% +
+% w_G\chi^2_{dI/dV}
+% +
+% w_R\chi^2_{dV/dI}
+% +
+% \chi^2_{G_N}.
+% \]The last term constrained the normal conductance. The zero-voltage branch was imposed through the directly observed switching current, while the running branch was determined solely by stationary MAR.
+% A three-group model was required:
+% \[
+% \begin{array}{c|c}
+% N_g & \tau_g\\ \hline
+% 23.36 & 0.440\\
+% 10.33 & 0.829\\
+% 9.84 & 1.000
+% \end{array}
+% \]with
+% \[
+% G_N=28.67\,G_0.
+% \]The fit quality was
+% \[
+% \operatorname{RMSE}_{I(V)}
+% =
+% 10.24\,\mathrm{nA},
+% \]\[
+% \operatorname{RMSE}_{V(I)}
+% =
+% 3.27\,\mu\mathrm V,
+% \]\[
+% \operatorname{RMSE}_{dI/dV}
+% =
+% 12.96\,G_0,
+% \]and
+% \[
+% \operatorname{RMSE}_{dV/dI}
+% =
+% 0.0128\,R_0.
+% \]The joint fit provides the best physically constrained description of the complete characteristic. The third transmission group allows the different MAR orders to vary more independently than in the two-group representation.
+% Nevertheless, the local voltage RMSE around the \(n=3\) feature remains approximately
+% \[
+% 4.29\,\mu\mathrm V.
+% \]Thus, stationary energy-independent MAR reproduces the location and approximate magnitude of the structure but not the full abruptness of the measured transition.
+% Comparison of the tested models
+% Model	Main result	\(V(I)\) RMSE
+% Small individual pincode	Insufficient total conductance; nonunique	—
+% Random/grouped/DMPK pincodes	Could not reproduce full IV	—
+% MAR plus independent ABS contribution	No satisfactory improvement; possible double counting	—
+% Overdamped RSJ with MAR dissipation	Predicts unobserved continuous running branch	\(36.8\,\mu\mathrm V\)
+% Two-group distributional MAR with switching boundary	Accurately reproduces stable branches	\(3.80\,\mu\mathrm V\)
+% Phenomenological threshold corrections	Best local jump reproduction, but not microscopic	\(3.47\,\mu\mathrm V\)
+% Time-dependent nonlinear RCSJ–MAR	Produces spurious dynamical attractors	\(33.6\,\mu\mathrm V\)
+% Joint three-group stationary MAR	Best physically constrained global model	\(3.27\,\mu\mathrm V\)
+
+% Interpretation
+% The modelling supports three main conclusions.
+% First, the resistive branches and their subgap structure are predominantly governed by multiple Andreev reflections. Their voltage positions, conductance structure, and overall current can be described using a short-junction MAR model with a broad, multimodal transmission distribution.
+% Second, the zero-voltage branch must be treated separately as a phase-locked state. The experiment switches directly from this state to a finite-voltage MAR branch. A quasistatic overdamped RSJ treatment predicts low-voltage running states that are not occupied experimentally.
+% Third, the sharpest finite-voltage transitions cannot be reproduced completely by stationary, energy-independent MAR. Their proximity to the \(2\Delta/ne\) scales suggests that they are connected to the opening of new MAR orders. However, neither phenomenological threshold corrections nor an instantaneous nonlinear RCSJ–MAR model provide a satisfactory microscopic explanation.
+% The preferred empirical description is therefore
+% \[
+% \boxed{
+% \text{three-component stationary MAR running branch}
+% +
+% \text{independently observed phase-locked switching boundary}.
+% }
+% \]A complete microscopic description of the remaining abrupt transitions would likely require either energy-dependent scattering, time-dependent MAR with quasiparticle memory, or a frequency-dependent electromagnetic environment.
+
