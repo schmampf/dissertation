@@ -53,6 +53,20 @@
 
     \subsubsection*{Coupling Parameter}
 
+        In contrast to the tunnel-junction calibration, the irradiated atomic contact curves cannot be fitted with a single complete PAT model because quasiparticle transport, MAR, and the zero-bias Cooper pair contribution coexist. I therefore use a self-referenced PAT approximation to estimate the coupling and assume the familiar linear relation $A=\eta A_\mathrm{out}$.
+
+        The measured unirradiated conductance is then used as the undriven characteristic in the Tien--Gordon transformation from Eq.~\eqref{eq:micro:pat-iv}. This construction is self-contained because it does not require a separate microscopic fit of the static or irradiated curves. It preserves the measured line shape and asks which value of $\eta$ best reproduces its photon-assisted replicas over the complete amplitude sweep. I perform the comparison in \textit{dI--dV}, which suppresses the approximately voltage-independent excess current and emphasizes the replicated spectral features. The map is dominated by quasiparticle PAT, so I use the transferred charge $q=e$. A trial coupling $\eta$ therefore gives
+        \begin{align}
+            G_\mathrm{test}\!\left(\eta, A_\mathrm{out}, V\right) 
+            &= \sum_{n=-\infty}^{\infty}
+                        J_n^2\!\left(\frac{q\eta A_\mathrm{out}}{h\nu}\right)
+                        G_\mathrm{exp}\!\left(V - \frac{n h\nu}{q}, A=0\right)\,,
+            \label{eq:ac:photon-assisted-transport:coupling:dG}\\
+            \chi^2\!(\eta) &= \left\langle\left(G_\mathrm{test}\!(\eta, A_\mathrm{out}, V)-G_\mathrm{exp}\!(A_\mathrm{out}, V)\right)^2\right\rangle_{(A_\mathrm{out}, V)}\,.
+            \label{eq:ac:photon-assisted-transport:coupling:chi}
+        \end{align}
+        The objective averages the squared deviation over the complete amplitude and voltage map. Narrow MAR and zero-bias features are not expected to follow the charge-$e$ transformation exactly, but they occupy a smaller part of the map than the quasiparticle replicas and therefore do not set the fitted coupling.
+
         \begin{wrapfigure}[11]{r}{1.4in}
             \captionsetup{format=plain}%
             \centering
@@ -64,21 +78,6 @@
             }
             \label{fig:ac:contact1:eta}
         \end{wrapfigure}
-
-        The nominal source amplitude $A_\mathrm{out}$ does not equal the ac voltage across the contact because the microwave line, stripline, and junction environment introduce frequency-dependent attenuation and voltage division. I therefore write the junction amplitude as $A=\eta A_\mathrm{out}$ and determine the coupling parameter $\eta$ from the measured microwave-amplitude sweep.
-
-        The calibration uses the broad photon-assisted quasiparticle structure, which dominates the measured \textit{dI--dV} map of contact 1. I apply the Tien--Gordon transformation from Eq.~\eqref{eq:micro:pat-iv} directly to the unirradiated conductance trace. Using the measured trace as the reference retains its experimental line shape and avoids introducing additional static-fit parameters. Working with conductance also suppresses the approximately voltage-independent excess-current contribution while emphasizing the replicated spectral features. For quasiparticle transport the transferred charge is $q=e$, so a trial coupling $\eta$ gives
-        \begin{align}
-            G_\mathrm{test}\!\left(\eta, A_\mathrm{out}, V\right) 
-            &= \sum_{n=-\infty}^{\infty}
-                        J_n^2\!\left(\frac{q\eta A_\mathrm{out}}{h\nu}\right)
-                        G_\mathrm{exp}\!\left(V - \frac{n h\nu}{q}, A=0\right)\,,
-            \label{eq:ac:photon-assisted-transport:coupling:dG}\\
-            \chi^2\!(\eta) &= \left\langle\left(G_\mathrm{test}\!(\eta, A_\mathrm{out}, V)-G_\mathrm{exp}\!(A_\mathrm{out}, V)\right)^2\right\rangle_{(A_\mathrm{out}, V)}\,.
-            \label{eq:ac:photon-assisted-transport:coupling:chi}
-        \end{align}
-        The objective averages the squared deviation over the complete amplitude and voltage map. Narrow MAR and zero-bias features are not expected to follow the charge-$e$ transformation exactly, but they occupy a smaller part of the map than the quasiparticle replicas and therefore do not set the fitted coupling. For measurements dominated instead by Cooper-pair replicas, the same procedure must use $q=2e$.
-
         I minimize Eq.~\eqref{eq:ac:photon-assisted-transport:coupling:chi} with a gradient-based optimizer. This continuous optimization is more efficient than a dense grid search because each objective evaluation transforms the complete measurement map and the minimum is narrow. The independently sampled objective landscape in Fig.~\ref{fig:ac:contact1:eta} is not the fit procedure itself. It visualizes the wider parameter range and confirms that the optimizer converges to the clear global minimum. For contact 1, this gives
         \begin{align}
             \nu = 15.0\,\mathrm{GHz}\, &&
@@ -86,7 +85,7 @@
             \label{eq:ac:contact1:eta}
         \end{align}
 
-        This calibration replaces the hardware-dependent source setting by the effective amplitude at the contact. The coupling parameters obtained for all irradiated contacts are summarized in Table~\ref{table:ac:coupling-parameter} in Appendix~\ref{appendix:coupling-and-pincode}.
+        This calibration replaces the hardware-dependent source setting by the effective amplitude at the contact. The coupling parameters obtained for all irradiated contacts are summarized in Table~\ref{table:ac:coupling-parameter} in Appendix~\ref{appendix:ac:coupling}.
 
     \subsubsection*{Photon-Assisted Multiple Andreev Reflection}
 
@@ -116,16 +115,14 @@
         i define weights such:
         \begin{align}
             w_m(V)=\exp\!\left(-\left(\frac{2\Delta_0/|eV|-m}{2}\right)^2\right)\,,&&
-            \sum_{m=0}^M w_m(V) + w_\infty(V)\overset{!}{=}1\,.
+            \sum_{m=0}^\infty w_m(V)\overset{!}{=}1\,.
         \end{align}
 
         Notice, that the weights are gaussian distributions on the inverse voltage scale. $w_\infty$ denotes the region of higher orders and might remain unused. $w_0$ is artificially created here and is merged into $w_1$, since quasiparticle transport is dominant at $eV>2\Delta$.
 
         With these weights i can define:
         \begin{align}
-            \mathrm{d}G_m\!(V) &= w_m(V) \cdot \mathrm{d}G\!(V)\,, &&
-            \mathrm{d}G\!(V) := \tfrac{\mathrm{d}I}{\mathrm{d}V}\!(V)\,, \\
-            I_m\!(V) &= \int \mathrm{d}V \mathrm{d}G_m\!(V)\,, &&
+            I_m\!(V) = \int w_m(V)\, \tfrac{\mathrm{d}I}{\mathrm{d}V}\!(V)\, \mathrm{d}V\,, &&
             I_m\!(0) \overset{!}{=} 0 \, .
         \end{align}
         as shown in \ref{fig:ac:pamar-weights}.
@@ -147,7 +144,7 @@
 
         why use differential conductance you might ask and not the current?
         \begin{align}
-            \mathrm{d}G_m = w_m \cdot \mathrm{d}G + I \cdot \tfrac{\mathrm{d}}{\mathrm{d}V}w_m\!(V)
+            \tfrac{\mathrm{d}}{\mathrm{d}V}(w_m \cdot I) = \tfrac{\mathrm{d}I}{\mathrm{d}V}\cdot w_m + I \cdot \tfrac{\mathrm{d}}{\mathrm{d}V}w_m
         \end{align}
         Here the derivative of the weight adds up another term.
 
