@@ -89,43 +89,29 @@
 
     \subsubsection*{Photon-Assisted Multiple Andreev Reflection}
 
+        The calibrated \textit{dI--dV} map contains several families of photon-assisted features. Replicas emerge from the quasiparticle threshold at $e|V|=2\Delta_0$ and from the subgap MAR thresholds near $e|V|=2\Delta_0/m$. I first ask whether the charge-resolved dc currents obtained from full counting statistics can be used directly in the unified charge-dependent Tien--Gordon expression of Eq.~\eqref{eq:meso:pamar-current}.
 
-        In order to understand this, we need the unified tien gordon equation (Eq.~\ref{eq:meso:pamar-current}).
+        This is the natural microscopic starting point because the FCS decomposition assigns a current $I_m(V)$ to transfer events with effective charge $me$. Dressing each $I_m(V)$ with the corresponding Bessel argument and voltage spacing then introduces no additional charge assignment. The center panel of Fig.~\ref{fig:ac:contact1:exp-pamar}, however, shows that this direct construction does not reproduce the measured sideband pattern.
 
-        The first obvious test is, if the charge resolved currents from Full counting statistics could provide us with those. As one can easily see, this doesn't work out very well unfortunately. as shown in figure \ref{fig:ac:contact1:sim-img}(c).
-
-        if we look at the charge resolved pamar contributions in figure \ref{fig:ac:contact1:pamarm}(a). It becomes obvious, that not just the dominant positive conductance gets replicated, but also the nearby negative conductance.
-        
         \begin{figure}[t]
             \centering
-            \subfigure[
-                FCS charge components
-                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{fcsm.pgf}}
-            \subfigure[
-                Threshold-weighted components
-                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{pamarm.pgf}}
+            \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{exp-pamar.pgf}
             \caption{
-                Charge-resolved contributions to the photon-assisted MAR model of contact 1. Each row shows the summed response and the components assigned to effective charge orders $m=1$ to $4$. (a) Direct dressing of the dc FCS components replicates both positive and nearby negative \textit{dI--dV} contributions and does not reproduce the measured map. (b) Decomposing the static \textit{dI--dV} around the MAR thresholds before applying the charge-dependent dressing suppresses this mixing and isolates the sidebands associated with each threshold. All panels use the calibrated $15.0\,\mathrm{GHz}$ drive amplitude.
+                Test of the photon-assisted MAR construction for contact 1 at $\nu=15.0\,\mathrm{GHz}$. The left panel shows the measured \textit{dI--dV} map. The center panel applies charge-dependent Tien--Gordon dressing directly to the dc FCS components. It does not reproduce the measured sideband pattern because positive and neighboring negative conductance contributions are replicated with the same effective charge. The right panel instead dresses components localized around the MAR thresholds and recovers the principal measured sideband trajectories. All calculations use the calibrated drive amplitude.
             }
-            \label{fig:ac:contact1:pamarm}
+            \label{fig:ac:contact1:exp-pamar}
         \end{figure}
 
-        From here on we need to think about what $I_m$ might actually be. We should think about it such, that it is the transport dominating that threshold, given by the MAR thresholds \eqref{eq:meso:mar-sgs}.
+        The difficulty is not the charge dependence of the Tien--Gordon transformation, but the choice of its input currents. The FCS contributions are charge resolved, but they are not localized exclusively around the corresponding MAR thresholds. Their differential conductance can contain both the dominant positive MAR feature and neighboring negative structure over the same voltage range. Direct photon dressing consequently replicates both contributions with the same effective charge, producing additional features that are absent or substantially weaker in the measurement. The component maps in Fig.~\ref{fig:ac:contact1:pamarm}(a) make this mixing visible.
 
-        i define weights such:
+        I therefore retain the charge-dependent Tien--Gordon transformation but replace the dc FCS currents by phenomenological currents localized around the MAR thresholds in Eq.~\eqref{eq:meso:mar-sgs}. Their starting point is the simulated static MAR current calculated with the pincode in Eq.~\eqref{eq:ac:contact1:pincode}. The natural coordinate for the decomposition is $2\Delta_0/|eV|$, on which the thresholds occur at integer $m$. I define Gaussian weights
         \begin{align}
             w_m(V)=\exp\!\left(-\left(\frac{2\Delta_0/|eV|-m}{2}\right)^2\right)\,,&&
-            \sum_{m=0}^\infty w_m(V)\overset{!}{=}1\,.
+            \sum_{m=0}^{M-1}w_m(V)+w_M(V)\overset{!}{=}1\,.
+            \label{eq:ac:pamar:weights}
         \end{align}
 
-        Notice, that the weights are gaussian distributions on the inverse voltage scale. $w_\infty$ denotes the region of higher orders and might remain unused. $w_0$ is artificially created here and is merged into $w_1$, since quasiparticle transport is dominant at $eV>2\Delta$.
-
-        With these weights i can define:
-        \begin{align}
-            I_m\!(V) = \int w_m(V)\, \tfrac{\mathrm{d}I}{\mathrm{d}V}\!(V)\, \mathrm{d}V\,, &&
-            I_m\!(0) \overset{!}{=} 0 \, .
-        \end{align}
-        as shown in \ref{fig:ac:pamar-weights}.
+        The Tien--Gordon calculation retains only a finite number of explicit MAR orders. As a numerical technicality, $w_M$ is therefore used as a terminal bin that collects all remaining orders not represented individually. The auxiliary contribution $w_0$ is merged into $w_1$ because quasiparticle transport dominates above $e|V|=2\Delta_0$. Figure~\ref{fig:ac:pamar-weights} shows that the same smooth partition appears unequally spaced on the voltage axis but equally spaced on the inverse-voltage coordinate.
 
         \begin{figure}[t]
             \centering
@@ -137,141 +123,165 @@
                 Inverse-voltage representation
             ]{\import{atomic_contact/pamar-weights}{1_V.pgf}}
             \caption{
-                Phenomenological weights used to decompose the static \textit{dI--dV} by MAR threshold. (a) On the voltage axis, each $w_m(V)$ selects the vicinity of $e|V|=2\Delta_0/m$, while $w_1$ contains the quasiparticle region above $2\Delta_0$ and $w_\infty$ collects unresolved higher orders near zero bias. (b) On the inverse-voltage axis, the finite-order weights form equally spaced Gaussians centered at integer $m$. The weights are normalized to unity at every voltage before constructing the effective currents $I_m(V)$.
+                Phenomenological weights used to decompose the simulated static MAR \textit{dI--dV} by threshold. (a) On the voltage axis, each $w_m(V)$ selects the vicinity of $e|V|=2\Delta_0/m$, while $w_1$ contains the quasiparticle region above $2\Delta_0$ and the terminal weight $w_M$ collects all remaining higher orders near zero bias. (b) On the inverse-voltage axis, the explicitly resolved weights form equally spaced Gaussians centered at integer $m$. The weights are normalized to unity at every voltage before constructing the effective currents $I_m(V)$.
             }
             \label{fig:ac:pamar-weights}
         \end{figure}
 
-        why use differential conductance you might ask and not the current?
+        I apply the weights to the differential conductance of the simulated static MAR current and reconstruct an effective current for each threshold,
         \begin{align}
-            \tfrac{\mathrm{d}}{\mathrm{d}V}(w_m \cdot I) = \tfrac{\mathrm{d}I}{\mathrm{d}V}\cdot w_m + I \cdot \tfrac{\mathrm{d}}{\mathrm{d}V}w_m
+            I_m(V) = \int w_m(V)\,\tfrac{\mathrm{d}I}{\mathrm{d}V}(V)\,\mathrm{d}V\,, &&
+            I_m(0)=0\,.
+            \label{eq:ac:pamar:effective-current}
         \end{align}
-        Here the derivative of the weight adds up another term.
+        Partitioning \textit{dI--dV} rather than multiplying the current directly avoids an artificial boundary term. In the latter construction,
+        \begin{equation}
+            \tfrac{\mathrm{d}}{\mathrm{d}V}\!\left(w_m\,I\right)
+            =w_m\tfrac{\mathrm{d}I}{\mathrm{d}V}+I\tfrac{\mathrm{d}}{\mathrm{d}V}w_m\,,
+            \label{eq:ac:pamar:current-weight-derivative}
+        \end{equation}
+        so the derivative of the weight would generate artificial conductance structure that is not present in the simulated static MAR spectrum.
 
-        With the unified tien gordon equation we can simulate the map as shown in \ref{fig:ac:contact1:sim-img}(e).
-
-        The pamar contributions by threshold are shown in figure \ref{fig:ac:contact1:pamarm}(b).
-
-    \subsubsection*{Photon Assisted Incoherent Cooper Pair Tunneling}
-
-        Now we can take a closer look at the replicas caused by the zero bias peak. A direct test if the zero bias peak is caused by phase coherent shapiro peaks or incoherent cooper pair tunneling, is to check the amplitude of the replicas.
-
-        one would expect a simple bessel like behavior for shapiro steps \ref{eq:macro:shapiro-iv} and a bessel square behaviour, as in \ref{eq:stochastic:icpt:current}.
-
-        Cuts along the amplitude axis highlight the icpt like behavior as shown in fig \ref{fig:ac:contact1:didv-cuts}(a).
-
-        Overall we can check for single line cuts as shown in fig \ref{fig:ac:contact1:didv-cuts}(a) are validating our theory against the experiment.
-
-        However for high amplitudes the line shape is not reproduced adequatly, however this deviations are minor and we can confidently claim a good overall agreement. (for contact1)
-
-        linecuts in a are strong proof for Icpt.
-        \begin{figure}[t]
-            \centering
-            \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{amplitude-cuts.pgf}
-            \caption{
-                Line-cut comparison between the measured \textit{dI--dV} of contact 1 and the photon-assisted models at $\nu=15.0\,\mathrm{GHz}$. Amplitude cuts follow the central feature and its first three photon replicas, $n=0,\pm1,\pm2,\pm3$. Their evolution is closer to the squared-Bessel PAICPT prediction than to the ideal coherent Shapiro response. 
-            }
-            \label{fig:ac:contact1:didv-cuts}
-        \end{figure}
-
-
-    \subsubsection*{Compare exp and theory}
-
-        look how beautiful experiment and simulation agree
-        \begin{figure}[t]
-            \centering
-            \subfigure[
-                \textit{dI--dV}
-                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGcomp.pgf}}
-            \hfill
-            \subfigure[
-                \textit{dV--dI}
-                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcomp.pgf}}
-            \caption{
-                Microwave response of the moderate-transmission contact 1 at $\nu=15.0\,\mathrm{GHz}$. (a) Measured and simulated \textit{dI--dV} maps. (b) The \textit{dV--dI} representation provides a complementary view of the same photon-assisted quasiparticle, MAR, and zero-bias-derived features. The model reproduces the main sideband trajectories and spectral-weight redistribution over the calibrated amplitude range.
-            }
-            \label{fig:ac:contact1:comparison}
-        \end{figure}
-
-        Strongest proof are residuals \ref{fig:ac:contact1:model-comparison}.
-
-
-
-    \subsection*{Validation for contact2}
-    \begin{align}
-        \{\tau_i\} = \{0.997, 0.440, 0.184, 0.184, 0.182\}\,, &&
-        G_\mathrm{N} = 1.987\,G_0\,.
-        \label{eq:ac:contact2:pincode}
-    \end{align}
-
-        \singlefitfigure{atomic_contact/2.4G0/15.0GHz_stripline/mar_fit}{
-            Static transport of contact 2 and multichannel MAR fit. The nearly ballistic leading channel produces a stronger excess current and sharper subgap structure than in contact 1. The simultaneous comparison of \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} establishes the undriven reference used for the photon-assisted calculation.
-        }{fig:ac:contact2:mar-fit}
+        I then use the effective currents from Eq.~\eqref{eq:ac:pamar:effective-current} in the unified Tien--Gordon expression. Figure~\ref{fig:ac:contact1:pamarm}(b) shows the resulting contributions by threshold. Their sum gives the right panel of Fig.~\ref{fig:ac:contact1:exp-pamar} and reproduces the principal quasiparticle and MAR sideband trajectories without the mixing produced by direct FCS dressing.
 
         \begin{figure}[t]
             \centering
             \subfigure[
-                \textit{dI--dV}
-                ]{\import{atomic_contact/2.4G0/15.0GHz_stripline/didv-img}{dGcomp.pgf}}
-            \hfill
+                FCS charge components
+                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{fcsm.pgf}}
             \subfigure[
-                \textit{dV--dI}
-                ]{\import{atomic_contact/2.4G0/15.0GHz_stripline/didv-img}{dRcomp.pgf}}
+                Threshold-weighted components
+                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{pamarm.pgf}}
             \caption{
-                Microwave response of the high-transmission contact 2 at $\nu=15.0\,\mathrm{GHz}$. (a) Measured and simulated \textit{dI--dV} maps. (b) The \textit{dV--dI} comparison emphasizes the subgap ridges generated by the nearly ballistic channel. The charge-dependent replica model reproduces the principal dispersing features and their amplitude evolution, while residual differences indicate structure not captured by the threshold-weighted stationary model.
+                Charge-resolved contributions to the photon-assisted MAR model of contact 1. Each row shows the summed response and the components assigned to effective charge orders $m=1$ to $4$. (a) Direct dressing of the dc FCS components replicates positive and neighboring negative \textit{dI--dV} contributions with the same effective charge. (b) Decomposing the simulated static MAR \textit{dI--dV} around the thresholds before applying the charge-dependent dressing suppresses this mixing and isolates the sidebands associated with each threshold. All panels use the calibrated $15.0\,\mathrm{GHz}$ drive amplitude.
             }
-            \label{fig:ac:contact2:comparison}
+            \label{fig:ac:contact1:pamarm}
         \end{figure}
 
-    \begin{figure}[p]
-        \centering
-        \subfigure[
-            \textit{dI--dV}
-            ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGcombined.pgf}}
-        \hfill
-        \subfigure[
-            \textit{dV--dI}
-            ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcombined.pgf}}
-        \subfigure[
-            \textit{dI--dV} residual
-            ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGdiff.pgf}}
-        \hfill
-        \subfigure[
-            \textit{dV--dI} residual
-            ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRdiff.pgf}}
-        \caption{
-            Comparison of four photon-assisted models for contact 1 at $\nu=15.0\,\mathrm{GHz}$. The (a) \textit{dI--dV} and (b) \textit{dV--dI} maps combine either PAICPT or an ideal Shapiro response with either threshold-weighted PAMAR or direct dressing of the FCS components. The PAICPT plus threshold-weighted PAMAR model retains the measured zero-bias-derived sidebands while avoiding the additional coherent Shapiro structure and the mixing produced by direct FCS dressing.
-            Residual maps for the four model combinations in Fig.~\ref{fig:ac:contact1:model}. The (a) \textit{dI--dV} and (b) \textit{dV--dI} residuals compare each calculation with the measurement of contact 1. The PAICPT plus threshold-weighted PAMAR combination gives the least structured residual over most of the map, while coherent Shapiro response and direct FCS dressing leave pronounced deviations near zero bias and the MAR sidebands.
-        }
-        \label{fig:ac:contact1:model-comparison}
-    \end{figure}
+        This threshold-weighted PAMAR construction is a phenomenological stationary replica model. It assigns the simulated static MAR structure near each threshold to its nominal effective charge order, but it does not replace a microscopic Floquet calculation of irradiated MAR. In particular, it neglects coherent interference between driven MAR paths, irradiation-induced changes of the contact occupations, and nonequilibrium redistribution at high drive. Within these limits, it provides a transparent description of the principal finite-bias replicas. The narrow replicas originating from the zero-bias feature require the separate Cooper-pair contribution considered next.
 
-    \clearpage
-    \section{Supplementary: Photon Assisted Transport}
-    \label{sec:ac:supplementary-photon-assisted-transport}
+    % \subsubsection*{Photon Assisted Incoherent Cooper Pair Tunneling}
 
 
-    \begin{figure}
-        \centering
-        \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{voltage-cuts-m.pgf}
-        \caption{
-            Charge-order decomposition of voltage cuts through the microwave-driven \textit{dI--dV} of contact 1 at $\nu=15.0\,\mathrm{GHz}$. The six panels show increasing reduced drive amplitude from $eA/h\nu=0$ to $5$. Measured positive- and negative-bias branches are compared with the composite simulation, its PAICPT contribution, the summed threshold-weighted PAMAR response, and the individual PAMAR components $m=1$ to $5$. The dominant charge order shifts toward larger $m$ as the relevant subgap threshold approaches zero bias.
-        }
-        \label{fig:ac:contact1:iv-cuts}
-    \end{figure}
+
+    %     Now we can take a closer look at the replicas caused by the zero bias peak. A direct test if the zero bias peak is caused by phase coherent shapiro peaks or incoherent cooper pair tunneling, is to check the amplitude of the replicas.
+
+    %     one would expect a simple bessel like behavior for shapiro steps \ref{eq:macro:shapiro-iv} and a bessel square behaviour, as in \ref{eq:stochastic:icpt:current}.
+
+    %     Cuts along the amplitude axis highlight the icpt like behavior as shown in fig \ref{fig:ac:contact1:didv-cuts}(a).
+
+    %     Overall we can check for single line cuts as shown in fig \ref{fig:ac:contact1:didv-cuts}(a) are validating our theory against the experiment.
+
+    %     However for high amplitudes the line shape is not reproduced adequatly, however this deviations are minor and we can confidently claim a good overall agreement. (for contact1)
+
+    %     linecuts in a are strong proof for Icpt.
+    %     \begin{figure}[t]
+    %         \centering
+    %         \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{amplitude-cuts.pgf}
+    %         \caption{
+    %             Line-cut comparison between the measured \textit{dI--dV} of contact 1 and the photon-assisted models at $\nu=15.0\,\mathrm{GHz}$. Amplitude cuts follow the central feature and its first three photon replicas, $n=0,\pm1,\pm2,\pm3$. Their evolution is closer to the squared-Bessel PAICPT prediction than to the ideal coherent Shapiro response. 
+    %         }
+    %         \label{fig:ac:contact1:didv-cuts}
+    %     \end{figure}
+
+
+    % \subsubsection*{Compare exp and theory}
+
+    %     look how beautiful experiment and simulation agree
+    %     \begin{figure}[t]
+    %         \centering
+    %         \subfigure[
+    %             \textit{dI--dV}
+    %             ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGcomp.pgf}}
+    %         \hfill
+    %         \subfigure[
+    %             \textit{dV--dI}
+    %             ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcomp.pgf}}
+    %         \caption{
+    %             Microwave response of the moderate-transmission contact 1 at $\nu=15.0\,\mathrm{GHz}$. (a) Measured and simulated \textit{dI--dV} maps. (b) The \textit{dV--dI} representation provides a complementary view of the same photon-assisted quasiparticle, MAR, and zero-bias-derived features. The model reproduces the main sideband trajectories and spectral-weight redistribution over the calibrated amplitude range.
+    %         }
+    %         \label{fig:ac:contact1:comparison}
+    %     \end{figure}
+
+    %     Strongest proof are residuals \ref{fig:ac:contact1:model-comparison}.
+
+
+
+    % \subsection*{Validation for contact2}
+    % \begin{align}
+    %     \{\tau_i\} = \{0.997, 0.440, 0.184, 0.184, 0.182\}\,, &&
+    %     G_\mathrm{N} = 1.987\,G_0\,.
+    %     \label{eq:ac:contact2:pincode}
+    % \end{align}
+
+    %     \singlefitfigure{atomic_contact/2.4G0/15.0GHz_stripline/mar_fit}{
+    %         Static transport of contact 2 and multichannel MAR fit. The nearly ballistic leading channel produces a stronger excess current and sharper subgap structure than in contact 1. The simultaneous comparison of \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} establishes the undriven reference used for the photon-assisted calculation.
+    %     }{fig:ac:contact2:mar-fit}
+
+    %     \begin{figure}[t]
+    %         \centering
+    %         \subfigure[
+    %             \textit{dI--dV}
+    %             ]{\import{atomic_contact/2.4G0/15.0GHz_stripline/didv-img}{dGcomp.pgf}}
+    %         \hfill
+    %         \subfigure[
+    %             \textit{dV--dI}
+    %             ]{\import{atomic_contact/2.4G0/15.0GHz_stripline/didv-img}{dRcomp.pgf}}
+    %         \caption{
+    %             Microwave response of the high-transmission contact 2 at $\nu=15.0\,\mathrm{GHz}$. (a) Measured and simulated \textit{dI--dV} maps. (b) The \textit{dV--dI} comparison emphasizes the subgap ridges generated by the nearly ballistic channel. The charge-dependent replica model reproduces the principal dispersing features and their amplitude evolution, while residual differences indicate structure not captured by the threshold-weighted stationary model.
+    %         }
+    %         \label{fig:ac:contact2:comparison}
+    %     \end{figure}
+
+    % \begin{figure}[p]
+    %     \centering
+    %     \subfigure[
+    %         \textit{dI--dV}
+    %         ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGcombined.pgf}}
+    %     \hfill
+    %     \subfigure[
+    %         \textit{dV--dI}
+    %         ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcombined.pgf}}
+    %     \subfigure[
+    %         \textit{dI--dV} residual
+    %         ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGdiff.pgf}}
+    %     \hfill
+    %     \subfigure[
+    %         \textit{dV--dI} residual
+    %         ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRdiff.pgf}}
+    %     \caption{
+    %         Comparison of four photon-assisted models for contact 1 at $\nu=15.0\,\mathrm{GHz}$. The (a) \textit{dI--dV} and (b) \textit{dV--dI} maps combine either PAICPT or an ideal Shapiro response with either threshold-weighted PAMAR or direct dressing of the FCS components. The PAICPT plus threshold-weighted PAMAR model retains the measured zero-bias-derived sidebands while avoiding the additional coherent Shapiro structure and the mixing produced by direct FCS dressing.
+    %         Residual maps for the four model combinations in Fig.~\ref{fig:ac:contact1:model}. The (a) \textit{dI--dV} and (b) \textit{dV--dI} residuals compare each calculation with the measurement of contact 1. The PAICPT plus threshold-weighted PAMAR combination gives the least structured residual over most of the map, while coherent Shapiro response and direct FCS dressing leave pronounced deviations near zero bias and the MAR sidebands.
+    %     }
+    %     \label{fig:ac:contact1:model-comparison}
+    % \end{figure}
+
+    % \clearpage
+    % \section{Supplementary: Photon Assisted Transport}
+    % \label{sec:ac:supplementary-photon-assisted-transport}
+
+
+    % \begin{figure}
+    %     \centering
+    %     \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{voltage-cuts-m.pgf}
+    %     \caption{
+    %         Charge-order decomposition of voltage cuts through the microwave-driven \textit{dI--dV} of contact 1 at $\nu=15.0\,\mathrm{GHz}$. The six panels show increasing reduced drive amplitude from $eA/h\nu=0$ to $5$. Measured positive- and negative-bias branches are compared with the composite simulation, its PAICPT contribution, the summed threshold-weighted PAMAR response, and the individual PAMAR components $m=1$ to $5$. The dominant charge order shifts toward larger $m$ as the relevant subgap threshold approaches zero bias.
+    %     }
+    %     \label{fig:ac:contact1:iv-cuts}
+    % \end{figure}
     
-    \transportlandscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{cal}{
-        Calibrated microwave-amplitude landscape of contact 1 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns display the same measurement as heat maps, surfaces, and representative waterfall cuts. Photon-assisted replicas emerge from the quasiparticle and MAR thresholds, while narrow features originating from the zero-bias peak disperse across the reduced-amplitude axis $eA/h\nu$.
-    }{fig:ac:contact1:cal}
+    % \transportlandscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{cal}{
+    %     Calibrated microwave-amplitude landscape of contact 1 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns display the same measurement as heat maps, surfaces, and representative waterfall cuts. Photon-assisted replicas emerge from the quasiparticle and MAR thresholds, while narrow features originating from the zero-bias peak disperse across the reduced-amplitude axis $eA/h\nu$.
+    % }{fig:ac:contact1:cal}
 
-    \transportlandscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{sim}{
-        Simulated microwave-amplitude landscape of contact 1 at $\nu=15.0\,\mathrm{GHz}$. The calculation combines threshold-weighted PAMAR with PAICPT using the calibrated drive amplitude and the static transport parameters of contact 1. The three representations reproduce the principal sideband trajectories and spectral-weight redistribution observed in Fig.~\ref{fig:ac:contact1:cal}, while smaller line-shape differences remain at high drive.
-    }{fig:ac:contact1:sim}
+    % \transportlandscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{sim}{
+    %     Simulated microwave-amplitude landscape of contact 1 at $\nu=15.0\,\mathrm{GHz}$. The calculation combines threshold-weighted PAMAR with PAICPT using the calibrated drive amplitude and the static transport parameters of contact 1. The three representations reproduce the principal sideband trajectories and spectral-weight redistribution observed in Fig.~\ref{fig:ac:contact1:cal}, while smaller line-shape differences remain at high drive.
+    % }{fig:ac:contact1:sim}
 
-    \transportlandscapefigure{atomic_contact/2.4G0/15.0GHz_stripline}{cal}{
-        Calibrated microwave-amplitude landscape of the high-transmission contact 2 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations emphasize the strong subgap response associated with the nearly ballistic leading channel. With increasing $eA/h\nu$, the quasiparticle and MAR structures develop photon-assisted replicas and redistribute spectral weight over the bias range.
-    }{fig:ac:contact2:cal}
+    % \transportlandscapefigure{atomic_contact/2.4G0/15.0GHz_stripline}{cal}{
+    %     Calibrated microwave-amplitude landscape of the high-transmission contact 2 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations emphasize the strong subgap response associated with the nearly ballistic leading channel. With increasing $eA/h\nu$, the quasiparticle and MAR structures develop photon-assisted replicas and redistribute spectral weight over the bias range.
+    % }{fig:ac:contact2:cal}
 
-    \transportlandscapefigure{atomic_contact/2.4G0/15.0GHz_stripline}{sim}{
-        Simulated microwave-amplitude landscape of contact 2 at $\nu=15.0\,\mathrm{GHz}$. The charge-dependent replica model uses the calibrated drive amplitude and the static MAR reference of the high-transmission contact. It captures the main amplitude-dependent subgap ridges visible in Fig.~\ref{fig:ac:contact2:cal}, although residual structure indicates limitations of the stationary threshold-weighted description near the most nonlinear features.
-    }{fig:ac:contact2:sim}
+    % \transportlandscapefigure{atomic_contact/2.4G0/15.0GHz_stripline}{sim}{
+    %     Simulated microwave-amplitude landscape of contact 2 at $\nu=15.0\,\mathrm{GHz}$. The charge-dependent replica model uses the calibrated drive amplitude and the static MAR reference of the high-transmission contact. It captures the main amplitude-dependent subgap ridges visible in Fig.~\ref{fig:ac:contact2:cal}, although residual structure indicates limitations of the stationary threshold-weighted description near the most nonlinear features.
+    % }{fig:ac:contact2:sim}
