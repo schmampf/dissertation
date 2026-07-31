@@ -53,9 +53,21 @@
 
     \subsubsection*{Coupling Parameter}
 
-        For atomic contacts we yet use another ansatz to solve the problem of a calibrated amplitude at the junction. We take advantage of, that the maps are usually dominated by single quasiparticle processes. So we can take the unirradiated curve as input for the tien gordon modell, and get a good appproximation of the coupling parameter.
+        \begin{wrapfigure}[11]{r}{1.4in}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-1em}
+            \import{atomic_contact/1.8G0/15.0GHz_stripline}{eta_fit.pgf}
+            \vspace{-1.5em}
+            \caption{
+                Coupling calibration for contact 1 at 15\,GHz.
+            }
+            \label{fig:ac:contact1:eta}
+        \end{wrapfigure}
 
-        To determine the coupling parameter, one can use the Tien Gordon Model as in Eq.~\eqref{eq:micro:pat-iv}. The same formula holds true for the conductance. This is specially helpfull, since we get rid of excess current, that might change and can track the PAT features, that are mostly dominant. by plugging in different etas we can minimize the deviation of the whole measuremnt set
+        The nominal source amplitude $A_\mathrm{out}$ does not equal the ac voltage across the contact because the microwave line, stripline, and junction environment introduce frequency-dependent attenuation and voltage division. I therefore write the junction amplitude as $A=\eta A_\mathrm{out}$ and determine the coupling parameter $\eta$ from the measured microwave-amplitude sweep.
+
+        The calibration uses the broad photon-assisted quasiparticle structure, which dominates the measured \textit{dI--dV} map of contact 1. I apply the Tien--Gordon transformation from Eq.~\eqref{eq:micro:pat-iv} directly to the unirradiated conductance trace. Using the measured trace as the reference retains its experimental line shape and avoids introducing additional static-fit parameters. Working with conductance also suppresses the approximately voltage-independent excess-current contribution while emphasizing the replicated spectral features. For quasiparticle transport the transferred charge is $q=e$, so a trial coupling $\eta$ gives
         \begin{align}
             G_\mathrm{test}\!\left(\eta, A_\mathrm{out}, V\right) 
             &= \sum_{n=-\infty}^{\infty}
@@ -65,26 +77,16 @@
             \chi^2\!(\eta) &= \left\langle\left(G_\mathrm{test}\!(\eta, A_\mathrm{out}, V)-G_\mathrm{exp}\!(A_\mathrm{out}, V)\right)^2\right\rangle_{(A_\mathrm{out}, V)}\,.
             \label{eq:ac:photon-assisted-transport:coupling:chi}
         \end{align}
-        normally maps get dominated by the PAT feature so $q=e$, however sometimes by cooper-pair transport, then we have to use $q=2e$.
+        The objective averages the squared deviation over the complete amplitude and voltage map. Narrow MAR and zero-bias features are not expected to follow the charge-$e$ transformation exactly, but they occupy a smaller part of the map than the quasiparticle replicas and therefore do not set the fitted coupling. For measurements dominated instead by Cooper-pair replicas, the same procedure must use $q=2e$.
 
-        \begin{wrapfigure}[11]{r}{1.4in}
-            \captionsetup{format=plain}%
-            \centering
-            \import{atomic_contact/1.8G0/15.0GHz_stripline}{eta_fit.pgf}
-            \caption{
-                Coupling calibration for contact 1 at 15\,GHz.
-            }
-            \label{fig:ac:contact1:eta}
-        \end{wrapfigure}
-        For contact1, we get a coupling parameter for the stripline of 
+        I minimize Eq.~\eqref{eq:ac:photon-assisted-transport:coupling:chi} with a gradient-based optimizer. This continuous optimization is more efficient than a dense grid search because each objective evaluation transforms the complete measurement map and the minimum is narrow. The independently sampled objective landscape in Fig.~\ref{fig:ac:contact1:eta} is not the fit procedure itself. It visualizes the wider parameter range and confirms that the optimizer converges to the clear global minimum. For contact 1, this gives
         \begin{align}
             \nu = 15.0\,\mathrm{GHz}\, &&
             \eta = 0.006179(16)\,.
             \label{eq:ac:contact1:eta}
         \end{align}
-        Figure \ref{eq:ac:contact1:eta} shows the calculated $\chi$ over a long strech and shows a clear global minimum.
 
-        A summary of all the coupling parameter is shown in table \ref{table:ac:coupling-parameter} in the appendix \ref{appendix:coupling-and-pincode}
+        This calibration replaces the hardware-dependent source setting by the effective amplitude at the contact. The coupling parameters obtained for all irradiated contacts are summarized in Table~\ref{table:ac:coupling-parameter} in Appendix~\ref{appendix:coupling-and-pincode}.
 
     \subsubsection*{Photon-Assisted Multiple Andreev Reflection}
 
