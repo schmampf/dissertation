@@ -157,6 +157,21 @@
         \titlespacing*{\chapter}{0pt}{25pt}{12.5pt}%
     }
 
+    % Format appendix sections like subsections while retaining section
+    % semantics and numbering, for example "A.1 Tunnel Regime".
+    \newcommand{\useappendixsectionstyle}{%
+        \titleformat{\section}%
+        {\selectfontsize{12pt}\sffamily\gdef\chapterlabel{}}%
+        {\gdef\chapterlabel{\thesection}}%
+        {0pt}%
+        {\ifx\chapterlabel\empty
+            \seeblauunderline{\textbf{##1}}%
+        \else
+            \seeblauunderline{\textbf{\chapterlabel~##1}}%
+        \fi}%
+        \titlespacing*{\section}{0pt}{20pt}{10pt}%
+    }
+
     % For blank page
         \usepackage{afterpage}
         \newcommand\blankpage{
