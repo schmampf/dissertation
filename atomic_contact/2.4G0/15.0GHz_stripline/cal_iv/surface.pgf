@@ -410,8 +410,8 @@
 \pgftext[x=2.034432in,y=0.950000in,,,rotate=88.223288]{\color{textcolor}{\sffamily\fontsize{7.000000}{8.400000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$eI\,/\,\Delta_0 G_\mathrm{N}$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.252778in}{0.231944in}%
-\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.561389in,height=1.363889in]{\detokenize{atomic_contact/2.4G0/15.0GHz_stripline/cal_iv/surface-img0.png}}}%
+\pgfsys@transformshift{0.253056in}{0.231944in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=1.561111in,height=1.363889in]{\detokenize{atomic_contact/2.4G0/15.0GHz_stripline/cal_iv/surface-img0.png}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%

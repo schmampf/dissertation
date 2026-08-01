@@ -96,3 +96,47 @@
             \end{tabular}
         \end{table}
 
+\clearpage
+%=========================================================
+\section{Supplementary Photon-Assisted Transport}
+\label{appendix:ac:photon-assisted-transport}
+%=========================================================
+
+    This appendix collects the detailed model decompositions and complete transport landscapes supporting Sec.~\ref{subsec:ac:photon-assisted-transport}. The compact figures in the main text establish the model choices and principal comparison, while the figures below retain the full voltage, amplitude, and representation dependence of the data.
+
+    \subsection{Charge-Order and Model Decomposition}
+    \label{subsec:appendix:ac:photon-assisted-transport:decomposition}
+
+        Figure~\ref{fig:ac:contact1:voltage-cuts} resolves the threshold-weighted PAMAR contributions at fixed amplitudes. Figure~\ref{fig:ac:contact1:model-comparison} provides the complete model-selection test by comparing the four combinations of the two MAR constructions and the two Cooper-pair responses.
+
+        \begin{figure}[t]
+            \centering
+            \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{voltage-cuts-m.pgf}
+            \caption{Charge-order decomposition of voltage cuts through the microwave-driven \textit{dI--dV} of contact 1 at $\nu=15.0\,\mathrm{GHz}$. The six panels show increasing reduced drive amplitude from $eA/h\nu=0$ to $5$. Measured positive- and negative-bias branches are compared with the composite simulation, its PAICPT contribution, the summed threshold-weighted PAMAR response, and the individual PAMAR components $m=1$ to $5$. The dominant charge order shifts toward larger $m$ as the relevant subgap threshold approaches zero bias.}
+            \label{fig:ac:contact1:voltage-cuts}
+        \end{figure}
+
+        \begin{figure}[p]
+            \centering
+            \subfigure[\textit{dI--dV}]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGcombined.pgf}}
+            \hfill
+            \subfigure[\textit{dV--dI}]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcombined.pgf}}
+            \subfigure[\textit{dI--dV} residual]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGdiff.pgf}}
+            \hfill
+            \subfigure[\textit{dV--dI} residual]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRdiff.pgf}}
+            \caption{Comparison of four photon-assisted models for contact 1 at $\nu=15.0\,\mathrm{GHz}$. The calculated (a) \textit{dI--dV} and (b) \textit{dV--dI} maps combine either PAICPT or an ideal coherent Shapiro response with either threshold-weighted PAMAR or direct dressing of the FCS components. Panels (c) and (d) show the corresponding residuals relative to the measurement. The PAICPT plus threshold-weighted PAMAR combination gives the least structured residual in both representations. Direct FCS dressing leaves pronounced deviations along the MAR sidebands, while the coherent Shapiro model does not reproduce the amplitude evolution of the zero-bias-derived replicas. All four calculations use the same calibrated drive amplitude and static contact parameters.}
+            \label{fig:ac:contact1:model-comparison}
+        \end{figure}
+
+    \subsection{Complete Transport Landscapes}
+    \label{subsec:appendix:ac:photon-assisted-transport:landscapes}
+
+        The measured and simulated landscapes for contact 1 are shown in Figs.~\ref{fig:ac:contact1:cal} and \ref{fig:ac:contact1:sim}. Figures~\ref{fig:ac:contact2:cal} and \ref{fig:ac:contact2:sim} provide the corresponding PAMAR-only validation for contact 2 and expose the different low-voltage amplitude evolution discussed in the main text.
+
+        \transportlandscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{cal}{Calibrated microwave-amplitude landscape of contact 1 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns display the same measurement as heat maps, surfaces, and representative waterfall cuts. Photon-assisted replicas emerge from the quasiparticle and MAR thresholds, while narrow features originating from the zero-bias peak disperse across the reduced-amplitude axis $eA/h\nu$.}{fig:ac:contact1:cal}
+
+        \transportlandscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{sim}{Simulated microwave-amplitude landscape of contact 1 at $\nu=15.0\,\mathrm{GHz}$. The calculation combines threshold-weighted PAMAR with PAICPT using the calibrated drive amplitude and the static transport parameters of contact 1. The three representations reproduce the principal sideband trajectories and spectral-weight redistribution observed in Fig.~\ref{fig:ac:contact1:cal}, while smaller line-shape differences remain at high drive.}{fig:ac:contact1:sim}
+
+        \transportlandscapefigure{atomic_contact/2.4G0/15.0GHz_stripline}{cal}{Calibrated microwave-amplitude landscape of contact 2 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations show the strong subgap response of the nearly ballistic leading channel. The measured low-voltage features exhibit an amplitude dependence that is not fully captured by the PAMAR-only simulation in Fig.~\ref{fig:ac:contact2:sim}.}{fig:ac:contact2:cal}
+
+        \transportlandscapefigure{atomic_contact/2.4G0/15.0GHz_stripline}{sim}{PAMAR-only microwave-amplitude landscape of contact 2 at $\nu=15.0\,\mathrm{GHz}$. The calculation uses the calibrated drive amplitude and the simulated static MAR current obtained from Eq.~\eqref{eq:ac:contact2:pincode}. It reproduces the dominant quasiparticle and MAR structure over the full bias and amplitude range, but assigns too much of the zero-voltage response to MAR and therefore misses the measured low-voltage amplitude evolution in Fig.~\ref{fig:ac:contact2:cal}.}{fig:ac:contact2:sim}
