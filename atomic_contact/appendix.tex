@@ -18,25 +18,31 @@
     %     bla blab la
     % }{fig:ac:0.05G0:15.0GHz_stripline:exp}
 
-    % \transportlandscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{cal}{
-    %     bla blab la
-    % }{fig:ac:0.05G0:15.0GHz_stripline:cal}
+    \transportlandscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{cal}{
+        bla blab la
+    }{fig:ac:0.05G0:15.0GHz_stripline:cal}
 
-    % \transportlandscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{sim}{
-    %     bla blab la
-    % }{fig:ac:0.05G0:15.0GHz_stripline:sim}
+    \transportlandscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{sim}{
+        bla blab la
+    }{fig:ac:0.05G0:15.0GHz_stripline:sim}
 
-\section{Coupling and Pincodes of Sample AC}
+\section{Supplementary Photon-Assisted Transport}
+\label{appendix:ac:photon-assisted-transport}
 \label{appendix:ac:coupling}
 
-        as in the mesoscopic pincode subsection, we assume minimal temperature and dynes-parameter
+    This appendix documents the complete set of atomic contacts included in the photon-assisted transport analysis and provides the detailed model decompositions and transport landscapes supporting Sec.~\ref{subsec:ac:photon-assisted-transport}. Tables~\ref{table:ac:pincodes} and \ref{table:ac:coupling-parameter} summarize the static MAR parameters and microwave coupling values used across this set.
+
+    \subsection{Pincodes and Microwave Coupling}
+    \label{subsec:appendix:ac:photon-assisted-transport:parameters}
+
+        As in the mesoscopic pincode analysis, I assume the minimum temperature and Dynes parameter
         \begin{align}
             T = 0\,\mathrm{K}\, &&
             \gamma = 1\,\mathrm{neV}.
             \label{eq:ac:photon-assisted-transport:assumptions}
         \end{align}
 
-        For the pincodes of the irradiated junctions, the gap and voltage noice parameter are kept free.
+        For the pincodes of the irradiated junctions, the gap and voltage-noise parameters remain free.
 
         Here they cluster around
         \begin{align}
@@ -47,7 +53,7 @@
 
         \begin{table}[t]
             \centering
-            \caption{mesoscopic pincodes}
+            \caption{Static MAR parameters and mesoscopic pincodes of the atomic contacts included in the photon-assisted transport analysis.}
             \label{table:ac:pincodes}
             \begin{tabular}{r|l|l|l}
                 $G_\mathrm{N}\,(G_0)$ & $\Delta_0\,(\mathrm{ueV})$ & $\sigma_V\,(\mathrm{uV})$ & $\{\tau_i\}$ \\\hline
@@ -65,7 +71,7 @@
 
         \begin{table}[t]
             \centering
-            \caption{coupling parameter of all available measurements}
+            \caption{Microwave coupling parameters of the atomic-contact measurements included in the photon-assisted transport analysis.}
             \label{table:ac:coupling-parameter}
             \begin{tabular}{c|c|c|c|c}
                 $G_\mathrm{N}\,(G_0)$ & $m$ & $\nu\,(\mathrm{GHz})$ & $\eta_\mathrm{antenna}\ (10^{-3})$ & $\eta_\mathrm{stripline}\ (10^{-3})$ \\\hline
@@ -96,13 +102,8 @@
             \end{tabular}
         \end{table}
 
-\clearpage
-%=========================================================
-\section{Supplementary Photon-Assisted Transport}
-\label{appendix:ac:photon-assisted-transport}
-%=========================================================
 
-    This appendix collects the detailed model decompositions and complete transport landscapes supporting Sec.~\ref{subsec:ac:photon-assisted-transport}. The compact figures in the main text establish the model choices and principal comparison, while the figures below retain the full voltage, amplitude, and representation dependence of the data.
+    The compact figures in the main text establish the model choices using the two representative contacts. The following figures retain the detailed charge-order decomposition and the complete voltage, amplitude, and representation dependence of the data.
 
     \subsection{Charge-Order and Model Decomposition}
     \label{subsec:appendix:ac:photon-assisted-transport:decomposition}
