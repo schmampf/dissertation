@@ -4,36 +4,34 @@
 \label{appendix:ac}
 %=========================================================
 
-%=========================================================
-\section{Tunnel Regime}
-\label{appendix:ac:tunneling}
-%=========================================================
+% %=========================================================
+% \section{Tunnel Regime}
+% \label{appendix:ac:tunneling}
+% %=========================================================
 
-    Control experiment, we can observe Tien Gordon PAT
-    We can observe onset of AR,
-    however no visible PAMAR yet.
-    Live is easy.
+%     Control experiment, we can observe Tien Gordon PAT
+%     We can observe onset of AR,
+%     however no visible PAMAR yet.
+%     Live is easy.
 
-    % \transportlandscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{exp}{
-    %     bla blab la
-    % }{fig:ac:0.05G0:15.0GHz_stripline:exp}
+%     % \transportlandscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{exp}{
+%     %     bla blab la
+%     % }{fig:ac:0.05G0:15.0GHz_stripline:exp}
 
-    \transportlandscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{cal}{
-        bla blab la
-    }{fig:ac:0.05G0:15.0GHz_stripline:cal}
+%     \transportlandscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{cal}{
+%         bla blab la
+%     }{fig:ac:0.05G0:15.0GHz_stripline:cal}
 
-    \transportlandscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{sim}{
-        bla blab la
-    }{fig:ac:0.05G0:15.0GHz_stripline:sim}
+%     \transportlandscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{sim}{
+%         bla blab la
+%     }{fig:ac:0.05G0:15.0GHz_stripline:sim}
 
-\section{Supplementary Photon-Assisted Transport}
-\label{appendix:ac:photon-assisted-transport}
-\label{appendix:ac:coupling}
+    \newpage
+    \section{Supplementary Photon-Assisted Transport}
+    \label{appendix:ac:photon-assisted-transport}
+    \label{appendix:ac:coupling}
 
-    This appendix documents the complete set of atomic contacts included in the photon-assisted transport analysis and provides the detailed model decompositions and transport landscapes supporting Sec.~\ref{subsec:ac:photon-assisted-transport}. Tables~\ref{table:ac:pincodes} and \ref{table:ac:coupling-parameter} summarize the static MAR parameters and microwave coupling values used across this set.
-
-    \subsection{Pincodes and Microwave Coupling}
-    \label{subsec:appendix:ac:photon-assisted-transport:parameters}
+        This appendix documents the complete set of atomic contacts included in the photon-assisted transport analysis and provides the detailed model decompositions and transport landscapes supporting Sec.~\ref{subsec:ac:photon-assisted-transport}. Tables~\ref{table:ac:pincodes} and \ref{table:ac:coupling-parameter} summarize the static MAR parameters and microwave coupling values used across this set.
 
         As in the mesoscopic pincode analysis, I assume the minimum temperature and Dynes parameter
         \begin{align}
@@ -51,11 +49,16 @@
             \label{eq:ac:photon-assisted-transport:parameter}
         \end{align}
 
-        \begin{table}[t]
+        The compact figures in the main text establish the model choices using the two representative contacts. Figure~\ref{fig:ac:contact1:voltage-cuts} resolves the threshold-weighted PAMAR contributions at fixed amplitudes, while Fig.~\ref{fig:ac:contact1:model-comparison} provides the complete model-selection test by comparing the four combinations of the two MAR constructions and the two Cooper-pair responses. The remaining figures retain the complete voltage, amplitude, and representation dependence of the data.
+
+        The measured and simulated landscapes for contact 1 are shown in Figs.~\ref{fig:ac:contact1:cal} and \ref{fig:ac:contact1:sim}. Figures~\ref{fig:ac:contact2:cal} and \ref{fig:ac:contact2:sim} provide the corresponding PAMAR-only validation for contact 2 and expose the different low-voltage amplitude evolution discussed in the main text.
+
+        \begin{table}[p]
             \centering
             \caption{Static MAR parameters and mesoscopic pincodes of the atomic contacts included in the photon-assisted transport analysis.}
             \label{table:ac:pincodes}
-            \begin{tabular}{r|l|l|l}
+            \vspace{1em}
+            \begin{tabular}{l|l|l|l}
                 $G_\mathrm{N}\,(G_0)$ & $\Delta_0\,(\mathrm{ueV})$ & $\sigma_V\,(\mathrm{uV})$ & $\{\tau_i\}$ \\\hline
                 $0.050$ & $192.0$ & $19.5$ & $\{0.045, 0.001, 0.001, 0.001, 0.001, 0.001\}$ \\ % 0.05 G0
                 $0.794$ & $190.5$ & $12.5$ & $\{0.682, 0.112\}$\\ % 0.8 G0
@@ -64,51 +67,42 @@
                 $1.987$ & $191.0$ & $11.5$ & $\{0.997, 0.440, 0.184, 0.184, 0.182\}$ \\ % 2.4 G0
                 $1.992$ & $190.5$ & $10.5$ & $\{0.780, 0.672, 0.266, 0.263, 0.011\}$ \\ % 2.1 G0
                 $2.035$ & $189.5$ &  $4.5$ & $\{0.988, 0.655, 0.272, 0.120\}$\\ % 1.9 G0
-                $2.819$ & $190.5$ & $8.0$ & $\{0.834, 0.747, 0.444, 0.383, 0.269, 0.142\}$ \\ % 4.3 G0
-                $2.822$ & $190.5$ & $8.0$ & $\{0.846, 0.735, 0.504, 0.289, 0.284, 0.164\}$ \\ % 3.6 G0
+                $2.819$ & $190.5$ &  $8.0$ & $\{0.834, 0.747, 0.444, 0.383, 0.269, 0.142\}$ \\ % 4.3 G0
+                $2.822$ & $190.5$ &  $8.0$ & $\{0.846, 0.735, 0.504, 0.289, 0.284, 0.164\}$ \\ % 3.6 G0
             \end{tabular}
-        \end{table}
-
-        \begin{table}[t]
-            \centering
+            \vspace{.25in}
             \caption{Microwave coupling parameters of the atomic-contact measurements included in the photon-assisted transport analysis.}
             \label{table:ac:coupling-parameter}
-            \begin{tabular}{c|c|c|c|c}
-                $G_\mathrm{N}\,(G_0)$ & $m$ & $\nu\,(\mathrm{GHz})$ & $\eta_\mathrm{antenna}\ (10^{-3})$ & $\eta_\mathrm{stripline}\ (10^{-3})$ \\\hline
-                0.050 & 1 & 15.0 &  -         &  5.803(1)  \\
-                0.794 & 1 &  7.8 &  9.680(19) &  8.403(9)  \\
-                      & 1 & 15.0 &  6.556(13) &  7.085(13) \\
-                      & 1 & 19.3 &  5.677(15) &  7.763(18) \\
-                0.926 & 1 & 15.0 &  -         &  7.785(12) \\
-                1.757 & 1 & 15.0 &  6.643(17) &  6.179(16) \\
-                1.987 & 1 &  7.8 &  -         &  6.079(7)  \\
-                      & 1 & 15.0 &  -         &  5.230(12) \\
-                      & 1 & 19.3 &  -         &  5.421(15) \\
-                1.992 & 1 &  7.8 & 10.580(10) &  7.120(7)  \\
-                      & 1 & 15.0 &  6.465(11) &  6.939(11) \\
-                      & 1 & 19.3 &  5.758(19) &  7.521(22) \\
-                2.035 & 1 &  7.8 &  9.188(11) &  6.148(6)  \\
-                      & 1 & 15.0 &  5.146(7)  &  5.293(6)  \\
-                      & 1 & 19.3 &  3.633(16) &  4.924(14) \\
-                2.819 & 1 &  7.8 &  -         &  7.645(11) \\
-                      & 1 & 15.0 &  -         &  7.345(16) \\
-                      & 1 & 19.3 &  -         &  7.472(17) \\
-                2.822 & 1 &  7.8 &  -         &  5.409(3)  \\
-                      & 1 & 15.0 &  -         &  5.081(6)  \\
-                      & 1 & 19.3 &  -         &  5.100(7)  \\
+            \vspace{1em}
+            \begin{tabular}{l|l|l|l}
+                $G_\mathrm{N}\,(G_0)$ & $\nu\,(\mathrm{GHz})$ & $\eta_\mathrm{antenna}\ (10^{-3})$ & $\eta_\mathrm{stripline}\ (10^{-3})$ \\\hline
+                $0.050$ & $15.0$ &  -           &  $5.803(1) $ \\
+                $0.794$ & $ 7.8$ &  $9.680(19)$ &  $8.403(9) $ \\
+                        & $15.0$ &  $6.556(13)$ &  $7.085(13)$ \\
+                        & $19.3$ &  $5.677(15)$ &  $7.763(18)$ \\
+                $0.926$ & $15.0$ &  -           &  $7.785(12)$ \\
+                $1.757$ & $15.0$ &  $6.643(17)$ &  $6.179(16)$ \\
+                $1.987$ & $ 7.8$ &  -           &  $6.079(7) $ \\
+                        & $15.0$ &  -           &  $5.230(12)$ \\
+                        & $19.3$ &  -           &  $5.421(15)$ \\
+                $1.992$ & $ 7.8$ & $10.580(10)$ &  $7.120(7) $ \\
+                        & $15.0$ & $ 6.465(11)$ &  $6.939(11)$ \\
+                        & $19.3$ & $ 5.758(19)$ &  $7.521(22)$ \\
+                $2.035$ & $ 7.8$ & $ 9.188(11)$ &  $6.148(6) $ \\
+                        & $15.0$ & $ 5.146(7) $ &  $5.293(6) $ \\
+                        & $19.3$ & $ 3.633(16)$ &  $4.924(14)$ \\
+                $2.819$ & $ 7.8$ &  -           &  $7.645(11)$ \\
+                        & $15.0$ &  -           &  $7.345(16)$ \\
+                        & $19.3$ &  -           &  $7.472(17)$ \\
+                $2.822$ & $ 7.8$ &  -           &  $5.409(3) $ \\
+                        & $15.0$ &  -           &  $5.081(6) $ \\
+                        & $19.3$ &  -           &  $5.100(7) $ \\
                 % 30.0  & 2 &  7.8 &  8.108(4)  &  6.566(3)  \\
                 %       & 2 & 15.0 &  4.365(3)  &  4.384(3)  \\
                 %       & 2 & 19.3 &  4.200(9)  &  5.682(10) 
             \end{tabular}
         \end{table}
 
-
-    The compact figures in the main text establish the model choices using the two representative contacts. The following figures retain the detailed charge-order decomposition and the complete voltage, amplitude, and representation dependence of the data.
-
-    \subsection{Charge-Order and Model Decomposition}
-    \label{subsec:appendix:ac:photon-assisted-transport:decomposition}
-
-        Figure~\ref{fig:ac:contact1:voltage-cuts} resolves the threshold-weighted PAMAR contributions at fixed amplitudes. Figure~\ref{fig:ac:contact1:model-comparison} provides the complete model-selection test by comparing the four combinations of the two MAR constructions and the two Cooper-pair responses.
 
         \begin{figure}[t]
             \centering
@@ -128,11 +122,6 @@
             \caption{Comparison of four photon-assisted models for contact 1 at $\nu=15.0\,\mathrm{GHz}$. The calculated (a) \textit{dI--dV} and (b) \textit{dV--dI} maps combine either PAICPT or an ideal coherent Shapiro response with either threshold-weighted PAMAR or direct dressing of the FCS components. Panels (c) and (d) show the corresponding residuals relative to the measurement. The PAICPT plus threshold-weighted PAMAR combination gives the least structured residual in both representations. Direct FCS dressing leaves pronounced deviations along the MAR sidebands, while the coherent Shapiro model does not reproduce the amplitude evolution of the zero-bias-derived replicas. All four calculations use the same calibrated drive amplitude and static contact parameters.}
             \label{fig:ac:contact1:model-comparison}
         \end{figure}
-
-    \subsection{Complete Transport Landscapes}
-    \label{subsec:appendix:ac:photon-assisted-transport:landscapes}
-
-        The measured and simulated landscapes for contact 1 are shown in Figs.~\ref{fig:ac:contact1:cal} and \ref{fig:ac:contact1:sim}. Figures~\ref{fig:ac:contact2:cal} and \ref{fig:ac:contact2:sim} provide the corresponding PAMAR-only validation for contact 2 and expose the different low-voltage amplitude evolution discussed in the main text.
 
         \transportlandscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{cal}{Calibrated microwave-amplitude landscape of contact 1 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns display the same measurement as heat maps, surfaces, and representative waterfall cuts. Photon-assisted replicas emerge from the quasiparticle and MAR thresholds, while narrow features originating from the zero-bias peak disperse across the reduced-amplitude axis $eA/h\nu$.}{fig:ac:contact1:cal}
 
