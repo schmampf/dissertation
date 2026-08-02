@@ -1,10 +1,10 @@
 % !TEX root = ../thesis.tex
 %=========================================================
-\subsection{Subharmonic Features and High Conductivity}
+\subsection{Subharmonic Features in a High-Conductance Contact}
 \label{subsec:ac:subharmonic}
 %=========================================================
 
-    I measured contact 3 after reclosing the mechanically controllable break junction. The resulting contact reached a normal-state conductance of approximately $29\,G_0$, indicating transport through many contributing channels rather than a small, individually resolvable pincode. This high-conductance regime differs substantially from the few-channel contacts considered in the preceding section. Its static and irradiated transport exhibits pronounced subgap structure and additional replicas beyond the standard PAMAR and PAICPT descriptions introduced above.
+    I measured contact 3 after reclosing the mechanically controllable break junction. The resulting contact reached a conductance of approximately $29\,G_0$, indicating transport through many contributing channels rather than a small, individually resolvable pincode. This high-conductance regime differs substantially from the few-channel contacts considered in the preceding section. Its static and irradiated transport exhibits pronounced subgap structure and additional replicas beyond the standard PAMAR and PAICPT descriptions introduced above.
 
     \subsubsection*{Series Resistance Correction}
 
@@ -30,7 +30,7 @@
 
     \subsubsection*{Static \textit{I--V} Description}
 
-        The unirradiated \textit{I--V} characteristic combines a zero-voltage branch up to approximately $404\,\mathrm{nA}$, pronounced subgap structure, and several abrupt voltage changes. After correcting the series resistance and voltage offset, I compared the characteristic with short-junction multiple-Andreev-reflection (MAR) calculations. Fits using individual transmission channels, randomly generated pincodes, grouped channels, and a continuous transmission distribution were considered. The large normal-state conductance of approximately $29\,G_0$ made a unique channel-by-channel pincode inaccessible.
+        The unirradiated \textit{I--V} characteristic combines a zero-voltage branch up to approximately $404\,\mathrm{nA}$, pronounced subgap structure, and several abrupt voltage changes. After correcting the series resistance and voltage offset, I compared the characteristic with short-junction multiple-Andreev-reflection (MAR) calculations. Fits using individual transmission channels, randomly generated pincodes, grouped channels, and a continuous transmission distribution were considered. The large conductance of approximately $29\,G_0$ made a unique channel-by-channel pincode inaccessible.
 
         The expected MAR thresholds do not coincide exactly with the measured \textit{dI--dV} maxima, as shown in Fig.~\ref{fig:ac:contact3:mar-fit}. Most orders are slightly displaced, and no distinct feature appears at the fourth-order threshold. I could not reproduce this combination of displaced and missing structure using any of the tested transmission distributions.
 
@@ -44,14 +44,14 @@
 
     \subsubsection*{Phenomenological Replica Description}
 
-        Since no microscopic model reproduced the static characteristic convincingly, I used the measured static \textit{I--V} directly as the input for a phenomenological description of the irradiated transport. The complete measured landscape is shown in Fig.~\ref{fig:ac:contact3:cal}. Replicas originating from the quasiparticle branch and the static subgap structure are described using the threshold-weighted PAMAR procedure introduced in Sec.~\ref{subsec:ac:photon-assisted-transport}. This approach preserves the measured step-like line shape instead of replacing it with a simulated MAR characteristic.
+        Since no microscopic model reproduced the static characteristic convincingly, I used the measured static \textit{I--V} directly as the input for a phenomenological description of the irradiated transport. The complete measured landscape is shown in Appendix Fig.~\ref{fig:ac:contact3:cal}. Replicas originating from the quasiparticle branch and the static subgap structure are described using the threshold-weighted PAMAR procedure introduced in Sec.~\ref{subsec:ac:photon-assisted-transport}. This approach preserves the measured step-like line shape instead of replacing it with a simulated MAR characteristic.
 
         The replicas originating near zero voltage require an additional contribution. Some follow the conventional Cooper-pair spacing $h\nu/(2e)$, while further trajectories appear halfway between them. I parameterized both sets by
         \begin{align}
             V_{n,p} = \frac{n}{p}\,\frac{h\nu}{2e}\,,
             \label{eq:ac:contact3:fractional-replicas}
         \end{align}
-        where $p=1$ gives the conventional spacing and $p=2$ generates the intermediate trajectories. In a coherent Josephson picture, the latter could be associated with fractional Shapiro steps produced by a nonsinusoidal current--phase relation. The present analysis instead extends the incoherent replica construction used above. This extension is empirical. In particular, the $p=2$ term behaves mathematically like an effective $4e$ contribution, but it does not by itself establish coherent pair-pair transfer or any other microscopic mechanism.
+        where $p=1$ gives the conventional spacing and $p=2$ generates the intermediate trajectories. In a coherent Josephson picture, the latter could be associated with fractional Shapiro steps produced by a nonsinusoidal current--phase relation, whose single-harmonic step width is given by Eq.~\eqref{eq:meso:shapiro-fractional-width}. The present analysis instead extends the incoherent replica construction used above. This extension is empirical. In particular, the $p=2$ term behaves mathematically like an effective $4e$ contribution, but it does not by itself establish coherent pair-pair transfer or any other microscopic mechanism.
 
         I isolated and integrated the static zero-voltage conductance feature as in Sec.~\ref{subsec:ac:photon-assisted-transport}, obtaining the current $I_0(V)$. I then constructed the irradiated contribution as
         \begin{align}
@@ -103,14 +103,6 @@
             \label{fig:ac:contact3:amplitude-cuts}
         \end{figure}
 
-        The complete measured and reconstructed transport landscapes are shown in Figs.~\ref{fig:ac:contact3:cal} and~\ref{fig:ac:contact3:sim}. The three representations provide the same comparison as heat maps, surfaces, and waterfall cuts over the full calibrated amplitude range.
-
-        \transportlandscapefigure{atomic_contact/43.0G0/19.3GHz_antenna}{cal}{
-            Calibrated microwave-amplitude landscape of contact 3 under antenna irradiation at $\nu=19.3\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns show the measured response as waterfall cuts, surfaces, and heat maps. Increasing the drive produces replicas of the quasiparticle branch and the static subgap structure, together with additional closely spaced features originating near zero voltage.
-        }{fig:ac:contact3:cal}
-
-        \transportlandscapefigure{atomic_contact/43.0G0/19.3GHz_antenna}{sim}{
-            Phenomenological microwave-amplitude landscape of contact 3 at $\nu=19.3\,\mathrm{GHz}$. The calculation uses the measured static \textit{I--V} characteristic as input and combines the weighted PAMAR construction for the finite-bias structure with the phenomenological Cooper-pair replica model. It reproduces the principal replica trajectories and their amplitude evolution in all three transport representations, while differences remain in the sharpness and spectral weight of the low-voltage features observed in Fig.~\ref{fig:ac:contact3:cal}.
-        }{fig:ac:contact3:sim}
+        The complete measured and reconstructed transport landscapes are provided in Appendix~\ref{appendix:ac:subharmonic}, Figs.~\ref{fig:ac:contact3:cal} and~\ref{fig:ac:contact3:sim}. They show the same comparison as heat maps, surfaces, and waterfall cuts over the full calibrated amplitude range.
 
         Taken together, the intermediate trajectories, the overlapping $p=1$ and $p=2$ contributions at the integer positions, and their squared-Bessel-like amplitude dependence consistently point toward a subharmonic PAICPT response. The present phenomenological construction does not provide a precise microscopic model, and it does not establish whether the $p=2$ component originates from incoherent correlated-pair transfer or another mechanism. Nevertheless, conventional PAICPT has been reported only with the usual $h\nu/(2e)$ replica spacing~\cite{roychowdhury_microwave_2015}. To the best of my knowledge, a subharmonic PAICPT response containing the additional $p=2$ structure observed here has not been reported previously. The experimental observation is therefore a result in its own right, independent of the unresolved microscopic interpretation.
