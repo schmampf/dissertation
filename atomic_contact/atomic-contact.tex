@@ -5,47 +5,31 @@
 \label{sec:atomic-contacts}
 %=========================================================
 
-    \subsubsection*{TODO}
-        This page is a Draft.
+    The tunnel junctions considered in the preceding section realize a fixed weak-transmission reference. A mechanically controllable break junction extends this picture by allowing the same aluminum constriction to be tuned from a many-channel metallic connection through few-channel atomic configurations and finally into the tunnel regime. The normal-state conductance gives only the sum of the transmission probabilities. In the superconducting state, multiple Andreev reflection produces a nonlinear subgap spectrum that depends on the individual transmission eigenvalues. The central purpose of this section is therefore to use superconducting transport to follow how the mesoscopic channel composition changes as the junction is opened, and to determine how this channel-dependent transport responds to microwave irradiation.
 
     \begin{wrapfigure}[13]{r}{40mm}
         \captionsetup{format=plain}%
         \centering
-        \vspace{-1.5em}
+        \vspace{-1.0em}
         {
             \fontsize{7}{9}\selectfont
             \import{tunnelbarrier/samples}{AC.pdf_tex}
         }
         \vspace{-1.5em}
         \caption{
-            SEM image of sample `AC'. $80\,\mathrm{nm}$ of Al.
+            SEM image of the mechanically controllable break-junction sample AC. The aluminum film is $80\,\mathrm{nm}$ thick.
         }
         \label{fig:ac:image-AC}
     \end{wrapfigure}
 
-    Mesurements were performed on sample AC, shown in Fig \ref{fig:ac:image-AC}. Also known as PR-22e-09. Setup used as in Patrick Raif and Martin Presel. Data aquisition as described in Sec. \ref{sec:methods:ditigal}. All microwave irradiation experiments shown in this section are done in corporation with Patrikc Raif during his Master's Thesis.
+    I performed these measurements on sample AC\footnote{In the lab book AC is called `PR-22e-09'.}, shown in Fig.~\ref{fig:ac:image-AC}. The device was fabricated as an aluminum mechanically controllable break junction and measured with the cryogenic and electrical setup described in Sec.~\ref{sec:methods:setup}. I denote the four selected configurations C0--C3. The synchronized acquisition and evaluation procedure is described in Sec.~\ref{sec:methods:digital}. The microwave measurements presented in Secs.~\ref{subsec:ac:photon-assisted-transport} and \ref{subsec:ac:subharmonic} were carried out together with Patrick Raif during his master's project, which also included extensive characterization of the unbroken device and the installed microwave paths \cite{raif_electronic_2024}.
 
-    We did a lot of characterization of the unbroken device, shown in Patrick Raif. However no effects of microwave irradiation has been measured. However we could measure magnet transport shown in Appendix~\ref{appendix:magneto-transport}.
-    
-    % tunnel limit
-    The samples gap and critical temperature are 
-    \begin{align}
-        G_\mathrm{N} = 0.0138(1)\,G_0\,, &&
-        \Delta_0 = 188.5(5)\,\mathrm{ueV}\,,\\
-        T_\mathrm{c} = 1.21(1)\,\mathrm{K}\,, &&
-        \mu_0H_\mathrm{c} = 28(1)\,\mathrm{mT}\,.
-    \end{align}
-    Critical temperature infered by Delta is $1.24$, whats close enough.
-    The gap could be estimated by the fits in \ref{subsec:ac:pincode}, and their clustering value. Measurements in the tunnel limit, that could be fitted with the bcs theory confirm this gap. The critcal temperature is retrieved by a temperature study on the same contact in the tunnel limit.
-    
-    % josephson Junction 
-    The sample in the unbroken state was characterized with Patrick and is described in \cite{raif_electronic_2024}. The order parameter in the unbroken state were found to be
-    \begin{align}
-        G_\mathrm{N} \geq 550\,G_0\,, &&
-        I_\mathrm{sw} = 1.075(5)\,\mathrm{mA}\,, \\
-        I_\mathrm{rt} = 0.595(5)\,\mathrm{mA}\,, &&
-        \mu_0H_\mathrm{c} = 9.9(1)\,\mathrm{mT}\,.
-    \end{align}
-    Critical- / Switching current and normal state conductance strongly depend the state of the break junction.
+    Before discussing finite-transmission transport, I characterized a tunnel-regime configuration denoted C0. Its temperature dependence provides independent superconducting energy scales, while irradiation recovers conventional Tien--Gordon photon-assisted quasiparticle tunneling. A weak subgap contribution marks the onset of Andreev reflection but does not form a separately resolved photon-assisted MAR pattern. Because C0 serves primarily as a control between the oxide tunnel barriers and the finite-transmission contacts, its complete characterization is collected in Appendix~\ref{appendix:ac:tunneling}.
 
+    In Sec.~\ref{subsec:ac:pincode}, I first follow the mesoscopic pincode $\{\tau_i\}$ along a complete opening trace. Channel-resolved MAR fits distinguish changes of the individual transmissions that remain hidden in the total normal-state conductance. The extracted channels evolve continuously along conductance plateaus and reorganize at abrupt jumps. I use the tunnel decay after rupture to establish an approximate relative displacement scale and compare the resulting channel evolution with plausible aluminum contact geometries. This comparison constrains the transition from a few-atom constriction to a tunnel junction, although the transport data do not determine a unique microscopic atomic structure.
 
+    Section~\ref{subsec:ac:photon-assisted-transport} then examines microwave-driven transport in two few-channel contacts with contrasting pincodes. The measured response contains replicas associated with the quasiparticle threshold, the MAR structure, and a narrow zero-bias Cooper-pair contribution. I calibrate the effective drive amplitude from the transport data and test how these components must be treated within a common description. Threshold-weighted photon-assisted MAR captures the dominant finite-bias trajectories, while photon-assisted incoherent Cooper-pair tunneling describes the zero-bias-derived replicas when that contribution can be separated. The comparison between a moderate-transmission contact and a contact with a nearly ballistic leading channel tests both the useful range and the low-voltage limitations of this construction.
+
+    Finally, Sec.~\ref{subsec:ac:subharmonic} considers C3 after the junction was reclosed into a high-conductance state. Many channels contribute in this regime, so a unique channel-by-channel pincode cannot be extracted. The static characteristic also contains sharp subgap features that are not reproduced convincingly by the tested conventional MAR descriptions. I therefore use the measured static response as the input for a phenomenological replica model under irradiation. This procedure reproduces the principal amplitude-dependent structures and exposes additional fractional trajectories, but it does not assign them a unique microscopic origin. C3 consequently marks the point at which the controlled few-channel description gives way to a more complex many-channel response.
+
+    Magnetic field was the remaining control parameter applied systematically to the different contact states. I measured field sweeps for the unbroken device and C0--C3. These measurements document the suppression of the supercurrent, quasiparticle gap, and subharmonic structure and provide empirical critical-field scales. They are not required for the microwave models developed here and are therefore presented together in Appendix~\ref{sec:appendix:ac:magnetic-field}. The three subsections below thus follow the junction across increasing model complexity, from channel-resolved static transport, through photon-assisted few-channel transport, to the phenomenological high-conductance regime.
