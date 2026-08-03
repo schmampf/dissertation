@@ -1,10 +1,10 @@
 % !TEX root = ../thesis.tex
 %=========================================================
-\subsection{Subharmonic Features in a High-Conductance Contact}
+\subsection{Subharmonic Transport at High Conductance}
 \label{subsec:ac:subharmonic}
 %=========================================================
 
-    I measured contact 3 after reclosing the mechanically controllable break junction. The resulting contact reached a conductance of approximately $29\,G_0$, indicating transport through many contributing channels rather than a small, individually resolvable pincode. This high-conductance regime differs substantially from the few-channel contacts considered in the preceding section. Its static and irradiated transport exhibits pronounced subgap structure and additional replicas beyond the standard PAMAR and PAICPT descriptions introduced above.
+    I measured C3 after reclosing the mechanically controllable break junction. The resulting contact reached a conductance of approximately $29\,G_0$, indicating transport through many contributing channels rather than a small, individually resolvable pincode. This high-conductance regime differs substantially from the few-channel contacts considered in the preceding section. Its static and irradiated transport exhibits pronounced subgap structure and additional replicas beyond the standard PAMAR and PAICPT descriptions introduced above.
 
     \subsubsection*{Series Resistance Correction}
 
@@ -35,7 +35,7 @@
         The expected MAR thresholds do not coincide exactly with the measured \textit{dI--dV} maxima, as shown in Fig.~\ref{fig:ac:contact3:mar-fit}. Most orders are slightly displaced, and no distinct feature appears at the fourth-order threshold. I could not reproduce this combination of displaced and missing structure using any of the tested transmission distributions.
 
         \singlefitfigure{atomic_contact/43.0G0/19.3GHz_antenna/mar_fit}{
-            Series-resistance-corrected static transport of contact 3. The panels show the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics. Gray lines mark the expected MAR voltages \(V_m=2\Delta_0/(me)\). The conductance features are displaced from several of these thresholds, and no distinct feature coincides with the fourth-order threshold. The sharp, step-like characteristic therefore cannot be described convincingly by a conventional multichannel MAR model.
+            Series-resistance-corrected static transport of C3. The panels show the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics. Gray lines mark the expected MAR voltages \(V_m=2\Delta_0/(me)\). The conductance features are displaced from several of these thresholds, and no distinct feature coincides with the fourth-order threshold. The sharp, step-like characteristic therefore cannot be described convincingly by a conventional multichannel MAR model.
         }{fig:ac:contact3:mar-fit}
 
         I then tested whether the zero-voltage and resistive branches could be described within a common Josephson--MAR model. Adding a separate current from Andreev bound states did not improve the description, while overdamped and time-dependent RCSJ variants produced low-voltage states and plateaus that were not observed experimentally. Treating the measured switching boundary separately and using effective distributions with two or three channel groups yielded somewhat better agreement with the stable resistive branches. The fitted noninteger channel weights, however, cannot be interpreted as a literal pincode.
@@ -86,7 +86,7 @@
                 \textit{dV--dI}
                 ]{\import{atomic_contact/43.0G0/19.3GHz_antenna/didv-img}{dRcomp.pgf}}
             \caption{
-                Measured and simulated microwave response of contact 3 at $\nu=19.3\,\mathrm{GHz}$. Each panel compares the experiment on the left with the phenomenological replica calculation on the right. (a) The \textit{dI--dV} maps show replicas of the quasiparticle branch and the static subgap structure. (b) The corresponding \textit{dV--dI} maps emphasize the sharp current-biased transitions. The calculation combines threshold-weighted PAMAR with the two-component Cooper-pair replica model and uses the measured static characteristic as input. It reproduces the dominant trajectories, while differences remain around the sharpest low-voltage features.
+                Measured and simulated microwave response of C3 at $\nu=19.3\,\mathrm{GHz}$. Each panel compares the experiment on the left with the phenomenological replica calculation on the right. (a) The \textit{dI--dV} maps show replicas of the quasiparticle branch and the static subgap structure. (b) The corresponding \textit{dV--dI} maps emphasize the sharp current-biased transitions. The calculation combines threshold-weighted PAMAR with the two-component Cooper-pair replica model and uses the measured static characteristic as input. It reproduces the dominant trajectories, while differences remain around the sharpest low-voltage features.
             }
             \label{fig:ac:contact3:comparison}
         \end{figure}
@@ -98,7 +98,7 @@
             \import{atomic_contact/43.0G0/19.3GHz_antenna/didv-cuts}{amplitude-cuts.pgf}
             \par
             \caption{
-                Amplitude dependence at the integer replica positions $V_{n,p}$ of contact 3 at $\nu=19.3\,\mathrm{GHz}$. The panels compare the measured positive- and negative-bias branches with the PAMAR background, the two-component phenomenological PAICPT construction, and an ideal Shapiro response. At each integer position, the $p=1$ replica of order $n$ overlaps the $p=2$ replica of order $2n$. Their combined squared-Bessel amplitude dependence follows the measured redistribution more closely than the ideal Shapiro limit, but does not determine the microscopic origin of the $p=2$ component.
+                Amplitude dependence at the integer replica positions $V_{n,p}$ of C3 at $\nu=19.3\,\mathrm{GHz}$. The panels compare the measured positive- and negative-bias branches with the PAMAR background, the two-component phenomenological PAICPT construction, and an ideal Shapiro response. At each integer position, the $p=1$ replica of order $n$ overlaps the $p=2$ replica of order $2n$. Their combined squared-Bessel amplitude dependence follows the measured redistribution more closely than the ideal Shapiro limit, but does not determine the microscopic origin of the $p=2$ component.
             }
             \label{fig:ac:contact3:amplitude-cuts}
         \end{figure}
