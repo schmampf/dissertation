@@ -317,6 +317,19 @@
         \end{landscape}
     }
 
+    \NewDocumentCommand{\transportlandscapefigurehalfpage}{O{0em} m m O{0em} +m m}{%
+        \begin{figure}[t]
+            \centering
+            \vspace*{#1}
+            \resizebox{\linewidth}{!}{\transportpanels{#2}{#3}}%
+            \vspace{#4}
+            \caption{%
+                #5
+                }
+            \label{#6}
+        \end{figure}
+    }
+
     \NewDocumentCommand{\landscapepgffigure}{O{0em} m m +m m}{%
         \begin{landscape}
             \begin{center}
