@@ -330,6 +330,29 @@
         \end{figure}
     }
 
+    \NewDocumentCommand{\landscapefigure}{O{0em} m m O{0em} +m m}{%
+        \begin{figure}[t]
+            \centering%
+            \vspace*{#1}
+            \subfigure[\textit{I--V}]{%
+                \import{#2/#3_iv}{main.pgf}%
+            }%
+            \hfill%
+            \subfigure[\textit{dI--dV}]{%
+                \import{#2/#3_didv}{main.pgf}%
+            }%
+            \hfill%
+            \subfigure[\textit{dV--dI}]{%
+                \import{#2/#3_dvdi}{main.pgf}%
+            }%
+            \vspace{#4}
+            \caption{%
+                #5
+                }
+            \label{#6}
+        \end{figure}
+    }
+
     \NewDocumentCommand{\landscapepgffigure}{O{0em} m m +m m}{%
         \begin{landscape}
             \begin{center}
