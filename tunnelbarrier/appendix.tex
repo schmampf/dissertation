@@ -1,0 +1,90 @@
+% !TEX root = ../thesis.tex
+%=========================================================
+\chapter{Supplementary: Tunnelbarrier}
+\label{appendix:tb}
+%=========================================================
+
+    %=========================================================
+    \section{High-Resolution Characterization}
+    \label{appendix:tb:highres}
+    %=========================================================
+
+    \section{Rectification and Asymmetry}
+    \label{appendix:tb:asym}
+    %=========================================================
+
+
+
+    % \landscapefigure{tunnelbarrier/asym/irradiation/nu_7.75GHz}{cal}{$7.75GHz$}{testexp1}
+    % \landscapefigure{tunnelbarrier/asym/irradiation/nu_7.87GHz}{cal}{$7.87GHz$}{testexp2}
+    % \landscapefigure{tunnelbarrier/asym/irradiation/nu_7.89GHz}{cal}{$7.89GHz$}{testexp3}
+    % \landscapefigure{tunnelbarrier/asym/irradiation/nu_7.91GHz}{cal}{$7.91GHz$}{testexp4}
+    % \landscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{cal}{$7.96GHz$}{testexp5}
+    % \landscapefigure{tunnelbarrier/asym/irradiation/nu_7.97GHz}{cal}{$7.97GHz$}{testexp6}
+    % \landscapefigure{tunnelbarrier/asym/irradiation/nu_8.05GHz}{cal}{$8.05GHz$}{testexp7}
+    % \landscapefigure{tunnelbarrier/asym/irradiation/nu_7.96GHz}{sim}{$7.96GHz$}{testsim5}
+    % \landscapefigure{tunnelbarrier/asym/irradiation/nu_7.97GHz}{sim}{$7.97GHz$}{testsim6}
+
+
+%=========================================================
+\chapter{Coupling and Heating for TB2}
+\label{appendix:coupling-and-heating}
+%=========================================================
+
+    I used the following diagnostic relations to compare microwave coupling and heating across the investigated frequencies:
+    \begin{align}
+        A_\mathrm{fit} &= \eta_{A_\mathrm{out}}^{(A_\mathrm{fit})}\, A_\mathrm{out}\,,\\
+        T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{A_\mathrm{out}}^{(T_\mathrm{fit})}\, A_\mathrm{out}+T_\mathrm{off}\right)\right]\,,\\
+        T_\mathrm{bath} &= \eta_{A_\mathrm{out}}^{(T_\mathrm{bath})}\, A_\mathrm{out}+ \mathrm{const.}\,,\\
+        T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{A_\mathrm{fit}}^{(T_\mathrm{fit})}\, A_\mathrm{fit}+T_\mathrm{off}\right)\right]\,,\\
+        T_\mathrm{bath} &= \eta_{A_\mathrm{fit}}^{(T_\mathrm{bath})}\, A_\mathrm{fit}+ \mathrm{const.}\,,\\
+        T_\mathrm{fit} &= \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{T_\mathrm{bath}}^{(T_\mathrm{fit})}\, T_\mathrm{bath}+T_\mathrm{off}\right)\right]\,.
+        \label{eq:tb:asym:diagnostic-couplings}
+    \end{align}
+
+    The fitted-temperature data formed empirical lower and upper clusters near $T_\mathrm{base}\approx0.47(1)\,\mathrm{K}$ and $T_\mathrm{c}\approx1.29(1)\,\mathrm{K}$. I used these values as the bounds in the clipped temperature relations. The coefficients $\eta$ quantify correlations between the respective coordinates and do not by themselves identify a causal coupling mechanism.
+
+    \begin{figure}[t]
+        \centering
+        \import{tunnelbarrier/asym/irradiation/control}{Tfit_Aout.pgf}
+        \caption{
+            Fitted transport temperature $T_\mathrm{fit}$ as a function of the nominal source amplitude $A_\mathrm{out}$ at selected frequencies. The clipped fits use the empirical bounds identified from the temperature clusters.
+        }
+        \label{fig:tb:asym:control-Tfit_Aout}
+    \end{figure}
+
+    \begin{figure}[t]
+        \centering
+        \import{tunnelbarrier/asym/irradiation/control}{Tbath_Aout.pgf}
+        \caption{
+            Measured bath temperature $T_\mathrm{bath}$ as a function of the nominal source amplitude $A_\mathrm{out}$ at selected frequencies. The slopes quantify microwave-induced bath heating for the frequency comparison.
+        }
+        \label{fig:tb:asym:control-Tbath_Aout}
+    \end{figure}
+
+    \begin{figure}[t]
+        \centering
+        \import{tunnelbarrier/asym/irradiation/control}{Tfit_Afit.pgf}
+        \caption{
+            Fitted transport temperature $T_\mathrm{fit}$ as a function of the effective fitted microwave amplitude $A_\mathrm{fit}$ at selected frequencies.
+        }
+        \label{fig:tb:asym:control-Tfit_Afit}
+    \end{figure}
+
+    \begin{figure}[t]
+        \centering
+        \import{tunnelbarrier/asym/irradiation/control}{Tbath_Afit.pgf}
+        \caption{
+            Measured bath temperature $T_\mathrm{bath}$ as a function of the effective fitted microwave amplitude $A_\mathrm{fit}$ at selected frequencies.
+        }
+        \label{fig:tb:asym:control-Tbath_Afit}
+    \end{figure}
+
+    \begin{figure}[t]
+        \centering
+        \import{tunnelbarrier/asym/irradiation/control}{Tfit_Tbath.pgf}
+        \caption{
+            Fitted transport temperature $T_\mathrm{fit}$ as a function of the measured bath temperature $T_\mathrm{bath}$ at selected frequencies. The clipped response separates the fitted-temperature floor, intermediate evolution, and upper saturation.
+        }
+        \label{fig:tb:asym:control-Tfit_Tbath}
+    \end{figure}
