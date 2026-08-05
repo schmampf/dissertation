@@ -91,6 +91,9 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
 - Minimize parentheses. Prefer short full-stop sentences.
 - Avoid semicolons. Prefer commas and short full-stop sentences.
 - Use footnotes for short side explanations and rough order-of-magnitude estimates of physical quantities.
+- Follow the APS adjectival-compound convention. Hyphenate a multiword expression when it functions adjectivally before a noun and the hyphen improves clarity, for example `frequency-dependent coupling`, `photon-assisted tunneling`, and `Bessel-weighted channels`.
+- Omit the adjectival hyphen when the same expression is used predicatively or substantively, for example `the coupling is frequency dependent` and `the system is in the excited state`.
+- Leave ordinary open noun compounds unhyphenated, for example `microwave coupling`, `amplitude calibration`, `contact configuration`, and `photon energy`. Preserve established lexical compounds and use hyphens where omission would create ambiguity.
 
 ## Terminology and Notation
 
