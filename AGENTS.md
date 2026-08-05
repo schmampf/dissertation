@@ -91,9 +91,9 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
 - Minimize parentheses. Prefer short full-stop sentences.
 - Avoid semicolons. Prefer commas and short full-stop sentences.
 - Use footnotes for short side explanations and rough order-of-magnitude estimates of physical quantities.
-- Follow the APS adjectival-compound convention. Hyphenate a multiword expression when it functions adjectivally before a noun and the hyphen improves clarity, for example `frequency-dependent coupling`, `photon-assisted tunneling`, and `Bessel-weighted channels`.
-- Omit the adjectival hyphen when the same expression is used predicatively or substantively, for example `the coupling is frequency dependent` and `the system is in the excited state`.
-- Leave ordinary open noun compounds unhyphenated, for example `microwave coupling`, `amplitude calibration`, `contact configuration`, and `photon energy`. Preserve established lexical compounds and use hyphens where omission would create ambiguity.
+- Follow the thesis minimal-hyphen house style. Do not hyphenate a compound modifier whose first element is a noun, for example `microwave driven transport`, `photon assisted tunneling`, `sample dependent variation`, `Bessel weighted channels`, and `voltage biased response`.
+- Hyphenate adjective-first compound modifiers before a noun when needed for clarity, for example `high-frequency response`, `low-temperature measurement`, and `normal-state conductance`. Omit the hyphen when the expression is used predicatively, for example `the response is frequency dependent`.
+- Leave ordinary noun compounds unhyphenated, for example `microwave coupling`, `amplitude calibration`, `contact configuration`, and `photon energy`. Preserve hyphens in established names, numerical compounds, and constructions where omission would create genuine ambiguity. Prefer rephrasing over adding a noun-first adjectival hyphen.
 
 ## Terminology and Notation
 
