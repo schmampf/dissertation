@@ -170,7 +170,11 @@
 
         I converted the nominal output setting into an effective junction amplitude by fitting the driven spectra with the Tien--Gordon model. The only fitted microwave parameter at each nominal output setting was the effective ac amplitude $A$ at the junction. This strongly constrains the fit because it cannot improve the agreement by moving the gap edge, changing the normal-state conductance, or broadening the spectrum.
 
-        \begin{wrapfigure}[14]{r}{0.4\textwidth}
+        The single-trace fit in Fig.~\ref{fig:tb:highres:amp18.3GHz:single-iv} is the most direct check that the calibration is quantitative rather than only qualitative. The same reduced amplitude controls all sideband weights at once, so agreement over the main coherence peaks, satellite peaks, and spectral weight tests the full PAT redistribution.
+
+        Figure~\ref{fig:tb:highres:amp18.3GHz:fit} shows the pointwise fitted amplitudes as a function of nominal VNA output. These fitted amplitudes are the values used to remap the sweep to the reduced PAT coordinate. I fit them again with a linear relation only to compare the effective coupling between measurement blocks. 
+
+        \begin{wrapfigure}[13]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
             \vspace{-1.0em}
@@ -181,10 +185,8 @@
                 }
             \label{fig:tb:highres:amp18.3GHz:fit}
         \end{wrapfigure}
-
-        The single-trace fit in Fig.~\ref{fig:tb:highres:amp18.3GHz:single-iv} is the most direct check that the calibration is quantitative rather than only qualitative. The same reduced amplitude controls all sideband weights at once, so agreement over the main coherence peaks, satellite peaks, and spectral weight tests the full PAT redistribution.
-
-        Figure~\ref{fig:tb:highres:amp18.3GHz:fit} shows the pointwise fitted amplitudes as a function of nominal VNA output. These fitted amplitudes are the values used to remap the sweep to the reduced PAT coordinate. I fit them again with a linear relation only to compare the effective coupling between measurement blocks. Over the main part of the sweep, this comparison fit gives
+        
+        Over the main part of the sweep, this comparison fit gives
         \begin{equation}
             A = \eta A_\mathrm{out}\,,\qquad \eta\approx8.38(3)\times10^{-4}\,.
             \label{eq:tb:highres:amp18.3GHz:eta}
@@ -243,14 +245,14 @@
 
         At the highest source settings, Fig.~\ref{fig:tb:highres:amp13.6GHz:fit} shows a plateau because the VNA reached its maximum available output power. For this fixed contact, the coupling is about $2.6$ times as large as the fitted coupling at $18.3\,\mathrm{GHz}$. This comparison demonstrates a strong frequency dependence, but it does not establish a universal frequency response because the coupling may change when the contact configuration changes. The $\eta$ values listed in Table~\ref{table:tunnelbarrier:highres} are therefore summary slopes from these secondary fits, not the calibration inputs used to remap the transport landscapes. Together with the lower photon energy, the larger slope makes the $13.6\,\mathrm{GHz}$ amplitude sweep the high-amplitude benchmark of the section.
 
-        Figures~\ref{fig:tb:highres:amp13.6GHz:cal} and \ref{fig:tb:highres:amp13.6GHz:sim} show the remapped $13.6\,\mathrm{GHz}$ amplitude sweep (M4) and the corresponding simulation. The $2\Delta$ peak acts as a sharp energy marker, and the microwave drive creates many photon shifted copies of this marker. The data resolve these replicas to at least the 25-photon range.
+        Figures~\ref{fig:tb:highres:amp13.6GHz:cal} and \ref{fig:tb:highres:amp13.6GHz:sim} show the remapped $13.6\,\mathrm{GHz}$ amplitude sweep (M4) and the corresponding simulation. The $2\Delta$ peak acts as a sharp energy marker, and the microwave drive creates many photon shifted copies of this marker. Individual replicas remain visually resolved to at least order $n=25$.
 
         \begin{figure}[p]
             \centering
 
             \landscapepanels{tunnelbarrier/highres/amp_13.6GHz}{cal}
             \caption{
-                Remapped amplitude sweep of TB1 at $\nu=13.6\,\mathrm{GHz}$. The vertical axis is the fitted reduced drive amplitude from Fig.~\ref{fig:tb:highres:amp13.6GHz:fit} rather than the nominal VNA output. The microwave coupling is stronger than at $\nu=18.3\,\mathrm{GHz}$, and the lower photon energy increases the reduced drive amplitude for the same ac voltage. The false-color map resolves photon assisted replicas to at least the 25-photon range. Parameters can be found in Table~\ref{table:tunnelbarrier:highres}.
+                Remapped amplitude sweep of TB1 at $\nu=13.6\,\mathrm{GHz}$. The vertical axis is the fitted reduced drive amplitude from Fig.~\ref{fig:tb:highres:amp13.6GHz:fit} rather than the nominal VNA output. The microwave coupling is stronger than at $\nu=18.3\,\mathrm{GHz}$, and the lower photon energy increases the reduced drive amplitude for the same ac voltage. The false-color map resolves individual photon assisted replicas to at least order $n=25$. Parameters can be found in Table~\ref{table:tunnelbarrier:highres}.
             }
             \label{fig:tb:highres:amp13.6GHz:cal}
 
@@ -263,12 +265,12 @@
             \label{fig:tb:highres:amp13.6GHz:sim}
         \end{figure}
 
-        This is the strongest result of the section because it requires three things at once: strong microwave coupling at the junction, enough voltage resolution to separate closely spaced photon replicas, and enough spectral stability that the underlying SIS feature remains identifiable after its weight has been redistributed over many sidebands. The experiment therefore resolves a well-organized Tien--Gordon drive response over a sideband ladder that is much wider than $2\Delta$.
+        This is the strongest result of the section because it requires four things at once: strong microwave coupling at the junction, enough voltage resolution to separate closely spaced photon replicas, a stable contact geometry throughout the sweep, and enough spectral stability that the underlying SIS feature remains identifiable after its weight has been redistributed over many sidebands. Here, I call a replica visually resolved when it appears at the expected displacement, remains distinguishable from neighboring features, and can be followed continuously through the full microwave amplitude map. The experiment therefore resolves a well-organized Tien--Gordon response over a sideband ladder that is much wider than $2\Delta$.
 
-        The remapped amplitude axis is essential for this claim. In nominal VNA units, the high-order structure would only show that the source setting was large. On the reduced-amplitude axis, the same structure can be read as a PAT redistribution over many Bessel weighted channels. The high photon order therefore does not mean that every tunneling event absorbed exactly $25$ photons. It means that photon shifted tunneling channels with order numbers up to at least $25$ remained visible in the measured quasiparticle spectrum.
+        The remapped amplitude axis is essential for this claim. In nominal VNA units, the high-order structure would only show that the source setting was large. For each trace, I instead infer the effective ac voltage at the junction by fitting the complete \textit{I--V} curve. On the resulting reduced-amplitude axis, the structure can be read as a PAT redistribution over many Bessel weighted channels. The high photon order therefore does not mean that every tunneling event absorbed exactly $25$ photons. It means that photon shifted tunneling channels with order numbers up to at least $25$ remain visually distinguishable in the measured quasiparticle spectrum.
 
         This interpretation also sets the limits of the result. I do not use the photon order to infer a quasiparticle tunneling time or traversal time. The PAT order labels energy shifted contributions in a driven tunneling probability, not a directly timed sequence of absorption events. The calibration is also local to this device, frequency, and antenna configuration. Heating and nonequilibrium quasiparticle generation may still contribute at high drive, even though the dominant visible structure remains organized by the Tien--Gordon sideband pattern.
 
-        The highest resolved order exceeds the range usually shown for superconducting tunnel junctions. Kot et al.~resolved photon assisted tunneling up to $12$ photons, while the present SIS data reach at least the $25$ photon range \cite{kot_microwave-assisted_2020}. I have not found a previous report of comparable photon order for quasiparticle photon assisted tunneling in an SIS tunnel junction, distinct from high-order Shapiro response or photon assisted subgap transport in finite-transmission weak links.
+        To my knowledge, no previous amplitude map of quasiparticle photon assisted tunneling in an SIS junction resolves and continuously tracks individual replicas to a higher order under this definition. In the amplitude map reported by Kot et al., approximately $13$ replica orders are individually discernible \cite{kot_microwave-assisted_2020}. The stable full amplitude map presented here follows the individual branches to at least order $n=25$. This comparison concerns visually resolved quasiparticle replicas, not the reduced drive reached in a single spectrum, high-order Shapiro response, or photon assisted subgap transport in finite-transmission weak links.
 
         The amplitude calibration data therefore serve two purposes. They establish a quantitative conversion from nominal microwave output to the reduced drive amplitude used on the y-axis, and they demonstrate that the setup resolves photon assisted structure deep into the multiphoton regime. With this reference established, the next step is to study a related tunnel barrier experiment where the plain BCS plus Tien--Gordon description is no longer sufficient.
