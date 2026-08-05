@@ -113,13 +113,23 @@
             Temperature dependence of the separate tunnel-regime contact C0$'$. This contact had a slightly higher conductance than C0, as listed in Table~\ref{table:ac:pincodes}. Thermal broadening progressively fills the subgap region and smears the quasiparticle onset as $T$ approaches $T_\mathrm{c}$. The three transport representations retain the complete evolution from the gapped low-temperature characteristic toward the normal-state response.
         }{fig:ac:0.05G0:temperature}
 
-        \landscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{cal}{
-            Calibrated microwave-amplitude landscape of C0 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. Photon-assisted replicas emerge from the quasiparticle onset and redistribute spectral weight as $eA/h\nu$ increases. A weaker subgap feature near $\lvert eV\rvert=\Delta$ indicates the onset of Andreev reflection.
-        }{fig:ac:0.05G0:15.0GHz_stripline:cal}
+        \begin{figure}[p]
+            \centering
+            \landscapepanels{atomic_contact/0.05G0/15.0GHz_stripline}{cal}
+            \caption{
+                Calibrated microwave-amplitude landscape of C0 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. Photon-assisted replicas emerge from the quasiparticle onset and redistribute spectral weight as $eA/h\nu$ increases. A weaker subgap feature near $\lvert eV\rvert=\Delta$ indicates the onset of Andreev reflection.
+                }
+            \label{fig:ac:0.05G0:15.0GHz_stripline:cal}
 
-        \landscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{sim}{
-            Simulated microwave-amplitude landscape according to PAT of C0 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The calculation reproduces the dominant quasiparticle sidebands in Fig.~\ref{fig:ac:0.05G0:15.0GHz_stripline:cal}, but it does not contain the weak Andreev contribution visible in the measured subgap response.
-        }{fig:ac:0.05G0:15.0GHz_stripline:sim}
+            \vspace{1em}
+
+            \landscapepanels{atomic_contact/0.05G0/15.0GHz_stripline}{sim}
+            \caption{
+                Simulated microwave-amplitude landscape according to PAT of C0 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The calculation reproduces the dominant quasiparticle sidebands in Fig.~\ref{fig:ac:0.05G0:15.0GHz_stripline:cal}, but it does not contain the weak Andreev contribution visible in the measured subgap response.
+                }
+            \label{fig:ac:0.05G0:15.0GHz_stripline:sim}
+        \end{figure}
+
 
     \clearpage
     %=========================================================
@@ -157,10 +167,10 @@
 
         The similar suppression fields are consistent with a dominant field scale set by the common aluminum electrodes rather than by the individual channel transmissions. This conclusion remains empirical because I do not model the electrode geometry, orbital depairing, or microscopic pair breaking. The value in Eq.~\eqref{eq:ac:magnetic-field:critical-field} therefore denotes the disappearance of resolved superconducting transport features and should not be identified directly with an intrinsic bulk critical field.
 
-        \landscapefigure{atomic_contact/magnetic-field/0.05G0}{cal}{bla}{fig:ac:magnetic-field:0.05G0}
-        \landscapefigure{atomic_contact/magnetic-field/1.8G0}{cal}{bla}{fig:ac:magnetic-field:1.8G0}
-        \landscapefigure{atomic_contact/magnetic-field/2.4G0}{cal}{bla}{fig:ac:magnetic-field:2.4G0}
-        \landscapefigure{atomic_contact/magnetic-field/43.0G0}{cal}{bla}{fig:ac:magnetic-field:43.0G0}
+        % \landscapefigure{atomic_contact/magnetic-field/0.05G0}{cal}{bla}{fig:ac:magnetic-field:0.05G0}
+        % \landscapefigure{atomic_contact/magnetic-field/1.8G0}{cal}{bla}{fig:ac:magnetic-field:1.8G0}
+        % \landscapefigure{atomic_contact/magnetic-field/2.4G0}{cal}{bla}{fig:ac:magnetic-field:2.4G0}
+        % \landscapefigure{atomic_contact/magnetic-field/43.0G0}{cal}{bla}{fig:ac:magnetic-field:43.0G0}
 
     \clearpage
     %=========================================================
@@ -297,13 +307,39 @@
 
         The measured and simulated landscapes for C1 are shown in Figs.~\ref{fig:ac:contact1:cal} and \ref{fig:ac:contact1:sim}. Figures~\ref{fig:ac:contact2:cal} and \ref{fig:ac:contact2:sim} provide the corresponding PAMAR-only validation for C2 and expose the different low-voltage amplitude evolution discussed in the main text.
 
-        \landscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{cal}{Calibrated microwave-amplitude landscape of C1 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns display the same measurement as heat maps, surfaces, and representative waterfall cuts. Photon-assisted replicas emerge from the quasiparticle and MAR thresholds, while narrow features originating from the zero-bias peak disperse across the reduced-amplitude axis $eA/h\nu$.}{fig:ac:contact1:cal}
+        \begin{figure}[p]
+            \centering
+            \landscapepanels{atomic_contact/1.8G0/15.0GHz_stripline}{cal}
+            \caption{
+                Calibrated microwave-amplitude landscape of C1 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns display the same measurement as heat maps, surfaces, and representative waterfall cuts. Photon-assisted replicas emerge from the quasiparticle and MAR thresholds, while narrow features originating from the zero-bias peak disperse across the reduced-amplitude axis $eA/h\nu$.
+                }
+            \label{fig:ac:contact1:cal}
 
-        \landscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{sim}{Simulated microwave-amplitude landscape of C1 at $\nu=15.0\,\mathrm{GHz}$. The calculation combines threshold-weighted PAMAR with PAICPT using the calibrated drive amplitude and the static transport parameters of C1. The three representations reproduce the principal sideband trajectories and spectral-weight redistribution observed in Fig.~\ref{fig:ac:contact1:cal}, while smaller line-shape differences remain at high drive.}{fig:ac:contact1:sim}
+            \vspace{1em}
 
-        \landscapefigure{atomic_contact/2.4G0/15.0GHz_stripline}{cal}{Calibrated microwave-amplitude landscape of C2 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations show the strong subgap response of the nearly ballistic leading channel. The measured low-voltage features exhibit an amplitude dependence that is not fully captured by the PAMAR-only simulation in Fig.~\ref{fig:ac:contact2:sim}.}{fig:ac:contact2:cal}
+            \landscapepanels{atomic_contact/1.8G0/15.0GHz_stripline}{sim}
+            \caption{
+                Simulated microwave-amplitude landscape of C1 at $\nu=15.0\,\mathrm{GHz}$. The calculation combines threshold-weighted PAMAR with PAICPT using the calibrated drive amplitude and the static transport parameters of C1. The three representations reproduce the principal sideband trajectories and spectral-weight redistribution observed in Fig.~\ref{fig:ac:contact1:cal}, while smaller line-shape differences remain at high drive.
+                }
+            \label{fig:ac:contact1:sim}
+        \end{figure}
 
-        \landscapefigure{atomic_contact/2.4G0/15.0GHz_stripline}{sim}{PAMAR-only microwave-amplitude landscape of C2 at $\nu=15.0\,\mathrm{GHz}$. The calculation uses the calibrated drive amplitude and the simulated static MAR current obtained from Eq.~\eqref{eq:ac:contact2:pincode}. It reproduces the dominant quasiparticle and MAR structure over the full bias and amplitude range, but assigns too much of the zero-voltage response to MAR and therefore misses the measured low-voltage amplitude evolution in Fig.~\ref{fig:ac:contact2:cal}.}{fig:ac:contact2:sim}
+        \begin{figure}[p]
+            \centering
+            \landscapepanels{atomic_contact/2.4G0/15.0GHz_stripline}{cal}
+            \caption{
+                Calibrated microwave-amplitude landscape of C2 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations show the strong subgap response of the nearly ballistic leading channel. The measured low-voltage features exhibit an amplitude dependence that is not fully captured by the PAMAR-only simulation in Fig.~\ref{fig:ac:contact2:sim}.
+                }
+            \label{fig:ac:contact2:cal}
+
+            \vspace{1em}
+
+            \landscapepanels{atomic_contact/2.4G0/15.0GHz_stripline}{sim}
+            \caption{
+                PAMAR-only microwave-amplitude landscape of C2 at $\nu=15.0\,\mathrm{GHz}$. The calculation uses the calibrated drive amplitude and the simulated static MAR current obtained from Eq.~\eqref{eq:ac:contact2:pincode}. It reproduces the dominant quasiparticle and MAR structure over the full bias and amplitude range, but assigns too much of the zero-voltage response to MAR and therefore misses the measured low-voltage amplitude evolution in Fig.~\ref{fig:ac:contact2:cal}.
+                }
+            \label{fig:ac:contact2:sim}
+        \end{figure}
 
     %=========================================================
     \section{Subharmonic Transport at High Conductance}
@@ -312,10 +348,19 @@
 
         Figures~\ref{fig:ac:contact3:cal} and~\ref{fig:ac:contact3:sim} provide the full transport landscapes for C3 discussed in Sec.~\ref{subsec:ac:subharmonic}.
 
-        \landscapefigure{atomic_contact/43.0G0/19.3GHz_antenna}{cal}{
-            Calibrated microwave-amplitude landscape of C3 under antenna irradiation at $\nu=19.3\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns show the measured response as waterfall cuts, surfaces, and heat maps. Increasing the drive produces replicas of the quasiparticle branch and the static subgap structure, together with additional closely spaced features originating near zero voltage.
-        }{fig:ac:contact3:cal}
+        \begin{figure}[p]
+            \centering
+            \landscapepanels{atomic_contact/43.0G0/19.3GHz_antenna}{cal}
+            \caption{
+                Calibrated microwave-amplitude landscape of C3 under antenna irradiation at $\nu=19.3\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns show the measured response as waterfall cuts, surfaces, and heat maps. Increasing the drive produces replicas of the quasiparticle branch and the static subgap structure, together with additional closely spaced features originating near zero voltage.
+                }
+            \label{fig:ac:contact3:cal}
 
-        \landscapefigure{atomic_contact/43.0G0/19.3GHz_antenna}{sim}{
-            Phenomenological microwave-amplitude landscape of C3 at $\nu=19.3\,\mathrm{GHz}$. It reproduces the principal replica trajectories and their amplitude evolution, while differences remain in the sharpness and spectral weight of the low-voltage features observed in Fig.~\ref{fig:ac:contact3:cal}.
-        }{fig:ac:contact3:sim}
+            \vspace{1em}
+
+            \landscapepanels{atomic_contact/43.0G0/19.3GHz_antenna}{sim}
+            \caption{
+                Phenomenological microwave-amplitude landscape of C3 at $\nu=19.3\,\mathrm{GHz}$. It reproduces the principal replica trajectories and their amplitude evolution, while differences remain in the sharpness and spectral weight of the low-voltage features observed in Fig.~\ref{fig:ac:contact3:cal}.
+                }
+            \label{fig:ac:contact3:sim}
+        \end{figure}
