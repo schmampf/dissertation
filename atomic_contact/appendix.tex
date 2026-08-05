@@ -64,28 +64,11 @@
 
         \begin{figure}[t]
             \centering
-            \resizebox{\linewidth}{!}{%
-                \subfigure[\textit{V--I}]{%
-                    \parbox[t]{2.1in}{%
-                        \centering
-                        \transportpanelgraphic{atomic_contact/magnetic-field/550.0G0/cal_iv}%
-                    }%
-                }%
-                \hfill
-                \subfigure[\textit{dV--dI}]{%
-                    \parbox[t]{2.1in}{%
-                        \centering
-                        \transportpanelgraphic{atomic_contact/magnetic-field/550.0G0/cal_dvdi}%
-                    }%
-                }%
-                \hfill
-                \subfigure[\textit{dI--dV}]{%
-                    \parbox[t]{2.1in}{%
-                        \centering
-                        \transportpanelgraphic{atomic_contact/magnetic-field/550.0G0/cal_didv}%
-                    }%
-                }%
-            }
+            \subfigure[\textit{V--I}]{\import{atomic_contact/magnetic-field/550.0G0/cal_iv}{main.pgf}}%
+            \hfill%
+            \subfigure[\textit{dV--dI}]{\import{atomic_contact/magnetic-field/550.0G0/cal_didv}{main.pgf}}%
+            \hfill%
+            \subfigure[\textit{dI--dV}]{\import{atomic_contact/magnetic-field/550.0G0/cal_dvdi}{main.pgf}}%
             \caption{
                 Positive-field transport landscape of the unbroken device. Each panel shows the measured traces as waterfall cuts, a continuous surface, and a projected heat map. The \textit{V--I} landscape shows that the low-voltage branch and its hysteretic switching interval contract as the perpendicular field increases. The \textit{dV--dI} and \textit{dI--dV} peaks trace the same switching boundaries and merge into the normal-state response near $H/H_\mathrm{c}=1$. Current, voltage, field, differential resistance, and differential conductance are normalized by $I_\mathrm{sw}$, $I_\mathrm{sw}R_\mathrm{N}$, $H_\mathrm{c}$, $R_\mathrm{N}$, and $1/R_\mathrm{N}$, respectively.
                 }
@@ -126,15 +109,15 @@
 
         The tunnel-regime measurements therefore provide a control for the later finite-transmission analysis. They verify the superconducting energy scales through independent field and temperature sweeps, and they recover conventional photon-assisted quasiparticle tunneling under irradiation. At the same time, the weak subgap deviation shows why the tunnel model must be replaced by a channel-resolved MAR description as the contact transmission increases.
 
-        \transportlandscapefigurehalfpage{atomic_contact/0.05G0/temperature}{cal}{
+        \landscapefigure{atomic_contact/temperature}{cal}{
             Temperature dependence of the separate tunnel-regime contact C0$'$. This contact had a slightly higher conductance than C0, as listed in Table~\ref{table:ac:pincodes}. Thermal broadening progressively fills the subgap region and smears the quasiparticle onset as $T$ approaches $T_\mathrm{c}$. The three transport representations retain the complete evolution from the gapped low-temperature characteristic toward the normal-state response.
         }{fig:ac:0.05G0:temperature}
 
-        \transportlandscapefigurehalfpage{atomic_contact/0.05G0/15.0GHz_stripline}{cal}{
+        \landscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{cal}{
             Calibrated microwave-amplitude landscape of C0 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. Photon-assisted replicas emerge from the quasiparticle onset and redistribute spectral weight as $eA/h\nu$ increases. A weaker subgap feature near $\lvert eV\rvert=\Delta$ indicates the onset of Andreev reflection.
         }{fig:ac:0.05G0:15.0GHz_stripline:cal}
 
-        \transportlandscapefigurehalfpage{atomic_contact/0.05G0/15.0GHz_stripline}{sim}{
+        \landscapefigure{atomic_contact/0.05G0/15.0GHz_stripline}{sim}{
             Simulated microwave-amplitude landscape according to PAT of C0 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The calculation reproduces the dominant quasiparticle sidebands in Fig.~\ref{fig:ac:0.05G0:15.0GHz_stripline:cal}, but it does not contain the weak Andreev contribution visible in the measured subgap response.
         }{fig:ac:0.05G0:15.0GHz_stripline:sim}
 
@@ -174,17 +157,22 @@
 
         The similar suppression fields are consistent with a dominant field scale set by the common aluminum electrodes rather than by the individual channel transmissions. This conclusion remains empirical because I do not model the electrode geometry, orbital depairing, or microscopic pair breaking. The value in Eq.~\eqref{eq:ac:magnetic-field:critical-field} therefore denotes the disappearance of resolved superconducting transport features and should not be identified directly with an intrinsic bulk critical field.
 
+        \landscapefigure{atomic_contact/magnetic-field/0.05G0}{cal}{bla}{fig:ac:magnetic-field:0.05G0}
+        \landscapefigure{atomic_contact/magnetic-field/1.8G0}{cal}{bla}{fig:ac:magnetic-field:1.8G0}
+        \landscapefigure{atomic_contact/magnetic-field/2.4G0}{cal}{bla}{fig:ac:magnetic-field:2.4G0}
+        \landscapefigure{atomic_contact/magnetic-field/43.0G0}{cal}{bla}{fig:ac:magnetic-field:43.0G0}
+
     \clearpage
     %=========================================================
     \section{The Mesoscopic Pincode}
     \label{appendix:ac:pincode}
     %=========================================================
 
-        \transportlandscapefigurehalfpage{atomic_contact/breaking}{cal}{
+        \landscapefigure{atomic_contact/breaking}{cal}{
             Measured transport landscape during contact opening. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations show the evolving MAR structure as a function of the approximate relative displacement $x$. Abrupt spectral changes separate successive contact configurations.
         }{fig:ac:pincode:cal}
 
-        \transportlandscapefigurehalfpage{atomic_contact/breaking}{sim}{
+        \landscapefigure{atomic_contact/breaking}{sim}{
             Transport landscape reconstructed from the fitted pincodes. The calculation uses the position-dependent transmissions, $T=\gamma=0$, and the common parameters in Eq.~\eqref{eq:ac:pincode:parameter}. It reproduces the principal displacement-dependent structures of Fig.~\ref{fig:ac:pincode:cal}.
         }{fig:ac:pincode:sim}
 
@@ -309,13 +297,13 @@
 
         The measured and simulated landscapes for C1 are shown in Figs.~\ref{fig:ac:contact1:cal} and \ref{fig:ac:contact1:sim}. Figures~\ref{fig:ac:contact2:cal} and \ref{fig:ac:contact2:sim} provide the corresponding PAMAR-only validation for C2 and expose the different low-voltage amplitude evolution discussed in the main text.
 
-        \transportlandscapefigurehalfpage{atomic_contact/1.8G0/15.0GHz_stripline}{cal}{Calibrated microwave-amplitude landscape of C1 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns display the same measurement as heat maps, surfaces, and representative waterfall cuts. Photon-assisted replicas emerge from the quasiparticle and MAR thresholds, while narrow features originating from the zero-bias peak disperse across the reduced-amplitude axis $eA/h\nu$.}{fig:ac:contact1:cal}
+        \landscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{cal}{Calibrated microwave-amplitude landscape of C1 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns display the same measurement as heat maps, surfaces, and representative waterfall cuts. Photon-assisted replicas emerge from the quasiparticle and MAR thresholds, while narrow features originating from the zero-bias peak disperse across the reduced-amplitude axis $eA/h\nu$.}{fig:ac:contact1:cal}
 
-        \transportlandscapefigurehalfpage{atomic_contact/1.8G0/15.0GHz_stripline}{sim}{Simulated microwave-amplitude landscape of C1 at $\nu=15.0\,\mathrm{GHz}$. The calculation combines threshold-weighted PAMAR with PAICPT using the calibrated drive amplitude and the static transport parameters of C1. The three representations reproduce the principal sideband trajectories and spectral-weight redistribution observed in Fig.~\ref{fig:ac:contact1:cal}, while smaller line-shape differences remain at high drive.}{fig:ac:contact1:sim}
+        \landscapefigure{atomic_contact/1.8G0/15.0GHz_stripline}{sim}{Simulated microwave-amplitude landscape of C1 at $\nu=15.0\,\mathrm{GHz}$. The calculation combines threshold-weighted PAMAR with PAICPT using the calibrated drive amplitude and the static transport parameters of C1. The three representations reproduce the principal sideband trajectories and spectral-weight redistribution observed in Fig.~\ref{fig:ac:contact1:cal}, while smaller line-shape differences remain at high drive.}{fig:ac:contact1:sim}
 
-        \transportlandscapefigurehalfpage{atomic_contact/2.4G0/15.0GHz_stripline}{cal}{Calibrated microwave-amplitude landscape of C2 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations show the strong subgap response of the nearly ballistic leading channel. The measured low-voltage features exhibit an amplitude dependence that is not fully captured by the PAMAR-only simulation in Fig.~\ref{fig:ac:contact2:sim}.}{fig:ac:contact2:cal}
+        \landscapefigure{atomic_contact/2.4G0/15.0GHz_stripline}{cal}{Calibrated microwave-amplitude landscape of C2 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations show the strong subgap response of the nearly ballistic leading channel. The measured low-voltage features exhibit an amplitude dependence that is not fully captured by the PAMAR-only simulation in Fig.~\ref{fig:ac:contact2:sim}.}{fig:ac:contact2:cal}
 
-        \transportlandscapefigurehalfpage{atomic_contact/2.4G0/15.0GHz_stripline}{sim}{PAMAR-only microwave-amplitude landscape of C2 at $\nu=15.0\,\mathrm{GHz}$. The calculation uses the calibrated drive amplitude and the simulated static MAR current obtained from Eq.~\eqref{eq:ac:contact2:pincode}. It reproduces the dominant quasiparticle and MAR structure over the full bias and amplitude range, but assigns too much of the zero-voltage response to MAR and therefore misses the measured low-voltage amplitude evolution in Fig.~\ref{fig:ac:contact2:cal}.}{fig:ac:contact2:sim}
+        \landscapefigure{atomic_contact/2.4G0/15.0GHz_stripline}{sim}{PAMAR-only microwave-amplitude landscape of C2 at $\nu=15.0\,\mathrm{GHz}$. The calculation uses the calibrated drive amplitude and the simulated static MAR current obtained from Eq.~\eqref{eq:ac:contact2:pincode}. It reproduces the dominant quasiparticle and MAR structure over the full bias and amplitude range, but assigns too much of the zero-voltage response to MAR and therefore misses the measured low-voltage amplitude evolution in Fig.~\ref{fig:ac:contact2:cal}.}{fig:ac:contact2:sim}
 
     %=========================================================
     \section{Subharmonic Transport at High Conductance}
@@ -324,10 +312,10 @@
 
         Figures~\ref{fig:ac:contact3:cal} and~\ref{fig:ac:contact3:sim} provide the full transport landscapes for C3 discussed in Sec.~\ref{subsec:ac:subharmonic}.
 
-        \transportlandscapefigurehalfpage{atomic_contact/43.0G0/19.3GHz_antenna}{cal}{
+        \landscapefigure{atomic_contact/43.0G0/19.3GHz_antenna}{cal}{
             Calibrated microwave-amplitude landscape of C3 under antenna irradiation at $\nu=19.3\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns show the measured response as waterfall cuts, surfaces, and heat maps. Increasing the drive produces replicas of the quasiparticle branch and the static subgap structure, together with additional closely spaced features originating near zero voltage.
         }{fig:ac:contact3:cal}
 
-        \transportlandscapefigurehalfpage{atomic_contact/43.0G0/19.3GHz_antenna}{sim}{
+        \landscapefigure{atomic_contact/43.0G0/19.3GHz_antenna}{sim}{
             Phenomenological microwave-amplitude landscape of C3 at $\nu=19.3\,\mathrm{GHz}$. It reproduces the principal replica trajectories and their amplitude evolution, while differences remain in the sharpness and spectral weight of the low-voltage features observed in Fig.~\ref{fig:ac:contact3:cal}.
         }{fig:ac:contact3:sim}
