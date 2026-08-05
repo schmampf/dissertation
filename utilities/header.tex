@@ -330,21 +330,25 @@
         \end{figure}
     }
 
+    \NewDocumentCommand{\landscapepanels}{m m}{%
+        \subfigure[\textit{I--V}]{%
+            \singlefitpanelgraphic{#1/#2_iv}{main}%
+        }%
+        \hfill%
+        \subfigure[\textit{dI--dV}]{%
+            \singlefitpanelgraphic{#1/#2_didv}{main}%
+        }%
+        \hfill%
+        \subfigure[\textit{dV--dI}]{%
+            \singlefitpanelgraphic{#1/#2_dvdi}{main}%
+        }%
+    }
+
     \NewDocumentCommand{\landscapefigure}{O{0em} m m O{0em} +m m}{%
         \begin{figure}[t]
-            \centering%
+            \centering
             \vspace*{#1}
-            \subfigure[\textit{I--V}]{%
-                \import{#2/#3_iv}{main.pgf}%
-            }%
-            \hfill%
-            \subfigure[\textit{dI--dV}]{%
-                \import{#2/#3_didv}{main.pgf}%
-            }%
-            \hfill%
-            \subfigure[\textit{dV--dI}]{%
-                \import{#2/#3_dvdi}{main.pgf}%
-            }%
+            \landscapepanels{#2}{#3}
             \vspace{#4}
             \caption{%
                 #5
