@@ -151,7 +151,22 @@
     \label{subsec:tb:asym:transport}
     %=========================================================
 
-        The representative trace establishes the presence of microwave induced rectification at one operating point. To determine whether the effect was isolated or evolved systematically, I measured microwave amplitude sweeps from $7.75$ to $8.05\,\mathrm{GHz}$ in steps of $50\,\mathrm{MHz}$. Figures~\ref{fig:tb:asym:sequence-iv}, \ref{fig:tb:asym:sequence-didv}, and \ref{fig:tb:asym:sequence-dvdi} compare the resulting \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} landscapes at selected frequencies. In each figure, panel~(a) shows the full amplitude dependence as a false-color map, while panel~(b) compares selected positive- and negative-bias traces.
+        The representative trace establishes the presence of microwave induced rectification at one operating point. To determine whether the effect was isolated or evolved systematically, I measured microwave amplitude sweeps from $7.75$ to $8.05\,\mathrm{GHz}$ in steps of $50\,\mathrm{MHz}$. Figure~\ref{fig:tb:asym:comparison-maps} compares the resulting \textit{dI--dV} and \textit{dV--dI} landscapes at six selected frequencies. The corresponding branch-resolved line cuts and the complete \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} frequency comparisons are provided in Appendix~\ref{appendix:tb:asym}.
+
+        \begin{figure}[t]
+            \centering
+            \subfigure[\textit{dI--dV}]{
+                \import{tunnelbarrier/asym/irradiation/comp-img-didv}{main.pgf}
+                }
+            \hfill
+            \subfigure[\textit{dV--dI}]{
+                \import{tunnelbarrier/asym/irradiation/comp-img-dvdi}{main.pgf}
+                }
+            \caption{
+                Microwave amplitude evolution of the asymmetric transport response of TB2 at six selected frequencies. Panel (a) shows the \textit{dI--dV} response as a function of voltage and calibrated amplitude, while panel (b) shows the \textit{dV--dI} response as a function of current and calibrated amplitude. The quasiparticle features evolve approximately symmetrically at the lowest and highest frequencies but become strongly bias asymmetric at intermediate frequencies, with the direction of the deformation reversing across the investigated interval. Gray regions indicate amplitudes for which no measurement is available.
+            }
+            \label{fig:tb:asym:comparison-maps}
+        \end{figure}
 
         The \textit{dI--dV} maps provide the clearest view of the spectral evolution. At the lowest and highest frequencies, the two quasiparticle-onset ridges remain approximately symmetric. At intermediate frequencies, one ridge is suppressed and displaced relative to the other, and the direction of this deformation reverses across the investigated frequency interval. Near the reversal, an additional conductance feature appears between the two main ridges. The \textit{I--V} and \textit{dV--dI} representations show the same systematic amplitude and frequency dependence, although the narrow resistance features make the latter more sensitive to noise.
 
@@ -227,7 +242,7 @@
             \label{fig:tb:asym:control-map}
         \end{figure}
 
-        \begin{figure}[t]
+        \begin{figure}[p]
             \centering
             \subfigure[
                 $\langle\mathcal{A}_I\rangle_{A_\mathrm{cal}}$
@@ -313,4 +328,4 @@
 
         The present measurements do not yet demonstrate a passive microwave detector. Such an application would require a zero-bias photocurrent or an open-circuit photovoltage, neither of which was measured here. Bias-asymmetric dc transport also does not by itself imply nonreciprocal microwave propagation, so the device cannot be identified as an isolator without forward and reverse scattering measurements. A practical assessment would require the responsivity, noise-equivalent power, bandwidth, response time, dissipation, and device-to-device reproducibility, together with an independent calibration of the microwave power delivered to the junction.
 
-    The scope of this section is therefore limited to establishing and quantifying the rectification and testing its most direct correlations. Distinguishing the remaining mechanisms would require a direct characterization of the microwave transfer function and a comparison before and after opening the break junction. Gate- and magnetic-field-dependent measurements performed within the irradiated asymmetric regime would test whether the driven island potential or a field-sensitive superconducting process provides an additional control parameter. Time-resolved measurements or an independent probe of the island distribution would help separate microwave voltage division from nonequilibrium heating. Measurements of nominally identical junctions would test the reproducibility of the effect.
+    The scope of this section is therefore limited to establishing and quantifying the rectification and testing its most direct correlations. Distinguishing the remaining mechanisms would require a direct characterization of the microwave transfer function and a comparison before and after opening the break junction. Gate and magnetic field dependent measurements performed within the irradiated asymmetric regime would test whether the driven island potential or a field sensitive superconducting process provides an additional control parameter. Time resolved measurements or an independent probe of the island distribution would help separate microwave voltage division from nonequilibrium heating. Measurements of nominally identical junctions would test the reproducibility of the effect.
