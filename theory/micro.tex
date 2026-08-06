@@ -23,6 +23,87 @@
     The following subsections introduce the temperature dependence of the superconducting gap, the superconducting DOS and its phenomenological broadening, and the tunnel-current expressions that connect these quantities to spectroscopy. The final subsection introduces the common electromagnetic-drive convention and extends the static tunnel model to photon-assisted transport.
 
     %=========================================================
+    \subsection{Normal-State Quasiparticles}
+    \label{subsec:quasi:normal-state-quasiparticles}
+    %=========================================================
+    A normal-state \textit{I--V} characteristic provides the conductance of a junction, but it does not generally identify the microscopic paths that carry charge. This distinction is central to this thesis. A large incoherent conductor is described by a local conductivity and Ohm's law. A phase-coherent constriction is instead described by transmission channels. Its normal-state conductance fixes only the sum of their transmission probabilities, whereas superconducting subgap transport can resolve the individual channels.
+
+    This section introduces the minimal normal-state framework for that distinction. We reduce the electronic structure to an effective single-band Hamiltonian and low-energy Fermi-surface parameters. We then connect elastic scattering to diffusion, conductivity, and measured resistance. Finally, we organize finite conductors by their characteristic length scales and introduce the scattering description used for atomic contacts. The goal is a controlled link between material parameters and the \textit{I--V} and \textit{dI--dV} observables used later. \cite{gross_festkorperphysik_2014}
+
+        At low temperature and low bias, transport involves states in a narrow energy window around the Fermi energy. The full many-electron and lattice problem is reduced to an effective normal-state single-particle Hamiltonian,
+        \begin{equation}
+            \hat{H}_\mathrm{N}(\vec{r})
+            = -\frac{\hbar^2}{2m^\ast}\nabla^2
+            + U(\vec{r})-\mu\,,
+            \label{eq:quasi:normal-hamiltonian}
+        \end{equation}
+        where energies are measured relative to the chemical potential $\mu$. The effective mass $m^\ast$ summarizes the relevant band curvature and interaction-induced renormalization. The potential $U(\vec{r})$ includes the effective lattice background, confinement, barriers, and disorder. In a homogeneous reference system, its constant contribution is absorbed into $\mu$. Equation~\eqref{eq:quasi:normal-hamiltonian} is not a first-principles many-body Hamiltonian because ionic motion, screening, and the mean-field action of other electrons are already absorbed into effective parameters. \cite{gross_festkorperphysik_2014}
+        % The same normal-state operator later forms the diagonal part of the Bogoliubov--de~Gennes Hamiltonian.
+
+        We refer to the low-energy excitations described by Eq.~\eqref{eq:quasi:normal-hamiltonian} as normal-state electronic quasiparticles. They carry charge $-e$ and spin $1/2$, but their effective parameters are dressed by the lattice and Fermi sea. They are distinct from Bogoliubov quasiparticles, which are coherent electron--hole superpositions introduced after superconducting pairing. This distinction also separates the effective band parameters used here from the spectral lifetime broadening discussed later for the superconducting density of states. \cite{landau_theory_1956,gross_festkorperphysik_2014}
+
+    %=========================================================
+    \subsection{Bogoliubov--de~Gennes Formalism}
+    \label{subsec:meso:bdg}
+    %=========================================================
+
+        The Bogoliubov--de~Gennes (BdG) formalism is the real-space mean-field extension of BCS theory for spatially inhomogeneous superconducting structures. Here its role is not to rederive superconductivity, but to define the coupled electron--hole scattering states from which Andreev reflection, Andreev bound states, and multiple Andreev reflection follow. We consider spin-singlet \textit{s}-wave pairing without spin-dependent fields, for which the problem separates into two equivalent $2\times2$ electron--hole blocks. \cite{bardeen_theory_1957,bogoljubov_new_1958,nambu_quasi-particles_1960,de_gennes_superconductivity_1966}
+
+        We use the effective normal-state Hamiltonian introduced in Eq.~\eqref{eq:quasi:normal-hamiltonian}, with energies measured relative to the chemical potential,
+        \begin{equation}
+            \hat{H}_\mathrm{N}(\vec r)
+            = -\frac{\hbar^2}{2m^\ast}\nabla^2 + U(\vec r) - \mu\,.
+            \label{eq:meso:h-n}
+        \end{equation}
+        The potential $U(\vec r)$ represents confinement, tunnel barriers, and disorder. At the BCS mean-field level, superconductivity enters through the local pair potential introduced in Eq.~\eqref{eq:micro:complex-delta},
+        \begin{equation}
+            \Delta(\vec r)=|\Delta(\vec r)|e^{\ima\phi(\vec r)}\,,
+        \end{equation}
+        which appears here as the BdG matrix element coupling time-reversed electron and hole amplitudes. In the reduced Nambu basis, a quasiparticle mode is represented by
+        \begin{equation}
+            \Psi_k(\vec r)
+            =
+            \begin{pmatrix}
+                u_k(\vec r)\\
+                v_k(\vec r)
+            \end{pmatrix},
+        \end{equation}
+        where $u_k$ and $v_k$ are its electron-like and hole-like components.
+
+        The corresponding BdG Hamiltonian and eigenvalue problem are
+        \begin{align}
+            \hat{H}_\mathrm{BdG}(\vec r)
+            &=
+            \begin{pmatrix}
+                \hat{H}_\mathrm{N}(\vec r) & \Delta(\vec r)\\
+                \Delta^\ast(\vec r) & -\hat{H}_\mathrm{N}^\ast(\vec r)
+            \end{pmatrix},
+            \hat{H}_\mathrm{BdG}(\vec r)\Psi_k(\vec r)
+            &=E_k\Psi_k(\vec r)\,.
+        \end{align}
+        The off-diagonal pair potential mixes electron and hole amplitudes. Particle--hole symmetry relates every solution at $+E_k$ to a partner at $-E_k$ with exchanged electron and hole components. In the normal-state limit $\Delta\to0$, the two components decouple and recover the electron and hole sectors of Eq.~\eqref{eq:meso:h-n} \cite{bogoljubov_new_1958,de_gennes_superconductivity_1966}.
+
+        For a homogeneous superconductor with uniform $\Delta=|\Delta|e^{\ima\phi}$, the modes are labeled by the wave vector $\vec q$. The quantity $\xi_{\vec q}=\hbar^2q^2/(2m^\ast)-\mu$ denotes the normal-state energy measured from the Fermi level. In terms of this energy, the bulk quasiparticle dispersion is
+        \begin{equation}
+            E_{\vec q}=\sqrt{\xi_{\vec q}^2+|\Delta|^2}\,.
+        \end{equation}
+        Scattering calculations instead fix the quasiparticle energy $E$ and use the inverse relation to distinguish electron-like and hole-like branches,
+        \begin{equation}
+            \xi_{\pm}(E)=\pm\sqrt{E^2-|\Delta|^2}\,,
+        \end{equation}
+        with corresponding BCS coherence factors
+        \begin{equation}
+            \begin{aligned}
+                u_0(E) &= \sqrt{\tfrac{1}{2}\left(1+\xi_{\pm}(E)/E\right)}\,,\\
+                v_0(E) &= \sqrt{\tfrac{1}{2}\left(1-\xi_{\pm}(E)/E\right)}\,.
+            \end{aligned}
+            \label{eq:meso:coherence-factors}
+        \end{equation}
+        These factors set the relative electron and hole content of the scattering states \cite{bardeen_theory_1957,bogoljubov_new_1958}. When broadening is introduced in the BTK model below, the square roots are evaluated with the complex energy argument $|E|+\ima\gamma$, and the physical solution is selected by the propagation or decay boundary condition. At $\gamma=0$ and $|E|<|\Delta|$, $\xi_\pm$ is imaginary, so the bulk solutions are evanescent.
+
+        The BdG formalism supplies the amplitudes and phases needed for superconducting scattering, but it does not specify the interface or contact geometry. Because homogeneous superconductors have no propagating subgap states, ordinary transmission below the gap is replaced by coherent electron--hole conversion at an NS interface. This conversion is introduced as Andreev reflection below. The same framework also reproduces the BCS density of states in Eq.~\eqref{eq:micro:dos-bcs}. \cite{andreev_thermal_1964,de_gennes_superconductivity_1966}
+
+    %=========================================================
     \subsection{Superconducting Gap}
     \label{subsec:micro:superconducting-gap}
     %=========================================================
@@ -73,6 +154,40 @@
     \subsection{Density of States}
     \label{subsec:micro:dos}
     %=========================================================
+
+        %=========================================================
+        \subsubsection*{Effective Single-Band Approximation}
+        %=========================================================
+
+            For the simple metals considered in this thesis, we approximate the relevant low-energy states by one isotropic band. In a homogeneous reference system, the dispersion is parabolic,
+            \begin{equation}
+                \varepsilon(\vec{k})
+                \approx \frac{\hbar^2 \lvert\vec{k}\rvert^2}{2m^\ast}\,,
+                \qquad
+                E_\mathrm{F}
+                = \frac{\hbar^2 k_\mathrm{F}^2}{2m^\ast}\,,
+                \qquad
+                v_\mathrm{F}
+                = \frac{\hbar k_\mathrm{F}}{m^\ast}\,.
+            \end{equation}
+            Here $E_\mathrm{F}$, $k_\mathrm{F}$, and $v_\mathrm{F}$ denote the Fermi energy, wave number, and velocity. The parabolic form approximates the band dispersion, not a constant dispersion near the Fermi surface.
+
+            The corresponding three-dimensional density of states per unit volume, including both spin directions, is
+            \begin{equation}
+                N(E)
+                = \frac{1}{2\pi^2}
+                \left(\frac{2m^\ast}{\hbar^2}\right)^{3/2}
+                \sqrt{E}\,,
+            \end{equation}
+            where $E$ is measured from the band edge. Low-temperature transport and weak-coupling superconductivity probe only a narrow window around $E_\mathrm{F}$. This window is on the meV scale, while $E_\mathrm{F}$ is on the eV scale. We therefore approximate the density of states within that window as
+            \begin{equation}
+                N(E) \approx N_0 \equiv N(E_\mathrm{F})\,.
+            \end{equation}
+            Thus, the constant approximation applies to the density of states near the Fermi level, not to the underlying band dispersion. \cite{gross_festkorperphysik_2014}
+
+            This effective single-band model is sufficient for the aluminum electrodes and the minimal transport models used below. It does not describe strongly anisotropic, strongly correlated, or quantitative multiband conductors, which may require band-dependent velocities, densities of states, and scattering. Atomic contacts also retain orbital information through their transmission channels even when the electrodes are summarized by effective bulk parameters.
+
+            Aluminum is a nearly free-electron-like $sp$ metal with three valence electrons per atom. Its low-energy normal-state regime is well represented by this approximation, with $m^\ast \simeq m$ as a useful estimate. Representative bulk free-electron parameters are $E_\mathrm{F}\approx11.7\,\mathrm{eV}$, $v_\mathrm{F}\approx2.0\times10^6\,\mathrm{m/s}$, and a Fermi wavelength of approximately $0.36\,\mathrm{nm}$. These are material estimates rather than parameters extracted from the devices studied in this thesis \cite{chauvin_josephson_2005,steinberg_quasi-particle_2008}.
 
         Throughout this section, energies are measured relative to the chemical potential. For conventional metals this coincides with the Fermi energy to very good approximation, so $E=0$ marks the Fermi level around which superconducting correlations form.
 

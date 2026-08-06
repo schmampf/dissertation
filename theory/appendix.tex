@@ -1,0 +1,48 @@
+% !TEX root = ../thesis.tex
+
+        %=========================================================
+        \subsubsection*{Diffusion, Conductivity, and Ohm's Law}
+        %=========================================================
+
+            Impurities, structural disorder, and phonons randomize the quasiparticle momentum. We characterize elastic transport by the mean free path $\ell_\mathrm{qp}$. On length scales much larger than $\ell_\mathrm{qp}$, repeated scattering produces diffusion. For an isotropic three-dimensional conductor, the diffusion constant is
+            \begin{equation}
+                D = \frac{v_\mathrm{F}\ell_\mathrm{qp}}{3}\,.
+            \end{equation}
+            The Einstein relation then connects diffusion to the normal-state conductivity,
+            \begin{equation}
+                \sigma = e^2 N_0 D\,.
+            \end{equation}
+            Under the same isotropic parabolic-band assumptions, this expression is equivalent to the Drude conductivity. The electric field creates a small imbalance in the quasiparticle distribution, while elastic scattering limits the drift. The local response is $\vec{j}=\sigma\vec{E}$. This description assumes that the field, current density, and material parameters vary slowly on the scale of $\ell_\mathrm{qp}$. \cite{drude_zur_1900,gross_festkorperphysik_2014}
+
+            For a homogeneous wire of length $L$ and cross-sectional area $A$, integration of the local relation gives Ohm's law,
+            \begin{equation}
+                I = G\,V\,,
+                \qquad
+                G = \sigma\,A/L\,,
+                \qquad
+                R = 1/G\,.
+            \end{equation}
+            The measured normal-state resistance therefore combines material transport parameters with sample geometry. It provides the bulk reference for the coherent finite-conductor description introduced next. \cite{ohm_galvanische_1827}
+
+            The parameters $v_\mathrm{F}$, $N_0$, $\ell_\mathrm{qp}$, and $D$ summarize the low-energy normal-state properties needed in this thesis. They do not specify a spectral lifetime or determine whether phase coherence survives across a finite device. That question requires comparing the conductor size with the relevant transport lengths.
+
+
+        %=========================================================
+        \subsubsection*{Diffusive Mesoscopic Transport}
+        %=========================================================
+
+            In the diffusive mesoscopic regime, the elastic mean free path remains much shorter than the system size, $\ell_\mathrm{qp} \ll L$. Quasiparticles undergo many momentum-randomizing scattering events while traversing the conductor. If $L \lesssim \ell_\phi$, phase coherence persists over many such events and interference between multiple paths becomes observable.
+
+            For diffusive motion the phase-coherence length is conveniently expressed in terms of the diffusion constant $D$ and a dephasing time $t_\phi$,
+            \begin{equation}
+                \ell_\phi = \sqrt{D t_\phi}\,.
+            \end{equation}
+            At finite temperature, thermal averaging over an energy window $\sim k_\mathrm{B}T$ further reduces interference. A common characteristic thermal length is
+            \begin{equation}
+                \ell_T = \sqrt{\hbar D / k_\mathrm{B}T}\,,
+            \end{equation}
+            such that phase-coherent effects are most pronounced when $L \lesssim \min(\ell_\phi,\,\ell_T)$. Numerical prefactors in the definition of $\ell_T$ depend on the geometry and convention. \cite{bergmann_weak_1984,lee_disordered_1985}
+
+            On average, transport still follows the bulk drift-diffusion picture with the conductivity and diffusion constant introduced above. Quantum mechanically, coherent superposition of scattering amplitudes adds corrections, most prominently weak localization and universal conductance fluctuations. In low-dimensional or strongly disordered systems, these effects can become strong and may lead to Anderson localization. \cite{bergmann_weak_1984,lee_universal_1985,lee_disordered_1985,anderson_absence_1958,schertel_magnetic-field_2019}
+
+            In the present work, the diffusive mesoscopic regime serves as a reference rather than the primary contact model. The atomic-scale constrictions studied here are shorter than the relevant scattering lengths, which leads to the ballistic channel description introduced next.

@@ -9,66 +9,139 @@
 
     Finite transmission makes electron and hole degrees of freedom inseparable. Subgap current is no longer described only by independent quasiparticle tunneling or by a lumped Josephson element, but by coherent Andreev conversion at superconducting interfaces. We start from the Bogoliubov--de~Gennes (BdG) formalism, which provides the electron--hole amplitudes used throughout this section. We then quantify a single NS interface with the BTK model, extend the scattering picture to Andreev bound states in short SNS contacts, and finally treat finite-bias multiple Andreev reflection (MAR) and its charge-resolved response.
 
+
     %=========================================================
-    \subsection{Bogoliubov--de~Gennes Formalism}
-    \label{subsec:meso:bdg}
+    \subsection{Mesoscopic Transport Regimes}
+    \label{subsec:quasi:meso}
     %=========================================================
 
-        The Bogoliubov--de~Gennes (BdG) formalism is the real-space mean-field extension of BCS theory for spatially inhomogeneous superconducting structures. Here its role is not to rederive superconductivity, but to define the coupled electron--hole scattering states from which Andreev reflection, Andreev bound states, and multiple Andreev reflection follow. We consider spin-singlet \textit{s}-wave pairing without spin-dependent fields, for which the problem separates into two equivalent $2\times2$ electron--hole blocks. \cite{bardeen_theory_1957,bogoljubov_new_1958,nambu_quasi-particles_1960,de_gennes_superconductivity_1966}
+        Mesoscopic transport occurs when the conductor size $L$ becomes comparable to microscopic transport length scales. Finite-size effects and quantum interference can then require a description beyond the bulk Drude picture. The relevant hierarchy involves the elastic mean free path $\ell_\mathrm{qp}$, the phase-coherence length $\ell_\phi$, and the thermal length $\ell_T$. This hierarchy determines the applicable transport description.
 
-        We use the effective normal-state Hamiltonian introduced in Eq.~\eqref{eq:quasi:normal-hamiltonian}, with energies measured relative to the chemical potential,
-        \begin{equation}
-            \hat{H}_\mathrm{N}(\vec r)
-            = -\frac{\hbar^2}{2m^\ast}\nabla^2 + U(\vec r) - \mu\,.
-            \label{eq:meso:h-n}
-        \end{equation}
-        The potential $U(\vec r)$ represents confinement, tunnel barriers, and disorder. At the BCS mean-field level, superconductivity enters through the local pair potential introduced in Eq.~\eqref{eq:micro:complex-delta},
-        \begin{equation}
-            \Delta(\vec r)=|\Delta(\vec r)|e^{\ima\phi(\vec r)}\,,
-        \end{equation}
-        which appears here as the BdG matrix element coupling time-reversed electron and hole amplitudes. In the reduced Nambu basis, a quasiparticle mode is represented by
-        \begin{equation}
-            \Psi_k(\vec r)
-            =
-            \begin{pmatrix}
-                u_k(\vec r)\\
-                v_k(\vec r)
-            \end{pmatrix},
-        \end{equation}
-        where $u_k$ and $v_k$ are its electron-like and hole-like components.
+        The phase-coherence length $\ell_\phi$ is set by inelastic and dephasing processes such as electron--electron and electron--phonon scattering. It quantifies how far a quasiparticle retains a well-defined quantum phase. At finite temperature, thermal averaging further limits observable interference on the scale $\ell_T$.
 
-        The corresponding BdG Hamiltonian and eigenvalue problem are
-        \begin{align}
-            \hat{H}_\mathrm{BdG}(\vec r)
-            &=
-            \begin{pmatrix}
-                \hat{H}_\mathrm{N}(\vec r) & \Delta(\vec r)\\
-                \Delta^\ast(\vec r) & -\hat{H}_\mathrm{N}^\ast(\vec r)
-            \end{pmatrix},
-            \hat{H}_\mathrm{BdG}(\vec r)\Psi_k(\vec r)
-            &=E_k\Psi_k(\vec r)\,.
-        \end{align}
-        The off-diagonal pair potential mixes electron and hole amplitudes. Particle--hole symmetry relates every solution at $+E_k$ to a partner at $-E_k$ with exchanged electron and hole components. In the normal-state limit $\Delta\to0$, the two components decouple and recover the electron and hole sectors of Eq.~\eqref{eq:meso:h-n} \cite{bogoljubov_new_1958,de_gennes_superconductivity_1966}.
+        In macroscopic conductors, where $L \gg \ell_\mathrm{qp}$ and $L \gg \ell_\phi$, quasiparticles scatter many times and lose phase coherence before crossing the sample. Transport is then described by bulk drift diffusion. When $L \lesssim \ell_\phi$, phase coherence extends across the conductor and quantum interference becomes observable. The mean free path distinguishes ballistic transport for $L \ll \ell_\mathrm{qp}$ from phase-coherent diffusive transport for $\ell_\mathrm{qp} \ll L \lesssim \ell_\phi$. Figure~\ref{fig:quasi:meso} summarizes this hierarchy. \cite{gross_festkorperphysik_2014,beenakker_random-matrix_1997}
 
-        For a homogeneous superconductor with uniform $\Delta=|\Delta|e^{\ima\phi}$, the modes are labeled by the wave vector $\vec q$. The quantity $\xi_{\vec q}=\hbar^2q^2/(2m^\ast)-\mu$ denotes the normal-state energy measured from the Fermi level. In terms of this energy, the bulk quasiparticle dispersion is
-        \begin{equation}
-            E_{\vec q}=\sqrt{\xi_{\vec q}^2+|\Delta|^2}\,.
-        \end{equation}
-        Scattering calculations instead fix the quasiparticle energy $E$ and use the inverse relation to distinguish electron-like and hole-like branches,
-        \begin{equation}
-            \xi_{\pm}(E)=\pm\sqrt{E^2-|\Delta|^2}\,,
-        \end{equation}
-        with corresponding BCS coherence factors
-        \begin{equation}
-            \begin{aligned}
-                u_0(E) &= \sqrt{\tfrac{1}{2}\left(1+\xi_{\pm}(E)/E\right)}\,,\\
-                v_0(E) &= \sqrt{\tfrac{1}{2}\left(1-\xi_{\pm}(E)/E\right)}\,.
-            \end{aligned}
-            \label{eq:meso:coherence-factors}
-        \end{equation}
-        These factors set the relative electron and hole content of the scattering states \cite{bardeen_theory_1957,bogoljubov_new_1958}. When broadening is introduced in the BTK model below, the square roots are evaluated with the complex energy argument $|E|+\ima\gamma$, and the physical solution is selected by the propagation or decay boundary condition. At $\gamma=0$ and $|E|<|\Delta|$, $\xi_\pm$ is imaginary, so the bulk solutions are evanescent.
+        \begin{figure}
+            \centering
+            \subfigure[
+                Incoherent diffusive
+                ]{\import{theory/schema/scattering}{classic.pdf_tex}}
+            \hfill
+            \subfigure[
+                Phase-coherent diffusive
+                ]{\import{theory/schema/scattering}{diffusive.pdf_tex}}
+            \hfill
+            \subfigure[
+                Ballistic
+                ]{\import{theory/schema/scattering}{ballistic.pdf_tex}}
+            \caption{
+            Sketch of the transport-regime hierarchy selected by conductor length $L$, elastic mean free path $\ell_{\mathrm{qp}}$, and phase-coherence length $\ell_{\phi}$. (a)~Incoherent diffusive transport follows a local conductivity when $L \gg \ell_{\mathrm{qp}},\ell_{\phi}$. (b)~Elastic scattering remains frequent for $\ell_{\mathrm{qp}} \ll L \lesssim \ell_{\phi}$, but coherent path interference can modify the average diffusive response. (c)~For $L \ll \ell_{\mathrm{qp}}$ and $L \lesssim \ell_{\phi}$, the constriction is ballistic and is described by transmission channels.
+            }
+            % Legend: constriction \legend{seegrau120}, scattering centers \legend{seegrau100}, phase-coherent trajectory \legend{seeblau65}, phase-randomized trajectory \legend{seegrau65}, phase-coherence disk \legend{seeblau20}.
+            \label{fig:quasi:meso}
+        \end{figure}
 
-        The BdG formalism supplies the amplitudes and phases needed for superconducting scattering, but it does not specify the interface or contact geometry. Because homogeneous superconductors have no propagating subgap states, ordinary transmission below the gap is replaced by coherent electron--hole conversion at an NS interface. This conversion is introduced as Andreev reflection below. The same framework also reproduces the BCS density of states in Eq.~\eqref{eq:micro:dos-bcs}. \cite{andreev_thermal_1964,de_gennes_superconductivity_1966}
+        %=========================================================
+        \subsubsection*{Ballistic Transport and Scattering Formalism}
+        %=========================================================
+
+            \begin{wrapfigure}[14]{r}{0.4\textwidth}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-1em} % fine-tune vertical position
+                \import{theory/schema/scattering}{scattering-matrix.pdf_tex}
+                \vspace{-.25em} % fine-tune vertical position
+                \caption{
+                    Sketch of a two-terminal scatterer connecting ideal leads. Incoming and outgoing mode amplitudes $\vec{A}$, $\vec{B}$ are related by the scattering matrix $\mat{S}$.
+                }
+                \label{fig:quasi:scatter}
+            \end{wrapfigure}
+            In the ballistic regime, the constriction is shorter than the elastic mean free path, $L \ll \ell_\mathrm{qp}$, so quasiparticles traverse the contact without momentum-randomizing scattering. If $L \lesssim \ell_\phi$, transport is phase coherent across the entire constriction. A characteristic ballistic coherence length may be estimated from the Fermi velocity and a dephasing time $t_\phi$,
+            \begin{equation}
+                \ell_\phi = v_\mathrm{F} \, t_\phi\,.
+            \end{equation}
+            The numerical prefactor depends on the definition of the dephasing time.
+
+            Ballistic transport is naturally formulated as an elastic scattering problem. A finite region connects ideal leads in which electronic modes propagate without dissipation. We denote the incoming amplitudes in the left and right leads by $A_1$ and $A_2$, and the outgoing amplitudes by $B_1$ and $B_2$, as shown in Fig.~\ref{fig:quasi:scatter}.
+
+            Linear scattering then gives
+            \begin{equation}
+                \begin{pmatrix} B_1 \\ B_2 \end{pmatrix} = \mat{S}\,\begin{pmatrix} A_1 \\ A_2 \end{pmatrix}\,.
+            \end{equation}
+
+            In the multi-mode case, $A_{1,2}$ and $B_{1,2}$ become vectors collecting all propagating modes in the corresponding lead. The scattering matrix decomposes into reflection blocks $\mat{r}$ and $\mat{r}'$ and transmission blocks $\mat{t}$ and $\mat{t}'$,
+            \begin{equation}
+                \mat{S}
+                = \begin{pmatrix} \mat{r} & \mat{t}' \\ \mat{t} & \mat{r}' \end{pmatrix}\,.
+            \end{equation}
+            For purely elastic normal-state scattering, $\mat{S}$ is unitary because probability current is conserved.
+
+            The central quantities governing transport are then the transmission eigenvalues
+            \begin{equation}
+                \{\tau_i\} = \operatorname{eig}\!\left(\mat{t}^\dagger\,\mat{t}\right)\,,\quad
+                \tau_i\in[0,1]\,.
+            \end{equation}
+            Choosing a basis of transmission eigenchannels diagonalizes $\mat{t}^\dagger\mat{t}$. This basis is unique up to unitary rotations within degenerate subspaces.
+
+            In linear response, the normal-state conductance is then given by the Landauer formula,
+            \begin{equation}
+                G_\mathrm{N} = G_0 \sum_{i=1}^N \tau_i\,,
+                \quad
+                G_0 = \frac{2e^2}{h}\,,
+            \end{equation}
+            where $\tau_i$ are the transmission eigenvalues and $G_0$ is the conductance quantum\footnote{
+                Throughout this thesis the conductance quantum is defined as $G_0 \equiv 2e^2/h = 77.48\,\mu\mathrm{S}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = 12.9\,\mathrm{k\Omega}$.
+            } \cite{landauer_electrical_1970,buttiker_four-terminal_1986}.
+
+            The normal-state conductance measures only the sum of the transmission eigenvalues. It does not determine their individual values. The set $\{\tau_i\}$, referred to throughout this thesis as the mesoscopic pincode, becomes observable through the channel-dependent superconducting \textit{I--V} and \textit{dI--dV} characteristics discussed later. This distinction connects the Landauer formula to experimental channel extraction. \cite{scheer_conduction_1997,beenakker_random-matrix_1997}
+
+        %=========================================================
+        \subsubsection*{Atomic-Scale Contacts}
+        %=========================================================
+
+            A split-gate quantum point contact (QPC) in a high-mobility two-dimensional electron gas provides the clean reference for the channel picture. Its short ballistic constriction is tuned electrostatically, and the conductance increases in quantized steps as transverse modes open. In the Landauer picture, each nearly open mode contributes about one conductance quantum $G_0$. The resulting staircase $G(V_\mathrm{G})$ is shown in Fig.~\ref{fig:quasi:atomic-contact}(a) \cite{van_wees_quantized_1988,wharam_one-dimensional_1988}.
+
+            Semiconductor QPCs provide a clean and tunable example of conductance quantization, but this work focuses on metallic atomic contacts. In these contacts, atomic-scale structure and chemistry determine the number, symmetry, and transparency of the transmission channels.
+
+            \begin{figure}
+                \centering
+                \subfigure[
+                    % QPC conductance $G$ vs. gate voltage $V_\mathrm{G}$, showing quantized plateaus.
+                    QPC conductance, showing quantized plateaus.
+                    \cite{van_wees_quantized_1988}
+                    ]{\import{theory/basics}{GV.pgf}}
+                \hfill
+                \subfigure[
+                    % Aluminum atomic contact opening trace, conductance $G$ vs. displacement $\Delta x$.
+                    Aluminum atomic contact opening trace.
+                    \cite{scheer_conduction_1997}
+                    ]{\import{theory/basics}{Gx.pgf}}
+                \hfill
+                \subfigure[
+                    % Conductance histogram $P(G)$ for aluminum atomic contacts.
+                    Aluminum atomic contact conductance histogram.
+                    \cite{yanson_histograms_1997}
+                    ]{\import{theory/basics}{PG.pgf}}
+
+                \caption{
+                    Normal-state conductance reveals channel opening and preferred atomic configurations, but not the individual transmission probabilities.
+                (a) A split-gate quantum point contact provides the clean reference: each nearly open transverse mode adds approximately one conductance quantum.
+                (b) An aluminum opening trace shows plateaus associated with metastable atomic configurations.
+                (c) A histogram identifies conductance ranges that recur over many breaking cycles.
+                }
+                \label{fig:quasi:atomic-contact}
+            \end{figure}
+
+            Metallic atomic contacts realize ballistic, phase-coherent transport. The constriction consists of one or a few atoms, with a length of order an interatomic spacing. The elastic mean free path in aluminum depends on disorder, thickness, and microstructure. For example, normal-state resistivity measurements on 30--50-nm-thick aluminum films give $\ell_\mathrm{qp}=1.8$--$5.0\,\mathrm{nm}$. These measured film values are sample-specific, but they still exceed the length of an atomic constriction \cite{steinberg_quasi-particle_2008}. At low temperature, the phase-coherence length is also much larger than the constriction, so atomic contacts typically satisfy $L \ll \ell_\mathrm{qp}$ and $L \ll \ell_\phi$. Experimentally, such contacts are tracked by recording conductance while mechanically separating the electrodes, producing an opening trace as in Fig.~\ref{fig:quasi:atomic-contact}(b) \cite{scheer_conduction_1997,agrait_quantum_2003}.
+
+            The transmission eigenchannels of an atomic contact are set by the valence orbitals at the narrowest part of the constriction and by their hybridization with the electrodes. For aluminum, whose conduction states have predominantly $sp$ character, a typical single-atom contact has three dominant transport channels: one mainly $sp_z$-like channel and two transverse $p$-like channels. The exact number and transmission values depend on geometry and disorder, and weaker channels may appear \cite{scheer_conduction_1997,scheer_signature_1998}. Conductance histograms provide a statistical view, as in Fig.~\ref{fig:quasi:atomic-contact}(c), where peaks reflect preferred atomic configurations rather than proving conductance quantization \cite{yanson_histograms_1997,agrait_quantum_2003}.
+
+            Experimentally, the mesoscopic pincode $\{\tau_i\}$ can be extracted from superconducting transport measurements using multiple Andreev reflection and related techniques. These transmission eigenvalues serve as input for the finite-transmission description of superconducting transport in the following sections. \cite{scheer_conduction_1997,scheer_signature_1998}
+
+            Together, opening traces and conductance histograms show how atomic configurations select reproducible conductance ranges. They motivate the channel description used throughout this thesis, while superconducting subgap spectroscopy supplies the additional information required to resolve the individual $\tau_i$.
+
+    In summary, comparing $L$ with $\ell_\mathrm{qp}$, $\ell_\phi$, and $\ell_T$ determines whether transport is described by local bulk conductivity or by phase-coherent scattering. In the coherent regime, the normal-state conductance determines only $\sum_i\tau_i$. Channel-resolved superconducting spectroscopy supplies the additional information needed to determine the individual transmission eigenvalues. Section~\ref{sec:micro} now introduces superconducting pairing, the quasiparticle spectrum, and tunnel transport.
+
 
 
     %=========================================================

@@ -112,50 +112,6 @@
 
 
     %=========================================================
-    \subsection{Shapiro Steps}
-    \label{subsec:macro:shapiro}
-    %=========================================================
-
-        Under microwave irradiation, a Josephson junction develops quantized constant-voltage plateaus in its dc \textit{I--V} characteristic. These Shapiro steps, or the inverse AC Josephson effect, arise from frequency locking between the Josephson oscillation and the applied drive \cite{shapiro_josephson_1963}.
-
-        The microwave drive introduced in Sec.~\ref{subsec:micro:pat} modulates the superconducting phase. For coherent Cooper-pair transfer, the charge-dependent phase in Eq.~\eqref{eq:micro:pat-phase} is evaluated at $q=2e$ and contributes directly to the phase difference. The Josephson frequency $\nu_0$ then mixes with the external frequency $\nu$, and the phase takes the form
-        \begin{equation}
-            \phi(t)=\phi_0 + 2\pi\nu_0 t + \alpha_{\nu,2e}\sin(2\pi\nu t)\,,
-            \label{eq:macro:shapiro-phase}
-        \end{equation}
-        with $\alpha_{\nu,2e} = 2eA/h\nu$ the dimensionless Cooper-pair drive strength.
-
-        Inserting this expression into Eq.~\eqref{eq:macro:josephson-current-phase} and expanding the phase modulation with Eq.~\eqref{eq:micro:pat-jacobi-anger} yields harmonics at frequencies $\nu_0 - n\nu$. Whenever $\nu_0 = n\nu$, the $n$-th harmonic becomes stationary and contributes a finite dc current. This produces quantized voltage plateaus at
-        \begin{equation}
-            V_n = \frac{nh\nu}{2e}\,,
-        \end{equation}
-        known as Shapiro steps \cite{shapiro_josephson_1963}.
-
-        In the ideal voltage-driven sinusoidal model, the amplitude of each dc locking contribution is governed by the Bessel factor $J_n(\alpha_{\nu,2e})$ \cite{shapiro_josephson_1963,barone_physics_1982}. In contrast to the Tien--Gordon description of quasiparticle tunneling, the Bessel functions appear here without being squared because the Josephson current depends linearly on the phase modulation rather than on a transition probability. To retain the spectroscopy language used for quasiparticle transport, we represent the microwave response phenomenologically as shifted replicas of a static Josephson \textit{I--V} characteristic,
-        \begin{equation}
-            I(V_0)
-                = \sum_{n=-\infty}^{\infty}
-                    \left|J_n\!(\alpha_{\nu,2e})\right|\,
-                    I_{0}\!\left(V_0 - \frac{nh\nu}{2e}\right),
-            \label{eq:macro:shapiro-iv}
-        \end{equation}
-        where $I_0(V_0)$ denotes the static Josephson \textit{I--V} curve in the absence of microwaves. Equation~\eqref{eq:macro:shapiro-iv} is a spectroscopy-oriented ansatz that displays the step positions and Bessel-weighted evolution in a form analogous to photon-assisted tunneling. It is not the general dynamical solution of a driven junction. The phase-locking dynamics and damping are treated with the RCSJ model below.
-
-        \begin{wrapfigure}[10]{r}{0.4\textwidth}
-            \captionsetup{format=plain}%
-            \centering
-            \vspace{-1.3em}
-            \import{theory/macro}{shapiro-ideal.pgf}
-            \vspace{-.9em}
-            \caption{
-                Microwave-driven transport in a Josephson junction.
-                }
-            \label{fig:macro:shapiro-iv}
-        \end{wrapfigure}
-        Quasiparticle tunneling occurs in parallel with the phase-driven supercurrent. Under microwave irradiation, Shapiro steps and PAT can therefore appear simultaneously. As illustrated in Fig.~\ref{fig:macro:shapiro-iv}, their interplay produces replicas in \textit{I--V} near zero bias and for energies twice the gap. The step spacing measures the applied frequency, while the step visibility depends on damping and fluctuations.
-
-
-    %=========================================================
     \subsection{RCSJ Model}
     \label{subsec:macro:rcsj}
     %=========================================================
@@ -311,6 +267,49 @@
 
             In the underdamped limit ($Q\gg 1$), the phase retains significant kinetic energy after escape and cannot relock until the tilt is nearly removed. The retrapping current therefore approaches zero, giving rise to strong hysteresis in the \textit{I--V} characteristic \cite{stewart_currentvoltage_1968,mccumber_effect_1968}.
 
+    %=========================================================
+    \subsection{Shapiro Steps}
+    \label{subsec:macro:shapiro}
+    %=========================================================
+
+        Under microwave irradiation, a Josephson junction develops quantized constant-voltage plateaus in its dc \textit{I--V} characteristic. These Shapiro steps, or the inverse AC Josephson effect, arise from frequency locking between the Josephson oscillation and the applied drive \cite{shapiro_josephson_1963}.
+
+        The microwave drive introduced in Sec.~\ref{subsec:micro:pat} modulates the superconducting phase. For coherent Cooper-pair transfer, the charge-dependent phase in Eq.~\eqref{eq:micro:pat-phase} is evaluated at $q=2e$ and contributes directly to the phase difference. The Josephson frequency $\nu_0$ then mixes with the external frequency $\nu$, and the phase takes the form
+        \begin{equation}
+            \phi(t)=\phi_0 + 2\pi\nu_0 t + \alpha_{\nu,2e}\sin(2\pi\nu t)\,,
+            \label{eq:macro:shapiro-phase}
+        \end{equation}
+        with $\alpha_{\nu,2e} = 2eA/h\nu$ the dimensionless Cooper-pair drive strength.
+
+        Inserting this expression into Eq.~\eqref{eq:macro:josephson-current-phase} and expanding the phase modulation with Eq.~\eqref{eq:micro:pat-jacobi-anger} yields harmonics at frequencies $\nu_0 - n\nu$. Whenever $\nu_0 = n\nu$, the $n$-th harmonic becomes stationary and contributes a finite dc current. This produces quantized voltage plateaus at
+        \begin{equation}
+            V_n = \frac{nh\nu}{2e}\,,
+        \end{equation}
+        known as Shapiro steps \cite{shapiro_josephson_1963}.
+
+        In the ideal voltage-driven sinusoidal model, the amplitude of each dc locking contribution is governed by the Bessel factor $J_n(\alpha_{\nu,2e})$ \cite{shapiro_josephson_1963,barone_physics_1982}. In contrast to the Tien--Gordon description of quasiparticle tunneling, the Bessel functions appear here without being squared because the Josephson current depends linearly on the phase modulation rather than on a transition probability. To retain the spectroscopy language used for quasiparticle transport, we represent the microwave response phenomenologically as shifted replicas of a static Josephson \textit{I--V} characteristic,
+        \begin{equation}
+            I(V_0)
+                = \sum_{n=-\infty}^{\infty}
+                    \left|J_n\!(\alpha_{\nu,2e})\right|\,
+                    I_{0}\!\left(V_0 - \frac{nh\nu}{2e}\right),
+            \label{eq:macro:shapiro-iv}
+        \end{equation}
+        where $I_0(V_0)$ denotes the static Josephson \textit{I--V} curve in the absence of microwaves. Equation~\eqref{eq:macro:shapiro-iv} is a spectroscopy-oriented ansatz that displays the step positions and Bessel-weighted evolution in a form analogous to photon-assisted tunneling. It is not the general dynamical solution of a driven junction. The phase-locking dynamics and damping are treated with the RCSJ model below.
+
+        \begin{wrapfigure}[10]{r}{0.4\textwidth}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-1.3em}
+            \import{theory/macro}{shapiro-ideal.pgf}
+            \vspace{-.9em}
+            \caption{
+                Microwave-driven transport in a Josephson junction.
+                }
+            \label{fig:macro:shapiro-iv}
+        \end{wrapfigure}
+        Quasiparticle tunneling occurs in parallel with the phase-driven supercurrent. Under microwave irradiation, Shapiro steps and PAT can therefore appear simultaneously. As illustrated in Fig.~\ref{fig:macro:shapiro-iv}, their interplay produces replicas in \textit{I--V} near zero bias and for energies twice the gap. The step spacing measures the applied frequency, while the step visibility depends on damping and fluctuations.
+        
         %=========================================================
         \subsubsection*{Shapiro Steps in the RCSJ Model}
         %=========================================================
