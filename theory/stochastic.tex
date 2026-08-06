@@ -46,7 +46,7 @@
             \label{fig:stochastic:pe}
         \end{figure}
 
-        The circuit impedance determines the phase fluctuations, their correlation function defines the energy-exchange probability, and this probability dresses the tunneling rate and measured current. The label $q$ denotes the charge transferred in one event. We use the environmental-tunneling formulation of Falci \textit{et al.} and the conventions summarized by Ingold and Nazarov \cite{falci_quasiparticle_1991,ingold_charge_1992}.
+        The circuit impedance determines the voltage fluctuations seen by the junction. These fluctuations produce the phase correlator and the energy-exchange probability that dresses the tunneling rate. The label $q$ denotes the net charge transferred in one tunneling event, for example $q=e$ for quasiparticle tunneling and $q=2e$ for Cooper-pair transfer. Because the phase acquired from a voltage fluctuation is proportional to $q$, the environmental coupling in the phase correlator scales as $q^2$. We use the environmental-tunneling formulation of Falci \textit{et al.} and the conventions summarized by Ingold and Nazarov \cite{falci_quasiparticle_1991,ingold_charge_1992}.
 
         The relevant impedance is the effective impedance $Z(\omega)$ seen by the junction rather than the impedance of an isolated circuit element. For a junction capacitance $C$ in parallel with an environmental impedance $Z_\mathrm{env}(\omega)$, it is
         \begin{equation}
@@ -89,7 +89,7 @@
             = \int_{-\infty}^{\infty} P_q(E)F_q^{\rightarrow}(E,V)\,\mathrm{d}E\,.
             \label{eq:stochastic:pe-tunnel-rate}
         \end{equation}
-        The electronic kernel $F_q^{\rightarrow}(E,V)$ is the bare tunneling rate for a process in which the environment absorbs the fixed energy $E$. It contains the electrode DOS, Fermi occupations, tunneling matrix elements, bias dependence, and selection rules for the transferred charge. Its form distinguishes quasiparticle tunneling, incoherent Cooper-pair tunneling, and incoherent Andreev reflection, while $P_q(E)$ describes the environment. The reverse rate has the same structure with the corresponding reverse electronic kernel. The net current is
+        The electronic kernel $F_q^{\rightarrow}(E,V)$ is the bare tunneling rate for a process in which the environment absorbs the fixed energy $E$. It contains the electrode DOS, Fermi occupations, tunneling matrix elements, bias dependence, and the initial and final electronic states of the process. Its form distinguishes quasiparticle tunneling, incoherent Cooper-pair tunneling, and incoherent Andreev reflection, while $P_q(E)$ describes the environment. The reverse rate has the same structure with the corresponding reverse electronic kernel. The net current is
         \begin{equation}
             I(V)=q\left[\Gamma_q^{\rightarrow}(V)-\Gamma_q^{\leftarrow}(V)\right]\,.
             \label{eq:stochastic:pe-rate-current}
@@ -105,7 +105,12 @@
             \begin{equation}
                 P_\mathrm{low}(E) \approx \delta(E)\,, \qquad \mathrm{Re}\,Z(\omega) \ll \frac{h}{q^2}\,.
             \end{equation}
-            The environment neither absorbs nor emits energy, so the rate reduces to the bare elastic rate and Eq.~\eqref{eq:stochastic:pe-rate-current} gives the elastic current. A finite but small $\alpha_q$ broadens the delta peak and introduces weak inelastic corrections, connecting $P(E)$ theory continuously to the usual elastic tunneling description \cite{ingold_charge_1992}.
+            In the limit $P_q(E)=\delta(E)$, Eq.~\eqref{eq:stochastic:pe-tunnel-rate} reduces to
+            \begin{equation}
+                \Gamma_q^{\rightarrow}(V)=F_q^{\rightarrow}(0,V)\,.
+                \label{eq:stochastic:elastic-rate}
+            \end{equation}
+            The environment exchanges no energy with the tunneling charge. For single-electron tunneling, Eq.~\eqref{eq:stochastic:elastic-rate} recovers the elastic microscopic tunnel rate introduced in Sec.~\ref{subsec:micro:tunnel-current}. A finite but small $\alpha_q$ broadens the delta peak and introduces weak inelastic corrections \cite{ingold_charge_1992}.
 
         %=========================================================
         \subsubsection*{Finite Ohmic Coupling}
@@ -124,7 +129,7 @@
                 \label{eq:stochastic:pe-ohmic}
             \end{equation}
 
-            Here $E_\mathrm{c}=\hbar\omega_\mathrm{c}$ is the cutoff energy of the environment. The function $\Gamma(\alpha_q)$ is the Euler Gamma function, the continuous extension of the factorial, and only normalizes $P(E)$. It should not be confused with the transition rates denoted by $\Gamma$ below. The power law is the Ohmic low-energy result. The exponential factor regularizes the high-energy tail, since a real circuit behaves Ohmically over a finite bandwidth. This Gamma-distribution form is a convenient cutoff model for the universal low-energy power law, not the exact kernel of every Ohmic circuit \cite{ingold_charge_1992}.
+            The cutoff energy is $E_\mathrm{c}=\hbar\omega_\mathrm{c}$. The Euler Gamma function $\Gamma(\alpha_q)$ normalizes the distribution. The power law describes the universal Ohmic low-energy behavior, while the exponential factor regularizes the high-energy tail of an environment with finite bandwidth. Equation~\eqref{eq:stochastic:pe-ohmic} is therefore a convenient cutoff model and not the exact kernel of every Ohmic circuit \cite{ingold_charge_1992}.
 
             At zero temperature this form has support only for $E>0$, because the environment can absorb energy but cannot emit energy from its ground state. At finite temperature, thermal modes add a negative-energy tail to $P(E)$, corresponding to energy emitted by the environment into the tunneling process. The full finite-temperature kernel is usually evaluated from Eq.~\eqref{eq:stochastic:pe-definition}. The low-energy suppression of $P(E)$ underlies dynamical Coulomb blockade and also sets the scale for incoherent Cooper-pair tunneling.
 
@@ -140,9 +145,9 @@
             \end{equation}
             where $\alpha_{0,q}$ quantifies the coupling between charge $q$ and the resonant mode. The shifted kernels describe tunneling events accompanied by excitation of $n$ mode quanta. The Poisson weights are not a generic property of any peak in $Z(\omega)$, but a consequence of a linearly coupled harmonic mode. Damping, thermal occupation, nonlinearities, or strong driving modify the sideband weights and line shapes. In the measured current, this structured $P_q(E)$ dresses the electronic kernel in Eq.~\eqref{eq:stochastic:pe-tunnel-rate} and produces satellites whose voltage spacing depends on the transferred charge \cite{ingold_charge_1992}.
 
-        Figure~\ref{fig:stochastic:pe} connects elastic, Ohmic, and mode-assisted energy exchange to the zero-bias suppression, broadened thresholds, and resonant satellites discussed below.
+        Figure~\ref{fig:stochastic:pe} summarizes the three environmental limits introduced above. Weak coupling concentrates the probability near zero exchanged energy. Ohmic coupling broadens this contribution and suppresses low-energy tunneling, while a resonant mode produces discrete inelastic contributions. After convolution with the electronic kernel, these structures appear in measured transport as zero-bias suppression, broadened thresholds, and resonant satellites.
 
-        The following subsections specialize this charge-general framework. DCB applies $P_e(E)$ to stochastic single-electron transport, while ICPT applies $P_{2e}(E)$ to Cooper-pair transfer. The SSET then combines the corresponding single-electron and pair-transfer rates in a master equation for charge-state occupations.
+        The transferred charge selects the environmental kernel because $J_q(t)\propto q^2$. Dynamical Coulomb blockade uses $P_e(E)$ to describe environmental dressing of single-electron tunneling. Incoherent Cooper-pair tunneling uses $P_{2e}(E)$ and is therefore more sensitive to the same impedance. In a superconducting single-electron transistor, these charge-specific rates connect different island charge states. A master equation then combines the rates with their stationary occupation probabilities.
 
 
     %=========================================================

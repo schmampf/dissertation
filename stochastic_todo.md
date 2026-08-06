@@ -19,12 +19,12 @@ This checklist tracks Elke's handwritten corrections in `Theory and Methods_ES_v
 
 ## 2. General \(P(E)\) framework
 
-- [ ] **STOCH-05, PDF p. 51, printed p. 49:** Explain what "selection rules for the transferred charge" means or replace it with a concrete description of the allowed tunneling processes.
-- [ ] **STOCH-06, PDF p. 51, printed p. 49:** Clarify the phrase "usual elastic tunneling description". Point to the precise microscopic expression or briefly state what is recovered when \(P(E)=\delta(E)\).
-- [ ] **STOCH-07, PDF p. 52, printed p. 50:** Reconsider the sentence beginning with "Here" after Eq. (108). Improve the introduction of the cutoff energy and the Euler Gamma function.
-- [ ] **STOCH-08, PDF p. 52, printed p. 50:** Clarify why the factorial and transition rate notation are mentioned together. Ensure the distinction between the Euler Gamma function and tunneling rates is useful and not distracting.
-- [ ] **STOCH-09, PDF p. 53, printed p. 51:** Rewrite "Figure 28 connects..." so that the physical relationship between environmental energy exchange and the observable transport features is explicit.
-- [ ] **STOCH-10, PDF p. 53, printed p. 51:** Strengthen the transition from the charge general \(P_q(E)\) framework to DCB, ICPT, and SSET transport. Elke's margin note appears to ask how these processes connect to the environment.
+- [x] **STOCH-05, PDF p. 51, printed p. 49:** Define $q$ using concrete single-electron and Cooper-pair examples and replace the abstract "selection rules" with the initial and final electronic states of the process.
+- [x] **STOCH-06, PDF p. 51, printed p. 49:** Show explicitly that $P_q(E)=\delta(E)$ gives $\Gamma_q^{\rightarrow}(V)=F_q^{\rightarrow}(0,V)$ and link the single-electron case to the microscopic tunnel rate.
+- [x] **STOCH-07, PDF p. 52, printed p. 50:** Introduce the cutoff energy and Euler Gamma function directly after Eq. (108).
+- [x] **STOCH-08, PDF p. 52, printed p. 50:** Remove the distracting factorial analogy and notation warning while retaining the normalization role of the Euler Gamma function.
+- [x] **STOCH-09, PDF p. 53, printed p. 51:** Explain how the three environmental kernels in Fig. 28 produce observable suppression, broadening, and satellites after convolution with the electronic kernel.
+- [x] **STOCH-10, PDF p. 53, printed p. 51:** Connect transferred charge, the $q^2$ dependence of the phase correlator, the charge-specific $P_q(E)$ kernels, transition rates, and SSET occupations.
 
 ## 3. Dynamical Coulomb blockade
 
@@ -71,6 +71,6 @@ This checklist tracks Elke's handwritten corrections in `Theory and Methods_ES_v
 ## Notes requiring confirmation
 
 - [x] Resolve the section title on printed p. 47 as `Stochastic Transport`.
-- [ ] Confirm the short margin note beside the definition of the transferred charge $q$ in the opening of the $P(E)$ subsection on printed p. 47. This note may belong to STOCH-05 rather than STOCH-04.
+- [x] Address the short margin note beside the definition of $q$ by defining the net transferred charge explicitly and explaining its role in the $q^2$ environmental coupling.
 - [ ] Confirm the long blue margin note concerning superconducting transitions and voltage thresholds on printed p. 59.
 - [ ] Confirm the red and green comments surrounding the JQP and incoherent-rate paragraphs on printed p. 59.
