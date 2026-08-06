@@ -5,7 +5,7 @@
 \label{sec:stochastic}
 %=========================================================
 
-    The stochastic transport description applies when fluctuations of the electromagnetic environment destroy phase memory between successive tunneling events. The voltage across the junction then contains a fluctuating contribution $\delta V(t)$ around its deterministic bias value. This fluctuation produces a random phase accumulation and allows the environment to absorb or supply energy during a tunneling event. Transport is therefore described by transition probabilities and charge-state occupations rather than by deterministic phase evolution.
+    The stochastic transport description applies when fluctuations of the electromagnetic environment destroy phase memory between successive tunneling events. The voltage across the junction then contains a fluctuating contribution $\delta V(t)$ around its deterministic bias value. This fluctuation produces a random phase accumulation and allows the environment to absorb or supply energy during a tunneling event. Transport is therefore described by transition probabilities and charge state occupations rather than by deterministic phase evolution.
 
     The crossover from phase coherent to stochastic transport follows from the conjugacy of the superconducting phase difference $\phi$ and the junction charge operator $Q$,
     \begin{equation}
@@ -15,11 +15,11 @@
     \begin{equation}
         \delta \vartheta_q(t) = \frac{q}{\hbar}\int_0^t \delta V(t')\,\mathrm{d}t'\,.
     \end{equation}
-    Here $\delta V(t)$ is the fluctuating part of the voltage across the junction relative to its mean bias value. For Cooper-pair transfer, $q=2e$, and $\delta\vartheta_{2e}$ is the fluctuating contribution to the condensate phase difference obtained from the AC Josephson relation in Eq.~\eqref{eq:macro:josephson-voltage-phase}. For single-electron tunneling, $\delta\vartheta_e$ instead multiplies the single-electron tunneling amplitude. It represents the environmental phase acquired by transferring charge $e$ and is not an independent superconducting condensate phase \cite{falci_quasiparticle_1991,ingold_charge_1992}.
+    Here $\delta V(t)$ is the fluctuating part of the voltage across the junction relative to its mean bias value. For Cooper-pair transfer, $q=2e$, and $\delta\vartheta_{2e}$ is the fluctuating contribution to the condensate phase difference obtained from the ac Josephson relation in Eq.~\eqref{eq:macro:josephson-voltage-phase}. For single-electron tunneling, $\delta\vartheta_e$ instead multiplies the single-electron tunneling amplitude. It represents the environmental phase acquired by transferring charge $e$ and is not an independent superconducting condensate phase \cite{falci_quasiparticle_1991,ingold_charge_1992}.
 
-    Strong phase fluctuations suppress phase memory. They broaden coherent Josephson and Andreev processes. When independent tunneling events dominate, their rates are governed by energy exchange with the environment. This crossover depends on the frequency-dependent impedance, junction parameters, temperature, and transferred charge.
+    Strong phase fluctuations suppress phase memory. They broaden coherent Josephson and Andreev processes. When independent tunneling events dominate, their rates are governed by energy exchange with the environment. This crossover depends on the frequency dependent impedance, junction parameters, temperature, and transferred charge.
 
-    In this incoherent limit, \textit{P(E)} theory gives the probability density for energy exchange between a discrete tunneling event and the environment. We first construct this environmental kernel, then apply it to dynamical Coulomb blockade of single-electron tunneling, incoherent Cooper-pair tunneling and its photon-assisted counterpart, and superconducting single-electron transistors.
+    In this incoherent limit, \textit{P(E)} theory gives the probability density for energy exchange between a discrete tunneling event and the environment. We first construct this environmental kernel, then apply it to dynamical Coulomb blockade of single-electron tunneling, incoherent Cooper-pair tunneling and its photon assisted counterpart, and superconducting single-electron transistors.
 
 
     %=========================================================
@@ -41,12 +41,12 @@
                 Mode weights
                 ]{\import{theory/stochastic}{pe-res-w.pgf}}
             \caption{
-                Energy-exchange probability for Ohmic and resonant electromagnetic environments. (a) The Ohmic kernel evolves from nearly elastic tunneling at small $\alpha_q$ to a broad distribution with suppressed low-energy weight as the environmental resistance increases. (b) Coupling to a harmonic mode redistributes this kernel into replicas separated by the mode energy $\hbar\omega_0$. (c) The replica amplitudes follow the Poisson weights, so increasing the mode coupling $\alpha_{0,q}$ transfers weight from the elastic contribution to higher-order mode excitations. Unless indicated by the legend, $\alpha_q=\alpha_{0,q}=1$.
+                Energy exchange probability for Ohmic and resonant electromagnetic environments. (a) The Ohmic kernel evolves from nearly elastic tunneling at small $\alpha_q$ to a broad distribution with suppressed low-energy weight as the environmental resistance increases. (b) Coupling to a harmonic mode redistributes this kernel into replicas separated by the mode energy $\hbar\omega_0$. (c) The replica amplitudes follow the Poisson weights, so increasing the mode coupling $\alpha_{0,q}$ transfers weight from the elastic contribution to higher-order mode excitations. Unless indicated by the legend, $\alpha_q=\alpha_{0,q}=1$.
                 }
             \label{fig:stochastic:pe}
         \end{figure}
 
-        The circuit impedance determines the voltage fluctuations seen by the junction. These fluctuations produce the phase correlator and the energy-exchange probability that dresses the tunneling rate. The label $q$ denotes the net charge transferred in one tunneling event, for example $q=e$ for quasiparticle tunneling and $q=2e$ for Cooper-pair transfer. Because the phase acquired from a voltage fluctuation is proportional to $q$, the environmental coupling in the phase correlator scales as $q^2$. We use the environmental-tunneling formulation of Falci \textit{et al.} and the conventions summarized by Ingold and Nazarov \cite{falci_quasiparticle_1991,ingold_charge_1992}.
+        The circuit impedance determines the voltage fluctuations seen by the junction. These fluctuations produce the phase correlator and the energy exchange probability that dresses the tunneling rate. The label $q$ denotes the net charge transferred in one tunneling event, for example $q=e$ for quasiparticle tunneling and $q=2e$ for Cooper-pair transfer. Because the phase acquired from a voltage fluctuation is proportional to $q$, the environmental coupling in the phase correlator scales as $q^2$. We use the environmental tunneling formulation of Falci \textit{et al.} and the conventions summarized by Ingold and Nazarov \cite{falci_quasiparticle_1991,ingold_charge_1992}.
 
         The relevant impedance is the effective impedance $Z(\omega)$ seen by the junction rather than the impedance of an isolated circuit element. For a junction capacitance $C$ in parallel with an environmental impedance $Z_\mathrm{env}(\omega)$, it is
         \begin{equation}
@@ -54,7 +54,7 @@
         \end{equation}
         The junction capacitance suppresses the high-frequency response and supplies a physical cutoff. For a more complex circuit, $Z(\omega)$ denotes the corresponding network impedance evaluated at the junction terminals \cite{falci_quasiparticle_1991,ingold_charge_1992}.
 
-        The effective impedance sets the spectrum of voltage fluctuations. Since voltage fluctuations integrate into the tunneling phase, the impedance enters through the charge-dependent phase correlation function
+        The effective impedance sets the spectrum of voltage fluctuations. Since voltage fluctuations integrate into the tunneling phase, the impedance enters through the charge dependent phase correlation function
         \begin{equation}
             J_q(t) = \frac{2q^2}{h} \int_0^\infty
             \underbrace{\vphantom{\coth\!\left(\frac{\hbar\omega}{2k_\mathrm{B}T}\right)\left(\cos(\omega t) - 1\right)}\frac{\mathrm{Re}\,Z(\omega)}{\textstyle \omega}}_{\text{coupling}}
@@ -69,7 +69,7 @@
 
         Equation~\eqref{eq:stochastic:phase-correlation} can be read from left to right through the three annotated factors. The coupling factor gives the dissipative environmental spectrum seen by the junction. The division by frequency appears because phase is the time integral of voltage, making low-frequency noise especially effective. The diffusion factor is the real part of the correlator and describes loss of phase memory. The winding factor is the imaginary part and tracks the deterministic phase shift generated by the environment.
 
-        The energy-exchange probability is obtained by Fourier transforming this phase correlator,
+        The energy exchange probability is obtained by Fourier transforming this phase correlator,
         \begin{equation}
             P_q(E) = \frac{1}{h} \int_{-\infty}^{\infty} \exp\left(J_q(t) + \ima E t/\hbar\right)\,\mathrm{d}t\,.
             \label{eq:stochastic:pe-definition}
@@ -101,7 +101,7 @@
         %=========================================================
         \subsubsection*{Elastic Limit}
         %=========================================================
-            The elastic limit is the weak-coupling limit $\alpha_q\to0$ of the Ohmic family. When the impedance is much smaller than the relevant resistance quantum over the frequencies involved in tunneling, voltage and phase fluctuations are weak and the environment exchanges little energy with the transferred charge. The energy-exchange probability approaches a delta function,
+            The elastic limit is the weak-coupling limit $\alpha_q\to0$ of the Ohmic family. When the impedance is much smaller than the relevant resistance quantum over the frequencies involved in tunneling, voltage and phase fluctuations are weak and the environment exchanges little energy with the transferred charge. The energy exchange probability approaches a delta function,
             \begin{equation}
                 P_\mathrm{low}(E) \approx \delta(E)\,, \qquad \mathrm{Re}\,Z(\omega) \ll \frac{h}{q^2}\,.
             \end{equation}
@@ -116,7 +116,7 @@
         \subsubsection*{Finite Ohmic Coupling}
         %=========================================================
 
-            As the Ohmic coupling increases, phase fluctuations broaden the elastic peak into a continuous energy-exchange spectrum. A simple zero-temperature cutoff model gives the normalized form
+            As the Ohmic coupling increases, phase fluctuations broaden the elastic peak into a continuous energy exchange spectrum. A simple zero-temperature cutoff model gives the normalized form
             \begin{equation}
                 P_\mathrm{Ohmic}(E)
                 = \frac{1}{E_\mathrm{c}\Gamma(\alpha_q)}
@@ -147,7 +147,7 @@
 
         Figure~\ref{fig:stochastic:pe} summarizes the three environmental limits introduced above. Weak coupling concentrates the probability near zero exchanged energy. Ohmic coupling broadens this contribution and suppresses low-energy tunneling, while a resonant mode produces discrete inelastic contributions. After convolution with the electronic kernel, these structures appear in measured transport as zero-bias suppression, broadened thresholds, and resonant satellites.
 
-        The transferred charge selects the environmental kernel because $J_q(t)\propto q^2$. Dynamical Coulomb blockade uses $P_e(E)$ to describe environmental dressing of single-electron tunneling. Incoherent Cooper-pair tunneling uses $P_{2e}(E)$ and is therefore more sensitive to the same impedance. In a superconducting single-electron transistor, these charge-specific rates connect different island charge states. A master equation then combines the rates with their stationary occupation probabilities.
+        The transferred charge selects the environmental kernel because $J_q(t)\propto q^2$. Dynamical Coulomb blockade uses $P_e(E)$ to describe environmental dressing of single-electron tunneling. Incoherent Cooper-pair tunneling uses $P_{2e}(E)$ and is therefore more sensitive to the same impedance. In a superconducting single-electron transistor, these charge specific rates connect different island charge states. A master equation then combines the rates with their stationary occupation probabilities.
 
 
     %=========================================================
@@ -164,7 +164,7 @@
             \caption{Environmental energy absorption in SIS junctions.}
             \label{fig:stochastic:dcb-schematic}
         \end{wrapfigure}
-        Dynamical Coulomb blockade (DCB) applies $P_e(E)$ to the elastic electronic kernel from the microscopic tunnel description. Figure~\ref{fig:stochastic:dcb-schematic} shows the energy balance for an SIS tunneling event. The electron creates quasiparticle excitations in the electrodes, and any energy not carried by the final electronic states must be absorbed by the environment. If $P_e(E)$ is small at the required absorption energy, this channel is suppressed \cite{falci_quasiparticle_1991,ingold_charge_1992}.
+        Dynamical Coulomb blockade (DCB) applies $P_e(E)$ to the elastic electronic kernel from the microscopic tunnel description. Figure~\ref{fig:stochastic:dcb-schematic} shows the energy balance for an SIS tunneling event. The electron creates quasiparticle excitations in the electrodes. At zero temperature, any energy not carried by the final electronic states must be absorbed by the environment. At finite temperature, thermally occupied environmental modes can also emit energy into the tunneling process. If $P_e(E)$ is small at the required exchange energy, this channel is suppressed \cite{falci_quasiparticle_1991,ingold_charge_1992}.
 
         A single electron crossing a junction with capacitance $C$ changes its electrostatic energy by an amount of order $E_\mathrm{C}=e^2/2C$. The environment carries this energy through its voltage fluctuations. Small low-energy weight in $P_e(E)$ therefore appears as a zero-bias suppression in \textit{dI--dV} \cite{falci_quasiparticle_1991,ingold_charge_1992}.
 
@@ -214,24 +214,24 @@
         The same $P_e(E)$ therefore yields a zero-bias anomaly in NIN junctions and dressed DOS thresholds in superconducting junctions, which are the main DCB observables used below.
 
         %=========================================================
-        \subsubsection*{Photon-Assisted Dynamical Coulomb Blockade}
+        \subsubsection*{Photon Assisted Dynamical Coulomb Blockade}
         %=========================================================
 
-            The photon-assisted tunneling mechanism and its Bessel weights are derived in Sec.~\ref{subsec:micro:pat}. For DCB, the same time-averaged dressing is applied to the complete undriven current $I_{\mathrm{DCB},0}(V)$, which already contains environmental energy exchange. The resulting photon-assisted DCB current is
+            The photon assisted tunneling mechanism and its Bessel weights were derived in Sec.~\ref{subsec:micro:pat}. For DCB, the same time averaged dressing is applied to the complete undriven current $I_{\mathrm{DCB},0}(V)$, which already contains environmental energy exchange. The resulting photon assisted DCB current is
             \begin{equation}
                 I_\mathrm{PADCB}(V_0) = \sum_{n=-\infty}^{\infty} J_n^2\!\left(\alpha_{\nu,e}\right) I_{\mathrm{DCB},0}\!\left(V_0 - \frac{nh\nu}{e}\right)\,,\qquad
                 \alpha_{\nu,e} = \frac{eA}{h\nu}\,.
                 \label{eq:stochastic:padcb}
             \end{equation}
-            This current-replica formulation applies to coherently driven tunnel junctions in the stationary DCB approximation \cite{falci_quasiparticle_1991,grabert_dynamical_2015,parlavecchio_fluctuation_2015,houle_photon-assisted_2019}. Here $A$ is the effective AC voltage amplitude after environmental filtering and voltage division. The replicas are separated by $h\nu/e$.
+            This current replica formulation applies to coherently driven tunnel junctions in the stationary DCB approximation \cite{falci_quasiparticle_1991,grabert_dynamical_2015,parlavecchio_fluctuation_2015,houle_photon-assisted_2019}. Here $A$ is the effective ac voltage amplitude after environmental filtering and voltage division. The replicas are separated by $h\nu/e$.
 
-            Equation~\eqref{eq:stochastic:padcb} assumes weak tunneling, a coherent classical drive, and an environment whose response can be absorbed into the stationary DCB characteristic and effective amplitude $A$. It neglects drive-induced changes of the DOS, heating, nonequilibrium electrode occupations, and nonlinear environmental backaction.
+            Equation~\eqref{eq:stochastic:padcb} assumes weak tunneling, a coherent classical drive, and an environment whose response can be absorbed into the stationary DCB characteristic and effective amplitude $A$. It neglects drive induced changes of the DOS, heating, nonequilibrium electrode occupations, and nonlinear environmental backaction.
 
-            Houle \textit{et al.} found that current and photon-assisted noise required different effective AC amplitudes. The stationary-replica model therefore misses part of the driven junction-environment dynamics and is limited as a quantitative microwave calibration~\cite{houle_photon-assisted_2019}.
+            Houle \textit{et al.} found that current and photon assisted noise required different effective ac amplitudes. The stationary replica model therefore misses part of the driven junction and environment dynamics and is limited as a quantitative microwave calibration~\cite{houle_photon-assisted_2019}.
 
-            Figures~\ref{fig:stochastic:dcb-resonant} and~\ref{fig:stochastic:dcb-pat} compare passive resonant and photon-assisted DCB in an SIS junction. Both generate satellites separated by $\hbar\omega_0=h\nu$, but passive modes produce Poisson-weighted inelastic channels and coherent drives produce Bessel-weighted current replicas. At zero temperature, passive-mode satellites lie on the higher-$|V|$ side of the quasiparticle threshold because the mode can only absorb energy. A coherent drive permits absorption and stimulated emission, creating replicas on both sides. Thermal mode occupation weakens this distinction through detailed balance.
+            Figures~\ref{fig:stochastic:dcb-resonant} and~\ref{fig:stochastic:dcb-pat} compare passive resonant and photon assisted DCB in an SIS junction. Both generate satellites separated by $\hbar\omega_0=h\nu$, but passive modes produce Poisson weighted inelastic channels and coherent drives produce Bessel weighted current replicas. At zero temperature, passive mode satellites lie on the higher-$|V|$ side of the quasiparticle threshold because the mode can only absorb energy. A coherent drive permits absorption and stimulated emission, creating replicas on both sides. Thermal mode occupation weakens this distinction through detailed balance.
 
-            DCB and ICPT are two charge-specific consequences of the same environmental interaction. Small low-energy weight in $P_e(E)$ suppresses stochastic $q=e$ tunneling, while finite-energy weight in $P_{2e}(E)$ enables the inelastic $q=2e$ transfer discussed next.
+            DCB and ICPT are two charge specific consequences of the same environmental interaction. Small low-energy weight in $P_e(E)$ suppresses stochastic $q=e$ tunneling, while finite-energy weight in $P_{2e}(E)$ enables the inelastic $q=2e$ transfer discussed next.
 
             \begin{landscape}
                 \begin{figure}[p]
@@ -258,7 +258,7 @@
                         \textit{dI--dV}, varying $\alpha_{0,e}$.
                         ]{\import{theory/stochastic}{dcb-resa-didv-sis.pgf}}
                     \caption{
-                        Resonant DCB in an SIS junction. (a) and (c) Increasing $\alpha_e$ at fixed $\alpha_{0,e}=1$ suppresses and broadens the quasiparticle features. (b) and (d) Increasing $\alpha_{0,e}$ at fixed $\alpha_e=1$ transfers weight to Poisson-weighted satellites spaced by $\hbar\omega_0/e$.
+                        Resonant DCB in an SIS junction. (a) and (c) Increasing $\alpha_e$ at fixed $\alpha_{0,e}=1$ suppresses and broadens the quasiparticle features. (b) and (d) Increasing $\alpha_{0,e}$ at fixed $\alpha_e=1$ transfers weight to Poisson weighted satellites spaced by $\hbar\omega_0/e$.
                         }
                         \label{fig:stochastic:dcb-resonant}
                     \end{minipage}
@@ -281,7 +281,7 @@
                             \textit{dI--dV}, varying $\alpha_{\nu,e}$.
                             ]{\import{theory/stochastic}{dcb-pata-ohm-didv-sis.pgf}}
                         \caption{
-                            Photon-assisted DCB in an SIS junction. (a) and (c) Increasing $\alpha_e$ at fixed $\alpha_{\nu,e}=1$ strengthens environmental suppression. (b) and (d) Increasing $\alpha_{\nu,e}$ at fixed $\alpha_e=1$ creates Bessel-weighted replicas spaced by $h\nu/e$.
+                            Photon assisted DCB in an SIS junction. (a) and (c) Increasing $\alpha_e$ at fixed $\alpha_{\nu,e}=1$ strengthens environmental suppression. (b) and (d) Increasing $\alpha_{\nu,e}$ at fixed $\alpha_e=1$ creates Bessel weighted replicas spaced by $h\nu/e$.
                             }
                             \label{fig:stochastic:dcb-pat}
                     \end{minipage}
@@ -292,15 +292,15 @@
         \subsubsection*{Dynamical Coulomb Blockade of Multiple Andreev Reflection}
         %=========================================================
 
-            The tunnel-junction treatment above assigns one elementary charge to each stochastic event. MAR instead consists of correlated electron and hole traversals through a finite-transmission superconducting contact. Its charge-resolved description in Sec.~\ref{subsec:meso:mar} associates a transfer of effective charge $q=me$ with each current component $I_m(V)$. This suggests an enhanced environmental sensitivity at low voltage because the phase correlator in Eq.~\eqref{eq:stochastic:phase-correlation} scales with $q^2$. However, DCB of MAR is not generally obtained by independently convolving every $I_m(V)$ with a kernel $P_{me}(E)$. The traversals within one MAR process remain coherent, different charge-transfer orders overlap at a given voltage, and the environment can also renormalize the elastic MAR probabilities.
+            The tunnel junction treatment above assigns one elementary charge to each stochastic event. MAR instead consists of correlated electron and hole traversals through a finite-transmission superconducting contact. Its charge resolved description in Sec.~\ref{subsec:meso:mar} associates a transfer of effective charge $q=me$ with each current component $I_m(V)$. This suggests an enhanced environmental sensitivity at low voltage because the phase correlator in Eq.~\eqref{eq:stochastic:phase-correlation} scales with $q^2$. However, DCB of MAR is not generally obtained by independently convolving every $I_m(V)$ with a kernel $P_{me}(E)$. The traversals within one MAR process remain coherent, different charge transfer orders overlap at a given voltage, and the environment can also renormalize the elastic MAR probabilities.
 
             Levy Yeyati, Cuevas, and Martín-Rodero calculate the leading environmental correction for a superconducting quantum point contact coupled to a weak macroscopic impedance \cite{levy_yeyati_dynamical_2005}. In the low-transmission limit, the relative blockade of an $m$th-order process is enhanced approximately as $m^2$, consistent with the environmental coupling to a transferred charge $me$. At higher transmission, Pauli correlations reduce this enhancement and elastic renormalization becomes important. The correction can then change sign in parts of the subgap region, so environmental coupling enhances rather than suppresses the MAR current. This antiblockade shows that the effective charge alone does not determine the environmental correction.
 
-            The experimental work by Cron \textit{et al.} established the two ingredients separately. Shot-noise measurements in superconducting atomic contacts resolved the enhanced effective charge associated with MAR, while normal-state measurements on the same class of contacts showed that DCB decreases as a channel approaches perfect transmission \cite{cron_multiple-charge-quanta_2001,cron_contacts_2001}. The latter experiment used a characterized series impedance and provided the platform proposed by Levy Yeyati \textit{et al.} for testing their superconducting prediction. It did not, however, measure DCB of MAR. Cron's thesis explicitly identifies the blockade of MAR processes as an open problem.
+            The experimental work by Cron \textit{et al.} established the two ingredients separately. Shot noise measurements in superconducting atomic contacts resolved the enhanced effective charge associated with MAR, while normal-state measurements on the same class of contacts showed that DCB decreases as a channel approaches perfect transmission \cite{cron_multiple-charge-quanta_2001,cron_contacts_2001}. The latter experiment used a characterized series impedance and provided the platform proposed by Levy Yeyati \textit{et al.} for testing their superconducting prediction. It did not, however, measure DCB of MAR. Cron's thesis explicitly identifies the blockade of MAR processes as an open problem.
 
-            The expected observables are changes in subgap current and in the amplitude and line shape of the MAR structures in \textit{dI--dV}. Their interpretation requires comparison with a coherent MAR reference at the same channel transmissions. A suppression near a MAR threshold is not by itself evidence for DCB because temperature, lifetime broadening, voltage noise, and imperfect knowledge of the pincode can produce similar changes. Conversely, environmental enhancement between thresholds would be missed by a model that treats DCB only as a positive charging-energy cost.
+            The expected observables are changes in subgap current and in the amplitude and line shape of the MAR structures in \textit{dI--dV}. Their interpretation requires comparison with a coherent MAR reference at the same channel transmissions. A suppression near a MAR threshold is not by itself evidence for DCB because temperature, lifetime broadening, voltage noise, and imperfect knowledge of the pincode can produce similar changes. Conversely, environmental enhancement between thresholds would be missed by a model that treats DCB only as a positive charging energy cost.
 
-            In summary, DCB of MAR couples environmental fluctuations to coherent multiparticle transfer through a finite-transmission contact. The low-transmission effective-charge picture explains the enhanced blockade, but it is incomplete once several MAR orders overlap and elastic renormalization becomes important. A quantitative interpretation must therefore retain the channel transmissions, coherent MAR dynamics, and electromagnetic environment together. The resulting transmission-dependent blockade and possible antiblockade distinguish this problem from a simple charging-energy shift or an independent dressing of each charge order.
+            In summary, DCB of MAR couples environmental fluctuations to coherent multiparticle transfer through a finite-transmission contact. The low-transmission effective charge picture explains the enhanced blockade, but it is incomplete once several MAR orders overlap and elastic renormalization becomes important. A quantitative interpretation must therefore retain the channel transmissions, coherent MAR dynamics, and electromagnetic environment together. The resulting transmission dependent blockade and possible antiblockade distinguish this problem from a simple charging energy shift or an independent dressing of each charge order.
 
 
     %=========================================================

@@ -28,15 +28,15 @@ This checklist tracks Elke's handwritten corrections in `Theory and Methods_ES_v
 
 ## 3. Dynamical Coulomb blockade
 
-- [ ] **STOCH-11, PDF p. 53, printed p. 51:** Improve the explanation of Fig. 29. Make the initial and final electronic states, the exchanged energy, and the role of the environment unambiguous.
-- [ ] **STOCH-12, PDF p. 53, printed p. 51:** Explain more directly why small low energy weight in \(P_e(E)\) produces a zero bias suppression in \(\mathrm{d}I/\mathrm{d}V\).
-- [ ] **STOCH-13, PDF p. 54, printed p. 52:** Explain where the Bessel weights in photon assisted DCB come from. Connect explicitly to the PAT derivation in Sec. 1.2.4 and state why the Bessel functions are squared.
-- [ ] **STOCH-14, PDF p. 55, printed p. 53:** Replace awkward terms such as "current-replica formulation" where needed and check the use of "AC amplitude" and "photon assisted noise".
-- [ ] **STOCH-15, PDF p. 56, printed p. 54:** Check the captions of Figs. 31 and 32 for consistency, especially the distinction between Poisson weighted passive resonances and Bessel weighted driven replicas.
+- [x] **STOCH-11, PDF p. 53, printed p. 51:** Explain Fig. 29 through the energy balance between the bias, quasiparticle excitations, and the environment, and expand its caption.
+- [x] **STOCH-12, PDF p. 53, printed p. 51:** Explain that restricted low-energy exchange suppresses the tunneling rate and therefore reduces the zero-bias slope of the current.
+- [x] **STOCH-13, PDF p. 54, printed p. 52:** Derive the squared Bessel weights conceptually from the AC phase, photon-order amplitudes, and time averaging.
+- [x] **STOCH-14, PDF p. 55, printed p. 53:** Replace "current-replica formulation" and spell out incoherent Cooper-pair tunneling before its dedicated subsection.
+- [x] **STOCH-15, PDF p. 56, printed p. 54:** Revise the paired captions to contrast Poisson-weighted passive resonances with squared Bessel-weighted driven replicas.
 
 ## 4. DCB of multiple Andreev reflection
 
-- [ ] **STOCH-16, PDF pp. 57--58, printed pp. 55--56:** Verify the claim that DCB of MAR has not yet been experimentally measured. Elke's German note appears to request an explicit statement that this has not been pursued experimentally from the theory proposal discussed here. Confirm the exact intended wording and literature scope.
+- [x] **STOCH-16, PDF pp. 57--58, printed pp. 55--56:** Distinguish experiments on island Coulomb blockade competing with MAR from the predicted series-impedance DCB correction, and avoid an absolute claim that DCB of MAR has never been measured.
 
 ## 5. Incoherent Cooper-pair tunneling
 
