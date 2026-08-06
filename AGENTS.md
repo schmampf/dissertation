@@ -94,6 +94,8 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
 - Follow the thesis minimal-hyphen house style. Do not hyphenate a compound modifier whose first element is a noun, for example `microwave driven transport`, `photon assisted tunneling`, `sample dependent variation`, `Bessel weighted channels`, and `voltage biased response`.
 - Hyphenate adjective-first compound modifiers before a noun when needed for clarity, for example `high-frequency response`, `low-temperature measurement`, and `normal-state conductance`. Omit the hyphen when the expression is used predicatively, for example `the response is frequency dependent`.
 - Leave ordinary noun compounds unhyphenated, for example `microwave coupling`, `amplitude calibration`, `contact configuration`, and `photon energy`. Preserve hyphens in established names, numerical compounds, and constructions where omission would create genuine ambiguity. Prefer rephrasing over adding a noun-first adjectival hyphen.
+- Use open noun compounds for named theories and models, with title capitalization for the complete name, for example `\(P(E)\) Theory` and `Tien-Gordon Model`. Do not join the name and the words `Theory` or `Model` with a hyphen or en dash.
+- Use a single hyphen inside compound names and joint attributions, for example `Tien-Gordon Model` and `Josephson-quasiparticle cycle`. Reserve the LaTeX en dash `--` for relational constructions such as `\textit{I--V}`, `\textit{dI--dV}`, and `gate--bias map`.
 
 ## Terminology and Notation
 
@@ -103,6 +105,8 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
   - `normal-state`
   - `weak-coupling`
   - `\textit{I--V}` and `\textit{dI--dV}` for measurement names
+  - `\textit{P(E)} Theory`
+  - `Tien-Gordon Model`
   - `I(V)` and `\mathrm{d}I/\mathrm{d}V` in equations
 - Keep notation stable across chapters unless a local redefinition is unavoidable and clearly introduced.
 
