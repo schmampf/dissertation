@@ -7,27 +7,27 @@
 
     Superconductivity was first observed by Heike Kamerlingh Onnes in 1911, when the electrical resistance of mercury vanished abruptly upon cooling below 4.2\,K. Shortly thereafter, the Meissner--Ochsenfeld effect revealed that superconductors also expel magnetic fields, establishing the two defining macroscopic properties of this quantum state of matter, perfect conductivity and perfect diamagnetism. At its core, superconductivity originates from an effective attraction between electrons near the Fermi surface. This attraction allows electrons with opposite momentum and spin to form Cooper pairs, which condense into a coherent macroscopic quantum state capable of carrying electrical current without resistance. \cite{onnes_further_1991, meissner_neuer_1933}
 
-    The central question of this chapter is how a measured superconducting transport feature selects the appropriate model. A gap edge in a tunnel spectrum, a Shapiro step, a multiple-Andreev-reflection onset, and a charge-state cycle are all consequences of superconductivity, but they do not keep the same degrees of freedom explicit. The theory developed here is therefore organized as a hierarchy of useful descriptions rather than as four independent theories.
+    % The central question of this chapter is how a measured superconducting transport feature selects the appropriate model. A gap edge in a tunnel spectrum, a Shapiro step, a multiple-Andreev-reflection onset, and a charge-state cycle are all consequences of superconductivity, but they do not keep the same degrees of freedom explicit. The theory developed here is therefore organized as a hierarchy of useful descriptions rather than as four independent theories.
 
-    We use four descriptions to connect this condensate to transport observables. The microscopic description keeps the quasiparticle spectrum and treats weak-transmission single-particle tunneling as incoherent events. The macroscopic description keeps the condensate phase and describes coherent Josephson dynamics through effective circuit variables rather than individual electron trajectories. The mesoscopic description extends the spectral and phase pictures to finite transmission, where individual channels, Andreev reflection, multiple Andreev reflection, and Andreev bound states must be resolved. The stochastic description is selected when phase memory between tunneling events is lost, so that charge-state probabilities and environment-dressed rates replace coherent amplitudes. Table~\ref{tab:theory:model-map} gives the orientation map used throughout the chapter.
+    % We use four descriptions to connect this condensate to transport observables. The microscopic description keeps the quasiparticle spectrum and treats weak-transmission single-particle tunneling as incoherent events. The macroscopic description keeps the condensate phase and describes coherent Josephson dynamics through effective circuit variables rather than individual electron trajectories. The mesoscopic description extends the spectral and phase pictures to finite transmission, where individual channels, Andreev reflection, multiple Andreev reflection, and Andreev bound states must be resolved. The stochastic description is selected when phase memory between tunneling events is lost, so that charge-state probabilities and environment-dressed rates replace coherent amplitudes. Table~\ref{tab:theory:model-map} gives the orientation map used throughout the chapter.
 
-    \begin{table}
-        \centering
-        \footnotesize
-        \begin{tabular}{lll}
-            Description & Kept degree of freedom & Use when the measured feature is \vspace{2mm}\\
-            Microscopic & quasiparticle spectrum, & gap spectroscopy, tunnel \textit{I--V}, \\
-                         & incoherent tunnel rates & photon-assisted sidebands \vspace{1mm}\\
-            Macroscopic & coherent condensate phase, & Josephson current, Shapiro steps, \\
-                         & effective circuit variables & switching, phase diffusion \vspace{1mm}\\
-            Mesoscopic & coherent transmission channels, & AR, ABS, fractional Shapiro steps,\\
-                         & Andreev amplitudes & MAR, photon-assisted MAR \vspace{1mm}\\
-            Stochastic & charge-state probabilities, & \textit{P(E)}, DCB, ICPT, SSET,\\
-                         & incoherent event rates & environment-dressed transport \\
-        \end{tabular}
-        \caption{Minimal map between the theory descriptions and the transport features discussed in this thesis. Mesoscopic theory extends the coherent phase and channel descriptions to finite transmission, while stochastic theory is selected by loss of phase memory between tunneling events and can use microscopic or mesoscopic rates as inputs.}
-        \label{tab:theory:model-map}
-    \end{table}
+    % \begin{table}
+    %     \centering
+    %     \footnotesize
+    %     \begin{tabular}{lll}
+    %         Description & Kept degree of freedom & Use when the measured feature is \vspace{2mm}\\
+    %         Microscopic & quasiparticle spectrum, & gap spectroscopy, tunnel \textit{I--V}, \\
+    %                      & incoherent tunnel rates & photon-assisted sidebands \vspace{1mm}\\
+    %         Macroscopic & coherent condensate phase, & Josephson current, Shapiro steps, \\
+    %                      & effective circuit variables & switching, phase diffusion \vspace{1mm}\\
+    %         Mesoscopic & coherent transmission channels, & AR, ABS, fractional Shapiro steps,\\
+    %                      & Andreev amplitudes & MAR, photon-assisted MAR \vspace{1mm}\\
+    %         Stochastic & charge-state probabilities, & \textit{P(E)}, DCB, ICPT, SSET,\\
+    %                      & incoherent event rates & environment-dressed transport \\
+    %     \end{tabular}
+    %     \caption{Minimal map between the theory descriptions and the transport features discussed in this thesis. Mesoscopic theory extends the coherent phase and channel descriptions to finite transmission, while stochastic theory is selected by loss of phase memory between tunneling events and can use microscopic or mesoscopic rates as inputs.}
+    %     \label{tab:theory:model-map}
+    % \end{table}
 
-    We first introduce the normal-state foundation. It connects quasiparticles, diffusion, coherent scattering, and transmission eigenvalues to the conductance measured in the normal-state regime. The subsequent sections then add superconductivity at increasing levels of resolution: weak-coupling spectral transport, coherent phase dynamics, finite-transmission channel transport, and incoherent environment-dressed charge dynamics. The models are introduced in general form, while aluminum provides the experimental material platform and the concrete scales used for numerical examples. Its material parameters are introduced locally when they become relevant. Unless stated otherwise or varied explicitly, all numerical simulations in this chapter use aluminum parameters, zero temperature, and zero Dynes broadening, $T=\gamma=0$. Irradiated simulations use a drive frequency of $\nu=10\,\mathrm{GHz}$.
+    % We first introduce the normal-state foundation. It connects quasiparticles, diffusion, coherent scattering, and transmission eigenvalues to the conductance measured in the normal-state regime. The subsequent sections then add superconductivity at increasing levels of resolution: weak-coupling spectral transport, coherent phase dynamics, finite-transmission channel transport, and incoherent environment-dressed charge dynamics. The models are introduced in general form, while aluminum provides the experimental material platform and the concrete scales used for numerical examples. Its material parameters are introduced locally when they become relevant. Unless stated otherwise or varied explicitly, all numerical simulations in this chapter use aluminum parameters, zero temperature, and zero Dynes broadening, $T=\gamma=0$. Irradiated simulations use a drive frequency of $\nu=10\,\mathrm{GHz}$.
 
