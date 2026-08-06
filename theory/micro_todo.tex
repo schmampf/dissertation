@@ -1,0 +1,251 @@
+% !TEX root = ../thesis.tex
+% Draft replacement for theory/micro.tex up to, but not including, Tunnel Current.
+% Keep Tunnel Current and Photon-Assisted Tunneling as separate subsections.
+
+%=========================================================
+\section{BCS Theory and Tunnel Spectroscopy}
+\label{sec:micro}
+%=========================================================
+
+    We develop the minimal weak-coupling Bardeen--Cooper--Schrieffer (BCS) description needed for superconducting transport. We first define the normal-state spectrum on which pairing acts. BCS mean-field theory then introduces the pair potential and gives the Bogoliubov quasiparticles whose spectrum determines the superconducting density of states (DOS). We use this spectrum and its occupation to formulate the static tunnel current in the low-transmission limit. Finally, we extend this description to photon-assisted tunneling (PAT) under harmonic driving. Phase dynamics and finite-transmission transport are treated in later sections. \cite{bardeen_theory_1957,tinkham_introduction_2004}
+
+    We consider a spin-singlet \textit{s}-wave superconductor with one effective isotropic band. This approximation captures the aluminum electrodes used in this thesis but excludes anisotropic, strongly correlated, and quantitative multiband superconductors.
+
+    %=========================================================
+    \subsection{BCS Mean Field and Bogoliubov Quasiparticles}
+    \label{subsec:micro:bcs-bdg}
+    %=========================================================
+
+        We first define the normal-state Hamiltonian and density of states on which pairing acts. BCS mean-field theory then introduces the pair potential, while the Bogoliubov--de~Gennes description gives the resulting electron--hole quasiparticles.
+
+        \subsubsection*{Normal-State Reference}
+        \label{subsubsec:micro:normal-reference}
+
+        At the energies relevant for superconducting transport, the electronic structure is represented by the effective single-particle Hamiltonian
+        \begin{equation}
+            \hat{H}_\mathrm{N}(\vec{r})
+            = -\frac{\hbar^2}{2m^\ast}\nabla^2
+            + U(\vec{r})-\mu\,.
+            \label{eq:quasi:normal-hamiltonian}
+        \end{equation}
+        Here $m^\ast$ describes the band curvature, while $U(\vec r)$ includes the effective lattice background, confinement, barriers, and disorder. Energies are measured relative to the chemical potential $\mu$. This normal-state operator later forms the diagonal part of the Bogoliubov--de~Gennes Hamiltonian. \cite{gross_festkorperphysik_2014}
+
+        We use the standard effective single-band approximation and represent the relevant low-energy states by one isotropic band. In a homogeneous system, its dispersion is approximated as parabolic,
+        \begin{align}
+            \varepsilon(\vec{k})
+            \approx \frac{\hbar^2 \lvert\vec{k}\rvert^2}{2m^\ast}\,,
+            &&
+            E_\mathrm{F}
+            = \frac{\hbar^2 k_\mathrm{F}^2}{2m^\ast}\,,
+            &&
+            v_\mathrm{F}
+            = \frac{\hbar k_\mathrm{F}}{m^\ast}\,.
+            \label{eq:micro:normal-dispersion}
+        \end{align}
+        The corresponding three-dimensional DOS per unit volume, including both spin directions, is
+        \begin{equation}
+            N(\varepsilon)
+            = \frac{1}{2\pi^2}
+            \left(\frac{2m^\ast}{\hbar^2}\right)^{3/2}
+            \sqrt{\varepsilon}\,.
+            \label{eq:micro:normal-dos}
+        \end{equation}
+        Here, $\varepsilon$ is measured from the band edge. Superconductivity involves only a narrow energy shell around $E_\mathrm{F}$. We therefore use
+        \begin{equation}
+            N(\varepsilon) \approx N_0 \equiv N(E_\mathrm{F})\,.
+            \label{eq:micro:constant-normal-dos}
+        \end{equation}
+        In the superconducting description below, $\xi$ and $E$ are instead measured relative to the chemical potential, which satisfies $\mu\simeq E_\mathrm{F}$ for a conventional metal.
+
+        Within the free-electron approximation with three conduction electrons per atom, bulk aluminum has $m^\ast\approx m$, $E_\mathrm{F}\approx11.7\,\mathrm{eV}$, $v_\mathrm{F}\approx2.0\cdot10^6\,\mathrm{m/s}$, and a Fermi wavelength of approximately $0.36\,\mathrm{nm}$. We use these as representative material scales, not as parameters extracted from the devices studied here. \cite{ashcroft_solid_1976}
+
+        The normal-state electron and hole excitations are independent. BCS pairing couples these sectors and reorganizes them into Bogoliubov quasiparticles.
+
+        \subsubsection*{BCS Mean Field}
+        \label{subsubsec:micro:bcs-mean-field}
+
+        In BCS theory, an effective attraction pairs electrons in time-reversed states near the Fermi surface. The mean-field approximation replaces this interaction by the complex local pair potential
+        \begin{align}
+            \widetilde{\Delta}(\vec r)
+            =-V\left\langle
+            \hat\psi_\downarrow(\vec r)
+            \hat\psi_\uparrow(\vec r)
+            \right\rangle
+            =\Delta(\vec r)e^{\ima\phi(\vec r)}\,,
+            &&
+            \Delta(\vec r):=|\widetilde{\Delta}(\vec r)|\,.
+            \label{eq:micro:complex-delta}
+        \end{align}
+        In the homogeneous bulk system considered below, the nonnegative magnitude $\Delta$ equals the excitation gap, while $\phi$ describes condensate coherence. The attractive coupling $V<0$ acts within the weak-coupling pairing shell. The pair potential must be determined self-consistently from the quasiparticle spectrum derived below. \cite{bardeen_theory_1957}
+
+        \subsubsection*{Bogoliubov--de~Gennes Eigenproblem}
+        \label{subsubsec:micro:bdg-eigenproblem}
+
+        For spin-singlet pairing without spin-dependent fields, the mean-field problem separates into two equivalent $2\times2$ electron--hole blocks. We define the reduced Nambu spinor and Bogoliubov--de~Gennes (BdG) Hamiltonian as
+        \begin{align}
+            \Psi_k(\vec r)
+            =
+            \begin{pmatrix}
+                u_k(\vec r)\\
+                v_k(\vec r)
+            \end{pmatrix}\,,
+            &&
+            \hat H_\mathrm{BdG}(\vec r)
+            =
+            \begin{pmatrix}
+                \hat H_\mathrm{N}(\vec r) & \widetilde{\Delta}(\vec r)\\
+                \widetilde{\Delta}^{\ast}(\vec r) & -\hat H_\mathrm{N}^\ast(\vec r)
+            \end{pmatrix}\,.
+            \label{eq:micro:bdg-definitions}
+        \end{align}
+        The amplitudes $u_k$ and $v_k$ describe the electron and hole components of one quasiparticle mode. The diagonal blocks propagate both components according to the normal-state problem, while the off-diagonal pair potential converts an electron into its time-reversed hole partner and vice versa. A superconducting excitation is therefore generally a coherent mixture of both components.
+
+        The allowed quasiparticle modes follow from the eigenvalue problem
+        \begin{equation}
+            \hat H_\mathrm{BdG}(\vec r)\Psi_k(\vec r)
+            =E_k\Psi_k(\vec r)\,.
+            \label{eq:micro:bdg}
+        \end{equation}
+        Particle--hole symmetry relates every solution at $+E_k$ to a partner at $-E_k$ with exchanged electron and hole components. In the normal-state limit $\widetilde{\Delta}\to0$, the off-diagonal coupling vanishes and both sectors decouple. \cite{bogoljubov_new_1958,nambu_quasi-particles_1960,de_gennes_superconductivity_1966}
+
+        \subsubsection*{Homogeneous Limit}
+        \label{subsubsec:micro:homogeneous-limit}
+
+        For uniform $\widetilde{\Delta}=\Delta e^{\ima\phi}$, the normal-state energy $\xi_{\vec q}=\hbar^2q^2/(2m^\ast)-\mu$ gives
+        \begin{align}
+            \begin{pmatrix}
+                \xi_{\vec q} & \widetilde{\Delta}\\
+                \widetilde{\Delta}^{\ast} & -\xi_{\vec q}
+            \end{pmatrix}
+            \begin{pmatrix}u_{\vec q}\\v_{\vec q}\end{pmatrix}
+            =E_{\vec q}
+            \begin{pmatrix}u_{\vec q}\\v_{\vec q}\end{pmatrix},
+            &&
+            E_{\vec q}=\sqrt{\xi_{\vec q}^2+\Delta^2}\,.
+            \label{eq:micro:bdg-homogeneous}
+        \end{align}
+        The quasiparticle spectrum is separated from the Fermi level by the gap $\Delta$. The homogeneous spectrum has two immediate consequences. It closes the BCS self-consistency equation for $\Delta(T)$, and it maps the normal-state DOS onto the superconducting DOS.
+
+        \subsubsection*{Superconducting Gap}
+        \label{subsubsec:micro:superconducting-gap}
+
+        Writing the homogeneous dispersion from Eq.~\eqref{eq:micro:bdg-homogeneous} as $E(\xi)$, evaluation of the pair expectation value in Eq.~\eqref{eq:micro:complex-delta} gives the weak-coupling self-consistency equation
+        \begin{equation}
+            1
+            =\frac{|V|N_0}{2}
+            \int_0^{\hbar\omega_\mathrm{D}}
+            \frac{1}{E(\xi)}
+            \tanh\!\left(\frac{E(\xi)}{2k_\mathrm{B}T}\right)
+            \,\mathrm d\xi\,.
+            \label{eq:micro:gap-self-consistency}
+        \end{equation}
+        Here, $N_0/2$ is the normal-state DOS per spin and $\omega_\mathrm{D}$ is the Debye frequency, so $\hbar\omega_\mathrm{D}$ bounds the phonon-mediated pairing shell. At each temperature, Eq.~\eqref{eq:micro:gap-self-consistency} implicitly determines $\Delta(T)$. Its zero-temperature solution defines $\Delta_0\equiv\Delta(0)$, while $T_\mathrm{c}$ is the temperature at which the nonzero solution vanishes. Comparing these limits gives the weak-coupling relation
+        \begin{equation}
+            \Delta_0
+            \approx 1.764\, k_\mathrm{B} T_\mathrm{c}\,.
+            \label{eq:micro:gap-zero-temperature}
+        \end{equation}
+        Thus, $\Delta_0$ or $T_\mathrm{c}$ sets the material scale, while the self-consistency equation fixes the normalized temperature dependence $\Delta(T)/\Delta_0$. \cite{bardeen_theory_1957,tinkham_introduction_2004}
+        Representative bulk aluminum values are
+        \begin{align}
+            \Delta_0 \approx 180\,\mu\mathrm{eV}\,, &&
+            T_\mathrm{c} \approx 1.2\,\mathrm{K}\,.
+            \label{eq:micro:aluminum-scales}
+        \end{align}
+        Thin-film disorder, thickness, and fabrication can shift both values. Unless stated otherwise, the following figures use these representative scales. \cite{giaever_study_1961,tinkham_introduction_2004}
+
+
+        \begin{wrapfigure}[11]{r}{0.4\textwidth}
+            \captionsetup{format=plain}%
+            \centering
+            \vspace{-1em}
+            \import{theory/micro}{gap.pgf}
+            \vspace{-.5em}
+            \caption{Temperature dependence of the superconducting gap in the weak-coupling limit (Eq.~\ref{eq:micro:gap-temperature}).}
+            \label{fig:micro:gap}
+        \end{wrapfigure}
+
+        Rather than solving Eq.~\eqref{eq:micro:gap-self-consistency} numerically at every temperature, we use the convenient interpolation
+        \begin{equation}
+            \frac{\Delta(T)}{\Delta_0}
+                \approx \tanh\!\left(
+                    1.74\,\sqrt{\frac{T_\mathrm{c}}{T} - 1}
+                \right).
+            \label{eq:micro:gap-temperature}
+        \end{equation}
+        The gap vanishes continuously at $T_\mathrm{c}$. At low temperature, it sets the approximate quasiparticle onset at $|eV|=\Delta$ for an NIS junction and $|eV|=2\Delta$ for an identical SIS junction. \cite{muhlschlegel_thermodynamischen_1959,tinkham_introduction_2004}
+
+
+        \subsubsection*{Density of States}
+        \label{subsubsec:micro:density-of-states}
+
+        Within the effective single-band approximation introduced above, the BdG dispersion maps the approximately constant normal-state DOS onto the superconducting DOS. For either particle--hole branch, conservation of the number of states in corresponding energy intervals gives
+        \begin{align}
+            N_\mathrm{S}(E)\,\mathrm dE
+            =N_0\,\mathrm d\xi\,,
+            &&
+            \xi(E)=\operatorname{sgn}(E)\sqrt{E^2-\Delta^2}\,.
+            \label{eq:micro:dos-state-conservation}
+        \end{align}
+        Taking the Jacobian $|\mathrm d\xi/\mathrm dE|$ yields the normalized BCS DOS
+        \begin{equation}
+            \frac{N_\mathrm{S}(E)}{N_0} =
+                \left\{
+                \begin{array}{@{}r@{\quad}l@{}}
+                    0 & (|E| < \Delta)\\
+                    \dfrac{|E|}{\sqrt{E^2-\Delta^2}} & (|E| \ge \Delta)
+                \end{array}
+                \right.\,.
+            \label{eq:micro:dos-bcs}
+        \end{equation}
+        No real $\xi$ exists for $|E|<\Delta$, while the Jacobian diverges at the gap edges. Temperature changes the gap through $\Delta(T)$ and the occupations through the Fermi function, but it does not otherwise broaden the ideal BCS DOS. \cite{bardeen_theory_1957,tinkham_introduction_2004}
+
+        Nonideal spectra are commonly described by Dynes broadening,
+        \begin{equation}
+            \frac{N_\mathrm{S}(E)}{N_0}
+                = \left|\Re\!\left(
+                    \frac{E+\ima\gamma}{
+                    \sqrt{(E+\ima\gamma)^{2}-\Delta^{2}}}
+                \right)\right|\,.
+            \label{eq:micro:dos-dynes}
+        \end{equation}
+        The parameter $\gamma$ describes finite subgap spectral weight and smeared coherence peaks but does not identify a unique microscopic mechanism. \cite{dynes_direct_1978,plecenik_finite-quasiparticle-lifetime_1994}
+
+        \subsubsection*{Occupation and Thermal Broadening}
+        \label{subsubsec:micro:occupation-broadening}
+
+        The DOS specifies the available states, while the Fermi--Dirac distribution determines their equilibrium occupation,
+        \begin{equation}
+            f(E) = \frac{1}{1+\exp\!\left(E/k_\mathrm{B}T\right)}\,,
+            \label{eq:micro:fermi-function}
+        \end{equation}
+        The derivative of this distribution defines the thermal broadening kernel
+        \begin{equation}
+            K_\mathrm{T}(E) := - \frac{\partial f(E)}{\partial E}\,.
+            \label{eq:micro:fermi-kernel}
+        \end{equation}
+        In the zero-temperature limit, $f(E)\to\theta(-E)$ and $K_\mathrm{T}(E)\to\delta(E)$. Dynes broadening modifies the DOS itself, whereas temperature broadens the energy window sampled in transport. Figure~\ref{fig:micro:dos-fermi} separates these effects.
+
+        \begin{figure}
+            \centering
+            \subfigure[
+                Superconducting DOS for varying $\gamma/\Delta_0$.
+                ]{\import{theory/micro}{dos.pgf}}
+            \hfill
+            \subfigure[
+                Fermi--Dirac distribution for varying $T/T_\mathrm{c}$.
+                ]{\import{theory/micro}{fermi.pgf}}
+            \hfill
+            \subfigure[
+                Thermal kernel for varying $T/T_\mathrm{c}$.
+                ]{\import{theory/micro}{fermi-kernel.pgf}}
+            \caption{Calculated superconducting DOS, Fermi distribution, and thermal kernel. Dynes broadening modifies the spectrum, while temperature broadens the occupation edge and thermal kernel.}
+            \label{fig:micro:dos-fermi}
+        \end{figure}
+
+        The DOS and occupation function provide the spectral and statistical inputs for the tunnel-current model that follows.
+
+%=========================================================
+% Continue with the existing \subsection{Tunnel Current}.
+% Keep \subsection{Photon-Assisted Tunneling} separate.
+%=========================================================
