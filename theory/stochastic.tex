@@ -21,7 +21,7 @@
 
     In this incoherent limit, \textit{P(E)} theory gives the probability density for energy exchange between a discrete tunneling event and the environment. We first construct this environmental kernel, then apply it to dynamical Coulomb blockade of single-electron tunneling, incoherent Cooper pair tunneling and its photon assisted counterpart, and superconducting single-electron transistors.
 
-
+    \newpage
     %=========================================================
     \subsection[P(E)--Theory]{\textit{P(E)}--Theory}
     \label{subsec:stochastic:pe-theory}
@@ -148,9 +148,9 @@
 
         Figure~\ref{fig:stochastic:pe} summarizes the three environmental limits introduced above. Weak coupling concentrates the probability near zero exchanged energy. Ohmic coupling broadens this contribution and suppresses low-energy tunneling, while a resonant mode produces discrete inelastic contributions. After convolution with the electronic kernel, these structures appear in measured transport as zero-bias suppression, broadened thresholds, and resonant satellites.
 
-        The transferred charge selects the environmental kernel because $J_q(t)\propto q^2$. Dynamical Coulomb blockade uses $P_e(E)$ to describe environmental dressing of single-electron tunneling. Incoherent Cooper pair tunneling uses $P_{2e}(E)$ and is therefore more sensitive to the same impedance. In a superconducting single-electron transistor, these charge specific rates connect different island charge states. A master equation then combines the rates with their stationary occupation probabilities.
+        The transferred charge selects the environmental kernel because $J_q(t)\propto q^2$. Dynamical Coulomb blockade uses $P_e(E)$ for single-electron tunneling, whereas incoherent Cooper pair tunneling uses the more strongly coupled $P_{2e}(E)$. In a superconducting single-electron transistor, a master equation combines these charge specific rates with the stationary charge state occupations.
 
-
+        \newpage
     %=========================================================
     \subsection{Dynamical Coulomb Blockade}
     \label{subsec:stochastic:dcb}
@@ -234,6 +234,20 @@
 
             DCB and ICPT are two charge specific consequences of the same environmental interaction. Small low-energy weight in $P_e(E)$ suppresses stochastic $q=e$ tunneling, while finite-energy weight in $P_{2e}(E)$ enables the inelastic $q=2e$ transfer discussed next.
 
+        %=========================================================
+        \subsubsection*{Dynamical Coulomb Blockade of Multiple Andreev Reflection}
+        %=========================================================
+
+            The tunnel junction treatment above assigns one elementary charge to each stochastic event. MAR instead consists of correlated electron and hole traversals through a finite-transmission superconducting contact. Its charge resolved description in Sec.~\ref{subsec:meso:mar} associates a transfer of effective charge $q=me$ with each current component $I_m(V)$. This suggests an enhanced environmental sensitivity at low voltage because the phase correlator in Eq.~\eqref{eq:stochastic:phase-correlation} scales with $q^2$. However, DCB of MAR is not generally obtained by independently convolving every $I_m(V)$ with a kernel $P_{me}(E)$. The traversals within one MAR process remain coherent, different charge transfer orders overlap at a given voltage, and the environment can also renormalize the elastic MAR probabilities.
+
+            Levy Yeyati, Cuevas, and Martín-Rodero calculate the leading environmental correction for a superconducting quantum point contact coupled to a weak macroscopic impedance \cite{levy_yeyati_dynamical_2005}. In the low-transmission limit, the relative blockade of an $m$th-order process is enhanced approximately as $m^2$, consistent with the environmental coupling to a transferred charge $me$. At higher transmission, Pauli correlations reduce this enhancement and elastic renormalization becomes important. The correction can then change sign in parts of the subgap region, so environmental coupling enhances rather than suppresses the MAR current. This antiblockade shows that the effective charge alone does not determine the environmental correction.
+
+            The experimental work by Cron \textit{et al.} established the two ingredients separately. Shot noise measurements in superconducting atomic contacts resolved the enhanced effective charge associated with MAR, while normal-state measurements on the same class of contacts showed that DCB decreases as a channel approaches perfect transmission \cite{cron_multiple-charge-quanta_2001,cron_contacts_2001}. The latter experiment used a characterized series impedance and provided the platform proposed by Levy Yeyati \textit{et al.} for testing their superconducting prediction. It did not, however, measure DCB of MAR. Cron's thesis explicitly identifies the blockade of MAR processes as an open problem.
+
+            The expected observables are changes in subgap current and in the amplitude and line shape of the MAR structures in \textit{dI--dV}. Their interpretation requires comparison with a coherent MAR reference at the same channel transmissions. A suppression near a MAR threshold is not by itself evidence for DCB because temperature, lifetime broadening, voltage noise, and imperfect knowledge of the pincode can produce similar changes. Conversely, environmental enhancement between thresholds would be missed by a model that treats DCB only as a positive charging energy cost.
+
+            In summary, DCB of MAR couples environmental fluctuations to coherent multiparticle transfer through a finite-transmission contact. The low-transmission effective charge picture explains the enhanced blockade, but it is incomplete once several MAR orders overlap and elastic renormalization becomes important. A quantitative interpretation must therefore retain the channel transmissions, coherent MAR dynamics, and electromagnetic environment together. The resulting transmission dependent blockade and possible antiblockade distinguish this problem from a simple charging energy shift or an independent dressing of each charge order. A complete quantitative theory that treats arbitrary channel transmissions, overlapping MAR orders, and environmental backaction on equal footing remains an open problem.
+
             \begin{landscape}
                 \begin{figure}[p]
                     % \captionsetup{format=plain}%
@@ -289,20 +303,6 @@
                 \end{figure}
             \end{landscape}
 
-        %=========================================================
-        \subsubsection*{Dynamical Coulomb Blockade of Multiple Andreev Reflection}
-        %=========================================================
-
-            The tunnel junction treatment above assigns one elementary charge to each stochastic event. MAR instead consists of correlated electron and hole traversals through a finite-transmission superconducting contact. Its charge resolved description in Sec.~\ref{subsec:meso:mar} associates a transfer of effective charge $q=me$ with each current component $I_m(V)$. This suggests an enhanced environmental sensitivity at low voltage because the phase correlator in Eq.~\eqref{eq:stochastic:phase-correlation} scales with $q^2$. However, DCB of MAR is not generally obtained by independently convolving every $I_m(V)$ with a kernel $P_{me}(E)$. The traversals within one MAR process remain coherent, different charge transfer orders overlap at a given voltage, and the environment can also renormalize the elastic MAR probabilities.
-
-            Levy Yeyati, Cuevas, and Martín-Rodero calculate the leading environmental correction for a superconducting quantum point contact coupled to a weak macroscopic impedance \cite{levy_yeyati_dynamical_2005}. In the low-transmission limit, the relative blockade of an $m$th-order process is enhanced approximately as $m^2$, consistent with the environmental coupling to a transferred charge $me$. At higher transmission, Pauli correlations reduce this enhancement and elastic renormalization becomes important. The correction can then change sign in parts of the subgap region, so environmental coupling enhances rather than suppresses the MAR current. This antiblockade shows that the effective charge alone does not determine the environmental correction.
-
-            The experimental work by Cron \textit{et al.} established the two ingredients separately. Shot noise measurements in superconducting atomic contacts resolved the enhanced effective charge associated with MAR, while normal-state measurements on the same class of contacts showed that DCB decreases as a channel approaches perfect transmission \cite{cron_multiple-charge-quanta_2001,cron_contacts_2001}. The latter experiment used a characterized series impedance and provided the platform proposed by Levy Yeyati \textit{et al.} for testing their superconducting prediction. It did not, however, measure DCB of MAR. Cron's thesis explicitly identifies the blockade of MAR processes as an open problem.
-
-            The expected observables are changes in subgap current and in the amplitude and line shape of the MAR structures in \textit{dI--dV}. Their interpretation requires comparison with a coherent MAR reference at the same channel transmissions. A suppression near a MAR threshold is not by itself evidence for DCB because temperature, lifetime broadening, voltage noise, and imperfect knowledge of the pincode can produce similar changes. Conversely, environmental enhancement between thresholds would be missed by a model that treats DCB only as a positive charging energy cost.
-
-            In summary, DCB of MAR couples environmental fluctuations to coherent multiparticle transfer through a finite-transmission contact. The low-transmission effective charge picture explains the enhanced blockade, but it is incomplete once several MAR orders overlap and elastic renormalization becomes important. A quantitative interpretation must therefore retain the channel transmissions, coherent MAR dynamics, and electromagnetic environment together. The resulting transmission dependent blockade and possible antiblockade distinguish this problem from a simple charging energy shift or an independent dressing of each charge order. A complete quantitative theory that treats arbitrary channel transmissions, overlapping MAR orders, and environmental backaction on equal footing remains an open problem.
-
 
     %=========================================================
     \subsection{Incoherent Cooper Pair Tunneling}
@@ -350,14 +350,14 @@
 
 
     %=========================================================
-    \subsection{Superconducting Single-Electron Transistors}
+    \subsection{Superconducting Single-Electron Transistor}
     \label{subsec:stochastic:sset}
     %=========================================================
 
-        A superconducting single-electron transistor combines charge quantization with quasiparticle and Cooper pair transport. We first introduce the normal conducting tunnel junction device and its charge state master equation, then discuss tunable and hybrid extensions \cite{ingold_charge_1992,grabert_single_2013}.
+        A superconducting single-electron transistor (SSET) combines charge quantization with quasiparticle and Cooper pair transport. We first introduce the normal conducting tunnel junction device and its charge state master equation, then discuss tunable and hybrid extensions \cite{ingold_charge_1992,grabert_single_2013}.
 
         %=========================================================
-        \subsubsection*{Normal Conducting SETs}
+        \subsubsection*{Normal Conducting SET}
         %=========================================================
 
             A normal conducting SET consists of a metallic island connected to source and drain by two tunnel junctions and coupled capacitively to a gate. The barriers permit charge quantization, while the gate shifts the charge state energies, as shown in Fig.~\ref{fig:stochastic:set}(a). Replacing the normal metals with superconductors gives an SSET.
@@ -402,18 +402,19 @@
             In normal-state sequential transport, an electron enters through one junction and leaves through the other, restoring the initial island charge. A dc current flows when both steps are energetically favorable, as illustrated in Fig.~\ref{fig:stochastic:set}(b). The gate opens or closes this cycle by shifting the charge state energies.
 
             If either step is inaccessible, the sequential current is blocked, as in Fig.~\ref{fig:stochastic:set}(c). Conductance is largest near charge degeneracy and periodic in gate induced charge. Far from degeneracy, weaker cotunneling can bypass the intermediate charge state \cite{ingold_charge_1992,grabert_single_2013}.
-
+        
+        \newpage
         %=========================================================
-        \subsubsection*{Superconducting SETs}
+        \subsubsection*{Superconducting SET}
         %=========================================================
 
-            We now consider superconductivity. In a conventional SSET, the island and both leads are superconducting, while the two junctions remain in the tunnel limit. The electrostatic charge states remain those of the normal SET, but the superconducting gap shifts the threshold energies of the transitions. Quasiparticle tunneling changes the island charge by one elementary charge and requires occupied and empty quasiparticle states. Cooper pair tunneling changes the island charge by two elementary charges and connects charge states of the same parity. The measured current can therefore contain competing single-electron and pair transfer cycles.
+            We now consider superconductivity. In a conventional SSET, the island and both leads are superconducting, while the two junctions remain in the tunnel limit. The electrostatic charge states remain those of the normal SET, but the superconducting gap shifts the threshold energies of the transitions. Quasiparticle tunneling changes the island charge by one elementary charge and requires occupied and empty quasiparticle states. Cooper pair tunneling changes the island charge by two elementary charges and connects charge states of the same parity. The measured current can therefore contain competing single-electron and pair transfer cycles. A stationary current flows only when energetically allowed transitions at both junctions form a complete transport cycle.
 
             The superconducting island distinguishes even and odd electron numbers. An odd charge state contains an unpaired quasiparticle and carries an additional free energy cost governed by the gap. At low temperature, this parity effect favors even charge states and can change the gate periodicity from $e$-periodic to $2e$-periodic. Nonequilibrium quasiparticles weaken this distinction and can restore single-electron periodicity. Here we retain parity as an energy cost for odd charge states rather than develop a separate quasiparticle population model \cite{grabert_single_2013}.
 
-            Quasiparticle and Cooper pair steps can combine into a JQP cycle, where JQP denotes Josephson--quasiparticle transport. A Cooper pair first tunnels resonantly through one junction and changes the island charge by two elementary charges. Two quasiparticle transitions then restore the initial island charge while transferring net charge through the device. Because the pair transition is resonant, the JQP cycle produces a localized feature in bias and gate voltage \cite{grabert_single_2013}.
+            Quasiparticle and Cooper pair transport combine in the Josephson--quasiparticle (JQP) cycle. In the first step, a Cooper pair tunnels coherently onto the island through one junction while a quasiparticle simultaneously leaves through the other junction. The island charge therefore increases by one elementary charge rather than two. This correlated step avoids the electrostatic cost of an isolated Cooper pair addition. A second quasiparticle subsequently leaves the island and restores the initial charge state. The complete cycle transfers charge through both junctions and produces a localized feature in bias and gate voltage \cite{lorenz_sset_mar_2018,lorenz_wechselspiel_2018,sprenger_interplay_2019}.
 
-            Treating the resonant pair step as an incoherent rate is controlled when dephasing or lifetime broadening destroys coherence between the coupled charge states faster than the Josephson coupling can establish it. If $E_\mathrm{J}/\hbar$ becomes comparable to the dephasing rate, off-diagonal density matrix elements must be retained and a generalized master equation replaces the population only equation below.
+            Describing the JQP cycle with a population master equation replaces the coherent Josephson dynamics by an effective transition rate. This approximation is valid when coherence between the coupled charge states decays much faster than the Josephson evolution, $\Gamma_\mathrm{deph}\gg E_\mathrm{J}/\hbar$. Otherwise, the off-diagonal density matrix elements must be retained in a generalized master equation.
 
             Orthodox theory describes the island by classical charge state probabilities and independent junction transitions. This population only description assumes well-defined charge states, Markovian events, and negligible off-diagonal coherences. The available transition energy is the initial free energy minus the final free energy, including work by the bias source. At zero temperature, a positive value permits the transition, while a negative value requires thermal activation or environmental energy supplied through $P(E)$. Each junction and direction contributes a rate set by this energy and the microscopic junction properties. In an SSET, these rates include the superconducting DOS and incoherent Cooper pair transfer. \cite{ingold_charge_1992,grabert_single_2013}
 
@@ -432,7 +433,7 @@
 
             The rates specify the allowed transport steps, while the master equation supplies their initial state occupations. Together they determine \textit{I--V}, \textit{dI--dV}, and gate dependent transport maps.
 
-            The orthodox description is controlled when both junctions remain in the tunnel limit, charge states are well defined, and memory between successive events can be neglected. It does not describe a highly transmitting contact, strong environmental backaction, large quantum charge fluctuations, or coherent multiparticle transfer.
+            The orthodox description is valid when both junctions remain in the tunnel limit, island charge states are well defined, and successive tunneling events are independent. It does not describe transport through a highly transmitting contact or regimes with strong environmental backaction, large quantum charge fluctuations, or coherent multiparticle transfer.
 
         %=========================================================
         \subsubsection*{Tunable and Hybrid SSETs}
