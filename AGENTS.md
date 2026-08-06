@@ -99,8 +99,7 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
 
 - Prefer the forms below and keep them consistent:
   - `quasiparticle`
-  - `Cooper pair` as noun
-  - `Cooper-pair` only as compound adjective
+  - `Cooper pair` in both noun and compound modifier uses, for example `Cooper pair transfer`
   - `normal-state`
   - `weak-coupling`
   - `\textit{I--V}` and `\textit{dI--dV}` for measurement names
