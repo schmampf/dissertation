@@ -115,7 +115,7 @@
 
         \subsubsection*{Dc Josephson Spectroscopy}
 
-            We first consider dc spectroscopy of an ideal voltage biased SIS Josephson junction. At finite voltage, the phase evolves at the Josephson frequency according to Eq.~\eqref{eq:macro:josephson-phase-evolution}. The supercurrent consequently oscillates and averages to zero over one period, so the measured dc current follows the SIS quasiparticle characteristic derived in Eq.~\eqref{eq:micro:tunnel-sis}. At $V=0$, the phase remains at its initial value $\phi_0$ and the junction can support the finite current $I_\mathrm{J}=I_\mathrm{c}\sin\phi_0$. Figures~\ref{fig:macro:Irsj}(a) and (b) show the resulting voltage biased spectrum and its dependence on the initial phase.
+            We first consider dc spectroscopy of an ideal voltage biased SIS Josephson junction. At finite voltage, the phase evolves at the Josephson frequency according to Eq.~\eqref{eq:macro:josephson-phase-evolution}. The supercurrent consequently oscillates and averages to zero over one period, so the measured dc current follows the SIS quasiparticle characteristic derived in Eq.~\eqref{eq:micro:tunnel-sis}. At $V=0$, the phase remains at its initial value $\phi_0$ and the junction can support the finite current $I_\mathrm{J}=I_\mathrm{c}\sin\phi_0$. In this idealized limit, the voltage fixes only the phase velocity, while the stationary value $\phi_0$ is set by the initial condition or the external circuit. Figures~\ref{fig:macro:Irsj}(a) and (b) show the resulting voltage biased spectrum and its dependence on the initial phase.
 
             \begin{figure}[t]
                 \captionsetup{format=plain}%
@@ -158,7 +158,7 @@
                 + I_\mathrm{qp}\!\left(V(t)\right)\,.
                 \label{eq:macro:rsj-current-balance}
             \end{equation}
-            We denote the inverse of the BCS quasiparticle characteristic by $V_\mathrm{qp}(I)$. Together with the ac Josephson relation, Eq.~\eqref{eq:macro:rsj-current-balance} determines the time evolution of the phase and voltage. For $|I_\mathrm{bias}|\leq I_\mathrm{c}$, a stationary phase can carry the applied current and the voltage remains zero. Above this range, the phase runs through successive $2\pi$ periods. Its velocity changes during each rotation because the current available for quasiparticle tunneling depends on $\phi$. 
+            We denote the inverse of the BCS quasiparticle characteristic by $V_\mathrm{qp}(I)$. This construction assumes that the quasiparticle branch follows the instantaneous voltage and that its \textit{I--V} characteristic can be inverted on the branch considered. Together with the ac Josephson relation, Eq.~\eqref{eq:macro:rsj-current-balance} determines the time evolution of the phase and voltage. For $|I_\mathrm{bias}|\leq I_\mathrm{c}$, a stationary phase can carry the applied current and the voltage remains zero. Above this range, the phase runs through successive $2\pi$ periods. Its velocity changes during each rotation because the current available for quasiparticle tunneling depends on $\phi$.
             
             Consequently, the phase does not sample all values for equal durations. Although the unweighted phase average of $\sin\phi$ vanishes over one rotation, its time average need not vanish under current bias. This differs from ideal voltage bias, where the phase advances uniformly and the supercurrent averages to zero. The measured dc voltage is the time average over the nonuniform phase motion. For one complete phase rotation, it is
             \begin{equation}
@@ -171,7 +171,7 @@
                 \right)^{-1}\,.
                 \label{eq:macro:rsj-average-voltage}
             \end{equation}
-            The current balance and Eq.~\eqref{eq:macro:rsj-average-voltage} thus convert the voltage biased quasiparticle spectrum into the current biased response shown in Fig.~\ref{fig:macro:Irsj}(c). This generalized RSJ description retains the nonlinear superconducting spectrum instead of replacing the dissipative branch by a linear resistance.
+            The current balance and Eq.~\eqref{eq:macro:rsj-average-voltage} thus convert the voltage biased quasiparticle spectrum into the current biased response shown in Fig.~\ref{fig:macro:Irsj}(c). This generalized RSJ description retains the nonlinear superconducting spectrum instead of replacing the dissipative branch by a linear resistance. It remains deterministic and neglects capacitive phase inertia and thermal fluctuations, which are introduced with the RCSJ model below.
 
     %=========================================================
     \subsection{RCSJ Model}
