@@ -1,69 +1,73 @@
 % !TEX root = ../thesis.tex
 
-\chapter{Diffusion }
-        %=========================================================
-        \subsubsection*{Diffusion, Conductivity, and Ohm's Law}
-        %=========================================================
-
-            Impurities, structural disorder, and phonons randomize the quasiparticle momentum. We characterize elastic transport by the mean free path $\ell_\mathrm{qp}$. On length scales much larger than $\ell_\mathrm{qp}$, repeated scattering produces diffusion. For an isotropic three-dimensional conductor, the diffusion constant is
-            \begin{equation}
-                D = \frac{v_\mathrm{F}\ell_\mathrm{qp}}{3}\,.
-            \end{equation}
-            The Einstein relation then connects diffusion to the normal-state conductivity,
-            \begin{equation}
-                \sigma = e^2 N_0 D\,.
-            \end{equation}
-            Under the same isotropic parabolic-band assumptions, this expression is equivalent to the Drude conductivity. The electric field creates a small imbalance in the quasiparticle distribution, while elastic scattering limits the drift. The local response is $\vec{j}=\sigma\vec{E}$. This description assumes that the field, current density, and material parameters vary slowly on the scale of $\ell_\mathrm{qp}$. \cite{drude_zur_1900,gross_festkorperphysik_2014}
-
-            For a homogeneous wire of length $L$ and cross-sectional area $A$, integration of the local relation gives Ohm's law,
-            \begin{equation}
-                I = G\,V\,,
-                \qquad
-                G = \sigma\,A/L\,,
-                \qquad
-                R = 1/G\,.
-            \end{equation}
-            The measured normal-state resistance therefore combines material transport parameters with sample geometry. It provides the bulk reference for the coherent finite-conductor description introduced next. \cite{ohm_galvanische_1827}
-
-            The parameters $v_\mathrm{F}$, $N_0$, $\ell_\mathrm{qp}$, and $D$ summarize the low-energy normal-state properties needed in this thesis. They do not specify a spectral lifetime or determine whether phase coherence survives across a finite device. That question requires comparing the conductor size with the relevant transport lengths.
-
-
-        %=========================================================
-        \subsubsection*{Diffusive Mesoscopic Transport}
-        %=========================================================
-
-            In the diffusive mesoscopic regime, the elastic mean free path remains much shorter than the system size, $\ell_\mathrm{qp} \ll L$. Quasiparticles undergo many momentum-randomizing scattering events while traversing the conductor. If $L \lesssim \ell_\phi$, phase coherence persists over many such events and interference between multiple paths becomes observable.
-
-            For diffusive motion the phase-coherence length is conveniently expressed in terms of the diffusion constant $D$ and a dephasing time $t_\phi$,
-            \begin{equation}
-                \ell_\phi = \sqrt{D t_\phi}\,.
-            \end{equation}
-            At finite temperature, thermal averaging over an energy window $\sim k_\mathrm{B}T$ further reduces interference. A common characteristic thermal length is
-            \begin{equation}
-                \ell_T = \sqrt{\hbar D / k_\mathrm{B}T}\,,
-            \end{equation}
-            such that phase-coherent effects are most pronounced when $L \lesssim \min(\ell_\phi,\,\ell_T)$. Numerical prefactors in the definition of $\ell_T$ depend on the geometry and convention. \cite{bergmann_weak_1984,lee_disordered_1985}
-
-            On average, transport still follows the bulk drift-diffusion picture with the conductivity and diffusion constant introduced above. Quantum mechanically, coherent superposition of scattering amplitudes adds corrections, most prominently weak localization and universal conductance fluctuations. In low-dimensional or strongly disordered systems, these effects can become strong and may lead to Anderson localization. \cite{bergmann_weak_1984,lee_universal_1985,lee_disordered_1985,anderson_absence_1958,schertel_magnetic-field_2019}
-
-            In the present work, the diffusive mesoscopic regime serves as a reference rather than the primary contact model. The atomic-scale constrictions studied here are shorter than the relevant scattering lengths, which leads to the ballistic channel description introduced next.
-
 %=========================================================
-\section{Superconducting Length Scales in Aluminum}
-\label{app:theory:aluminum-length-scales}
+\chapter{Diffusion and Coherence Lengths}
+\label{app:theory:diffusive-transport}
 %=========================================================
 
-    The short-junction approximation requires the weak-link length $L$ to remain much smaller than the relevant superconducting coherence length, $L\ll\xi$. The clean-limit BCS coherence length of aluminum is
-    \begin{equation}
-        \xi_{\mathrm{clean}, 0} = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\approx 2.4\,\mu\mathrm{m}\,.
-    \end{equation}
-    For a diffusive aluminum film, the corresponding zero-temperature decay length is
-    \begin{equation}
-        \xi_{\mathrm{dirty},0}
-        = \sqrt{\frac{\hbar D}{\Delta_0}}\approx 67-111\,\mathrm{nm}\,.
-    \end{equation}
-    Here $D=(1.2\text{--}3.3)\times10^{-3}\,\mathrm{m^2/s}$ follows from $D=v_\mathrm{F}\ell_\mathrm{qp}/3$ using $v_\mathrm{F}\approx2.0\times10^6\,\mathrm{m/s}$ and the measured thin-film range $\ell_\mathrm{qp}=1.8$--$5.0\,\mathrm{nm}$ \cite{steinberg_quasi-particle_2008}.
+    Disorder enters the device description at several distinct levels. It produces normal-state momentum relaxation in the aluminum films, permits phase-coherent diffusion over finite distances, and reduces the superconducting coherence length from its clean-limit value. These effects characterize propagation in the electrodes. They do not imply that the atomic constriction itself is diffusive. This appendix develops these distinctions and collects the length estimates used for the short-junction approximation in Sec.~\ref{subsec:meso:abs}.
 
-    The parameters and source measurements entering the clean and dirty estimates are given in Secs.~\ref{subsec:quasi:normal-state-quasiparticles} and \ref{subsec:micro:superconducting-gap}. These are representative bulk and film estimates rather than device-specific coherence lengths. Both greatly exceed an atomic-scale constriction, placing the contacts considered here in the short-junction limit \cite{scheer_conduction_1997}. The coherence lengths characterize superconducting propagation in clean or diffusive material. They do not determine whether transport through the constriction itself is ballistic or diffusive.
+    %=========================================================
+    \subsection*{Normal-State Diffusion}
+    %=========================================================
 
-    In the short-junction limit, quasiparticles acquire only a negligible energy-dependent propagation phase while traversing the weak link. Its normal-state scattering properties may therefore be treated as energy independent over the gap. Each channel is characterized by one transmission eigenvalue $\tau_i$, and its ABS spectrum depends only on $\tau_i$, the gap, and the phase difference. This leads to the universal short-junction spectrum below.
+        Impurities, structural disorder, and phonons randomize the quasiparticle momentum. We characterize elastic transport by the mean free path $\ell_\mathrm{qp}$. On length scales much larger than $\ell_\mathrm{qp}$, repeated scattering produces diffusion. For an isotropic three-dimensional conductor, the diffusion constant is
+        \begin{equation}
+            D = \frac{v_\mathrm{F}\ell_\mathrm{qp}}{3}\,.
+        \end{equation}
+        The Einstein relation then connects diffusion to the normal-state conductivity,
+        \begin{equation}
+            \sigma_\mathrm{N} = e^2 N_0 D\,.
+        \end{equation}
+        Under the same isotropic parabolic-band assumptions, this expression is equivalent to the Drude conductivity. The electric field creates a small imbalance in the quasiparticle distribution, while elastic scattering limits the drift. The local response is $\vec{j}=\sigma\vec{E}$. This description assumes that the field, current density, and material parameters vary slowly on the scale of $\ell_\mathrm{qp}$. \cite{drude_zur_1900,gross_festkorperphysik_2014}
+
+        For a homogeneous wire of length $L$ and cross-sectional area $A$, integration of the local relation gives Ohm's law,
+        \begin{align}
+            I = G_\mathrm{N}\,V\,, &&
+            G_\mathrm{N} = \sigma\,A/L\,.
+        \end{align}
+        The measured normal-state conductance therefore combines material transport parameters with sample geometry. This local description provides the material basis for discussing coherent propagation over a finite conductor. \cite{ohm_galvanische_1827}
+
+        The parameters $v_\mathrm{F}$, $N_0$, $\ell_\mathrm{qp}$, and $D$ summarize the low-energy normal-state properties needed in this thesis. They do not specify a spectral lifetime or determine whether phase coherence survives across a finite device. That question requires comparing the conductor size with the relevant transport lengths.
+
+    %=========================================================
+    \subsection*{Phase-Coherent Diffusive Transport}
+    %=========================================================
+
+        In the diffusive mesoscopic regime, the elastic mean free path remains much shorter than the system size, $\ell_\mathrm{qp} \ll L$. Quasiparticles undergo many momentum-randomizing scattering events while traversing the conductor. If $L \lesssim \ell_\phi$, phase coherence persists over many such events and interference between multiple paths becomes observable.
+
+        For diffusive motion the phase-coherence length is conveniently expressed in terms of the diffusion constant $D$ and a dephasing time $t_\phi$,
+        \begin{equation}
+            \ell_\phi = \sqrt{D t_\phi}\,.
+        \end{equation}
+        At finite temperature, thermal averaging over an energy window $\sim k_\mathrm{B}T$ further reduces interference. A common characteristic thermal length is
+        \begin{equation}
+            \ell_T = \sqrt{\hbar D / k_\mathrm{B}T}\,,
+        \end{equation}
+        such that phase-coherent effects are most pronounced when $L \lesssim \min(\ell_\phi,\,\ell_T)$. Numerical prefactors in the definition of $\ell_T$ depend on the geometry and convention. \cite{bergmann_weak_1984,lee_disordered_1985}
+
+        On average, transport still follows the bulk drift-diffusion picture with the conductivity and diffusion constant introduced above. Quantum mechanically, coherent superposition of scattering amplitudes adds corrections, most prominently weak localization and universal conductance fluctuations. In low-dimensional or strongly disordered systems, these effects can become strong and may lead to Anderson localization. \cite{bergmann_weak_1984,lee_universal_1985,lee_disordered_1985,anderson_absence_1958,schertel_magnetic-field_2019}
+
+        In the present work, this regime serves as a reference rather than the primary contact model. The aluminum electrodes can support diffusive propagation, while the atomic-scale constrictions remain shorter than the relevant scattering lengths and are therefore described as ballistic scatterers by their transmission eigenvalues.
+
+    %=========================================================
+    \subsection*{Superconducting Length Scales in Aluminum}
+    \label{app:theory:aluminum-length-scales}
+    %=========================================================
+
+        The short-junction approximation requires the weak-link length $L$ to remain much smaller than the relevant superconducting coherence length, $L\ll\xi$. The clean-limit BCS coherence length of aluminum is
+        \begin{equation}
+            \xi_{\mathrm{clean}, 0} = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\approx 2.4\,\mu\mathrm{m}\,.
+        \end{equation}
+        For a diffusive aluminum film, the corresponding zero-temperature decay length is
+        \begin{equation}
+            \xi_{\mathrm{dirty},0}
+            = \sqrt{\frac{\hbar D}{\Delta_0}}\approx 67\,\text{-}\,111\,\mathrm{nm}\,.
+        \end{equation}
+        The dirty-limit estimate is film dependent. Steinberg \textit{et al.} reported \(\ell_\mathrm{qp}=1.8\,\text{-}\,5.0\,\mathrm{nm}\) for several thin aluminum films, yielding the range above.
+
+        These are representative bulk and film estimates rather than device specific coherence lengths. Both greatly exceed an atomic-scale constriction, placing the contacts considered here in the short-junction limit \cite{scheer_conduction_1997}. The coherence lengths characterize superconducting propagation in clean or diffusive material. They do not determine whether transport through the constriction itself is ballistic or diffusive.
+
+        In the short-junction limit, quasiparticles acquire only a negligible energy dependent propagation phase while traversing the weak link. Its normal-state scattering properties may therefore be treated as energy independent over the gap. Each channel is characterized by one transmission eigenvalue $\tau_i$, and its ABS spectrum depends only on $\tau_i$, the gap, and the phase difference, as expressed by Eq.~\eqref{eq:meso:abs-spectrum}.
+
+        In summary, the aluminum electrodes may lie in the dirty limit while the atomic constriction remains a short ballistic scatterer. Electrode disorder determines the relevant superconducting coherence length, but it does not place the weak link in the KO1 limit. That limit applies only when the weak link itself is diffusive.
