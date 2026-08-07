@@ -96,6 +96,8 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
 - Leave ordinary noun compounds unhyphenated, for example `microwave coupling`, `amplitude calibration`, `contact configuration`, and `photon energy`. Preserve hyphens in established names, numerical compounds, and constructions where omission would create genuine ambiguity. Prefer rephrasing over adding a noun-first adjectival hyphen.
 - Use open noun compounds for named theories and models, with title capitalization for the complete name, for example `\(P(E)\) Theory` and `Tien-Gordon Model`. Do not join the name and the words `Theory` or `Model` with a hyphen or en dash.
 - Use a single hyphen inside compound names and joint attributions, for example `Tien-Gordon Model` and `Josephson-quasiparticle cycle`. Reserve the LaTeX en dash `--` for relational constructions such as `\textit{I--V}`, `\textit{dI--dV}`, and `gate--bias map`.
+- Write numerical ranges in math mode with a short text hyphen surrounded by thin spaces, for example `$1.8\,\text{-}\,5.0\,\mathrm{nm}$`. For named alphanumeric series in running text, use the corresponding text form, for example `M1\,-\,M4` and `C0\,-\,C3`. Do not use `-` or `--` as the range separator. Retain the LaTeX en dash for relational scientific notation such as `\textit{I--V}` and `gate--bias`.
+- In running prose, write author abbreviations as `\textit{et al.}`. When another word follows directly, use a nonbreaking interword space, for example `Steinberg \textit{et al.}~reported`. When punctuation follows, attach it directly to the abbreviation, for example `Cuevas \textit{et al.}, which`.
 
 ## Terminology and Notation
 
