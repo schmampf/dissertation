@@ -1,5 +1,4 @@
 % !TEX root = ../thesis.tex
-\newpage
 %=========================================================
 \section{Mesoscopic Superconducting Transport}
 \label{sec:meso}
@@ -556,7 +555,7 @@
                 \right]\,.
                 \label{eq:meso:mar-excess-analytical}
             \end{align}
-            Figure~\ref{fig:meso:mar-excess} shows the normalized excess current approaches $8/3$ in the ballistic limit $\tau\to1$ \cite{senkpiel_extracting_2022}.
+            Figure~\ref{fig:meso:mar-excess} shows that the normalized excess current approaches $8/3$ in the ballistic limit $\tau\to1$ \cite{senkpiel_extracting_2022}.
 
         %=========================================================
         \subsubsection*{Multichannel Atomic Contacts}
@@ -576,7 +575,7 @@
         \subsubsection*{Charge-Resolved Multiple Andreev Reflection}
         %=========================================================
 
-            To connect dc MAR to charge transfer, we use the current decomposition provided by full counting statistics. Full counting statistics provides a process-resolved extension of the coherent MAR calculation \cite{levitov_charge_1993,levitov_electron_1996,cuevas_full_2003}. We use it only to decompose the dc current into contributions associated with transfer of an effective charge $q=me$,
+            To connect dc MAR to charge transfer, we use full counting statistics as a process-resolved extension of the coherent MAR calculation \cite{levitov_charge_1993,levitov_electron_1996,cuevas_full_2003}. Here we use it only to decompose the dc current into contributions associated with transfer of an effective charge $q=me$,
             \begin{equation}
                 I(V)=\sum_{m=1}^{\infty} I_m(V)\,.
                 \label{eq:meso:fcs-decomposition}
@@ -627,10 +626,9 @@
                     ]{\import{theory/meso}{fcs-didv-m-inv.pgf}}
                 \caption{
                         Charge-resolved MAR current and differential conductance for selected single-channel transmissions.
-                        (a,c) show charge-resolved \textit{I--V} and \textit{dI--dV}.
-                        (b,d) show the same components on the inverse-voltage axis, where integer positions correspond to the MAR thresholds $eV_m=2\Delta/m$.
-                        Increasing transmission enhances the contribution of higher-order charge transfer.
-                        Colored curves resolve the effective charge order $m$. Color intensity corresponds to different transmissions $\tau$.
+                        (a,c) Voltage representation.
+                        (b,d) Inverse-voltage representation, where the thresholds $eV_m=2\Delta/m$ align at integer positions.
+                        Curve color identifies the MAR order $m$, and color intensity identifies the transmission $\tau$.
                     }
                 \label{fig:meso:fcs-m}
             \end{figure}
@@ -659,7 +657,7 @@
 
             Equation~\eqref{eq:meso:pamar-current} does not determine how the measured or calculated dc current should be separated into the components $I_m(V)$. The FCS currents of Eq.~\eqref{eq:meso:fcs-decomposition} are a natural candidate because they resolve transfer events by charge. Their independent Tien--Gordon dressing is nevertheless an additional assumption, not a consequence of the dc FCS theory. In Sec.~\ref{subsec:ac:photon-assisted-transport}, we test this candidate and find that it does not reproduce the measured sideband pattern. We therefore use a phenomenological threshold-based decomposition for the practical analysis.
 
-            The microscopically controlled description of irradiated coherent MAR is the two-frequency Keldysh--Floquet theory developed by Cuevas \textit{et al.} for superconducting point contacts of arbitrary transmission \cite{cuevas_subharmonic_2002}. It treats the Josephson oscillation and the external microwave drive within the same calculation and therefore includes coherent interference between driven MAR paths. The unified Tien--Gordon expression remains an interpretable approximation for sideband positions and practical modeling, but it does not replace the double-Floquet theory.
+            The microscopic reference for irradiated coherent MAR is the two-frequency Keldysh--Floquet theory developed by Cuevas \textit{et al.} for superconducting point contacts of arbitrary transmission \cite{cuevas_subharmonic_2002}. It treats the Josephson oscillation and the external microwave drive within the same calculation and therefore includes coherent interference between driven MAR paths. The unified Tien--Gordon expression remains an interpretable approximation for sideband positions and practical modeling, but it does not replace the double-Floquet theory.
 
         In summary, the transmission eigenvalues provide a common description of mesoscopic superconducting transport. Andreev reflection determines the interface process, ABS describe the equilibrium spectrum and supercurrent, and MAR governs finite-bias subgap transport. Channel-resolved models thereby connect the mesoscopic pincode to measured \textit{I--V} and \textit{dI--dV} characteristics.
 
