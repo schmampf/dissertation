@@ -239,8 +239,9 @@
 
             Introducing the rescaled time $t'=\omega_\mathrm{p} t$ and the normalized current $i = I_\mathrm{bias}/I_\mathrm{c}$ gives the compact dimensionless form
             \begin{equation}
-                i - \sin\phi
-                = \frac{1}{Q}\,\frac{\mathrm{d}\phi}{\mathrm{d}t'}
+                i 
+                = \sin\phi
+                + \frac{1}{Q}\,\frac{\mathrm{d}\phi}{\mathrm{d}t'}
                 + \frac{\mathrm{d}^2\phi}{\mathrm{d}t'^2}\,,
                 \label{eq:macro:rcsj-cpr-norm}
             \end{equation}
@@ -256,24 +257,7 @@
         \subsubsection*{Tilted Washboard Potential}
         %=========================================================
 
-            The normalized RCSJ equation~\eqref{eq:macro:rcsj-cpr-norm} has the form of Newton's equation for a particle moving in a potential and subject to viscous damping. After division by the particle mass, the mechanical equation of motion can be written as
-            \begin{equation}
-                - \frac{\mathrm{d}u}{\mathrm{d}x}
-                = \frac{\zeta}{m}\,\frac{\mathrm{d}x}{\mathrm{d}t'}
-                + \frac{\mathrm{d}^2x}{\mathrm{d}t'^2}\,, \quad
-                u = \frac{U}{m}\,.
-                \label{eq:macro:newtonian-eom}
-            \end{equation}
-            Here, $x$ is the particle coordinate, $U(x)$ its mechanical potential energy, $m$ its mass, and $\zeta$ the viscous damping coefficient.
-
-            Comparison with Eq.~\eqref{eq:macro:rcsj-cpr-norm} identifies the phase difference as the particle coordinate and the inverse quality factor as the normalized damping coefficient,
-            \begin{align}
-                x \longleftrightarrow \phi\,,&&
-                U(x)\longleftrightarrow U(\phi)\,, &&
-                \frac{\zeta}{m}\longleftrightarrow\frac{1}{Q}\,.
-            \end{align}
-
-            The remaining terms in the normalized RCSJ equation determine the force acting on this phase particle. Identifying this force with the negative gradient of the potential and integrating over $\phi$ gives
+            The normalized RCSJ equation~\eqref{eq:macro:rcsj-cpr-norm} has the form of Newton's equation for a unit mass phase particle subject to viscous damping. The phase difference $\phi$ acts as the particle coordinate, while $1/Q$ sets the normalized damping. The remaining terms define the force acting on the phase particle. Identifying this force with the negative gradient of a dimensionless potential and integrating over $\phi$ gives
             \begin{equation}
                 -\tfrac{\mathrm{d}}{\mathrm{d}\phi}u=i-\sin\phi\,,
                 \qquad
@@ -281,6 +265,9 @@
                 \label{eq:macro:washboard-potential}
             \end{equation}
             The Josephson coupling produces the periodic cosine landscape, while the normalized bias current $i$ produces its linear tilt. The corresponding dimensional phase potential is $U(\phi)=E_\mathrm{J}u(\phi)$. In the untilted case ($i=0$), adjacent minima are separated by a barrier $\Delta U=2E_\mathrm{J}$. Figure~\ref{fig:macro:rcsj-u-phi} shows how this tilted washboard potential evolves with increasing bias current \cite{stewart_currentvoltage_1968,tinkham_introduction_2004}.
+
+
+            For $i=0$, the periodic potential has equivalent stable minima. A finite subcritical bias, $0<i<1$, tilts the potential and turns them into metastable minima separated by finite barriers. While the phase remains localized in one well, its average velocity and therefore the junction voltage are zero. Small oscillations about a minimum are governed by the plasma-frequency scale introduced in Eq.~\eqref{eq:macro:rcsj-plasma-frequency}.
 
             \begin{wrapfigure}[18]{r}{2in}
                 \captionsetup{format=plain}%
@@ -293,9 +280,7 @@
                 }
                 \label{fig:macro:rcsj-u-phi}
             \end{wrapfigure}
-
-            For $i=0$, the periodic potential has equivalent stable minima. A finite subcritical bias, $0<i<1$, tilts the potential and turns them into metastable minima separated by finite barriers. While the phase remains localized in one well, its average velocity and therefore the junction voltage are zero. Small oscillations about a minimum are governed by the plasma-frequency scale introduced in Eq.~\eqref{eq:macro:rcsj-plasma-frequency}.
-
+            
             As the bias approaches $i=1$, the barrier in the direction of the tilt decreases and vanishes at the deterministic critical current. For $i>1$, no local minima remain and the phase runs continuously, corresponding to a finite-voltage state. Thermal and environmental fluctuations can induce escape already below this threshold and thereby cause premature switching. When the bias is subsequently reduced below $i=1$, local minima reappear. The return from the running state to a localized minimum is called retrapping.
 
             Not every escape leads to a sustained running state. If the phase is captured in an adjacent minimum, it has undergone a phase slip of approximately $2\pi$. Through the Josephson voltage--phase relation, each slip produces a voltage pulse with time integral $h/(2e)$. Forward and backward slips balance at zero bias, whereas a directional imbalance produces a finite average phase velocity. Repeated slips interrupted by retrapping constitute phase diffusion.
@@ -336,87 +321,80 @@
 
             Escape from a metastable minimum need not occur by thermal activation. At sufficiently low temperature, the phase can tunnel through the potential barrier and escape from the minimum. In an underdamped junction, this escape can initiate the running state. The process is known as macroscopic quantum tunneling because the tunneling coordinate is the collective phase difference across the junction. Its experimental observation, together with the quantized phase particle levels, established that an electrical circuit can exhibit quantum behavior in a collective macroscopic degree of freedom \cite{devoret_measurements_1985}. These quantum effects lie outside the classical RCSJ treatment used throughout this section.
 
-    % %=========================================================
-    % \subsection{Shapiro Steps}
-    % \label{subsec:macro:shapiro}
-    % %=========================================================
+    %=========================================================
+    \subsection{Shapiro Steps}
+    \label{subsec:macro:shapiro}
+    %=========================================================
 
-    %     Under microwave irradiation, a Josephson junction develops quantized constant-voltage plateaus in its dc \textit{I--V} characteristic. These Shapiro steps, or the inverse AC Josephson effect, arise from frequency locking between the Josephson oscillation and the applied drive \cite{shapiro_josephson_1963}.
+        Under microwave irradiation, a Josephson junction develops quantized constant-voltage plateaus in its dc \textit{I--V} characteristic. These Shapiro steps, or the inverse AC Josephson effect, arise from frequency locking between the Josephson oscillation and the applied drive \cite{shapiro_josephson_1963}.
 
-    %     The microwave drive introduced in Sec.~\ref{subsec:micro:pat} modulates the superconducting phase. For coherent Cooper-pair transfer, the charge-dependent phase in Eq.~\eqref{eq:micro:pat-phase} is evaluated at $q=2e$ and contributes directly to the phase difference. The Josephson frequency $\nu_0$ then mixes with the external frequency $\nu$, and the phase takes the form
-    %     \begin{equation}
-    %         \phi(t)=\phi_0 + 2\pi\nu_0 t + \alpha_{\nu,2e}\sin(2\pi\nu t)\,,
-    %         \label{eq:macro:shapiro-phase}
-    %     \end{equation}
-    %     with $\alpha_{\nu,2e} = 2eA/h\nu$ the dimensionless Cooper-pair drive strength.
+        The microwave drive introduced in Sec.~\ref{subsec:micro:pat} modulates the superconducting phase. For coherent Cooper-pair transfer, the charge-dependent phase in Eq.~\eqref{eq:micro:pat-phase} is evaluated at $q=2e$ and contributes directly to the phase difference. The Josephson frequency $\nu_0$ then mixes with the external frequency $\nu$, and the phase takes the form
+        \begin{equation}
+            \phi(t)=\phi_0 + 2\pi\nu_0 t + \alpha_{\nu,2e}\sin(2\pi\nu t)\,,
+            \label{eq:macro:shapiro-phase}
+        \end{equation}
+        with $\alpha_{\nu,2e} = 2eA/h\nu$ the dimensionless Cooper-pair drive strength.
 
-    %     Inserting this expression into Eq.~\eqref{eq:macro:josephson-current-phase} and expanding the phase modulation with Eq.~\eqref{eq:micro:pat-jacobi-anger} yields harmonics at frequencies $\nu_0 - n\nu$. Whenever $\nu_0 = n\nu$, the $n$-th harmonic becomes stationary and contributes a finite dc current. This produces quantized voltage plateaus at
-    %     \begin{equation}
-    %         V_n = \frac{nh\nu}{2e}\,,
-    %     \end{equation}
-    %     known as Shapiro steps \cite{shapiro_josephson_1963}.
+        Inserting this expression into Eq.~\eqref{eq:macro:josephson-current-phase} and expanding the phase modulation with Eq.~\eqref{eq:micro:pat-jacobi-anger} yields harmonics at frequencies $\nu_0 - n\nu$. Whenever $\nu_0 = n\nu$, the $n$-th harmonic becomes stationary and contributes a finite dc current. This produces quantized voltage plateaus at
+        \begin{equation}
+            V_n = \frac{nh\nu}{2e}\,,
+        \end{equation}
+        known as Shapiro steps \cite{shapiro_josephson_1963}.
 
-    %     In the ideal voltage-driven sinusoidal model, the amplitude of each dc locking contribution is governed by the Bessel factor $J_n(\alpha_{\nu,2e})$ \cite{shapiro_josephson_1963,barone_physics_1982}. In contrast to the Tien--Gordon description of quasiparticle tunneling, the Bessel functions appear here without being squared because the Josephson current depends linearly on the phase modulation rather than on a transition probability. To retain the spectroscopy language used for quasiparticle transport, we represent the microwave response phenomenologically as shifted replicas of a static Josephson \textit{I--V} characteristic,
-    %     \begin{equation}
-    %         I(V_0)
-    %             = \sum_{n=-\infty}^{\infty}
-    %                 \left|J_n\!(\alpha_{\nu,2e})\right|\,
-    %                 I_{0}\!\left(V_0 - \frac{nh\nu}{2e}\right),
-    %         \label{eq:macro:shapiro-iv}
-    %     \end{equation}
-    %     where $I_0(V_0)$ denotes the static Josephson \textit{I--V} curve in the absence of microwaves. Equation~\eqref{eq:macro:shapiro-iv} is a spectroscopy-oriented ansatz that displays the step positions and Bessel-weighted evolution in a form analogous to photon-assisted tunneling. It is not the general dynamical solution of a driven junction. The phase-locking dynamics and damping are treated with the RCSJ model below.
+        In the ideal voltage-driven sinusoidal model, the amplitude of each dc locking contribution is governed by the Bessel factor $J_n(\alpha_{\nu,2e})$ \cite{shapiro_josephson_1963,barone_physics_1982}. In contrast to the Tien--Gordon description of quasiparticle tunneling, the Bessel functions appear here without being squared because the Josephson current depends linearly on the phase modulation rather than on a transition probability. To retain the spectroscopy language used for quasiparticle transport, we represent the microwave response phenomenologically as shifted replicas of a static Josephson \textit{I--V} characteristic,
+        \begin{equation}
+            I(V_0)
+                = \sum_{n=-\infty}^{\infty}
+                    \left|J_n\!(\alpha_{\nu,2e})\right|\,
+                    I_{0}\!\left(V_0 - \frac{nh\nu}{2e}\right),
+            \label{eq:macro:shapiro-iv}
+        \end{equation}
+        where $I_0(V_0)$ denotes the static Josephson \textit{I--V} curve in the absence of microwaves. Equation~\eqref{eq:macro:shapiro-iv} is a spectroscopy-oriented ansatz that displays the step positions and Bessel-weighted evolution in a form analogous to photon-assisted tunneling. It is not the general dynamical solution of a driven junction. The phase-locking dynamics and damping are treated with the RCSJ model below.
 
-    %     \begin{wrapfigure}[10]{r}{0.4\textwidth}
-    %         \captionsetup{format=plain}%
-    %         \centering
-    %         \vspace{-1.3em}
-    %         \import{theory/macro}{shapiro-ideal.pgf}
-    %         \vspace{-.9em}
-    %         \caption{
-    %             Microwave-driven transport in a Josephson junction.
-    %             }
-    %         \label{fig:macro:shapiro-iv}
-    %     \end{wrapfigure}
-    %     Quasiparticle tunneling occurs in parallel with the phase-driven supercurrent. Under microwave irradiation, Shapiro steps and PAT can therefore appear simultaneously. As illustrated in Fig.~\ref{fig:macro:shapiro-iv}, their interplay produces replicas in \textit{I--V} near zero bias and for energies twice the gap. The step spacing measures the applied frequency, while the step visibility depends on damping and fluctuations.
+        Quasiparticle tunneling occurs in parallel with the phase-driven supercurrent. Under microwave irradiation, Shapiro steps and PAT can therefore appear simultaneously. As illustrated in Fig.~\ref{fig:macro:shapiro-iv}, their interplay produces replicas in \textit{I--V} near zero bias and for energies twice the gap. The step spacing measures the applied frequency, while the step visibility depends on damping and fluctuations.
 
-    %     %=========================================================
-    %     \subsubsection*{Shapiro Steps in the RCSJ Model}
-    %     %=========================================================
+        %=========================================================
+        \subsubsection*{Shapiro Steps in the RCSJ Model}
+        %=========================================================
 
-    %         \begin{figure}
-    %             \centering
-    %             \subfigure[
-    %                 Underdamped junction ($Q\gg 1$), switching current parameter $I_\mathrm{sw}=0.5\,I_\mathrm{c}$.
-    %                 ]{\import{theory/macro/}{shapiro-under.pgf}}
-    %             \hfill
-    %             \subfigure[
-    %                 Overdamped junction ($Q\ll 1$), switching current parameter $I_\mathrm{sw}=0.2\,I_\mathrm{c}$.
-    %                 ]{\import{theory/macro/}{shapiro-over.pgf}}
-    %             \caption{
-    %                 Phenomenological microwave-driven dc transport based on the static switching and retrapping characteristic, rather than a deterministic RCSJ solution.
-    %                 }
-    %             \label{fig:macro:rcsj-shapiro-iv}
-    %         \end{figure}
+            \begin{figure}
+                \centering
+                \subfigure[
+                    Voltage biased junction.
+                ]{\import{theory/macro}{shapiro-ideal.pgf}}%
+                \hfill%
+                \subfigure[
+                    Underdamped junction with $I_\mathrm{sw}=0.5\,I_\mathrm{c}$.
+                    ]{\import{theory/macro/}{shapiro-under.pgf}}%
+                \hfill%
+                \subfigure[
+                    Overdamped junction with $I_\mathrm{sw}=0.2\,I_\mathrm{c}$.
+                    ]{\import{theory/macro/}{shapiro-over.pgf}}%
+                \caption{
+                    Phenomenological microwave-driven dc transport based on the static switching and retrapping characteristic, rather than a deterministic RCSJ solution.
+                    }
+                \label{fig:macro:rcsj-shapiro-iv}
+            \end{figure}
 
-    %         In the driven RCSJ model, Shapiro steps arise through frequency locking between the intrinsic Josephson oscillation and an external microwave drive. We describe the drive as an applied ac current with amplitude $a$ and frequency $\nu$. With $t'=\omega_\mathrm{p}t$, $i=I_\mathrm{bias}/I_\mathrm{c}$, $a'=a/I_\mathrm{c}$, and $\nu'=\nu/\nu_\mathrm{p}$, the normalized RCSJ equation becomes
-    %         \begin{equation}
-    %             i + a'\sin(\nu' t')
-    %             = \sin\phi
-    %             + \frac{1}{Q}\,\frac{\mathrm{d}\phi}{\mathrm{d}t'}
-    %             + \frac{\mathrm{d}^2\phi}{\mathrm{d}t'^2}\,,
-    %         \end{equation}
-    %         This driven extension combines the RCSJ dynamics with the microwave locking observed by Shapiro \cite{shapiro_josephson_1963,stewart_currentvoltage_1968,mccumber_effect_1968}.
+            In the driven RCSJ model, Shapiro steps arise through frequency locking between the intrinsic Josephson oscillation and an external microwave drive. We describe the drive as an applied ac current with amplitude $a$ and frequency $\nu$. With $t'=\omega_\mathrm{p}t$, $i=I_\mathrm{bias}/I_\mathrm{c}$, $a'=a/I_\mathrm{c}$, and $\nu'=\nu/\nu_\mathrm{p}$, the normalized RCSJ equation becomes
+            \begin{equation}
+                i + a'\sin(\nu' t')
+                = \sin\phi
+                + \frac{1}{Q}\,\frac{\mathrm{d}\phi}{\mathrm{d}t'}
+                + \frac{\mathrm{d}^2\phi}{\mathrm{d}t'^2}\,,
+            \end{equation}
+            This driven extension combines the RCSJ dynamics with the microwave locking observed by Shapiro \cite{shapiro_josephson_1963,stewart_currentvoltage_1968,mccumber_effect_1968}.
 
-    %         The washboard potential then becomes time dependent,
-    %         \begin{equation}
-    %             u(\phi)
-    %             = -\cos\phi \;-\; i\,\phi - a'\phi\sin(\nu' t')\,.
-    %         \end{equation}
+            The washboard potential then becomes time dependent,
+            \begin{equation}
+                u(\phi)
+                = -\cos\phi \;-\; i\,\phi - a'\phi\sin(\nu' t')\,.
+            \end{equation}
 
-    %         Weak damping makes the junction sensitive to residual oscillations, which can distort Shapiro steps and reduce their visibility under microwave irradiation.
+            Weak damping makes the junction sensitive to residual oscillations, which can distort Shapiro steps and reduce their visibility under microwave irradiation.
 
-    %         In the overdamped regime, damping suppresses inertial phase oscillations and stabilizes the frequency-locked state, yielding clean Shapiro steps. Thermal fluctuations can broaden the step edges when a stochastic current source is included.
+            In the overdamped regime, damping suppresses inertial phase oscillations and stabilizes the frequency-locked state, yielding clean Shapiro steps. Thermal fluctuations can broaden the step edges when a stochastic current source is included.
 
-    %         Figure~\ref{fig:macro:rcsj-shapiro-iv} applies the irradiation response to the phenomenological static characteristic of Fig.~\ref{fig:macro:rcsj-iv}. It shows the resulting \textit{I--V} characteristics in the underdamped and overdamped limits.
+            Figure~\ref{fig:macro:rcsj-shapiro-iv} applies the irradiation response to the phenomenological static characteristic of Fig.~\ref{fig:macro:rcsj-iv}. It shows the resulting \textit{I--V} characteristics in the underdamped and overdamped limits.
 
-    %         The RCSJ framework connects ideal Josephson step positions to measured \textit{I--V} characteristics, where damping, noise, and capacitive dynamics shape the visibility and stability of Shapiro steps.
+            The RCSJ framework connects ideal Josephson step positions to measured \textit{I--V} characteristics, where damping, noise, and capacitive dynamics shape the visibility and stability of Shapiro steps.
