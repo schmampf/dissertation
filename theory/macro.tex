@@ -326,32 +326,44 @@
     \label{subsec:macro:shapiro}
     %=========================================================
 
-        Under microwave irradiation, a Josephson junction develops quantized constant-voltage plateaus in its dc \textit{I--V} characteristic. These Shapiro steps, or the inverse AC Josephson effect, arise from frequency locking between the Josephson oscillation and the applied drive \cite{shapiro_josephson_1963}.
+        Under microwave irradiation, the Josephson oscillation can synchronize with the applied drive. This frequency locking produces discrete dc current contributions under voltage bias and constant-voltage plateaus under current bias. We first derive the ideal response for the harmonic junction voltage used in the Tien-Gordon description. We then show how the resulting current intervals are interpreted under dc current bias. This construction combines the time averaged quasiparticle PAT background with coherent Josephson locking without introducing a dynamical microwave circuit \cite{shapiro_josephson_1963,barone_physics_1982}.
 
-        The microwave drive introduced in Sec.~\ref{subsec:micro:pat} modulates the superconducting phase. For coherent Cooper-pair transfer, the charge-dependent phase in Eq.~\eqref{eq:micro:pat-phase} is evaluated at $q=2e$ and contributes directly to the phase difference. The Josephson frequency $\nu_0$ then mixes with the external frequency $\nu$, and the phase takes the form
-        \begin{equation}
-            \phi(t)=\phi_0 + 2\pi\nu_0 t + \alpha_{\nu,2e}\sin(2\pi\nu t)\,,
-            \label{eq:macro:shapiro-phase}
-        \end{equation}
-        with $\alpha_{\nu,2e} = 2eA/h\nu$ the dimensionless Cooper-pair drive strength.
+        %=========================================================
+        \subsubsection*{Driven Phase and Ideal Locking}
+        %=========================================================
 
-        Inserting this expression into Eq.~\eqref{eq:macro:josephson-current-phase} and expanding the phase modulation with Eq.~\eqref{eq:micro:pat-jacobi-anger} yields harmonics at frequencies $\nu_0 - n\nu$. Whenever $\nu_0 = n\nu$, the $n$-th harmonic becomes stationary and contributes a finite dc current. This produces quantized voltage plateaus at
-        \begin{equation}
-            V_n = \frac{nh\nu}{2e}\,,
-        \end{equation}
-        known as Shapiro steps \cite{shapiro_josephson_1963}.
+            We begin with the harmonic voltage in Eq.~\eqref{eq:micro:pat-drive-voltage}. Integrating the ac Josephson relation in Eq.~\eqref{eq:macro:josephson-voltage-phase} gives
+            \begin{align}
+                \phi(t)=\phi_0+2\pi\nu_\mathrm{J}t+\alpha_{\nu,2e}\sin(2\pi\nu t)\,, &&
+                \nu_\mathrm{J}=\frac{2eV_0}{h}\,, &&
+                \alpha_{\nu,2e}=\frac{2eA}{h\nu}\,.
+                \label{eq:macro:shapiro-phase}
+            \end{align}
+            The phase therefore contains uniform Josephson evolution and a periodic modulation set by the Cooper pair charge $2e$.
 
-        In the ideal voltage-driven sinusoidal model, the amplitude of each dc locking contribution is governed by the Bessel factor $J_n(\alpha_{\nu,2e})$ \cite{shapiro_josephson_1963,barone_physics_1982}. In contrast to the Tien--Gordon description of quasiparticle tunneling, the Bessel functions appear here without being squared because the Josephson current depends linearly on the phase modulation rather than on a transition probability. To retain the spectroscopy language used for quasiparticle transport, we represent the microwave response phenomenologically as shifted replicas of a static Josephson \textit{I--V} characteristic,
-        \begin{equation}
-            I(V_0)
-                = \sum_{n=-\infty}^{\infty}
-                    \left|J_n\!(\alpha_{\nu,2e})\right|\,
-                    I_{0}\!\left(V_0 - \frac{nh\nu}{2e}\right),
-            \label{eq:macro:shapiro-iv}
-        \end{equation}
-        where $I_0(V_0)$ denotes the static Josephson \textit{I--V} curve in the absence of microwaves. Equation~\eqref{eq:macro:shapiro-iv} is a spectroscopy-oriented ansatz that displays the step positions and Bessel-weighted evolution in a form analogous to photon-assisted tunneling. It is not the general dynamical solution of a driven junction. The phase-locking dynamics and damping are treated with the RCSJ model below.
+            Inserting Eq.~\eqref{eq:macro:shapiro-phase} into the sinusoidal CPR (Eq.~\ref{eq:macro:josephson-current-phase}) and using the Jacobi--Anger expansion (Eq.~\ref{eq:micro:pat-jacobi-anger}) produces 
+            \begin{align}
+                I_\mathrm{J}(t)
+                    =
+                    I_\mathrm{c}
+                    \sum_{n=-\infty}^{\infty}
+                    J_n(\alpha_{\nu,2e})
+                    \sin\!\left(
+                    \phi_0+2\pi(\nu_\mathrm{J}+n\nu)t
+                    \right)\,.
+            \end{align}
 
-        Quasiparticle tunneling occurs in parallel with the phase-driven supercurrent. Under microwave irradiation, Shapiro steps and PAT can therefore appear simultaneously. As illustrated in Fig.~\ref{fig:macro:shapiro-iv}, their interplay produces replicas in \textit{I--V} near zero bias and for energies twice the gap. The step spacing measures the applied frequency, while the step visibility depends on damping and fluctuations.
+            A component becomes stationary when $\nu_\mathrm{J}=n\nu$. The corresponding locking voltages and full current interval are
+            \begin{align}
+                V_n=\frac{nh\nu}{2e}\,, &&
+                \Delta I_n =2I_\mathrm{c}\left|J_n\!\left(\frac{2eA}{h\nu}\right)\right|\,.
+                \label{eq:macro:shapiro-iv}
+            \end{align}
+            The full interval follows by allowing the stationary phase offset to vary between the two extrema of the sinusoidal CPR. The quantized voltages define the integer Shapiro steps and are independent of the critical current and damping. The ideal width instead depends on $I_\mathrm{c}$ and on the local microwave voltage amplitude \cite{shapiro_josephson_1963}.
+
+            The unsquared Bessel function reflects coherent addition at the current amplitude level. This differs from quasiparticle PAT, where averaging over one drive period removes cross terms between photon channels and produces the squared Bessel weights in Eq.~\eqref{eq:micro:pat-iv}. Both responses are generated by the same prescribed voltage, but quasiparticles couple with charge $e$ and Cooper pairs with charge $2e$.
+
+            Under prescribed voltage bias, Eq.~\eqref{eq:micro:pat-iv} gives the continuous time averaged quasiparticle background. Away from the locking voltages, the Josephson current averages to zero. At each $V_n$, the stationary Josephson contribution adds a current interval of width $\Delta I_n$ centered on $I_\mathrm{PAT}(V_n)$. Figure~\ref{fig:macro:rcsj-shapiro-iv}(a) illustrates this decomposition.
 
         %=========================================================
         \subsubsection*{Shapiro Steps in the RCSJ Model}
