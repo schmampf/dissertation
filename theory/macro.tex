@@ -30,7 +30,7 @@
 
     A Josephson junction denotes such a weak link between two superconductors. It can be formed by an insulating barrier, a metallic constriction, or a short normal region. In the low-transmission limit considered here, the overlap and resulting Josephson coupling are weak, but remain sufficient for coherent Cooper pair transfer. Finite-transmission weak links require the mesoscopic description of Sec.~\ref{sec:meso}. \cite{josephson_possible_1962,likharev_superconducting_1979}
 
-    The following subsections introduce the Josephson relations and the RCSJ model for dissipative phase dynamics.
+    We first introduce the Josephson relations, the Ambegaokar-Baratoff critical current, and the coupling energy. We then connect the ideal voltage biased SIS spectrum to current bias using a generalized RSJ model that retains the nonlinear quasiparticle branch. The RCSJ model changes the modeling goal by replacing this spectrum with a linear shunt and adding capacitance to describe phase dynamics. Finally, we discuss the distinct voltage and current biased manifestations of microwave phase locking in the Shapiro effect.
 
     %=========================================================
     \subsection{Josephson Effect}
@@ -359,7 +359,7 @@
                 \vspace{-1em} % fine-tune vertical position
                 \import{theory/macro}{shapiro-ideal.pgf}
                 \caption{
-                    Ideal voltage biased response of an SIS Josephson junction under microwave irradiation.
+                    Under voltage bias, SIS curves show PAT and vertical bars mark coherent phase locking.
                 }
                 \label{fig:macro:shapiro-iv}
             \end{wrapfigure}
@@ -373,7 +373,7 @@
                 \label{eq:macro:shapiro-iv}
             \end{equation}
 
-            The full interval follows by allowing the stationary phase offset to vary between the two extrema of the sinusoidal CPR. The quantized voltages define the integer Shapiro steps and are independent of the critical current and damping. The ideal width instead depends on $I_\mathrm{c}$ and on the local microwave voltage amplitude \cite{shapiro_josephson_1963}.
+            The full interval follows by allowing the stationary phase offset to vary between the two extrema of the sinusoidal CPR. The integer locking voltages are independent of the critical current and damping. The ideal width instead depends on $I_\mathrm{c}$ and on the local microwave voltage amplitude \cite{shapiro_josephson_1963}.
 
             The Josephson intervals and the PAT background in Fig.~\ref{fig:macro:shapiro-iv} arise from different physics. The unsquared Bessel function in $\Delta I_n$ reflects coherent phase evolution and Cooper pair transfer. Quasiparticle PAT is incoherent. Averaging over one drive period removes cross terms between photon channels and produces the squared Bessel weights in Eq.~\eqref{eq:micro:pat-iv}. The two contributions share only the prescribed junction voltage in this construction, with quasiparticles coupling through charge $e$ and Cooper pairs through charge $2e$.
             
@@ -383,7 +383,7 @@
         \subsubsection*{Current Biased RCSJ Dynamics}
         %=========================================================
 
-            Under current bias, the microwave drive enters the RCSJ current balance. With the normalized variables (Sec.~\ref{subsec:macro:rcsj}) and $a'=I_\mathrm{ac}/I_\mathrm{c}$, the driven RCSJ equation is
+            Under current bias, the microwave drive enters the RCSJ current balance. Using the scales introduced in Sec.~\ref{subsec:macro:rcsj}, we set $t'=\omega_\mathrm{p}t$, $i=I_\mathrm{dc}/I_\mathrm{c}$, $a'=I_\mathrm{ac}/I_\mathrm{c}$, and $\nu'=\nu/\nu_\mathrm{p}$. The driven RCSJ equation is
             \begin{equation}
                 i+a'\sin(\nu't')
                 =\sin\phi
@@ -404,11 +404,11 @@
                 \vspace{-1em} % fine-tune vertical position
                 \import{theory/macro}{shapiro-rsj.pgf}
                 \caption{
-                    Current biased Shapiro response in the overdamped limit of the RCSJ Model ($C=0$).
+                    Overdamped current biased RCSJ response with $C=0$ and linear $R$. The voltage $\overline V$ is time averaged.
                 }
                 \label{fig:macro:shapiro-rsj}
             \end{wrapfigure}
 
-            The ac current periodically raises and lowers the barriers of the tilted potential. In an underdamped junction, the capacitive term gives the phase particle sufficient inertia to continue moving after the instantaneous tilt has decreased. Locked trajectories can then compete with trapped and running states. Their stability depends on the initial condition and sweep history, and switching or retrapping can interrupt a locked branch. Underdamped Shapiro steps are therefore less robust and substantially more difficult to calculate as a unique stationary \textit{I--V} characteristic.
+            The ac current periodically raises and lowers the barriers of the tilted potential. In an underdamped junction, the capacitive term gives the phase particle sufficient inertia to continue moving after the instantaneous tilt has decreased. Locked trajectories can then compete with trapped and running states. Their stability depends on the initial condition and sweep history, and switching or retrapping can interrupt a locked branch. Underdamped Shapiro steps can therefore be less robust and protocol dependent, which makes them substantially more difficult to calculate as a unique stationary \textit{I--V} characteristic.
 
             We consequently use the strongly overdamped case for the illustrative current biased response. On the time scale of the driven motion, the capacitive contribution is then negligible compared with the damping. For Fig.~\ref{fig:macro:shapiro-rsj}, we set $C=0$ in the dimensional RCSJ current balance of Eq.~\eqref{eq:macro:rcsj-cpr}, while retaining the linear resistance. The phase therefore follows first order driven dynamics within the same RCSJ framework. Frequency locking occurs when it advances by $2\pi n$ during one microwave period, producing plateaus in the time averaged voltage at $V_n$. The figure shows the resulting characteristic for different drive amplitudes. It is a dynamical current biased solution, not a reinterpretation of the voltage biased spectrum above.
