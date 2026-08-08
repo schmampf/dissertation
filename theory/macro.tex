@@ -322,7 +322,7 @@
             Escape from a metastable minimum need not occur by thermal activation. At sufficiently low temperature, the phase can tunnel through the potential barrier and escape from the minimum. In an underdamped junction, this escape can initiate the running state. The process is known as macroscopic quantum tunneling because the tunneling coordinate is the collective phase difference across the junction. Its experimental observation, together with the quantized phase particle levels, established that an electrical circuit can exhibit quantum behavior in a collective macroscopic degree of freedom \cite{devoret_measurements_1985}. These quantum effects lie outside the classical RCSJ treatment used throughout this section.
 
     %=========================================================
-    \subsection{Shapiro Steps}
+    \subsection{Shapiro Effect}
     \label{subsec:macro:shapiro}
     %=========================================================
 
@@ -346,14 +346,14 @@
                 I_\mathrm{J}(t)
                     =
                     I_\mathrm{c}
-                    \sum_{n=-\infty}^{\infty}
+                    \sum_{n=-\infty}^\infty
                     J_n(\alpha_{\nu,2e})
                     \sin\!\left(
                     \phi_0+2\pi(\nu_\mathrm{J}+n\nu)t
                     \right)\,.
             \end{align}
 
-            \begin{wrapfigure}[12]{r}{0.4\textwidth}
+            \begin{wrapfigure}[12]{r}{1.8in}
                 \captionsetup{format=plain}%
                 \centering
                 \vspace{-1em} % fine-tune vertical position
@@ -364,7 +364,7 @@
                 \label{fig:macro:shapiro-iv}
             \end{wrapfigure}
 
-            A component becomes stationary when $\nu_\mathrm{J}=n\nu$. The corresponding locking voltages and full current interval are
+            A harmonic becomes stationary whenever $\nu_\mathrm{J}$ is an integer multiple of $\nu$. The corresponding locking voltages and full current intervals are
             \begin{equation}
                 \begin{aligned}
                     V_n&=nh\nu/2e\,, \\
@@ -383,27 +383,7 @@
         \subsubsection*{Current Biased RCSJ Dynamics}
         %=========================================================
 
-            \begin{wrapfigure}[17]{r}{0.4\textwidth}
-                \captionsetup{format=plain}%
-                \centering
-                \vspace{-1em} % fine-tune vertical position
-                \import{theory/macro}{shapiro-rsj.pgf}
-                \caption{
-                    test
-                }
-                \label{fig:macro:shapiro-rsj}
-            \end{wrapfigure}
-
-            Figure~\ref{fig:macro:rcsj-shapiro-iv}(b) is obtained from the standard overdamped RSJ Model. The junction is driven by $I_\mathrm{dc}+I_\mathrm{ac}\sin(2\pi\nu t)$, and the dissipative branch is approximated by a constant resistance $R$. With $\tau=\omega_\mathrm{c}t$, $\omega_\mathrm{c}=2eI_\mathrm{c}R/\hbar$, $i=I_\mathrm{dc}/I_\mathrm{c}$, $a'=I_\mathrm{ac}/I_\mathrm{c}$, and $\Omega=2\pi\nu/\omega_\mathrm{c}$, the equation of motion is
-            \begin{equation}
-                i+a'\sin(\Omega\tau)
-                = \sin\phi
-                +\frac{\mathrm{d}\phi}{\mathrm{d}\tau}\,.
-                \label{eq:macro:shapiro-rsj}
-            \end{equation}
-            The voltage is not prescribed in this model. It follows from the phase velocity and is averaged after the driven trajectory reaches a stationary response. Locking occurs when the phase advances by $2\pi n$ during one drive period, which gives the same universal voltages $V_n$ as Eq.~\eqref{eq:macro:shapiro-iv}. The current widths, however, follow from the nonlinear dynamics in Eq.~\eqref{eq:macro:shapiro-rsj} and depend on $a'$ and $\Omega$. They therefore need not reproduce the ideal voltage driven Bessel intervals in Fig.~\ref{fig:macro:rcsj-shapiro-iv}(a). The two panels also use different drive variables, $A$ in panel (a) and $I_\mathrm{ac}$ in panel (b).
-
-            Restoring the capacitance gives the driven RCSJ equation,
+            Under current bias, the microwave drive enters the RCSJ current balance. With the normalized variables (Sec.~\ref{subsec:macro:rcsj}) and $a'=I_\mathrm{ac}/I_\mathrm{c}$, the driven RCSJ equation is
             \begin{equation}
                 i+a'\sin(\nu't')
                 =\sin\phi
@@ -411,14 +391,24 @@
                 +\frac{\mathrm{d}^2\phi}{\mathrm{d}t'^2}\,,
                 \label{eq:macro:shapiro-rcsj}
             \end{equation}
-            with the normalized variables introduced in Sec.~\ref{subsec:macro:rcsj}. The washboard potential from Eq.~\eqref{eq:macro:washboard-potential} then becomes time dependent,
+            The voltage is not prescribed. It follows from the phase velocity through the ac Josephson relation and is obtained by averaging the driven trajectory. The corresponding washboard potential from Eq.~\eqref{eq:macro:washboard-potential} is time dependent,
             \begin{equation}
                 u(\phi,t')
-                =-\cos\phi-\left[i+a'\sin(\nu't')\right]\phi\,.
+                =-\cos\phi-\left(i+a'\sin(\nu't')\right)\phi\,.
                 \label{eq:macro:shapiro-washboard}
             \end{equation}
-            The ac current periodically raises and lowers the barriers of the tilted potential. In the overdamped RSJ limit, the phase responds directly to this changing tilt and relaxes without inertial oscillations. In the RCSJ Model, the capacitive term gives the phase particle inertia. It can continue across a barrier after the instantaneous tilt has decreased and can approach different trapped, locked, or running trajectories depending on its previous motion.
 
-            This additional degree of dynamical memory makes the RCSJ response substantially more complicated than the RSJ staircase in Fig.~\ref{fig:macro:rcsj-shapiro-iv}(b). Step widths and shapes can become history dependent, and switching or retrapping can interrupt a locked branch. Weak damping permits residual plasma oscillations and competing attractors, while thermal fluctuations and phase diffusion can round or suppress narrow steps. A quantitative RCSJ characteristic therefore requires the capacitive dynamics, initial state, sweep protocol, and averaging procedure to be specified.
+            \begin{wrapfigure}[13]{r}{1.8in}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-1em} % fine-tune vertical position
+                \import{theory/macro}{shapiro-rsj.pgf}
+                \caption{
+                    Current biased Shapiro response in the overdamped limit of the RCSJ Model ($C=0$).
+                }
+                \label{fig:macro:shapiro-rsj}
+            \end{wrapfigure}
 
-            The two panels in Fig.~\ref{fig:macro:rcsj-shapiro-iv} consequently represent complementary limits rather than successive approximations to one microscopic calculation. Panel (a) combines the period averaged PAT spectrum with ideal coherent locking under prescribed voltage drive. Panel (b) isolates the phase dynamics of a current driven junction with a linear resistance. The RCSJ Model retains this linear damping approximation but adds capacitive inertia, so its Shapiro response can differ significantly from both idealized curves.
+            The ac current periodically raises and lowers the barriers of the tilted potential. In an underdamped junction, the capacitive term gives the phase particle sufficient inertia to continue moving after the instantaneous tilt has decreased. Locked trajectories can then compete with trapped and running states. Their stability depends on the initial condition and sweep history, and switching or retrapping can interrupt a locked branch. Underdamped Shapiro steps are therefore less robust and substantially more difficult to calculate as a unique stationary \textit{I--V} characteristic.
+
+            We consequently use the strongly overdamped case for the illustrative current biased response. On the time scale of the driven motion, the capacitive contribution is then negligible compared with the damping. For Fig.~\ref{fig:macro:shapiro-rsj}, we set $C=0$ in the dimensional RCSJ current balance of Eq.~\eqref{eq:macro:rcsj-cpr}, while retaining the linear resistance. The phase therefore follows first order driven dynamics within the same RCSJ framework. Frequency locking occurs when it advances by $2\pi n$ during one microwave period, producing plateaus in the time averaged voltage at $V_n$. The figure shows the resulting characteristic for different drive amplitudes. It is a dynamical current biased solution, not a reinterpretation of the voltage biased spectrum above.
