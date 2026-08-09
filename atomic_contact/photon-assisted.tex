@@ -4,7 +4,7 @@
 \label{subsec:ac:photon-assisted-transport}
 %=========================================================
 
-    I first consider C1, whose static transport and multichannel MAR fit are shown in Fig.~\ref{fig:ac:contact1:mar-fit}. In addition to the finite-bias MAR structure, the measurement contains a narrow zero-bias peak associated with a supercurrent contribution. This contribution is not included in the dc MAR model used to determine the transmission eigenvalues. I therefore excluded the data near zero bias from the fit and obtaine
+    I first consider atomic configuration C1, whose static transport and multichannel MAR fit are shown in Fig.~\ref{fig:ac:contact1:mar-fit}. In addition to the finite-bias MAR structure, the measurement contains a narrow zero-bias peak associated with a supercurrent contribution. This contribution is not included in the dc MAR model used to determine the transmission eigenvalues. I therefore excluded the data near zero bias from the fit and obtained
     \begin{align}
         \{\tau_i\} = \{0.517, 0.399, 0.332, 0.305, 0.204\}\,, &&
         G_\mathrm{N} = 1.757\,G_0\,.
@@ -15,31 +15,31 @@
         Static transport of C1 and multichannel MAR fit. The fit reproduces the finite-bias \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} characteristics for the transmission eigenvalues in Eq.~\eqref{eq:ac:contact1:pincode}. Data near zero bias are excluded because the additional narrow peak is not contained in the dc MAR model.
     }{fig:ac:contact1:mar-fit}
 
-    The largest transmission of this contact is only $\tau_1=0.517$. C1 therefore provides a comparatively low-transmission starting point for separating the photon-assisted quasiparticle, MAR, and supercurrent contributions below. I used the same static MAR fitting procedure for all irradiated contacts. Their extracted pincodes are collected in Table~\ref{table:ac:pincodes} in Appendix~\ref{appendix:ac:coupling}, demonstrating that the undriven transport of the complete contact set can be described within the same multichannel MAR framework. At the end of this section, I test the photon-assisted model on C2. Its nearly ballistic leading channel, $\tau_1=0.996$, provides a deliberately contrasting validation case rather than a repetition of the C1 regime.
+    The largest transmission of this contact is only $\tau_1=0.517$. C1 therefore provides a comparatively low-transmission starting point for separating the photon assisted quasiparticle, MAR, and supercurrent contributions below. I used the same static MAR fitting procedure for all irradiated contacts. Their extracted pincodes are collected in Table~\ref{table:ac:pincodes} in Appendix~\ref{appendix:ac:photon-assisted-transport}, demonstrating that the undriven transport of the full contact set can be described within the same multichannel MAR framework. At the end of this section, I test the photon assisted model on C2. Its nearly ballistic leading channel, $\tau_1=0.996$, provides a deliberately contrasting validation case rather than a repetition of the C1 regime.
 
-    \subsubsection*{Incoherent Cooper-Pair Transport at Zero Bias}
+    \subsubsection*{Incoherent Cooper-Pair Transport (ICPT)}
 
-        I now return to the narrow zero-bias feature that was excluded from the static MAR fit. Its location identifies it with a Cooper-pair contribution, but the measurement does not show a stable zero-voltage supercurrent branch. This suggests that fluctuations of the phase and the electromagnetic environment suppress coherent Josephson transport. I therefore test whether the feature is consistent with incoherent Cooper-pair tunneling (ICPT), for which individual charge-$2e$ transfer events exchange energy with the environment.
+        I now return to the narrow zero-bias feature that was excluded from the static MAR fit. Its location identifies it with a Cooper pair contribution, but the measurement does not show a stable zero-voltage supercurrent branch. This suggests that phase fluctuations induced by the electromagnetic environment suppress coherent Josephson transport. I therefore test whether the feature is consistent with ICPT, for which individual charge-$2e$ transfer events exchange energy with the environment.
 
-        In the perturbative ICPT regime, the current samples the environmental probability density $P_{2e}(E)$ at $E=2eV$ according to Eq.~\eqref{eq:stochastic:icpt:current}. I use the zero-temperature approximation, for which the environment does not emit energy into the junction. Equivalently, a tunneling Cooper pair can release energy into the environment, while the reverse process is absent.
-
-        I first invert the measured current to visualize the environmental response before choosing a circuit model. Under the zero-temperature approximation, Eq.~\eqref{eq:stochastic:icpt:current} gives an effective $P_{2e}(E)$ directly from the measured $I(V)$, as shown in Fig.~\ref{fig:ac:contact1:supercurrent}(b). Equations~\eqref{eq:stochastic:pe-definition} and \eqref{eq:stochastic:phase-correlation} then yield the corresponding effective dissipative impedance in Fig.~\ref{fig:ac:contact1:supercurrent}(c). This inversion is a diagnostic construction. It shows that the inferred frequency dependence can be represented by a minimal parallel-$RC$ environment and therefore motivates the impedance ansatz
-        \begin{equation}
-            Z(\omega;R_\mathrm{eff},C_\mathrm{eff}) = \frac{R_\mathrm{eff}}{1+ \ima\omega R_\mathrm{eff}C_\mathrm{eff}}\,.
-            \label{eq:ac:photon-assisted-transport:impedance}
-        \end{equation}
-        After selecting this circuit form, I reverse the calculation for the quantitative fit. For each trial, I calculate $P_{2e}(E)$ from the assumed impedance and substitute it into Eq.~\eqref{eq:stochastic:icpt:current}. This gives the forward model, which I fit directly to the measured zero-bias \textit{I--V} curve. Thus, the inversion motivates the parallel-$RC$ model, while the fitted parameters are obtained from the forward calculation.
+        In the perturbative ICPT regime, the current samples the environmental probability density $P_{2e}(E)$ at $E=2eV$ according to Eq.~\eqref{eq:stochastic:icpt:current}. I use the zero-temperature approximation, in which the environment can absorb energy released by a tunneling Cooper pair but cannot supply energy to it.
 
         \begin{figure}
             \centering
             \subfigure[Zero-bias \textit{I--V} and ICPT fit.]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{iv.pgf}}
             \hfill
-            \subfigure[Extracted $P(E)$.]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{pe.pgf}}
+            \subfigure[Extracted $P_{2e}(E)$.]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{pe.pgf}}
             \hfill
             \subfigure[Effective dissipative $Z(\omega)$.]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{zv.pgf}}
-            \caption{Effective-environment analysis and forward-model fit of the zero-bias feature of C1. (a) Measured \textit{I--V} characteristic and fitted ICPT current. Data below $V=0$ and in the quasiparticle branch are ignored. (b) Effective zero-temperature $P_{2e}(E)$ obtained by the measured current. (c) Effective dissipative impedance reconstructed from $P_{2e}(E)$, together with the parallel-$RC$ form used in the subsequent forward fit. The resulting fit parameters are given in Eq.~\eqref{eq:ac:contact1:icpt-parameter}.}
+            \caption{Effective environment analysis and forward model fit of the zero-bias feature of C1. (a) Measured \textit{I--V} characteristic and fitted ICPT current. Data below $V=0$ and in the quasiparticle branch are excluded. (b) Effective zero-temperature $P_{2e}(E)$ obtained from the measured current. (c) Effective dissipative impedance reconstructed from $P_{2e}(E)$, together with the parallel-$RC$ form used in the subsequent forward fit. The resulting fit parameters are given in Eq.~\eqref{eq:ac:contact1:icpt-parameter}.}
             \label{fig:ac:contact1:supercurrent}
         \end{figure}
+
+        I first invert the measured current to visualize the environmental response before choosing a circuit model. Under the zero-temperature approximation, Eq.~\eqref{eq:stochastic:icpt:current} gives an effective $P_{2e}(E)$ directly from the measured $I(V)$, as shown in Fig.~\ref{fig:ac:contact1:supercurrent}(b). Equations~\eqref{eq:stochastic:pe-definition} and \eqref{eq:stochastic:phase-correlation} then yield the corresponding effective dissipative impedance in Fig.~\ref{fig:ac:contact1:supercurrent}(c). This inversion is a diagnostic construction. The inferred frequency dependence motivates the simplest impedance ansatz that includes both low-frequency dissipation and a high-frequency cutoff. I represent the linear environment seen by the junction by an effective resistance $R_\mathrm{eff}$ in parallel with an effective capacitance $C_\mathrm{eff}$. The resistance sets the low-frequency impedance, while the capacitance progressively shunts the impedance as the frequency increases. The resulting impedance is
+        \begin{equation}
+            Z(\omega,R_\mathrm{eff},C_\mathrm{eff}) = \frac{R_\mathrm{eff}}{1+ \ima\omega R_\mathrm{eff}C_\mathrm{eff}}\,.
+            \label{eq:ac:photon-assisted-transport:impedance}
+        \end{equation}
+        After selecting this circuit form, I reverse the calculation for the quantitative fit. For each trial, I calculate $P_{2e}(E)$ from the assumed impedance and substitute it into Eq.~\eqref{eq:stochastic:icpt:current}. This gives the forward model, which I fit directly to the measured zero-bias \textit{I--V} curve. Thus, the inversion motivates the parallel-$RC$ model, while the fitted parameters are obtained from the forward calculation.
 
         This forward fit gives
         \begin{align}
@@ -49,69 +49,69 @@
             \label{eq:ac:contact1:icpt-parameter}
         \end{align}
 
-        The static characteristic is therefore consistent with ICPT in an effective dissipative environment, but it does not by itself exclude a broadened coherent Josephson response. The photon-assisted replicas provide an independent test below because incoherent transfer produces squared-Bessel weights, whereas coherent Shapiro response has a different amplitude dependence. The parameters extracted here define the undriven ICPT contribution used in that comparison. The remaining calibration step is to relate the nominal microwave output to the ac voltage at the junction.
+        The static characteristic is therefore consistent with ICPT in an effective dissipative environment, but it does not by itself exclude a broadened coherent Josephson response. The photon assisted replicas provide an independent test below because incoherent transfer produces squared-Bessel weights, whereas coherent Shapiro response has a different amplitude dependence. The parameters extracted here define the undriven ICPT contribution used in that comparison. The remaining calibration step is to relate the nominal microwave output to the ac voltage across the junction.
 
     \subsubsection*{Coupling Parameter}
 
-        In contrast to the tunnel-junction calibration, the irradiated atomic contact curves cannot be fitted with a single complete PAT model because quasiparticle transport, MAR, and the zero-bias Cooper pair contribution coexist. I therefore use a self-referenced PAT approximation to estimate the coupling and assume the familiar linear relation $A=\eta A_\mathrm{out}$.
+        In contrast to the tunnel-junction calibration, the irradiated atomic contact curves cannot be fitted with a single complete PAT model, as in Sec.~\ref{subsec:tb:highres}, because quasiparticle transport, MAR, and the zero-bias Cooper pair contribution coexist. I therefore use a self-referenced PAT approximation to estimate the amplitude coupling.
 
-        The measured unirradiated conductance is then used as the undriven characteristic in the Tien--Gordon transformation from Eq.~\eqref{eq:micro:pat-iv}. This construction is self-contained because it does not require a separate microscopic fit of the static or irradiated curves. It preserves the measured line shape and asks which value of $\eta$ best reproduces its photon-assisted replicas over the complete amplitude sweep. I perform the comparison in \textit{dI--dV}, which suppresses the approximately voltage-independent excess current and emphasizes the replicated spectral features. The map is dominated by quasiparticle PAT, so I use the transferred charge $q=e$. A trial coupling $\eta$ therefore gives
+        For all microwave amplitude sweeps on the atomic contacts, I stepped the source power uniformly in dBm. Conversion to the nominal voltage amplitude $A_\mathrm{out}\propto\sqrt{P_\mathrm{out}}$ therefore gives logarithmically spaced rather than equally spaced amplitude values. I acquired the unirradiated trace at $A_\mathrm{out}=0$ separately. The experimental maps retain these measured amplitude coordinates after calibration.
+
+        The measured unirradiated conductance is then used as the undriven characteristic in the Tien--Gordon transformation from Eq.~\eqref{eq:micro:pat-iv}. This construction is self-contained because it does not require a separate microscopic fit of the static or irradiated curves. It preserves the measured line shape and asks which value of $\eta$ best reproduces its photon assisted replicas over the complete amplitude sweep. I perform the comparison in \textit{dI--dV}, which suppresses the approximately voltage independent excess current and emphasizes the replicated spectral features. The map is dominated by quasiparticle PAT, so I use the transferred charge $q=e$. A trial coupling $\eta$ therefore gives
         \begin{align}
-            G_\mathrm{test}\!\left(\eta, A_\mathrm{out}, V\right) 
+            \tfrac{\mathrm{d}I}{\mathrm{d}V}\left(\eta, A_\mathrm{out}, V\right)
             &= \sum_{n=-\infty}^{\infty}
-                        J_n^2\!\left(\frac{q\eta A_\mathrm{out}}{h\nu}\right)
-                        G_\mathrm{exp}\!\left(V - \frac{n h\nu}{q}, A=0\right)\,,
+                        J_n^2\!\left(\frac{q\eta A_\mathrm{out}}{h\nu}\right)\cdot
+                        \tfrac{\mathrm{d}I}{\mathrm{d}V}_\mathrm{exp}^{(A_\mathrm{out}=0)}\!\left(V - \frac{n h\nu}{q}\right)\,,
             \label{eq:ac:photon-assisted-transport:coupling:dG}\\
-            \chi^2\!(\eta) &= \left\langle\left(G_\mathrm{test}\!(\eta, A_\mathrm{out}, V)-G_\mathrm{exp}\!(A_\mathrm{out}, V)\right)^2\right\rangle_{(A_\mathrm{out}, V)}\,.
+            \chi^2(\eta) &= \left\langle\!\!\left(\tfrac{\mathrm{d}I}{\mathrm{d}V}(\eta, A_\mathrm{out}, V)-\tfrac{\mathrm{d}I}{\mathrm{d}V}_\mathrm{exp}(A_\mathrm{out}, V)\right)^2\right\rangle_{\!\!(A_\mathrm{out}, V)}\,.
             \label{eq:ac:photon-assisted-transport:coupling:chi}
         \end{align}
-        The objective averages the squared deviation over the complete amplitude and voltage map. Narrow MAR and zero-bias features are not expected to follow the charge-$e$ transformation exactly, but they occupy a smaller part of the map than the quasiparticle replicas and therefore do not set the fitted coupling.
+        I evaluate the squared deviation at each sampled amplitude and voltage point and average it over the map to obtain the objective $\chi^2(\eta)$. Narrow MAR and zero-bias features are not expected to follow the charge-$e$ transformation exactly, but they occupy a smaller part of the map than the quasiparticle replicas and therefore do not set the fitted coupling.
 
-        \begin{wrapfigure}[11]{r}{1.4in}
+        \begin{wrapfigure}[13]{r}{1.4in}
             \captionsetup{format=plain}%
             \centering
-            \vspace{-1em}
+            % \vspace{-1em}
             \import{atomic_contact/1.8G0/15.0GHz_stripline}{eta_fit.pgf}
-            \vspace{-1.5em}
+            % \vspace{-1.5em}
             \caption{
                 Coupling calibration for C1 at 15\,GHz.
             }
             \label{fig:ac:contact1:eta}
         \end{wrapfigure}
-        I minimize Eq.~\eqref{eq:ac:photon-assisted-transport:coupling:chi} with a gradient-based optimizer. This continuous optimization is more efficient than a dense grid search because each objective evaluation transforms the complete measurement map and the minimum is narrow. The independently sampled objective landscape in Fig.~\ref{fig:ac:contact1:eta} is not the fit procedure itself. It visualizes the wider parameter range and confirms that the optimizer converges to the clear global minimum. For C1, this gives
+        I minimize Eq.~\eqref{eq:ac:photon-assisted-transport:coupling:chi} with a gradient based optimizer. This continuous optimization is more efficient than a dense grid search because each objective evaluation transforms the complete measurement map and the minimum is narrow. The independently sampled objective landscape in Fig.~\ref{fig:ac:contact1:eta} is not the fit procedure itself. It displays a wider parameter range and confirms that the optimizer converges to the clear global minimum. For C1, this gives
         \begin{align}
-            \nu = 15.0\,\mathrm{GHz}\, &&
-            \eta = 0.006179(16)\,.
+            \eta = 0.006179(16) && (\nu = 15.0\,\mathrm{GHz})\,.
             \label{eq:ac:contact1:eta}
         \end{align}
 
-        This calibration replaces the hardware-dependent source setting by the effective amplitude at the contact. The coupling parameters obtained for all irradiated contacts are summarized in Table~\ref{table:ac:coupling-parameter} in Appendix~\ref{appendix:ac:photon-assisted-transport}.
+        This calibration replaces the hardware dependent source setting with the effective amplitude at the contact. The coupling parameters obtained for all irradiated contacts are summarized in Table~\ref{table:ac:coupling-parameter} in Appendix~\ref{appendix:ac:photon-assisted-transport}.
 
-    \subsubsection*{Photon-Assisted Multiple Andreev Reflection}
+    \subsubsection*{Photon Assisted Multiple Andreev Reflection (PAMAR)}
 
-        The calibrated \textit{dI--dV} map contains several families of photon-assisted features. Replicas emerge from the quasiparticle threshold at $e|V|=2\Delta_0$ and from the subgap MAR thresholds near $e|V|=2\Delta_0/m$. I first ask whether the charge-resolved dc currents obtained from full counting statistics can be used directly in the unified charge-dependent Tien--Gordon expression of Eq.~\eqref{eq:meso:pamar-current}.
+        The calibrated \textit{dI--dV} map contains several families of photon assisted features. Replicas emerge from the quasiparticle threshold at $e|V|=2\Delta_0$ and from the subgap MAR thresholds near $e|V|=2\Delta_0/m$. The full counting statistics (FCS) decomposition introduced in Sec.~\ref{subsec:meso:mar} and Eq.~\eqref{eq:meso:fcs-decomposition} separates the dc MAR current into components $I_m(V)$ associated with the transfer of an effective charge $q=me$. I first test whether these components can be used directly in the unified charge dependent Tien--Gordon expression of Eq.~\eqref{eq:meso:pamar-current}.
 
-        This is the natural microscopic starting point because the FCS decomposition assigns a current $I_m(V)$ to transfer events with effective charge $me$. Dressing each $I_m(V)$ with the corresponding Bessel argument and voltage spacing then introduces no additional charge assignment. The center panel of Fig.~\ref{fig:ac:contact1:exp-pamar}, however, shows that this direct construction does not reproduce the measured sideband pattern.
+        This is a natural microscopic starting point because each FCS component already carries an effective charge assignment. Dressing each $I_m(V)$ with the corresponding Bessel argument and voltage spacing therefore requires no additional assignment. The center panel of Fig.~\ref{fig:ac:contact1:exp-pamar}, however, shows that this direct construction does not reproduce the measured sideband pattern.
 
         \begin{figure}[t]
             \centering
             \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{exp-pamar.pgf}
             \caption{
-                Test of the photon-assisted MAR construction for C1 at $\nu=15.0\,\mathrm{GHz}$. The left panel shows the measured \textit{dI--dV} map. The center panel applies charge-dependent Tien--Gordon dressing directly to the dc FCS components. It does not reproduce the measured sideband pattern because positive and neighboring negative conductance contributions are replicated with the same effective charge. The right panel instead dresses components localized around the MAR thresholds and recovers the principal measured sideband trajectories. All calculations use the calibrated drive amplitude.
+                Test of the photon assisted MAR construction for C1 at $\nu=15.0\,\mathrm{GHz}$. The left panel shows the measured \textit{dI--dV} map on the logarithmically sampled amplitude grid described in Sec.~\ref{subsec:ac:photon-assisted-transport}. The center panel applies charge dependent Tien--Gordon dressing directly to the dc FCS components. It does not reproduce the measured sideband pattern because positive and neighboring negative conductance contributions are replicated with the same effective charge. The right panel instead dresses components localized around the MAR thresholds and recovers the principal measured sideband trajectories. All calculations use the calibrated drive amplitude.
             }
             \label{fig:ac:contact1:exp-pamar}
         \end{figure}
 
         The difficulty is not the charge dependence of the Tien--Gordon transformation, but the choice of its input currents. The FCS contributions are charge resolved, but they are not localized exclusively around the corresponding MAR thresholds. Their differential conductance can contain both the dominant positive MAR feature and neighboring negative structure over the same voltage range. Direct photon dressing consequently replicates both contributions with the same effective charge, producing additional features that are absent or substantially weaker in the measurement. The component maps in Fig.~\ref{fig:ac:contact1:pamarm}(a) make this mixing visible.
 
-        I therefore retain the charge-dependent Tien--Gordon transformation but replace the dc FCS currents by phenomenological currents localized around the MAR thresholds in Eq.~\eqref{eq:meso:mar-sgs}. Their starting point is the simulated static MAR current calculated with the pincode in Eq.~\eqref{eq:ac:contact1:pincode}. The natural coordinate for the decomposition is $2\Delta_0/|eV|$, on which the thresholds occur at integer $m$. I define Gaussian weights
+        I therefore retain the charge dependent Tien--Gordon transformation but replace the dc FCS currents with phenomenological currents localized around the MAR thresholds in Eq.~\eqref{eq:meso:mar-sgs}. I construct these currents from the simulated static MAR current calculated with the pincode in Eq.~\eqref{eq:ac:contact1:pincode}. The natural coordinate for the decomposition is $2\Delta_0/|eV|$, on which the thresholds occur at integer $m$. I define normalized Gaussian weights
         \begin{align}
-            w_m(V)=\exp\!\left(-\left(\frac{2\Delta_0/|eV|-m}{2}\right)^2\right)\,,&&
-            \sum_{m=0}^{M-1}w_m(V)+w_M(V)\overset{!}{=}1\,.
+            w_m(V) = \frac{\tilde{w}_m(V)}{w_\mathcal{N}(V)}\,, &&
+            \tilde{w}_m(V)=\exp\!\left(-\left(\frac{2\Delta_0/|eV|-m}{2}\right)^2\right)\,,
             \label{eq:ac:pamar:weights}
         \end{align}
-
-        The Tien--Gordon calculation retains only a finite number of explicit MAR orders. As a numerical technicality, $w_M$ is therefore used as a terminal bin that collects all remaining orders not represented individually. The auxiliary contribution $w_0$ is merged into $w_1$ because quasiparticle transport dominates above $e|V|=2\Delta_0$. Figure~\ref{fig:ac:pamar-weights} shows that the same smooth partition appears unequally spaced on the voltage axis but equally spaced on the inverse-voltage coordinate.
+        I merge the contribution $w_0$ into $w_1$ because quasiparticle transport dominates above $e|V|=2\Delta_0$. For practical reasons, I use a maximum order $M$ that combines order $M$ and all higher orders. The normalization factor $w_\mathcal{N}(V)$ is chosen so that the individual weights $w_m(V)$ sum to unity at every voltage. Figure~\ref{fig:ac:pamar-weights} shows that the same smooth partition appears unequally spaced on the voltage axis but equally spaced on the inverse-voltage coordinate.
 
         \begin{figure}[t]
             \centering
@@ -153,36 +153,36 @@
                 Threshold-weighted components
                 ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{pamarm.pgf}}
             \caption{
-                Charge-resolved contributions to the photon-assisted MAR model of C1. Each row shows the summed response and the components assigned to effective charge orders $m=1$ to $4$. (a) Direct dressing of the dc FCS components replicates positive and neighboring negative \textit{dI--dV} contributions with the same effective charge. (b) Decomposing the simulated static MAR \textit{dI--dV} around the thresholds before applying the charge-dependent dressing suppresses this mixing and isolates the sidebands associated with each threshold. All panels use the calibrated $15.0\,\mathrm{GHz}$ drive amplitude.
+                Charge resolved contributions to the photon assisted MAR model of C1. Each row shows the summed response and the components assigned to effective charge orders $m=1$ to $4$. (a) Direct dressing of the dc FCS components replicates positive and neighboring negative \textit{dI--dV} contributions with the same effective charge. (b) Decomposing the simulated static MAR \textit{dI--dV} around the thresholds before applying the charge dependent dressing suppresses this mixing and isolates the sidebands associated with each threshold. All panels use the calibrated drive amplitude at $15.0\,\mathrm{GHz}$.
             }
             \label{fig:ac:contact1:pamarm}
         \end{figure}
 
-        This threshold-weighted PAMAR construction is a phenomenological stationary replica model. It assigns the simulated static MAR structure near each threshold to its nominal effective charge order, but it does not replace a microscopic Floquet calculation of irradiated MAR. In particular, it neglects coherent interference between driven MAR paths, irradiation-induced changes of the contact occupations, and nonequilibrium redistribution at high drive. Within these limits, it provides a transparent description of the principal finite-bias replicas. A detailed voltage-cut decomposition into the individual charge orders is provided in Appendix Fig.~\ref{fig:ac:contact1:voltage-cuts}. The narrow replicas originating from the zero-bias feature require the separate Cooper-pair contribution considered next.
+        This threshold weighted PAMAR construction is a phenomenological stationary replica model. It assigns the simulated static MAR structure near each threshold to its nominal effective charge order, but it does not replace a microscopic Floquet calculation of irradiated MAR. In particular, it neglects coherent interference between driven MAR paths, irradiation induced changes of the contact occupations, and nonequilibrium redistribution at high drive. Within these limits, it provides a transparent description of the principal finite-bias replicas. A detailed voltage cut decomposition into the individual charge orders is provided in Appendix Fig.~\ref{fig:ac:contact1:voltage-cuts}. The narrow replicas originating from the zero-bias feature require the separate Cooper pair contribution considered next.
 
-    \subsubsection*{Photon Assisted Incoherent Cooper Pair Tunneling}
+    \subsubsection*{Photon Assisted Incoherent Cooper Pair Tunneling (PAICPT)}
 
-        I now consider the narrow replicas that originate from the zero-bias feature. Their spacing alone does not distinguish incoherent Cooper-pair tunneling from coherent Josephson transport. Both mechanisms involve charge $2e$ and therefore generate features at voltages separated by $h\nu/(2e)$. The distinction instead lies in how their spectral weight evolves with the microwave amplitude.
+        Figure~\ref{fig:ac:contact1:exp-pamar} shows experimental features that are not associated with PAMAR. Instead, they originate from the zero-bias feature identified above as ICPT. Their spacing alone does not distinguish ICPT from coherent Josephson transport. Both mechanisms involve charge $2e$ and therefore generate features at voltages separated by $h\nu/(2e)$. The distinction lies in how their spectral weight evolves with microwave amplitude.
 
         For PAICPT, the microwave drive dresses the static ICPT characteristic determined above with probabilities proportional to squared Bessel functions, as discussed in Sec.~\ref{subsec:stochastic:icpt}. An ideal coherent Shapiro response follows the phase-locking relation in Eq.~\eqref{eq:macro:shapiro-iv}, for which the Bessel functions enter at the amplitude level. I calculate both responses using the calibrated ac voltage at the contact. The PAICPT calculation additionally uses the static ICPT parameters in Eq.~\eqref{eq:ac:contact1:icpt-parameter}. The comparison therefore tests the amplitude dependence without refitting the individual replicas.
 
-        Figure~\ref{fig:ac:contact1:didv-cuts} follows the central feature and the first three pairs of replicas along the microwave-amplitude axis. The measured positive- and negative-bias branches show the same sequence of maxima and minima as the PAICPT calculation over most of the calibrated range. The ideal Shapiro response instead predicts a different redistribution between the central feature and successive replica orders. The finite PAMAR contribution provides a smooth background to these cuts but does not account for their oscillatory amplitude dependence.
+        Figure~\ref{fig:ac:contact1:didv-cuts} follows the central feature and the first three pairs of replicas along the microwave amplitude axis. The measured positive- and negative-bias branches show the same sequence of maxima and minima as the PAICPT calculation over most of the calibrated range. The ideal Shapiro response instead predicts a different redistribution between the central feature and successive replica orders. The finite PAMAR contribution provides a smooth background to these cuts but does not account for their oscillatory amplitude dependence.
 
         \begin{figure}[t]
             \centering
             \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{amplitude-cuts.pgf}
             \caption{
-                Amplitude dependence of the zero-bias-derived features of C1 at $\nu=15.0\,\mathrm{GHz}$. The four panels follow the central feature and the first three replica pairs, $n=0,\pm1,\pm2,\pm3$. Measured positive- and negative-bias branches are compared, with the squared-Bessel PAICPT calculation, and an ideal coherent Shapiro response on a PAMAR background. The observed redistribution among the replica orders is described more consistently by PAICPT.
+                Amplitude dependence of the features originating from zero bias in C1 at $\nu=15.0\,\mathrm{GHz}$. The four panels follow the central feature and the first three replica pairs, $n=0,\pm1,\pm2,\pm3$. The measured positive- and negative-bias branches are compared with the squared-Bessel PAICPT calculation and an ideal coherent Shapiro response on a PAMAR background. The observed redistribution among the replica orders is described more consistently by PAICPT.
             }
             \label{fig:ac:contact1:didv-cuts}
         \end{figure}
 
-        Deviations remain at the largest amplitudes, where the measured line shapes broaden and the stationary PAICPT model becomes less accurate. Heating, nonequilibrium occupation, and drive-dependent phase dynamics are not included in the calculation. The line cuts therefore do not establish ICPT from the microwave response alone. Together with the static $P(E)$ analysis, however, their squared-Bessel-like amplitude evolution supports the interpretation of the zero-bias feature as incoherent Cooper-pair transport rather than an ideal coherent Shapiro response.
+        Deviations remain at the largest amplitudes, where the measured line shapes broaden and the stationary PAICPT model becomes less accurate. Heating, nonequilibrium occupation, and drive dependent phase dynamics are not included in the calculation. The line cuts therefore do not establish ICPT from the microwave response alone. Together with the static $P(E)$ analysis, however, their squared-Bessel-like amplitude evolution supports the interpretation of the zero-bias feature as incoherent Cooper pair transport rather than an ideal coherent Shapiro response.
 
 
     \subsubsection*{Comparison of Experiment and Simulation}
 
-        I finally combine the threshold-weighted PAMAR and PAICPT contributions. The calculation uses the static pincode, the effective ICPT environment, and the microwave coupling determined above. No additional adjustment is made for the comparison in Fig.~\ref{fig:ac:contact1:comparison}.
+        I finally combine the threshold weighted PAMAR and PAICPT contributions. The calculation uses the static pincode, the effective ICPT environment, and the microwave coupling determined above. No additional adjustment is made for the comparison in Fig.~\ref{fig:ac:contact1:comparison}.
 
         \begin{figure}[t]
             \centering
@@ -199,27 +199,27 @@
             \label{fig:ac:contact1:comparison}
         \end{figure}
 
-        The agreement is exceptionally close considering the number and overlap of the observed structures. The simulation reproduces not only their positions, but also the redistribution of spectral weight across the microwave-amplitude range in both derivative representations. The remaining differences are concentrated at the largest drive amplitudes and in the detailed line shapes of the sharpest subgap features, consistent with the limits identified above.
+        The agreement is exceptionally close considering the number and overlap of the observed structures. The simulation reproduces not only their positions but also the redistribution of spectral weight across the microwave amplitude range in both derivative representations. The remaining differences are concentrated at the largest drive amplitudes and in the detailed line shapes of the sharpest subgap features, consistent with the limits identified above.
 
-        Appendix Fig.~\ref{fig:ac:contact1:model-comparison} provides the stricter model-selection test. It compares all four combinations of the two MAR constructions and the two Cooper-pair responses, together with their residual maps. Only threshold-weighted PAMAR combined with PAICPT simultaneously suppresses the structured residuals along the MAR trajectories and around the zero-bias-derived replicas. The complete measured and simulated transport landscapes are shown in Appendix Figs.~\ref{fig:ac:contact1:cal} and \ref{fig:ac:contact1:sim}. The full comparison therefore confirms that both ingredients are required to capture the dominant microwave response of C1 within one common, parameter-constrained description.
+        Appendix Fig.~\ref{fig:ac:contact1:model-comparison} provides the stricter model selection test. It compares all four combinations of the two MAR constructions and the two Cooper pair responses, together with their residual maps. Only threshold weighted PAMAR combined with PAICPT simultaneously suppresses the structured residuals along the MAR trajectories and around the replicas originating from zero bias. The complete measured and simulated transport landscapes are shown in Appendix Figs.~\ref{fig:ac:contact1:cal} and \ref{fig:ac:contact1:sim}. The full comparison therefore confirms that both ingredients are required to capture the dominant microwave response of C1 within a common description constrained by independently determined parameters.
 
 
 
     \subsection*{Validation with C2}
 
-        I next test whether the threshold-weighted PAMAR construction remains useful for a contact with a nearly ballistic leading channel. The static MAR fit gives
+        I next test whether the threshold weighted PAMAR construction remains useful for a contact with a nearly ballistic leading channel. The static MAR fit gives
         \begin{align}
             \{\tau_i\} = \{0.997, 0.440, 0.184, 0.184, 0.182\}\,, &&
             G_\mathrm{N} = 1.987\,G_0\,.
             \label{eq:ac:contact2:pincode}
         \end{align}
-        This pincode is deliberately different from that of C1. Its leading channel produces a strong MAR contribution that dominates the measured response around zero voltage. A separate static supercurrent contribution cannot therefore be isolated and fitted reliably. For this validation, I use only the threshold-weighted PAMAR model constructed from the simulated static MAR current and do not add a fitted PAICPT contribution.
+        This pincode is deliberately different from that of C1. Its leading channel produces a strong MAR contribution that dominates the measured response around zero voltage. A separate static supercurrent contribution cannot therefore be isolated and fitted reliably. For this validation, I use only the threshold weighted PAMAR model constructed from the simulated static MAR current and do not add a fitted PAICPT contribution.
 
         \singlefitfigure{atomic_contact/2.4G0/15.0GHz_stripline/mar_fit}{
-            Static transport of C2 and multichannel MAR fit. The nearly ballistic leading channel produces a stronger excess current and sharper subgap structure than in C1. The simultaneous comparison of \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} establishes the undriven reference used for the photon-assisted calculation.
+            Static transport of C2 and multichannel MAR fit. The nearly ballistic leading channel produces a stronger excess current and sharper subgap structure than in C1. The simultaneous comparison of \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} establishes the undriven reference used for the photon assisted calculation.
         }{fig:ac:contact2:mar-fit}
 
-        Figure~\ref{fig:ac:contact2:comparison} shows that PAMAR alone already reproduces the overall microwave response remarkably well. The simulation captures the dominant quasiparticle and MAR trajectories, their charge-dependent spacing, and the broad redistribution of spectral weight over the calibrated amplitude range. This agreement is obtained despite the nearly ballistic leading channel and without using the ICPT analysis developed for C1.
+        Figure~\ref{fig:ac:contact2:comparison} shows that PAMAR alone already reproduces the overall microwave response remarkably well. The simulation captures the dominant quasiparticle and MAR trajectories, their charge dependent spacing, and the broad redistribution of spectral weight over the calibrated amplitude range. This agreement is obtained despite the nearly ballistic leading channel and without using the ICPT analysis developed for C1.
 
         \begin{figure}[t]
             \centering
@@ -236,8 +236,8 @@
             \label{fig:ac:contact2:comparison}
         \end{figure}
 
-        The remaining disagreement is structured rather than random. The tilted lines parallel to the principal simulated features in Fig.~\ref{fig:ac:contact2:comparison} arise from the numerical calculation and are not assigned physical significance. In contrast, the vertical lines in the measured \textit{dI--dV} map and the lines perpendicular to the principal measured features in \textit{dV--dI} are absent from the simulation. They are therefore signatures of physics missing from the PAMAR-only description.
+        The remaining disagreement is structured rather than random. The tilted lines parallel to the principal simulated features in Fig.~\ref{fig:ac:contact2:comparison} arise from the numerical calculation and do not have physical significance. In contrast, the vertical lines in the measured \textit{dI--dV} map and the lines perpendicular to the principal measured features in \textit{dV--dI} are absent from the simulation. They are therefore signatures of physics missing from the PAMAR-only description.
 
-        The full measured and simulated landscapes in Appendix Figs.~\ref{fig:ac:contact2:cal} and \ref{fig:ac:contact2:sim} make a second difference visible near zero voltage. Experiment and simulation redistribute the low-voltage spectral weight differently as the drive increases. Because the PAMAR construction attributes the complete simulated zero-voltage response to MAR, it most likely overestimates the MAR contribution in this region. A remaining incoherent Cooper-pair contribution could account for the additional features and their different amplitude dependence. C2 does not permit an independent static ICPT fit, so this interpretation remains suggestive rather than quantitative.
+        The full measured and simulated landscapes in Appendix Figs.~\ref{fig:ac:contact2:cal} and \ref{fig:ac:contact2:sim} make a second difference visible near zero voltage. Experiment and simulation redistribute the low-voltage spectral weight differently as the drive amplitude increases. Because the PAMAR construction attributes the complete simulated zero-voltage response to MAR, it most likely overestimates the MAR contribution in this region. A remaining incoherent Cooper pair contribution could account for the additional features and their different amplitude dependence. C2 does not permit an independent static ICPT fit, so this interpretation remains suggestive rather than quantitative.
 
-        C2 therefore validates the principal PAMAR picture while exposing its main limitation near zero voltage. Together, C1 and C2 test opposite pincode regimes, from a moderate leading transmission to an almost ballistic channel, and establish the complementary roles of PAMAR and PAICPT. The same static MAR, microwave calibration, and photon-assisted modeling procedures describe the overall response of the complete atomic-contact set summarized in Appendix Tables~\ref{table:ac:pincodes} and \ref{table:ac:coupling-parameter}. Within the tabulated range, PAMAR captures the dominant finite-bias structure, while PAICPT accounts for the zero-bias-derived contribution when it can be separated from the MAR background.
+        C2 therefore validates the principal PAMAR picture while exposing its main limitation near zero voltage. Together, C1 and C2 test opposite pincode regimes, from a moderate leading transmission to an almost ballistic channel, and establish the complementary roles of PAMAR and PAICPT. The same static MAR, microwave calibration, and photon assisted modeling procedures describe the overall response of the full atomic contact set summarized in Appendix Tables~\ref{table:ac:pincodes} and \ref{table:ac:coupling-parameter}. Within the tabulated range, PAMAR captures the dominant finite-bias structure, while PAICPT accounts for the contribution originating from zero bias when it can be separated from the MAR background.
