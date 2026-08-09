@@ -6,7 +6,7 @@
 
     This appendix complements the atomic-contact measurements in Sec.~\ref{sec:atomic-contacts} with the characterization data and extended model comparisons supporting the main analysis. I first characterize the intact constriction before breaking. Its hysteretic zero-field response and magnetic-field dependence establish the initial superconducting device state, which is distinct from the subsequently selected contact configurations C0\,-\,C3. I then introduce C0 in the tunnel regime. Static MAR fitting, the temperature dependence measured on the separate contact C0$'$, and microwave irradiation establish the superconducting energy scales and recover conventional photon-assisted quasiparticle tunneling while exposing the first weak finite-transmission correction.
 
-    The following magnetic-field study compares C0\,-\,C3. It establishes a common empirical suppression scale near $28\,\mathrm{mT}$ and documents the configuration-dependent suppression of the superconducting features. I then provide the representative channel-resolved MAR fits and the complete measured and reconstructed transport landscapes underlying the mesoscopic-pincode analysis of the contact-opening trace.
+    The following magnetic-field study compares C0\,-\,C3. It establishes a common empirical suppression scale near $\qty{28}{\milli\tesla}$ and documents the configuration-dependent suppression of the superconducting features. I then provide the representative channel-resolved MAR fits and the complete measured and reconstructed transport landscapes underlying the mesoscopic-pincode analysis of the contact-opening trace.
 
     The final sections collect the extended microwave results. Tables summarize the static pincodes and coupling parameters of the measured configurations, while the C1 and C2 figures provide the charge-order decomposition, model-selection residuals, and complete measured and simulated photon-assisted transport landscapes. The appendix closes with the full measured and phenomenological landscapes of the high-conductance configuration C3. Together, these results document the parameter extraction, fit quality, model limits, and field dependence that support the more compact comparisons in the main text.
 
@@ -19,23 +19,23 @@
 
         \begin{figure}[t]
             \centering
-            \subfigure[\textit{V--I}]{\import{atomic_contact/magnetic-field/550.0G0}{vi.pgf}}
+            \subfigure[\textit{V--I}]{\thesisplot{atomic_contact/magnetic-field/550.0G0}{vi}}
             \hfill
-            \subfigure[\textit{dV--dI}]{\import{atomic_contact/magnetic-field/550.0G0}{dvdi.pgf}}
+            \subfigure[\textit{dV--dI}]{\thesisplot{atomic_contact/magnetic-field/550.0G0}{dvdi}}
             \hfill
-            \subfigure[\textit{dI--dV}]{\import{atomic_contact/magnetic-field/550.0G0}{didv.pgf}}
+            \subfigure[\textit{dI--dV}]{\thesisplot{atomic_contact/magnetic-field/550.0G0}{didv}}
             \caption{
-                Zero-field transport of the unbroken device. The \textit{V--I} characteristic exhibits hysteretic switching from the low-voltage branch at $I_\mathrm{sw}=1.075(5)\,\mathrm{mA}$ and retrapping at $I_\mathrm{rt}=0.595(5)\,\mathrm{mA}$. The corresponding \textit{dV--dI} and \textit{dI--dV} traces emphasize the switching transitions and the finite slope of the low-voltage branch.
+                Zero-field transport of the unbroken device. The \textit{V--I} characteristic exhibits hysteretic switching from the low-voltage branch at $I_\mathrm{sw}=\qty{1.075(5)}{\milli\ampere}$ and retrapping at $I_\mathrm{rt}=\qty{0.595(5)}{\milli\ampere}$. The corresponding \textit{dV--dI} and \textit{dI--dV} traces emphasize the switching transitions and the finite slope of the low-voltage branch.
                 }
             \label{fig:ac:magnetic-fields:unbroken:single-vi}
         \end{figure}
 
         Figure~\ref{fig:ac:magnetic-fields:unbroken:single-vi} shows the characteristic hysteresis of the intact constriction. On increasing the current magnitude, the device leaves the low-voltage branch at the switching current $I_\mathrm{sw}$. On the return sweep, it reenters this branch at the lower retrapping current $I_\mathrm{rt}$. Linear fits to the low-voltage and normal branches give the resistances $R_\mathrm{s}$ and $R_\mathrm{N}$, respectively. The extracted zero-field parameters are
         \begin{align}
-            I_\mathrm{sw} = 1.075(5)\,\mathrm{mA}\,, &&
-            I_\mathrm{rt} = 0.595(5)\,\mathrm{mA}\,, \\
-            R_\mathrm{s} = 0.3387(2)\,\Omega\,, &&
-            R_\mathrm{N} = 23.151(2)\,\Omega\,.
+            I_\mathrm{sw} = \qty{1.075(5)}{\milli\ampere}\,, &&
+            I_\mathrm{rt} = \qty{0.595(5)}{\milli\ampere}\,, \\
+            R_\mathrm{s} = \qty{0.3387(2)}{\ohm}\,, &&
+            R_\mathrm{N} = \qty{23.151(2)}{\ohm}\,.
             \label{eq:ac:unbroken:transport}
         \end{align}
 
@@ -43,19 +43,19 @@
 
         \begin{figure}[t]
             \centering
-            \subfigure[\textit{dI--dV}]{\import{atomic_contact/magnetic-field/550.0G0}{dGexp.pgf}}
+            \subfigure[\textit{dI--dV}]{\thesisplot{atomic_contact/magnetic-field/550.0G0}{dGexp}}
             \hfill
-            \subfigure[\textit{dV--dI}]{\import{atomic_contact/magnetic-field/550.0G0}{dRexp.pgf}}
+            \subfigure[\textit{dV--dI}]{\thesisplot{atomic_contact/magnetic-field/550.0G0}{dRexp}}
             \caption{
-                Magnetic-field dependence of the unbroken device. The normalized \textit{dI--dV} and \textit{dV--dI} maps show the hysteretic switching region for both field polarities. The region narrows as $\lvert\mu_0H-\mu_0H_\mathrm{off}\rvert$ increases and disappears at an empirical critical-field scale of $\mu_0H_\mathrm{c}=9.9(1)\,\mathrm{mT}$. The small offset $\mu_0H_\mathrm{off}=0.5(1)\,\mathrm{mT}$ describes the displacement of the response along the field axis.
+                Magnetic-field dependence of the unbroken device. The normalized \textit{dI--dV} and \textit{dV--dI} maps show the hysteretic switching region for both field polarities. The region narrows as $\lvert\mu_0H-\mu_0H_\mathrm{off}\rvert$ increases and disappears at an empirical critical-field scale of $\mu_0H_\mathrm{c}=\qty{9.9(1)}{\milli\tesla}$. The small offset $\mu_0H_\mathrm{off}=\qty{0.5(1)}{\milli\tesla}$ describes the displacement of the response along the field axis.
                 }
             \label{fig:ac:magnetic-fields:unbroken}
         \end{figure}
 
         I next applied a magnetic field perpendicular to the sample plane. Figure~\ref{fig:ac:magnetic-fields:unbroken} shows that the switching region narrows for both field polarities and is centered at a small field offset. I characterize this evolution by
         \begin{align}
-            \mu_0H_\mathrm{c} = 9.9(1)\,\mathrm{mT}\,, &&
-            \mu_0H_\mathrm{off} = 0.5(1)\,\mathrm{mT}\,.
+            \mu_0H_\mathrm{c} = \qty{9.9(1)}{\milli\tesla}\,, &&
+            \mu_0H_\mathrm{off} = \qty{0.5(1)}{\milli\tesla}\,.
             \label{eq:ac:unbroken:field}
         \end{align}
         Here, $\mu_0H_\mathrm{c}$ is the field scale at which the switching structure is no longer resolved and $\mu_0H_\mathrm{off}$ is the center of the measured field response. I treat $\mu_0H_\mathrm{c}$ as an empirical device parameter. The measurement does not distinguish orbital, geometric, and microscopic pair-breaking contributions.
@@ -64,11 +64,11 @@
 
         \begin{figure}[t]
             \centering
-            \subfigure[\textit{V--I}]{\import{atomic_contact/magnetic-field/550.0G0/cal_iv}{main.pgf}}%
+            \subfigure[\textit{V--I}]{\thesisplot{atomic_contact/magnetic-field/550.0G0/cal_iv}{main}}%
             \hfill%
-            \subfigure[\textit{dV--dI}]{\import{atomic_contact/magnetic-field/550.0G0/cal_didv}{main.pgf}}%
+            \subfigure[\textit{dV--dI}]{\thesisplot{atomic_contact/magnetic-field/550.0G0/cal_didv}{main}}%
             \hfill%
-            \subfigure[\textit{dI--dV}]{\import{atomic_contact/magnetic-field/550.0G0/cal_dvdi}{main.pgf}}%
+            \subfigure[\textit{dI--dV}]{\thesisplot{atomic_contact/magnetic-field/550.0G0/cal_dvdi}{main}}%
             \caption{
                 Positive-field transport landscape of the unbroken device. Each panel shows the measured traces as waterfall cuts, a continuous surface, and a projected heat map. The \textit{V--I} landscape shows that the low-voltage branch and its hysteretic switching interval contract as the perpendicular field increases. The \textit{dV--dI} and \textit{dI--dV} peaks trace the same switching boundaries and merge into the normal-state response near $H/H_\mathrm{c}=1$. Current, voltage, field, differential resistance, and differential conductance are normalized by $I_\mathrm{sw}$, $I_\mathrm{sw}R_\mathrm{N}$, $H_\mathrm{c}$, $R_\mathrm{N}$, and $1/R_\mathrm{N}$, respectively.
                 }
@@ -97,13 +97,13 @@
 
         The temperature sweep in Fig.~\ref{fig:ac:0.05G0:temperature} tests whether the dominant spectral structure follows the superconducting electrodes. At low temperature, the differential conductance is suppressed inside the gap and shows a pronounced quasiparticle onset near $2\Delta$. Increasing the temperature shifts spectral weight toward lower bias and weakens the onset as superconductivity is suppressed. The temperature dependence of C0$'$ and the magnetic-field-dependent characterization of C0 in Sec.~\ref{sec:appendix:ac:magnetic-field} give
         \begin{align}
-            \Delta_0 = 192.0(5)\,\mathrm{ueV}\,, &&
-            T_\mathrm{c} = 1.21(1)\,\mathrm{K}\,, &&
-            \mu_0H_\mathrm{c} = 28(1)\,\mathrm{mT}\,.
+            \Delta_0 = \qty{192.0(5)}{\micro\electronvolt}\,, &&
+            T_\mathrm{c} = \qty{1.21(1)}{\kelvin}\,, &&
+            \mu_0H_\mathrm{c} = \qty{28(1)}{\milli\tesla}\,.
         \end{align}
-        Using the extracted gap for the weak-coupling relation gives $T_\mathrm{c}=1.24\,\mathrm{K}$. This value is close to the measured $1.21(1)\,\mathrm{K}$ and confirms that the temperature evolution of C0$'$ is consistent with the extracted superconducting gap.
+        Using the extracted gap for the weak-coupling relation gives $T_\mathrm{c}=\qty{1.24}{\kelvin}$. This value is close to the measured $\qty{1.21(1)}{\kelvin}$ and confirms that the temperature evolution of C0$'$ is consistent with the extracted superconducting gap.
 
-        I then irradiated C0 through the stripline at $\nu=15.0\,\mathrm{GHz}$. Figure~\ref{fig:ac:0.05G0:15.0GHz_stripline:cal} shows replicas of the quasiparticle onset whose spacing and redistribution with drive amplitude follow Tien--Gordon photon-assisted tunneling. I calibrated the effective junction amplitude with the same procedure used in earlier in Sec.~\ref{sec:tunnelbarrier}.
+        I then irradiated C0 through the stripline at $\nu=\qty{15.0}{\giga\hertz}$. Figure~\ref{fig:ac:0.05G0:15.0GHz_stripline:cal} shows replicas of the quasiparticle onset whose spacing and redistribution with drive amplitude follow Tien--Gordon photon-assisted tunneling. I calibrated the effective junction amplitude with the same procedure used in earlier in Sec.~\ref{sec:tunnelbarrier}.
 
         PAT simulations reproduces the principal quasiparticle sidebands and their transfer of spectral weight over the measured amplitude range. A weak measured subgap structure near the $n=2$ MAR threshold, is absent from the first-order tunnel calculation. This deviation is consistent with the onset of Andreev reflection from the leading channel. I do not resolve a separate photon-assisted MAR replica pattern in this contact, so the data do not justify a quantitative PAMAR analysis. The comparison consequently establishes the useful scope of the tunnel reference: Tien--Gordon dressing describes the dominant irradiated quasiparticle transport, while the remaining subgap signal marks the beginning of finite-transmission corrections.
 
@@ -117,7 +117,7 @@
             \centering
             \landscapepanels{atomic_contact/0.05G0/15.0GHz_stripline}{cal}
             \caption{
-                Calibrated microwave-amplitude landscape of C0 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. Photon-assisted replicas emerge from the quasiparticle onset and redistribute spectral weight as $eA/h\nu$ increases. A weaker subgap feature near $\lvert eV\rvert=\Delta$ indicates the onset of Andreev reflection.
+                Calibrated microwave-amplitude landscape of C0 under stripline irradiation at $\nu=\qty{15.0}{\giga\hertz}$. Photon-assisted replicas emerge from the quasiparticle onset and redistribute spectral weight as $eA/h\nu$ increases. A weaker subgap feature near $\lvert eV\rvert=\Delta$ indicates the onset of Andreev reflection.
                 }
             \label{fig:ac:0.05G0:15.0GHz_stripline:cal}
 
@@ -125,7 +125,7 @@
 
             \landscapepanels{atomic_contact/0.05G0/15.0GHz_stripline}{sim}
             \caption{
-                Simulated microwave-amplitude landscape according to PAT of C0 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The calculation reproduces the dominant quasiparticle sidebands in Fig.~\ref{fig:ac:0.05G0:15.0GHz_stripline:cal}, but it does not contain the weak Andreev contribution visible in the measured subgap response.
+                Simulated microwave-amplitude landscape according to PAT of C0 under stripline irradiation at $\nu=\qty{15.0}{\giga\hertz}$. The calculation reproduces the dominant quasiparticle sidebands in Fig.~\ref{fig:ac:0.05G0:15.0GHz_stripline:cal}, but it does not contain the weak Andreev contribution visible in the measured subgap response.
                 }
             \label{fig:ac:0.05G0:15.0GHz_stripline:sim}
         \end{figure}
@@ -139,27 +139,27 @@
 
         \begin{figure}[t]
             \centering
-            \subfigure[\textit{dI--dV}]{\import{atomic_contact/magnetic-field}{dGexp.pgf}}
+            \subfigure[\textit{dI--dV}]{\thesisplot{atomic_contact/magnetic-field}{dGexp}}
             \hfill
-            \subfigure[\textit{dV--dI}]{\import{atomic_contact/magnetic-field}{dRexp.pgf}}
+            \subfigure[\textit{dV--dI}]{\thesisplot{atomic_contact/magnetic-field}{dRexp}}
             \caption{
                 Magnetic-field-dependent transport of C0\,-\,C3 for a field perpendicular to the sample plane. The maps show the normalized \textit{dI--dV} as a function of $eV/\Delta_0$ and the normalized \textit{dV--dI} as a function of $eI/(\Delta_0G_\mathrm{N})$. Each panel is labeled by its contact configuration, and both field polarities are shown.
                 }
             \label{fig:ac:magnetic-fields}
         \end{figure}
 
-        I measured C0\,-\,C3 as functions of magnetic field perpendicular to the sample plane. Figure~\ref{fig:ac:magnetic-fields} compares the resulting \textit{dI--dV} and \textit{dV--dI} maps. The center of the superconducting response occurs at a small configuration-dependent offset $\mu_0H_\mathrm{off}=0.5\,\text{-}\,1.5\,\mathrm{mT}$. I therefore characterize the suppression relative to the effective field $H-H_\mathrm{off}$. I attribute this small offset operationally to the residual field of the magnet and cryostat, without an independent calibration of its origin.
+        I measured C0\,-\,C3 as functions of magnetic field perpendicular to the sample plane. Figure~\ref{fig:ac:magnetic-fields} compares the resulting \textit{dI--dV} and \textit{dV--dI} maps. The center of the superconducting response occurs at a small configuration-dependent offset $\mu_0H_\mathrm{off}=\qtyrange{0.5}{1.5}{\milli\tesla}$. I therefore characterize the suppression relative to the effective field $H-H_\mathrm{off}$. I attribute this small offset operationally to the residual field of the magnet and cryostat, without an independent calibration of its origin.
 
         Starting from $H_\mathrm{off}$, the superconducting transport features weaken with increasing field magnitude. In C0, the quasiparticle onset moves toward zero voltage and the subgap region fills as the gap closes. In C1\,-\,C3, the supercurrent contribution and subharmonic gap structure are progressively suppressed. Although the visible structures depend on the contact regime, they disappear at a relatively consistent field scale in both \textit{dI--dV} and \textit{dV--dI}. I define the empirical critical field as the field at which no resolved superconducting transport features remain. This criterion gives the common value
         \begin{align}
-            \mu_0H_\mathrm{c} = 28.0(5)\,\mathrm{mT}\,.
+            \mu_0H_\mathrm{c} = \qty{28.0(5)}{\milli\tesla}\,.
             \label{eq:ac:magnetic-field:critical-field}
         \end{align}
         The uncertainty is given by the field resolution.
 
-        Particularly noisy regions occur around $\mu_0H\approx\pm10\,\mathrm{mT}$ in the \textit{I--V} characteristics. These regions are noisy likely due to internal processes in the magnet powersupply or controller.
+        Particularly noisy regions occur around $\mu_0H\approx\pm\qty{10}{\milli\tesla}$ in the \textit{I--V} characteristics. These regions are noisy likely due to internal processes in the magnet powersupply or controller.
 
-        A distinct abrupt change occurs in C3 for $\mu_0H\lesssim-20\,\mathrm{mT}$. In contrast to the continuously suppressed contribution, this transition changes the background conductance after the superconducting features have largely disappeared. I therefore attribute it tentatively to a reformation of the atomic contact. The data recorded before and after this event do not necessarily represent the same microscopic contact configuration. I consequently determine the superconducting suppression field from the continuous evolution outside this reformation event and do not interpret the conductance jump as superconducting hysteresis.
+        A distinct abrupt change occurs in C3 for $\mu_0H\lesssim\qty{-20}{\milli\tesla}$. In contrast to the continuously suppressed contribution, this transition changes the background conductance after the superconducting features have largely disappeared. I therefore attribute it tentatively to a reformation of the atomic contact. The data recorded before and after this event do not necessarily represent the same microscopic contact configuration. I consequently determine the superconducting suppression field from the continuous evolution outside this reformation event and do not interpret the conductance jump as superconducting hysteresis.
 
         Beyond the aptrupt change in conductance in C3 discussed before, there seem to be a different critical fields in the suppression of the zero voltage feature and the subgap structure (SGS). The SGS is supressed earlier and with that, the overall conductance gets lowered, while the supercurrent survives a higher field.
 
@@ -193,13 +193,13 @@
             \subfigure[
                 \textit{I--V}
             ]{
-                \import{atomic_contact/breaking}{ivs.pgf}
+                \thesisplot{atomic_contact/breaking}{ivs}
             }
             \\
             \subfigure[
                 \textit{dI--dV}
             ]{
-                \import{atomic_contact/breaking}{didvs.pgf}
+                \thesisplot{atomic_contact/breaking}{didvs}
                 }
             \caption{
                 Representative channel-resolved MAR fits during contact opening. The measured \textit{I--V} characteristics and corresponding \textit{dI--dV} spectra are compared with the best-fit multichannel model. Each trace is labeled by its relative displacement $x$ and extracted mesoscopic pincode $\{\tau_i\}$. The derivative spectra are obtained from the same \textit{I--V} data and are not independent fit observables.
@@ -220,7 +220,7 @@
             \label{table:ac:pincodes}
             \vspace{1em}
             \begin{tabular}{l|l|l|l|l}
-                C & $G_\mathrm{N}\,(G_0)$ & $\Delta_0\,(\mathrm{ueV})$ & $\sigma_V\,(\mathrm{uV})$ & $\{\tau_i\}$ \\\hline
+                C & $G_\mathrm{N}\,(G_0)$ & $\Delta_0\,(\unit{\micro\electronvolt})$ & $\sigma_V\,(\unit{\micro\volt})$ & $\{\tau_i\}$ \\\hline
                 C0  & $0.050$ & $192.0$ & $19.5$ & $\{0.045, 0.001, 0.001, 0.001, 0.001, 0.001\}$ \\ % 0.05 G0
                 C0$'$ & $0.133$ & $0.189$ & $25.5$ & $\{0.118, 0.008, 0.004, 0.001, 0.001, 0.001\}$ \\ % 0.05 G0 temperature
                     & $0.794$ & $190.5$ & $12.5$ & $\{0.682, 0.112\}$\\ % 0.8 G0
@@ -240,7 +240,7 @@
             \label{table:ac:coupling-parameter}
             \vspace{1em}
             \begin{tabular}{l|l|l|l|l}
-                C & $G_\mathrm{N}\,(G_0)$ & $\nu\,(\mathrm{GHz})$ & $\eta_\mathrm{antenna}\ (10^{-3})$ & $\eta_\mathrm{stripline}\ (10^{-3})$ \\\hline
+                C & $G_\mathrm{N}\,(G_0)$ & $\nu\,(\unit{\giga\hertz})$ & $\eta_\mathrm{antenna}\ (10^{-3})$ & $\eta_\mathrm{stripline}\ (10^{-3})$ \\\hline
                 C0 & $0.050$ & $15.0$ &  -           &  $5.803(1) $ \\
                    & $0.794$ & $ 7.8$ &  $9.680(19)$ &  $8.403(9) $ \\
                    &         & $15.0$ &  $6.556(13)$ &  $7.085(13)$ \\
@@ -270,8 +270,8 @@
 
         As in the mesoscopic pincode analysis, I assume the minimum temperature and Dynes parameter
         \begin{align}
-            T = 0\,\mathrm{K}\, &&
-            \gamma = 1\,\mathrm{neV}.
+            T = \qty{0}{\kelvin}\, &&
+            \gamma = \qty{1}{\nano\electronvolt}.
             \label{eq:ac:photon-assisted-transport:assumptions}
         \end{align}
 
@@ -279,8 +279,8 @@
 
         Here they cluster around
         \begin{align}
-            \Delta_0 = 190.4(8)\,\mathrm{ueV}\,, &&
-            \sigma_V = 10(4)\,\mathrm{uV}\,.
+            \Delta_0 = \qty{190.4(8)}{\micro\electronvolt}\,, &&
+            \sigma_V = \qty{10(4)}{\micro\volt}\,.
             \label{eq:ac:photon-assisted-transport:parameter}
         \end{align}
 
@@ -288,20 +288,20 @@
 
         \begin{figure}[t]
             \centering
-            \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{voltage-cuts-m.pgf}
-            \caption{Charge-order decomposition of voltage cuts through the microwave-driven \textit{dI--dV} of C1 at $\nu=15.0\,\mathrm{GHz}$. The six panels show increasing reduced drive amplitude from $eA/h\nu=0$ to $5$. Measured positive- and negative-bias branches are compared with the composite simulation, its PAICPT contribution, the summed threshold-weighted PAMAR response, and the individual PAMAR components $m=1$ to $5$. The dominant charge order shifts toward larger $m$ as the relevant subgap threshold approaches zero bias.}
+            \thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{voltage-cuts-m}
+            \caption{Charge-order decomposition of voltage cuts through the microwave-driven \textit{dI--dV} of C1 at $\nu=\qty{15.0}{\giga\hertz}$. The six panels show increasing reduced drive amplitude from $eA/h\nu=0$ to $5$. Measured positive- and negative-bias branches are compared with the composite simulation, its PAICPT contribution, the summed threshold-weighted PAMAR response, and the individual PAMAR components $m=1$ to $5$. The dominant charge order shifts toward larger $m$ as the relevant subgap threshold approaches zero bias.}
             \label{fig:ac:contact1:voltage-cuts}
         \end{figure}
 
         \begin{figure}
             \centering
-            \subfigure[\textit{dI--dV}]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGcombined.pgf}}
+            \subfigure[\textit{dI--dV}]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGcombined}}
             \hfill
-            \subfigure[\textit{dV--dI}]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcombined.pgf}}
-            \subfigure[\textit{dI--dV} residual]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGdiff.pgf}}
+            \subfigure[\textit{dV--dI}]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcombined}}
+            \subfigure[\textit{dI--dV} residual]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGdiff}}
             \hfill
-            \subfigure[\textit{dV--dI} residual]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRdiff.pgf}}
-            \caption{Comparison of four photon-assisted models for C1 at $\nu=15.0\,\mathrm{GHz}$. The calculated (a) \textit{dI--dV} and (b) \textit{dV--dI} maps combine either PAICPT or an ideal coherent Shapiro response with either threshold-weighted PAMAR or direct dressing of the FCS components. Panels (c) and (d) show the corresponding residuals relative to the measurement. The PAICPT plus threshold-weighted PAMAR combination gives the least structured residual in both representations. Direct FCS dressing leaves pronounced deviations along the MAR sidebands, while the coherent Shapiro model does not reproduce the amplitude evolution of the zero-bias-derived replicas. All four calculations use the same calibrated drive amplitude and static contact parameters.}
+            \subfigure[\textit{dV--dI} residual]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRdiff}}
+            \caption{Comparison of four photon-assisted models for C1 at $\nu=\qty{15.0}{\giga\hertz}$. The calculated (a) \textit{dI--dV} and (b) \textit{dV--dI} maps combine either PAICPT or an ideal coherent Shapiro response with either threshold-weighted PAMAR or direct dressing of the FCS components. Panels (c) and (d) show the corresponding residuals relative to the measurement. The PAICPT plus threshold-weighted PAMAR combination gives the least structured residual in both representations. Direct FCS dressing leaves pronounced deviations along the MAR sidebands, while the coherent Shapiro model does not reproduce the amplitude evolution of the zero-bias-derived replicas. All four calculations use the same calibrated drive amplitude and static contact parameters.}
             \label{fig:ac:contact1:model-comparison}
         \end{figure}
 
@@ -311,7 +311,7 @@
             \centering
             \landscapepanels{atomic_contact/1.8G0/15.0GHz_stripline}{cal}
             \caption{
-                Calibrated microwave-amplitude landscape of C1 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns display the same measurement as heat maps, surfaces, and representative waterfall cuts. Photon-assisted replicas emerge from the quasiparticle and MAR thresholds, while narrow features originating from the zero-bias peak disperse across the reduced-amplitude axis $eA/h\nu$.
+                Calibrated microwave-amplitude landscape of C1 under stripline irradiation at $\nu=\qty{15.0}{\giga\hertz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns display the same measurement as heat maps, surfaces, and representative waterfall cuts. Photon-assisted replicas emerge from the quasiparticle and MAR thresholds, while narrow features originating from the zero-bias peak disperse across the reduced-amplitude axis $eA/h\nu$.
                 }
             \label{fig:ac:contact1:cal}
 
@@ -319,7 +319,7 @@
 
             \landscapepanels{atomic_contact/1.8G0/15.0GHz_stripline}{sim}
             \caption{
-                Simulated microwave-amplitude landscape of C1 at $\nu=15.0\,\mathrm{GHz}$. The calculation combines threshold-weighted PAMAR with PAICPT using the calibrated drive amplitude and the static transport parameters of C1. The three representations reproduce the principal sideband trajectories and spectral-weight redistribution observed in Fig.~\ref{fig:ac:contact1:cal}, while smaller line-shape differences remain at high drive.
+                Simulated microwave-amplitude landscape of C1 at $\nu=\qty{15.0}{\giga\hertz}$. The calculation combines threshold-weighted PAMAR with PAICPT using the calibrated drive amplitude and the static transport parameters of C1. The three representations reproduce the principal sideband trajectories and spectral-weight redistribution observed in Fig.~\ref{fig:ac:contact1:cal}, while smaller line-shape differences remain at high drive.
                 }
             \label{fig:ac:contact1:sim}
         \end{figure}
@@ -328,7 +328,7 @@
             \centering
             \landscapepanels{atomic_contact/2.4G0/15.0GHz_stripline}{cal}
             \caption{
-                Calibrated microwave-amplitude landscape of C2 under stripline irradiation at $\nu=15.0\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations show the strong subgap response of the nearly ballistic leading channel. The measured low-voltage features exhibit an amplitude dependence that is not fully captured by the PAMAR-only simulation in Fig.~\ref{fig:ac:contact2:sim}.
+                Calibrated microwave-amplitude landscape of C2 under stripline irradiation at $\nu=\qty{15.0}{\giga\hertz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations show the strong subgap response of the nearly ballistic leading channel. The measured low-voltage features exhibit an amplitude dependence that is not fully captured by the PAMAR-only simulation in Fig.~\ref{fig:ac:contact2:sim}.
                 }
             \label{fig:ac:contact2:cal}
 
@@ -336,7 +336,7 @@
 
             \landscapepanels{atomic_contact/2.4G0/15.0GHz_stripline}{sim}
             \caption{
-                PAMAR-only microwave-amplitude landscape of C2 at $\nu=15.0\,\mathrm{GHz}$. The calculation uses the calibrated drive amplitude and the simulated static MAR current obtained from Eq.~\eqref{eq:ac:contact2:pincode}. It reproduces the dominant quasiparticle and MAR structure over the full bias and amplitude range, but assigns too much of the zero-voltage response to MAR and therefore misses the measured low-voltage amplitude evolution in Fig.~\ref{fig:ac:contact2:cal}.
+                PAMAR-only microwave-amplitude landscape of C2 at $\nu=\qty{15.0}{\giga\hertz}$. The calculation uses the calibrated drive amplitude and the simulated static MAR current obtained from Eq.~\eqref{eq:ac:contact2:pincode}. It reproduces the dominant quasiparticle and MAR structure over the full bias and amplitude range, but assigns too much of the zero-voltage response to MAR and therefore misses the measured low-voltage amplitude evolution in Fig.~\ref{fig:ac:contact2:cal}.
                 }
             \label{fig:ac:contact2:sim}
         \end{figure}
@@ -352,7 +352,7 @@
             \centering
             \landscapepanels{atomic_contact/43.0G0/19.3GHz_antenna}{cal}
             \caption{
-                Calibrated microwave-amplitude landscape of C3 under antenna irradiation at $\nu=19.3\,\mathrm{GHz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns show the measured response as waterfall cuts, surfaces, and heat maps. Increasing the drive produces replicas of the quasiparticle branch and the static subgap structure, together with additional closely spaced features originating near zero voltage.
+                Calibrated microwave-amplitude landscape of C3 under antenna irradiation at $\nu=\qty{19.3}{\giga\hertz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns show the measured response as waterfall cuts, surfaces, and heat maps. Increasing the drive produces replicas of the quasiparticle branch and the static subgap structure, together with additional closely spaced features originating near zero voltage.
                 }
             \label{fig:ac:contact3:cal}
 
@@ -360,7 +360,7 @@
 
             \landscapepanels{atomic_contact/43.0G0/19.3GHz_antenna}{sim}
             \caption{
-                Phenomenological microwave-amplitude landscape of C3 at $\nu=19.3\,\mathrm{GHz}$. It reproduces the principal replica trajectories and their amplitude evolution, while differences remain in the sharpness and spectral weight of the low-voltage features observed in Fig.~\ref{fig:ac:contact3:cal}.
+                Phenomenological microwave-amplitude landscape of C3 at $\nu=\qty{19.3}{\giga\hertz}$. It reproduces the principal replica trajectories and their amplitude evolution, while differences remain in the sharpness and spectral weight of the low-voltage features observed in Fig.~\ref{fig:ac:contact3:cal}.
                 }
             \label{fig:ac:contact3:sim}
         \end{figure}

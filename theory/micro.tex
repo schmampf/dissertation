@@ -57,7 +57,7 @@
             \end{equation}
             In the superconducting description below, $\xi$ and $E$ are instead measured relative to the chemical potential, which satisfies $\mu\simeq E_\mathrm{F}$ for a conventional metal.
 
-            Within the free-electron approximation with three conduction electrons per atom, bulk aluminum has $m^\ast\approx m$, $E_\mathrm{F}\approx11.7\,\mathrm{eV}$, $v_\mathrm{F}\approx2.0\cdot10^6\,\mathrm{m/s}$, and a Fermi wavelength of approximately $0.36\,\mathrm{nm}$. We use these as representative material scales, not as parameters extracted from the devices studied here. \cite{ashcroft_solid_1976}
+            Within the free-electron approximation with three conduction electrons per atom, bulk aluminum has $m^\ast\approx m$, $E_\mathrm{F}\approx\qty{11.7}{\electronvolt}$, $v_\mathrm{F}\approx2.0\cdot10^6\,\unit{\meter\per\second}$, and a Fermi wavelength of approximately $\qty{0.36}{\nano\meter}$. We use these as representative material scales, not as parameters extracted from the devices studied here. \cite{ashcroft_solid_1976}
 
             The normal-state electron and hole excitations are independent. BCS pairing couples these sectors and reorganizes them into Bogoliubov quasiparticles.
 
@@ -156,8 +156,8 @@
             Thus, $\Delta_0$ or $T_\mathrm{c}$ sets the material scale, while the self-consistency equation fixes the normalized temperature dependence $\Delta(T)/\Delta_0$. \cite{bardeen_theory_1957,tinkham_introduction_2004}
             Representative bulk aluminum values are
             \begin{align}
-                \Delta_0 \approx 180\,\mu\mathrm{eV}\,, &&
-                T_\mathrm{c} \approx 1.2\,\mathrm{K}\,.
+                \Delta_0 \approx \qty{180}{\micro\electronvolt}\,, &&
+                T_\mathrm{c} \approx \qty{1.2}{\kelvin}\,.
                 \label{eq:micro:aluminum-scales}
             \end{align}
             Thin-film disorder, thickness, and fabrication can shift both values. Unless stated otherwise, the following figures use these representative scales. \cite{giaever_study_1961,tinkham_introduction_2004}
@@ -166,7 +166,7 @@
                 \captionsetup{format=plain}%
                 \centering
                 % \vspace{-1em}
-                \import{theory/micro}{gap.pgf}
+                \thesisplot{theory/micro}{gap}
                 % \vspace{-.5em}
                 \caption{Temperature dependence of the superconducting gap in the weak-coupling limit (Eq.~\ref{eq:micro:gap-temperature}).}
                 \label{fig:micro:gap}
@@ -229,15 +229,15 @@
                 \centering
                 \subfigure[
                     Superconducting DOS for varying $\gamma/\Delta_0$.
-                    ]{\import{theory/micro}{dos.pgf}}
+                    ]{\thesisplot{theory/micro}{dos}}
                 \hfill
                 \subfigure[
                     Fermi function for varying $T/T_\mathrm{c}$.
-                    ]{\import{theory/micro}{fermi.pgf}}
+                    ]{\thesisplot{theory/micro}{fermi}}
                 \hfill
                 \subfigure[
                     Thermal kernel for varying $T/T_\mathrm{c}$.
-                    ]{\import{theory/micro}{fermi-kernel.pgf}}
+                    ]{\thesisplot{theory/micro}{fermi-kernel}}
                 \caption{Calculated quasiparticle DOS, Fermi function, and thermal kernel. Dynes broadening modifies the spectrum, while temperature broadens the occupation edge and the thermal kernel.}
                 \label{fig:micro:dos-fermi}
             \end{figure}
@@ -328,7 +328,7 @@
 
             % \textit{dI--dV} NIS case
             In the NIS case, the \textit{dI--dV} characteristic probes the superconducting DOS through its convolution with the thermal broadening kernel from Eq.~\eqref{eq:micro:fermi-kernel}. Temperature broadens the measured \textit{dI--dV} response without introducing spectral broadening into the equilibrium DOS\footnote{
-                The full width at half maximum of $K_\mathrm{T}(E)$ is approximately $3.5\,k_\mathrm{B}T$. At 30\,mK this corresponds to about 10\,\textmu eV, whereas at 300\,mK it is about 90\,\textmu eV. The relevant temperature is the electronic temperature, which can exceed the cryostat base temperature due to imperfect filtering, finite electron--phonon coupling, or microwave leakage.
+                The full width at half maximum of $K_\mathrm{T}(E)$ is approximately $3.5\,k_\mathrm{B}T$. At \qty{30}{\milli\kelvin} this corresponds to about \qty{10}{\micro\electronvolt}, whereas at \qty{300}{\milli\kelvin} it is about \qty{90}{\micro\electronvolt}. The relevant temperature is the electronic temperature, which can exceed the cryostat base temperature due to imperfect filtering, finite electron--phonon coupling, or microwave leakage.
             }.
 
             Differentiating Eq.~\eqref{eq:micro:tunnel-nis} with respect to $V$ acts only on $f(E+eV)$ because both $N_{\mathrm{S}}(E)$ and $f(E)$ are independent of bias. The chain rule produces the thermal broadening kernel at $E+eV$. Using the particle--hole symmetry of $N_\mathrm{S}(E)$ and the even symmetry of $K_\mathrm{T}(E)$ gives
@@ -360,18 +360,18 @@
                 \centering
                 \subfigure[
                     \textit{I--V} characteristics for varying $T/T_\mathrm{c}$.
-                    ]{\import{theory/micro}{tunnel-iv-T.pgf}}
+                    ]{\thesisplot{theory/micro}{tunnel-iv-T}}
                 \hfill
                 \subfigure[
                     \textit{dI--dV} characteristics for varying $T/T_\mathrm{c}$.
-                    ]{\import{theory/micro}{tunnel-didv-T.pgf}}
+                    ]{\thesisplot{theory/micro}{tunnel-didv-T}}
                 \subfigure[
                     \textit{I--V} characteristics for varying $\gamma/\Delta_0$.
-                    ]{\import{theory/micro}{tunnel-iv-gamma.pgf}}
+                    ]{\thesisplot{theory/micro}{tunnel-iv-gamma}}
                 \hfill
                 \subfigure[
                     \textit{dI--dV} characteristics for varying $\gamma/\Delta_0$.
-                    ]{\import{theory/micro}{tunnel-didv-gamma.pgf}}
+                    ]{\thesisplot{theory/micro}{tunnel-didv-gamma}}
                 \caption{
                     Quasiparticle tunneling in SIS, NIS, and NIN junctions. Temperature and Dynes broadening of NIS (gray) and SIS (blue) \textit{I--V} and \textit{dI--dV} curves. The gray dashed line represents the NIN reference.
                     }
@@ -453,19 +453,19 @@
             \centering
             \subfigure[
                 Harmonic voltage $V(t)$.
-            ]{\import{theory/basics}{mw-V.pgf}}
+            ]{\thesisplot{theory/basics}{mw-V}}
             \hfill
             \subfigure[
                 Charge transfer phase $\phi_q(t)$.
-            ]{\import{theory/basics}{mw-phi.pgf}}
+            ]{\thesisplot{theory/basics}{mw-phi}}
             \hfill
             \subfigure[
                 Phase factor $\Re(U_q(t))$.
-            ]{\import{theory/basics}{mw-ReU.pgf}}
+            ]{\thesisplot{theory/basics}{mw-ReU}}
             \hfill
             \subfigure[
                 Sideband amplitudes $J_n(\alpha_{\nu, q})$.
-            ]{\import{theory/basics}{mw-Jn.pgf}}
+            ]{\thesisplot{theory/basics}{mw-Jn}}
             \caption{
                 Visualization of (a) harmonic voltage, (b) charge transfer phase, (c) phase factor, and (d) sideband amplitudes. The parameters are $q=e$ and $eV_0=eA=0.5\,\Delta_0$.
             }
@@ -476,7 +476,7 @@
         \begin{equation}
             h\nu_\mathrm{pb} = 2\Delta_0\,.
         \end{equation}
-        Using the representative gap in Eq.~\eqref{eq:micro:aluminum-scales} gives $\nu_\mathrm{pb}\approx87\,\mathrm{GHz}$ \cite{bardeen_theory_1957,tinkham_introduction_2004}. The installed microwave paths transmitted frequencies up to approximately $20\,\mathrm{GHz}$, as established from microwave induced changes in measured \textit{dI--dV} spectra \cite{raif_electronic_2024}. This experimental upper frequency is below the single-photon pair breaking threshold. Direct single-photon pair breaking is therefore excluded within this estimate, although heating, multiphoton absorption, and nonequilibrium quasiparticle generation may still occur.
+        Using the representative gap in Eq.~\eqref{eq:micro:aluminum-scales} gives $\nu_\mathrm{pb}\approx\qty{87}{\giga\hertz}$ \cite{bardeen_theory_1957,tinkham_introduction_2004}. The installed microwave paths transmitted frequencies up to approximately $\qty{20}{\giga\hertz}$, as established from microwave induced changes in measured \textit{dI--dV} spectra \cite{raif_electronic_2024}. This experimental upper frequency is below the single-photon pair breaking threshold. Direct single-photon pair breaking is therefore excluded within this estimate, although heating, multiphoton absorption, and nonequilibrium quasiparticle generation may still occur.
 
         %=========================================================
         \subsubsection*{Tien-Gordon Quasiparticle Tunneling}
@@ -496,11 +496,11 @@
             \centering
             \subfigure[
                 \textit{I--V} characteristics.
-                ]{\import{theory/micro}{pat-iv.pgf}}
+                ]{\thesisplot{theory/micro}{pat-iv}}
             \hfill
             \subfigure[
                 \textit{dI--dV} characteristics.
-                ]{\import{theory/micro}{pat-didv.pgf}}
+                ]{\thesisplot{theory/micro}{pat-didv}}
             \caption{
                 Photon assisted NIS (gray) and SIS (blue) spectra. Sidebands are separated by $h\nu/e$ and weighted by $J_n^2(eA/h\nu)$.
                 }

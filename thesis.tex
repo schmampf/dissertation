@@ -2,15 +2,17 @@
 %%% Main File %%%
 %=========================================================
 \documentclass[fontsize=9pt, rgb]{scrreport} 
+
+% Figure rendering: empty (framed placeholders), pdf (fast), or pgf (final quality).
+\providecommand{\figuremode}{pgf}
+
 \input{utilities/header.tex}
 \addbibresource{miscellaneous/local.bib}
 
-% \usepgffigurestrue
-
 \begin{document}
 
-    % \include{miscellaneous/titelpage.tex}
-    % \include{miscellaneous/empty-page.tex}
+    \include{miscellaneous/titelpage.tex}
+    \include{miscellaneous/empty-page.tex}
 
     % %=========================================================
     % %%% Pre Body %%%
@@ -19,65 +21,67 @@
 
     %     \include{miscellaneous/abstract.tex}
     %     \include{miscellaneous/inspirational.tex}
-        \tableofcontents
+    %     \tableofcontents
 
-    %=========================================================
-    %%% Main body %%%
-    %=========================================================
-        \clearpage \pagenumbering{arabic}
+    % %=========================================================
+    % %%% Main body %%%
+    % %=========================================================
+    %     \clearpage \pagenumbering{arabic}
 
-        % \include{miscellaneous/introduction.tex}
+    %     \include{miscellaneous/introduction.tex}
 
-        % %=========================================================
-        % \include{theory/theory.tex} % thesis graded
-        % %=========================================================
-        %     \include{theory/micro.tex} % thesis graded
-        %     \include{theory/macro.tex} % thesis graded
-        %     \include{theory/meso.tex} % thesis graded
-        %     \include{theory/stochastic.tex} % thesis graded
+    %     %=========================================================
+    %     \include{theory/theory.tex} % thesis graded
+    %     %=========================================================
+    %         \include{theory/micro.tex} % thesis graded
+    %         \include{theory/macro.tex} % thesis graded
+    %         \include{theory/meso.tex} % thesis graded
+    %         \include{theory/stochastic.tex} % thesis graded
 
-        % %=========================================================
-        % \include{methods/methods.tex}
-        % %=========================================================
-        %     \include{methods/sample.tex}
-        %     \include{methods/setup.tex}
-        %     \include{methods/digital.tex}
-        %     % - Elkes Korrekturen einpflegen
-        %     % - Rref, Fomblin number
+    %     %=========================================================
+    %     \include{methods/methods.tex}
+    %     %=========================================================
+    %         \include{methods/sample.tex}
+    %         \include{methods/setup.tex}
+    %         \include{methods/digital.tex}
+    %         % - Elkes Korrekturen einpflegen
+    %         % - Rref, Fomblin number
 
         % % =========================================================
         % \include{miscellaneous/results.tex}
         % % =========================================================
         %     \include{tunnelbarrier/tunnelbarrier.tex}
-                % \include{tunnelbarrier/highres.tex}
-            %     \include{tunnelbarrier/asym.tex}
+        %         \include{tunnelbarrier/highres.tex}
+        %         \include{tunnelbarrier/asym.tex}
 
             \include{atomic_contact/atomic-contact.tex} % patrick ready
                 \include{atomic_contact/pincode.tex} % patrick ready
-                \include{atomic_contact/photon-assisted.tex}
+                \include{atomic_contact/photon-assisted.tex} % patrick ready 
+                % (vielleicht w_m nochmal angucken)
+                
                 \include{atomic_contact/subharmonic.tex}
 
-        % \include{miscellaneous/conclusion.tex} 
+    %     \include{miscellaneous/conclusion.tex} 
 
-    %=========================================================
-    %%% Post Body %%%
-    %=========================================================
-        \clearpage \pagenumbering{roman}
+    % %=========================================================
+    % %%% Post Body %%%
+    % %=========================================================
+    %     \clearpage \pagenumbering{roman}
 
-        \input{miscellaneous/references.tex}
+    %     \input{miscellaneous/references.tex}
 
-        %=========================================================
-        \input{appendices/appendix.tex}
-        %=========================================================
-            % \include{theory/appendix.tex}
-        %     \include{appendices/software.tex}
-        %     \include{appendices/sample-fabrication.tex}
-            % \include{tunnelbarrier/appendix.tex}
-            % \include{atomic_contact/appendix.tex}
-            % \include{ssn-set/ssn-set.tex}
+    %     %=========================================================
+    %     \input{appendices/appendix.tex}
+    %     %=========================================================
+    %         \include{theory/appendix.tex}
+    %         \include{appendices/software.tex}
+    %         \include{appendices/sample-fabrication.tex}
+    %         \include{tunnelbarrier/appendix.tex}
+    %         \include{atomic_contact/appendix.tex}
+    %         \include{ssn-set/ssn-set.tex}
 
-        % \include{miscellaneous/acknowledgement.tex}
-        % \include{miscellaneous/eidestattliche-versicherung.tex}
+    %     \include{miscellaneous/acknowledgement.tex}
+    %     \include{miscellaneous/eidestattliche-versicherung.tex}
 \end{document}
 
 % - consistency coherence / 2 Delta peaks

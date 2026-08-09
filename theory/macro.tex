@@ -13,7 +13,7 @@
         \caption{Schematic Cooper pair tunneling in an SIS junction.}
         \label{fig:macro:schematic}
         % \vspace{.5em}
-        % \import{theory/macro}{delta-r.pgf}
+        % \thesisplot{theory/macro}{delta-r}
         % \vspace{-1.5em}
         % \caption{
         %     Schematic spatial profile of $\Delta_1$ and $\Delta_2$ in SIS junction.
@@ -77,15 +77,15 @@
                 \centering
                 \subfigure[
                     Current-phase relation of a weak-coupling Josephson junction (Eq.~\ref{eq:macro:josephson-current-phase}).
-                ]{\import{theory/macro}{josephson-iphi.pgf}}
+                ]{\thesisplot{theory/macro}{josephson-iphi}}
                 \hfill
                 \subfigure[
-                    Josephson current over time for a constant voltage $V_0=31\,\mu\mathrm{V}$ (Eq.~\ref{eq:macro:josephson-current-evolution}).
-                ]{\import{theory/macro}{josephson-it.pgf}}
+                    Josephson current over time for a constant voltage $V_0=\qty{31}{\micro\volt}$ (Eq.~\ref{eq:macro:josephson-current-evolution}).
+                ]{\thesisplot{theory/macro}{josephson-it}}
                 \hfill
                 \subfigure[
                     Temperature dependence of the critical current $I_\mathrm{c}(T)$ (Eq.~\ref{eq:macro:critical-current}).
-                ]{\import{theory/macro}{critical-current.pgf}}
+                ]{\thesisplot{theory/macro}{critical-current}}
                 \caption{
                     Phase and temperature dependence of the Josephson current in the weak-coupling limit. (a) The sinusoidal current-phase relation reaches its maximum magnitude at $I_\mathrm{c}$. (b) A constant voltage drives an oscillating current at the Josephson frequency. (c) The Ambegaokar-Baratoff critical current decreases with increasing temperature and vanishes as the superconducting gap closes at $T_\mathrm{c}$.
                 }
@@ -122,15 +122,15 @@
                 \centering
                 \subfigure[
                     Time averaged current under voltage bias, combining the BCS quasiparticle spectrum with the zero-voltage Josephson branch.
-                ]{\import{theory/macro/}{Ibcs.pgf}}%
+                ]{\thesisplot{theory/macro/}{Ibcs}}%
                 \hfill%
                 \subfigure[
                     Time averaged Josephson current at zero voltage as a function of the stationary initial phase $\phi_0$.
-                ]{\import{theory/macro/}{Ic.pgf}}%
+                ]{\thesisplot{theory/macro/}{Ic}}%
                 \hfill%
                 \subfigure[
                     Time averaged voltage under current bias, obtained from the generalized RSJ dynamics of both parallel transport branches.
-                ]{\import{theory/macro/}{Irsj.pgf}}%
+                ]{\thesisplot{theory/macro/}{Irsj}}%
                 \caption{
                     Josephson spectroscopy under voltage and current bias. Overbars denote time averages over the Josephson phase dynamics. (a) At finite voltage, the oscillating supercurrent averages to zero and $\overline{I}$ follows the quasiparticle characteristic. At zero voltage, the stationary phase supports a finite supercurrent. (b) The resulting $\overline{I_\mathrm{J}}$ depends on the initial phase $\phi_0$. (c) Under current bias, a stationary phase gives $\overline{V}=0$, while a running phase produces a finite $\overline{V}$.
                 }
@@ -273,7 +273,7 @@
                 \captionsetup{format=plain}%
                 \centering
                 \vspace{-.5em}
-                \import{theory/macro}{u-phi.pgf}
+                \thesisplot{theory/macro}{u-phi}
                 % \vspace{-1.5em}
                 \caption{
                     Tilted washboard potential of the RCSJ model (Eq.~\ref{eq:macro:washboard-potential}). Increasing the normalized bias current $i$ tilts the potential and lowers the barrier in the direction of phase motion. Thermal fluctuations can induce $2\pi$ phase slips between neighboring minima before the barrier disappears at the critical tilt $i=1$.
@@ -301,7 +301,7 @@
                 \captionsetup{format=plain}%
                 \centering
                 \vspace{-1em} % fine-tune vertical position
-                \import{theory/macro}{rcsj-iv.pgf}
+                \thesisplot{theory/macro}{rcsj-iv}
                 \caption{
                     Phenomenological \textit{I--V} characteristic of a Josephson junction with prescribed switching current $I_\mathrm{sw}$ and retrapping current $I_\mathrm{rt}$. The finite slope represents phase diffusion, while the separation between $I_\mathrm{sw}$ and $I_\mathrm{rt}$ represents hysteretic switching and retrapping.
                 }
@@ -357,7 +357,7 @@
                 \captionsetup{format=plain}%
                 \centering
                 \vspace{-1em} % fine-tune vertical position
-                \import{theory/macro}{shapiro-ideal.pgf}
+                \thesisplot{theory/macro}{shapiro-ideal}
                 \caption{
                     Under voltage bias, SIS curves show PAT and vertical bars mark coherent phase locking.
                 }
@@ -402,7 +402,7 @@
                 \captionsetup{format=plain}%
                 \centering
                 \vspace{-1em} % fine-tune vertical position
-                \import{theory/macro}{shapiro-rsj.pgf}
+                \thesisplot{theory/macro}{shapiro-rsj}
                 \caption{
                     Overdamped current biased RCSJ response with $C=0$ and linear $R$. The voltage $\overline V$ is time averaged.
                 }

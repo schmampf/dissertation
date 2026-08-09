@@ -144,7 +144,7 @@
                     \begin{minipage}[t][1.5in]{1.8in}
                         \centering
                         \vspace{0pt}
-                        \import{methods/digital}{ivscript.pgf}
+                        \thesisplot{methods/digital}{ivscript}
                     \end{minipage}
                 }
                 \hfill
@@ -200,7 +200,7 @@
             \end{align}
             The offsets are obtained from the interval recorded before the sweep and are subtracted from every trace. This correction compensates slow thermal drifts of the amplifier outputs. When the data contain sufficient symmetric structure, I can also apply the smaller symmetry-based correction described below. Both corrections are completed while the data remain an ordered pair of time traces, $V(t)$ and $I(t)$.
 
-            The corrected branch is then low-pass filtered to suppress high-frequency pickup that is not resolved by the quasi-dc sweep. I filter only the selected branch, which prevents the discontinuities at the boundaries between the offset interval and the sweep branches from affecting the result. The standard analysis preset uses a fourth-order Butterworth filter with a 43.7\,Hz cutoff. The filtered data are subsequently resampled onto a uniform time axis at the same rate. Resampling does not add physical information. It increases the point density and thereby reduces empty or sparsely populated bins in the following step.
+            The corrected branch is then low-pass filtered to suppress high-frequency pickup that is not resolved by the quasi-dc sweep. I filter only the selected branch, which prevents the discontinuities at the boundaries between the offset interval and the sweep branches from affecting the result. The standard analysis preset uses a fourth-order Butterworth filter with a \qty{43.7}{\hertz} cutoff. The filtered data are subsequently resampled onto a uniform time axis at the same rate. Resampling does not add physical information. It increases the point density and thereby reduces empty or sparsely populated bins in the following step.
 
             \begin{figure}[t]
                 \centering
@@ -208,26 +208,26 @@
                     \subfigure[
                             Raw branch and low-pass filtered trace.
                         ]{
-                            \import{methods/digital}{eva_0.pgf}
+                            \thesisplot{methods/digital}{eva_0}
                             
                         }
                     \hfill
                     \subfigure[
                             Zoom-in of the filtering step.
                         ]{
-                            \import{methods/digital}{eva_1.pgf}
+                            \thesisplot{methods/digital}{eva_1}
                         }
                     \\
                     \subfigure[
                             Voltage-grid representation $I(V)$
                         ]{
-                            \import{methods/digital}{eva_2.pgf}
+                            \thesisplot{methods/digital}{eva_2}
                         }
                     \hfill
                     \subfigure[
                             Current-grid representation $V(I)$
                         ]{
-                            \import{methods/digital}{eva_3.pgf}
+                            \thesisplot{methods/digital}{eva_3}
                         }
                 \caption{Evaluation pipeline for one selected sweep branch. After offset correction, the ordered time trace is low-pass filtered and resampled. It is then binned onto a regular voltage or current grid, which removes the time coordinate.}
                 \label{fig:methods:digital:eva}

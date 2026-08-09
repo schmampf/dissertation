@@ -210,8 +210,19 @@
     \usepackage{amsmath}
     \usepackage{amsfonts} % für N, Z, Q und so \mathbb{Z}
     \usepackage{amssymb} % extra math symbols (e.g. \lessapprox)
-    \usepackage{physics} % For \hbar and other physics notation
-    % \usepackage{siunitx} % For SI units
+    \usepackage{siunitx}
+    \sisetup{
+        mode=match,
+        range-phrase={\,\text{-}\,},
+        range-units=single
+    }
+    \DeclareSIUnit{\dBm}{dBm}
+    \DeclareSIUnit{\rpm}{rpm}
+    \DeclareSIUnit{\sccm}{sccm}
+    \DeclareSIUnit{\torr}{Torr}
+    \DeclareSIUnit{\dayunit}{d}
+    \DeclareSIUnit{\inch}{in}
+    \DeclareSIUnit{\barunit}{bar}
     \usepackage{accents} % Custom math accents (for small arrows)
     % xunicode maps \hbar to a text symbol; restore the math variant and keep the text one if ever needed.
     \DeclareRobustCommand{\mathhbar}{\ensuremath{{\mathchar'26\mkern-9muh}}}
@@ -219,13 +230,23 @@
     \let\hbar\mathhbar
     \usepackage{textcomp}  % \textmu
     \usepackage{upgreek} % \upmu
+    \newfontfamily\thesissanssymbolfamily{lmsans9-regular.otf}
+    % XeLaTeX makes siunitx select text-font variants of the micro and ohm
+    % symbols at \begin{document}. The legacy thesis font encoding does not
+    % provide them reliably. Use the optical-size body sans font in prose and
+    % upright serif math Greek in equations. Apply the same context-sensitive
+    % treatment to the ohm symbol.
+    \AtBeginDocument{%
+        \DeclareSIPrefix\micro{\ifmmode\upmu\else{\thesissanssymbolfamily µ}\fi}{-6}%
+        \DeclareSIUnit\ohm{\ifmmode\Omega\else{\thesissanssymbolfamily Ω}\fi}%
+        \DeclareSIUnit\angstromunit{\ifmmode\mathring{\mathrm{A}}\else{\thesissanssymbolfamily Å}\fi}%
+    }
     \newcommand{\mum}{\textmu m~}
     \newcommand{\ima}[0]{\overset{\hspace{0.6mm}\text{\scalebox{0.7}{$_\circ$}}}{\imath}} % complex number i with °
     % \newcommand{\mat}[1]{\underline{\underline{#1}}} % matrizes get underlined twice
     \usepackage[normalem]{ulem}
     \newcommand{\mat}[1]{\smash[b]{\uuline{#1}}}
     % \usepackage{textgreek}
-    % \usepackage{siunitx}
     % \usepackage{textalpha}
 
 %%% python plots %%%
@@ -241,9 +262,43 @@
     % and then include the figures with
     % \import{<path to file>}{<filename>.pgf}
     
-    % => Either import or input works. Don't know the difference yet.
+    % Central figure mode. Override this before loading the header in thesis.tex:
+    % \newcommand{\figuremode}{empty} % framed PDF placeholders
+    % \newcommand{\figuremode}{pdf}   % precompiled PDFs
+    % \newcommand{\figuremode}{pgf}   % PGF sources
+    \providecommand{\figuremode}{pdf}
 
-    \newif\ifusepgffigures
+    % In empty mode, graphicx reads each file's bounding box but does not render it.
+    % This also covers ordinary \includegraphics calls and images inside pdf_tex files.
+    \ifdefstring{\figuremode}{empty}{\setkeys{Gin}{draft}}{}
+
+    \NewDocumentCommand{\thesisplot}{O{} m m}{%
+        \ifdefstring{\figuremode}{empty}{%
+            \IfFileExists{#2/#3.pdf}{%
+                \includegraphics[#1]{#2/#3.pdf}%
+            }{%
+                \transportmissinggraphic{#2/#3.pdf}%
+            }%
+        }{\ifdefstring{\figuremode}{pdf}{%
+            \IfFileExists{#2/#3.pdf}{%
+                \includegraphics[#1]{#2/#3.pdf}%
+            }{%
+                \transportmissinggraphic{#2/#3.pdf}%
+            }%
+        }{\ifdefstring{\figuremode}{pgf}{%
+            \IfFileExists{#2/#3.pgf}{%
+                \import{#2/}{#3.pgf}%
+            }{%
+                \IfFileExists{#2/#3.pdf}{%
+                    \includegraphics[#1]{#2/#3.pdf}%
+                }{%
+                    \transportmissinggraphic{#2/#3.pgf}%
+                }%
+            }%
+        }{%
+            \PackageError{thesis}{Unknown figure mode `\figuremode'}{Use empty, pdf, or pgf.}%
+        }}}%
+    }
 
     \NewDocumentCommand{\transportmissinggraphic}{m}{%
         \fbox{%
@@ -256,27 +311,7 @@
     }
 
     \NewDocumentCommand{\transportpanelgraphic}{m}{%
-        \ifusepgffigures
-            \IfFileExists{#1/main.pgf}{%
-                \import{#1/}{main.pgf}%
-            }{%
-                \IfFileExists{#1/main.pdf}{%
-                    \includegraphics[width=\linewidth]{#1/main.pdf}%
-                }{%
-                    \transportmissinggraphic{#1/main.pgf}%
-                }%
-            }%
-        \else
-            \IfFileExists{#1/main.pdf}{%
-                \includegraphics[width=\linewidth]{#1/main.pdf}%
-            }{%
-                \IfFileExists{#1/main.pgf}{%
-                    \import{#1/}{main.pgf}%
-                }{%
-                    \transportmissinggraphic{#1/main.pdf}%
-                }%
-            }%
-        \fi
+        \thesisplot[width=\linewidth]{#1}{main}%
     }
 
     \NewDocumentCommand{\transportpanels}{m m}{%
@@ -361,27 +396,7 @@
         \begin{landscape}
             \begin{center}
                 \captionsetup{type=figure}
-                \ifusepgffigures
-                    \IfFileExists{#2/#3.pgf}{%
-                        \import{#2/}{#3.pgf}%
-                    }{%
-                        \IfFileExists{#2/#3.pdf}{%
-                            \includegraphics{#2/#3.pdf}%
-                        }{%
-                            \transportmissinggraphic{#2/#3.pgf}%
-                        }%
-                    }%
-                \else
-                    \IfFileExists{#2/#3.pdf}{%
-                        \includegraphics{#2/#3.pdf}%
-                    }{%
-                        \IfFileExists{#2/#3.pgf}{%
-                            \import{#2/}{#3.pgf}%
-                        }{%
-                            \transportmissinggraphic{#2/#3.pdf}%
-                        }%
-                    }%
-                \fi
+                \thesisplot{#2}{#3}%
                 \vspace{#1}
                 \captionof{figure}{
                     #4
@@ -392,27 +407,7 @@
     }
 
     \NewDocumentCommand{\singlefitpanelgraphic}{m m}{%
-        \ifusepgffigures
-            \IfFileExists{#1/#2.pgf}{%
-                \import{#1}{#2.pgf}%
-            }{%
-                \IfFileExists{#1/#2.pdf}{%
-                    \includegraphics{#1/#2.pdf}%
-                }{%
-                    \transportmissinggraphic{#1/#2.pgf}%
-                }%
-            }%
-        \else
-            \IfFileExists{#1/#2.pdf}{%
-                \includegraphics{#1/#2.pdf}%
-            }{%
-                \IfFileExists{#1/#2.pgf}{%
-                    \import{#1}{#2.pgf}%
-                }{%
-                    \transportmissinggraphic{#1/#2.pdf}%
-                }%
-            }%
-        \fi
+        \thesisplot{#1}{#2}%
     }
 
     \NewDocumentCommand{\singlefitpanels}{m}{%
@@ -440,9 +435,6 @@
         \end{figure}
     }
     
-    \usepgffiguresfalse
-
-
 %%% Python-Code %%%
     % for python code
     \usepackage{listings}

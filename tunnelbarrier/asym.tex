@@ -14,7 +14,7 @@
         }
         \vspace{-1.5em}
         \caption{
-            SEM image of TB2. The $60\,\mathrm{nm}$ lower Al layer was oxidized in-situ at $3.4\,\mathrm{mbar}$ for $3\,\mathrm{min}$. The angled top layer corresponds to $77\,\mathrm{nm}$ Al.
+            SEM image of TB2. The $\qty{60}{\nano\meter}$ lower Al layer was oxidized in-situ at $\qty{3.4}{\milli\barunit}$ for $\qty{3}{\minute}$. The angled top layer corresponds to $\qty{77}{\nano\meter}$ Al.
         }
         \label{fig:tb:asym:image-TB2}
     \end{wrapfigure}
@@ -48,15 +48,15 @@
             \begin{tabular}{r|l}
                 % Figures & \ref{fig:tb:asym:irradiation:single-iv} \\\hline
                 $G_\mathrm{N}\ (G_0)$ & $0.0927461(83)$\\
-                $T_\mathrm{fit}\ (\mathrm{K})$ & $0.534(41)$ \\
-                $\Delta_0\ (\mathrm{meV})$ & $0.2031(10)$ \\
-                $\gamma\ (\mathrm{meV})$ & $0.0055(17)$ \\
-                $\sigma_V\ (\mathrm{mV})$ & $0.0410(37)$ \\
-                $\nu\ (\mathrm{GHz})$ & $7.78$ \\
-                $A_\mathrm{fit}\ (\mathrm{mV})$ & $0.1059(12)$ \\
+                $T_\mathrm{fit}\ (\unit{\kelvin})$ & $0.534(41)$ \\
+                $\Delta_0\ (\unit{\milli\electronvolt})$ & $0.2031(10)$ \\
+                $\gamma\ (\unit{\milli\electronvolt})$ & $0.0055(17)$ \\
+                $\sigma_V\ (\unit{\milli\volt})$ & $0.0410(37)$ \\
+                $\nu\ (\unit{\giga\hertz})$ & $7.78$ \\
+                $A_\mathrm{fit}\ (\unit{\milli\volt})$ & $0.1059(12)$ \\
                 % $\eta\ (10^{-4})$ & $5.294(61)$ \\
-                $A_\mathrm{out}\ (\mathrm{mV})$& $200$ \\
-                $T_\mathrm{bath}\ (\mathrm{K})$ & $0.277(1)$
+                $A_\mathrm{out}\ (\unit{\milli\volt})$& $200$ \\
+                $T_\mathrm{bath}\ (\unit{\kelvin})$ & $0.277(1)$
             \end{tabular}
             \label{table:tunnelbarrier:asym}
         \end{wraptable}
@@ -72,7 +72,7 @@
     \label{subsec:tb:asym:representative}
     %=========================================================
 
-        The deviation from the symmetric SIS response became pronounced at selected frequencies and sufficiently large microwave amplitudes. Figure~\ref{fig:tb:asym:irradiation:single-asym} shows a representative trace at $\nu=7.97\,\mathrm{GHz}$. To compare the two bias polarities, I reflected the negative-bias branch about the origin and plotted it together with the positive-bias branch. The two branches differ substantially in the quasiparticle-onset region and remain separated at larger bias. The corresponding \textit{dI--dV} and \textit{dV--dI} curves show that the asymmetry is associated with a redistribution and displacement of the spectral features rather than with a constant current or voltage offset.
+        The deviation from the symmetric SIS response became pronounced at selected frequencies and sufficiently large microwave amplitudes. Figure~\ref{fig:tb:asym:irradiation:single-asym} shows a representative trace at $\nu=\qty{7.97}{\giga\hertz}$. To compare the two bias polarities, I reflected the negative-bias branch about the origin and plotted it together with the positive-bias branch. The two branches differ substantially in the quasiparticle-onset region and remain separated at larger bias. The corresponding \textit{dI--dV} and \textit{dV--dI} curves show that the asymmetry is associated with a redistribution and displacement of the spectral features rather than with a constant current or voltage offset.
 
         I recorded the same trace with increasing and decreasing bias. The two sweep directions overlapped within the experimental resolution. The asymmetry is therefore reproducible and does not originate from sweep direction hysteresis on the measurement timescale.
 
@@ -91,29 +91,29 @@
             \centering
             \subfigure[
                 \textit{I--V}
-                ]{\import{tunnelbarrier/asym/irradiation/single-asym}{iv.pgf}}
+                ]{\thesisplot{tunnelbarrier/asym/irradiation/single-asym}{iv}}
             \hfill
             \subfigure[
                 \textit{dI--dV}
-                ]{\import{tunnelbarrier/asym/irradiation/single-asym}{didv.pgf}}
+                ]{\thesisplot{tunnelbarrier/asym/irradiation/single-asym}{didv}}
             \hfill
             \subfigure[
                 \textit{dV--dI}
-                ]{\import{tunnelbarrier/asym/irradiation/single-asym}{dvdi.pgf}}
+                ]{\thesisplot{tunnelbarrier/asym/irradiation/single-asym}{dvdi}}
             \\
             \subfigure[
                 Asymmetry of \textit{I--V}
-                ]{\import{tunnelbarrier/asym/irradiation/single-asym-rect}{iv.pgf}}
+                ]{\thesisplot{tunnelbarrier/asym/irradiation/single-asym-rect}{iv}}
             \hfill
             \subfigure[
                 Asymmetry of \textit{dI--dV}
-                ]{\import{tunnelbarrier/asym/irradiation/single-asym-rect}{didv.pgf}}
+                ]{\thesisplot{tunnelbarrier/asym/irradiation/single-asym-rect}{didv}}
             \hfill
             \subfigure[
                 Asymmetry of \textit{dV--dI}
-                ]{\import{tunnelbarrier/asym/irradiation/single-asym-rect}{dvdi.pgf}}
+                ]{\thesisplot{tunnelbarrier/asym/irradiation/single-asym-rect}{dvdi}}
             \caption{
-                Representative asymmetric transport trace of TB2. Panels a--c compare the positive-bias branch with the negative-bias branch reflected about the origin for the measured \textit{I--V} curve and the numerically derived \textit{dI--dV} and \textit{dV--dI} responses. Panels d--f show the corresponding local normalized asymmetry defined in Eq.~\eqref{eq:tb:asym:rect-chi}. The trace was measured at $\nu=7.97\,\mathrm{GHz}$, $A_\mathrm{out}=720\,\mathrm{mV}$, and $T_\mathrm{bath}=917(1)\,\mathrm{mK}$.
+                Representative asymmetric transport trace of TB2. Panels a--c compare the positive-bias branch with the negative-bias branch reflected about the origin for the measured \textit{I--V} curve and the numerically derived \textit{dI--dV} and \textit{dV--dI} responses. Panels d--f show the corresponding local normalized asymmetry defined in Eq.~\eqref{eq:tb:asym:rect-chi}. The trace was measured at $\nu=\qty{7.97}{\giga\hertz}$, $A_\mathrm{out}=\qty{720}{\milli\volt}$, and $T_\mathrm{bath}=\qty{917(1)}{\milli\kelvin}$.
                 }
             \label{fig:tb:asym:irradiation:single-asym}
         \end{figure}
@@ -137,7 +137,7 @@
 
         \begin{figure}[t]
             \centering
-            \import{tunnelbarrier/asym/irradiation/control}{Afit_Aout.pgf}
+            \thesisplot{tunnelbarrier/asym/irradiation/control}{Afit_Aout}
             \caption{
                 Effective microwave-amplitude calibration of TB2 at selected frequencies. The points show $A_\mathrm{fit}$ obtained from the complete signed \textit{I--V} curves. The lines show the frequency-dependent effective coupling used to define $A_\mathrm{cal}$ in Eq.~\eqref{eq:tb:asym:calibrated-amplitude}. Deviations from the lines are largest where the bias asymmetry prevents a quantitative symmetric-model fit.
             }
@@ -151,16 +151,16 @@
     \label{subsec:tb:asym:transport}
     %=========================================================
 
-        The representative trace establishes the presence of microwave induced rectification at one operating point. To determine whether the effect was isolated or evolved systematically, I measured microwave amplitude sweeps from $7.75$ to $8.05\,\mathrm{GHz}$ in steps of $50\,\mathrm{MHz}$. Figure~\ref{fig:tb:asym:comparison-maps} compares the resulting \textit{dI--dV} and \textit{dV--dI} landscapes at six selected frequencies. The corresponding branch-resolved line cuts and the complete \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} frequency comparisons are provided in Appendix~\ref{appendix:tb2}.
+        The representative trace establishes the presence of microwave induced rectification at one operating point. To determine whether the effect was isolated or evolved systematically, I measured microwave amplitude sweeps from $7.75$ to $\qty{8.05}{\giga\hertz}$ in steps of $\qty{50}{\mega\hertz}$. Figure~\ref{fig:tb:asym:comparison-maps} compares the resulting \textit{dI--dV} and \textit{dV--dI} landscapes at six selected frequencies. The corresponding branch-resolved line cuts and the complete \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} frequency comparisons are provided in Appendix~\ref{appendix:tb2}.
 
         \begin{figure}[t]
             \centering
             \subfigure[\textit{dI--dV}]{
-                \import{tunnelbarrier/asym/irradiation/comp-img-didv}{main.pgf}
+                \thesisplot{tunnelbarrier/asym/irradiation/comp-img-didv}{main}
                 }
             \hfill
             \subfigure[\textit{dV--dI}]{
-                \import{tunnelbarrier/asym/irradiation/comp-img-dvdi}{main.pgf}
+                \thesisplot{tunnelbarrier/asym/irradiation/comp-img-dvdi}{main}
                 }
             \caption{
                 Microwave amplitude evolution of the asymmetric transport response of TB2 at six selected frequencies. Panel (a) shows the \textit{dI--dV} response as a function of voltage and calibrated amplitude, while panel (b) shows the \textit{dV--dI} response as a function of current and calibrated amplitude. The quasiparticle features evolve approximately symmetrically at the lowest and highest frequencies but become strongly bias asymmetric at intermediate frequencies, with the direction of the deformation reversing across the investigated interval. Gray regions indicate amplitudes for which no measurement is available.
@@ -192,15 +192,15 @@
             \centering
             \subfigure[
                 Rectification $\mathcal{A}_I$
-            ]{\import{tunnelbarrier/asym/irradiation/rect}{iv.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/rect}{iv}}
             \hfill
             \subfigure[
                 Rectification $\mathcal{A}_{\mathrm{d}I/\mathrm{d}V}$
-            ]{\import{tunnelbarrier/asym/irradiation/rect}{didv.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/rect}{didv}}
             \hfill
             \subfigure[
                 Rectification $\mathcal{A}_{\mathrm{d}V/\mathrm{d}I}$
-            ]{\import{tunnelbarrier/asym/irradiation/rect}{dvdi.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/rect}{dvdi}}
             \caption{
                 Frequency- and amplitude-dependent rectification of TB2. The panels show the signed integrated asymmetry $\mathcal{A}$ of the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses. The calibrated amplitude is defined by Eq.~\eqref{eq:tb:asym:calibrated-amplitude}. Gray regions indicate amplitudes for which no measurement is available at the corresponding frequency.
                 }
@@ -227,15 +227,15 @@
             \centering
             \subfigure[
                 $A_\mathrm{fit}/A_\mathrm{out}\ (10^3)$
-            ]{\import{tunnelbarrier/asym/irradiation/control-img}{Afit_Aout.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/control-img}{Afit_Aout}}
             \hfill
             \subfigure[
-                $T_\mathrm{fit}/A_\mathrm{out}\ (\mathrm{K}/\mathrm{V})$
-            ]{\import{tunnelbarrier/asym/irradiation/control-img}{Tfit_Aout.pgf}}
+                $T_\mathrm{fit}/A_\mathrm{out}\ (\unit{\kelvin\per\volt})$
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/control-img}{Tfit_Aout}}
             \hfill
             \subfigure[
-                $T_\mathrm{bath}/A_\mathrm{out}\ (\mathrm{K}/\mathrm{V})$
-            ]{\import{tunnelbarrier/asym/irradiation/control-img}{Tbath_Aout.pgf}}
+                $T_\mathrm{bath}/A_\mathrm{out}\ (\unit{\kelvin\per\volt})$
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/control-img}{Tbath_Aout}}
             \caption{
                 Frequency- and amplitude-dependent control quantities. The panels show the pointwise ratios $A_\mathrm{fit}/A_\mathrm{out}$, $T_\mathrm{fit}/A_\mathrm{out}$, and $T_\mathrm{bath}/A_\mathrm{out}$. Gray regions indicate amplitudes for which no measurement is available at the corresponding frequency.
             }
@@ -246,39 +246,39 @@
             \centering
             \subfigure[
                 $\langle\mathcal{A}_I\rangle_{A_\mathrm{cal}}$
-            ]{\import{tunnelbarrier/asym/irradiation/frequency}{rectI.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/frequency}{rectI}}
             \hfill
             \subfigure[
                 $\langle\mathcal{A}_{\mathrm{d}I/\mathrm{d}V}\rangle_{A_\mathrm{cal}}$
-            ]{\import{tunnelbarrier/asym/irradiation/frequency}{rectdG.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/frequency}{rectdG}}
             \hfill
             \subfigure[
                 $\langle\mathcal{A}_{\mathrm{d}V/\mathrm{d}I}\rangle_{A_\mathrm{cal}}$
-            ]{\import{tunnelbarrier/asym/irradiation/frequency}{rectdR.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/frequency}{rectdR}}
             \\
             \subfigure[
                 $\eta_{A_\mathrm{out}}^{(A_\mathrm{fit})}$
-            ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Afit_Aout.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/frequency}{eta_Afit_Aout}}
             \hfill
             \subfigure[
                 $\eta_{A_\mathrm{out}}^{(T_\mathrm{fit})}$
-            ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tfit_Aout.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/frequency}{eta_Tfit_Aout}}
             \hfill
             \subfigure[
                 $\eta_{A_\mathrm{out}}^{(T_\mathrm{bath})}$
-            ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tbath_Aout.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/frequency}{eta_Tbath_Aout}}
             \\
             \subfigure[
                 $\eta_{T_\mathrm{bath}}^{(T_\mathrm{fit})}$
-            ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tfit_Tbath.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/frequency}{eta_Tfit_Tbath}}
             \hfill
             \subfigure[
                 $\eta_{A_\mathrm{fit}}^{(T_\mathrm{fit})}$
-            ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tfit_Afit.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/frequency}{eta_Tfit_Afit}}
             \hfill
             \subfigure[
                 $\eta_{A_\mathrm{fit}}^{(T_\mathrm{bath})}$
-            ]{\import{tunnelbarrier/asym/irradiation/frequency}{eta_Tbath_Afit.pgf}}
+            ]{\thesisplot{tunnelbarrier/asym/irradiation/frequency}{eta_Tbath_Afit}}
             \\
             \caption{
                 Frequency dependence of the integrated asymmetry and diagnostic coupling coefficients. Panels (a)--(c) show the amplitude averaged asymmetry defined in Eq.~\eqref{eq:tb:asym:amplitude-averaged-rectification}. Panels (d)--(i) show the slopes extracted from the amplitude and temperature correlation fits. Similar frequency dependence indicates correlation only and does not establish a causal mechanism.
@@ -302,13 +302,13 @@
 
         The effect being limited to a narrow frequency range, first points to a resonance in the microwave transfer function. The antenna, wiring, sample holder, shielding cup, and device can all contribute external or local modes. In an earlier transmission experiment in the same cryostat, I observed a feature-rich transfer function and used time-domain analysis to associate prominent features with different parts of the microwave environment. The dominant resonance in that experiment was consistent with the radius of the semicylindrical shielding cup used at the time \cite{irtenkauf_broadband_2021}.
         
-        The present measurements used a different, cylindrical shielding cup. At $7.93\,\mathrm{GHz}$, the free-space wavelength is $\lambda_0=c/\nu\approx37.8\,\mathrm{mm}$, close to the $38\,\mathrm{mm}$ diameter of the present cup. This geometric correspondence makes an electromagnetic mode of the sample environment plausible, although it does not identify the mode responsible for the present response.
+        The present measurements used a different, cylindrical shielding cup. At $\qty{7.93}{\giga\hertz}$, the free-space wavelength is $\lambda_0=c/\nu\approx\qty{37.8}{\milli\meter}$, close to the $\qty{38}{\milli\meter}$ diameter of the present cup. This geometric correspondence makes an electromagnetic mode of the sample environment plausible, although it does not identify the mode responsible for the present response.
 
         The sample was mounted near the center of the cylindrical shielding cup, where the relevant enclosure mode may contain a field node or another symmetry point. Because I did not characterize the precise mode structure or sample position, I cannot assume that the junction was located exactly at this point. A small displacement from a field node can place the different sample leads in regions of unequal microwave field and produce a strong local amplitude gradient. The nanostructure itself is much smaller than the free-space wavelength, so I do not expect a direct propagation-phase difference across the junction. Unequal excitation of the leads, combined with their different impedances and electrical path lengths, can nevertheless generate different microwave amplitudes and phases at the island, BJ, and TB counterelectrode. The enclosure resonance can therefore produce the asymmetric local drive required by the proposed mechanism.
 
         The resonantly enhanced field can produce the observed drive threshold, while the phase evolution across resonance provides a natural route to the reversal of the rectification direction. The asymmetric lead excitation enters a local circuit formed by the island, connected shadow electrode, TB counterelectrode, and BJ lead. Frequency-dependent voltage division within this circuit can therefore drive the island with an amplitude and phase that differ from those of the macroscopic counterelectrode.
 
-        The BJ constriction supplies a phase sensitive element within this local circuit. A similar BJ in sample AC showed a conventional Josephson response in its pristine state, including a finite switching current (Sec.~\ref{sec:atomic-contacts}). I therefore identify the intact constriction of TB2 as a Josephson weak link. Under irradiation, phase locking of this weak link can produce the inverse ac Josephson effect and Shapiro structure \cite{shapiro_josephson_1963}. Near $7.8\,\mathrm{GHz}$, the integer Shapiro spacing is $h\nu/(2e)\approx16\,\mathrm{uV}$. This is smaller than the fitted voltage broadening $\sigma_V\approx41\,\mathrm{uV}$ of TB2, so individual steps are not expected to be resolved in the present transport curves.
+        The BJ constriction supplies a phase sensitive element within this local circuit. A similar BJ in sample AC showed a conventional Josephson response in its pristine state, including a finite switching current (Sec.~\ref{sec:atomic-contacts}). I therefore identify the intact constriction of TB2 as a Josephson weak link. Under irradiation, phase locking of this weak link can produce the inverse ac Josephson effect and Shapiro structure \cite{shapiro_josephson_1963}. Near $\qty{7.8}{\giga\hertz}$, the integer Shapiro spacing is $h\nu/(2e)\approx\qty{16}{\micro\volt}$. This is smaller than the fitted voltage broadening $\sigma_V\approx\qty{41}{\micro\volt}$ of TB2, so individual steps are not expected to be resolved in the present transport curves.
 
         The central interpretation is that the TB detects the influence of this driven Josephson response on its photon assisted quasiparticle transport. A phase locked voltage contribution across the BJ changes the potential of the island and therefore the voltage experienced by the TB. Even when the individual Shapiro steps are unresolved, their contribution can shift and redistribute the PAT features measured across the combined device. In this sense, the experiment is conceptually similar to Giaever's detection of the ac Josephson effect with a second tunnel junction, although the device topology and coupling mechanism are different \cite{giaever_detection_1965}. The resonance-dependent microwave phase could reverse the induced island response and thereby reverse the observed bias asymmetry. The present data do not independently measure the voltage across the constriction, so this causal connection remains an interpretation rather than a direct observation.
 

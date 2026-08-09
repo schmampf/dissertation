@@ -85,7 +85,7 @@
                 \label{eq:meso:landauer}
             \end{equation}
             where $\tau_i$ are the transmission eigenvalues and $G_0$ is the conductance quantum\footnote{
-                Throughout this thesis the conductance quantum is defined as $G_0 \equiv 2e^2/h = 77.48\,\mu\mathrm{S}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = 12.9\,\mathrm{k\Omega}$.
+                Throughout this thesis the conductance quantum is defined as $G_0 \equiv 2e^2/h = \qty{77.48}{\micro\siemens}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = \qty{12.9}{\kilo\ohm}$.
             } \cite{landauer_electrical_1970,buttiker_four-terminal_1986}.
 
             The normal-state conductance determines only the total transmission $\sum_i\tau_i$. Different channel sets can therefore produce the same $G_\mathrm{N}$. The set $\{\tau_i\}$ is referred to throughout this thesis as the mesoscopic pincode. In a superconducting contact, different pincodes produce distinct multiple Andreev reflection characteristics, which allows the individual transmissions to be extracted from measured \textit{I--V} and \textit{dI--dV} curves. \cite{scheer_conduction_1997,beenakker_random-matrix_1997}
@@ -104,19 +104,19 @@
                     % QPC conductance $G$ vs. gate voltage $V_\mathrm{G}$, showing quantized plateaus.
                     QPC conductance, showing quantized plateaus.
                     \cite{van_wees_quantized_1988}
-                    ]{\import{theory/basics}{GV.pgf}}
+                    ]{\thesisplot{theory/basics}{GV}}
                 \hfill
                 \subfigure[
                     % Aluminum atomic contact opening trace, conductance $G$ vs. displacement $\Delta x$.
                     Aluminum atomic contact opening trace.
                     \cite{scheer_conduction_1997}
-                    ]{\import{theory/basics}{Gx.pgf}}
+                    ]{\thesisplot{theory/basics}{Gx}}
                 \hfill
                 \subfigure[
                     % Conductance histogram $P(G)$ for aluminum atomic contacts.
                     Aluminum atomic contact conductance histogram.
                     \cite{yanson_histograms_1997}
-                    ]{\import{theory/basics}{PG.pgf}}
+                    ]{\thesisplot{theory/basics}{PG}}
 
                 \caption{
                     Normal-state conductance characterizes channel opening in a quantum point contact and the mechanical evolution of an atomic contact, but does not determine the individual transmission probabilities.
@@ -156,19 +156,19 @@
                 \subfigure[$\mathrm{1e}$ process]{\import{theory/schema/semiconductor}{ns-qp.pdf_tex}}
                 \hfill
                 \setcounter{subfigure}{2}
-                \subfigure[$\mathrm{1e}$ transport kernel]{\import{theory/meso}{btk-1e-dos.pgf}}
+                \subfigure[$\mathrm{1e}$ transport kernel]{\thesisplot{theory/meso}{btk-1e-dos}}
                 \hfill
                 \setcounter{subfigure}{4}
-                \subfigure[Total \textit{I--V} response]{\import{theory/meso}{btk-iv.pgf}}
+                \subfigure[Total \textit{I--V} response]{\thesisplot{theory/meso}{btk-iv}}
                 \\
                 \setcounter{subfigure}{1}
                 \subfigure[$\mathrm{2e}$ process]{\import{theory/schema/semiconductor}{ns-ar.pdf_tex}}
                 \hfill
                 \setcounter{subfigure}{3}
-                \subfigure[$\mathrm{2e}$ transport kernel]{\import{theory/meso}{btk-2e-dos.pgf}}
+                \subfigure[$\mathrm{2e}$ transport kernel]{\thesisplot{theory/meso}{btk-2e-dos}}
                 \hfill
                 \setcounter{subfigure}{5}
-                \subfigure[Total \textit{dI--dV} response]{\import{theory/meso}{btk-didv.pgf}}
+                \subfigure[Total \textit{dI--dV} response]{\thesisplot{theory/meso}{btk-didv}}
                 \caption{
                     BTK energy schematics, transport kernels, and calculated characteristics for several normal-state transmissions $\tau$. The single-particle and Andreev contributions determine the total \textit{I--V} and \textit{dI--dV} response. Increasing $\tau$ enhances the Andreev contribution, which increases the subgap conductance and reduces the coherence peak.
                     }
@@ -288,11 +288,11 @@
                 \centering
                 \subfigure[
                     ABS Energy Spectra
-                    ]{\import{theory/meso}{abs-Ephi.pgf}}
+                    ]{\thesisplot{theory/meso}{abs-Ephi}}
                 \hfill
                 \subfigure[
                     ABS Current--Phase Relation
-                    ]{\import{theory/meso}{abs-Iphi.pgf}}
+                    ]{\thesisplot{theory/meso}{abs-Iphi}}
                 \caption{
                     Andreev bound-state spectrum and equilibrium current--phase relation of a short single-channel contact for several transmissions $\tau$.
                     (a) Increasing $\tau$ strengthens the phase dispersion and reduces the minimum positive ABS energy at $\phi=\pi$, approaching a crossing for perfect transmission.
@@ -358,11 +358,11 @@
                 \centering
                 \subfigure[
                     Current--Phase Relation $I(\phi)$
-                    ]{\import{theory/meso}{ko-cpr.pgf}}
+                    ]{\thesisplot{theory/meso}{ko-cpr}}
                 \hfill
                 \subfigure[
                     Critical Current $I_\mathrm{c}(T)$
-                    ]{\import{theory/meso}{ko-ic.pgf}}
+                    ]{\thesisplot{theory/meso}{ko-ic}}
                 \caption{
                     Equilibrium current--phase relation and critical current of three canonical short-junction reference limits, Ambegaokar-Baratoff (AB) and Kulik--Omel'yanchuk (KO1 \& KO2).
                     (a) The AB limit corresponds to a sinusoidal CPR, whereas KO1 for a diffusive contact and KO2 for a clean ballistic contact are progressively more skewed towards $\phi=\pi$.
@@ -386,7 +386,7 @@
                 \captionsetup{format=plain}%
                 \centering
                 \vspace{-1.0em}
-                \import{theory/meso}{ko-rho.pgf}
+                \thesisplot{theory/meso}{ko-rho}
                 \caption{
                     DMPK transmission density for a short diffusive wire.
                     }
@@ -497,11 +497,11 @@
                 \centering
                 \subfigure[
                     MAR \textit{I--V} characteristic
-                    ]{\import{theory/meso}{ha-iv.pgf}}
+                    ]{\thesisplot{theory/meso}{ha-iv}}
                 \hfill
                 \subfigure[
                     MAR \textit{dI--dV} characteristic
-                    ]{\import{theory/meso}{ha-didv.pgf}}
+                    ]{\thesisplot{theory/meso}{ha-didv}}
                 \caption{
                     Coherent MAR transport through a short single-channel contact at selected transmissions $\tau$.
                     (a) The subgap current increases strongly with $\tau$, and a finite excess current remains above the gap.
@@ -529,7 +529,7 @@
                 \captionsetup{format=plain}%
                 \centering
                 \vspace{-1.em}
-                \import{theory/meso}{ha-excess.pgf}
+                \thesisplot{theory/meso}{ha-excess}
                 \vspace{-0.5em}
                 \caption{
                     Normalized excess current versus channel transmission.
@@ -590,15 +590,15 @@
                 \centering
                 \subfigure[
                     $\tau = 0.90$
-                    ]{\import{theory/meso}{fcs-090.pgf}}
+                    ]{\thesisplot{theory/meso}{fcs-090}}
                 \hfill
                 \subfigure[
                     $\tau = 0.66$
-                    ]{\import{theory/meso}{fcs-066.pgf}}
+                    ]{\thesisplot{theory/meso}{fcs-066}}
                 \hfill
                 \subfigure[
                     $\tau = 0.33$
-                    ]{\import{theory/meso}{fcs-033.pgf}}
+                    ]{\thesisplot{theory/meso}{fcs-033}}
                 \caption{
                     Charge-resolved MAR current for three single-channel transmissions.
                     Each panel decomposes the total current into contributions $I_m(V)$ associated with effective charge transfer $q=me$.
@@ -613,19 +613,19 @@
                 \centering
                 \subfigure[
                     \textit{I--V} characteristics
-                    ]{\import{theory/meso}{fcs-iv-m.pgf}}
+                    ]{\thesisplot{theory/meso}{fcs-iv-m}}
                 \hfill
                 \subfigure[
                     \textit{I--V} over inverse-voltage
-                    ]{\import{theory/meso}{fcs-iv-m-inv.pgf}}
+                    ]{\thesisplot{theory/meso}{fcs-iv-m-inv}}
                 \\
                 \subfigure[
                     \textit{dI--dV} characteristics
-                    ]{\import{theory/meso}{fcs-didv-m.pgf}}
+                    ]{\thesisplot{theory/meso}{fcs-didv-m}}
                 \hfill
                 \subfigure[
                     \textit{dI--dV} over inverse-voltage
-                    ]{\import{theory/meso}{fcs-didv-m-inv.pgf}}
+                    ]{\thesisplot{theory/meso}{fcs-didv-m-inv}}
                 \caption{
                         Charge-resolved MAR current and differential conductance for selected single-channel transmissions.
                         (a,c) Voltage representation.

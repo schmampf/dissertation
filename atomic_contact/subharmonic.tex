@@ -14,7 +14,7 @@
             \captionsetup{format=plain}%
             \centering
             \vspace{-1.5em}
-            \import{atomic_contact/43.0G0/15.0GHz_stripline}{rs_fit.pgf}
+            \thesisplot{atomic_contact/43.0G0/15.0GHz_stripline}{rs_fit}
             \vspace{-.5em}
             \caption{
                     Linear fit to the low-voltage superconducting branch.
@@ -24,7 +24,7 @@
 
         The low-voltage superconducting branch exhibits a small linear slope. I assume that this slope is dominated by a residual series resistance between the contact and the effective four-point measurement terminals. Under this assumption, the linear fit shown in Fig.~\ref{fig:ac:contact3:rs-fit} gives an effective series resistance and a corrected voltage $V'$ of
         \begin{align}
-            R_\mathrm{s}=12.61(7)\,\Omega\,, && V'=V-I R_\mathrm{s}\,.
+            R_\mathrm{s}=\qty{12.61(7)}{\ohm}\,, && V'=V-I R_\mathrm{s}\,.
             \label{eq:ac:contact3:voltage-correction}
         \end{align}
 
@@ -34,7 +34,7 @@
     \subsubsection*{Static \textit{I--V} Description}
     %=========================================================
 
-        The unirradiated \textit{I--V} characteristic combines a zero-voltage branch up to approximately $404\,\mathrm{nA}$, pronounced subgap structure, and several abrupt voltage changes. After correcting the series resistance and voltage offset, I compared the characteristic with short-junction multiple-Andreev-reflection (MAR) calculations. Fits using individual transmission channels, randomly generated pincodes, grouped channels, and a continuous transmission distribution were considered. The large conductance of approximately $29\,G_0$ made a unique channel-by-channel pincode inaccessible.
+        The unirradiated \textit{I--V} characteristic combines a zero-voltage branch up to approximately $\qty{404}{\nano\ampere}$, pronounced subgap structure, and several abrupt voltage changes. After correcting the series resistance and voltage offset, I compared the characteristic with short-junction multiple-Andreev-reflection (MAR) calculations. Fits using individual transmission channels, randomly generated pincodes, grouped channels, and a continuous transmission distribution were considered. The large conductance of approximately $29\,G_0$ made a unique channel-by-channel pincode inaccessible.
 
         The expected MAR thresholds do not coincide exactly with the measured \textit{dI--dV} maxima, as shown in Fig.~\ref{fig:ac:contact3:mar-fit}. Most orders are slightly displaced, and no distinct feature appears at the fourth-order threshold. I could not reproduce this combination of displaced and missing structure using any of the tested transmission distributions.
 
@@ -86,13 +86,13 @@
             \centering
             \subfigure[
                 \textit{dI--dV}
-                ]{\import{atomic_contact/43.0G0/19.3GHz_antenna/didv-img}{dGcomp.pgf}}
+                ]{\thesisplot{atomic_contact/43.0G0/19.3GHz_antenna/didv-img}{dGcomp}}
             \hfill
             \subfigure[
                 \textit{dV--dI}
-                ]{\import{atomic_contact/43.0G0/19.3GHz_antenna/didv-img}{dRcomp.pgf}}
+                ]{\thesisplot{atomic_contact/43.0G0/19.3GHz_antenna/didv-img}{dRcomp}}
             \caption{
-                Measured and simulated microwave response of C3 at $\nu=19.3\,\mathrm{GHz}$. Each panel compares the experiment on the left with the phenomenological replica calculation on the right. (a) The \textit{dI--dV} maps show replicas of the quasiparticle branch and the static subgap structure. (b) The corresponding \textit{dV--dI} maps emphasize the sharp current-biased transitions. The calculation combines threshold-weighted PAMAR with the two-component Cooper-pair replica model and uses the measured static characteristic as input. It reproduces the dominant trajectories, while differences remain around the sharpest low-voltage features.
+                Measured and simulated microwave response of C3 at $\nu=\qty{19.3}{\giga\hertz}$. Each panel compares the experiment on the left with the phenomenological replica calculation on the right. (a) The \textit{dI--dV} maps show replicas of the quasiparticle branch and the static subgap structure. (b) The corresponding \textit{dV--dI} maps emphasize the sharp current-biased transitions. The calculation combines threshold-weighted PAMAR with the two-component Cooper-pair replica model and uses the measured static characteristic as input. It reproduces the dominant trajectories, while differences remain around the sharpest low-voltage features.
             }
             \label{fig:ac:contact3:comparison}
         \end{figure}
@@ -101,10 +101,10 @@
 
         \begin{figure}[t]
             \centering
-            \import{atomic_contact/43.0G0/19.3GHz_antenna/didv-cuts}{amplitude-cuts.pgf}
+            \thesisplot{atomic_contact/43.0G0/19.3GHz_antenna/didv-cuts}{amplitude-cuts}
             \par
             \caption{
-                Amplitude dependence at the integer replica positions $V_{n,p}$ of C3 at $\nu=19.3\,\mathrm{GHz}$. The panels compare the measured positive- and negative-bias branches with the PAMAR background, the two-component phenomenological PAICPT construction, and an ideal Shapiro response. At each integer position, the $p=1$ replica of order $n$ overlaps the $p=2$ replica of order $2n$. Their combined squared-Bessel amplitude dependence follows the measured redistribution more closely than the ideal Shapiro limit, but does not determine the microscopic origin of the $p=2$ component.
+                Amplitude dependence at the integer replica positions $V_{n,p}$ of C3 at $\nu=\qty{19.3}{\giga\hertz}$. The panels compare the measured positive- and negative-bias branches with the PAMAR background, the two-component phenomenological PAICPT construction, and an ideal Shapiro response. At each integer position, the $p=1$ replica of order $n$ overlaps the $p=2$ replica of order $2n$. Their combined squared-Bessel amplitude dependence follows the measured redistribution more closely than the ideal Shapiro limit, but does not determine the microscopic origin of the $p=2$ component.
             }
             \label{fig:ac:contact3:amplitude-cuts}
         \end{figure}

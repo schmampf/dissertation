@@ -31,15 +31,15 @@
             \centering
             \subfigure[
                 Ohmic environment
-                ]{\import{theory/stochastic}{pe-ohm.pgf}}
+                ]{\thesisplot{theory/stochastic}{pe-ohm}}
             \hfill
             \subfigure[
                 Resonant environment
-                ]{\import{theory/stochastic}{pe-res.pgf}}
+                ]{\thesisplot{theory/stochastic}{pe-res}}
             \hfill
             \subfigure[
                 Mode weights
-                ]{\import{theory/stochastic}{pe-res-w.pgf}}
+                ]{\thesisplot{theory/stochastic}{pe-res-w}}
             \caption{
                 Energy exchange probability for Ohmic and resonant electromagnetic environments. (a) The Ohmic kernel evolves from nearly elastic tunneling at small $\alpha_q$ to a broad distribution with suppressed low-energy weight as the environmental resistance increases. (b) Coupling to a harmonic mode redistributes this kernel into replicas separated by the mode energy $\hbar\omega_0$. (c) The replica amplitudes follow the Poisson weights, so increasing the mode coupling $\alpha_{0,q}$ transfers weight from the elastic contribution to higher-order mode excitations. Unless indicated by the legend, $\alpha_q=\alpha_{0,q}=1$.
                 }
@@ -183,27 +183,27 @@
             \centering
             \subfigure[
                 NIN current
-                ]{\import{theory/stochastic}{dcb-ohm-iv-nin.pgf}}
+                ]{\thesisplot{theory/stochastic}{dcb-ohm-iv-nin}}
             \hfill
             \subfigure[
                 NIS current
-                ]{\import{theory/stochastic}{dcb-ohm-iv-sin.pgf}}
+                ]{\thesisplot{theory/stochastic}{dcb-ohm-iv-sin}}
             \hfill
             \subfigure[
                 SIS current
-                ]{\import{theory/stochastic}{dcb-ohm-iv-sis.pgf}}
+                ]{\thesisplot{theory/stochastic}{dcb-ohm-iv-sis}}
             \\
             \subfigure[
                 NIN conductance
-                ]{\import{theory/stochastic}{dcb-ohm-didv-nin.pgf}}
+                ]{\thesisplot{theory/stochastic}{dcb-ohm-didv-nin}}
             \hfill
             \subfigure[
                 NIS conductance
-                ]{\import{theory/stochastic}{dcb-ohm-didv-sin.pgf}}
+                ]{\thesisplot{theory/stochastic}{dcb-ohm-didv-sin}}
             \hfill
             \subfigure[
                 SIS conductance
-                ]{\import{theory/stochastic}{dcb-ohm-didv-sis.pgf}}
+                ]{\thesisplot{theory/stochastic}{dcb-ohm-didv-sis}}
             \caption{
                 DCB dressing of tunnel \textit{I--V} and \textit{dI--dV} curves for NIN, NIS, and SIS junctions.
                 The calculation uses the Ohmic kernel from Eq.~\eqref{eq:stochastic:pe-ohmic} with cutoff energy $E_\mathrm{c}=\Delta_0$.
@@ -259,19 +259,19 @@
                     \centering
                     \subfigure[
                         \textit{I--V}, varying $\alpha_e$.
-                        ]{\import{theory/stochastic}{dcb-res-iv-sis.pgf}}
+                        ]{\thesisplot{theory/stochastic}{dcb-res-iv-sis}}
                     \hfill
                     \subfigure[
                         \textit{I--V}, varying $\alpha_{0,e}$.
-                        ]{\import{theory/stochastic}{dcb-resa-iv-sis.pgf}}
+                        ]{\thesisplot{theory/stochastic}{dcb-resa-iv-sis}}
                     \medskip
                     \subfigure[
                         \textit{dI--dV}, varying $\alpha_e$.
-                        ]{\import{theory/stochastic}{dcb-res-didv-sis.pgf}}
+                        ]{\thesisplot{theory/stochastic}{dcb-res-didv-sis}}
                     \hfill
                     \subfigure[
                         \textit{dI--dV}, varying $\alpha_{0,e}$.
-                        ]{\import{theory/stochastic}{dcb-resa-didv-sis.pgf}}
+                        ]{\thesisplot{theory/stochastic}{dcb-resa-didv-sis}}
                     \caption{
                         Resonant DCB in an SIS junction. (a) and (c) Increasing $\alpha_e$ at fixed $\alpha_{0,e}=1$ suppresses and broadens the quasiparticle features. (b) and (d) Increasing $\alpha_{0,e}$ at fixed $\alpha_e=1$ transfers weight to Poisson weighted satellites spaced by $\hbar\omega_0/e$.
                         }
@@ -282,19 +282,19 @@
                     \centering
                         \subfigure[
                         \textit{I--V}, varying $\alpha_e$.
-                            ]{\import{theory/stochastic}{dcb-pat-ohm-iv-sis.pgf}}
+                            ]{\thesisplot{theory/stochastic}{dcb-pat-ohm-iv-sis}}
                         \hfill
                         \subfigure[
                             \textit{I--V}, varying $\alpha_{\nu,e}$.
-                            ]{\import{theory/stochastic}{dcb-pata-ohm-iv-sis.pgf}}
+                            ]{\thesisplot{theory/stochastic}{dcb-pata-ohm-iv-sis}}
                         \medskip
                         \subfigure[
                             \textit{dI--dV}, varying $\alpha_e$.
-                            ]{\import{theory/stochastic}{dcb-pat-ohm-didv-sis.pgf}}
+                            ]{\thesisplot{theory/stochastic}{dcb-pat-ohm-didv-sis}}
                         \hfill
                         \subfigure[
                             \textit{dI--dV}, varying $\alpha_{\nu,e}$.
-                            ]{\import{theory/stochastic}{dcb-pata-ohm-didv-sis.pgf}}
+                            ]{\thesisplot{theory/stochastic}{dcb-pata-ohm-didv-sis}}
                         \caption{
                             Photon assisted DCB in an SIS junction. (a) and (c) Increasing $\alpha_e$ at fixed $\alpha_{\nu,e}=1$ strengthens environmental suppression. (b) and (d) Increasing $\alpha_{\nu,e}$ at fixed $\alpha_e=1$ creates Bessel weighted replicas spaced by $h\nu/e$.
                             }

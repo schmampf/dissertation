@@ -25,11 +25,11 @@
 
         \begin{figure}
             \centering
-            \subfigure[Zero-bias \textit{I--V} and ICPT fit.]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{iv.pgf}}
+            \subfigure[Zero-bias \textit{I--V} and ICPT fit.]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{iv}}
             \hfill
-            \subfigure[Extracted $P_{2e}(E)$.]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{pe.pgf}}
+            \subfigure[Extracted $P_{2e}(E)$.]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{pe}}
             \hfill
-            \subfigure[Effective dissipative $Z(\omega)$.]{\import{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{zv.pgf}}
+            \subfigure[Effective dissipative $Z(\omega)$.]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/sc_fit}{zv}}
             \caption{Effective environment analysis and forward model fit of the zero-bias feature of C1. (a) Measured \textit{I--V} characteristic and fitted ICPT current. Data below $V=0$ and in the quasiparticle branch are excluded. (b) Effective zero-temperature $P_{2e}(E)$ obtained from the measured current. (c) Effective dissipative impedance reconstructed from $P_{2e}(E)$, together with the parallel-$RC$ form used in the subsequent forward fit. The resulting fit parameters are given in Eq.~\eqref{eq:ac:contact1:icpt-parameter}.}
             \label{fig:ac:contact1:supercurrent}
         \end{figure}
@@ -43,9 +43,9 @@
 
         This forward fit gives
         \begin{align}
-            I_\mathrm{c} = 7.76(14)\,\mathrm{nA}\,, &&
-            R_\mathrm{eff} = 3.32(5)\,\mathrm{k\Omega}\,, &&
-            C_\mathrm{eff} = 2.02(10)\,\mathrm{fF}\,.
+            I_\mathrm{c} = \qty{7.76(14)}{\nano\ampere}\,, &&
+            R_\mathrm{eff} = \qty{3.32(5)}{\kilo\ohm}\,, &&
+            C_\mathrm{eff} = \qty{2.02(10)}{\femto\farad}\,.
             \label{eq:ac:contact1:icpt-parameter}
         \end{align}
 
@@ -73,16 +73,16 @@
             \captionsetup{format=plain}%
             \centering
             % \vspace{-1em}
-            \import{atomic_contact/1.8G0/15.0GHz_stripline}{eta_fit.pgf}
+            \thesisplot{atomic_contact/1.8G0/15.0GHz_stripline}{eta_fit}
             % \vspace{-1.5em}
             \caption{
-                Coupling calibration for C1 at 15\,GHz.
+                Coupling calibration for C1 at \qty{15}{\giga\hertz}.
             }
             \label{fig:ac:contact1:eta}
         \end{wrapfigure}
         I minimize Eq.~\eqref{eq:ac:photon-assisted-transport:coupling:chi} with a gradient based optimizer. This continuous optimization is more efficient than a dense grid search because each objective evaluation transforms the complete measurement map and the minimum is narrow. The independently sampled objective landscape in Fig.~\ref{fig:ac:contact1:eta} is not the fit procedure itself. It displays a wider parameter range and confirms that the optimizer converges to the clear global minimum. For C1, this gives
         \begin{align}
-            \eta = 0.006179(16) && (\nu = 15.0\,\mathrm{GHz})\,.
+            \eta = 0.006179(16) && (\nu = \qty{15.0}{\giga\hertz})\,.
             \label{eq:ac:contact1:eta}
         \end{align}
 
@@ -96,9 +96,9 @@
 
         \begin{figure}[t]
             \centering
-            \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{exp-pamar.pgf}
+            \thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{exp-pamar}
             \caption{
-                Test of the photon assisted MAR construction for C1 at $\nu=15.0\,\mathrm{GHz}$. The left panel shows the measured \textit{dI--dV} map on the logarithmically sampled amplitude grid described in Sec.~\ref{subsec:ac:photon-assisted-transport}. The center panel applies charge dependent Tien--Gordon dressing directly to the dc FCS components. It does not reproduce the measured sideband pattern because positive and neighboring negative conductance contributions are replicated with the same effective charge. The right panel instead dresses components localized around the MAR thresholds and recovers the principal measured sideband trajectories. All calculations use the calibrated drive amplitude.
+                Test of the photon assisted MAR construction for C1 at $\nu=\qty{15.0}{\giga\hertz}$. The left panel shows the measured \textit{dI--dV} map on the logarithmically sampled amplitude grid described in Sec.~\ref{subsec:ac:photon-assisted-transport}. The center panel applies charge dependent Tien--Gordon dressing directly to the dc FCS components. It does not reproduce the measured sideband pattern because positive and neighboring negative conductance contributions are replicated with the same effective charge. The right panel instead dresses components localized around the MAR thresholds and recovers the principal measured sideband trajectories. All calculations use the calibrated drive amplitude.
             }
             \label{fig:ac:contact1:exp-pamar}
         \end{figure}
@@ -117,11 +117,11 @@
             \centering
             \subfigure[
                 Voltage representation
-            ]{\import{atomic_contact/pamar-weights}{V.pgf}}
+            ]{\thesisplot{atomic_contact/pamar-weights}{V}}
             \hfill
             \subfigure[
                 Inverse-voltage representation
-            ]{\import{atomic_contact/pamar-weights}{1_V.pgf}}
+            ]{\thesisplot{atomic_contact/pamar-weights}{1_V}}
             \caption{
                 Phenomenological weights used to decompose the simulated static MAR \textit{dI--dV} by threshold. (a) On the voltage axis, each $w_m(V)$ selects the vicinity of $e|V|=2\Delta_0/m$, while $w_1$ contains the quasiparticle region above $2\Delta_0$ and the terminal weight $w_M$ collects all remaining higher orders near zero bias. (b) On the inverse-voltage axis, the explicitly resolved weights form equally spaced Gaussians centered at integer $m$. The weights are normalized to unity at every voltage before constructing the effective currents $I_m(V)$.
             }
@@ -148,12 +148,12 @@
             \centering
             \subfigure[
                 FCS charge components
-                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{fcsm.pgf}}
+                ]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{fcsm}}
             \subfigure[
                 Threshold-weighted components
-                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{pamarm.pgf}}
+                ]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{pamarm}}
             \caption{
-                Charge resolved contributions to the photon assisted MAR model of C1. Each row shows the summed response and the components assigned to effective charge orders $m=1$ to $4$. (a) Direct dressing of the dc FCS components replicates positive and neighboring negative \textit{dI--dV} contributions with the same effective charge. (b) Decomposing the simulated static MAR \textit{dI--dV} around the thresholds before applying the charge dependent dressing suppresses this mixing and isolates the sidebands associated with each threshold. All panels use the calibrated drive amplitude at $15.0\,\mathrm{GHz}$.
+                Charge resolved contributions to the photon assisted MAR model of C1. Each row shows the summed response and the components assigned to effective charge orders $m=1$ to $4$. (a) Direct dressing of the dc FCS components replicates positive and neighboring negative \textit{dI--dV} contributions with the same effective charge. (b) Decomposing the simulated static MAR \textit{dI--dV} around the thresholds before applying the charge dependent dressing suppresses this mixing and isolates the sidebands associated with each threshold. All panels use the calibrated drive amplitude at $\qty{15.0}{\giga\hertz}$.
             }
             \label{fig:ac:contact1:pamarm}
         \end{figure}
@@ -170,9 +170,9 @@
 
         \begin{figure}[t]
             \centering
-            \import{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{amplitude-cuts.pgf}
+            \thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{amplitude-cuts}
             \caption{
-                Amplitude dependence of the features originating from zero bias in C1 at $\nu=15.0\,\mathrm{GHz}$. The four panels follow the central feature and the first three replica pairs, $n=0,\pm1,\pm2,\pm3$. The measured positive- and negative-bias branches are compared with the squared-Bessel PAICPT calculation and an ideal coherent Shapiro response on a PAMAR background. The observed redistribution among the replica orders is described more consistently by PAICPT.
+                Amplitude dependence of the features originating from zero bias in C1 at $\nu=\qty{15.0}{\giga\hertz}$. The four panels follow the central feature and the first three replica pairs, $n=0,\pm1,\pm2,\pm3$. The measured positive- and negative-bias branches are compared with the squared-Bessel PAICPT calculation and an ideal coherent Shapiro response on a PAMAR background. The observed redistribution among the replica orders is described more consistently by PAICPT.
             }
             \label{fig:ac:contact1:didv-cuts}
         \end{figure}
@@ -188,13 +188,13 @@
             \centering
             \subfigure[
                 \textit{dI--dV}
-                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGcomp.pgf}}
+                ]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGcomp}}
             \hfill
             \subfigure[
                 \textit{dV--dI}
-                ]{\import{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcomp.pgf}}
+                ]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcomp}}
             \caption{
-                Comparison of the measured and simulated microwave response of C1 at $\nu=15.0\,\mathrm{GHz}$. (a) The combined PAMAR and PAICPT model reproduces the quasiparticle and MAR sideband trajectories in \textit{dI--dV}, together with the narrow replicas originating from the zero-bias feature. (b) The corresponding \textit{dV--dI} maps emphasize the same agreement in the strongly nonlinear subgap region. Experiment and simulation use the calibrated drive amplitude and the independently determined static parameters.
+                Comparison of the measured and simulated microwave response of C1 at $\nu=\qty{15.0}{\giga\hertz}$. (a) The combined PAMAR and PAICPT model reproduces the quasiparticle and MAR sideband trajectories in \textit{dI--dV}, together with the narrow replicas originating from the zero-bias feature. (b) The corresponding \textit{dV--dI} maps emphasize the same agreement in the strongly nonlinear subgap region. Experiment and simulation use the calibrated drive amplitude and the independently determined static parameters.
             }
             \label{fig:ac:contact1:comparison}
         \end{figure}
@@ -225,13 +225,13 @@
             \centering
             \subfigure[
                 \textit{dI--dV}
-                ]{\import{atomic_contact/2.4G0/15.0GHz_stripline/didv-img}{dGcomp.pgf}}
+                ]{\thesisplot{atomic_contact/2.4G0/15.0GHz_stripline/didv-img}{dGcomp}}
             \hfill
             \subfigure[
                 \textit{dV--dI}
-                ]{\import{atomic_contact/2.4G0/15.0GHz_stripline/didv-img}{dRcomp.pgf}}
+                ]{\thesisplot{atomic_contact/2.4G0/15.0GHz_stripline/didv-img}{dRcomp}}
             \caption{
-                PAMAR validation for the high-transmission C2 at $\nu=15.0\,\mathrm{GHz}$. (a) Measured and simulated \textit{dI--dV} maps. (b) The corresponding \textit{dV--dI} maps emphasize the strong subgap response generated by the nearly ballistic leading channel. Threshold-weighted PAMAR reproduces the overall trajectories and amplitude evolution without an additional PAICPT contribution. Tilted lines parallel to the main simulated features are numerical artifacts. Vertical structures in the measured \textit{dI--dV} map and structures perpendicular to the main measured \textit{dV--dI} ridges indicate a contribution missing from the PAMAR-only calculation.
+                PAMAR validation for the high-transmission C2 at $\nu=\qty{15.0}{\giga\hertz}$. (a) Measured and simulated \textit{dI--dV} maps. (b) The corresponding \textit{dV--dI} maps emphasize the strong subgap response generated by the nearly ballistic leading channel. Threshold-weighted PAMAR reproduces the overall trajectories and amplitude evolution without an additional PAICPT contribution. Tilted lines parallel to the main simulated features are numerical artifacts. Vertical structures in the measured \textit{dI--dV} map and structures perpendicular to the main measured \textit{dV--dI} ridges indicate a contribution missing from the PAMAR-only calculation.
             }
             \label{fig:ac:contact2:comparison}
         \end{figure}
