@@ -4,7 +4,7 @@
 \label{subsec:ac:subharmonic}
 %=========================================================
 
-    I measured C3 after reclosing the mechanically controllable break junction. The resulting contact reached a conductance of approximately $29\,G_0$, indicating transport through many contributing channels rather than a small, individually resolvable pincode. This high-conductance regime differs substantially from the few-channel contacts considered in the preceding section. Its static and irradiated transport exhibits pronounced subgap structure and additional replicas beyond the standard PAMAR and PAICPT descriptions introduced above.
+    I measured C3 after reclosing the mechanically controllable break junction. The resulting contact reached a conductance of approximately $29\,G_0$, indicating transport through many contributing channels rather than a small set of individually resolvable channels. This high-conductance regime differs substantially from the few-channel contacts considered in the preceding section. Its static and irradiated transport exhibits pronounced subgap structure and additional replicas beyond the standard PAMAR and PAICPT descriptions introduced above.
 
     %=========================================================
     \subsubsection*{Series Resistance Correction}
@@ -22,19 +22,19 @@
             \label{fig:ac:contact3:rs-fit}
         \end{wrapfigure}
 
-        The low-voltage superconducting branch exhibits a small linear slope. I assume that this slope is dominated by a residual series resistance between the contact and the effective four-point measurement terminals. Under this assumption, the linear fit shown in Fig.~\ref{fig:ac:contact3:rs-fit} gives an effective series resistance and a corrected voltage $V'$ of
+        The low-voltage superconducting branch exhibits a small linear slope. I assume that this slope is dominated by a residual series resistance between the contact and the effective four-point measurement terminals. Under this assumption, the linear fit shown in Fig.~\ref{fig:ac:contact3:rs-fit} gives the effective series resistance \(R_\mathrm{s}\), which I use to define the corrected voltage $V'$ as
         \begin{align}
             R_\mathrm{s}=\qty{12.61(7)}{\ohm}\,, && V'=V-I R_\mathrm{s}\,.
             \label{eq:ac:contact3:voltage-correction}
         \end{align}
 
-        The extracted resistance likely originates from the copper-wire and silver-paste contacts to the sample. It is not expected to include a substantial contribution from the on-chip aluminum leads. Their large cross section gives them a high critical current, so they most likely remain superconducting throughout this measurement. This procedure provides an approximate series correction rather than an independent measurement of the lead resistance. In particular, any intrinsic linear voltage response of the contact in this regime would also be included in the fitted value.
+        The extracted resistance likely originates from the copper wire and silver paste contacts to the sample. It is not expected to include a substantial contribution from the on-chip aluminum leads. Their large cross section gives them a high critical current, so they most likely remain superconducting throughout this measurement. This procedure provides an approximate series correction rather than an independent measurement of the lead resistance. In particular, any intrinsic linear voltage response of the contact in this regime would also be included in the fitted value.
 
     %=========================================================
     \subsubsection*{Static \textit{I--V} Description}
     %=========================================================
 
-        The unirradiated \textit{I--V} characteristic combines a zero-voltage branch up to approximately $\qty{404}{\nano\ampere}$, pronounced subgap structure, and several abrupt voltage changes. After correcting the series resistance and voltage offset, I compared the characteristic with short-junction multiple-Andreev-reflection (MAR) calculations. Fits using individual transmission channels, randomly generated pincodes, grouped channels, and a continuous transmission distribution were considered. The large conductance of approximately $29\,G_0$ made a unique channel-by-channel pincode inaccessible.
+        The unirradiated \textit{I--V} characteristic combines a zero-voltage branch up to approximately $\qty{404}{\nano\ampere}$, pronounced subgap structure, and several abrupt voltage changes. After correcting the series resistance and voltage offset, I compared the \textit{I--V} characteristic with MAR calculations. I considered fits using individual transmission channels, randomly generated pincodes, grouped channels, and a continuous transmission distribution. The large conductance of approximately $29\,G_0$ made a unique channel-by-channel pincode inaccessible.
 
         The expected MAR thresholds do not coincide exactly with the measured \textit{dI--dV} maxima, as shown in Fig.~\ref{fig:ac:contact3:mar-fit}. Most orders are slightly displaced, and no distinct feature appears at the fourth-order threshold. I could not reproduce this combination of displaced and missing structure using any of the tested transmission distributions.
 
@@ -44,20 +44,20 @@
 
         I then tested whether the zero-voltage and resistive branches could be described within a common Josephson--MAR model. Adding a separate current from Andreev bound states did not improve the description, while overdamped and time-dependent RCSJ variants produced low-voltage states and plateaus that were not observed experimentally. Treating the measured switching boundary separately and using effective distributions with two or three channel groups yielded somewhat better agreement with the stable resistive branches. The fitted noninteger channel weights, however, cannot be interpreted as a literal pincode.
 
-        Despite these improvements, none of the tested models provided a convincing description of the complete characteristic. In particular, they did not reproduce its sharp, step-like shape and instead connected the subgap structures too smoothly. Phenomenological corrections improved some transitions locally, but did not provide a physical explanation. I therefore do not attempt a more detailed interpretation of this \textit{I--V} characteristic.
+        Despite these improvements, none of the tested models provided a convincing description of the complete \textit{I--V} characteristic. In particular, they did not reproduce its sharp, step-like shape and instead connected the subgap structures too smoothly. Phenomenological corrections improved some transitions locally but did not provide a physical explanation. I therefore do not attempt a more detailed interpretation of this characteristic.
 
     %=========================================================
     \subsubsection*{Phenomenological Replica Description}
     %=========================================================
 
-        Since no microscopic model reproduced the static characteristic convincingly, I used the measured static \textit{I--V} directly as the input for a phenomenological description of the irradiated transport. The complete measured landscape is shown in Appendix Fig.~\ref{fig:ac:contact3:cal}. Replicas originating from the quasiparticle branch and the static subgap structure are described using the threshold-weighted PAMAR procedure introduced in Sec.~\ref{subsec:ac:photon-assisted-transport}. This approach preserves the measured step-like line shape instead of replacing it with a simulated MAR characteristic.
+        Because no microscopic model reproduced the static \textit{I--V} characteristic convincingly, I used the measured characteristic directly as input for a phenomenological description of the irradiated transport. The complete measured map is shown in Appendix Fig.~\ref{fig:ac:contact3:cal}. Replicas originating from the quasiparticle branch and the static subgap structure are described using the threshold weighted PAMAR procedure introduced in Sec.~\ref{subsec:ac:photon-assisted-transport}. This approach preserves the measured step-like line shape instead of replacing it with a simulated MAR \textit{I--V} characteristic.
 
-        The replicas originating near zero voltage require an additional contribution. Some follow the conventional Cooper-pair spacing $h\nu/(2e)$, while further trajectories appear halfway between them. I parameterized both sets by
+        The replicas originating near zero voltage require an additional contribution. Some follow the conventional Cooper pair spacing $h\nu/(2e)$, while further trajectories appear halfway between them. I parameterized both sets as
         \begin{align}
             V_{n,p} = \frac{n}{p}\,\frac{h\nu}{2e}\,,
             \label{eq:ac:contact3:fractional-replicas}
         \end{align}
-        where $p=1$ gives the conventional spacing and $p=2$ generates the intermediate trajectories. In a coherent Josephson picture, the latter could be associated with fractional Shapiro steps produced by a nonsinusoidal current--phase relation, whose single-harmonic step width is given by Eq.~\eqref{eq:meso:shapiro-fractional-width}. The present analysis instead extends the incoherent replica construction used above. This extension is empirical. In particular, the $p=2$ term behaves mathematically like an effective $4e$ contribution, but it does not by itself establish coherent pair-pair transfer or any other microscopic mechanism.
+        where $p=1$ gives the conventional spacing and $p=2$ generates the intermediate trajectories. In a coherent Josephson picture, the latter could be associated with fractional Shapiro steps produced by a nonsinusoidal current--phase relation. The corresponding single-harmonic estimate for the step width is given by Eq.~\eqref{eq:meso:shapiro-fractional-width}. The present analysis instead extends the incoherent replica construction used above. This extension is empirical. In particular, the $p=2$ term behaves mathematically like an effective $4e$ contribution, but it does not by itself establish coherent transfer of two Cooper pairs or any other microscopic mechanism.
 
         I isolated and integrated the static zero-voltage conductance feature as in Sec.~\ref{subsec:ac:photon-assisted-transport}, obtaining the current $I_0(V)$. I then constructed the irradiated contribution as
         \begin{align}
@@ -73,14 +73,14 @@
             \sum_{p=1}^{2} w_p &= 1\,.
             \label{eq:ac:contact3:fractional-weights}
         \end{align}
-        I selected the relative weights by comparing the calculated maps and amplitude cuts with the measurement. The closest qualitative agreement was obtained for
+        I selected the relative weights by comparing the calculated maps and amplitude cuts with the measured data. The closest qualitative agreement was obtained for
         \begin{align}
             \left\{w_1,w_2\right\}=\left\{\tfrac{3}{5},\tfrac{2}{5}\right\}\,.
             \label{eq:ac:contact3:fractional-weight-values}
         \end{align}
-        These weights were not extracted through an independent microscopic fit and should only be interpreted as empirical spectral weights of the two replica components.
+        These weights were not extracted through an independent microscopic fit and should be interpreted only as empirical spectral weights of the two replica components.
 
-        Figure~\ref{fig:ac:contact3:comparison} compares the resulting calculation with the measured derivative maps. The combined construction reproduces the principal finite-bias and low-voltage trajectories in both representations. It also retains the sharp structure of the measured static characteristic, although differences remain in the detailed line shapes and spectral weights.
+        Figure~\ref{fig:ac:contact3:comparison} compares the resulting calculation with the measured derivative maps. The combined construction reproduces the principal finite-bias and low-voltage trajectories in both representations. It also retains the sharp structure of the measured static \textit{I--V}, although differences remain in the detailed line shapes and spectral weights.
 
         \begin{figure}[t]
             \centering
@@ -92,23 +92,23 @@
                 \textit{dV--dI}
                 ]{\thesisplot{atomic_contact/43.0G0/19.3GHz_antenna/didv-img}{dRcomp}}
             \caption{
-                Measured and simulated microwave response of C3 at $\nu=\qty{19.3}{\giga\hertz}$. Each panel compares the experiment on the left with the phenomenological replica calculation on the right. (a) The \textit{dI--dV} maps show replicas of the quasiparticle branch and the static subgap structure. (b) The corresponding \textit{dV--dI} maps emphasize the sharp current-biased transitions. The calculation combines threshold-weighted PAMAR with the two-component Cooper-pair replica model and uses the measured static characteristic as input. It reproduces the dominant trajectories, while differences remain around the sharpest low-voltage features.
+                Measured and simulated microwave response of C3 at $\nu=\qty{19.3}{\giga\hertz}$. Each panel compares the measured data on the left with the phenomenological replica calculation on the right. (a) The \textit{dI--dV} maps show replicas of the quasiparticle branch and the static subgap structure. (b) The corresponding \textit{dV--dI} maps emphasize the sharp current biased transitions. The calculation combines threshold weighted PAMAR with the two-component Cooper pair replica model and uses the measured static \textit{I--V} characteristic as input. It reproduces the dominant trajectories, while differences remain around the sharpest low-voltage features.
             }
             \label{fig:ac:contact3:comparison}
         \end{figure}
 
-        Figure~\ref{fig:ac:contact3:amplitude-cuts} compares amplitude cuts at the integer positions $V_{n,p}$. Both components contribute at these voltages because $V_{n,1}=V_{2n,2}$. The cuts therefore contain the $n$th replica of the $p=1$ contribution and the $2n$th replica of the $p=2$ contribution. Their superposed squared-Bessel amplitude dependence follows the measured redistribution more closely than the ideal Shapiro response. The intermediate trajectories in the full maps provide the complementary evidence that a separate $p=2$ component is required.
+        Figure~\ref{fig:ac:contact3:amplitude-cuts} compares amplitude cuts at the integer positions $V_{n,p}$. Both components contribute at these voltages because $V_{n,1}=V_{2n,2}$. The cuts therefore contain the $n$th replica of the $p=1$ contribution and the $2n$th replica of the $p=2$ contribution. Their superimposed squared-Bessel amplitude dependence follows the measured redistribution more closely than the ideal Shapiro response. The intermediate trajectories in the full maps provide complementary evidence that a separate $p=2$ component is required.
 
         \begin{figure}[t]
             \centering
             \thesisplot{atomic_contact/43.0G0/19.3GHz_antenna/didv-cuts}{amplitude-cuts}
             \par
             \caption{
-                Amplitude dependence at the integer replica positions $V_{n,p}$ of C3 at $\nu=\qty{19.3}{\giga\hertz}$. The panels compare the measured positive- and negative-bias branches with the PAMAR background, the two-component phenomenological PAICPT construction, and an ideal Shapiro response. At each integer position, the $p=1$ replica of order $n$ overlaps the $p=2$ replica of order $2n$. Their combined squared-Bessel amplitude dependence follows the measured redistribution more closely than the ideal Shapiro limit, but does not determine the microscopic origin of the $p=2$ component.
+                Amplitude dependence at the integer replica positions $V_{n,p}$ of C3 at $\nu=\qty{19.3}{\giga\hertz}$. The panels compare the measured positive- and negative-bias branches with the PAMAR background, the two-component phenomenological PAICPT construction, and an ideal Shapiro response. At each integer position, the $p=1$ replica of order $n$ overlaps the $p=2$ replica of order $2n$. Their combined squared-Bessel amplitude dependence follows the measured redistribution more closely than the ideal Shapiro limit but does not determine the microscopic origin of the $p=2$ component.
             }
             \label{fig:ac:contact3:amplitude-cuts}
         \end{figure}
 
-        The complete measured and reconstructed transport landscapes are provided in Appendix~\ref{appendix:ac:subharmonic}, Figs.~\ref{fig:ac:contact3:cal} and~\ref{fig:ac:contact3:sim}. They show the same comparison as heat maps, surfaces, and waterfall cuts over the full calibrated amplitude range.
+        The complete measured and reconstructed transport maps are provided in Appendix Figs.~\ref{fig:ac:contact3:cal} and~\ref{fig:ac:contact3:sim} in Sec.~\ref{appendix:ac:subharmonic}. They show the same comparison as heat maps, surfaces, and waterfall cuts over the full calibrated amplitude range.
 
-        Taken together, the intermediate trajectories, the overlapping $p=1$ and $p=2$ contributions at the integer positions, and their squared-Bessel-like amplitude dependence consistently point toward a subharmonic PAICPT response. The present phenomenological construction does not provide a precise microscopic model, and it does not establish whether the $p=2$ component originates from incoherent correlated-pair transfer or another mechanism. Nevertheless, conventional PAICPT has been reported only with the usual $h\nu/(2e)$ replica spacing~\cite{roychowdhury_microwave_2015}. To the best of my knowledge, a subharmonic PAICPT response containing the additional $p=2$ structure observed here has not been reported previously. The experimental observation is therefore a result in its own right, independent of the unresolved microscopic interpretation.
+        Taken together, the intermediate trajectories, the overlapping $p=1$ and $p=2$ contributions at the integer positions, and their squared-Bessel-like amplitude dependence consistently point toward a subharmonic PAICPT response. The present phenomenological construction does not provide a precise microscopic model, and it does not establish whether the $p=2$ component originates from incoherent correlated Cooper pair transfer or another mechanism. Nevertheless, conventional PAICPT has been reported only with the usual $h\nu/(2e)$ replica spacing~\cite{roychowdhury_microwave_2015}. To the best of my knowledge, a subharmonic PAICPT response containing the additional $p=2$ structure observed here has not been reported previously. The experimental observation is therefore a new result in its own right, independent of the unresolved microscopic interpretation.
