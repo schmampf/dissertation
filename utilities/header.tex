@@ -267,6 +267,10 @@
     % \newcommand{\figuremode}{pdf}   % precompiled PDFs
     % \newcommand{\figuremode}{pgf}   % PGF sources
     \providecommand{\figuremode}{pdf}
+    % The editor's full-build recipe sets this flag for its first LaTeX pass.
+    \ifdefined\buildemptyfigures
+        \renewcommand{\figuremode}{empty}
+    \fi
 
     % In empty mode, graphicx reads each file's bounding box but does not render it.
     % This also covers ordinary \includegraphics calls and images inside pdf_tex files.
