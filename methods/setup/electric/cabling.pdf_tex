@@ -58,7 +58,7 @@
     \put(0,0){\includegraphics[width=\unitlength,page=2]{cabling.pdf}}%
     \put(0.47338509,0.57088258){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}shielded box\end{tabular}}}}%
     \put(0.00640612,0.49998987){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}coaxial twisted-pair cables\end{tabular}}}}}%
-    \put(0.77563646,0.51280608){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}coaxias microwave cables\end{tabular}}}}}%
+    \put(0.77563646,0.51280608){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}coaxial microwave cables\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{cabling.pdf}}%
     \put(0.82979181,0.96187237){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-0\,dB\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=4]{cabling.pdf}}%
