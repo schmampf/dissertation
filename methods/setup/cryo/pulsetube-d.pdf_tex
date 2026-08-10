@@ -50,11 +50,11 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.32)%
+  \begin{picture}(1,0.28000004)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{pulsetube-d.pdf}}%
-    \put(0.64231512,0.22139087){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}$\Delta x$\end{tabular}}}}%
-    \put(0.52,0.04000005){\color[rgb]{0.45098039,0.47058824,0.49411765}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}GP\end{tabular}}}}%
+    \put(0.64231513,0.20139082){\color[rgb]{0,0,0}\makebox(0,0)[rt]{\lineheight{1.25}\smash{\begin{tabular}[t]{r}$\Delta x$\end{tabular}}}}%
+    \put(0.52000001,0.02){\color[rgb]{0.45098039,0.47058824,0.49411765}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}GP\end{tabular}}}}%
   \end{picture}%
 \endgroup%

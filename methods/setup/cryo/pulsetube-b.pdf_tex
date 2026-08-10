@@ -50,17 +50,18 @@
   \global\let\svgwidth\undefined%
   \global\let\svgscale\undefined%
   \makeatother%
-  \begin{picture}(1,0.32)%
+  \begin{picture}(1,0.28000004)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0.73021163,0.03999944){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}X\textsubscript{h}\end{tabular}}}}%
-    \put(0.13000067,0.03999944){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}X\textsubscript{0}\end{tabular}}}}%
-    \put(0.28000001,0.03999944){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}RG\end{tabular}}}}%
-    \put(0.84000001,0.07999941){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}OR\end{tabular}}}}%
-    \put(0.95999999,0.07999941){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}BV\end{tabular}}}}%
-    \put(0.58000001,0.03999944){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}PT\end{tabular}}}}%
-    \put(0.42999401,0.03999944){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}X\textsubscript{c}\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{pulsetube-b.pdf}}%
-    \put(0.5182396,0.22139821){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta x$\end{tabular}}}}%
+    \put(0.95999999,0.05999944){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}BV\end{tabular}}}}%
+    \put(0.73021163,0.01999947){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}X\textsubscript{h}\end{tabular}}}}%
+    \put(0.13000067,0.01999947){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}X\textsubscript{0}\end{tabular}}}}%
+    \put(0.84000002,0.05999944){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}OR\end{tabular}}}}%
+    \put(0.28000001,0.01999947){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}RG\end{tabular}}}}%
+    \put(0.58000001,0.01999947){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}PT\end{tabular}}}}%
+    \put(0.42999401,0.01999947){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}X\textsubscript{c}\end{tabular}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=2]{pulsetube-b.pdf}}%
+    \put(0.5182396,0.20139824){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta x$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

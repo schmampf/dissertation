@@ -55,10 +55,7 @@
     \setlength\tabcolsep{0pt}%
     \put(0,0){\includegraphics[width=\unitlength,page=1]{pulsetube-c.pdf}}%
     \put(-0.00000488,0.21551086){\color[rgb]{0,0.6627451,0.87843137}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta p$\end{tabular}}}}%
+    \put(0.46000001,0.24000004){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta Q$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=2]{pulsetube-c.pdf}}%
-    \put(-0.00000488,0.85551765){\color[rgb]{0,0.6627451,0.87843137}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta p$\end{tabular}}}}%
-    \put(0.16000001,0.88000001){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta Q$\end{tabular}}}}%
-    \put(0.76000002,0.88000001){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta Q$\end{tabular}}}}%
-    \put(0.46000001,0.24000002){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$\Delta Q$\end{tabular}}}}%
   \end{picture}%
 \endgroup%

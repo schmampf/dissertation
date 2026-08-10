@@ -64,6 +64,6 @@
     \put(0.57734306,0.12499635){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$C_\mathrm{G}$\end{tabular}}}}%
     \put(0.45312431,0.03125058){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V_\mathrm{G}$\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{ninin-schematic.pdf}}%
-    \put(0.49999787,0.77423601){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}$I$\end{tabular}}}}%
+    \put(0.49999787,0.77423601){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$I$\end{tabular}}}}%
   \end{picture}%
 \endgroup%
