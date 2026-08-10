@@ -1,172 +1,23 @@
 % !TEX root = ../thesis.tex
-\newpage
 %=========================================================
 \section{Experimental Setup}
 \label{sec:methods:setup}
 %=========================================================
 
-    The experiments in this thesis require a setup that can form nanometer-scale superconducting junctions, tune them in situ, and measure nonlinear transport at energies of only a few tens of microelectronvolts. The relevant object is therefore not only the lithographic device. It is the complete measurement environment around it. The cryostat determines temperature, cooling power, vibration level, and thermal anchors for the wiring. The mechanically controlled break junction (MCBJ) opens a metallic constriction from a closed contact into the few-channel and tunnel regimes. The cold electrical environment defines the bias circuit, filters external radiation, thermalizes the electronic degrees of freedom, and sets how microwave power reaches the sample. The instrumentation and grounding determine how voltages are generated, amplified, digitized, synchronized, and isolated from unwanted ground paths.
+    The experiments in this thesis require a mechanically controlled break junction (MCBJ) that can form and tune superconducting atomic contacts at millikelvin temperatures, together with a filtered electrical environment for nonlinear transport measurements and microwave excitation. The dilution refrigerator provides the low-temperature environment and thermal anchors for the sample and wiring. The junction mechanics define the contact-control coordinate, while the bias circuit, filtering, microwave coupling, instrumentation, and grounding determine the experimentally accessible voltages, currents, and drive conditions.
 
-    These parts cannot be treated as independent accessories. A stable atomic contact is only useful if the cryostat vibration level is low enough to hold it during a slow sweep. A low base temperature is only useful if the electrical lines are filtered and thermalized well enough that the electronic temperature follows the cold stage. A nominal bias voltage is meaningful only if the voltage division between reference resistors, filters, leads, and the sample is measured rather than assumed. A microwave source power is likewise not the same as a calibrated local microwave voltage at the junction. The setup therefore defines both the experimental control parameters and the limits of their interpretation.
+    These parts cannot be treated as independent accessories. A low base temperature is only useful if the electrical lines are filtered and thermalized well enough that the electronic temperature follows the cold stage. A nominal bias voltage is meaningful only if the voltage division between reference resistors, filters, leads, and the sample is measured rather than assumed. A microwave source power is likewise not the same as a calibrated local microwave voltage at the junction. The setup therefore defines both the experimental control parameters and the limits of their interpretation.
 
     The platform was inherited from earlier MCBJ experiments in the group, but it was modified substantially during this work for superconducting devices, microwave irradiation, local thermometry, and more robust repeated cooldowns. Mechanical parts were replaced, gearbox ratios were redistributed, fragile wiring was removed, filter and reference-resistor layouts were revised, and the grounding configuration was selected empirically from noise measurements. These practical details determine whether the data are reproducible. They also state which assumptions are justified when later chapters interpret \textit{I--V} curves, derived \textit{dI--dV} spectra, and microwave-induced features.
 
-    I organize this section by experimental constraint rather than by component list. First, I describe the cryogenic environment, including precooling, condensation, dilution refrigeration, vibration, and heat load. Second, I describe the MCBJ mechanics and the conversion from motor motion to the relative contact-control coordinate. Third, I define the cold electrical measurement environment, including voltage and current reconstruction, filtering, and microwave coupling. Finally, I describe the instrumentation and grounding, including the practical cryostat ground reference and the isolation choices used for low-noise measurements. Together, these subsections record the physical setup and the measurement model used throughout the thesis.
-
-    %=========================================================
-    \newpage
-    \subsection{Cryogenic Environment}
-    \label{subsec:setup:cryostat}
-    %=========================================================
-
-        The measurements were carried out in an LD400 Bluefors dry dilution refrigerator. The cryostat has to solve three coupled problems before a superconducting nanostructure can be measured reproducibly. It must remove heat from room temperature to the millikelvin regime, thermalize the wiring and sample environment, and keep mechanical motion small enough that an atomic contact remains stable during slow conductance tuning. The relevant cooling chain is therefore described here in operational order. The pulse tube provides closed-cycle precooling and defines much of the vibration environment. The Joule--Thomson stage condenses the circulating helium mixture after sufficient precooling. The dilution unit then supplies the continuous millikelvin cooling power at the mixing chamber.
-
-        %=========================================================
-        \subsubsection*{Pulse Tube Cryocooler}
-        %=========================================================
-
-
-            The first active cooling stage is a two-stage Gifford--McMahon-type (GM-type) pulse tube. It is a closed-cycle helium refrigerator. A room-temperature compressor and rotary valve generate a pressure oscillation, while the cold head contains no mechanical displacer. This distinction is important for the MCBJ experiment. The pulse tube removes the dominant heat load, cools the radiation shields, provides thermal anchors for wiring, and brings the helium mixture to the few-kelvin range. At the same time, the pressure oscillation and rotary valve remain a source of mechanical vibration.
-
-            \begin{figure}[tb]
-                \centering
-                \subfigure[
-                Pressure $\Delta p$ enters from the left. Heat $\Delta Q$ is rejected at the warm end. The high-pressure front is delayed by the orifice.
-                ]{\fontsize{7}{9}\selectfont
-                \import{methods/setup/cryo}{pulsetube-a.pdf_tex}
-                }
-                \setcounter{subfigure}{2}
-                \subfigure[
-                The returning gas absorbs heat at the cold heat exchanger and leaves to the left.
-                ]{\fontsize{7}{9}\selectfont
-                \import{methods/setup/cryo}{pulsetube-c.pdf_tex}
-                }
-                \hfill
-                \setcounter{subfigure}{1}
-                \subfigure[
-                The virtual gas piston is displaced, while the buffer volume delays the gas flow.
-                ]{\fontsize{7}{9}\selectfont
-                \import{methods/setup/cryo}{pulsetube-b.pdf_tex}
-                }
-                \setcounter{subfigure}{3}
-                \subfigure[
-                The virtual gas piston moves back toward equilibrium before the next cycle begins.
-                ]{\fontsize{7}{9}\selectfont
-                \import{methods/setup/cryo}{pulsetube-d.pdf_tex}
-                }
-                \caption{Schematic of pulse-tube cooling. The stage consists of an aftercooler (X\textsubscript{0}), regenerator (RG), cold heat exchanger (X\textsubscript{c}), pulse tube (PT), warm heat exchanger (X\textsubscript{h}), virtual gas piston (GP), orifice (OR), and buffer volume (BV). High-pressure regions are indicated in blue (\legend{seeblau100}). Adapted from Ref.~\cite{bar-cohen_low_2019}.}
-                \label{fig:setup:pulsetube}
-            \end{figure}
-            Figure~\ref{fig:setup:pulsetube} shows the basic operation of a single-stage orifice pulse tube, following Refs.~\cite{de_waele_basic_2011, bar-cohen_low_2019}. The compressor drives helium back and forth through the aftercooler, regenerator, cold heat exchanger, pulse-tube volume, warm heat exchanger, and the flow impedance to the buffer volume. The gas does not circulate through the cold head in one direction. It oscillates. The regenerator stores heat during one part of the cycle and returns it during another, which maintains the temperature gradient between the warm and cold ends.
-
-            Cooling is produced by the phase relation between pressure and gas displacement. In a conventional GM cooler, this phase relation is imposed by a cold mechanical displacer. In a pulse tube, the gas column itself acts as a virtual piston. The warm-end impedance and buffer volume delay the flow relative to the pressure oscillation. With the correct timing, gas rejects heat at the warm heat exchanger and absorbs heat at the cold heat exchanger. The useful cooling can therefore be understood as an enthalpy flow through an oscillating gas column.
-
-            The LD400 uses two cascaded pulse-tube stages, as sketched in Fig.~\ref{fig:setup:pulse-tube-gm}. The first stage removes heat at intermediate temperature and provides a thermal anchor near \qty{40}{\kelvin}. The second stage is precooled by the first and reaches the few-kelvin range. These stages are not only refrigeration points. They are also the first thermal anchors for radiation shields, cabling, and the incoming mixture line. Their performance therefore affects both the cooldown time and the heat load that must later be handled by the dilution unit.
-
-            Mechanical decoupling is part of the cryostat design because pulse-tube-driven motion can couple to the break junction. The cryostat frame is supported by pneumatic air springs at the four corners, operated at about \qty{6}{\barunit} and the suspended assembly has a large mass. The mass and air springs reduce the transmission of building and compressor vibrations to the MCBJ. They do not remove all motion, but they make slow contact tuning practical. In this configuration, contacts could remain stable on the scale of weeks as long as the cryostat was not mechanically disturbed. A small fraction of contacts still showed atomic rearrangements during individual measurements. I treat this as an intrinsic limitation of atomic-scale junctions, not only as a cryostat-stability issue.
-
-            The pulse-tube system is driven by an oil-lubricated room-temperature helium compressor.\footnote{Cryomech, \texttt{CPA1110W2FNCE-21770300001}.} Low-pressure helium returning from the cold head is compressed, cooled, purified, and supplied again as high-pressure helium. Oil improves sealing and removes heat from the compressor, but it must not reach the cold head. Oil separators, coalescing filters, and adsorbers therefore remove oil droplets, mist, and residual contaminants before the helium returns to the cryostat. This purification chain is essential because impurities can freeze out at cryogenic temperatures and degrade the regenerator or block small flow impedances.
-
-            \begin{wrapfigure}[22]{r}{0.4\textwidth}
-                \captionsetup{format=plain}%
-                \centering
-                \vspace{-.5em}
-                {\fontsize{7}{9}\selectfont
-                \import{methods/setup/cryo}{pulsetube-gm.pdf_tex}}
-                \vspace{-.5em}
-                \caption{Schematic of a two-stage Gifford--McMahon-type pulse tube. The rotary valve (RV) alternately connects the cold head to the high- and low-pressure sides of the compressor (CP). The first stage provides an intermediate thermal anchor, while the second stage is precooled by the first stage. Adapted from Ref.~\cite{de_waele_basic_2011}.}
-                \label{fig:setup:pulse-tube-gm}
-            \end{wrapfigure}
-            Compressor maintenance became relevant during this work. The adsorber was replaced, and the compressor heat exchanger required repeated repairs due to leaks. One practical cause was the cooling-water supply. The compressor was cooled with water from Lake Constance, which is very soft and can corrode copper cooling-water circuits if it is not chemically conditioned. Dirt particles and shell debris in insufficiently filtered lake water can additionally abrade the piping~\cite{haltiner_distribution_2022}. Eventually, a leak between the cooling-water circuit and the helium circuit led to replacement of the compressor package. This history is included because compressor degradation or helium contamination can reduce pulse-tube performance before a problem is visible at the sample stage.
-
-        %=========================================================
-        \subsubsection*{Joule--Thomson Cooling}
-        %=========================================================
-
-            After pulse-tube precooling, the circulating \textsuperscript{3}He\,/\,\textsuperscript{4}He mixture must be condensed before it can feed the dilution unit. The mixture cannot simply be expanded from room temperature into the cold part of the cryostat, because the incoming gas would carry too much enthalpy. It is first thermalized at the pulse-tube stages and by lower-temperature return flows. It then passes through a flow impedance. This is the Joule--Thomson stage of the refrigerator~\cite{de_waele_basic_2011,pobell_matter_2007}.
-
-            Joule--Thomson cooling is the temperature change of a real gas during throttling at approximately constant enthalpy $H$,
-            \begin{equation}
-                H = U + pV\,,\qquad \Delta H \approx 0\,,
-                \label{eq:setup:jt-enthalpy}
-            \end{equation}
-            with internal energy $U$, pressure $p$, and volume $V$. During throttling through a narrow restriction, no useful mechanical work is extracted and ideally no heat is exchanged within the impedance. The gas therefore changes pressure without changing its enthalpy appreciably.
-
-            For a small pressure drop, the corresponding temperature change can be written as
-            \begin{equation}
-                \Delta T \approx \mu_\mathrm{JT}\, \Delta p\,,
-                \label{eq:setup:jt-temperature-change}
-            \end{equation}
-            where $\mu_\mathrm{JT}$ is the Joule--Thomson coefficient, which is given by
-            \begin{equation}
-                \mu_\mathrm{JT} = \left( \tfrac{\partial T}{\partial p} \right)_H = \tfrac{V}{C_\mathrm{p}} (\alpha T -1)\,.
-                \label{eq:setup:jt-coefficient}
-            \end{equation}
-            Here $C_\mathrm{p}$ is the heat capacity at constant pressure and $\alpha$ is the thermal expansion coefficient. The Joule--Thomson coefficient is the slope of an isenthalpic path in the temperature-pressure plane. Its sign determines whether a pressure drop cools or heats the gas. For an ideal gas, enthalpy depends only on temperature, so an isenthalpic expansion would not change the temperature. Joule--Thomson cooling is therefore a real-gas effect.
-
-            \begin{wrapfigure}[14]{r}{0.4\textwidth}
-                \captionsetup{format=plain}%
-                \centering
-                \vspace{-1.5em}
-                \thesisplot{methods/setup/cryo}{joule-thomson}
-                \vspace{-1.75em}
-                \caption{Joule--Thomson coefficient of \textsuperscript{4}He as a function of temperature. The curve was calculated for a pressure of \qty{1}{\barunit} using CoolProp~\cite{bell_pure_2014} and shows the change of sign at the inversion temperature.}
-                \label{fig:setup:joule-thomson}
-            \end{wrapfigure}
-            The sign of $\mu_\mathrm{JT}$ changes at the inversion temperature, as shown in Fig.~\ref{fig:setup:joule-thomson} for \textsuperscript{4}He. Helium has an unusually low inversion temperature, so room-temperature helium would not be cooled by Joule--Thomson expansion. The exact values differ for the circulating \textsuperscript{3}He\,/\,\textsuperscript{4}He mixture, but the practical requirement is the same. The gas must be precooled before throttling can be used for condensation. The pulse tube is therefore not just a convenience stage. It brings the mixture into the thermodynamic regime where expansion removes heat instead of adding it.
-
-            In the dry dilution refrigerator, the incoming high-pressure mixture is cooled stepwise before it reaches the Joule--Thomson impedance. It is anchored at the pulse-tube stages and exchanges heat with colder return flows in the lower-temperature part of the dilution unit. After this precooling, the pressure drop across the impedance lowers the temperature further and condenses the mixture. The Joule--Thomson stage thus connects pulse-tube precooling to dilution refrigeration by converting a precooled, pressurized gas flow into a cold liquid mixture for continuous circulation.
-
-            Initial condensation and regular circulation have different failure modes. During condensation, the mixture line is operated at overpressure to drive gas through the impedance and condense it. Leaks can therefore lose mixture to the vacuum space or laboratory environment. During regular circulation, by contrast, the condensing line is usually below atmospheric pressure. Small leaks are then more likely to draw residual gas or contamination into the circulation path. This is dangerous because the Joule--Thomson impedance is narrow and can become clogged by gases or moisture that freeze out at cryogenic temperatures. For this reason, the mixture handling line is passed through a liquid-nitrogen trap before condensation or circulation.
-
-            Once the mixture has condensed and circulation is established, the same impedance remains part of the continuous flow path. The pressure drop and counterflow heat exchangers supply cold liquid mixture to the lower-temperature stages, while the actual millikelvin cooling is produced in the mixing chamber.
-
-        %=========================================================
-        \subsubsection*{Dilution Refrigerator}
-        %=========================================================
-
-            \begin{figure}[t!]
-                \centering
-                \newcommand{\capHeThree}{\smash{\textsuperscript{3}}He}
-                \newcommand{\capHeFour}{\smash{\textsuperscript{4}}He}
-                \subfigure[
-                Phase diagram of liquid \capHeThree\,/\,\capHeFour{} mixtures. The white region is forbidden for a homogeneous liquid, because mixtures in this range lower their free energy by separating into a \capHeThree-rich concentrated phase and a \capHeFour-rich dilute phase. The $\lambda$-line marks the superfluid transition of the \capHeFour-rich phase. Adapted from Ref.~\cite{radebaugh_thermodynamic_1967}.
-                ]{\ooalign{%
-                        \thesisplot{methods/setup/cryo}{phase-diagram}\cr
-                        {\fontsize{7}{9}\selectfont\import{methods/setup/cryo}{phase-diagram.pdf_tex}}\cr
-                    }%
-                }
-                \hfill
-                \subfigure[
-                Dilution-unit circulation. The incoming \capHeThree-rich stream is precooled, enters the mixing chamber (MXC), and cools it as \capHeThree{} crosses into the dilute phase. The still evaporates \capHeThree{} and closes the cycle.
-                ]{{\fontsize{7}{9}\selectfont\import{methods/setup/cryo}{dilution-fridge.pdf_tex}}
-                }
-                \vspace{-.75em}
-                \caption{Dilution refrigeration with a \textsuperscript{3}He\,/\,\textsuperscript{4}He mixture. (a) The phase diagram shows the miscibility gap and the finite low-temperature \textsuperscript{3}He solubility of the dilute phase. (b) The circulation schematic shows how continuous removal of \textsuperscript{3}He from the dilute phase keeps the mixing chamber cold.}
-                \label{fig:setup:dilution-fridge}
-            \end{figure}
-
-            The dilution unit is governed by the low-temperature phase diagram of the helium mixture rather than by a further gas-expansion step. Figure~\ref{fig:setup:dilution-fridge}(a) shows that a homogeneous liquid is stable only outside the phase-separation boundary. The white ``Forbidden Region'' is therefore not an impossible total mixture composition. It is a miscibility gap. If the average \textsuperscript{3}He concentration and temperature place the mixture inside this region, the homogeneous liquid has a higher free energy than two coexisting liquids. The mixture therefore separates into a \textsuperscript{3}He-rich concentrated phase and a \textsuperscript{4}He-rich dilute phase with compositions on the phase boundary at the same temperature~\cite{radebaugh_thermodynamic_1967,pobell_matter_2007}.
-
-            This phase separation is useful because the dilute phase does not become pure \textsuperscript{4}He as the temperature approaches zero. Instead, it retains a finite \textsuperscript{3}He concentration of about 0.066, while the concentrated phase approaches nearly pure \textsuperscript{3}He. The mixing chamber exploits exactly this property. Its phase boundary separates the upper concentrated phase from the lower dilute phase. When \textsuperscript{3}He atoms cross from the concentrated phase into the dilute phase, they enter a state with larger enthalpy. The required energy is taken from the mixing chamber, so the transfer cools the sample stage. The refrigerator can keep cooling only if this transfer is driven continuously. Without circulation, the phases would approach equilibrium and the cooling power would vanish.
-
-            The circulation path in Fig.~\ref{fig:setup:dilution-fridge}(b) shows how this non-equilibrium condition is maintained. The incoming \textsuperscript{3}He-rich stream is precooled by the outgoing cold dilute stream in the counterflow heat exchangers and enters the mixing chamber on the concentrated side of the phase boundary. After crossing into the dilute phase, the \textsuperscript{3}He is carried upward with the dilute mixture toward the still. At the still temperature, \textsuperscript{3}He has a much higher vapor pressure than \textsuperscript{4}He, so still heating evaporates \textsuperscript{3}He preferentially. The pumps remove this \textsuperscript{3}He-rich gas, the room-temperature gas-handling system cleans it, and the condensing line returns it to the cryostat. The cooling power is therefore set mainly by the \textsuperscript{3}He circulation rate and by the heat-exchanger efficiency. The heat exchangers determine how much of the outgoing cooling is recovered before the incoming stream reaches the mixing chamber~\cite{de_waele_basic_2011,pobell_matter_2007}.
-
-            Typical preparation and cooldown values are useful diagnostics for later operation. Before cooldown, the cryostat vacuum space was pumped for up to \qty{24}{\hour} and reached pressures of about 6$\,\times\,$10\textsuperscript{-3}\,mbar. During cryogenic operation, the insulating vacuum reached about 2$\,\times\,$10\textsuperscript{-6}\,mbar. A full cooldown to the few-kelvin regime, including the magnet, took about \qty{36}{\hour}. Under typical operating conditions the nominal \qty{40}{\kelvin} stage stabilized near \qty{47}{\kelvin}, while the \qty{4}{\kelvin} stage reached about \qty{3.2}{\kelvin}. Once the system was at \qty{4}{\kelvin}, condensation of the mixture took about \qty{1}{\hour}, and the subsequent cooldown from \qty{4}{\kelvin} to base temperature took about \qty{3}{\hour}.
-
-            The LD400 system is specified with a guaranteed base temperature of \qty{10}{\milli\kelvin} and an expected base temperature of \qty{8}{\milli\kelvin}. The specified cooling powers at the mixing-chamber flange are \qty{14}{\micro\watt} at \qty{20}{\milli\kelvin}, \qty{400}{\micro\watt} at \qty{100}{\milli\kelvin}, and \qty{575}{\micro\watt} at \qty{120}{\milli\kelvin}~\cite{bluefors_ld_dilution_nodate}. These values are manufacturer specifications for the cryostat and were not remeasured for the installed experiment. With the installed MCBJ experiment, wiring, filters, thermometers, and microwave infrastructure, the sample and mixing-chamber stages could reach about \qty{30}{\milli\kelvin}, while the still was operated at about \qty{1}{\kelvin}. A normal automated warm-up with the Bluefors warm-up script took about \qtyrange{2.5}{3}{\dayunit}.
-
-            I did not optimize the \textsuperscript{3}He circulation rate for the absolute lowest mixing-chamber temperature during this work. The limiting factor for the transport measurements was not the final few millikelvin of lattice temperature. The setup could be operated comfortably between about \qty{30}{\milli\kelvin} and \qty{40}{\milli\kelvin}, and the MCBJ could be moved step by step without leaving this temperature regime. The largest temperature excursions occurred during microwave irradiation. Depending on the applied microwave power and coupling path, the sample-stage temperature could rise to several hundred millikelvin. In extreme cases it approached \qty{1}{\kelvin}. Improving the last part of the base-temperature performance was therefore less relevant than controlling microwave heating and maintaining a well-thermalized, well-filtered electrical environment. These conditions were more important for obtaining sharp \textit{dI--dV} spectra. The measured sample-stage temperature should therefore not be identified automatically with the electronic temperature relevant for the junction, which can be higher because of residual radiation, imperfect line thermalization, bias dissipation, or microwave-induced heating. Earlier optimization of the same cryostat and MCBJ platform by Martin Prestel reached temperatures below \qty{30}{\milli\kelvin} before the modifications described here~\cite{prestel_magnetic_2020}.
-
-            Together, these stages define the thermal environment of the experiment. The pulse tube provides the dominant cooling power at intermediate temperatures, the Joule--Thomson stage condenses the helium mixture and enables continuous circulation, and the dilution unit provides the millikelvin cooling power at the mixing chamber. The sample, filters, thermometers, and wiring are thermally anchored to the corresponding cryostat stages. The cryostat therefore does not only set the lattice temperature of the device. It also determines how well electrical lines are thermalized, how much external radiation reaches the contact, and how much mechanical motion is transmitted to the break junction. These limits directly affect the sharpness of the \textit{dI--dV} spectra and the reproducibility of contact tuning.
-
+    I first describe the MCBJ mechanics and the conversion from motor motion to the relative contact-control coordinate in Sec.~\ref{subsec:setup:mcbj}. I then define the cold electrical measurement environment, including voltage and current reconstruction, filtering, and microwave coupling in Sec.~\ref{subsec:setup:electrical}. Finally, I describe the instrumentation and grounding, including the practical cryostat ground reference and the isolation choices used for low-noise measurements in Sec.~\ref{subsec:setup:instrumentation-grounding}. The operation and performance of the dilution refrigerator are documented separately in Appendix~\ref{appendix:cryostat}.
 
     %=========================================================
     \newpage
     \subsection{Mechanically Controlled Break Junction}
     \label{subsec:setup:mcbj}
     %=========================================================
-        
+
         \begin{wrapfigure}[32]{r}{0.35\textwidth}
             \captionsetup{format=plain}%
             \centering
@@ -176,11 +27,17 @@
             \caption{Rendering of the differential screw, central pushing element, counter supports, and sample holder used for the cryogenic MCBJ mechanics.}
             \label{fig:setup:bruchmechanik}
         \end{wrapfigure}
+
         The mechanically controllable break-junction (MCBJ) setup provides the in situ control coordinate of the experiment. Its task is to convert a macroscopic room-temperature motor motion into a reproducible, much smaller elongation of the metallic constriction at millikelvin temperature. The sample is mounted in a three-point bending geometry, as shown in Fig.~\ref{fig:setup:bruchmechanik}. Two fixed counter supports hold the substrate, while a central pushing element bends it from the opposite side. In this implementation the counter supports remain fixed and the central element is displaced. The suspended metallic bridge on the elastic substrate then elongates by only a small fraction of the macroscopic bending motion. This mechanical reduction allows atomic-scale contacts to be formed, opened, and held over long measurement times.
 
-        The cryogenic mechanics used here are based on the LD400-compatible design developed by Ansgar Fischer and Martin Prestel~\cite{prestel_magnetic_2020} and built by the scientific workshop.\footnote{Scientific workshop, \texttt{07062016}.} The rotary motion from the drive train is converted into linear motion by a differential screw. The screw combines an M4 and an M5 thread, so one full revolution advances the bending mechanism only by the difference between the two thread pitches. The resulting macroscopic feed is \qty{0.1}{\milli\meter} per revolution. This differential screw is therefore the final mechanical interface between the cryogenic rotary drive train and the three-point bending mechanism.
 
-        I did not independently calibrate the conversion from motor motion to junction elongation. The absolute elongation of the atomic contact is therefore not used as a calibrated variable in this thesis. Instead, the contact position is treated operationally. The motor encoder reports large integer values up to about 1.8$\,\times\,$10\textsuperscript{9}, which are not useful for describing contact tuning. The laboratory control software maps the motion to a relative coordinate from 0 to 18. This range corresponds to 30 revolutions of the differential screw and therefore to \qty{3}{\milli\meter} of macroscopic screw feed. It should be read as a reproducible opening and closing coordinate, while the conductance response provides the physical calibration of the contact state.
+        The cryogenic mechanics are based on the LD400-compatible design developed by Ansgar Fischer and Martin Prestel~\cite{prestel_magnetic_2020} and built by the scientific workshop.\footnote{Scientific workshop, \texttt{07062016}.} At the sample stage, a differential screw converts the rotary motion of the drive train into linear motion of the central pushing element. The screw combines an M4 and an M5 thread, so one full revolution advances the bending mechanism only by the difference between the two thread pitches. The resulting macroscopic feed is \qty{0.1}{\milli\meter} per revolution.
+
+        The motor position is treated operationally rather than as a universal measure of junction elongation. The motor encoder reports large integer values up to about 1.8$\,\times\,$10\textsuperscript{9}, which are not useful for describing contact tuning. The laboratory control software therefore maps the motion to a relative coordinate from \qtyrange{0}{18}{}. This range corresponds to 30 revolutions of the differential screw and thus to \qty{3}{\milli\meter} of macroscopic screw feed. For an individual opening trace, the motor coordinate can be converted into an approximate relative electrode displacement by fitting the exponential conductance decay in the tunnel regime, as demonstrated in Sec.~\ref{subsec:ac:pincode}. I treat this conversion as sample dependent because the effective mechanical reduction can vary with the realized bridge and mounting geometry, including variations introduced by the resist stack. The operational coordinate is therefore used for reproducible opening and closing, while a displacement scale is calibrated from the tunnel data whenever it is required.
+
+        %=========================================================
+        \subsubsection*{Cryogenic Drive Train}
+        %=========================================================
 
         \begin{wrapfigure}[15]{r}{0.35\textwidth}
             \captionsetup{format=plain}%
@@ -190,19 +47,30 @@
             \caption{Rendering of the redesigned room-temperature mounting plates for the motor and vacuum feedthrough.}
             \label{fig:setup:motorhalterung}
         \end{wrapfigure}
-        The cryogenic drive train has to transmit controlled rotary motion from room temperature to the sample space without creating excessive heat load or mechanical stress. It is therefore segmented and thermalized at several cryostat stages. Hollow stainless-steel tubes connect the individual gear stages.\footnote{Faulhaber, \texttt{401.4659.04 ``Ritzel'' 2.0x4.35x4.7 Z12 Weld}, welded to stainless-steel tubes with \qty{4}{\milli\meter} outer diameter and \qty{0.1}{\milli\meter} wall thickness.} The gearboxes transmit motion and interrupt the thermal path along the shaft.
 
-        The inherited drive train used four commercial gearboxes with equal reduction. During this work, repeated gearbox failures showed that this distribution loaded the upper cold gearboxes too strongly. The cryogenic drive train uses spur gearheads with ball bearings\footnote{Faulhaber, \texttt{22/2K}, \qty{0.1}{\newton\meter}.} with a reduction of 1:3.1 at each gearbox stage. I replaced the gearhead close to the motor by a 1:9.7 reduction and the first two cryogenic gearboxes by 1:5.4 reductions. The remaining 1:3.1 gear stages were left unchanged. This redistribution places less torque on the first cryogenic gearbox. If a lower stage blocks or becomes stiff, the upper gearbox is then less likely to deform the thin drive rod or decouple from the following shaft. The additional rotations at the \qty{40}{\kelvin} and \qty{4}{\kelvin} stages are acceptable, because these stages have much larger cooling power than the millikelvin stages.
+        The cryogenic drive train must transmit controlled rotary motion from room temperature to the sample space without creating excessive heat load or mechanical stress. The established design meets the thermal requirement by dividing the train into several gearbox stages that are thermalized at the corresponding cryostat stages. Hollow stainless-steel tubes connect the gearboxes.\footnote{Faulhaber, \texttt{401.4659.04 ``Ritzel'' 2.0x4.35x4.7 Z12 Weld}, welded to stainless-steel tubes with \qty{4}{\milli\meter} outer diameter and \qty{0.1}{\milli\meter} wall thickness.} The gearboxes transmit the motion and interrupt the thermal path along the shaft.
 
-        Several room-temperature drive components were redesigned in parallel with the cold gearbox changes. In the previous motor mount, the clamping element was a massive plastic disk with a central bore and a narrow radial slit. Closing the slit mainly deformed the plastic body instead of reducing the bore diameter. The thread was also cut directly into the plastic and was damaged by the force needed for clamping. As a result, the mount did not hold the motor or the vacuum feedthrough reproducibly. I replaced it with the two-piece clamp\footnote{Scientific workshop, \texttt{13042026}.}, designed by Oliver Bruttel and myself, shown in Fig.~\ref{fig:setup:motorhalterung}. Separate clamps now hold the motor and vacuum feedthrough, and rods connect the two plates. This gives a stiffer and more reproducible alignment of the room-temperature drive. The motor and gearhead are also held by a 3D-printed clamp instead of being glued in place.
+        The inherited drive train used the same 1:3.1 reduction at each of its four commercial spur gearheads.\footnote{Faulhaber, \texttt{22/2K}, \qty{0.1}{\newton\meter}.} Repeated failures during this work showed that this distribution loaded the upper cryogenic gearboxes too strongly when a lower stage became stiff or blocked. The resulting torque could damage the small gears inside the gearboxes or decouple from the following shaft. I redistributed the reduction by replacing the gearhead close to the motor with a 1:9.7 reduction and the first two cryogenic gearboxes with 1:5.4 reductions. The remaining 1:3.1 stages were left unchanged. This configuration reduces the torque applied by the first cryogenic gearbox. It requires more rotations at the \qty{40}{\kelvin} and \qty{4}{\kelvin} stages and therefore increases the heat dissipated there. This additional heat load is acceptable because these stages provide much greater cooling power than the millikelvin stages.
 
-        The vacuum feedthrough and slip clutch were treated as part of the same reliability problem. The rotary feedthrough\footnote{Pfeiffer Vacuum, \texttt{DD 016 A}, rotary feedthrough, \texttt{DN 16 ISO-KF}.} was lubricated regularly with vacuum grease\footnote{Fomblin, \texttt{1234567890}.} to keep friction low and to avoid stick--slip motion or excessive motor load. In the original slip clutch, the clamping threads were cut into plastic. Repeated compression deformed these threads and shifted the clutch away from the rotation axis. The resulting misalignment increased the motor load and led to premature motor failure. The plastic threads were replaced by brass inserts, which improved centering and made the coupling stable under repeated clamping.
+        %=========================================================
+        \subsubsection*{Room-Temperature Drive and Alignment}
+        %=========================================================
 
-        Assembly procedure was as important as the replacement parts. The rods inside the cryostat were fixed while rotating slowly, so small angular or lateral offsets could relax before the train was locked in place. This reduces the risk that residual misalignment freezes into the completed drive train and blocks motion at low temperature. Before cooldown, each gearbox was stripped of its original lubricant, cleaned overnight in an ultrasonic acetone bath, rinsed with isopropanol, and immediately before cooldown heated with a hot-air gun. This removes residual solvent and adsorbed moisture. The preparation is necessary because lubricant, solvent, or water residues can freeze and block the gears at cryogenic temperature.
+        The room-temperature drive must hold the motor and rotary vacuum feedthrough on a common axis so that the cryogenic shaft is not loaded by lateral motion. The previous mount used a massive plastic disk with a central bore and a narrow radial slit. Tightening the clamp mainly deformed the plastic body instead of reducing the bore diameter, and the thread cut directly into the plastic was damaged by the required clamping force. The mount therefore did not hold the motor or feedthrough reproducibly. Coaxial alignment of the two components was not possible, which imposed substantial lateral load on the entire drive train. 
+        
+        I replaced it with the two-piece mount shown in Fig.~\ref{fig:setup:motorhalterung}, designed by Oliver Bruttel and myself.\footnote{Scientific workshop, \texttt{13042026}.} Separate clamps hold the motor and vacuum feedthrough, while rods connect the two plates and maintain their alignment. A 3D-printed clamp holds the separately ordered motor and gearhead in place instead of glue, allowing either component to be replaced independently. Under excessive load, the printed clamp also provides a sacrificial mechanical weak point that can fail before the motor is damaged. The revised mount is stiffer, can be assembled reproducibly, and improves the maintainability of the drive.
 
-        Motion at low temperature normally produces heat at the cryostat stages where mechanical work is dissipated. The stage temperatures therefore provide a useful diagnostic of the mechanical chain. A temperature increase at successive stages indicates that motion is transmitted through the corresponding part of the drive train. If the response stops at one stage or changes abruptly compared with earlier operation, the blockage or mechanical failure is likely located near the following gearbox or coupling. In some tests, motion of the cold mechanism heated the sample stage up to about \qty{1}{\kelvin}. During such tests the gas-handling system has to be monitored, because the added heat load on the still can increase the return pressure and may cause overpressure if the motion is too aggressive or repeated too quickly.
+        Friction and misalignment at the vacuum feedthrough and slip clutch produced a second source of excessive motor load. The rotary feedthrough\footnote{Pfeiffer Vacuum, \texttt{DD 016 A}, rotary feedthrough, \texttt{DN 16 ISO-KF}.} was therefore lubricated regularly with vacuum grease\footnote{Fomblin, \texttt{1234567890}.} to suppress stick--slip motion and keep its friction low. In the original slip clutch, repeated compression deformed the clamping threads cut into the plastic body and displaced the clutch from the rotation axis. The resulting misalignment contributed to premature motor failure. I replaced the plastic threads with brass inserts. This improved the centering and kept the coupling stable under repeated clamping.
 
-        The final configuration was reached through iterative commissioning rather than a single repair. Each mechanical change had to be tested in a full cryogenic cycle. A failed test usually meant another warm-up, repair or replacement, pump-down, and cooldown. This made the mechanical optimization one of the slower parts of the experiment, but it also made the final operating procedure reproducible. After the gearbox distribution, motor mount, slip clutch, feedthrough lubrication, and assembly procedure had been revised, the mechanics could be operated reliably during cooldown and at base temperature. After these revisions, the mechanics operated reproducibly during cooldown and at base temperature, and the sample could be broken and tuned without further mechanical failures. The practical takeaway is that the MCBJ position is a reproducible conductance-control coordinate, while the absolute atomic displacement remains inferred from the measured transport response.
+        %=========================================================
+        \subsubsection*{Assembly and Commissioning}
+        %=========================================================
+
+        Reliable operation also depends on assembly and preparation. The rods inside the cryostat were fixed while rotating slowly so that small angular or lateral offsets could relax before the drive train was locked in place. This reduces the risk of residual misalignment that can block motion after cooldown. Each gearbox was stripped of its original lubricant, cleaned overnight in an ultrasonic acetone bath, and rinsed with isopropanol. Immediately before cooldown, the gearboxes were heated with a hot-air gun to remove residual solvent and adsorbed moisture. This preparation prevents lubricant, solvent, or water residues from freezing and blocking the gears at cryogenic temperature.
+
+        The drive train cannot be inspected directly at low temperature, so I used heating at the cryostat stages as an operational diagnostic. Mechanical motion dissipates heat at the stages through which it is transmitted. A temperature increase at successive stages therefore indicates that the corresponding parts of the drive train are moving. If this response stops at one stage or changes abruptly relative to earlier operation, the blockage or failure is likely near the following gearbox or coupling. In some tests, motion of the cold mechanism heated the sample stage to about \qty{1}{\kelvin}. The gas-handling system must be monitored during such tests, because additional heat at the still can increase the return pressure and may cause overpressure if the motion is too aggressive or repeated too quickly.
+
+        The final configuration was reached through iterative commissioning. Each change required a full cryogenic test, and a failed test usually required another warm-up, repair or replacement, pump-down, and cooldown. After the gearbox distribution, motor mount, slip clutch, feedthrough lubrication, and assembly procedure had been revised, the mechanics operated reproducibly during cooldown and at base temperature. The samples could then be broken and tuned without further mechanical failures. The MCBJ position therefore provides a reproducible conductance-control coordinate, while the absolute atomic displacement remains inferred from the measured transport response.
 
 
     %=========================================================
