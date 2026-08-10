@@ -15,6 +15,19 @@
 				"env": {}
 			},
 			{
+				"name": "xelatex empty figures",
+				"command": "xelatex",
+				"args": [
+					"-synctex=1",
+					"-interaction=nonstopmode",
+					"-file-line-error",
+					"-jobname=%DOCFILE%",
+					"-output-directory=%OUTDIR%",
+					"\\def\\buildemptyfigures{1}\\input{%DOC%}"
+				],
+				"env": {}
+			},
+			{
 				"name": "biber",
 				"command": "biber",
 				"args": [
@@ -34,7 +47,7 @@
 			{
 				"name": "xelatex -> biber -> biber -> xelatex -> copy",
 				"tools": [
-					"xelatex",
+					"xelatex empty figures",
 					"biber",
 					"biber",
 					"xelatex",
