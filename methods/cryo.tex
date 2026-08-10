@@ -56,20 +56,28 @@
 
         The LD400 uses two cascaded pulse-tube stages, as sketched in Fig.~\ref{fig:setup:pulse-tube-gm}. The first stage removes heat at intermediate temperature and provides a thermal anchor near \qty{40}{\kelvin}. The second stage is precooled by the first and reaches the few-kelvin range. These stages are not only refrigeration points. They are also the first thermal anchors for radiation shields, cabling, and the incoming mixture line. Their performance therefore affects both the cooldown time and the heat load that must later be handled by the dilution unit.
 
+        \begin{figure}[t]
+            \centering
+            \hfill
+            \begin{minipage}[c]{0.4\textwidth}
+                \centering
+                {\fontsize{7}{9}\selectfont
+                \import{methods/setup/cryo}{pulsetube-gm.pdf_tex}}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[c]{0.55\textwidth}
+                \captionof{figure}{
+                    Schematic of a two-stage Gifford--McMahon-type pulse tube. The rotary valve (RV) alternately connects the cold head to the high- and low-pressure sides of the compressor (CP). The first stage provides an intermediate thermal anchor, while the second stage is precooled by the first stage. Adapted from Ref.~\cite{de_waele_basic_2011}.
+                }
+                \label{fig:setup:pulse-tube-gm}
+            \end{minipage}
+            \hfill
+        \end{figure}
+
         The cryostat frame is supported by pneumatic air springs at the four corners, operated at about \qty{6}{\barunit}, and the suspended assembly has a large mass. This arrangement reduces the transmission of building and compressor vibrations to the suspended assembly. The vibration coupling to the junction was not measured independently. In this configuration, contacts could remain stable on the scale of weeks as long as the cryostat was not mechanically disturbed. A small fraction of contacts still showed atomic rearrangements during individual measurements. I therefore do not attribute these rearrangements specifically to cryostat vibration.
 
         The pulse-tube system is driven by an oil-lubricated room-temperature helium compressor.\footnote{Cryomech, \texttt{CPA1110W2FNCE-21770300001}.} Low-pressure helium returning from the cold head is compressed, cooled, purified, and supplied again as high-pressure helium. Oil improves sealing and removes heat from the compressor, but it must not reach the cold head. Oil separators, coalescing filters, and adsorbers therefore remove oil droplets, mist, and residual contaminants before the helium returns to the cryostat. This purification chain is essential because impurities can freeze out at cryogenic temperatures and degrade the regenerator or block small flow impedances.
 
-        \begin{wrapfigure}[22]{r}{0.4\textwidth}
-            \captionsetup{format=plain}%
-            \centering
-            \vspace{-.5em}
-            {\fontsize{7}{9}\selectfont
-            \import{methods/setup/cryo}{pulsetube-gm.pdf_tex}}
-            \vspace{-.5em}
-            \caption{Schematic of a two-stage Gifford--McMahon-type pulse tube. The rotary valve (RV) alternately connects the cold head to the high- and low-pressure sides of the compressor (CP). The first stage provides an intermediate thermal anchor, while the second stage is precooled by the first stage. Adapted from Ref.~\cite{de_waele_basic_2011}.}
-            \label{fig:setup:pulse-tube-gm}
-        \end{wrapfigure}
         Compressor maintenance became relevant during this work. The adsorber was replaced, and the compressor heat exchanger required repeated repairs due to leaks. One practical cause was the cooling-water supply. The compressor was cooled with water from Lake Constance, which is very soft and can corrode copper cooling-water circuits if it is not chemically conditioned. Dirt particles and shell debris in insufficiently filtered lake water can additionally abrade the piping~\cite{haltiner_distribution_2022}. Eventually, a leak between the cooling-water circuit and the helium circuit led to replacement of the compressor package. This history is included because compressor degradation or helium contamination can reduce pulse-tube performance before a problem is visible at the sample stage.
 
     %=========================================================
@@ -119,6 +127,7 @@
     %=========================================================
 
         \begin{figure}[t!]
+            \nocite{brewer_phase_1962,edwards_solubility_1965,de_bruyn_ouboter_thermodynamic_1960}
             \centering
             \newcommand{\capHeThree}{\smash{\textsuperscript{3}}He}
             \newcommand{\capHeFour}{\smash{\textsuperscript{4}}He}
