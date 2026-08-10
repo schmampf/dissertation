@@ -16,17 +16,19 @@
             {\fontsize{5pt}{9pt}\selectfont\import{methods/sample/probe}{probe2.pdf_tex}}\cr
         }%
         \endgroup
-        \caption{Scanning electron micrograph of the central sample region. The colored region highlights the top layer that forms one electrode of the oxide tunnel barrier. In addition, schematic insets illustrate the atomic contact and the cross-section of the tunnel barrier.}
+        \caption{Scanning electron micrograph of the central sample region. The colored region highlights the top layer that forms one electrode of the oxide tunnel barrier. The schematic insets illustrate the atomic contact and the cross section of the tunnel barrier.}
         \label{fig:methods:sem}
     \end{wrapfigure}
-    Single-electron transistors (SETs) consist of two junctions that define a small island capacitively coupled to a dc gate electrode. In the present approach, one of these junctions is realized as a mechanically controlled break junction (MCBJ), while the second junction is an oxide tunnel barrier. Aluminum is used as the device material, and an ac gate is integrated to couple microwave fields to the device. Such a sample is shown in Fig.~\ref{fig:methods:sem}.
+    Single-electron transistors (SETs) consist of two junctions that define a small island capacitively coupled to a dc gate electrode. In the present approach, one of these junctions is realized as a mechanically controllable break junction (MCBJ), while the second junction is an oxide tunnel barrier. Aluminum is used as the device material, and an ac gate is integrated to couple microwave fields to the device. Figure~\ref{fig:methods:sem} shows such a sample.
 
-    This section describes work carried out together with Patrick Raif as part of his project practical\footnote{A component of the master's curriculum completed within a semester.} \cite{raif_electronic_2024}.
+    This section describes work carried out together with Patrick Raif as part of his project practicum\footnote{An optional component of the master's curriculum completed within four weeks.} \cite{raif_fabrication_2023}.
 
-    The following subsections present the sample preparation process from complementary perspectives. First, the conceptual framework is introduced. Next, the main design choices and their rationale are discussed. The practical fabrication procedure itself, including practical considerations and typical challenges encountered in the laboratory, is given in the appendix in Subsection~\ref{subsection:realization}.
+    The following subsections present the sample preparation process from complementary perspectives. First, I introduce the conceptual framework. Next, I discuss the main design choices and their rationale. The fabrication procedure, including practical considerations and typical challenges encountered in the laboratory, is given in Appendix~\ref{appendix:sample-fabrication}.
 
+    %=========================================================
     \subsection{Device Concept} 
     \label{subsection:concept}
+    %=========================================================
 
         \begin{wrapfigure}[8]{r}{40mm}
             \captionsetup{format=plain}%
@@ -34,92 +36,102 @@
             \vspace{-1.5em}
             \import{methods/sample/bruchmechanik}{bruchmechanik.pdf_tex}
             \vspace{-1.75em}
-            \caption{Schematic illustration of the bending principle of a MCBJ. Adapted from Ref.~\cite{schirm_einfluss_2009}.}
+            \caption{Schematic illustration of the bending principle of an MCBJ. Adapted from Ref.~\cite{schirm_einfluss_2009}.}
             \label{fig:methods:bruchmechanik}
         \end{wrapfigure}
         In this subsection, I introduce the general concept of the sample fabrication process and its connection to the underlying device physics.
 
-        The sample design must satisfy several requirements simultaneously. Mechanically, it must provide a freestanding bridge on a bendable substrate so that an atomic contact can be formed in a controlled manner. Lithographically, it must enable suspended shadow-mask structures for double-angle evaporation. Electrically, it must define an island between two weak links and provide gate coupling. Finally, the design should allow efficient coupling of microwave fields.
+        The sample design must satisfy several requirements simultaneously. Mechanically, it must provide a freestanding bridge on a bendable substrate so that an atomic contact can be formed in a controlled manner. Lithographically, it must enable suspended shadow mask structures for double angle evaporation. Electrically, it must define an island between two weak links and provide gate coupling. Finally, the design should allow efficient coupling of microwave fields.
 
-        The MCBJ is realized as a freestanding bridge-like structure on a bendable substrate, as illustrated schematically in Fig.~\ref{fig:methods:bruchmechanik}. The substrate can be bent either by pushing a stamp from below or by pressing counter rods from above. This bending elongates the bridge and allows the junction to be tuned into the atomic-contact regime. The mechanical setup of the MCBJ is described in more detail in Subsection~\ref{subsec:setup:mcbj}.
+        The MCBJ is realized as a freestanding bridge-like structure on a bendable substrate, as illustrated schematically in Fig.~\ref{fig:methods:bruchmechanik}. The substrate can be bent either by pushing a stamp from below or by pressing counter supports from above. This bending elongates the bridge and allows the junction to be tuned into the atomic contact and tunnel regimes. The mechanical setup of the MCBJ is described in more detail in Subsection~\ref{subsec:setup:mcbj}.
 
-        A polyimide (PI) layer insulates the substrate from the structures produced in the subsequent steps. More importantly, the PI layer serves as a sacrificial layer. During later processing, it is partially etched, allowing the structure to become freestanding.
+        A polyimide (PI) layer insulates the substrate from the structures produced in the subsequent steps. More importantly, the PI layer serves as a sacrificial layer. During later processing, it is partially etched off, allowing the structure to become freestanding.
 
-        Next, a bilayer of positive electron-sensitive resist is applied. Electron-beam lithography (EBL) is then used to expose the desired pattern with high precision. After development, the exposed resist is removed, leaving behind the lithographically defined structure.
+        Next, a bilayer of positive electron sensitive resist is applied. Electron beam lithography (EBL) is then used to expose the desired pattern with high precision. After development, the exposed resist is removed, leaving behind the lithographically defined structure.
 
-        In addition to the MCBJ, the SET requires a second weak link, which is realized as an oxide barrier. A convenient method for fabricating this barrier is shadow evaporation \cite{niemeyer_observation_1976,dolan_offset_1977}. In this technique, two evaporation steps are carried out at different incident angles, producing a lateral offset between the deposited structures. Between the two depositions, a controlled oxidation step is performed without breaking vacuum. This yields overlapping regions with a metal--oxide--metal cross-section, as illustrated in Fig.~\ref{fig:methods:flow}.
+        In addition to the MCBJ, the SET requires a second weak link, which is realized as an oxide barrier. A convenient method for fabricating this barrier is shadow evaporation \cite{niemeyer_observation_1976,dolan_offset_1977}. In this technique, two evaporation steps are carried out at different incident angles, producing a lateral offset between the deposited structures. Between the two depositions, a controlled oxidation step is performed without breaking vacuum. This yields overlapping regions with a metal--oxide--metal cross section, as illustrated in Fig.~\ref{fig:methods:flow}.
 
-        Since the aim is to fabricate a superconducting single-electron transistor (SSET), aluminum (Al) is used in both evaporation steps. This results in an Al break junction (BJ) and an Al--Al$_\text{2}$O$_\text{3}$--Al oxide barrier, as described by Thomas Lorenz \cite{lorenz_wechselspiel_2018} and Susanne Sprenger \cite{sprenger_interplay_2019}. Alternatively, the second electrode material can be changed; for example, Al--Al$_\text{2}$O$_\text{3}$--Cu structures were successfully realized by Laura Sobral Rey \cite{sobral-rey_interplay_2022}.
+        Since the aim is to fabricate a superconducting single-electron transistor (SSET), aluminum (Al) is used in both evaporation steps. This results in an Al break junction (BJ) and an Al--Al$_\text{2}$O$_\text{3}$--Al oxide barrier, as described by Thomas Lorenz \cite{lorenz_wechselspiel_2018} and Susanne Sprenger \cite{sprenger_interplay_2019}. Alternatively, the second electrode material can be changed. For example, Al--Al$_\text{2}$O$_\text{3}$--Cu structures were successfully realized by Laura Sobral Rey \cite{sobral-rey_interplay_2022}.
 
-        In the final fabrication step, approximately \qty{500}{\nano\meter} of the PI layer is removed by oxygen plasma etching. Because the etch proceeds essentially homogeneously, a pronounced undercut is created, as illustrated in Fig.~\ref{fig:methods:sem}. This step releases the bridge and renders the break junction freestanding.
+        In the final fabrication step, approximately \qty{500}{\nano\meter} of the PI layer is removed by oxygen plasma etching. Because the etch proceeds essentially isotropically, it creates a pronounced undercut, as illustrated in Fig.~\ref{fig:methods:sem}. This step releases the bridge and renders the break junction freestanding.
 
         \begin{figure}[t]
             \subfigure[
                 A bilayer resist stack is spin-coated onto the substrate (bottom: copolymer, top: PMMA).
                 ]{\import{methods/sample/flowchart}{flowchart1.pdf_tex}}
-            \hfill
+            \hfill%
             \subfigure[
-                The structure is exposed by an electron-beam. A fraction of the incident electrons is backscattered.
-                ]{\import{methods/sample/flowchart}{flowchart2.pdf_tex}}
-            \hfill
+                The structure is exposed by an electron beam. A fraction of the incident electrons is backscattered.
+                ]{%
+                \ooalign{%
+                    \import{methods/sample/flowchart}{flowchart2a.pdf_tex}\cr%
+                    \includegraphics[width=32mm]{methods/sample/flowchart/flowchart2b.png}\cr%
+                    \import{methods/sample/flowchart}{flowchart2c.pdf_tex}\cr%
+                }%
+                }
+            \hfill%
             \subfigure[
-                Development with creates an undercut in the copolymer layer.
+                Development creates an undercut in the copolymer layer.
                 ]{\import{methods/sample/flowchart}{flowchart3.pdf_tex}}
-                \\
+                \\%
             \subfigure[
-                First metal deposition normal to the sample plane.
+                First metal deposition normal to the sample plane. This layer is oxidized in situ to form the tunnel barrier.
                 ]{\import{methods/sample/flowchart}{flowchart4.pdf_tex}}
-            \hfill
+            \hfill%
             \subfigure[
-                Second deposition at an oblique angle. The second layer must be thicker to ensure electrical continuity.
+                Second deposition at an oblique angle. The second layer must be thicker than the first to ensure electrical continuity.
                 ]{\import{methods/sample/flowchart}{flowchart5.pdf_tex}}
-            \hfill
+            \hfill%
             \subfigure[
                 The resist undercut facilitates lift-off after deposition.
                 ]{\import{methods/sample/flowchart}{flowchart6.pdf_tex}}
             \caption{
-                Schematic cross-section of the fabrication process used to realize an oxide tunnel barrier by electron-beam lithography and double-angle evaporation.
+                Schematic cross section of the fabrication process used to realize an oxide tunnel barrier by electron beam lithography and double angle evaporation.
             }
             \label{fig:methods:flow}
         \end{figure}
 
-
-
+    %=========================================================
     \subsection{Design Choices} 
     \label{subsection:design}
+    %=========================================================
+
         This subsection discusses the fabrication process from the perspective of the underlying design decisions. While there is no single unique route to a working sample, individual choices can have important practical consequences. The following paragraphs summarize the reasoning behind the most relevant steps.
 
-        Bronze has long been used as a substrate material for MCBJ samples. A key reason is that it bends with comparatively little force while retaining excellent elastic behavior. This is crucial for MCBJs, where the junction configuration must be adjusted repeatedly and reproducibly. Other materials, such as copper, bend less uniformly and tend to deform mainly in the center beneath the stamp. This leads to larger angular changes and poorer elastic reproducibility. In addition, copper often shows non-monotonic bending behavior, which makes fine adjustment in the atomic-contact regime impractical. Kapton, by contrast, bends homogeneously along its length but does not allow sufficiently strong bending for the present MCBJ geometry. Copper--beryllium would be mechanically suitable, but its toxicity makes it undesirable in routine use. Finally, the substrate must be non-magnetic and contain as few magnetic impurities as possible. Considering all these requirements, bronze has proven to be the most suitable substrate material for this type of MCBJ over the years \cite{schirm_einfluss_2009}.
+        Bronze has long been used as a substrate material for MCBJ samples. A key reason is that it bends with comparatively little force while retaining excellent elastic behavior. This is crucial for MCBJs, where the junction configuration must be adjusted repeatedly and reproducibly. Other materials, such as copper, bend less uniformly and tend to deform mainly in the center beneath the stamp. This bending behavior leads to larger angular changes and poorer elastic reproducibility. In addition, copper often shows nonmonotonic bending behavior, which makes fine adjustment in the atomic contact regime impractical. Kapton, by contrast, bends homogeneously along its length but does not allow sufficiently strong bending for the present MCBJ geometry. Copper--beryllium would be mechanically suitable, but its toxicity makes it undesirable for routine use. Finally, the substrate must be nonmagnetic and contain as few magnetic impurities as possible. Considering all these requirements, bronze has proven to be the most suitable substrate material for this type of MCBJ \cite{schirm_einfluss_2009}.
         
-        A polyamide (PA) layer is spin-coated onto the entire bronze wafer and converted into polyimide (PI) during a subsequent hard-bake step. Two resist layers are then applied. The thin top layer is optimized for high-resolution lithography and defines sharp feature edges. The thicker bottom layer serves two purposes: it lifts the top layer away from the substrate and promotes undercut formation during development. Two effects contribute to this undercut. First, electrons broaden as they pass through the resist stack, so the exposed volume widens with depth. In addition, backscattered electrons from the substrate can re-enter the resist from below and increase the effective exposure near the lower resist region. As a result, the bottom layer develops more rapidly and an undercut can form. Second, prolonged rinsing in isopropyl alcohol (IPA) after development in diluted methyl isobutyl ketone (MIBK) further enhances the undercut.
+        A polyamide (PA) layer is spin-coated onto the entire bronze wafer and converted into polyimide (PI) during a subsequent hard-bake step. Two resist layers are then applied. The thin top layer is optimized for high-resolution lithography and defines sharp feature edges. The thicker bottom layer serves two purposes. It lifts the top layer away from the substrate and promotes undercut formation during development. Two effects contribute to this undercut. First, electrons spread as they pass through the resist stack, so the exposed volume widens with depth. Backscattered electrons from the substrate can also reenter the resist from below and increase the effective exposure in the lower resist region. As a result, the bottom layer develops more rapidly and forms an undercut. Second, prolonged rinsing in isopropyl alcohol (IPA) after development in diluted methyl isobutyl ketone (MIBK) further enhances the undercut.
 
         EBL is carried out using a Zeiss Crossbeam system that was modified for significantly faster beam blanking. The beam blanker operates synchronously with the beam deflection, allowing arbitrary structures to be exposed precisely within the selected field of view. For small high-resolution structures, a field size of \qty{100}{\micro\meter} is typically used, whereas coarser and larger features are written in a \qty{1000}{\micro\meter} field. Structures exceeding these dimensions are exposed over multiple adjacent fields by moving the sample stage. To ensure smooth transitions between neighboring fields, a deliberate overlap is included for stitching.
 
-        At the beginning of my doctoral work, only one of the two available EBL software packages, \texttt{Elphy Plus} by Raith, was functional and properly supported. The sample design therefore had to be reimplemented from scratch, since my predecessors had used a different software environment. The dimensions of the break junction and the gate follow the established geometry and are consistent with earlier implementations in Refs.~\cite{lorenz_wechselspiel_2018, sprenger_interplay_2019,sobral-rey_interplay_2022}. In contrast, the finger defining the oxide barrier was modified to become wider toward its lower part. This reduces the freestanding length of the evaporation mask and thereby improves its mechanical stability. However, older resist material was found to collapse more easily during evaporation. In those cases, the finger does not reliably reach the island during the second evaporation step, which results in defective structures. The overall electron-beam lithography design is shown in Fig.~\ref{fig:methods:ebeam}.
+        At the beginning of my doctoral work, only one of the two previously used EBL software packages, \texttt{Elphy Plus} by Raith, was functional and properly supported. The sample design therefore had to be reimplemented from scratch because my predecessors had used a different software environment. The dimensions of the break junction and the gate follow the established geometry and are consistent with earlier implementations in Refs.~\cite{lorenz_wechselspiel_2018,sprenger_interplay_2019,sobral-rey_interplay_2022}.
+
+        The tip of the bottom electrode connects to the island during the second evaporation at an oblique angle. The angle and height of the mask define the lateral offset of this deposition. I encountered difficulties with the mechanical stability of the evaporation mask. During evaporation, the mask sagged, and the shadow electrode did not connect electrically to the island. I modified the finger geometry to reduce the freestanding length of the evaporation mask. A new resist further improved the stability of the mask, and the finger then reliably reached the island during the second evaporation. The complete electron beam lithography design is shown in Fig.~\ref{fig:methods:ebeam}.
 
         \begin{figure}[t]
             \centering
-
             \subfigure[
                 Central region, successively magnified, showing the break junction, the island, the oxide-barrier finger, the nearby dc gate, and the adjacent ac gate. Blue structures (\legend{seeblau100}) are written in a \qty{100}{\micro\meter} writing field, whereas gray structures (\legend{seegrau100}) are written in \qty{1000}{\micro\meter} writing fields.
                 ]{{
             \centering\fontsize{6}{7}\selectfont\import{methods/sample/ebeamdesign}{ebeam1.pdf_tex}}}
             \hfill
             \subfigure[
-                Overview of full pattern. Individual writing fields are indicated by dashed squares. Their overlap avoids stiching problems. The outer leads are arranged to simplify electrical contacting, and a shorting structure is included to protect the sample against electrostatic discharge.
+                Overview of the full pattern. Individual writing fields are indicated by dashed squares. Their overlap avoids stitching problems. The outer leads are arranged to simplify electrical contacting, and a shorting structure is included to protect the sample against electrostatic discharge.
                 ]{{
             \centering\fontsize{6}{7}\selectfont\import{methods/sample/ebeamdesign}{ebeam2.pdf_tex}}}
-            \caption{Electron-beam lithography design of the sample at different length scales.}
+            \caption{Electron beam lithography design of the sample at different length scales.}
             % label subfigures?
             \label{fig:methods:ebeam}
         \end{figure}
 
-        The larger leads and contact pads are arranged to simplify electrical contacting. In addition, an ac gate or strip line is placed at a distance of \qty{8}{\micro\meter} to maximize microwave coupling while keeping the electron-beam writing time within reasonable limits. A shorting structure is also included to protect the sensitive tunnel barrier against electrostatic discharge. Finally, the central vertical lead is made wider to improve its visibility, which helps to align the break junction precisely with the stamp during mounting.
+        The larger leads and contact pads are arranged to simplify electrical contacting. In addition, an ac gate or stripline is placed at a distance of \qty{8}{\micro\meter} from the junction to maximize microwave coupling while keeping the electron beam writing time within reasonable limits. A shorting structure is also included to protect the sensitive tunnel barrier against electrostatic discharge. Finally, the central vertical lead is made wider to improve its visibility, which helps to align the break junction precisely with the stamp during mounting.
 
-        The evaporator used in this work has a comparatively long source-to-sample distance. As a result, the aluminum deposition is highly directional, although the effective deposition cross-section is reduced. The system offers two methods for aluminum evaporation: thermal evaporation and electron-beam evaporation. In thermal evaporation, a large current heats a small crucible until the aluminum evaporates. However, the crucible used for this method is fragile and must be loaded and run empty after each use to avoid crack formation. This procedure is laborious, prone to errors, and offers no clear advantage over electron-beam evaporation. In electron-beam evaporation, a focused electron beam locally heats the aluminum charge, resulting in a more efficient and reliable deposition process. For this reason, and in contrast to Refs.~\cite{lorenz_wechselspiel_2018, sprenger_interplay_2019,sobral-rey_interplay_2022}, electron-beam evaporation was used throughout this work.
+        The evaporator used in this work has a comparatively long source-to-sample distance. As a result, the aluminum deposition is highly directional. For the same reason, however, the effective deposition cross section is reduced. The system offers two methods for aluminum evaporation: thermal evaporation and electron beam evaporation. In thermal evaporation, a large current heats a small crucible until the aluminum evaporates. The crucible used for this method is fragile and must be loaded and completely emptied during each run to avoid crack formation.
+        
+        This procedure is laborious, prone to error, and offers no clear advantage over electron beam evaporation. In electron beam evaporation, a focused electron beam locally heats the aluminum charge, resulting in a more efficient and reliable deposition process. For this reason, and in contrast to Refs.~\cite{lorenz_wechselspiel_2018,sprenger_interplay_2019,sobral-rey_interplay_2022}, I used electron beam evaporation throughout this work.
 
         The oxidation step between the two evaporations is performed in the load lock of the evaporator at an oxygen pressure of approximately \qty{3.0(2)}{\milli\barunit} for \qty{3}{\minute} \cite{sobral-rey_interplay_2022}. In the past, this step was found to be insufficiently reproducible. It is therefore monitored carefully in the present process \cite{sprenger_interplay_2019,conzelmann_optimierung_2016}.
 
-        Reactive ion etching (RIE) is carried out using the \textit{PlasmaPro 80 ICP RIE system} from Oxford Instruments. This system was newly introduced when I began my doctoral work, so the fabrication of break junctions with it had to be established from scratch, including the development of a suitable etching recipe. Although this tool is not primarily designed for highly homogeneous etching, acceptable uniformity can be achieved by combining low table radio-frequency (RF) power, high inductively coupled plasma (ICP) RF power, and high chamber pressure. The ICP source generates a high-density plasma by coupling energy into the chamber via an electromagnetic field, whereas the RF power applied to the table controls the ion energy at the sample surface. A heated sample table further improves etch homogeneity. The etched depth is monitored in real time by laser interferometry, which allows precise process control.
+        Reactive ion etching (RIE) is carried out using the \textit{PlasmaPro 80 ICP RIE system} from Oxford Instruments. This system was newly introduced when I began my doctoral work, so the fabrication of break junctions with it had to be established from scratch, including the development of a suitable etching recipe. Although this tool is not primarily designed for highly isotropic etching, acceptable uniformity can be achieved by combining high inductively coupled plasma (ICP) radio-frequency (RF) power, low RF power at the sample table, and high chamber pressure. The ICP source generates a high-density plasma by coupling energy into the chamber through an electromagnetic field, whereas the RF power applied to the table controls the ion energy at the sample surface. A heated sample table increases the chemical etching component and further improves etch isotropy. The etched depth is monitored in real time by laser interferometry, which allows precise process control.
 
-        The final step is electrical contacting of the sample. Wedge bonding is unsuitable because the bonding wire can press through the pad and penetrate the soft PI layer, thereby causing a short. Instead, thin copper wires are attached to the pads using conductive silver paste. This approach provides reliable electrical contact without damaging the underlying structure.
+        The final step is electrical contacting of the sample. Wedge bonding is unsuitable because the bonding wire can press through the pad and penetrate the soft PI layer, thereby causing a short to ground. Instead, thin copper wires are attached to the pads using conductive silver paste. This approach provides reliable electrical contact without damaging the underlying structure.
