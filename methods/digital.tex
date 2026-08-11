@@ -248,9 +248,9 @@
         \subsubsection*{Offset Analysis}
         %=========================================================
 
-            The coarse offset subtraction described above removes the dominant amplifier drift. The evaluation pipeline also provides an optional symmetry based correction to align the residual voltage and current origins of quantitative \textit{I--V} curves. This correction is not applied by default. Its use and fitted offsets remain part of the evaluation record.
+            Beyond the coarse subtraction of amplifier drift, the evaluation pipeline provides an optional symmetry based correction that aligns the residual voltage and current origins. It is not applied by default, and its use and fitted offsets remain part of the evaluation record.
 
-            The key advantage of the method is that differentiation separates the two offset coordinates. The method assumes that the intrinsic quasi-dc \textit{I--V} curve is point symmetric. Its differential conductance is therefore even in voltage. A constant current offset drops out when calculating \textit{dI--dV}, so the symmetry search depends on the voltage offset but not on the current offset. The remaining task is the horizontal alignment of the conductance trace. If the correct voltage origin is chosen, the derivative overlaps with its reflection. The implementation determines this alignment by minimizing a mirror symmetry error.
+            The key advantage of the method is that differentiation separates the two offset coordinates. For an intrinsic point symmetric quasi-dc \textit{I--V} curve, the differential conductance is even in voltage. A constant current offset drops out when calculating \textit{dI--dV}, so the symmetry search depends on the voltage offset but not on the current offset. The remaining task is the horizontal alignment of the conductance trace. If the correct voltage origin is chosen, the derivative overlaps with its reflection. The implementation determines this alignment by minimizing a mirror symmetry error.
 
             In practice, the analysis scans a list of candidate voltage offsets. For a candidate $\delta V$, the trace is shifted by subtracting $\delta V$, then passed through the same filtering, resampling, binning, and smoothing pipeline as the final data. The shifted trace defines a sampled curve $I_{\delta V}(V_k)$ on a symmetric voltage grid. The score is the mean absolute mirror mismatch of its differential conductance,
             \begin{equation}
@@ -267,7 +267,7 @@
             \end{equation}
             The voltage offset assigned to the trace is the candidate with the smallest finite value of $\epsilon_V$. I then exchanged the axes and applied the same search to \textit{dV--dI}. In this representation, a constant voltage offset drops out under differentiation, while the symmetry alignment determines the current offset. The two searches therefore determine $\delta V$ and $\delta I$ independently. Subtracting both values corrects the complete origin of the measured trace in the \textit{I--V} plane.
 
-            The procedure is a diagnostic correction, not a physical model fit. It is meaningful only when the conductance contains corresponding features at positive and negative bias over the analyzed window and the error curve has a distinct minimum. Traces with rectification, strong hysteresis, insufficient overlap of the two bias branches, or no distinct minimum are not corrected by this method. These conditions prevent the symmetry assumption from determining a unique voltage origin and would otherwise bias the minimum of Eq.~\eqref{eq:methods:digital:offset:vscore}.
+            The procedure is a diagnostic correction, not a physical model fit. It requires corresponding conductance features at positive and negative bias and a distinct error minimum. Traces with rectification, strong hysteresis, insufficient branch overlap, or no distinct minimum are not corrected because symmetry cannot determine a unique voltage origin.
 
         %=========================================================
         \subsubsection*{BCS Simulation and Fitting}
