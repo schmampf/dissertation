@@ -121,7 +121,7 @@
                         ADwin & $V_0$, $T_0$, $f_0$ & $V_1$, $V_2$, $i_0$ & Output, Sweeping \\
                         Femtos & $A_1$, $A_2$ &  & {\color{seegrau100}Overload (2)} \\
                         VNA & $A_\mathrm{out}$, $\nu$ & {\color{seegrau100} $S_{11}$, $S_{21}$} & Irradiating\\
-                        BlueFors & $P_\mathrm{heater}$ & $T_\mathrm{sample}$, {\color{seegrau100}$(T, p)_\mathrm{aux}$} & Heating\\
+                        BlueFors & $P_\mathrm{heater}$ & $T_\mathrm{bath}$, {\color{seegrau100}$(T, p)_\mathrm{aux}$} & Heating\\
                         Yoko & $V_\mathrm{gate}$ & {\color{seegrau100}$I_\mathrm{leak}$} & Output\\
                         Magnet & $\mu_0H$, $\tfrac{\partial}{\partial t}\mu_0H$ & $\mu_0H$ & Ramping\\
                         Motor & $\Delta x$, $\tfrac{\partial}{\partial t}\Delta x$ & $\Delta x$ & Moving\\
@@ -163,7 +163,7 @@
                             $f_0$: & sampling rate \vspace{.5em}\\ 
                             \texttt{iv\_script.py}  &  \\
                             $(A_\mathrm{out}, \nu)$: & microwave irradiation\\
-                            $T_\mathrm{sample}$: & sample temperature \\
+                            $T_\mathrm{bath}$: & bath temperature \\
                             $\Delta x$: & sample displacement \\
                             $\mu_0 H$: & magnetic field \\
                             $V_\mathrm{gate}$: & gate voltage  \\
@@ -202,35 +202,25 @@
             \end{equation}
             The offsets are obtained from the interval recorded before the sweep and are subtracted from every trace. This correction compensates for slow thermal drifts in the amplifier outputs. When the data contain sufficient symmetric structure, the finer symmetry based correction described below can also be applied. Both corrections are performed while the data remain an ordered pair of time traces, $V(t)$ and $I(t)$.
 
-            The corrected branch is then low-pass filtered to suppress high-frequency pickup that is not resolved by the quasi-dc sweep. I filtered only the selected branch, which prevented discontinuities at the boundaries between the offset interval and the sweep branches from affecting the result. The standard analysis preset uses a fourth-order Butterworth filter with a \qty{43.7}{\hertz} cutoff. The filtered data are subsequently resampled onto a uniform time axis at the same rate. Resampling does not add physical information. It increases the point density and thereby reduces the number of empty or sparsely populated bins in the following step.
+            The corrected branch is then low-pass filtered to suppress high-frequency pickup that is not resolved by the quasi-dc sweep. I filtered only the selected branch, which prevented discontinuities at the boundaries between the offset interval and the sweep branches from affecting the result. The standard analysis preset uses a fourth-order Butterworth filter with a \qty{43.7}{\hertz} cutoff. The filtered voltage and current traces are subsequently linearly interpolated onto a uniform time grid at \qty{137}{\hertz}. This numerical upsampling does not add independent measurements. It provides a denser representation of the filtered trace and regularizes its subsequent mapping onto the voltage or current grid.
 
             \begin{figure}[t]
                 \centering
-                \renewcommand{\mu}{\upmu}
-                    \subfigure[
-                            Raw branch and low-pass filtered trace.
-                        ]{
-                            \thesisplot{methods/digital}{eva_0}
-                            
-                        }
-                    \hfill
-                    \subfigure[
-                            Detail of the filtering step.
-                        ]{
-                            \thesisplot{methods/digital}{eva_1}
-                        }
-                    \\
-                    \subfigure[
-                            Voltage grid representation $I(V)$
-                        ]{
-                            \thesisplot{methods/digital}{eva_2}
-                        }
-                    \hfill
-                    \subfigure[
-                            Current grid representation $V(I)$
-                        ]{
-                            \thesisplot{methods/digital}{eva_3}
-                        }
+                \subfigure[
+                        Raw branch and low-pass filtered trace.
+                    ]{\thesisplot{methods/digital}{eva_0}}
+                \hfill
+                \subfigure[
+                        Detail of the filtering step.
+                    ]{\thesisplot{methods/digital}{eva_1}}
+                \\
+                \subfigure[
+                        Voltage grid representation $I(V)$
+                    ]{\thesisplot{methods/digital}{eva_2}}
+                \hfill
+                \subfigure[
+                        Current grid representation $V(I)$
+                    ]{\thesisplot{methods/digital}{eva_3}}
                 \caption{Evaluation pipeline for one selected sweep branch. After offset correction, the ordered time trace is low-pass filtered and resampled. It is then binned onto a regular voltage or current grid, which removes the time coordinate.}
                 \label{fig:methods:digital:eva}
             \end{figure}
@@ -316,7 +306,7 @@
 
             To determine the mesoscopic pincode $\{\tau_i\}$ of an atomic contact, I fitted the measured finite transmission \textit{I--V} characteristic with a sum of independent single-channel MAR currents. The adjustable parameters were the channel transmissions $\{\tau_i\}$, the zero-temperature gap $\Delta_0$, and the effective voltage noise width $\sigma_V$. 
             
-            I fixed the electronic temperature and Dynes broadening to $T=0$ and $\gamma=0$. Between $\qtyrange{0}{0.5}{\kelvin}$, the calculated temperature dependence of the MAR spectra was negligible at the voltage and current resolution relevant here. I therefore retained $\sigma_V$ as the only effective broadening parameter rather than introducing correlated thermal, Dynes, and voltage noise contributions. Setting $\gamma=0$ also preserved the unmodified microscopic MAR model implemented by the Cuevas kernels. 
+            I fixed the electronic temperature and Dynes broadening to $T=0$ and $\gamma=0$. The effective voltage noise width $\sigma_V$ already accounts phenomenologically for the rounding relevant to these fits. Allowing additional broadening through $T$ or $\gamma$ would introduce strongly correlated parameters that cannot be distinguished reliably at the available voltage and current resolution. The fitted transmissions should therefore be interpreted within this restricted zero-temperature model rather than as an independent determination of electronic temperature or lifetime broadening.
             
             Each adjustable parameter could be varied within prescribed bounds on a predefined grid or fixed to a selected value. Because the transmission grid included $\tau_i=0$, a fit allowing $N$ channels also included every solution with fewer than $N$ contributing channels. Increasing the maximum number of allowed channels therefore did not require all of them to contribute to the fitted current.
 
