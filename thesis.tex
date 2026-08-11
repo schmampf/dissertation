@@ -4,31 +4,32 @@
 \documentclass[fontsize=9pt, rgb]{scrreport} 
 
 % Figure rendering: empty (framed placeholders), pdf (fast), or pgf (final quality).
-\providecommand{\figuremode}{pgf}
+\providecommand{\figuremode}{pdf}
 
 \input{utilities/header.tex}
-\addbibresource{miscellaneous/local.bib}
+\addbibresource{miscellaneous/local.bib} % thesis graded
 
 \begin{document}
-
-    % \include{miscellaneous/titelpage.tex}
-    % \include{miscellaneous/empty-page.tex}
-
     % =========================================================
     %%% Pre Body %%%
-        \clearpage \pagenumbering{Roman}
     % =========================================================
 
-    %     \include{miscellaneous/abstract.tex}
-    %     \include{miscellaneous/inspirational.tex}
+        \include{miscellaneous/titelpage.tex} % thesis graded
+        \include{miscellaneous/empty-page.tex} % thesis graded
+
+        \clearpage \pagenumbering{Roman}
+
+        \include{miscellaneous/abstract.tex}
+        \include{miscellaneous/inspirational.tex} % thesis graded
+
         \tableofcontents
+        \clearpage \pagenumbering{arabic}
 
     % =========================================================
     %%% Main body %%%
-        \clearpage \pagenumbering{arabic}
     % =========================================================
 
-    %     \include{miscellaneous/introduction.tex}
+        \include{miscellaneous/introduction.tex}
 
         % =========================================================
         \include{theory/theory.tex} % thesis graded
@@ -47,38 +48,36 @@
             % - Elkes Korrekturen einpflegen
             % - Rref, Fomblin number
 
-        % % =========================================================
-        % \include{miscellaneous/results.tex}
-        % % =========================================================
-        %     \include{tunnelbarrier/tunnelbarrier.tex}
-        %         \include{tunnelbarrier/highres.tex}
-        %         \include{tunnelbarrier/asym.tex}
+        % =========================================================
+        \include{miscellaneous/results.tex}
+        % =========================================================
+            \include{tunnelbarrier/tunnelbarrier.tex}
+                \include{tunnelbarrier/highres.tex}
+                \include{tunnelbarrier/asym.tex}
 
-        %     \include{atomic_contact/atomic-contact.tex} % patrick ready
-        %         \include{atomic_contact/pincode.tex} % patrick ready
-        %         \include{atomic_contact/photon-assisted.tex} % patrick ready 
-        %         % (vielleicht w_m nochmal angucken)
+            \include{atomic_contact/atomic-contact.tex} % patrick ready
+                \include{atomic_contact/pincode.tex} % patrick ready
+                \include{atomic_contact/photon-assisted.tex} % patrick ready 
+                \include{atomic_contact/subharmonic.tex} % patrick ready
                 
-        %         \include{atomic_contact/subharmonic.tex} % patrick ready
-
-    %     \include{miscellaneous/conclusion.tex} 
+        \include{miscellaneous/conclusion.tex} 
 
     % =========================================================
     %%% Post Body %%%
     % =========================================================
-        \input{miscellaneous/references.tex}
+        \input{miscellaneous/references.tex} % thesis graded
 
         \include{miscellaneous/software.tex} % thesis graded
         \include{theory/diffusive.tex} % thesis graded
         \include{methods/fabrication.tex} % thesis graded
         \include{methods/cryo.tex} % thesis graded
 
-        % \include{tunnelbarrier/appendix.tex}
-        % \include{atomic_contact/appendix.tex} % patrick ready
-%         \include{ssn-set/ssn-set.tex}
+        \include{tunnelbarrier/appendix.tex}
+        \include{atomic_contact/appendix.tex}
+        \include{ssn-set/ssn-set.tex}
 
-    %     \include{miscellaneous/acknowledgement.tex}
-    %     \include{miscellaneous/eidestattliche-versicherung.tex}
+        \include{miscellaneous/acknowledgement.tex} % thesis graded
+        \include{miscellaneous/eidestattliche-versicherung.tex} % thesis graded
 \end{document}
 
 % - consistency coherence / 2 Delta peaks
