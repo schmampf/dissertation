@@ -67,7 +67,7 @@
     \put(0.3155087,0.20009866){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}copper wires\end{tabular}}}}}%
     \put(0.00640614,0.19878037){\color[rgb]{0.45098039,0.47058824,0.49411765}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}manganin wire\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=5]{cabling.pdf}}%
-    \put(0.13461316,1.06409638){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{T}\textsubscript{sample}\end{tabular}}}}}%
+    \put(0.13461316,1.06409638){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{T}\textsubscript{bath}\end{tabular}}}}}%
     \put(0.00640801,1.06409638){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{P}\textsubscript{heater}\end{tabular}}}}}%
     \put(0.26281831,1.06409638){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{sample}\end{tabular}}}}}%
     \put(0.39102342,1.06409641){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{bias}\end{tabular}}}}}%
