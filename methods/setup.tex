@@ -14,7 +14,7 @@
 
     %=========================================================
     \newpage
-    \subsection{Mechanically Controlled Break Junction}
+    \subsection{Mechanically Controllable Break Junction}
     \label{subsec:setup:mcbj}
     %=========================================================
 
@@ -101,9 +101,9 @@
                 \label{fig:setup:measurement-schema}
             \end{figure}
 
-            The standard configuration in Fig.~\ref{fig:setup:measurement-schema}(a) is used for tunnel junctions and few-channel contacts. Two cold reference resistors are placed symmetrically on either side of the sample. This keeps the sample potential close to the cryostat ground during a bias sweep and reduces common-mode offsets in the voltage readout. The voltage $V_\mathrm{ref}$ is measured across one of these resistors. Its measured base-temperature resistance is
+            The standard configuration in Fig.~\ref{fig:setup:measurement-schema}(a) is used for tunnel junctions and few-channel contacts. Two cold reference resistors are placed symmetrically on either side of the sample. This keeps the sample potential close to the cryostat ground during a bias sweep and reduces common-mode offsets in the voltage readout. The voltage $V_\mathrm{ref}$ is measured across one of these resistors. Its independently measured 4-point resistance at base temperature is
             \begin{equation}
-                R_\mathrm{ref} = \qty{101.473}{\kilo\ohm}\,.
+                R_\mathrm{ref} = \qty{101.473(1)}{\kilo\ohm}\,.
                 \label{eq:setup:cold-reference-resistance}
             \end{equation}
             The second cold reference resistor contributes to the total series resistance of the bias path, but it is not part of the measured reference voltage drop. The sample current is obtained directly from
@@ -237,12 +237,12 @@
 
             Because the thermal conductance between the sample holder and the mixing chamber increases with temperature, equally spaced power setpoints do not produce equally spaced temperatures. I therefore selected the heater setpoints from the empirical relation
             \begin{equation}
-                P_\mathrm{heater} \approx \qty{0.11}{\micro\watt\per\kelvin\tothe{5/2}} \cdot T_\mathrm{sample}^{2.5}\,.
+                P_\mathrm{heater} \approx \qty{0.11}{\micro\watt\per\kelvin\tothe{5/2}} \cdot T_\mathrm{bath}^{2.5}\,.
                 \label{eq:methods:setup:heater-power-scaling}
             \end{equation}
             This choice produced an approximately uniform temperature axis for repeated \textit{I--V} sweeps. Equation~\eqref{eq:methods:setup:heater-power-scaling} is a calibration of the applied setpoints for this assembly, not a microscopic model of its thermal conductance. It can change after remounting the sample holder or modifying the thermal links and must then be measured again.
 
-            The heater, thermometer, sample holder, and junction are not perfectly thermally equivalent. Finite thermal resistance along the pushing rod, stamp, and counter rods can produce temperature gradients. From the setup and control perspective, I denote the calibrated thermometer reading by $T_\mathrm{sample}$. In the later transport analysis, the same recorded quantity is denoted by $T_\mathrm{bath}$ to distinguish it from $T_\mathrm{fit}$. Thus, $T_\mathrm{sample}$ and $T_\mathrm{bath}$ refer to the same thermometer channel, while $T_\mathrm{fit}$ is inferred from the junction transport.
+            The heater, thermometer, sample holder, and junction are not perfectly thermally equivalent. Finite thermal resistance along the pushing rod, stamp, and counter rods can produce temperature gradients. Throughout this thesis, $T_\mathrm{bath}$ denotes the calibrated thermometer reading, while $T_\mathrm{fit}$ denotes the electronic temperature inferred from junction transport.
 
             The calibrated thermometer reading estimates the local bath temperature, while controlled heating and temperature dependent \textit{I--V} curves provide consistency checks on the electronic response. Together, the cold reference resistors, thermalized wiring, and microwave lines define the current readout, limit noise and heating, and provide reproducible irradiation without an absolute calibration.
 
@@ -252,7 +252,6 @@
     \label{subsec:setup:instrumentation-grounding}
     %=========================================================
         
-
         Figure~\ref{fig:setup:grounding} summarizes the room-temperature instruments and their grounding connections. This part of the setup had two tasks. It had to provide synchronized voltage readout and bias control, and it had to avoid additional ground paths that bypassed the filtered cryostat wiring. The cryostat was treated as the local ground reference because its large metallic body provides a stable electrical potential. The working rule was to connect each instrument to this reference only through its intended signal path or through a deliberately isolated control link. Uncontrolled parallel connections between building ground, computer interfaces, instrument shields, and the cryostat body were avoided.
 
         \begin{figure}[t!]
@@ -262,12 +261,12 @@
             }
             \vspace{-.5em}
             \caption{
-                Grounding and instrument schematic. Building ground and cryostat ground are separated except for a \qty{13}{\mega\ohm} connection~(G) through the temperature controller. The motor controller (B) and LAN switch (W) lack a protective-earth connection and therefore float. Floating operation of the magnet power supply (Y) minimized noise in the \textit{I--V} traces.
+                Grounding and instrument schematic. Building ground and cryostat ground are separated except for a \qty{13}{\mega\ohm} connection~(G) through the temperature controller. The motor controller (B) and LAN switch (W) were powered by two-wire power supplies without a protective-earth conductor. Operating the magnet power supply (Y) without protective earth minimized noise in the \textit{I--V} traces, but created a potential touch-voltage hazard and must not be reproduced.
                 }
             \label{fig:setup:grounding}
         \end{figure}
 
-        Instrument control was part of the grounding task because control cables can introduce additional shield and ground paths. The control computer was connected to the laboratory network, while GPIB and RS-232 instruments were interfaced through USB adapters\footnote{National Instruments, \texttt{GPIB-USB-HS}, used for GPIB access.}. USB connections can introduce additional shield and ground paths, so they were isolated either by USB-over-LAN links\footnote{Icron, \texttt{USB 2.0 Ranger 2304}.} or by galvanic USB isolators\footnote{CESYS, \texttt{C028149}.}. The cryostat control unit\footnote{Bluefors, \texttt{LD400}, serial number \texttt{BF2015-05}, connected by USB.} was included in this isolated control chain. LAN-connected instruments were used where available because they allowed remote control without direct USB connections to the measurement computer. The motor controller and LAN switch\footnote{D-Link, \texttt{DGS-108}.} were powered without a protective-earth connection and therefore floated relative to building ground, as indicated in Fig.~\ref{fig:setup:grounding}.
+        Instrument control was part of the grounding task because control cables can introduce additional shield and ground paths. The control computer was connected to the laboratory network, while GPIB and RS-232 instruments were interfaced through USB adapters\footnote{National Instruments, \texttt{GPIB-USB-HS}, used for GPIB access.}. USB connections can introduce additional shield and ground paths, so they were isolated either by USB-over-LAN links\footnote{Icron, \texttt{USB 2.0 Ranger 2304}.} or by galvanic USB isolators\footnote{CESYS, \texttt{C028149}.}. The cryostat control unit\footnote{Bluefors, \texttt{LD400}, serial number \texttt{BF2015-05}, connected by USB.} was included in this isolated control chain. LAN-connected instruments were used where available because they allowed remote control without direct USB connections to the measurement computer. The motor controller and LAN switch\footnote{D-Link, \texttt{DGS-108}.} were powered by two-wire power supplies without a protective-earth conductor, as indicated in Fig.~\ref{fig:setup:grounding}.
 
         The voltage signals were first amplified by voltage preamplifiers\footnote{Femto, \texttt{DLPVA}, preamplifier. Scientific workshop, \texttt{WW-98000627}, power supply. Femto, \texttt{Luci10}, USB control interface.}. These amplifiers provide selectable gains and a low-pass bandwidth of about \qty{100}{\kilo\hertz}. Their ground-referenced output voltages are digitized by the analog inputs of the measurement card\footnote{Jäger Computergesteuerte Messtechnik GmbH, \texttt{ADwin Gold II}, connected by LAN.}. Although the card can sample at rates up to \qty{100}{\kilo\hertz}, the quasi-dc sweeps used here did not require this bandwidth. The data stream was therefore reduced on the card to \qty{137}{\hertz}.
 
