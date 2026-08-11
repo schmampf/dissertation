@@ -11,41 +11,41 @@
 
 \begin{document}
 
-    \include{miscellaneous/titelpage.tex}
-    \include{miscellaneous/empty-page.tex}
+    % \include{miscellaneous/titelpage.tex}
+    % \include{miscellaneous/empty-page.tex}
 
-    % %=========================================================
-    % %%% Pre Body %%%
-    % %=========================================================
-    %     \clearpage \pagenumbering{Roman}
+    % =========================================================
+    %%% Pre Body %%%
+        \clearpage \pagenumbering{Roman}
+    % =========================================================
 
     %     \include{miscellaneous/abstract.tex}
     %     \include{miscellaneous/inspirational.tex}
-    %     \tableofcontents
+        \tableofcontents
 
-    % %=========================================================
-    % %%% Main body %%%
-    % %=========================================================
-    %     \clearpage \pagenumbering{arabic}
+    % =========================================================
+    %%% Main body %%%
+        \clearpage \pagenumbering{arabic}
+    % =========================================================
 
     %     \include{miscellaneous/introduction.tex}
 
-    %     %=========================================================
-    %     \include{theory/theory.tex} % thesis graded
-    %     %=========================================================
-    %         \include{theory/micro.tex} % thesis graded
-    %         \include{theory/macro.tex} % thesis graded
-    %         \include{theory/meso.tex} % thesis graded
-    %         \include{theory/stochastic.tex} % thesis graded
+        % =========================================================
+        \include{theory/theory.tex} % thesis graded
+        % =========================================================
+            \include{theory/micro.tex} % thesis graded
+            \include{theory/macro.tex} % thesis graded
+            \include{theory/meso.tex} % thesis graded
+            \include{theory/stochastic.tex} % thesis graded
 
-    %     %=========================================================
-    %     \include{methods/methods.tex}
-    %     %=========================================================
-    %         \include{methods/sample.tex}
-    %         \include{methods/setup.tex}
-    %         \include{methods/digital.tex}
-    %         % - Elkes Korrekturen einpflegen
-    %         % - Rref, Fomblin number
+        % =========================================================
+        \include{methods/methods.tex}
+        % =========================================================
+            \include{methods/sample.tex} % elkes Korrekturen sind drinnen
+            \include{methods/setup.tex} % elkes Korrekturen sind drinnen
+            \include{methods/digital.tex}
+            % - Elkes Korrekturen einpflegen
+            % - Rref, Fomblin number
 
         % % =========================================================
         % \include{miscellaneous/results.tex}
@@ -54,31 +54,28 @@
         %         \include{tunnelbarrier/highres.tex}
         %         \include{tunnelbarrier/asym.tex}
 
-            \include{atomic_contact/atomic-contact.tex} % patrick ready
-                \include{atomic_contact/pincode.tex} % patrick ready
-                \include{atomic_contact/photon-assisted.tex} % patrick ready 
-                % (vielleicht w_m nochmal angucken)
+        %     \include{atomic_contact/atomic-contact.tex} % patrick ready
+        %         \include{atomic_contact/pincode.tex} % patrick ready
+        %         \include{atomic_contact/photon-assisted.tex} % patrick ready 
+        %         % (vielleicht w_m nochmal angucken)
                 
-                \include{atomic_contact/subharmonic.tex}
+        %         \include{atomic_contact/subharmonic.tex} % patrick ready
 
     %     \include{miscellaneous/conclusion.tex} 
 
-    % %=========================================================
-    % %%% Post Body %%%
-    % %=========================================================
-    %     \clearpage \pagenumbering{roman}
+    % =========================================================
+    %%% Post Body %%%
+    % =========================================================
+        \input{miscellaneous/references.tex}
 
-    %     \input{miscellaneous/references.tex}
+        \include{miscellaneous/software.tex} % thesis graded
+        \include{theory/diffusive.tex} % thesis graded
+        \include{methods/fabrication.tex} % thesis graded
+        \include{methods/cryo.tex} % thesis graded
 
-    %     %=========================================================
-    %     \input{appendices/appendix.tex}
-    %     %=========================================================
-    %         \include{theory/appendix.tex}
-    %         \include{appendices/software.tex}
-    %         \include{appendices/sample-fabrication.tex}
-    %         \include{tunnelbarrier/appendix.tex}
-    %         \include{atomic_contact/appendix.tex}
-    %         \include{ssn-set/ssn-set.tex}
+        % \include{tunnelbarrier/appendix.tex}
+        % \include{atomic_contact/appendix.tex} % patrick ready
+%         \include{ssn-set/ssn-set.tex}
 
     %     \include{miscellaneous/acknowledgement.tex}
     %     \include{miscellaneous/eidestattliche-versicherung.tex}
@@ -100,3 +97,15 @@
 % 34 70 106
 % 01 31 61  91 121
 % 29 59 89 119 149
+
+
+    % \BibScaron
+
+    % \the\textwidth
+    % \printinunitsof{in}\prntlen{\textwidth}
+    % \printinunitsof{in}\prntlen{\linewidth}
+    % \printinunitsof{mm}\prntlen{\textwidth}
+    % \printinunitsof{mm}\prntlen{\linewidth}
+    
+    % \printinunitsof{in}\prntlen{\textheight}
+    % \printinunitsof{mm}\prntlen{\textheight}
