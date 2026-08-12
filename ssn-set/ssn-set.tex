@@ -1,63 +1,159 @@
 % !TEX root = ../thesis.tex
 
 %=========================================================
-\chapter{SSN SET} 
+\chapter{SSN Single-Electron Transistor} 
 \label{appendix:ssn-set}
 %=========================================================
 
     %=========================================================
-    \subsubsection*{TB Characterization}
+    \section{Static Coulomb Blockade}
     %=========================================================
 
-
-        \singlefitfigure{ssn-set/tb-single}{
+        \singlefitfigure{ssn-set/ssn1-sin}{
             bla
-        }{fig:ssn-set:tb}
+        }{fig:ssn1-set:sin}
+        in the unbroken state we can characterize the SIN BCS Dynes TB.
 
-    %=========================================================
-    \subsubsection*{Low-Conducting BJ}
-    %=========================================================
+        \begin{align}
+            G_\mathrm{N} = 0.79714(7)\,G_0 &&
+            R_\mathrm{N} = \qty{16.191(1)}{\kilo\ohm}          
+        \end{align}
+
+        \begin{align}
+            \Delta_0 = \qty{196.106(9)}{\micro\electronvolt} &&
+            T = \qty{68.1(5)}{\milli\kelvin} &&
+            \gamma = \qty{0.86(3)}{\micro\electronvolt}
+        \end{align}
+
+        No signs of DCB in anyway in unbroken state.
 
         \begin{figure}[t]
             \centering
-            \subfigure[bla]{\thesisplot{ssn-set/ssn-single}{iv}}
-            \subfigure[bla]{\thesisplot{ssn-set/ssn-single}{didv}}
-            \subfigure[bla]{\thesisplot{ssn-set/ssn-single}{dvdi}}
-        \end{figure}
-
-        \begin{figure}[t]
-            \centering
-            \subfigure[bla]{\thesisplot{ssn-set/sc-map/cal_iv}{main}}%
-            \subfigure[bla]{\thesisplot{ssn-set/sc-map/cal_didv}{main}}%
-            \subfigure[bla]{\thesisplot{ssn-set/sc-map/cal_dvdi}{main}}%
-        \end{figure}
-
-        \begin{wrapfigure}[11]{r}{1.6in}
-            \captionsetup{format=plain}%
-            \centering
-            \vspace{-1.5em}
-            % \thesisplot{ssn-set/}{dGdiff}
-            \includegraphics{ssn-set/dGdiff.pdf}
-            \vspace{-.5em}
+            \landscapepanels{ssn-set/ssn1-set}{exp}
             \caption{
-                    Linear fit to the low-voltage superconducting branch.
+                bla
+            }
+            \label{fig:ssn1-set:ssn1-nset}
+        \end{figure}
+        In broken but normal state we see CB with asymmetrical Coulomb diamonds.
+
+        In the broken state the IV in the Superconducting state reveals a hysteresis in up and down sweep
+
+        \begin{figure}[t]
+            \centering
+            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sisin}{iv}}
+            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sisin}{didv}}
+            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sisin}{dvdi}}
+            \caption{
+                bla
+            }
+            \label{fig:ssn1-set:ssn-iv}
+        \end{figure}
+
+        This hysteresis as the other features are gate dependent. We normalize with
+        \begin{align}
+            C_\mathrm{gate} = \qty{36.41}{\atto\farad}
+        \end{align}
+        \begin{figure}[p]
+            \centering
+            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-iv/cal_iv}{main}}%
+            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-iv/cal_didv}{main}}%
+            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-iv/cal_dvdi}{main}}%
+            \caption{
+                bla
                 }
-        \end{wrapfigure}
+            \label{fig:ssn1-set:ssn-iv-gate}
 
-    %=========================================================
-    \subsubsection*{High-Conducting BJ}
-    %=========================================================
+            \vspace{1em}
 
-        \begin{figure}[t]
-            \centering
-            \subfigure[bla]{\thesisplot{ssn-set/dcb-single}{iv}}%
-            \subfigure[bla]{\thesisplot{ssn-set/dcb-single}{didv}}%
-            \subfigure[bla]{\thesisplot{ssn-set/dcb-single}{dvdi}}%
+            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-didv/cal_iv}{main}}%
+            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-didv/cal_didv}{main}}%
+            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-didv/cal_dvdi}{main}}%
+            \caption{
+                bla
+                }
+            \label{fig:ssn1-set:ssn-didv-gate}
         \end{figure}
 
-        \begin{figure}[t]
-            \centering
-            \subfigure[bla]{\thesisplot{ssn-set/dcb-ssn-single}{iv}}%
-            \subfigure[bla]{\thesisplot{ssn-set/dcb-ssn-single}{didv}}%
-            \subfigure[bla]{\thesisplot{ssn-set/dcb-ssn-single}{dvdi}}%
-        \end{figure}
+        % \begin{wrapfigure}[11]{r}{1.6in}
+        %     \captionsetup{format=plain}%
+        %     \centering
+        %     \vspace{-1.5em}
+        %     % \thesisplot{ssn-set/}{dGdiff}
+        %     \includegraphics{ssn-set/dGdiff.pdf}
+        %     \vspace{-.5em}
+        %     \caption{
+        %             Linear fit to the low-voltage superconducting branch.
+        %         }
+        % \end{wrapfigure}
+
+    \clearpage
+    \newpage
+
+    %=========================================================
+    \section{Dynamical Coulomb Blockade}
+    %=========================================================
+
+        No gate modulation is observed for all three cases.
+
+        \singlefitfigure{ssn-set/ssn2-sin}{
+            bla
+        }{fig:ssn2-set:sin}
+
+        The unbroken device i basically a SIN tunnel barrier Al-AlOx-Cu contact.
+        The Spectrum can be fitted with simple SIN BCS Dynes model and reveals.
+
+        \begin{align}
+            G_\mathrm{N} = 0.39859(3)\,G_0 &&
+            R_\mathrm{N} = \qty{32.379(2)}{\kilo\ohm}          
+        \end{align}
+
+        \begin{align}
+            \Delta_0 = \qty{195.99(2)}{\micro\electronvolt} &&
+            T = \qty{59.5(8)}{\milli\kelvin} &&
+            \gamma = \qty{1.48(4)}{\micro\electronvolt}
+        \end{align}
+        No non-linearities found in normal state.
+
+        If we start pulling the MCBJ apart, I measured i high conductive state of the MCBJ.
+
+        \singlefitfigure{ssn-set/ssn2-dcb}{
+            bla
+        }{fig:ssn2-set:dcb}
+        In the normal conducting State, we observe proper DCB
+        If we again asume an effective RC environment, we can make a proper fit of the conductance and the three effective values RC and T
+        \begin{align}
+            G_\mathrm{N} = 0.37488(3)\,G_0 &&
+            R_\mathrm{N} = \qty{34.43(3)}{\kilo\ohm}          
+        \end{align}
+
+        \begin{align}
+            R_\mathrm{eff} = \qty{0.446(3)}{\kilo\ohm} &&
+            C_\mathrm{eff} = \qty{4.36(5)}{\femto\farad} &&
+            T_\mathrm{eff} = \qty{77(6)}{\milli\kelvin}
+        \end{align}
+
+        \singlefitfigure{ssn-set/ssn2-sin-dcb}{
+            bla
+        }{fig:ssn2-set:sin-dcb}
+        However, the superconducting state reveals a more odd IV.
+        Below 0.55 mV it seems as we had a normal SIN BCS Dynes Tunnel Barrier.
+
+        \begin{align}
+            G_\mathrm{N} = 0.33657(2)\,G_0 &&
+            R_\mathrm{N} = \qty{38.34(2)}{\kilo\ohm}          
+        \end{align}
+
+        \begin{align}
+            \Delta_0 = \qty{195.94(6)}{\micro\electronvolt} &&
+            T = \qty{121(2)}{\milli\kelvin} &&
+            \gamma = \qty{0.88(9)}{\micro\electronvolt}
+        \end{align} 
+        
+        However above that threshold we reach a higher conductance. If we use the data abs(V) > 0.6 and the same superconducting parameter as we extracted before, we end up with a different conductance.
+        For those parameter we fitted the dIdV.
+        \begin{align}
+            G_\mathrm{N} = 0.40172(3)\,G_0 &&
+            R_\mathrm{N} = \qty{32.13(2)}{\kilo\ohm}          
+        \end{align}
+        It seems like we have the same conductance as in the non-modified BJ case.
