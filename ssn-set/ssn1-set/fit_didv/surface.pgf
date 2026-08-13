@@ -410,8 +410,8 @@
 \pgftext[x=1.266383in,y=0.589189in,,,rotate=88.223288]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\mathrm{d}I/\mathrm{d}V\,/\,G_0$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.102963in}{0.297407in}%
-\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.972593in,height=0.508148in]{\detokenize{ssn-set/ssn1-set/fit_didv/surface-img0.png}}}%
+\pgfsys@transformshift{0.102963in}{0.282593in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.972593in,height=0.525926in]{\detokenize{ssn-set/ssn1-set/fit_didv/surface-img0.png}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%

@@ -387,7 +387,7 @@
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsys@transformshift{0.108148in}{0.303333in}%
-\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.962222in,height=0.590370in]{\detokenize{ssn-set/ssn1-set/fit_dvdi/surface-img0.png}}}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.962222in,height=0.591111in]{\detokenize{ssn-set/ssn1-set/fit_dvdi/surface-img0.png}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%

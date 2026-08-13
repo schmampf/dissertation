@@ -293,7 +293,7 @@
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsys@transformshift{0.111852in}{0.169259in}%
-\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.954074in,height=0.364444in]{\detokenize{ssn-set/ssn1-set/fit_didv/heatmap-img0.png}}}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.954815in,height=0.364444in]{\detokenize{ssn-set/ssn1-set/fit_didv/heatmap-img0.png}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%

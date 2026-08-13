@@ -451,8 +451,8 @@
 \pgftext[x=1.266383in,y=0.589189in,,,rotate=88.223288]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$I\ (\mathrm{nA})$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.111852in}{0.172963in}%
-\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.968148in,height=0.785185in]{\detokenize{ssn-set/ssn1-set/exp_iv/surface-img0.png}}}%
+\pgfsys@transformshift{0.111852in}{0.170000in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.968889in,height=0.784444in]{\detokenize{ssn-set/ssn1-set/exp_iv/surface-img0.png}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%

@@ -386,8 +386,8 @@
 \pgftext[x=1.266383in,y=0.589189in,,,rotate=88.223288]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\mathrm{d}V/\mathrm{d}I\,\cdot\,G_0$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
-\pgfsys@transformshift{0.108148in}{0.302593in}%
-\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.962222in,height=0.590370in]{\detokenize{ssn-set/ssn1-set/exp_dvdi/surface-img0.png}}}%
+\pgfsys@transformshift{0.108148in}{0.298889in}%
+\pgftext[left,bottom]{\includegraphics[interpolate=true,width=0.962222in,height=0.595556in]{\detokenize{ssn-set/ssn1-set/exp_dvdi/surface-img0.png}}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
