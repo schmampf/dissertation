@@ -392,8 +392,18 @@
             Charge quantization requires weak thermal activation and weak quantum charge fluctuations. Thus $E_\mathrm{C}\gg k_\mathrm{B}T$, and in the tunnel limit each normal-state junction resistance must be large compared with $R_\mathrm{K}=h/e^2$. The island can then be described by an integer excess electron number $n$. A gate voltage induces the offset charge $n_\mathrm{G}=C_\mathrm{G}V_\mathrm{G}/e$ and changes the electrostatic energy according to
             \begin{equation}
                 E_n(V_\mathrm{G}) = E_\mathrm{C}\left(n-n_\mathrm{G}\right)^2\,.
+                \label{eq:stochastic:set-electrostatic-energy}
             \end{equation}
             The expression omits a charge independent constant and assumes that other induced charges are absorbed into $n_\mathrm{G}$ \cite{ingold_charge_1992,grabert_single_2013}.
+
+            For a normal tunnel junction with resistance $R_i$, the sequential tunneling rate for a transition whose final free energy exceeds the initial free energy by $\Delta E$ is
+            \begin{equation}
+                \Gamma_i(\Delta E)
+                =
+                \frac{\Delta E}{e^2R_i\left[\exp\left(\Delta E/k_\mathrm{B}T\right)-1\right]}\,.
+                \label{eq:stochastic:set-normal-rate}
+            \end{equation}
+            Negative $\Delta E$ describes an energetically favorable transition, while positive $\Delta E$ is thermally activated. Separate rates are evaluated for both directions across each junction.
 
             Neighboring charge states become degenerate at half-integer gate charge. Between these points, one state has the lowest electrostatic energy and charge transfer costs energy. This gate controlled cost is the origin of static Coulomb blockade \cite{ingold_charge_1992,grabert_single_2013}.
 
@@ -414,18 +424,20 @@
 
             Describing the JQP cycle with a population master equation replaces the coherent Josephson dynamics by an effective transition rate. This approximation is valid when coherence between the coupled charge states decays much faster than the Josephson evolution, $\Gamma_\mathrm{deph}\gg E_\mathrm{J}/\hbar$. Otherwise, the off-diagonal density matrix elements must be retained in a generalized master equation.
 
-            Orthodox theory describes the island by classical charge state probabilities and independent junction transitions. This population only description assumes well-defined charge states, Markovian events, and negligible off-diagonal coherences. The available transition energy is the initial free energy minus the final free energy, including work by the bias source. At zero temperature, a positive value permits the transition, while a negative value requires thermal activation or environmental energy supplied through $P(E)$. Each junction and direction contributes a rate set by this energy and the microscopic junction properties. In an SSET, these rates include the superconducting DOS and incoherent Cooper pair transfer \cite{ingold_charge_1992,grabert_single_2013}.
+            Orthodox theory describes the island by classical charge state probabilities and independent junction transitions. This population only description assumes well-defined charge states, Markovian events, and negligible off-diagonal coherences. Each junction and direction contributes a rate set by the corresponding free energy difference and microscopic junction properties. In an SSET, these rates include the superconducting DOS and incoherent Cooper pair transfer \cite{ingold_charge_1992,grabert_single_2013}.
 
             Let $\Gamma_{n\rightarrow m}$ denote the total rate for all junction processes that change the island from charge state $n$ to charge state $m$. In the stationary state, probability flow into every charge state balances probability flow out of it,
             \begin{align}
                 \sum_m \left(\Gamma_{m\to n}p_m-\Gamma_{n\to m}p_n\right) = 0\,, &&
                  \sum_n p_n=1\,.
+                \label{eq:stochastic:set-master-equation}
             \end{align}
             This is the orthodox stationary population master equation \cite{ingold_charge_1992,grabert_single_2013}.
 
             Solving this linear system gives the occupation probability $p_n$ of each charge state. The current at junction $i$ follows by summing all signed charge transfer events through that junction,
             \begin{equation}
                 I_i = \sum_n p_n\sum_{m\neq n}q_{i,n\to m}\,\Gamma_{i,n\to m}\,.
+                \label{eq:stochastic:set-current}
             \end{equation}
             Here $q_{i,n\to m}$ is the signed charge transferred through junction $i$, while $\Gamma_{i,n\to m}$ is its rate. Charge conservation gives the same stationary current through both junctions. The master equation is a population balance method that can use orthodox single-electron rates or additional superconducting rates \cite{ingold_charge_1992,grabert_single_2013}.
 
