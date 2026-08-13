@@ -1,0 +1,178 @@
+% !TEX root = ../thesis.tex
+
+
+    %=========================================================
+    \section{Static Coulomb Blockade}
+    \label{sec:ssn-set:static}
+    %=========================================================
+
+        \singlefitfigure{ssn-set/ssn1-sin}{
+            Static transport of SET1 before opening the break junction. The panels show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses together with the SIN BCS Dynes fit. The fit describes the quasiparticle onset and the conductance above the gap.
+        }{fig:ssn1-set:sin}
+
+        I first characterized SET1 with the mechanically controlled break junction in its unbroken state. The closed metallic constriction had a much lower resistance than the oxide tunnel barrier, so the measured voltage dropped predominantly across the Al--Al\textsubscript{2}O\textsubscript{3}--Cu junction. The device therefore provided an SIN tunnel junction reference before the superconducting island was formed.
+
+        In the superconducting state, the current was suppressed below the quasiparticle threshold and increased sharply near $eV=\Delta_0$, as expected for an SIN junction. I fitted the complete \textit{I--V} characteristic with the BCS density of states including Dynes broadening. The fit yielded the normal-state resistance and conductance
+        \begin{align}
+            R_\mathrm{N} = \qty{32.381(3)}{\kilo\ohm}\,, &&
+            G_\mathrm{N} = 0.39857(4)\,G_0\,.
+            \label{eq:ssn-set:static:sin-normal}
+        \end{align}
+
+        The same fit gave the superconducting gap, fitted electronic temperature, and Dynes broadening
+        \begin{align}
+            \Delta_0 = \qty{196.106(9)}{\micro\electronvolt}\,, &&
+            T = \qty{68.1(5)}{\milli\kelvin}\,, &&
+            \gamma = \qty{0.86(3)}{\micro\electronvolt}\,.
+            \label{eq:ssn-set:static:sin-superconducting}
+        \end{align}
+
+        The fit reproduced both the quasiparticle onset and the conductance peak in Fig.~\ref{fig:ssn1-set:sin}. The extracted gap provides the superconducting energy scale used below, while $R_\mathrm{N}$ characterizes the fixed oxide barrier before the device was converted into an SET.
+
+        In addition, I measured the device after suppressing superconductivity. The normal conducting \textit{I--V} characteristic showed no resolvable zero bias anomaly. I therefore found no evidence for appreciable dynamical Coulomb blockade in the unbroken device.
+
+        %=========================================================
+        \subsection*{Normal Conducting SET}
+        %=========================================================
+
+            Opening the break junction separated the constriction and the fixed oxide tunnel barrier by a small island. I suppressed superconductivity to first characterize this three-terminal device in the normal conducting state. At $V_\mathrm{gate}=\qty{0}{\milli\volt}$, the \textit{I--V} curve in Fig.~\ref{fig:ssn1-set:ssn1-nset-iv0} showed a reduced low bias conductance compared with the approximately linear response at larger bias.
+
+            \singlefitfigure{ssn-set/ssn1-nset-iv0}{
+                Normal-state transport of SET1 after opening the break junction at $V_\mathrm{gate}=\qty{0}{\milli\volt}$. The measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses are compared with the orthodox SET fit to the stable upper part of the gate sweep. The suppressed low bias conductance is the local signature of Coulomb blockade.
+            }{fig:ssn1-set:ssn1-nset-iv0}
+
+            Sweeping the gate voltage revealed that this suppression was periodic and bounded by diagonal conductance onsets, as shown in Fig.~\ref{fig:ssn1-set:ssn1-nset:exp}. The resulting Coulomb diamonds had unequal positive and negative slopes. Below $V_\mathrm{gate}\approx\qty{-1.7}{\milli\volt}$, the measured pattern changed abruptly. I attribute this discontinuity to an atomic rearrangement of the mechanically formed break junction during the sweep, which produced a second contact configuration. The normal-state data therefore established gate controlled Coulomb blockade and an asymmetric SET geometry before superconducting transport was considered, but the complete map did not correspond to one perfectly unchanged break junction.
+
+            \begin{figure}[p]
+                \centering
+                \landscapepanels{ssn-set/ssn1-set}{exp}
+                \caption{
+                    Measured normal-state gate--bias transport of SET1 after opening the break junction. The panels show the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses as selected traces, surfaces, and false-color maps. The periodic low conductance regions form Coulomb diamonds with unequal positive and negative slopes. The abrupt change below $V_\mathrm{gate}\approx\qty{-1.7}{\milli\volt}$ results from an atomic rearrangement of the break junction during the sweep.
+                }
+                \label{fig:ssn1-set:ssn1-nset:exp}
+
+                \vspace{1em}
+
+                \landscapepanels{ssn-set/ssn1-set}{fit}
+                \caption{
+                    Orthodox SET fit to the stable upper part of the normal-state transport landscape in Fig.~\ref{fig:ssn1-set:ssn1-nset:exp}. The panels show the calculated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses in the same representation as the measurement. The lower part of the displayed range was excluded from the optimization because the break junction rearranged near $V_\mathrm{gate}\approx\qty{-1.7}{\milli\volt}$.
+                }
+                \label{fig:ssn1-set:ssn1-nset:fit}
+            \end{figure}
+
+            I fitted the part of the measured \textit{I--V} gate map above the break-junction rearrangement with the orthodox sequential tunneling model introduced in the theory chapter. The island energy and normal-state tunneling rates follow Eqs.~\eqref{eq:stochastic:set-electrostatic-energy} and \eqref{eq:stochastic:set-normal-rate}. At each bias and gate voltage, I solved the stationary master equation in Eq.~\eqref{eq:stochastic:set-master-equation} and evaluated the current from Eq.~\eqref{eq:stochastic:set-current}. The experimental gate polarity was reversed relative to the model convention. I optimized the circuit parameters with the nonlinear least squares implementation in SciPy using a soft L1 loss to reduce the influence of isolated outliers. Data below $V_\mathrm{gate}\approx\qty{-1.7}{\milli\volt}$ were not included in the optimization.
+
+            During the optimization, I held the oxide tunnel barrier resistance fixed (Eq.~\ref{eq:ssn-set:static:sin-normal}) and fitted the break-junction resistance. The corresponding individual and series conductances are
+            \begin{align}
+                R_\mathrm{TB} &= \qty{32.38}{\kilo\ohm}\,, &&
+                R_\mathrm{BJ} &= \qty{24.15(4)}{\kilo\ohm}\,, &&
+                R_\Sigma &= \qty{56.53(4)}{\kilo\ohm} \,, \\
+                G_\mathrm{TB} &= 0.3985\,G_0\,\,, &&
+                G_\mathrm{BJ} &= 0.5344(9)\,G_0\,, &&
+                G_\Sigma &= 0.2283(2)\,G_0 \,. 
+            \end{align}
+
+            The resistance of the opened break junction was comparable to that of the oxide tunnel barrier. Both junctions therefore contributed appreciably to the measured voltage drop.
+
+            The fit further yielded the junction and gate capacitances
+            \begin{align}
+                C_\mathrm{TB} = \qty{957(3)}{\atto\farad}\,, &&
+                C_\mathrm{BJ} = \qty{214(3)}{\atto\farad}\,, &&
+                C_\mathrm{gate} = \qty{37.3(2)}{\atto\farad}\,,
+            \end{align}
+            and therefore the total island capacitance and charging energy
+            \begin{align}
+                C_\Sigma = \qty{1.208(4)}{\femto\farad}\,, &&
+                E_\mathrm{C} = \qty{66.3(2)}{\micro\electronvolt}\,.
+            \end{align}
+            
+            The substantially different junction capacitances quantify the unequal Coulomb diamond slopes. The oxide tunnel barrier supplied most of the total island capacitance, while the gate capacitance set the conversion from applied gate voltage to induced charge,
+            \begin{align}
+                n_\mathrm{gate} = n_{g,0}-C_\mathrm{gate}V_\mathrm{gate}/e\,, && 
+                n_{g,0} = 0.2130(26)\,.
+            \end{align}
+
+            The fitted temperature was moderately higher than the measured bath temperature,
+            \begin{align}
+                T_\mathrm{fit} = \qty{132.6(16)}{\milli\kelvin}\,, &&
+                T_\mathrm{bath} = \qty{96.6(1)}{\milli\kelvin}\,.
+            \end{align}
+
+            This difference indicates that the rounding of the transport thresholds corresponded to an effective electronic temperature above the cryostat reading. The extracted charging scale satisfied $E_\mathrm{C}>k_\mathrm{B}T_\mathrm{fit}$, consistent with the resolved Coulomb blockade. Overall, the calculated maps in Fig.~\ref{fig:ssn1-set:ssn1-nset:fit} reproduced the dominant gate period, asymmetric blockade boundaries, and normal-state current scale of the stable break-junction configuration.
+
+            \begin{figure}[t]
+                \centering
+                \thesisplot{ssn-set/ssn1-nset}{dGdiff}
+                \caption{
+                    Comparison of the measured and fitted normal-state differential conductance. the gate axis is expressed as $n_\mathrm{gate}=n_{g,0}-C_\mathrm{gate}V_\mathrm{gate}/e$, and the bias axis is normalized as $eV_\mathrm{bias}/E_\mathrm{C}$ with $E_\mathrm{C}=e^2/(2C_\Sigma)$. The left and center panels show the experimental map and the orthodox SET result, while the right panel shows their difference. Only the stable upper part above the break-junction rearrangement was included in the fit. The lower part is shown as a visual reference for the rearrangement and for comparison with the residual structures in the fitted region.
+                }
+                \label{fig:ssn1-nset:dGdiff}
+            \end{figure}
+
+            Within the fitted region, the residual in Fig.~\ref{fig:ssn1-nset:dGdiff} is structured rather than uniformly distributed. Its diagonal features follow approximately the same directions as the measured conductance onsets. The data below $V_\mathrm{gate}\approx\qty{-1.7}{\milli\volt}$ are shown only as a visual reference and are not interpreted as fit residuals. I report the structures in the fitted region without assigning a microscopic origin here.
+
+            \clearpage
+        %=========================================================
+        \subsection*{SSN SET}
+        %=========================================================
+
+            In the broken state the IV in the Superconducting state reveals a hysteresis in up and down sweep
+
+            \begin{figure}[t]
+                \centering
+                \subfigure[bla]{\thesisplot{ssn-set/ssn1-sisin}{iv}}
+                \subfigure[bla]{\thesisplot{ssn-set/ssn1-sisin}{didv}}
+                \subfigure[bla]{\thesisplot{ssn-set/ssn1-sisin}{dvdi}}
+                \caption{
+                    bla
+                }
+                \label{fig:ssn1-set:ssn-iv}
+            \end{figure}
+
+            This hysteresis as the other features are gate dependent. We normalize with
+            \begin{align}
+                C_\mathrm{gate} = \qty{36.41}{\atto\farad}
+            \end{align}
+            \begin{figure}[p]
+                \centering
+                \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-iv/cal_iv}{main}}%
+                \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-iv/cal_didv}{main}}%
+                \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-iv/cal_dvdi}{main}}%
+                \caption{
+                    bla
+                    }
+                \label{fig:ssn1-set:ssn-iv-gate}
+
+                \vspace{1em}
+
+                \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-didv/cal_iv}{main}}%
+                \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-didv/cal_didv}{main}}%
+                \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-didv/cal_dvdi}{main}}%
+                \caption{
+                    bla
+                    }
+                \label{fig:ssn1-set:ssn-didv-gate}
+            \end{figure}
+
+
+            \begin{figure}[t]
+                \centering
+                \thesisplot{ssn-set/ssn1-sset-Ic}{dGdiff}
+                \caption{
+                    bla
+                }
+                \label{fig:ssn1-set:dGdiff}
+            \end{figure}
+            
+            \begin{wrapfigure}[11]{r}{1.6in}
+                \captionsetup{format=plain}%
+                \centering
+                \vspace{-1.5em}
+                % \thesisplot{ssn-set/}{dGdiff}
+                \thesisplot{ssn-set/ssn1-sset-Ic}{Ic}
+                \vspace{-.5em}
+                \caption{
+                        Linear fit to the low-voltage superconducting branch.
+                    }
+                \label{fig:ssn1-set:Ic}
+            \end{wrapfigure}
