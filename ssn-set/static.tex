@@ -29,19 +29,19 @@
 
         The fit reproduced both the quasiparticle onset and the conductance peak in Fig.~\ref{fig:ssn1-set:sin}. The extracted gap provides the superconducting energy scale used below, while $R_\mathrm{TB}$ characterizes the fixed oxide barrier before the device was converted into an SET.
 
-        In addition, I measured the device after suppressing superconductivity. The normal conducting \textit{I--V} characteristic showed no resolvable zero bias anomaly. I therefore found no evidence for appreciable dynamical Coulomb blockade in the unbroken device.
+        In addition, I measured the device after suppressing superconductivity. The normal-state \textit{I--V} characteristic showed no resolvable zero bias anomaly. I therefore found no evidence for appreciable dynamical Coulomb blockade in the unbroken device.
 
         %=========================================================
-        \subsection*{Normal Conducting Single-Electron Transistor}
+        \subsection*{Normal-State Single-Electron Transistor}
         %=========================================================
 
-            Opening the break junction separated the constriction and the fixed oxide tunnel barrier by a small island. I suppressed superconductivity to first characterize this three-terminal device in the normal conducting state. A representative \textit{I--V} curve is shown in Fig.~\ref{fig:ssn1-set:ssn1-nset-iv0}. It shows a reduced low bias conductance compared with the approximately linear response at larger bias.
+            Opening the break junction separated the constriction and the fixed oxide tunnel barrier by a small island. I suppressed superconductivity to first characterize this three-terminal device in the normal state. A representative \textit{I--V} curve is shown in Fig.~\ref{fig:ssn1-set:ssn1-nset-iv0}. It shows a reduced low bias conductance compared with the approximately linear response at larger bias.
 
             \singlefitfigure{ssn-set/ssn1-nset-iv0}{
                 Normal-state transport of SET1 after opening the break junction at $V_\mathrm{gate}=\qty{0}{\milli\volt}$. The measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses are compared with the orthodox SET fit. The suppressed low bias conductance is the local signature of Coulomb blockade.
             }{fig:ssn1-set:ssn1-nset-iv0}
 
-            Sweeping the gate voltage revealed that this suppression was periodic and bounded by diagonal conductance onsets, as shown in Fig.~\ref{fig:ssn1-set:ssn1-nset:exp}. The two families of Coulomb diamond edges had different absolute slopes in the gate--bias plane, as expected for unequal junction capacitances. Above $V_\mathrm{gate}\approx\qty{1.7}{\milli\volt}$, the measured pattern changed abruptly. This discontinuity was consistent with an atomic rearrangement of the mechanically formed break junction during the sweep, although the conductance did not provide an independent signature of such a change. The normal-state data therefore established gate controlled Coulomb blockade and an asymmetric SET geometry before superconducting transport was considered, but the complete map did not correspond to one perfectly unchanged configuration.
+            Sweeping the gate voltage revealed that this suppression was periodic and bounded by diagonal conductance onsets, as shown in Fig.~\ref{fig:ssn1-set:ssn1-nset:exp}. The two families of Coulomb diamond edges had different absolute slopes in the gate--bias plane, as expected for unequal junction capacitances. Above $V_\mathrm{gate}\approx\qty{1.7}{\milli\volt}$, the measured pattern changed abruptly. This discontinuity was consistent with an atomic rearrangement of the mechanically formed break junction during the sweep, although the conductance did not provide an independent signature of such a change. The normal-state data therefore established gate controlled Coulomb blockade and an asymmetric SET geometry before superconducting transport was considered, but the complete map did not represent a single unchanged configuration.
 
             \begin{figure}[p]
                 \centering
@@ -60,7 +60,7 @@
                 \label{fig:ssn1-set:ssn1-nset:fit}
             \end{figure}
 
-            I fitted the measured \textit{I--V} gate map below the discontinuity with the orthodox sequential tunneling model introduced in the theory chapter. All bias and gate points at $V_\mathrm{gate}<\qty{1.7}{\milli\volt}$ were fitted simultaneously with one common set of circuit parameters rather than by fitting individual gate traces separately. The island energy and normal-state tunneling rates follow Eqs.~\eqref{eq:stochastic:set-electrostatic-energy} and \eqref{eq:stochastic:set-normal-rate}. At each bias and gate voltage, I solved the stationary master equation in Eq.~\eqref{eq:stochastic:set-master-equation} and evaluated the current from Eq.~\eqref{eq:stochastic:set-current}. I optimized the circuit parameters with the nonlinear least squares implementation in SciPy using a soft L1 loss to reduce the influence of isolated outliers.
+            I fitted the measured \textit{I--V} gate map below the discontinuity with the orthodox sequential tunneling model introduced in the theory chapter. All bias and gate points at $V_\mathrm{gate}<\qty{1.7}{\milli\volt}$ were fitted simultaneously with a common set of circuit parameters rather than by fitting individual gate traces separately. The island energy and normal-state tunneling rates follow Eqs.~\eqref{eq:stochastic:set-electrostatic-energy} and \eqref{eq:stochastic:set-normal-rate}. At each bias and gate voltage, I solved the stationary master equation in Eq.~\eqref{eq:stochastic:set-master-equation} and evaluated the current from Eq.~\eqref{eq:stochastic:set-current}. I optimized the circuit parameters with the nonlinear least squares implementation in SciPy using a soft L1 loss to reduce the influence of isolated outliers.
 
             \begin{figure}[t]
                 \centering
@@ -73,7 +73,7 @@
 
             The intact SIN measurement already determined the resistance of the oxide tunnel barrier. I therefore held this resistance fixed and fitted the complete normal-state transport map simultaneously to extract the remaining junction resistances and capacitances, the gate coupling, the offset charge, and the effective electronic temperature. 
             
-            The individual junction and the resulting total normal-state resistance and conductance are
+            The individual junction resistances and conductances, together with the resulting totals, are
             \begin{equation}
                 \begin{alignedat}{3}
                     R_\mathrm{TB} &= \qty{32.38}{\kilo\ohm}\,, &\qquad
@@ -118,11 +118,11 @@
                 \label{eq:ssn-set:static:nset-gate-charge}
             \end{align}
 
-            Overall, the calculated maps in Fig.~\ref{fig:ssn1-set:ssn1-nset:fit} reproduced the dominant gate period, asymmetric blockade boundaries, and normal-state current scale of the stable break-junction configuration.
+            Overall, the calculated maps in Fig.~\ref{fig:ssn1-set:ssn1-nset:fit} reproduced the dominant gate period, asymmetric blockade boundaries, and normal-state current scale of the stable break junction configuration.
 
             Within the fitted region, the residual in Fig.~\ref{fig:ssn1-nset:dGdiff} is structured rather than uniformly distributed. Its diagonal features follow approximately the same directions as the measured conductance onsets. The data above the fit boundary are shown only as a visual reference and are not interpreted as fit residuals. I report the structures in the fitted region without assigning a microscopic origin here.
 
-            I used the orthodox model as a minimal electrostatic description. Its tunnel limit validity was marginal because $R_\mathrm{BJ}=\qty{24.15(4)}{\kilo\ohm}$ was slightly below the resistance quantum $R_\mathrm{K}=h/e^2$. The normal-state resistance alone did not determine the individual channel transmissions of the break junction, and the present data did not provide its mesoscopic pincode. Higher-order and transmission dependent processes could therefore have contributed to the structured residuals. I consequently used the fit to quantify the dominant charging scale, gate coupling, and junction asymmetry, but I did not interpret the remaining structures microscopically.
+            I used the orthodox model as a minimal electrostatic description. Its validity in the tunnel limit was marginal because $R_\mathrm{BJ}=\qty{24.15(4)}{\kilo\ohm}$ was slightly below the resistance quantum $R_\mathrm{K}=h/e^2$. The normal-state resistance alone did not determine the individual channel transmissions of the break junction, and the present data did not provide its mesoscopic pincode. Higher-order and transmission dependent processes could therefore have contributed to the structured residuals. I consequently used the fit to quantify the dominant charging scale, gate coupling, and junction asymmetry, but I did not interpret the remaining structures microscopically.
 
         %=========================================================
         \subsection*{SSN Single-Electron Transistor}
@@ -139,38 +139,38 @@
                 \label{fig:ssn1-set:ssn-iv}
             \end{figure}
             
-            The normal conducting measurement established the electrostatic calibration of the island. I now use this reference to examine how superconductivity changes the low voltage transport and how the resulting features depend on the gate induced charge.
+            The normal-state measurement established the electrostatic calibration of the island. I used this reference to examine how superconductivity changed the low voltage transport and how the resulting features depended on the gate induced charge.
 
             \begin{figure}[t]
                 \centering
                 \thesisplot{ssn-set/ssn1-sset-Ic}{dGdiff}
                 \caption{
-                    Gate dependent sweep difference and switching voltages in the superconducting state. The left panel shows the positive-bias discontinuity $V_\mathrm{sw}^{+}$ extracted from the up sweep and the negative-bias discontinuity $V_\mathrm{sw}^{-}$ extracted from the down sweep. The center panel shows the current difference $\delta I=I_\uparrow-I_\downarrow$, while the right panel shows the corresponding differential-conductance difference. The axes use the normalized coordinates $n_\mathrm{gate}$ and $eV_\mathrm{bias}/\Delta_0$. The extracted switching voltages follow the abrupt boundaries of the sweep-dependent region.
+                    Gate dependent sweep difference and switching voltages in the superconducting state. The left panel shows the positive-bias discontinuity $V_\mathrm{sw}^{+}$ extracted from the up sweep and the negative-bias discontinuity $V_\mathrm{sw}^{-}$ extracted from the down sweep. The center panel shows the current difference $\delta I=I_\uparrow-I_\downarrow$, while the right panel shows the corresponding differential conductance difference. The axes use the normalized coordinates $n_\mathrm{gate}$ and $eV_\mathrm{bias}/\Delta_0$. The extracted switching voltages follow the abrupt boundaries of the sweep dependent region.
                 }
                 \label{fig:ssn1-set:dGdiff}
             \end{figure}
 
             After the normal-state characterization, I removed the magnetic field and measured the same device in the superconducting state. Figure~\ref{fig:ssn1-set:ssn-iv} compares increasing and decreasing voltage sweeps. The two traces differ around the low voltage branch and show abrupt transitions whose positions depend on sweep direction. I refer to this difference as hysteresis without assigning it to a particular dynamical model.
 
-            I next repeated the measurement as a function of gate voltage. Figures~\ref{fig:ssn1-set:ssn-iv-gate} and \ref{fig:ssn1-set:ssn-didv-gate} show that both the low voltage response and the abrupt transitions varied periodically with the gate. I used the electrostatic calibration from the normal SET fit for the gate coordinate. I scaled the superconducting bias by the gap, the current by the corresponding normal-state current scale, and the differential conductance by the total normal-state conductance. This follows the normalization used for the normal SET, with the charging energy replaced by the superconducting gap as the relevant bias scale.
+            I next repeated the measurement as a function of gate voltage. Figures~\ref{fig:ssn1-set:ssn-iv-gate} and \ref{fig:ssn1-set:ssn-didv-gate} show that both the low voltage response and the abrupt transitions varied periodically with the gate. I used the electrostatic calibration from the normal SET fit for the gate coordinate. I scaled the superconducting bias by the gap, the current by the corresponding normal-state current scale, and the differential conductance by the total normal-state conductance. This followed the normalization used for the normal SET, with the charging energy replaced by the superconducting gap as the relevant bias scale.
 
-            The high-bias superconducting conductance did not coincide exactly with $G_\mathrm{N}$, which suggests that the contact configuration was not perfectly preserved between the two measurements. A further atomic rearrangement of the mechanically formed break junction is a plausible explanation. I retain $G_\mathrm{N}$ only as a common normalization and do not interpret the mismatch quantitatively.
-
-            To quantify these boundaries, I operationally defined $V_\mathrm{sw}^{+}$ as the positive-bias discontinuity in the up sweep and $V_\mathrm{sw}^{-}$ as the negative-bias discontinuity in the down sweep. I did not assign the other sweep-direction-dependent features to retrapping because they did not provide additional boundaries that could be identified with comparable confidence. Figure~\ref{fig:ssn1-set:dGdiff} shows the extracted switching voltages together with the measured differential-conductance landscape.
+            The high-bias superconducting conductance did not coincide exactly with $G_\mathrm{N}$, which suggested that the contact configuration was not perfectly preserved between the two measurements. A further atomic rearrangement of the mechanically formed break junction was a plausible explanation. I retained $G_\mathrm{N}$ only as a common normalization and did not interpret the mismatch quantitatively.
 
             \begin{wrapfigure}[18]{r}{1.6in}
                 \captionsetup{format=plain}%
                 \centering
-                \vspace{-1.5em}
+                \vspace{-1.0em}
                 \thesisplot{ssn-set/ssn1-sset-Ic}{Ic}
-                \vspace{-.5em}
+                \vspace{-1.0em}
                 \caption{
-                        Positive and negative switching currents obtained from the up-sweep current at $V_\mathrm{sw}^{+}$ and the down-sweep current at $V_\mathrm{sw}^{-}$, respectively. Both magnitudes vary periodically with $n_\mathrm{gate}$.
+                        Positive and negative switching currents obtained from the current at $V_\mathrm{sw}^{+}$ in the up sweep and at $V_\mathrm{sw}^{-}$ in the down sweep, respectively. Both magnitudes vary periodically with $n_\mathrm{gate}$.
                     }
                 \label{fig:ssn1-set:Ic}
             \end{wrapfigure}
 
-            I evaluated the up-sweep current at $V_\mathrm{sw}^{+}$ and the down-sweep current at $V_\mathrm{sw}^{-}$ to obtain $I_\mathrm{sw}^{+}$ and $I_\mathrm{sw}^{-}$, shown in Fig.~\ref{fig:ssn1-set:Ic}. Their magnitudes were approximately symmetric between the two bias polarities and varied periodically with gate induced charge. Lukas Kammermeier and I identified this gate dependence during the analysis. The data therefore establish gate dependent switching in the superconducting SSN device. I associate the discontinuities with switching of the superconducting break junction, but the present measurement does not determine the microscopic origin of their gate dependence or of the observed hysteresis.
+            To quantify these boundaries, I operationally defined $V_\mathrm{sw}^{+}$ as the positive-bias discontinuity in the up sweep and $V_\mathrm{sw}^{-}$ as the negative-bias discontinuity in the down sweep. I did not assign the other sweep direction dependent features to retrapping because they did not provide additional boundaries that could be identified with comparable confidence. Figure~\ref{fig:ssn1-set:dGdiff} shows the extracted switching voltages together with the measured differential conductance landscape.
+
+            I evaluated the current at $V_\mathrm{sw}^{+}$ in the up sweep and at $V_\mathrm{sw}^{-}$ in the down sweep to obtain $I_\mathrm{sw}^{+}$ and $I_\mathrm{sw}^{-}$, shown in Fig.~\ref{fig:ssn1-set:Ic}. Their magnitudes were approximately symmetric between the two bias polarities and varied periodically with gate induced charge. Lukas Kammermeier and I identified this gate dependence during the analysis. The data therefore established gate dependent switching in the superconducting SSN device. I associated the discontinuities with switching of the superconducting break junction, but the present measurement did not determine the microscopic origin of their gate dependence or of the observed hysteresis.
 
             \begin{figure}[p]
                 \centering

@@ -4,7 +4,7 @@
 \documentclass[fontsize=9pt, rgb]{scrreport} 
 
 % Figure rendering: empty (framed placeholders), pdf (fast), or pgf (final quality).
-\providecommand{\figuremode}{pdf}
+\providecommand{\figuremode}{pgf}
 
 \input{utilities/header.tex}
 \addbibresource{miscellaneous/local.bib} % thesis graded
@@ -31,20 +31,21 @@
 
         % \include{miscellaneous/introduction.tex} % TODO
 
-        % % =========================================================
-        % \include{theory/theory.tex} % thesis graded
-        % % =========================================================
-        %     \include{theory/micro.tex} % thesis graded
-        %     \include{theory/macro.tex} % thesis graded
-        %     \include{theory/meso.tex} % thesis graded
+        % =========================================================
+        \include{theory/theory.tex} % thesis graded
+        % =========================================================
+            \include{theory/micro.tex} % thesis graded
+            \include{theory/macro.tex} % thesis graded
+            \include{theory/meso.tex} % thesis graded
             \include{theory/stochastic.tex} % thesis graded
+            % patricks comments pending
 
         % % =========================================================
         % \include{methods/methods.tex} % Newly adapted
         % % =========================================================
         %     \include{methods/sample.tex} % elkes Korrekturen sind drinnen
         %     \include{methods/setup.tex} % elkes Korrekturen sind drinnen
-        %     \include{methods/digital.tex}% elkes & Flos Korrekturen sind drinnen
+        %     \include{methods/digital.tex} % elkes & Flos Korrekturen sind drinnen
 
         % % =========================================================
         % \include{miscellaneous/results.tex}
@@ -52,6 +53,7 @@
         %     \include{tunnelbarrier/tunnelbarrier.tex}
         %         \include{tunnelbarrier/highres.tex}
         %         \include{tunnelbarrier/asym.tex}
+            % ronjas comments pending
 
         %     \include{atomic_contact/atomic-contact.tex} % patrick ready
         %         \include{atomic_contact/pincode.tex} % patrick ready
@@ -69,7 +71,7 @@
         % \include{miscellaneous/software.tex} % thesis graded
         % \include{theory/diffusive.tex} % thesis graded
         % \include{methods/fabrication.tex} % thesis graded
-        % \include{methods/cryo.tex} % thesis graded
+        \include{methods/cryo.tex} % thesis graded
 
         % \include{tunnelbarrier/appendix.tex}
         % \include{atomic_contact/appendix.tex}
