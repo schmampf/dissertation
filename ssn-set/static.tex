@@ -8,7 +8,7 @@
             Static transport of SET1 before opening the break junction. The panels show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses together with the SIN BCS Dynes fit. The fit describes the quasiparticle onset and the conductance above the gap.
         }{fig:ssn1-set:sin}
 
-        I first characterized SET1 with the mechanically controlled break junction in its unbroken state. The closed metallic constriction had a much lower resistance than the oxide tunnel barrier, so the measured voltage dropped predominantly across the Al--Al\textsubscript{2}O\textsubscript{3}--Cu junction. The device therefore provided an SIN tunnel junction reference before the superconducting island was formed.
+        I first characterized SET1 with the mechanically controlled break junction in its unbroken state. The closed metallic constriction had a much lower resistance than the oxide tunnel barrier, so the measured voltage dropped predominantly across the Al--AlO\textsubscript{x}--Cu junction. The device therefore provided an SIN tunnel junction reference before the superconducting island was formed.
 
         In the superconducting state, the current was suppressed below the quasiparticle threshold and increased sharply near $eV=\Delta_0$, as expected for an SIN junction. I fitted the complete \textit{I--V} characteristic with the BCS density of states including Dynes broadening. The fit yielded the normal-state resistance and conductance
         \begin{align}
@@ -27,7 +27,7 @@
 
         The fitted temperature was higher than the measured bath temperature, $T_\mathrm{bath}=\qty{52(1)}{\milli\kelvin}$. Such a difference is expected because the bath thermometer does not directly measure the electronic temperature of the junction, and residual electrical noise or imperfect thermalization can broaden the transport response. I therefore treat $T_\mathrm{fit}$ as an effective electronic temperature.
 
-        The fit reproduced both the quasiparticle onset and the conductance peak in Fig.~\ref{fig:ssn1-set:sin}. The extracted gap provides the superconducting energy scale used below, while $R_\mathrm{N}$ characterizes the fixed oxide barrier before the device was converted into an SET.
+        The fit reproduced both the quasiparticle onset and the conductance peak in Fig.~\ref{fig:ssn1-set:sin}. The extracted gap provides the superconducting energy scale used below, while $R_\mathrm{TB}$ characterizes the fixed oxide barrier before the device was converted into an SET.
 
         In addition, I measured the device after suppressing superconductivity. The normal conducting \textit{I--V} characteristic showed no resolvable zero bias anomaly. I therefore found no evidence for appreciable dynamical Coulomb blockade in the unbroken device.
 
@@ -154,6 +154,10 @@
 
             I next repeated the measurement as a function of gate voltage. Figures~\ref{fig:ssn1-set:ssn-iv-gate} and \ref{fig:ssn1-set:ssn-didv-gate} show that both the low voltage response and the abrupt transitions varied periodically with the gate. I used the electrostatic calibration from the normal SET fit for the gate coordinate. I scaled the superconducting bias by the gap, the current by the corresponding normal-state current scale, and the differential conductance by the total normal-state conductance. This follows the normalization used for the normal SET, with the charging energy replaced by the superconducting gap as the relevant bias scale.
 
+            The high-bias superconducting conductance did not coincide exactly with $G_\mathrm{N}$, which suggests that the contact configuration was not perfectly preserved between the two measurements. A further atomic rearrangement of the mechanically formed break junction is a plausible explanation. I retain $G_\mathrm{N}$ only as a common normalization and do not interpret the mismatch quantitatively.
+
+            To quantify these boundaries, I operationally defined $V_\mathrm{sw}^{+}$ as the positive-bias discontinuity in the up sweep and $V_\mathrm{sw}^{-}$ as the negative-bias discontinuity in the down sweep. I did not assign the other sweep-direction-dependent features to retrapping because they did not provide additional boundaries that could be identified with comparable confidence. Figure~\ref{fig:ssn1-set:dGdiff} shows the extracted switching voltages together with the measured differential-conductance landscape.
+
             \begin{wrapfigure}[18]{r}{1.6in}
                 \captionsetup{format=plain}%
                 \centering
@@ -165,10 +169,6 @@
                     }
                 \label{fig:ssn1-set:Ic}
             \end{wrapfigure}
-
-            The high-bias superconducting conductance did not coincide exactly with $G_\mathrm{N}$, which suggests that the contact configuration was not perfectly preserved between the two measurements. A further atomic rearrangement of the mechanically formed break junction is a plausible explanation. I retain $G_\mathrm{N}$ only as a common normalization and do not interpret the mismatch quantitatively.
-
-            To quantify these boundaries, I operationally defined $V_\mathrm{sw}^{+}$ as the positive-bias discontinuity in the up sweep and $V_\mathrm{sw}^{-}$ as the negative-bias discontinuity in the down sweep. I did not assign the other sweep-direction-dependent features to retrapping because they did not provide additional boundaries that could be identified with comparable confidence. Figure~\ref{fig:ssn1-set:dGdiff} shows the extracted switching voltages together with the measured differential-conductance landscape.
 
             I evaluated the up-sweep current at $V_\mathrm{sw}^{+}$ and the down-sweep current at $V_\mathrm{sw}^{-}$ to obtain $I_\mathrm{sw}^{+}$ and $I_\mathrm{sw}^{-}$, shown in Fig.~\ref{fig:ssn1-set:Ic}. Their magnitudes were approximately symmetric between the two bias polarities and varied periodically with gate induced charge. Lukas Kammermeier and I identified this gate dependence during the analysis. The data therefore establish gate dependent switching in the superconducting SSN device. I associate the discontinuities with switching of the superconducting break junction, but the present measurement does not determine the microscopic origin of their gate dependence or of the observed hysteresis.
 
