@@ -4,7 +4,7 @@
 \documentclass[fontsize=9pt, rgb]{scrreport} 
 
 % Figure rendering: empty (framed placeholders), pdf (fast), or pgf (final quality).
-\providecommand{\figuremode}{pgf}
+\providecommand{\figuremode}{pdf}
 
 \input{utilities/header.tex}
 \addbibresource{miscellaneous/local.bib} % thesis graded
@@ -22,7 +22,7 @@
         % \include{miscellaneous/abstract.tex} % TODO
         % \include{miscellaneous/inspirational.tex} % thesis graded
 
-        \tableofcontents
+        % \tableofcontents
         \clearpage \pagenumbering{arabic}
 
     % =========================================================
@@ -57,6 +57,7 @@
         %         \include{atomic_contact/pincode.tex} % patrick ready
         %         \include{atomic_contact/photon-assisted.tex} % patrick ready 
         %         \include{atomic_contact/subharmonic.tex} % patrick ready
+        % % atomic configuration bild shading
                 
         % \include{miscellaneous/conclusion.tex} % TODO
 
@@ -73,6 +74,8 @@
         % \include{tunnelbarrier/appendix.tex}
         % \include{atomic_contact/appendix.tex}
         \include{ssn-set/ssn-set.tex}
+        \include{ssn-set/static.tex}
+        \include{ssn-set/dynamic.tex}
 
         % \include{miscellaneous/acknowledgement.tex} % thesis graded
         % \include{miscellaneous/eidestattliche-versicherung.tex} % thesis graded
