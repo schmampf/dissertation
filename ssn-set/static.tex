@@ -41,13 +41,13 @@
                 Normal-state transport of SET1 after opening the break junction at $V_\mathrm{gate}=\qty{0}{\milli\volt}$. The measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses are compared with the orthodox SET fit. The suppressed low bias conductance is the local signature of Coulomb blockade.
             }{fig:ssn1-set:ssn1-nset-iv0}
 
-            Sweeping the gate voltage revealed that this suppression was periodic and bounded by diagonal conductance onsets, as shown in Fig.~\ref{fig:ssn1-set:ssn1-nset:exp}. The two families of Coulomb diamond edges had different absolute slopes in the gate--bias plane, as expected for unequal junction capacitances. Above $V_\mathrm{gate}\approx\qty{1.7}{\milli\volt}$, the measured pattern changed abruptly. I attribute this discontinuity to an atomic rearrangement of the mechanically formed break junction during the sweep, which produced a second contact configuration. The normal-state data therefore established gate controlled Coulomb blockade and an asymmetric SET geometry before superconducting transport was considered, but the complete map did not correspond to one perfectly unchanged break junction.
+            Sweeping the gate voltage revealed that this suppression was periodic and bounded by diagonal conductance onsets, as shown in Fig.~\ref{fig:ssn1-set:ssn1-nset:exp}. The two families of Coulomb diamond edges had different absolute slopes in the gate--bias plane, as expected for unequal junction capacitances. Above $V_\mathrm{gate}\approx\qty{1.7}{\milli\volt}$, the measured pattern changed abruptly. This discontinuity was consistent with an atomic rearrangement of the mechanically formed break junction during the sweep, although the conductance did not provide an independent signature of such a change. The normal-state data therefore established gate controlled Coulomb blockade and an asymmetric SET geometry before superconducting transport was considered, but the complete map did not correspond to one perfectly unchanged configuration.
 
             \begin{figure}[p]
                 \centering
                 \landscapepanels{ssn-set/ssn1-set}{exp}
                 \caption{
-                    Measured normal-state gate--bias transport of SET1 after opening the break junction. The panels show the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses as selected traces, surfaces, and false-color maps. The periodic low conductance regions form Coulomb diamonds whose two edge families have different absolute slopes. The abrupt change during the gate sweep results from an atomic rearrangement of the break junction.
+                    Measured normal-state gate--bias transport of SET1 after opening the break junction. The panels show the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses as selected traces, surfaces, and false-color maps. The periodic low conductance regions form Coulomb diamonds whose two edge families have different absolute slopes. The abrupt change during the gate sweep is consistent with an atomic rearrangement of the break junction.
                 }
                 \label{fig:ssn1-set:ssn1-nset:exp}
 
@@ -55,18 +55,18 @@
 
                 \landscapepanels{ssn-set/ssn1-set}{fit}
                 \caption{
-                    Orthodox SET fit to the stable region of the normal-state transport landscape in Fig.~\ref{fig:ssn1-set:ssn1-nset:exp}. The panels show the calculated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses in the same representation as the measurement. The rearranged break-junction configuration was excluded from the optimization.
+                    Orthodox SET fit to the stable region of the normal-state transport landscape in Fig.~\ref{fig:ssn1-set:ssn1-nset:exp}. The panels show the calculated \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses in the same representation as the measurement. The region beyond the discontinuity was excluded from the optimization.
                 }
                 \label{fig:ssn1-set:ssn1-nset:fit}
             \end{figure}
 
-            I fitted the measured \textit{I--V} gate map below the break-junction rearrangement with the orthodox sequential tunneling model introduced in the theory chapter. All bias and gate points at $V_\mathrm{gate}<\qty{1.7}{\milli\volt}$ were fitted simultaneously with one common set of circuit parameters rather than by fitting individual gate traces separately. The island energy and normal-state tunneling rates follow Eqs.~\eqref{eq:stochastic:set-electrostatic-energy} and \eqref{eq:stochastic:set-normal-rate}. At each bias and gate voltage, I solved the stationary master equation in Eq.~\eqref{eq:stochastic:set-master-equation} and evaluated the current from Eq.~\eqref{eq:stochastic:set-current}. I optimized the circuit parameters with the nonlinear least squares implementation in SciPy using a soft L1 loss to reduce the influence of isolated outliers.
+            I fitted the measured \textit{I--V} gate map below the discontinuity with the orthodox sequential tunneling model introduced in the theory chapter. All bias and gate points at $V_\mathrm{gate}<\qty{1.7}{\milli\volt}$ were fitted simultaneously with one common set of circuit parameters rather than by fitting individual gate traces separately. The island energy and normal-state tunneling rates follow Eqs.~\eqref{eq:stochastic:set-electrostatic-energy} and \eqref{eq:stochastic:set-normal-rate}. At each bias and gate voltage, I solved the stationary master equation in Eq.~\eqref{eq:stochastic:set-master-equation} and evaluated the current from Eq.~\eqref{eq:stochastic:set-current}. I optimized the circuit parameters with the nonlinear least squares implementation in SciPy using a soft L1 loss to reduce the influence of isolated outliers.
 
             \begin{figure}[t]
                 \centering
                 \thesisplot{ssn-set/ssn1-nset}{dGdiff}
                 \caption{
-                    Comparison of the measured and fitted normal-state differential conductance. The left and center panels show the experimental map and the orthodox SET result, while the right panel shows the differential conductance of the current residual $\delta I=I_\mathrm{exp}-I_\mathrm{fit}$. Only the stable region was included in the fit. Data above the fit boundary are shown as a visual reference for the rearrangement and are not interpreted as fit residuals.
+                    Comparison of the measured and fitted normal-state differential conductance. The left and center panels show the experimental map and the orthodox SET result, while the right panel shows the differential conductance of the current residual $\delta I=I_\mathrm{exp}-I_\mathrm{fit}$. Only the stable region was included in the fit. Data above the fit boundary are shown as a visual reference for the discontinuity and are not interpreted as fit residuals.
                 }
                 \label{fig:ssn1-nset:dGdiff}
             \end{figure}
