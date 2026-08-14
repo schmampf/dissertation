@@ -2,158 +2,32 @@
 
 %=========================================================
 \chapter{SSN Single-Electron Transistor} 
-\label{appendix:ssn-set}
+\label{ch:ssn-set}
 %=========================================================
 
-    %=========================================================
-    \section{Static Coulomb Blockade}
-    %=========================================================
+    This chapter presents transport measurements on two hybrid devices in an SSN configuration. Here, SSN denotes the sequence of a superconducting lead, a superconducting island, and a normal conducting lead. Each device combined a fixed Al--AlO\textsubscript{x}--Cu tunnel barrier with an Al mechanically controllable break junction. Opening the break junction created the second junction and defined the superconducting island between the two contacts. Although SET1 and SET2 shared the same nominal design and were fabricated in the same production batch, they developed distinct transport regimes after opening. SET1 formed a gate controlled single-electron transistor, whereas SET2 retained a high-conductance contact and exhibited a gate independent zero bias anomaly.
 
-        \singlefitfigure{ssn-set/ssn1-sin}{
-            bla
-        }{fig:ssn1-set:sin}
-        in the unbroken state we can characterize the SIN BCS Dynes TB.
+    \begin{wrapfigure}[12]{r}{40mm}
+        \captionsetup{format=plain}%
+        \vspace{-1.0em}
+        \centering
+        \begingroup
+        \ooalign{%
+            \includegraphics[width=40mm]{methods/sample/probe/probe.jpg}\cr
+            {\fontsize{7pt}{9pt}\selectfont\import{methods/sample/probe}{probe1.pdf_tex}}\cr
+            {\fontsize{5pt}{9pt}\selectfont\import{methods/sample/probe}{probe2b.pdf_tex}}\cr
+        }%
+        \endgroup
+        \caption{SEM image of SET1. The overlays identify the break junction, island, fixed tunnel barrier, and gate electrodes.}
+        \label{fig:ssn-set:sample}
+    \end{wrapfigure}
 
-        \begin{align}
-            G_\mathrm{N} = 0.79714(7)\,G_0 &&
-            R_\mathrm{N} = \qty{16.191(1)}{\kilo\ohm}          
-        \end{align}
+    I fabricated and measured SET1\footnote{In the lab book, SET1 is called `OI-22a-14'.}, shown in Fig.~\ref{fig:ssn-set:sample}, and SET2. Both devices came from the same production batch and used the same nominal design and process parameters. The Al layer was \qty{40}{\nano\meter} thick, and the Cu top layer was approximately \qty{80}{\nano\meter} thick. The oxidation was performed at \qty{4.9(1)}{\milli\barunit} for 2:30\,min. The SSN architecture and the specific design used for these devices originated from the preceding work of Laura Sobral Rey \cite{sobral_rey_interplay_2022}, who introduced me to the design at the beginning of this work. I used this design without adaptation. The fabrication principles and general design considerations are described in Sec.~\ref{section:sample-preparation}.
 
-        \begin{align}
-            \Delta_0 = \qty{196.106(9)}{\micro\electronvolt} &&
-            T = \qty{68.1(5)}{\milli\kelvin} &&
-            \gamma = \qty{0.86(3)}{\micro\electronvolt}
-        \end{align}
+    I performed these measurements on the Scheer~II setup, which had been developed and operated in the preceding work of Thomas Lorenz, Susanne Sprenger, and Laura Sobral Rey. Detailed descriptions of the platform are given in their theses \cite{lorenz_wechselspiel_2018,sprenger_interplay_2019,sobral_rey_interplay_2022}. Laura Sobral Rey introduced me to the operation of the cryostat, after which I operated the setup independently for these measurements. Before the measurement campaign presented here, I repaired the cryogenic system with valuable technical input from Thomas Lorenz.
 
-        No signs of DCB in anyway in unbroken state.
+    I performed the complete numerical evaluation and model fitting presented here. This included the SIN reference fits, the orthodox normal-state SET fit, the analysis of its periodic residual structure, and the dynamical Coulomb blockade fit. The data treatment followed the procedure described in Sec.~\ref{sec:methods:digital} and used the Python based analysis pipeline that I developed. The physical interpretation benefited from discussions with Lukas Kammermeier.
 
-        \begin{figure}[t]
-            \centering
-            \landscapepanels{ssn-set/ssn1-set}{exp}
-            \caption{
-                bla
-            }
-            \label{fig:ssn1-set:ssn1-nset}
-        \end{figure}
-        In broken but normal state we see CB with asymmetrical Coulomb diamonds.
+    Section~\ref{sec:ssn-set:static} first establishes the intact tunnel barrier of SET1 and then examines the normal and superconducting transport after opening the break junction. In the normal-state SET, the gate--bias response reveals Coulomb diamonds, and an orthodox SET fit provides the minimal electrostatic description. I additionally report the structured residuals that remained after this fit. In the superconducting SSN SET, I report the gate dependence of the supercurrent as a separate experimental outcome.
 
-        In the broken state the IV in the Superconducting state reveals a hysteresis in up and down sweep
-
-        \begin{figure}[t]
-            \centering
-            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sisin}{iv}}
-            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sisin}{didv}}
-            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sisin}{dvdi}}
-            \caption{
-                bla
-            }
-            \label{fig:ssn1-set:ssn-iv}
-        \end{figure}
-
-        This hysteresis as the other features are gate dependent. We normalize with
-        \begin{align}
-            C_\mathrm{gate} = \qty{36.41}{\atto\farad}
-        \end{align}
-        \begin{figure}[p]
-            \centering
-            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-iv/cal_iv}{main}}%
-            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-iv/cal_didv}{main}}%
-            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-iv/cal_dvdi}{main}}%
-            \caption{
-                bla
-                }
-            \label{fig:ssn1-set:ssn-iv-gate}
-
-            \vspace{1em}
-
-            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-didv/cal_iv}{main}}%
-            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-didv/cal_didv}{main}}%
-            \subfigure[bla]{\thesisplot{ssn-set/ssn1-sset-didv/cal_dvdi}{main}}%
-            \caption{
-                bla
-                }
-            \label{fig:ssn1-set:ssn-didv-gate}
-        \end{figure}
-
-        % \begin{wrapfigure}[11]{r}{1.6in}
-        %     \captionsetup{format=plain}%
-        %     \centering
-        %     \vspace{-1.5em}
-        %     % \thesisplot{ssn-set/}{dGdiff}
-        %     \includegraphics{ssn-set/dGdiff.pdf}
-        %     \vspace{-.5em}
-        %     \caption{
-        %             Linear fit to the low-voltage superconducting branch.
-        %         }
-        % \end{wrapfigure}
-
-    \clearpage
-    \newpage
-
-    %=========================================================
-    \section{Dynamical Coulomb Blockade}
-    %=========================================================
-
-        No gate modulation is observed for all three cases.
-
-        \singlefitfigure{ssn-set/ssn2-sin}{
-            bla
-        }{fig:ssn2-set:sin}
-
-        The unbroken device i basically a SIN tunnel barrier Al-AlOx-Cu contact.
-        The Spectrum can be fitted with simple SIN BCS Dynes model and reveals.
-
-        \begin{align}
-            G_\mathrm{N} = 0.39859(3)\,G_0 &&
-            R_\mathrm{N} = \qty{32.379(2)}{\kilo\ohm}          
-        \end{align}
-
-        \begin{align}
-            \Delta_0 = \qty{195.99(2)}{\micro\electronvolt} &&
-            T = \qty{59.5(8)}{\milli\kelvin} &&
-            \gamma = \qty{1.48(4)}{\micro\electronvolt}
-        \end{align}
-        No non-linearities found in normal state.
-
-        If we start pulling the MCBJ apart, I measured i high conductive state of the MCBJ.
-
-        \singlefitfigure{ssn-set/ssn2-dcb}{
-            bla
-        }{fig:ssn2-set:dcb}
-        In the normal conducting State, we observe proper DCB
-        If we again asume an effective RC environment, we can make a proper fit of the conductance and the three effective values RC and T
-        \begin{align}
-            G_\mathrm{N} = 0.37488(3)\,G_0 &&
-            R_\mathrm{N} = \qty{34.43(3)}{\kilo\ohm}          
-        \end{align}
-
-        \begin{align}
-            R_\mathrm{eff} = \qty{0.446(3)}{\kilo\ohm} &&
-            C_\mathrm{eff} = \qty{4.36(5)}{\femto\farad} &&
-            T_\mathrm{eff} = \qty{77(6)}{\milli\kelvin}
-        \end{align}
-
-        \singlefitfigure{ssn-set/ssn2-sin-dcb}{
-            bla
-        }{fig:ssn2-set:sin-dcb}
-        However, the superconducting state reveals a more odd IV.
-        Below 0.55 mV it seems as we had a normal SIN BCS Dynes Tunnel Barrier.
-
-        \begin{align}
-            G_\mathrm{N} = 0.33657(2)\,G_0 &&
-            R_\mathrm{N} = \qty{38.34(2)}{\kilo\ohm}          
-        \end{align}
-
-        \begin{align}
-            \Delta_0 = \qty{195.94(6)}{\micro\electronvolt} &&
-            T = \qty{121(2)}{\milli\kelvin} &&
-            \gamma = \qty{0.88(9)}{\micro\electronvolt}
-        \end{align} 
-        
-        However above that threshold we reach a higher conductance. If we use the data abs(V) > 0.6 and the same superconducting parameter as we extracted before, we end up with a different conductance.
-        For those parameter we fitted the dIdV.
-        \begin{align}
-            G_\mathrm{N} = 0.40172(3)\,G_0 &&
-            R_\mathrm{N} = \qty{32.13(2)}{\kilo\ohm}          
-        \end{align}
-        It seems like we have the same conductance as in the non-modified BJ case.
+    Section~\ref{sec:ssn-set:dynamic} presents SET2 as a contrasting outcome of the same device concept. No gate modulation was resolved after the break junction was partially opened. Instead, the normal-state response was described by dynamical Coulomb blockade, and the superconducting response developed two conductance regimes separated by a crossover. The analysis compares the independently extracted resistance and energy scales while keeping the microscopic origin of their correspondence open.
