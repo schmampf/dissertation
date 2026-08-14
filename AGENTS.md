@@ -45,7 +45,7 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
 
 ## Labels and Cross-References
 
-- Add a `\label{...}` immediately after each chapter, section, subsection, figure, and important equation.
+- Add a `\label{...}` immediately after each numbered chapter, section, subsection, and subsubsection, as well as each figure and important equation. Unnumbered headings created with starred sectioning commands do not require labels.
 - Use namespaced labels:
   - `ch:...` for chapters
   - `sec:...` for sections
