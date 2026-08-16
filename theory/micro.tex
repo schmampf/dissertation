@@ -281,7 +281,7 @@
             \label{eq:micro:tunnel-conv}
         \end{equation}
 
-        Depending on the electronic state of the electrodes, Eq.~\eqref{eq:micro:tunnel} describes the three configurations in Fig.~\ref{fig:micro:tunnel-current}. Here, N denotes a normal electrode, I the insulating barrier, and S a superconducting electrode \cite{giaever_electron_1960,giaever_study_1961}.
+        Depending on the electronic state of the electrodes, Eq.~\eqref{eq:micro:tunnel} describes the three configurations in Fig.~\ref{fig:micro:tunnel-current}. Here, $\mathrm{N}$ denotes a normal electrode, I the insulating barrier, and $\mathrm{S}$ a superconducting electrode \cite{giaever_electron_1960,giaever_study_1961}.
 
         \begin{figure}[t]
             \centering
@@ -373,7 +373,7 @@
                     \textit{dI--dV} characteristics for varying $\gamma/\Delta_0$.
                     ]{\thesisplot{theory/micro}{tunnel-didv-gamma}}
                 \caption{
-                    Quasiparticle tunneling in SIS, NIS, and NIN junctions. Temperature and Dynes broadening of NIS (gray) and SIS (blue) \textit{I--V} and \textit{dI--dV} curves. The gray dashed line represents the NIN reference.
+                    Quasiparticle tunneling in NIN, NIS, and SIS junctions. Temperature and Dynes broadening of NIS (gray) and SIS (blue) \textit{I--V} and \textit{dI--dV} curves. The gray dashed line represents the NIN reference.
                     }
                 \label{fig:micro:tunnel-iv-didv}
             \end{figure}
@@ -392,7 +392,7 @@
     \label{subsec:micro:pat}
     %=========================================================
 
-        \begin{wrapfigure}[15]{r}{0.35\textwidth}
+        \begin{wrapfigure}[16]{r}{0.35\textwidth}
             \captionsetup{format=plain}%
             \centering
             \vspace{-1em}
@@ -402,11 +402,11 @@
                 }
             \label{fig:micro:pat-schematic}
         \end{wrapfigure}
-        The static characteristics derived above define the reference current $I_0(V)$. Under microwave irradiation, a quasiparticle may absorb or emit $|n|$ photons while tunneling, changing its energy from $E_0$ to
+        The static NIN, NIS, and SIS characteristics derived above each define a reference current $I_0(V)$. Photon assisted tunneling is therefore not specific to superconducting junctions, although distinct sidebands are visible only when $I_0(V)$ contains nonlinear spectral features. In the ideal NIN case, the redistribution leaves the linear \textit{I--V} characteristic unchanged. Under microwave irradiation, a quasiparticle may absorb or emit $|n|$ photons while tunneling, changing its energy from $E_0$ to
         \begin{equation}
             E_n = E_0 + n h\nu \qquad (n\in\mathbb{Z})\,,
         \end{equation}
-        where $n>0$ corresponds to absorption and $n<0$ to emission. These energy exchanges shift the static tunnel thresholds by integer multiples of $h\nu/e$, as illustrated in Fig.~\ref{fig:micro:pat-schematic}. To determine the sideband weights, we represent the harmonic voltage by a time dependent phase factor in the tunneling amplitude. Its Fourier expansion then leads to the Tien-Gordon current \cite{tien_multiphoton_1963}.
+        where $n>0$ corresponds to absorption and $n<0$ to emission. These energy exchanges shift static tunnel features by integer multiples of $h\nu/e$. Figure~\ref{fig:micro:pat-schematic} illustrates this process for an SIS junction, whose sharp quasiparticle threshold makes the shifts particularly clear. To determine the sideband weights, we represent the harmonic voltage by a time dependent phase factor in the tunneling amplitude. Its Fourier expansion then leads to the Tien-Gordon Eq.~\eqref{eq:micro:pat-iv} \cite{tien_multiphoton_1963}.
 
         %=========================================================
         \subsubsection*{Harmonic Drive and Sideband Formation}
@@ -460,7 +460,7 @@
             ]{\thesisplot{theory/basics}{mw-phi}}
             \hfill
             \subfigure[
-                Phase factor $\Re(U_q(t))$.
+                Phase factor $\mathrm{Re}(U_q(t))$.
             ]{\thesisplot{theory/basics}{mw-ReU}}
             \hfill
             \subfigure[
@@ -484,7 +484,7 @@
 
         We now specialize to quasiparticle tunneling with $q=e$. The Fourier components of $U_e(t)$ describe energy transfers $nh\nu$. For a stationary incoherent tunnel current, averaging over one drive period removes cross terms between different components and leaves the probabilities $J_n^2$. The resulting Tien-Gordon current is
         \begin{equation}
-            I_\mathrm{PAT}(V_0)
+            I(V_0)
                 = \sum_{n=-\infty}^{\infty}
                     J_n^2\!\left(\frac{eA}{h\nu}\right)
                     I_0\!\left(V_0 - \frac{n h\nu}{e}\right)\,,
