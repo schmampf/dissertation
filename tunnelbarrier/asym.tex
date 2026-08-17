@@ -19,7 +19,7 @@
         \label{fig:tb:asym:image-TB2}
     \end{wrapfigure}
 
-    The measurements in this section were an earlier attempt to test whether microwave driven quasiparticle transport could be reproduced in an Al TB. I measured the nominally similar device TB2\footnote{In the lab book, TB2 is called `OI-24d-09'.} with an earlier version of the setup, before performing the optimized measurements on TB1 discussed in Sec.~\ref{sec:tb:highres}. Although the spectra of TB2 were less sharply resolved, they showed reproducible features that departed from the expected bias symmetric SIS response and motivated the analysis presented here.
+    The measurements in this section were an earlier attempt to test whether microwave driven quasiparticle transport could be reproduced in an Al TB. I measured the nominally similar device TB2\footnote{In the lab book, TB2 is called `OI-24d-09'.} with an earlier version of the setup, before performing the optimized measurements on TB1 discussed in Sec.~\ref{subsec:tb:highres}. Although the spectra of TB2 were less sharply resolved, they showed reproducible features that departed from the expected bias symmetric SIS response and motivated the analysis presented here.
 
     TB2 also provides a useful comparison because its fabrication differed from TB1 in several identifiable ways. I moved the junction finger to the left to reduce the unsupported length of the evaporation mask after repeated mask collapse during evaporation. The aluminum layers were slightly thinner, and the oxidation pressure and duration differed moderately. Most importantly, the shadow electrode near the break junction remained connected because the evaporation mask had less undercut. I nevertheless expected the junction itself to remain in a similar tunnel regime.
 
@@ -85,7 +85,7 @@
         \end{align}
         All three quantities vanish for an ideally bias symmetric transport response. Their signs indicate which bias branch has the larger response, while their magnitudes quantify the relative difference between the branches. Because the normalization can become small, particularly in the derivative representations, I use $\chi$ primarily to identify the bias regions in which the symmetry breaking occurs rather than as a globally averaged measure.
 
-        For the representative trace in Fig.~\ref{fig:tb:asym:irradiation:single-asym}, the local current asymmetry reached $\chi_I=0.254$. The largest values occurred in the voltage range where the positive- and negative-bias quasiparticle onsets evolved differently. This observation shows that the microwave response cannot be described by a single bias-symmetric SIS plus Tien--Gordon curve. The full amplitude sweep at this frequency is shown in Fig.~\ref{fig:tb:asym:nu_7.97GHz:cal}.
+        For the representative trace in Fig.~\ref{fig:tb:asym:irradiation:single-asym}, the local current asymmetry reached $\chi_I=0.254$. The largest values occurred in the voltage range where the positive- and negative-bias quasiparticle onsets evolved differently. This observation shows that the microwave response cannot be described by a single bias-symmetric SIS plus Tien--Gordon curve. The full amplitude sweep at this frequency is shown in Fig.~\ref{fig:tb:asym:nu_7.97GHz:cal}, in the Appendix.
 
         \begin{figure}[t]
             \centering
@@ -139,7 +139,7 @@
             \centering
             \thesisplot{tunnelbarrier/asym/irradiation/control}{Afit_Aout}
             \caption{
-                Effective microwave-amplitude calibration of TB2 at selected frequencies. The points show $A_\mathrm{fit}$ obtained from the complete signed \textit{I--V} curves. The lines show the frequency-dependent effective coupling used to define $A_\mathrm{cal}$ in Eq.~\eqref{eq:tb:asym:calibrated-amplitude}. Deviations from the lines are largest where the bias asymmetry prevents a quantitative symmetric-model fit.
+                Effective microwave-amplitude calibration of TB2 at selected frequencies. The points show $A_\mathrm{fit}$ obtained from the complete signed \textit{I--V} curves. The lines show the frequency-dependent effective coupling used to define $A_\mathrm{cal}$ in Eq.~\eqref{eq:tb:asym:amplitude-coupling}. Deviations from the lines are largest where the bias asymmetry prevents a quantitative symmetric-model fit.
             }
             \label{fig:tb:asym:control-Afit_Aout}
         \end{figure}
@@ -202,7 +202,7 @@
                 Rectification $\mathcal{A}_{\mathrm{d}V/\mathrm{d}I}$
             ]{\thesisplot{tunnelbarrier/asym/irradiation/rect}{dvdi}}
             \caption{
-                Frequency- and amplitude-dependent rectification of TB2. The panels show the signed integrated asymmetry $\mathcal{A}$ of the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses. The calibrated amplitude is defined by Eq.~\eqref{eq:tb:asym:calibrated-amplitude}. Gray regions indicate amplitudes for which no measurement is available at the corresponding frequency.
+                Frequency- and amplitude-dependent rectification of TB2. The panels show the signed integrated asymmetry $\mathcal{A}$ of the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses. Gray regions indicate amplitudes for which no measurement is available at the corresponding frequency.
                 }
             \label{fig:tb:asym:rectification-map}
         \end{figure}
