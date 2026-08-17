@@ -253,7 +253,7 @@
 \pgfusepath{clip}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
-\pgfsetlinewidth{1.003750pt}%
+\pgfsetlinewidth{0.752812pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.662745,0.878431}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
@@ -673,7 +673,7 @@
 \begin{pgfscope}%
 \pgfsetrectcap%
 \pgfsetroundjoin%
-\pgfsetlinewidth{1.003750pt}%
+\pgfsetlinewidth{0.752812pt}%
 \definecolor{currentstroke}{rgb}{0.000000,0.662745,0.878431}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
