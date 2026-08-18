@@ -4,6 +4,8 @@
     \label{sec:ssn-set:static}
     %=========================================================
 
+        In this section, I use the term static Coulomb blockade for charging effects described by discrete island charge states and orthodox sequential tunneling, in contrast to environmental dynamical Coulomb blockade.
+
         \singlefitfigure{ssn-set/ssn1-sin}{
             Static transport of SET1 before opening the break junction. The panels show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses together with the SIN BCS Dynes fit. The fit describes the quasiparticle onset and the conductance above the gap.
         }{fig:ssn1-set:sin}
@@ -41,7 +43,7 @@
                 Normal-state transport of SET1 after opening the break junction at $V_\mathrm{gate}=\qty{0}{\milli\volt}$. The measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses are compared with the orthodox SET fit. The suppressed low bias conductance is the local signature of Coulomb blockade.
             }{fig:ssn1-set:ssn1-nset-iv0}
 
-            Sweeping the gate voltage revealed that this suppression was periodic and bounded by diagonal conductance onsets, as shown in Fig.~\ref{fig:ssn1-set:ssn1-nset:exp}. The two families of Coulomb diamond edges had different absolute slopes in the gate--bias plane, as expected for unequal junction capacitances. Above $V_\mathrm{gate}\approx\qty{1.7}{\milli\volt}$, the measured pattern changed abruptly. This discontinuity was consistent with an atomic rearrangement of the mechanically formed break junction during the sweep, although the conductance did not provide an independent signature of such a change. The normal-state data therefore established gate controlled Coulomb blockade and an asymmetric SET geometry before superconducting transport was considered, but the complete map did not represent a single unchanged configuration.
+            Sweeping the gate voltage revealed that this suppression was periodic and bounded by diagonal conductance onsets, as shown in Fig.~\ref{fig:ssn1-set:ssn1-nset:exp}. The two families of Coulomb diamond edges had different absolute slopes in the gate--bias plane, as expected for unequal junction capacitances. Above $V_\mathrm{gate}\approx\qty{1.7}{\milli\volt}$, the measured pattern changed abruptly, as seen more clearly in Fig.~\ref{fig:ssn1-set:ssn1-nset:fitdiff}. This discontinuity was consistent with an atomic rearrangement of the mechanically formed break junction during the sweep, although the conductance did not provide an independent signature of such a change. The normal-state data therefore established gate controlled Coulomb blockade and an asymmetric SET geometry before superconducting transport was considered, but the complete map did not represent a single unchanged configuration.
 
             \begin{figure}[p]
                 \centering
@@ -134,7 +136,7 @@
                 \subfigure[\textit{dI--dV}]{\thesisplot{ssn-set/ssn1-sisin}{didv}}
                 \subfigure[Sweep difference]{\thesisplot{ssn-set/ssn1-sisin}{dvdi}}
                 \caption{
-                    Superconducting transport of the broken device for increasing and decreasing voltage sweeps. Panels (a) and (b) show the \textit{I--V} and \textit{dI--dV} responses, while panel (c) shows the current difference $I_\uparrow-I_\downarrow$ between the two sweep directions. The low voltage response is sweep direction dependent and contains abrupt transitions, but the reverse sweep does not provide an independently resolved retrapping current.
+                    Superconducting transport of the broken device for increasing and decreasing voltage sweeps. Panels (a) and (b) show the \textit{I--V} and \textit{dI--dV} responses, while panel (c) shows the current difference $I_\uparrow-I_\downarrow$ between the two sweep directions. The low voltage response is sweep direction dependent and contains abrupt transitions, but no separate retrapping transition can be distinguished from the broader sweep dependent response.
                 }
                 \label{fig:ssn1-set:ssn-iv}
             \end{figure}
@@ -154,7 +156,7 @@
 
             I next repeated the measurement as a function of gate voltage. Figures~\ref{fig:ssn1-set:ssn-iv-gate} and \ref{fig:ssn1-set:ssn-didv-gate} show that both the low voltage response and the abrupt transitions varied periodically with the gate. I used the electrostatic calibration from the normal SET fit for the gate coordinate. I scaled the superconducting bias by the gap, the current by the corresponding normal-state current scale, and the differential conductance by the total normal-state conductance. This followed the normalization used for the normal SET, with the charging energy replaced by the superconducting gap as the relevant bias scale.
 
-            The high-bias superconducting conductance did not coincide exactly with $G_\mathrm{N}$, which suggested that the contact configuration was not perfectly preserved between the two measurements. A further atomic rearrangement of the mechanically formed break junction was a plausible explanation. I retained $G_\mathrm{N}$ only as a common normalization and did not interpret the mismatch quantitatively.
+            The high-bias superconducting conductance did not coincide exactly with $G_\mathrm{N}$. This mismatch could result from a contact rearrangement between the measurements or from superconducting transport contributions not captured by the normal-state conductance scale. I therefore retained $G_\mathrm{N}$ only as a common normalization and did not interpret the mismatch quantitatively.
 
             \begin{wrapfigure}[18]{r}{1.6in}
                 \captionsetup{format=plain}%
