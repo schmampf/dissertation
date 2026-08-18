@@ -76,7 +76,7 @@
     \put(0.77563879,1.06409641){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{A}\textsubscript{gate}\end{tabular}}}}}%
     \put(0.90384393,1.06409641){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{A}\textsubscript{antenna}\end{tabular}}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=6]{cabling.pdf}}%
-    \put(0.49860461,1.21958884){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MFT25 Filter\end{tabular}}}}%
+    \put(0.49860461,1.21958884){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}\texttt{MFT25} Filter\end{tabular}}}}%
     \put(0.95799679,1.25033806){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}-10\,dB\end{tabular}}}}}%
     \put(0.47081732,0.69159816){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}100\,k\textohm\end{tabular}}}}}%
     \put(0.41953543,0.69159815){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}100\,k\textohm\end{tabular}}}}}%

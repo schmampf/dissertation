@@ -18,13 +18,10 @@
         \include{miscellaneous/titelpage.tex}
         \include{miscellaneous/empty-page.tex}
 
-        \clearpage \pagenumbering{Roman}
-
         \include{miscellaneous/abstract.tex}
         \include{miscellaneous/inspirational.tex}
 
-        \tableofcontents
-        \clearpage \pagenumbering{arabic}
+        \input{miscellaneous/table-of-content.tex}
 
     % =========================================================
     %%% Main body %%%
@@ -72,7 +69,6 @@
         \include{theory/diffusive.tex}
         \include{methods/fabrication.tex}
         \include{methods/cryo.tex}
-        % - update gradient export in fig dil fridge schematic
 
         \include{tunnelbarrier/appendix.tex}
         \include{atomic_contact/appendix.tex}
@@ -84,8 +80,6 @@
         \include{miscellaneous/eidestattliche-versicherung.tex}
 \end{document}
 
-% ssnset with Lukas
-% Cryo with Lukas
 % Josephson with ronja
 % reste with jenni
 
@@ -93,7 +87,6 @@
 % - Abstract
 % - Join bib files
 % - hyphenation pass
-% - range of panels with \,-\,
 % - e.g.~text
 % - hurenkinder und Schusterjungen
 % - float placing
@@ -101,7 +94,6 @@
 % - vergangenheit korrigieren (!!!)
 % - passiv korrigieren
 % - weniger Lab journal
-% - figure numbering nach Kapitel
 % - texttt LD400 and so ähnlich.
 % - et al. ?
 % - ackknowledgement checken ob es sich liest, als hätte ich nichts gemacht.?

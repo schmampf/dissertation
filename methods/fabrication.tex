@@ -29,13 +29,13 @@
     \subsection*{Electron Beam Lithography}
     %=========================================================
 
-        I performed electron beam lithography (EBL) using the Crossbeam system. I began by measuring the beam current with the jig containing the Faraday cup. A position list in the Zeiss software helped me locate the Faraday cup quickly. I kept the working distance as close as possible to \qty{5.00}{\milli\meter}. Because the beam current required some time to stabilize, I either waited before measuring or returned later and repeated the check.
+        I performed electron beam lithography (EBL) using the \texttt{Crossbeam} system. I began by measuring the beam current with the jig containing the Faraday cup. A position list in the Zeiss software helped me locate the Faraday cup quickly. I kept the working distance as close as possible to \qty{5.00}{\milli\meter}. Because the beam current required some time to stabilize, I either waited before measuring or returned later and repeated the check.
 
-        Accurate horizontal alignment of the sample was essential for exposure. I used the alignment tools in the focused ion beam (FIB) toolbox to simplify this step. I zoomed out to the maximum field of view and used the upper-right corner together with the leftmost sample edge for the initial alignment. This was usually sufficient to correct the dominant angular misalignment. Additional refinement within Elphy Plus was possible, but in practice it rarely improved the final angular alignment once the sample was mounted in the cryostat.
+        Accurate horizontal alignment of the sample was essential for exposure. I used the alignment tools in the focused ion beam (FIB) toolbox to simplify this step. I zoomed out to the maximum field of view and used the upper-right corner together with the leftmost sample edge for the initial alignment. This was usually sufficient to correct the dominant angular misalignment. Additional refinement within \texttt{Elphy Plus} was possible, but in practice it rarely improved the final angular alignment once the sample was mounted in the cryostat.
 
         Next, I focused the beam in the upper-right corner of the sample. I used the wobble function to center the beam in the aperture and minimized astigmatism with the \textit{x}- and \textit{y}-stigmators. Once the beam was well focused, I checked the current again at the Faraday cup. For the \qty{30}{\micro\meter} aperture in high-current mode, the beam current was about \qty{0.5}{\nano\ampere}. I used this setting for the small high-resolution structures. For the \qty{120}{\micro\meter} aperture, which I used for the \qty{1000}{\micro\meter} writing fields, the exact current was less critical because the larger leads tolerated moderate underexposure. In practice, slight underexposure in these larger fields reduced the writing time without compromising the result. The beam current for the \qty{120}{\micro\meter} aperture in high-current mode was typically around \qty{5}{\nano\ampere}. I performed a final focusing step at a central position along the upper sample edge, using a particle on the resist as a focusing aid. At this stage, I confirmed once more that the working distance was \qty{5.00(1)}{\milli\meter} and that the beam shift was set to zero.
 
-        Before starting the exposure, I noted the current time. Because the design layout included a timestamp, this provided a convenient way to match laboratory notes to the physical sample. If the measured beam current differed from earlier sessions, I recalculated the settling time for the \qty{100}{\micro\meter} field accordingly. The position list executed in Elphy Plus then located the writing fields automatically, applied the corresponding settings, and wrote the design. I enforced stitching between adjacent writing fields by overlapping their nominal positions by \qty{100}{\micro\meter}.
+        Before starting the exposure, I noted the current time. Because the design layout included a timestamp, this provided a convenient way to match laboratory notes to the physical sample. If the measured beam current differed from earlier sessions, I recalculated the settling time for the \qty{100}{\micro\meter} field accordingly. The position list executed in \texttt{Elphy Plus} then located the writing fields automatically, applied the corresponding settings, and wrote the design. I enforced stitching between adjacent writing fields by overlapping their nominal positions by \qty{100}{\micro\meter}.
 
         In practice, it is advantageous to keep the written design as simple as possible and avoid an unnecessarily large number of polygons. This reduces writing overhead and makes the exposure procedure more robust. I also avoided contamination dots as focusing markers. Instead, the combination of high-current mode and the \qty{30}{\micro\meter} aperture proved sufficient for reliable focusing because it provides a comparatively large depth of focus. The drawback is that very low exposure doses are no longer readily accessible, but this was not a practical limitation for the structures used here.
         
@@ -74,7 +74,7 @@
             \label{fig:methods:rie}
         \end{wrapfigure}
 
-        For the penultimate fabrication step, I used the PlasmaPro 80 ICP RIE system from Oxford Instruments. Although this tool was not designed specifically for highly isotropic etching, I operated it in a regime that gave sufficiently isotropic results by combining low table RF power with elevated pressure. I first used an ignition step to stabilize the plasma before switching to the less stable regime that favored isotropic etching. The sample temperature was particularly important for obtaining the desired undercut. A table temperature of \qty{100}{\degreeCelsius} proved to be a good compromise because it produced a sufficient undercut while keeping the etch slow enough to control the depth reliably. The process parameters that gave the best results are listed in Table~\ref{tab:methods:rie_parameter}.
+        For the penultimate fabrication step, I used the \texttt{PlasmaPro 80} ICP RIE system from Oxford Instruments. Although this tool was not designed specifically for highly isotropic etching, I operated it in a regime that gave sufficiently isotropic results by combining low table RF power with elevated pressure. I first used an ignition step to stabilize the plasma before switching to the less stable regime that favored isotropic etching. The sample temperature was particularly important for obtaining the desired undercut. A table temperature of \qty{100}{\degreeCelsius} proved to be a good compromise because it produced a sufficient undercut while keeping the etch slow enough to control the depth reliably. The process parameters that gave the best results are listed in Table~\ref{tab:methods:rie_parameter}.
         \begin{table}
             \centering
             \caption{RIE recipe \texttt{MCBJ SSET v5 @ 100C}.}
@@ -174,7 +174,7 @@
                 Hard baking         & \qty{170}{\degreeCelsius} for \qty{30}{\minute} in convection oven\\
 
                 \hline
-                Exposure            & Crossbeam by Zeiss, Elphy Plus by Raith\\
+                Exposure            & \texttt{Crossbeam} by Zeiss, \texttt{Elphy Plus} by Raith\\
                 Settings            & \qty{10}{\kilo\volt} acceleration voltage, \qty{5}{\milli\meter} working distance,\\
                 Aperture            & \qty{30}{\micro\meter} and \qty{120}{\micro\meter} aperture, high current,\\
                                     & \qty{155}{\micro\coulomb\per\centi\meter\squared} area dose\\
@@ -188,7 +188,7 @@
                 Lift-off            & \qtyrange{1}{3}{\hour} in acetone at \qty{60}{\degreeCelsius}\\
 
                 \hline
-                Reactive ion etching & PlasmaPro 80 ICP RIE by Oxford Instruments\\
+                Reactive ion etching & \texttt{PlasmaPro 80} ICP RIE by Oxford Instruments\\
                                     & \texttt{MCBJ SSET v5 @ 100C}, see Table~\ref{tab:methods:rie_parameter}\\
                 \hline
                 Electrical contacting & \qty{90}{\micro\meter} insulated copper wire, silver paste as\\
