@@ -1,6 +1,6 @@
 %% Creator: Inkscape 1.3.2 (091e20e, 2023-11-25), www.inkscape.org
 %% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
-%% Accompanies image file 'dilution-fridge.pdf' (pdf, eps, ps)
+%% Accompanies image file 'dilution-fridge-hx.pdf' (pdf, eps, ps)
 %%
 %% To include the image in your LaTeX document, write
 %%   \input{<filename>.pdf_tex}
@@ -53,16 +53,6 @@
   \begin{picture}(1,1.40714282)%
     \lineheight{1}%
     \setlength\tabcolsep{0pt}%
-    \put(0,0){\includegraphics[width=\unitlength,page=1]{dilution-fridge.pdf}}%
-    \put(0.60713907,0.85952398){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textsuperscript{3}He\,/\,\textsuperscript{4}He\\\end{tabular}}}}%
-    \put(0.68907524,0.76514677){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Gas\end{tabular}}}}%
-    \put(0.69009914,0.57352399){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Fermi Fluid\,/\\\end{tabular}}}}%
-    \put(0.69009914,0.66875773){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Normal Fluid\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=2]{dilution-fridge.pdf}}%
-    \put(0.69047625,0.50238115){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}Superfluid\end{tabular}}}}%
-    \put(0,0){\includegraphics[width=\unitlength,page=3]{dilution-fridge.pdf}}%
-    \put(0.05997197,0.30528592){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}MXC\end{tabular}}}}}%
-    \put(0.05997196,1.09100017){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Still\end{tabular}}}}}%
-    \put(0.05951467,0.69285718){\color[rgb]{0,0,0}\rotatebox{90}{\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}Heat Exchanger\end{tabular}}}}}%
+    \put(0,0){\includegraphics[width=\unitlength,page=1]{dilution-fridge-hx.pdf}}%
   \end{picture}%
 \endgroup%

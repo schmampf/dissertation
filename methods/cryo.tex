@@ -143,7 +143,13 @@
             \hfill
             \subfigure[
             Dilution unit circulation. The incoming \capHeThree-rich stream is precooled, enters the mixing chamber (MXC), and cools it as \capHeThree{} crosses into the dilute phase. The still evaporates \capHeThree{} and closes the cycle.
-            ]{{\fontsize{7}{9}\selectfont\import{methods/setup/cryo}{dilution-fridge.pdf_tex}}
+            ]{\ooalign{%
+                    \import{methods/setup/cryo}{dilution-fridge-hx.pdf_tex}\cr%
+                    \includegraphics[width=42mm]{methods/setup/cryo/dilution-fridge.png}\cr%
+                    {\fontsize{7}{9}\selectfont%
+                    \import{methods/setup/cryo}{dilution-fridge.pdf_tex}%
+                    }\cr%
+                }%
             }
             \vspace{-.75em}
             \caption{Dilution refrigeration with a \textsuperscript{3}He\,/\,\textsuperscript{4}He mixture. (a) The phase diagram shows the miscibility gap and the finite low-temperature \textsuperscript{3}He solubility of the dilute phase. (b) The circulation schematic shows how continuous removal of \textsuperscript{3}He from the dilute phase keeps the mixing chamber cold. The blue shading in panel (b) follows the mixture composition encoding used in panel (a), including the intentional gradient along the condensing line. In the dilute Fermi fluid, the density of the \textsuperscript{3}He symbols within the \textsuperscript{4}He-rich background indicates the local \textsuperscript{3}He concentration.}
