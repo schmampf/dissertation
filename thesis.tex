@@ -18,52 +18,50 @@
         % \include{miscellaneous/titelpage.tex}
         % \include{miscellaneous/empty-page.tex}
 
-        \clearpage \pagenumbering{Roman}
+        % \clearpage \pagenumbering{Roman}
 
         % \include{miscellaneous/abstract.tex}
         % \include{miscellaneous/inspirational.tex}
 
-        \tableofcontents
-        \clearpage \pagenumbering{arabic}
+        % \tableofcontents
+        % \clearpage \pagenumbering{arabic}
 
-    % =========================================================
-    %%% Main body %%%
-    % =========================================================
+    % % =========================================================
+    % %%% Main body %%%
+    % % =========================================================
 
-        % \include{miscellaneous/introduction.tex}
-        % Daniel Comments pending
+    %     \include{miscellaneous/introduction.tex}
+    %     % Daniel Comments pending
 
-        % % =========================================================
-        % \include{theory/theory.tex}
-        % % =========================================================
-        %     \include{theory/micro.tex}
-        %     \include{theory/macro.tex}
-        %     \include{theory/meso.tex}
-        %     \include{theory/stochastic.tex}
+    %     % =========================================================
+    %     \include{theory/theory.tex}
+    %     % =========================================================
+    %         \include{theory/micro.tex}
+    %         \include{theory/macro.tex}
+    %         \include{theory/meso.tex}
+    %         \include{theory/stochastic.tex}
 
-        % % =========================================================
-        % \include{methods/methods.tex}
-        % % =========================================================
-        %    \include{methods/sample.tex}
-        %     \include{methods/setup.tex}
-        %     \include{methods/digital.tex}
+    %     % =========================================================
+    %     \include{methods/methods.tex}
+    %     % =========================================================
+    %        \include{methods/sample.tex}
+    %         \include{methods/setup.tex}
+    %         \include{methods/digital.tex}
 
         % =========================================================
-        % \include{miscellaneous/results.tex}
+        \include{miscellaneous/results.tex}
         % =========================================================
             \include{tunnelbarrier/tunnelbarrier.tex}
             \include{tunnelbarrier/highres.tex}
             \include{tunnelbarrier/asym.tex}
-            % ronjas comments pending
-            % elkes comments pending
 
-            \include{atomic_contact/atomic-contact.tex}
-            \include{atomic_contact/pincode.tex}
-            \include{atomic_contact/photon-assisted.tex} 
-            \include{atomic_contact/subharmonic.tex}
-        %     % elkes comments pending
+        %     \include{atomic_contact/atomic-contact.tex}
+        %     \include{atomic_contact/pincode.tex}
+        %     \include{atomic_contact/photon-assisted.tex} 
+        %     \include{atomic_contact/subharmonic.tex}
                 
         % \include{miscellaneous/conclusion.tex}
+        % % Daniel Comments pending
 
     % % =========================================================
     % %%% Post Body %%%
@@ -75,33 +73,36 @@
     %     \include{methods/fabrication.tex}
     %     \include{methods/cryo.tex}
 
-    %     \include{tunnelbarrier/appendix.tex}
-    %     \include{atomic_contact/appendix.tex}
-    %     \include{ssn-set/ssn-set.tex}
-    %     \include{ssn-set/static.tex}
-    %     \include{ssn-set/dynamic.tex}
+        \include{tunnelbarrier/appendix.tex}
+        % \include{atomic_contact/appendix.tex}
+        % \include{ssn-set/ssn-set.tex}
+        % \include{ssn-set/static.tex}
+        % \include{ssn-set/dynamic.tex}
 
-    %     \include{miscellaneous/acknowledgement.tex}
-    %     \include{miscellaneous/eidestattliche-versicherung.tex}
+        % % \include{miscellaneous/acknowledgement.tex}
+        % \include{miscellaneous/eidestattliche-versicherung.tex}
 \end{document}
 
-% conclusion with Daniel
 % mcbj with Valentin
 % ssnset with Lukas
 % Cryo with Lukas
+% Josephson with ronja
+% reste with jenni
 
 % TODOs
 % - Abstract
 % - Join bib files
-
+% - hyphenation pass
+% - range of panels with \,-\,
+% - e.g.~text
+% - hurenkinder und Schusterjungen
+% - float placing
 % - consistency coherence / 2 Delta peaks
+% - vergangenheit korrigieren (!!!)
+% - passiv korrigieren
+% - weniger Lab journal
+% - figure numbering nach Kapitel
 
-% 13.-17.7. Breaking / Pincode
-% 20.-24.7. PAMAR
-% 27.-31.7. SC?
-% 03.-07.8. Miscellaneous
-% 10.-14.8. Revision
-% 17.-21.8. Revision
 % 24.08.2026 Abgabe
 % 03.09.2026 Gutachten Deadline
 % 08.10.2026 Mündliche Prüfung
@@ -112,15 +113,15 @@
 % 29 59 89 119 149
 
 
-    % \BibScaron
+% \BibScaron
 
-    % \the\textwidth
-    % \printinunitsof{in}\prntlen{\textwidth}
-    % \printinunitsof{in}\prntlen{\linewidth}
-    % \printinunitsof{mm}\prntlen{\textwidth}
-    % \printinunitsof{mm}\prntlen{\linewidth}
-    
-    % \printinunitsof{in}\prntlen{\textheight}
-    % \printinunitsof{mm}\prntlen{\textheight}
+% \the\textwidth
+% \printinunitsof{in}\prntlen{\textwidth}
+% \printinunitsof{in}\prntlen{\linewidth}
+% \printinunitsof{mm}\prntlen{\textwidth}
+% \printinunitsof{mm}\prntlen{\linewidth}
 
-    % Superconductivity was first observed by Heike Kamerlingh Onnes in 1911, when the electrical resistance of mercury vanished abruptly upon cooling below \qty{4.2}{\kelvin}. About 20 years later thereafter, the Meissner--Ochsenfeld effect revealed that superconductors also expel magnetic fields, establishing the two defining macroscopic properties of this quantum state of matter, perfect conductivity and perfect diamagnetism. At its core, superconductivity originates from an effective attraction between electrons near the Fermi surface. This attraction allows electrons with opposite momentum and spin to form Cooper pairs, which condense into a coherent macroscopic quantum state capable of carrying electrical current without resistance. \cite{onnes_further_1991, meissner_neuer_1933}
+% \printinunitsof{in}\prntlen{\textheight}
+% \printinunitsof{mm}\prntlen{\textheight}
+
+% Superconductivity was first observed by Heike Kamerlingh Onnes in 1911, when the electrical resistance of mercury vanished abruptly upon cooling below \qty{4.2}{\kelvin}. About 20 years later thereafter, the Meissner--Ochsenfeld effect revealed that superconductors also expel magnetic fields, establishing the two defining macroscopic properties of this quantum state of matter, perfect conductivity and perfect diamagnetism. At its core, superconductivity originates from an effective attraction between electrons near the Fermi surface. This attraction allows electrons with opposite momentum and spin to form Cooper pairs, which condense into a coherent macroscopic quantum state capable of carrying electrical current without resistance. \cite{onnes_further_1991, meissner_neuer_1933}
