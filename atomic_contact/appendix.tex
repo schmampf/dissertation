@@ -295,12 +295,13 @@
 
         \begin{figure}
             \centering
-            \subfigure[\textit{dI--dV}]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGcombined}}
+            \subfigure[\textit{dI--dV}]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGcombined}}%
+            \hfill%
+            \subfigure[\textit{dV--dI}]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcombined}}%
+            \\%
+            \subfigure[\textit{dI--dV} residual]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGdiff}}%
             \hfill
-            \subfigure[\textit{dV--dI}]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcombined}}
-            \subfigure[\textit{dI--dV} residual]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGdiff}}
-            \hfill
-            \subfigure[\textit{dV--dI} residual]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRdiff}}
+            \subfigure[\textit{dV--dI} residual]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRdiff}}%
             \caption{Comparison of four photon assisted models for C1 at $\nu=\qty{15.0}{\giga\hertz}$. The calculated (a) \textit{dI--dV} and (b) \textit{dV--dI} maps combine either PAICPT or an ideal coherent Shapiro response with either threshold weighted PAMAR or direct dressing of the FCS components. Panels (c) and (d) show the corresponding residuals relative to the measurement. The combination of PAICPT and threshold weighted PAMAR gives the least structured residual in both representations. Direct FCS dressing leaves pronounced deviations along the MAR sidebands, while the coherent Shapiro model does not reproduce the amplitude evolution of the replicas originating from zero bias. All four calculations use the same calibrated drive amplitude and static contact parameters.}
             \label{fig:ac:contact1:model-comparison}
         \end{figure}
@@ -315,7 +316,7 @@
                 }
             \label{fig:ac:contact1:cal}
 
-            \vspace{1em}
+            % \vspace{1em}
 
             \landscapepanels{atomic_contact/1.8G0/15.0GHz_stripline}{sim}
             \caption{
@@ -332,7 +333,7 @@
                 }
             \label{fig:ac:contact2:cal}
 
-            \vspace{1em}
+            % \vspace{1em}
 
             \landscapepanels{atomic_contact/2.4G0/15.0GHz_stripline}{sim}
             \caption{
