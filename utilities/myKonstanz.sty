@@ -149,7 +149,7 @@
         {\selectfontsize{16pt}\sffamily\gdef\chapterlabel{}} 
         {\gdef\chapterlabel{}}
         {0pt}
-        {
+        {%
             \ifx\chapterlabel\empty\seeblauunderline{\textbf{#1}}\else\seeblauunderline{\textbf{\chapterlabel~{#1}}}\fi%
         } % before
         \titlespacing*{\chapter}{0pt}{28pt}{42pt}%

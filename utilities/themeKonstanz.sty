@@ -926,11 +926,11 @@ Konstanz, \jahr%
 \ifdim\bluelinewidth<\textwidth%
 \begin{tikzpicture}[remember picture,overlay]%
 \draw [seeblau100, fill=seeblau100, line width=0.10\currentfontsize] (0,-0.62ex) -- (\bluelinewidth,-0.62ex);%
-\node [anchor=base west] at (-0.8ex,0) {#1};%
+\node [anchor=base west, inner sep=0pt, outer sep=0pt] at (0,0) {#1};%
 \end{tikzpicture}%
 \else%
 \begin{tikzpicture}[remember picture,overlay]%
-\node [anchor=south west, text width=\textwidth] at (-0.8ex,0) {#1};%
+\node [anchor=south west, inner sep=0pt, outer sep=0pt, text width=\textwidth] at (0,0) {#1};%
 \draw [seeblau100, fill=seeblau100, line width=0.10\currentfontsize] (0,0.16ex) -- (\textwidth,0.16ex);%
 \end{tikzpicture}%
 \fi%
