@@ -1,0 +1,481 @@
+% !TEX root = thesis.tex
+
+% XeLaTeX and fontspec use native Unicode (TU) encoding.
+
+\usepackage[ngerman, english]{babel}  % Add both English and German support
+
+%%% Legend %%%
+% \legend{seeblau}                 % 1.5mm x 1.5mm
+% \legend[2mm]{seeblau}            % 2mm x 1.5mm
+% \legend[2mm][1mm]{seeblau}       % 2mm x 1mm
+
+\usepackage{xparse}
+\usepackage{newunicodechar}
+% Render caron characters as explicit accents. This preserves the correct
+% Unicode names in Biber while avoiding unavailable glyphs in Latin Modern Sans.
+\newunicodechar{Š}{\v{S}}
+\newunicodechar{š}{\v{s}}
+\newunicodechar{ň}{\v{n}}
+\newunicodechar{č}{\v{c}}
+\DeclareRobustCommand{\BibScaron}{\v{S}}
+\DeclareRobustCommand{\Bibscaron}{\v{s}}
+\DeclareRobustCommand{\Bibncaron}{\v{n}}
+\DeclareRobustCommand{\Bibccaron}{\v{c}}
+\NewDocumentCommand{\legend}{O{1.5mm} O{1.5mm} m}{%
+  \textcolor{#3}{\rule{#1}{#2}}%
+}
+
+
+%%% A5 Format %%%
+    \usepackage{geometry} % A5
+    % \usepackage[mag=1414]{geometry} % A5+ = A4
+
+    \geometry{
+        paperheight=21.0cm, 
+        paperwidth=14.8cm, 
+        left=2cm, 
+        right=2cm, 
+        bottom=1.6cm, 
+        top=2cm, 
+        headheight=12pt, 
+        headsep=0.5cm, 
+        footskip=22pt,
+        }%
+    \usepackage{setspace}
+
+%%% corporate design %%%
+    \RequirePackage{etex}
+
+    \usepackage{utilities/themeKonstanzXelatexAddOn}
+    % XeLaTeX mit Schriftart Arial, VOR dem Standardpaket importieren
+
+    \usepackage{utilities/themeKonstanz} % Muss immer verwendet werden (Standardpaket)
+    % modified so no geometry is used
+
+    % \usepackage{utilities/themeKonstanzStyleAddOn}
+    % Style Add-On für andere Überschriften, NACH dem Standardpaket importieren
+    % doesn't show any difference
+
+    % usepackage that contains my modification to themeKonstanz
+    \usepackage{utilities/myKonstanz}
+
+    \usepackage{scrhack} % Fixes KOMA-Script compatibility issues
+    
+    \usepackage{coffeestains}
+
+    \usepackage{fontawesome5}
+
+%%% bibliography %%%
+    \RequirePackage{etex}
+    \usepackage[
+        backend=biber,
+        sorting=none,
+        maxbibnames=20,
+        minbibnames=20,
+        doi=false,
+        url=false,
+        isbn=false,
+        eprint=false
+    ]{biblatex}
+    \usepackage{csquotes} % Bibtex and language stuff
+
+    % Use the same font size as the main body for all bibliography entries.
+    \renewcommand*{\bibfont}{\normalsize}
+
+    % Abbreviate given names in journal articles. Retain full given names in
+    % books, theses, and other entry types when the bibliography data provides them.
+    \ExecuteBibliographyOptions[article]{giveninits=true}
+
+    % The standard style forces URLs to be printed for online entries. Keep the
+    % URL available for the clickable title and print only its access date below.
+    \ExecuteBibliographyOptions[online]{url=true}
+    \renewbibmacro*{urldate}{%
+        \printtext{\bibstring{urlseen}\addspace
+            \mkdayzeros{\thefield{urlday}}/\mkmonthzeros{\thefield{urlmonth}}/\mkyearzeros{\thefield{urlyear}}}%
+    }
+    \renewbibmacro*{url+urldate}{%
+        \iffieldundef{urlyear}{}{\usebibmacro{urldate}}%
+    }
+
+    % Link the displayed title to the URL, or to the DOI when no URL is available.
+    % The address itself is intentionally not printed in the bibliography.
+    \newcommand{\bibtitlelink}[1]{%
+        \iffieldundef{url}{%
+            \iffieldundef{doi}{#1}{\href{https://doi.org/\thefield{doi}}{#1}}%
+        }{%
+            \href{\thefield{url}}{#1}%
+        }%
+    }
+    \DeclareFieldFormat{title}{\bibtitlelink{#1}\isdot}
+    \DeclareFieldFormat[article,inbook,incollection,inproceedings,patent,thesis,unpublished]{title}{\mkbibquote{\bibtitlelink{#1}\isdot}}
+    \DeclareFieldFormat[book,collection,manual,proceedings,report]{title}{\mkbibemph{\bibtitlelink{#1}\isdot}}
+
+    % Retain the year, but omit finer date information and journal issue numbers.
+    \AtEveryBibitem{%
+        \clearfield{month}%
+        \clearfield{day}%
+        \ifentrytype{article}{%
+            \clearfield{number}%
+            \clearfield{issue}%
+            \clearfield{note}%
+            \clearfield{addendum}%
+        }{}%
+    }
+
+%%% basic settings %%%
+
+    % Kopf und Fusszeile  
+    % nr. 9 original         
+    % uneven means in header
+    % \headFoot{9} % for analog version
+    \headFoot{11} % for digital version
+
+    % Preserve the capitalization supplied by chapter and section titles in
+    % running headers instead of converting marks to uppercase.
+    \providecommand*{\MakeMarkcase}[1]{#1}
+    \renewcommand*{\chaptermark}[1]{%
+        \markboth{\chaptermarkformat #1}{\chaptermarkformat #1}%
+    }
+    \renewcommand*{\sectionmark}[1]{%
+        \markright{\sectionmarkformat #1}%
+    }
+
+    % Format appendix chapters like sections while retaining chapter semantics.
+    % This produces headings such as "A Sample Fabrication" and keeps sections
+    % within an appendix numbered as A.1, A.2, and so on.
+    \newcommand{\useappendixchapterstyle}{%
+        \titleformat{\chapter}%
+        {\selectfontsize{14pt}\sffamily\gdef\chapterlabel{}}%
+        {\gdef\chapterlabel{\thechapter}}%
+        {0pt}%
+        {\ifx\chapterlabel\empty
+            \seeblauunderline{\textbf{##1}}%
+        \else
+            \seeblauunderline{\textbf{\chapterlabel~##1}}%
+        \fi}%
+        \titlespacing*{\chapter}{0pt}{25pt}{12.5pt}%
+    }
+
+    % Format appendix sections like subsections while retaining section
+    % semantics and numbering, for example "A.1 Tunnel Regime".
+    \newcommand{\useappendixsectionstyle}{%
+        \titleformat{\section}%
+        {\selectfontsize{12pt}\sffamily\gdef\chapterlabel{}}%
+        {\gdef\chapterlabel{\thesection}}%
+        {0pt}%
+        {\ifx\chapterlabel\empty
+            \seeblauunderline{\textbf{##1}}%
+        \else
+            \seeblauunderline{\textbf{\chapterlabel~##1}}%
+        \fi}%
+        \titlespacing*{\section}{0pt}{20pt}{10pt}%
+    }
+
+    % Shift appendix entries down by one visual level in the table of
+    % contents without changing their sectioning semantics or PDF bookmarks.
+    \makeatletter
+    \newcommand{\appendixtocstyle}{%
+        \let\l@chapter\l@section
+        \let\l@section\l@subsection
+        \let\l@subsection\l@subsubsection
+    }
+    \makeatother
+    \newcommand{\useappendixtocstyle}{%
+        \addtocontents{toc}{\protect\appendixtocstyle}%
+    }
+
+    % For blank page
+        \usepackage{afterpage}
+        \newcommand\blankpage{
+            \null
+            \thispagestyle{empty}
+            \addtocounter{page}{-1}
+            \newpage
+            }
+
+    % desgin development
+        % for \printinunitsof{in}\prntlen{\textwidth}
+        \usepackage{layouts} 
+        % \setlayoutscale{1.0} % uncommented
+        % \usepackage{blindtext}
+
+    % uncomment for frames around boxes.
+    % \usepackage{showframe} 
+
+    % for includegraphics
+    \usepackage{graphicx}
+
+    % for wrappings / putting small pictures to the right
+    \usepackage{wrapfig}
+    \usepackage{rotating}
+    \usepackage{pdflscape}
+
+    % \usepackage{caption}
+    \usepackage{subcaption} % subfigures
+    % \usepackage{import}
+    % \usepackage{multicol}
+    % \setlength{\columnsep}{30pt}
+    % \usepackage{pdflscape}
+    % \interfootnotelinepenalty=10000
+
+%%% math stuff %%%
+    \usepackage{amsmath}
+    \usepackage{amsfonts} % für N, Z, Q und so \mathbb{Z}
+    \usepackage{amssymb} % extra math symbols (e.g. \lessapprox)
+    % Keep Arial for text and use a dedicated sans serif OpenType math font.
+    % kpfonts-otf loads unicode-math and selects KpMath Sans without replacing
+    % the text families configured by the Konstanz XeLaTeX add-on.
+    \usepackage[notext,sfmath]{kpfonts-otf}
+    \usepackage{siunitx}
+    \sisetup{
+        mode=match,
+        range-phrase={\,\text{-}\,},
+        range-units=single
+    }
+    \DeclareSIUnit{\dBm}{dBm}
+    \DeclareSIUnit{\rpm}{rpm}
+    \DeclareSIUnit{\sccm}{sccm}
+    \DeclareSIUnit{\torr}{Torr}
+    \DeclareSIUnit{\dayunit}{d}
+    \DeclareSIUnit{\inch}{in}
+    \DeclareSIUnit{\barunit}{bar}
+    \usepackage{textcomp}  % \textmu
+    \newfontfamily\thesissanssymbolfamily{lmsans9-regular.otf}
+    % Keep SI symbols upright and sans serif in both prose and equations.
+    \AtBeginDocument{%
+        \DeclareSIPrefix\micro{\ifmmode\upmu\else{\thesissanssymbolfamily µ}\fi}{-6}%
+        \DeclareSIUnit\ohm{{\thesissanssymbolfamily Ω}}%
+        \DeclareSIUnit\angstromunit{\ifmmode\mathring{\mathrm{A}}\else{\thesissanssymbolfamily Å}\fi}%
+    }
+    \newcommand{\mum}{\textmu m~}
+    \newcommand{\ima}[0]{\overset{\hspace{0.6mm}\text{\scalebox{0.7}{$_\circ$}}}{\imath}} % complex number i with °
+    % \newcommand{\mat}[1]{\underline{\underline{#1}}} % matrizes get underlined twice
+    \usepackage[normalem]{ulem}
+    \newcommand{\mat}[1]{\smash[b]{\uuline{#1}}}
+    % \usepackage{textgreek}
+    % \usepackage{textalpha}
+
+%%% python plots %%%
+    % Creator: Matplotlib, PGF backend
+    % To include the figure in your LaTeX document, write
+    % \input{<filename>.pgf}
+    % Make sure the required packages are loaded in your preamble
+    \usepackage{pgf}
+    % Figures using additional raster images can only be included by \input if they are in the same directory as the main LaTeX file. For loading figures from other directories you can use the `import` package
+    \usepackage{import}
+    % and then include the figures with
+    % \import{<path to file>}{<filename>.pgf}
+    
+    % Central figure mode. Override this before loading the header in thesis.tex:
+    % \newcommand{\figuremode}{empty} % framed PDF placeholders
+    % \newcommand{\figuremode}{pdf}   % precompiled PDFs
+    % \newcommand{\figuremode}{pgf}   % PGF sources
+    \providecommand{\figuremode}{pdf}
+    % The editor's full-build recipe sets this flag for its first LaTeX pass.
+    \ifdefined\buildemptyfigures
+        \renewcommand{\figuremode}{empty}
+    \fi
+
+    % In empty mode, graphicx reads each file's bounding box but does not render it.
+    % This also covers ordinary \includegraphics calls and images inside pdf_tex files.
+    \ifdefstring{\figuremode}{empty}{\setkeys{Gin}{draft}}{}
+
+    \NewDocumentCommand{\thesisplot}{O{} m m}{%
+        \ifdefstring{\figuremode}{empty}{%
+            \IfFileExists{#2/#3.pdf}{%
+                \includegraphics[#1]{#2/#3.pdf}%
+            }{%
+                \transportmissinggraphic{#2/#3.pdf}%
+            }%
+        }{\ifdefstring{\figuremode}{pdf}{%
+            \IfFileExists{#2/#3.pdf}{%
+                \includegraphics[#1]{#2/#3.pdf}%
+            }{%
+                \transportmissinggraphic{#2/#3.pdf}%
+            }%
+        }{\ifdefstring{\figuremode}{pgf}{%
+            \IfFileExists{#2/#3.pgf}{%
+                \import{#2/}{#3.pgf}%
+            }{%
+                \IfFileExists{#2/#3.pdf}{%
+                    \includegraphics[#1]{#2/#3.pdf}%
+                }{%
+                    \transportmissinggraphic{#2/#3.pgf}%
+                }%
+            }%
+        }{%
+            \PackageError{thesis}{Unknown figure mode `\figuremode'}{Use empty, pdf, or pgf.}%
+        }}}%
+    }
+
+    \NewDocumentCommand{\transportmissinggraphic}{m}{%
+        \fbox{%
+            \parbox[c][1.8in][c]{0.9\linewidth}{%
+                \centering
+                \scriptsize Missing figure\\
+                \texttt{\detokenize{#1}}%
+            }%
+        }%
+    }
+
+    \NewDocumentCommand{\transportpanelgraphic}{m}{%
+        \thesisplot[width=\linewidth]{#1}{main}%
+    }
+
+    \NewDocumentCommand{\transportpanels}{m m}{%
+        \subfigure[\textit{I--V}]{%
+            \parbox[t]{2.1in}{%
+                \centering
+                \transportpanelgraphic{#1/#2_iv}%
+            }%
+        }%
+        \hfill%
+        \subfigure[\textit{dI--dV}]{%
+            \parbox[t]{2.1in}{%
+                \centering
+                \transportpanelgraphic{#1/#2_didv}%
+            }%
+        }%
+        \hfill%
+        \subfigure[\textit{dV--dI}]{%
+            \parbox[t]{2.1in}{%
+                \centering
+                \transportpanelgraphic{#1/#2_dvdi}%
+            }%
+        }%
+    }
+
+    \NewDocumentCommand{\transportlandscapefigure}{O{-.3in} m m O{0em} +m m}{%
+        \begin{landscape}
+        \vspace*{#1}
+            \begin{center}
+                \captionsetup{type=figure}
+                \transportpanels{#2}{#3}
+                \vspace{#4}
+                \captionof{figure}{
+                    #5
+                    }
+                \label{#6}
+            \end{center}
+        \end{landscape}
+    }
+
+    \NewDocumentCommand{\transportlandscapefigurehalfpage}{O{0em} m m O{0em} +m m}{%
+        \begin{figure}[t]
+            \centering
+            \vspace*{#1}
+            \resizebox{\linewidth}{!}{\transportpanels{#2}{#3}}%
+            \vspace{#4}
+            \caption{%
+                #5
+                }
+            \label{#6}
+        \end{figure}
+    }
+
+    \NewDocumentCommand{\landscapepanels}{m m}{%
+        \subfigure[\textit{I--V}]{%
+            \singlefitpanelgraphic{#1/#2_iv}{main}%
+        }%
+        \hfill%
+        \subfigure[\textit{dI--dV}]{%
+            \singlefitpanelgraphic{#1/#2_didv}{main}%
+        }%
+        \hfill%
+        \subfigure[\textit{dV--dI}]{%
+            \singlefitpanelgraphic{#1/#2_dvdi}{main}%
+        }%
+    }
+
+    \NewDocumentCommand{\landscapefigure}{O{0em} m m O{0em} +m m}{%
+        \begin{figure}[t]
+            \centering
+            \vspace*{#1}
+            \landscapepanels{#2}{#3}
+            \vspace{#4}
+            \caption{%
+                #5
+                }
+            \label{#6}
+        \end{figure}
+    }
+
+    \NewDocumentCommand{\landscapepgffigure}{O{0em} m m +m m}{%
+        \begin{landscape}
+            \begin{center}
+                \captionsetup{type=figure}
+                \thesisplot{#2}{#3}%
+                \vspace{#1}
+                \captionof{figure}{
+                    #4
+                    }
+                \label{#5}
+            \end{center}
+        \end{landscape}
+    }
+
+    \NewDocumentCommand{\singlefitpanelgraphic}{m m}{%
+        \thesisplot{#1}{#2}%
+    }
+
+    \NewDocumentCommand{\singlefitpanels}{m}{%
+        \subfigure[\textit{I--V}]{%
+            \singlefitpanelgraphic{#1}{iv}%
+        }%
+        \hfill%
+        \subfigure[\textit{dI--dV}]{%
+            \singlefitpanelgraphic{#1}{didv}%
+        }%
+        \hfill%
+        \subfigure[\textit{dV--dI}]{%
+            \singlefitpanelgraphic{#1}{dvdi}%
+        }%
+    }
+
+    \NewDocumentCommand{\singlefitfigure}{O{t} m +m m}{%
+        \begin{figure}[#1]
+            \centering
+            \singlefitpanels{#2}
+            \caption{
+                #3
+            }
+            \label{#4}
+        \end{figure}
+    }
+    
+%%% Python-Code %%%
+    % for python code
+    \usepackage{listings}
+    \lstdefinestyle{mystyle}{
+        backgroundcolor=\color{backcolour},   
+        commentstyle=\color{seeblau100},
+        keywordstyle=\color{magenta100},
+        numberstyle=\tiny\color{codegray},
+        stringstyle=\color{seeblau65},
+        basicstyle=\ttfamily\tiny,
+        breakatwhitespace=false,         
+        breaklines=true,                 
+        captionpos=b,                    
+        keepspaces=true,                 
+        numbers=left,                    
+        numbersep=5pt,                  
+        showspaces=false,                
+        showstringspaces=false,
+        showtabs=false,                  
+        tabsize=2
+    }
+    \lstset{style=mystyle}
+
+    % for program environment, like figure
+    \usepackage{float}
+    \floatstyle{plaintop} % caption is above for program
+    \newfloat{program}{tbp}{lop} % name, positioning, aux file
+    \floatname{program}{Program} % name, Name in pdf
+
+%%% Hyphenations %%%
+    \hyphenation{Bei-spiel}
+    \hyphenation{Am-be-ga-o-kar}
+    \hyphenation{fer-mi-o-nic}
+
+
+\newcommand{\githubicon}{\textcolor{seeblau100}{\faGithub}}
