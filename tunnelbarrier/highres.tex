@@ -13,12 +13,12 @@
             }
         \vspace{-1.5em}
         \caption{
-                SEM image of TB1. The $\qty{70}{\nano\meter}$ lower Al layer was oxidized in situ for $\qty{2}{\minute}\,\qty{15}{\second}$ at $\qty{4}{\milli\barunit}$. The upper Al layer is $\qty{92}{\nano\meter}$ thick. The barrier overlap is about $(50\times100)\,\unit{\nano\meter\squared}$.
+                SEM image of TB1. The \qty{70}{\nano\meter} lower Al layer was oxidized in situ for 2:15\,\unit{\minute} at \qty{4}{\milli\barunit}. The upper Al layer is \qty{92}{\nano\meter} thick. The barrier overlap is about (50$\times$100)\,\unit{\nano\meter\squared}.
             }
         \label{fig:tb:highres:image-TB1}
     \end{wrapfigure}
 
-    This section starts with the simplest microwave driven superconducting junction investigated in this thesis. The goal is to understand one device as completely as possible before moving to junctions where additional mechanisms complicate the interpretation. TB1 is an SIS tunnel barrier (TB) without an observable supercurrent. Its static spectra are therefore expected to be described by quasiparticle tunneling between BCS electrodes, and its microwave response should follow photon assisted tunneling as introduced in Sec.~\ref{sec:micro}.
+    This section starts with the simplest microwave driven superconducting junction investigated in this thesis. The goal is to understand one device as completely as possible before moving to junctions where additional mechanisms complicate the interpretation. TB1 is an SIS tunnel barrier (TB) without an observable supercurrent. Its static spectra are therefore expected to be described by quasiparticle tunneling between two BCS electrodes, and its microwave response should follow photon assisted tunneling as introduced in Sec.~\ref{sec:micro}.
 
     I used this device as a reference system for three connected questions. First, I determined how well the unirradiated \textit{I--V} curve is described by the TB parameters. Second, I used controlled heating to calibrate the temperature axis and to introduce the transport landscape visualization used throughout the chapter. Third, I drove the same junction with microwaves and used the remapped amplitude axis to test how far photon assisted sidebands can be resolved. The high-amplitude data show sidebands up to very high photon order and therefore provide a direct benchmark for the spectral resolution and microwave coupling of the setup.
 
@@ -41,7 +41,7 @@
 
     The corresponding charging energy for $C_\mathrm{TB}\sim\qtyrange{0.2}{0.4}{\femto\farad}$ is $E_\mathrm{c}=e^2/2C_\mathrm{TB}\sim\qtyrange{200}{400}{\micro\electronvolt}$. Even allowing for stray capacitance that increases the effective capacitance to several fF, this scale remains comparable to or larger than the Josephson energy. I therefore interpret the missing zero-voltage branch as consistent with a junction whose dc phase relation is strongly affected by thermal fluctuations, charge fluctuations, voltage noise, and the unengineered microwave environment. The electrodes remain superconducting, but the phase difference across the barrier is not stiff enough to produce a resolvable zero-voltage branch \cite{ambegaokar_tunneling_1963,tinkham_introduction_2004,grabert_single_2013}.
 
-    This absence is important for the interpretation below because it removes a coherent Josephson branch and Shapiro step response from the expected microwave signal. The superconducting gap then provides a sharp energy ruler, so microwave irradiation should generate photon assisted replicas shifted by multiples of the single-photon energy.
+    This absence is important for the interpretation below because it excludes a coherent Josephson branch and Shapiro step response from the expected microwave signal. The superconducting gap then provides a sharp energy ruler, so microwave irradiation should generate photon assisted replicas shifted by multiples of the single-photon energy.
 
     The lack of a supercurrent does not prevent me from characterizing the junction. The quasiparticle branch gives access to the superconducting gap $\Delta_0$, the normal-state conductance $G_\mathrm{N}$, the fitted electronic temperature $T_\mathrm{fit}$, the Dynes broadening $\gamma$, and the effective voltage broadening $\sigma_V$. Assuming symmetric electrodes and negligible magnetic field, I obtained the values listed in Table~\ref{table:tunnelbarrier:highres} for the measurement blocks used in this section.
 
@@ -69,9 +69,9 @@
         \label{table:tunnelbarrier:highres}
     \end{table}
     
-    The fitted gaps cluster near $\Delta_0\approx\qty{195}{\micro\electronvolt}$, slightly larger than the literature value of about $\qty{180}{\micro\electronvolt}$ used in Sec.~\ref{subsubsec:micro:superconducting-gap}. I do not interpret this difference as unusual. Thin-film aluminum commonly shows sample dependent variations of both $\Delta_0$ and $T_\mathrm{c}$ due to thickness, disorder, and fabrication conditions, and the weak-coupling estimate from $\Delta_0$ gives $T_\mathrm{c}\approx\qty{1.274}{\kelvin}$, consistent with the temperature calibration below \cite{giaever_study_1961,tinkham_introduction_2004}. The normal-state conductance remains near $G_\mathrm{N}\simeq0.19\,G_0$ in all reference fits, which places TB1 in the tunnel limit. BCS quasiparticle tunneling and Tien--Gordon photon assisted tunneling are therefore the appropriate minimal models for the measurement blocks in this section.
+    The fitted gaps cluster near $\Delta_0\approx\qty{195}{\micro\electronvolt}$, slightly larger than the literature value of about $\qty{180}{\micro\electronvolt}$ used in Sec.~\ref{subsubsec:micro:superconducting-gap}. This difference is typical for thin-film aluminum. The weak-coupling estimate from $\Delta_0$ gives $T_\mathrm{c}\approx\qty{1.274}{\kelvin}$, consistent with the temperature calibration below \cite{giaever_study_1961,tinkham_introduction_2004}. The normal-state conductance remains near $G_\mathrm{N}\simeq0.19\,G_0$ in all reference fits, which places TB1 in the tunnel limit. BCS quasiparticle tunneling and Tien--Gordon photon assisted tunneling are therefore the appropriate minimal models for the measurement blocks in this section.
 
-    The fitted electronic temperature $T_\mathrm{fit}$ is difficult to estimate from an SIS junction far below the critical temperature because the spectrum changes only weakly in that regime. Although the static fit gives $T_\mathrm{fit}=\qty{215(13)}{\milli\kelvin}$, the temperature calibration below shows a low-temperature fit plateau near $T_\mathrm{base}=\qty{282(2)}{\milli\kelvin}$. I therefore use the single-trace value only as a weakly constrained model parameter and return to its physical meaning below.
+    The fitted electronic temperature $T_\mathrm{fit}$ is difficult to estimate from an SIS junction far below the critical temperature because the spectrum changes only weakly in that temperature range. Although the static fit gives $T_\mathrm{fit}=\qty{215(13)}{\milli\kelvin}$, the temperature calibration below shows a low-temperature fit plateau near $T_\mathrm{base}=\qty{282(2)}{\milli\kelvin}$. I therefore use the single-trace value only as a weakly constrained model parameter and return to its physical meaning below.
 
     The remaining two fit parameters describe phenomenological broadening. The Dynes parameter $\gamma$ accounts for a finite quasiparticle lifetime and other mechanisms that broaden the singularity in the DOS itself, while $\sigma_V$ describes effective voltage broadening from residual bias noise and averaging during the voltage sweep. I keep both parameters because they affect the fit differently. Increasing $\gamma$ alone can round the curve at the gap edge, but it also increases the modeled subgap conductance. The additional voltage broadening allows the gap edge width to be reproduced without producing an overall rounding of the DOS.
 
@@ -152,7 +152,7 @@
     \label{subsec:tb:highres:amplitude-calibration}
     %=========================================================
 
-        I next used TB1 to calibrate the microwave amplitude axis and to test the dynamic range of the PAT measurement. The two drive frequencies emphasize complementary aspects of the response. At $\qty{18.3}{\giga\hertz}$, the larger single-photon energy produces a wider voltage separation between adjacent replicas, while the weaker microwave coupling limits the maximum reduced amplitude reached in the sweep. The resulting uncluttered maps make the sideband evolution and amplitude calibration particularly clear. I therefore use this measurement first to introduce the analysis. At $\qty{13.6}{\giga\hertz}$, the smaller photon energy and stronger coupling provide access to a much wider range of reduced amplitudes and photon orders. I use this second measurement to test how far the sidebands remain resolvable in the multiphoton regime. For both sweeps, I fitted the effective junction amplitude point by point.
+        Next, I used TB1 to calibrate the microwave amplitude axis, to test the dynamic range of the PAT measurement. The two drive frequencies emphasize complementary aspects of the response. At $\qty{18.3}{\giga\hertz}$, the larger single-photon energy produces a wider voltage separation between adjacent replicas, while the weaker microwave coupling limits the maximum reduced amplitude reached in the sweep. The resulting uncluttered maps make the sideband evolution and amplitude calibration particularly clear. I therefore use this measurement first to introduce the analysis. At $\qty{13.6}{\giga\hertz}$, the smaller photon energy and stronger coupling provide access to a much wider range of reduced amplitudes and photon orders. I use this second measurement to test how far the sidebands remain resolvable in the multiphoton regime. For both sweeps, I fitted the effective junction amplitude point by point.
 
         In this quasiparticle PAT regime the relevant charge is $q=e$, so I use the reduced drive amplitude $\alpha_e=eA/h\nu$ and the voltage equivalent of the single-photon energy, $V_\nu=h\nu/e$.
 
@@ -186,7 +186,7 @@
             \label{fig:tb:highres:amp18.3GHz:fit}
         \end{wrapfigure}
         
-        Over the main part of the sweep, this comparison fit gives
+        Over the indicated parameter range of the sweep, this comparison fit gives
         \begin{equation}
             A = \eta A_\mathrm{out}\,,\qquad \eta\approx8.38(3)\times10^{-4}\,.
             \label{eq:tb:highres:amp18.3GHz:eta}

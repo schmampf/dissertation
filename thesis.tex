@@ -4,7 +4,7 @@
 \documentclass[fontsize=9pt, rgb]{scrreport} 
 
 % Figure rendering: empty (framed placeholders), pdf (fast), or pgf (final quality).
-\providecommand{\figuremode}{pgf}
+\providecommand{\figuremode}{pdf}
 
 \input{utilities/header.tex}
 \addbibresource{miscellaneous/local.bib} % thesis graded
@@ -44,38 +44,38 @@
         % % =========================================================
         % \include{methods/methods.tex}
         % % =========================================================
-        %     \include{methods/sample.tex}
+        %    \include{methods/sample.tex}
         %     \include{methods/setup.tex}
         %     \include{methods/digital.tex}
 
-        % % =========================================================
+        % =========================================================
         % \include{miscellaneous/results.tex}
-        % % =========================================================
-        %     \include{tunnelbarrier/tunnelbarrier.tex}
-        %     \include{tunnelbarrier/highres.tex}
-        %     \include{tunnelbarrier/asym.tex}
-        %     % ronjas comments pending
-        %     % elkes comments pending
+        % =========================================================
+            \include{tunnelbarrier/tunnelbarrier.tex}
+            \include{tunnelbarrier/highres.tex}
+            \include{tunnelbarrier/asym.tex}
+            % ronjas comments pending
+            % elkes comments pending
 
-        %     \include{atomic_contact/atomic-contact.tex}
-        %     \include{atomic_contact/pincode.tex}
-        %     \include{atomic_contact/photon-assisted.tex} 
-        %     \include{atomic_contact/subharmonic.tex}
-        % %     % elkes comments pending
+            \include{atomic_contact/atomic-contact.tex}
+            \include{atomic_contact/pincode.tex}
+            \include{atomic_contact/photon-assisted.tex} 
+            \include{atomic_contact/subharmonic.tex}
+        %     % elkes comments pending
                 
         % \include{miscellaneous/conclusion.tex}
 
     % % =========================================================
     % %%% Post Body %%%
     % % =========================================================
-    %     \input{miscellaneous/references.tex}
+        \input{miscellaneous/references.tex}
 
     %     \include{miscellaneous/software.tex}
     %     \include{theory/diffusive.tex}
-        % \include{methods/fabrication.tex}
-        % \include{methods/cryo.tex}
+    %     \include{methods/fabrication.tex}
+    %     \include{methods/cryo.tex}
 
-        % \include{tunnelbarrier/appendix.tex}
+    %     \include{tunnelbarrier/appendix.tex}
     %     \include{atomic_contact/appendix.tex}
     %     \include{ssn-set/ssn-set.tex}
     %     \include{ssn-set/static.tex}
