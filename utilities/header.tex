@@ -172,6 +172,19 @@
         \titlespacing*{\section}{0pt}{20pt}{10pt}%
     }
 
+    % Shift appendix entries down by one visual level in the table of
+    % contents without changing their sectioning semantics or PDF bookmarks.
+    \makeatletter
+    \newcommand{\appendixtocstyle}{%
+        \let\l@chapter\l@section
+        \let\l@section\l@subsection
+        \let\l@subsection\l@subsubsection
+    }
+    \makeatother
+    \newcommand{\useappendixtocstyle}{%
+        \addtocontents{toc}{\protect\appendixtocstyle}%
+    }
+
     % For blank page
         \usepackage{afterpage}
         \newcommand\blankpage{

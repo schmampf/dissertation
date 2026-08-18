@@ -8,3 +8,18 @@
 \appendix
 \useappendixchapterstyle
 \useappendixsectionstyle
+
+% Insert the umbrella entry immediately before the first appendix chapter's
+% own ToC entry. Doing this at \addchaptertocentry keeps the ordering stable
+% across \include files and gives both entries the same page target.
+\newif\ifappendixtocpending
+\appendixtocpendingtrue
+\let\standardaddchaptertocentry\addchaptertocentry
+\renewcommand*{\addchaptertocentry}[2]{%
+    \ifappendixtocpending
+        \addcontentsline{toc}{chapter}{Appendices}%
+        \useappendixtocstyle
+        \global\appendixtocpendingfalse
+    \fi
+    \standardaddchaptertocentry{#1}{#2}%
+}
