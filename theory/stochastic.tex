@@ -232,6 +232,51 @@
 
             Figures~\ref{fig:stochastic:dcb-resonant} and~\ref{fig:stochastic:dcb-pat} compare passive resonant and photon assisted DCB in an SIS junction. Both generate satellites separated by $\hbar\omega_0=h\nu$, but passive modes produce Poisson weighted inelastic channels and coherent drives produce Bessel weighted current replicas. At zero temperature, passive mode satellites lie on the higher-$|V|$ side of the quasiparticle threshold because the mode can only absorb energy. A coherent drive permits absorption and stimulated emission, creating replicas on both sides. Thermal mode occupation weakens this distinction through detailed balance.
 
+            \begin{figure}[t]
+                \centering
+                \subfigure[
+                    \textit{I--V}
+                    ]{\thesisplot{theory/stochastic}{dcb-res-iv-sis}}%
+                \hfill%
+                \subfigure[
+                    \textit{dI--dV}
+                    ]{\thesisplot{theory/stochastic}{dcb-res-didv-sis}}%
+                \hfill%
+                \subfigure[
+                    \textit{I--V}
+                    ]{\thesisplot{theory/stochastic}{dcb-resa-iv-sis}}%
+                \hfill%
+                \subfigure[
+                    \textit{dI--dV}
+                    ]{\thesisplot{theory/stochastic}{dcb-resa-didv-sis}}%
+                \caption{
+                    Resonant DCB in an SIS junction. (a) and (b) Increasing $\alpha_e$ at fixed $\alpha_{0,e}=1$ suppresses and broadens the quasiparticle features. (c) and (d) Increasing $\alpha_{0,e}$ at fixed $\alpha_e=1$ transfers weight to Poisson weighted satellites spaced by $\hbar\omega_0/e$.
+                    }
+                \label{fig:stochastic:dcb-resonant}
+                
+                \vspace{1em}
+
+                \subfigure[
+                \textit{I--V}
+                    ]{\thesisplot{theory/stochastic}{dcb-pat-ohm-iv-sis}}%
+                \hfill%
+                \subfigure[
+                    \textit{dI--dV}
+                    ]{\thesisplot{theory/stochastic}{dcb-pat-ohm-didv-sis}}%
+                \hfill%
+                \subfigure[
+                    \textit{I--V}
+                    ]{\thesisplot{theory/stochastic}{dcb-pata-ohm-iv-sis}}%
+                \hfill%
+                \subfigure[
+                    \textit{dI--dV}
+                    ]{\thesisplot{theory/stochastic}{dcb-pata-ohm-didv-sis}}%
+                \caption{
+                    Photon assisted DCB in an SIS junction. (a) and (b) Increasing $\alpha_e$ at fixed $\alpha_{\nu,e}=1$ strengthens environmental suppression. (c) and (d) Increasing $\alpha_{\nu,e}$ at fixed $\alpha_e=1$ creates Bessel weighted replicas spaced by $h\nu/e$.
+                    }
+                \label{fig:stochastic:dcb-pat}
+            \end{figure}
+
             DCB and ICPT are two charge specific consequences of the same environmental interaction. Small low-energy weight in $P_e(E)$ suppresses stochastic $q=e$ tunneling, while finite-energy weight in $P_{2e}(E)$ enables the inelastic $q=2e$ transfer discussed next.
 
         %=========================================================
@@ -247,62 +292,6 @@
             The expected observables are changes in subgap current and in the amplitude and line shape of the MAR structures in \textit{dI--dV}. Their interpretation requires comparison with a coherent MAR reference at the same channel transmissions. A suppression near a MAR threshold is not by itself evidence for DCB because temperature, lifetime broadening, voltage noise, and imperfect knowledge of the channel transmissions can produce similar changes. Conversely, environmental enhancement between thresholds would be missed by a model that treats DCB only as a positive charging energy cost.
 
             In summary, DCB of MAR couples environmental fluctuations to coherent multiparticle transfer through a finite-transmission contact. The low-transmission effective charge picture explains the enhanced blockade, but it is incomplete once several MAR orders overlap and elastic renormalization becomes important. A quantitative interpretation must therefore retain the channel transmissions, coherent MAR dynamics, and electromagnetic environment together. The resulting transmission dependent blockade and possible antiblockade distinguish this problem from a simple charging energy shift or an independent dressing of each charge order. A complete quantitative theory that treats arbitrary channel transmissions, overlapping MAR orders, and environmental backaction on equal footing remains an open problem.
-
-            \begin{landscape}
-                \begin{figure}[p]
-                    % \captionsetup{format=plain}%
-                    \vspace{-1.0cm}
-                    \centering
-
-                    % Left figure
-                    \begin{minipage}[t]{3.0in}
-                    \centering
-                    \subfigure[
-                        \textit{I--V}, varying $\alpha_e$.
-                        ]{\thesisplot{theory/stochastic}{dcb-res-iv-sis}}
-                    \hfill
-                    \subfigure[
-                        \textit{I--V}, varying $\alpha_{0,e}$.
-                        ]{\thesisplot{theory/stochastic}{dcb-resa-iv-sis}}
-                    \medskip
-                    \subfigure[
-                        \textit{dI--dV}, varying $\alpha_e$.
-                        ]{\thesisplot{theory/stochastic}{dcb-res-didv-sis}}
-                    \hfill
-                    \subfigure[
-                        \textit{dI--dV}, varying $\alpha_{0,e}$.
-                        ]{\thesisplot{theory/stochastic}{dcb-resa-didv-sis}}
-                    \caption{
-                        Resonant DCB in an SIS junction. (a) and (c) Increasing $\alpha_e$ at fixed $\alpha_{0,e}=1$ suppresses and broadens the quasiparticle features. (b) and (d) Increasing $\alpha_{0,e}$ at fixed $\alpha_e=1$ transfers weight to Poisson weighted satellites spaced by $\hbar\omega_0/e$.
-                        }
-                        \label{fig:stochastic:dcb-resonant}
-                    \end{minipage}
-                    \hfill
-                    \begin{minipage}[t]{3.0in}
-                    \centering
-                        \subfigure[
-                        \textit{I--V}, varying $\alpha_e$.
-                            ]{\thesisplot{theory/stochastic}{dcb-pat-ohm-iv-sis}}
-                        \hfill
-                        \subfigure[
-                            \textit{I--V}, varying $\alpha_{\nu,e}$.
-                            ]{\thesisplot{theory/stochastic}{dcb-pata-ohm-iv-sis}}
-                        \medskip
-                        \subfigure[
-                            \textit{dI--dV}, varying $\alpha_e$.
-                            ]{\thesisplot{theory/stochastic}{dcb-pat-ohm-didv-sis}}
-                        \hfill
-                        \subfigure[
-                            \textit{dI--dV}, varying $\alpha_{\nu,e}$.
-                            ]{\thesisplot{theory/stochastic}{dcb-pata-ohm-didv-sis}}
-                        \caption{
-                            Photon assisted DCB in an SIS junction. (a) and (c) Increasing $\alpha_e$ at fixed $\alpha_{\nu,e}=1$ strengthens environmental suppression. (b) and (d) Increasing $\alpha_{\nu,e}$ at fixed $\alpha_e=1$ creates Bessel weighted replicas spaced by $h\nu/e$.
-                            }
-                            \label{fig:stochastic:dcb-pat}
-                    \end{minipage}
-                \end{figure}
-            \end{landscape}
-
 
     %=========================================================
     \subsection{Incoherent Cooper Pair Tunneling}
