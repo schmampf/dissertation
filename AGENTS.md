@@ -104,6 +104,7 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
 
 - Prefer the forms below and keep them consistent:
   - `quasiparticle`
+  - `quasiparticle peak` for the SIS/NIS gap-edge DOS feature (not "coherence peak", which refers to coherence-factor-sensitive processes such as NMR relaxation, not single-particle tunneling)
   - `Cooper pair` in both noun and compound modifier uses, for example `Cooper pair transfer`
   - `normal-state`
   - `weak-coupling`
