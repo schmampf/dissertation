@@ -91,6 +91,7 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
 - Avoid colons as sentence-internal punctuation. Prefer a comma appositive or a new sentence instead of a colon introducing a clause.
 - Minimize parentheses. Prefer short full-stop sentences.
 - Avoid semicolons. Prefer commas and short full-stop sentences.
+- Avoid inline math in running prose. State physical relations and scales in words instead. Use inline math only when a precise expression is essential and cannot be phrased clearly in words, and prefer a displayed, labeled equation over inline math when the relation is worth referencing again.
 - Use footnotes for short side explanations and rough order-of-magnitude estimates of physical quantities.
 - Follow the thesis minimal-hyphen house style. Do not hyphenate a compound modifier whose first element is a noun, for example `microwave driven transport`, `photon assisted tunneling`, `sample dependent variation`, `Bessel weighted channels`, and `voltage biased response`.
 - Hyphenate adjective-first compound modifiers before a noun when needed for clarity, for example `high-frequency response`, `low-temperature measurement`, and `normal-state conductance`. Omit the hyphen when the expression is used predicatively, for example `the response is frequency dependent`.
