@@ -4,51 +4,69 @@ This repository contains the LaTeX source for my dissertation. The project is st
 
 ## Current status
 
-`thesis.tex` is the main entry point. At the moment, it compiles only the theory chapter:
+`thesis.tex` is the main entry point and currently compiles theory, methods, and the results chapters (tunnel barrier and atomic contact).
 
-- Theory close to be finished / ready for first pass to Elke.
-- Methods sent to Elke. Waiting for feedback.
+- Theory, methods, and the tunnel-barrier / atomic-contact results chapters have all gone through a first round of feedback (Elke on theory and atomic contact, Ronja on tunnel barrier, Lukas on SSN-SET and cryo, Valentin on setup, Daniel on conclusion), which has been incorporated.
+- Currently in a polishing/formatting pass (spacing, references, figures, TOC/appendix style) ahead of submission.
+- The SSN-SET chapter (`ssn-set/`) is written and included, but currently sits in the post-body/appendix section rather than the main results flow.
 
+Key dates: Abgabe (submission) 2026-08-24, Gutachten deadline 2026-09-03, mündliche Prüfung 2026-10-08.
 
 ## Repository structure
 
-- `thesis.tex`  
+- `thesis.tex`
   Main file controlling the build and which chapters are included.
 
-- `header.tex`  
-  Central preamble: page geometry (A5), everything is now in accordance with A5. Dont change. For Prüfungsamt, enlarge manually to a4. Further includes: corporate design theme, math packages, plotting/graphics support, and `biblatex` configuration (`backend=biber`).
+- `header.tex` (via `utilities/header.tex`)
+  Central preamble: page geometry (A5, do not change; enlarge manually to A4 for Prüfungsamt submission), corporate design theme, math packages, plotting/graphics support, and `biblatex` configuration (`backend=biber`).
 
-- `theory/`  
-  Theory chapter(s). Contains many Matplotlib-PGF figures (`.pgf`) and supporting graphics.  
+- `theory/`
+  Theory chapters. Contains many Matplotlib-PGF figures (`.pgf`) and supporting graphics.
   Notable files:
   - `theory/theory.tex` (chapter header)
-  - `theory/basics.tex` (basic concepts / normal-state + mesoscopic preliminaries)
-  - `theory/micro.tex` (microscopic superconductivity / BCS-level building blocks)
-  - `theory/macro.tex` (macroscopic superconductivity / phase, Josephson relations, electrodynamics)
-  - `theory/meso.tex` (mesoscopic superconducting transport perspective)
-  - `theory/stochastic.tex` (stochastic/finite-temperature aspects; noise / fluctuations where applicable)
-  
-- `methods/`  
-  Experimental methods chapter scaffold. Notable files:
+  - `theory/basics.tex`, `theory/micro.tex`, `theory/macro.tex`, `theory/meso.tex`, `theory/stochastic.tex`
+  - `theory/diffusive.tex` (included in the post-body/appendix section)
+
+- `methods/`
+  Experimental methods chapter. Notable files:
   - `methods/methods.tex` (chapter header)
-  - `methods/sample.tex` (sample preparation section)
-  - `methods/setup.tex` (physical setup)
-  - `methods/digital.tex` (digital steps involved in data acquisition and evaluation)
-  - `methods/sampleappendix.tex` (step-by-step fabrication appendix-style content)
+  - `methods/sample.tex`, `methods/setup.tex`, `methods/digital.tex`
+  - `methods/fabrication.tex`, `methods/cryo.tex` (post-body/appendix)
   Also contains many figure assets (PNG/PDF/SVG/PGF, and some `pdf_tex` exports).
 
-- `results/`  
-  Results chapter (currently not included in `thesis.tex`).
+- `tunnelbarrier/`
+  Tunnel-barrier results chapter (`tunnelbarrier.tex`, `highres.tex`, `asym.tex`) plus `appendix.tex`.
 
-- `miscellaneous/`  
-  Optional chapters/sections (e.g., abstract, intro, conclusion, appendix, acknowledgements), depending on what is included from `thesis.tex`.
+- `atomic_contact/`
+  Atomic-contact results chapter (`atomic-contact.tex`, `pincode.tex`, `photon-assisted.tex`, `subharmonic.tex`) plus `appendix.tex`.
 
-- `utilities/`  
+- `ssn-set/`
+  Superconductor-superconductor-normal single-electron transistor (SSN-SET) chapter (`ssn-set.tex`, `static.tex`, `dynamic.tex`), currently included in the post-body section.
+
+- `dcb-ssn/`
+  Raw/working data folders for dynamical-Coulomb-blockade SSN measurements, not directly referenced from `thesis.tex`.
+
+- `miscellaneous/`
+  Front/back matter and shared source: titlepage, abstract, introduction, results intro, conclusion, references, software, acknowledgements, `eidestattliche-versicherung`, plus the bibliography files (`local.bib`, `intro.bib`).
+
+- `utilities/`
   Style files (Konstanz theme), logos, and templates used by the document.
+
+- `papierkram/`
+  Administrative paperwork for the submission (signed declaration, front page, forms, correspondence) — not thesis source content.
+
+- `versionen/`
+  Dated PDF snapshots of chapters sent out for review; not build source.
+
+- `output/`
+  Rendered PDF output snapshots.
+
+- `.auxiliary/`, `tmp/`
+  Build artifacts and scratch files.
 
 ## Bibliography
 
 The document uses `biblatex` with `biber`:
 
-- Zotero bibliography file: `My Library.bib`
-- Local bibliography file: `local.bib`
+- Zotero bibliography file: `local.bib`
+- Introduction-specific bibliography file: `intro.bib`
