@@ -31,7 +31,7 @@
 
         The static transport response initially supported this expectation. TB2 showed a clear quasiparticle onset and no resolved supercurrent, and its \textit{I--V} curve could be described by the same SIS model used for TB1. Under microwave irradiation, however, the transport became strongly bias asymmetric within a narrow frequency range. The purpose of this section is therefore to characterize this unexpected rectification, establish its dependence on microwave amplitude and frequency, and test whether it correlates with microwave coupling or sample heating. The available measurements constrain possible explanations but do not identify a unique microscopic mechanism.
 
-        I used the representative \textit{I--V} curve in Fig.~\ref{fig:tb:asym:irradiation:single-iv} to determine the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$. The fit also returned the trace-dependent fitted temperature $T_\mathrm{fit}$ and effective microwave amplitude $A_\mathrm{fit}$ for this curve. The corresponding values and measurement conditions are listed in Table~\ref{table:tunnelbarrier:asym}. I did not apply the additional offset-correction algorithm discussed in Sec.~\ref{subsec:methods:digital:analysis} to these data. This algorithm asumes symmetric \textit{I--V} and we will see, that this asumption is not true for this measurement.
+        I used the representative \textit{I--V} curve in Fig.~\ref{fig:tb:asym:irradiation:single-iv} to determine the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$. The fit also returned the trace dependent fitted temperature $T_\mathrm{fit}$ and effective microwave amplitude $A_\mathrm{fit}$ for this curve. The corresponding values and measurement conditions are listed in Table~\ref{table:tunnelbarrier:asym}. I did not apply the additional offset-correction algorithm discussed in Sec.~\ref{subsec:methods:digital:analysis} to these data. This algorithm asumes symmetric \textit{I--V} and we will see, that this asumption is not true for this measurement.
 
         \singlefitfigure{tunnelbarrier/asym/irradiation/single-fit}{
             Representative transport trace of TB2. The panels show the measured \textit{I--V} curve and the numerically derived \textit{dI--dV} and \textit{dV--dI} responses. The \textit{I--V} curve is fitted with the SIS BCS model, with the extracted parameters listed in Table~\ref{table:tunnelbarrier:asym}.
@@ -66,18 +66,18 @@
 
         I performed these measurements with the setup described by Patrick Raif and Martin Prestel, with several changes to the low-temperature wiring \cite{raif_electronic_2024,prestel_magnetic_2020}. Instead of the commercial thermalizer and filter, I used a sequence of copper-powder filters and stainless steel capillaries. The reference resistor was already located at low temperature, in contrast to the configuration used by Martin Prestel. Microwave irradiation was again applied through the antenna.
 
-        For the microwave amplitude sweeps, I held the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$ fixed at the values obtained from the representative fit. I held $\nu$ at the nominal applied frequency. I then allowed $T_\mathrm{fit}$ and $A_\mathrm{fit}$ to vary for each irradiated trace. This procedure follows the analysis of TB1 and provides a common reference for comparing the different drive frequencies. Unlike TB1, however, TB2 developed a pronounced bias asymmetry under microwave irradiation. The symmetric SIS plus Tien--Gordon model cannot reproduce this response, so the extracted $T_\mathrm{fit}$ and $A_\mathrm{fit}$ should be interpreted as effective comparison parameters rather than as a complete physical description of the asymmetric curves.
+        For the microwave amplitude sweeps, I held the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$ fixed at the values obtained from the representative fit. I held $\nu$ at the nominal applied frequency. I then allowed $T_\mathrm{fit}$ and $A_\mathrm{fit}$ to vary for each irradiated trace. This procedure follows the analysis of TB1 and provides a common reference for comparing the different drive frequencies. Unlike TB1, however, TB2 developed a pronounced bias asymmetry under microwave irradiation. The symmetric SIS plus Tien-Gordon model cannot reproduce this response, so the extracted $T_\mathrm{fit}$ and $A_\mathrm{fit}$ should be interpreted as effective comparison parameters rather than as a complete physical description of the asymmetric curves.
 
     %=========================================================
     \subsubsection*{Motivating Asymmetric Response}
     \label{subsec:tb:asym:representative}
     %=========================================================
 
-        The deviation from the symmetric SIS response became pronounced at selected frequencies and sufficiently large microwave amplitudes. Figure~\ref{fig:tb:asym:irradiation:single-asym} shows a representative trace at $\nu=\qty{7.97}{\giga\hertz}$. To compare the two bias polarities, I reflected the negative-bias branch about the origin and plotted it together with the positive-bias branch. The two branches differ substantially in the quasiparticle-onset region and remain separated at larger bias. The corresponding \textit{dI--dV} and \textit{dV--dI} curves show that the asymmetry is associated with a redistribution and displacement of the spectral features rather than with a constant current or voltage offset.
+        The deviation from the symmetric SIS response became pronounced at selected frequencies and sufficiently large microwave amplitudes. Figure~\ref{fig:tb:asym:irradiation:single-asym} shows a representative trace at $\nu=\qty{7.97}{\giga\hertz}$. To compare the two bias polarities, I reflected the negative-bias branch about the origin and plotted it together with the positive-bias branch. The two branches differ substantially in the quasiparticle onset region and remain separated at larger bias. The corresponding \textit{dI--dV} and \textit{dV--dI} curves show that the asymmetry is associated with a redistribution and displacement of the spectral features rather than with a constant current or voltage offset.
 
         I recorded the same trace with increasing and decreasing bias. The two sweep directions overlapped within the experimental resolution. The asymmetry is therefore reproducible and does not originate from sweep direction hysteresis on the measurement timescale of \qty{3}{\minute}.
 
-        To quantify the effect locally, I define normalized bias-asymmetry parameters for the three transport representations,
+        To quantify the effect locally, I define normalized bias asymmetry parameters for the three transport representations,
         \begin{align}
             \chi_I(V) &= \frac{I(V)+I(-V)}{\left|I(V)-I(-V)\right|}\,,\\
             \chi_{\mathrm{d}I/\mathrm{d}V}(V) &= \frac{\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) - \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V)}{\left|\tfrac{\mathrm{d}I}{\mathrm{d}V}(V) + \tfrac{\mathrm{d}I}{\mathrm{d}V}(-V) \right|}\,,\\
@@ -86,7 +86,7 @@
         \end{align}
         All three quantities vanish for an ideally bias symmetric transport response. Their signs indicate which bias branch has the larger response, while their magnitudes quantify the relative difference between the branches. Because the normalization can become small, particularly in the derivative representations, I use $\chi$ primarily to identify the bias regions in which the symmetry breaking occurs other than as a globally averaged measure.
 
-        For the representative trace in Fig.~\ref{fig:tb:asym:irradiation:single-asym}, the local current asymmetry reached $\chi_I=0.254$. The largest values occurred in the voltage range where the positive- and negative-bias quasiparticle onsets evolved differently. This observation shows that the microwave response cannot be described by a single bias-symmetric SIS plus Tien--Gordon curve. The full amplitude sweep at this frequency is shown in Fig.~\ref{fig:tb:asym:nu_7.97GHz:cal}, in the Appendix.
+        For the representative trace in Fig.~\ref{fig:tb:asym:irradiation:single-asym}, the local current asymmetry reached $\chi_I=0.254$. The largest values occurred in the voltage range where the positive- and negative-bias quasiparticle onsets evolved differently. This observation shows that the microwave response cannot be described by a single bias-symmetric SIS plus Tien-Gordon curve. The full amplitude sweep at this frequency is shown in Fig.~\ref{fig:tb:asym:nu_7.97GHz:cal}, in the Appendix.
 
         \begin{figure}[t]
             \centering
@@ -119,16 +119,16 @@
             \label{fig:tb:asym:irradiation:single-asym}
         \end{figure}
 
-        This trace creates a calibration problem. For TB1, each irradiated curve could be fitted with the symmetric SIS plus Tien--Gordon model and remapped using its individual $A_\mathrm{fit}$. When the rectification in TB2 becomes large, however, the measured response violates the bias symmetry assumed by this model. The resulting $A_\mathrm{fit}$ is only then a compromise between two differently evolving bias branches and no longer represents the physical microwave amplitude. A pointwise remapping based on these values would therefore imprint the failure of the symmetric model onto the calibrated amplitude axis.
+        This trace creates a calibration problem. For TB1, each irradiated curve could be fitted with the symmetric SIS plus Tien-Gordon model and remapped using its individual $A_\mathrm{fit}$. When the rectification in TB2 becomes large, however, the measured response violates the bias symmetry assumed by this model. The resulting $A_\mathrm{fit}$ is only then a compromise between two differently evolving bias branches and no longer represents the physical microwave amplitude. A pointwise remapping based on these values would therefore imprint the failure of the symmetric model onto the calibrated amplitude axis.
 
     %=========================================================
-    \subsubsection*{Effective Microwave-Amplitude Calibration}
+    \subsubsection*{Effective Microwave Amplitude Calibration}
     \label{subsec:tb:asym:amplitude-calibration}
     %=========================================================
 
-        I nevertheless fitted every complete \textit{I--V} curve with the symmetric SIS plus Tien--Gordon model and extracted $A_\mathrm{fit}$ and $T_\mathrm{fit}$. For asymmetric curves, these values are effective fit parameters because the model cannot reproduce both bias branches simultaneously. I therefore did not use the individual $A_\mathrm{fit}$ values as the remapped amplitude coordinate.
+        I nevertheless fitted every complete \textit{I--V} curve with the symmetric SIS plus Tien-Gordon model and extracted $A_\mathrm{fit}$ and $T_\mathrm{fit}$. For asymmetric curves, these values are effective fit parameters because the model cannot reproduce both bias branches simultaneously. I therefore did not use the individual $A_\mathrm{fit}$ values as the remapped amplitude coordinate.
 
-        Instead, I determined one effective coupling coefficient for each frequency. For every nonzero source amplitude in a frequency sweep, I evaluated $A_\mathrm{fit}/A_\mathrm{out}$. All ratios were included without rejection based on fit quality or asymmetry. I defined the frequency-dependent coupling and its relation as
+        Instead, I determined one effective coupling coefficient for each frequency. For every nonzero source amplitude in a frequency sweep, I evaluated $A_\mathrm{fit}/A_\mathrm{out}$. All ratios were included without rejection based on fit quality or asymmetry. I defined the frequency dependent coupling and its relation as
         \begin{align}
             \eta(\nu)=\operatorname*{median}_{A_\mathrm{out}>0}\!\left(\frac{A_\mathrm{fit}}{A_\mathrm{out}}\right)\,, &&
             A_\mathrm{cal}=\eta(\nu)A_\mathrm{out}\,.
@@ -140,7 +140,7 @@
             \centering
             \thesisplot{tunnelbarrier/asym/irradiation/control}{Afit_Aout}
             \caption{
-                Effective microwave-amplitude calibration of TB2 at selected frequencies. The points show $A_\mathrm{fit}$ obtained from the complete signed \textit{I--V} curves. The lines show the frequency-dependent effective coupling used to define $A_\mathrm{cal}$ in Eq.~\eqref{eq:tb:asym:amplitude-coupling}. Deviations from the lines are largest where the bias asymmetry prevents a quantitative symmetric-model fit.
+                Effective microwave-amplitude calibration of TB2 at selected frequencies. The points show $A_\mathrm{fit}$ obtained from the complete signed \textit{I--V} curves. The lines show the frequency dependent effective coupling used to define $A_\mathrm{cal}$ in Eq.~\eqref{eq:tb:asym:amplitude-coupling}. Deviations from the lines are largest where the bias asymmetry prevents a quantitative symmetric-model fit.
             }
             \label{fig:tb:asym:control-Afit_Aout}
         \end{figure}
@@ -152,7 +152,7 @@
     \label{subsec:tb:asym:transport}
     %=========================================================
 
-        The representative trace establishes the presence of microwave induced rectification at one operating point. To determine whether the effect was isolated or evolved systematically, I measured microwave amplitude sweeps from $7.75$ to $\qty{8.05}{\giga\hertz}$ in steps of $\qty{50}{\mega\hertz}$. Figure~\ref{fig:tb:asym:comparison-maps} compares the resulting \textit{dI--dV} and \textit{dV--dI} landscapes at six selected frequencies. The corresponding branch-resolved line cuts and the complete \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} frequency comparisons are provided in Appendix~\ref{appendix:tb2}.
+        The representative trace establishes the presence of microwave induced rectification at one operating point. To determine whether the effect was isolated or evolved systematically, I measured microwave amplitude sweeps from $7.75$ to $\qty{8.05}{\giga\hertz}$ in steps of $\qty{50}{\mega\hertz}$. Figure~\ref{fig:tb:asym:comparison-maps} compares the resulting \textit{dI--dV} and \textit{dV--dI} landscapes at six selected frequencies. The corresponding branch resolved line cuts and the complete \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} frequency comparisons are provided in Appendix~\ref{appendix:tb2}.
 
         \begin{figure}[t]
             \centering
@@ -169,9 +169,9 @@
             \label{fig:tb:asym:comparison-maps}
         \end{figure}
 
-        The \textit{dI--dV} maps provide the clearest view of the spectral evolution. At the lowest and highest frequencies, the two quasiparticle-onset ridges remain approximately symmetric. At intermediate frequencies, one ridge is suppressed and displaced relative to the other, and the direction of this deformation reverses across the investigated frequency interval. Near the reversal, an additional conductance feature appears between the two main ridges. The \textit{I--V} and \textit{dV--dI} representations show the same systematic amplitude and frequency dependence, although the narrow resistance features make the latter more sensitive to noise.
+        The \textit{dI--dV} maps provide the clearest view of the spectral evolution. At the lowest and highest frequencies, the two quasiparticle onset ridges remain approximately symmetric. At intermediate frequencies, one ridge is suppressed and displaced relative to the other, and the direction of this deformation reverses across the investigated frequency interval. Near the reversal, an additional conductance feature appears between the two main ridges. The \textit{I--V} and \textit{dV--dI} representations show the same systematic amplitude and frequency dependence, although the narrow resistance features make the latter more sensitive to noise.
 
-        The calibrated landscapes establish that the symmetry breaking evolves systematically with both microwave amplitude and frequency. The symmetric calculation reproduces the overall photon-assisted redistribution of spectral weight but not the unequal evolution of the two bias branches. I next quantify this difference over the complete data set.
+        The calibrated landscapes establish that the symmetry breaking evolves systematically with both microwave amplitude and frequency. The symmetric calculation reproduces the overall photon assisted redistribution of spectral weight but not the unequal evolution of the two bias branches. I next quantify this difference over the complete data set.
 
     %=========================================================
     \subsubsection*{Rectification Analysis}
@@ -203,7 +203,7 @@
                 Rectification $\mathcal{A}_{\mathrm{d}V/\mathrm{d}I}$
             ]{\thesisplot{tunnelbarrier/asym/irradiation/rect}{dvdi}}
             \caption{
-                Frequency- and amplitude-dependent rectification of TB2. The panels show the signed integrated asymmetry $\mathcal{A}$ of the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses. Gray regions indicate amplitudes for which no measurement is available at the corresponding frequency.
+                Frequency and amplitude dependent rectification of TB2. The panels show the signed integrated asymmetry $\mathcal{A}$ of the \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses. Gray regions indicate amplitudes for which no measurement is available at the corresponding frequency.
                 }
             \label{fig:tb:asym:rectification-map}
         \end{figure}
@@ -238,7 +238,7 @@
                 $T_\mathrm{bath}/A_\mathrm{out}\ (\unit{\kelvin\per\volt})$
             ]{\thesisplot{tunnelbarrier/asym/irradiation/control-img}{Tbath_Aout}}
             \caption{
-                Frequency- and amplitude-dependent control quantities. The panels show the pointwise ratios $A_\mathrm{fit}/A_\mathrm{out}$, $T_\mathrm{fit}/A_\mathrm{out}$, and $T_\mathrm{bath}/A_\mathrm{out}$. Gray regions indicate amplitudes for which no measurement is available at the corresponding frequency.
+                Frequency and amplitude dependent control quantities. The panels show the pointwise ratios $A_\mathrm{fit}/A_\mathrm{out}$, $T_\mathrm{fit}/A_\mathrm{out}$, and $T_\mathrm{bath}/A_\mathrm{out}$. Gray regions indicate amplitudes for which no measurement is available at the corresponding frequency.
             }
             \label{fig:tb:asym:control-map}
         \end{figure}
@@ -288,7 +288,7 @@
             \label{fig:tb:asym:frequency}
         \end{figure}
 
-        Most diagnostic slopes neither correlate nor anticorrelate clearly with the amplitude-averaged asymmetry. The bath-heating slopes show the most similar frequency dependence, but this comparison alone does not establish heating as the cause of the rectification. Uniform heating changes the quasiparticle spectrum but cannot by itself break bias symmetry.
+        Most diagnostic slopes neither correlate nor anticorrelate clearly with the amplitude averaged asymmetry. The bath heating slopes show the most similar frequency dependence, but this comparison alone does not establish heating as the cause of the rectification. Uniform heating changes the quasiparticle spectrum but cannot by itself break bias symmetry.
 
     %=========================================================
     \subsubsection*{Interpretation and Model Limits}
@@ -297,7 +297,7 @@
 
         The measurements establish a reproducible microwave induced breaking of bias symmetry in TB2. At the representative operating point, increasing and decreasing bias sweeps overlap within the experimental resolution. The diode like response is therefore single valued and nonhysteretic on the measurement timescale. Its defining features are an onset at elevated drive, confinement to a narrow frequency interval, and a reversal of direction within that interval.
 
-        The static control measurements show conventional superconducting behavior. Magnetic field dependent maps contain no unexpected features, and the transport remains unchanged over a wide range of dc gate voltages. Together with the low-impedance connection through the intact break junction, these observations support treating the asymmetry as a microwave-induced response rather than a property of a static flux-sensitive or Coulomb blockaded state.
+        The static control measurements show conventional superconducting behavior. Magnetic field dependent maps contain no unexpected features, and the transport remains unchanged over a wide range of dc gate voltages. Together with the low-impedance connection through the intact break junction, these observations support treating the asymmetry as a microwave induced response rather than a property of a static flux sensitive or Coulomb blockaded state.
 
         The narrow frequency interval points to resonant coupling through the microwave environment. In an earlier transmission experiment in the same cryostat, I observed a feature-rich transfer function and associated prominent features with different parts of the setup. The dominant resonance was consistent with the radius of the semicylindrical shielding cup used at the time \cite{irtenkauf_broadband_2021}. The present cylindrical cup has a diameter of $\qty{38}{\milli\meter}$, close to the free-space wavelength $\lambda_0=c/\nu\approx\qty{37.8}{\milli\meter}$ at $\qty{7.93}{\giga\hertz}$. This correspondence supports an electromagnetic mode of the sample environment as the origin of the frequency selectivity.
 
@@ -313,7 +313,7 @@
     \subsubsection*{Significance and Outlook}
     %=========================================================
 
-        The central result is a microwave controlled rectification effect whose magnitude and polarity are tuned jointly by dc bias, microwave amplitude, and frequency. The response reaches a local current asymmetry of \qty{25}{\percent}, appears above a drive threshold, and reverses direction within a narrow frequency interval. It therefore represents a distinct transport regime beyond the bias symmetric Tien-Gordon Model. To my knowledge, this combination of amplitude controlled onset and frequency controlled polarity reversal has not previously been reported for an SIS tunnel junction.
+        The central result is a microwave controlled rectification effect whose magnitude and polarity are tuned jointly by dc bias, microwave amplitude, and frequency. The response reaches a local current asymmetry of \qty{25}{\percent}, appears above a drive threshold, and reverses direction within a narrow frequency interval. It therefore represents a distinct transport regime beyond the bias symmetric Tien-Gordon model. To my knowledge, this combination of amplitude controlled onset and frequency controlled polarity reversal has not previously been reported for an SIS tunnel junction.
 
         The response also demonstrates that the electromagnetic environment can become an active part of quasiparticle transport. The measurements are consistent with resonant microwave coupling to a local circuit containing the intact Josephson weak link and the tunnel barrier. A deliberately designed resonator or impedance environment would provide the most direct test of this interpretation. Such an experiment could determine whether the observed rectification can be reproduced and controlled as a junction property rather than as a sample specific response.
 

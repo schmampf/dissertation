@@ -93,11 +93,11 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
 - Avoid semicolons. Prefer commas and short full-stop sentences.
 - Avoid inline math in running prose. State physical relations and scales in words instead. Use inline math only when a precise expression is essential and cannot be phrased clearly in words, and prefer a displayed, labeled equation over inline math when the relation is worth referencing again.
 - Use footnotes for short side explanations and rough order-of-magnitude estimates of physical quantities.
-- Follow the thesis minimal-hyphen house style. Do not hyphenate a compound modifier whose first element is a noun, for example `microwave driven transport`, `photon assisted tunneling`, `sample dependent variation`, `Bessel weighted channels`, and `voltage biased response`.
-- Hyphenate adjective-first compound modifiers before a noun when needed for clarity, for example `high-frequency response`, `low-temperature measurement`, and `normal-state conductance`. Omit the hyphen when the expression is used predicatively, for example `the response is frequency dependent`.
+- Follow the thesis minimal-hyphen house style. Do not hyphenate a compound modifier whose first element is a noun, for example `microwave driven transport`, `photon assisted tunneling`, `sample dependent variation`, `Bessel weighted channels`, `voltage biased response`, `spin singlet` (`spin` is a noun), and `pair breaking` (`pair` is a noun). This holds even for terms that look like fixed jargon; the noun-first test is what decides it, not familiarity.
+- Hyphenate adjective-first compound modifiers before a noun when needed for clarity, for example `high-frequency response`, `low-temperature measurement`, `normal-state conductance`, and `weak-link` (`weak` is an adjective). Omit the hyphen when the expression is used predicatively, for example `the response is frequency dependent`.
 - Leave ordinary noun compounds unhyphenated, for example `microwave coupling`, `amplitude calibration`, `contact configuration`, and `photon energy`. Preserve hyphens in established names, numerical compounds, and constructions where omission would create genuine ambiguity. Prefer rephrasing over adding a noun-first adjectival hyphen.
-- Use open noun compounds for named theories and models, with title capitalization for the complete name, for example `\(P(E)\) Theory` and `Tien-Gordon Model`. Do not join the name and the words `Theory` or `Model` with a hyphen or en dash.
-- Use a single hyphen inside compound names and joint attributions, for example `Tien-Gordon Model` and `Josephson-quasiparticle cycle`. Reserve the LaTeX en dash `--` for relational constructions such as `\textit{I--V}`, `\textit{dI--dV}`, and `gate--bias map`.
+- Use open noun compounds for named theories and models, with title capitalization for the complete name, for example `\(P(E)\) Theory`. Write `Tien-Gordon model` with a lowercase `model` (capitalizing it reads as a germanism). Do not join the name and the word `Theory` or `model` with a hyphen or en dash.
+- Use a single hyphen inside compound names and joint attributions, for example `Tien-Gordon model` and `Josephson-quasiparticle cycle`. Reserve the LaTeX en dash `--` for relational constructions such as `\textit{I--V}`, `\textit{dI--dV}`, and `gate--bias map`.
 - Write numerical ranges in math mode with a short text hyphen surrounded by thin spaces, for example `$1.8\,\text{-}\,5.0\,\mathrm{nm}$`. For named alphanumeric series in running text, use the corresponding text form, for example `M1\,-\,M4` and `C0\,-\,C3`. Do not use `-` or `--` as the range separator. Retain the LaTeX en dash for relational scientific notation such as `\textit{I--V}` and `gate--bias`.
 - In running prose, write author abbreviations as `\textit{et al.}`. When another word follows directly, use a nonbreaking interword space, for example `Steinberg \textit{et al.}~reported`. When punctuation follows, attach it directly to the abbreviation, for example `Cuevas \textit{et al.}, which`.
 
@@ -109,9 +109,12 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
   - `Cooper pair` in both noun and compound modifier uses, for example `Cooper pair transfer`
   - `normal-state`
   - `weak-coupling`
+  - `weak-link`
+  - `spin singlet` (no hyphen; `spin` is a noun)
+  - `pair breaking` (no hyphen; `pair` is a noun)
   - `\textit{I--V}` and `\textit{dI--dV}` for measurement names
   - `\textit{P(E)} Theory`
-  - `Tien-Gordon Model`
+  - `Tien-Gordon model` (lowercase `model`)
   - `I(V)` and `\mathrm{d}I/\mathrm{d}V` in equations
 - Keep notation stable across chapters unless a local redefinition is unavoidable and clearly introduced.
 

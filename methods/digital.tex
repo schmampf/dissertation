@@ -269,7 +269,7 @@
 
             For repeated evaluations, the production model uses the convolution form of the tunnel current, Eq.~\eqref{eq:micro:tunnel-conv}. Instead of recomputing the full energy integral for every bias point, the occupied and empty spectral functions are convolved on an energy grid and interpolated back to the requested voltage axis. This makes parameter sweeps and fits substantially faster while keeping the same physical model.
 
-            Photon assisted tunneling is included by applying the Tien--Gordon sideband sum of Eq.~\eqref{eq:micro:pat-iv} to the BCS current. This extension adds the irradiation amplitude $A$ and frequency $\nu$ as model parameters. After evaluating the static or photon assisted current $I_0(V)$, the model can account for unresolved voltage fluctuations by averaging over a Gaussian distribution of instantaneous bias offsets $\delta V$,
+            Photon assisted tunneling is included by applying the Tien-Gordon sideband sum of Eq.~\eqref{eq:micro:pat-iv} to the BCS current. This extension adds the irradiation amplitude $A$ and frequency $\nu$ as model parameters. After evaluating the static or photon assisted current $I_0(V)$, the model can account for unresolved voltage fluctuations by averaging over a Gaussian distribution of instantaneous bias offsets $\delta V$,
             \begin{align}
                 I_{\sigma_V}(V)
                 = \int_{-\infty}^{\infty}
