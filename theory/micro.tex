@@ -356,6 +356,8 @@
 
             Unlike the NIS case, the SIS differential conductance is not reduced here to a convolution of one DOS with the thermal kernel. We evaluate it numerically from the full current. For identical electrodes, the dominant quasiparticle threshold occurs near $|eV|=2\Delta$, producing a pronounced feature in both \textit{I--V} and \textit{dI--dV}.
 
+            More generally, this threshold sits at $|eV|=\Delta_1+\Delta_2$ for electrodes with different gaps, since only then does a filled state in one electrode align with an empty state above the gap in the other. It reduces to the familiar $2\Delta$ threshold for the identical electrodes considered throughout this thesis. We refer to this feature as the quasiparticle peak.
+
             \begin{figure}[t]
                 \centering
                 \subfigure[
@@ -383,7 +385,7 @@
 
             In NIS junctions, temperature broadens the occupation factor and therefore rounds the coherence peak and smooths the gap edge, while Dynes broadening directly smears the superconducting DOS.
 
-            In SIS junctions, temperature produces thermally activated subgap current and weakens the threshold feature as $T$ approaches $T_\mathrm{c}$. Dynes broadening introduces subgap spectral weight in both electrodes and smears the threshold.
+            In SIS junctions, temperature produces thermally activated subgap current and weakens the threshold feature as $T$ approaches $T_\mathrm{c}$. For unequal gaps, quasiparticles already excited above the larger gap can additionally tunnel into the empty states just above the smaller gap without the bias supplying the full gap sum, which produces a separate and much weaker peak at $|eV|=|\Delta_1-\Delta_2|$. Since it requires a thermal quasiparticle population, this feature vanishes as $T\to0$. For the identical electrodes considered throughout this thesis it sits at $eV=0$, merging into the thermally activated subgap current described above rather than appearing as a distinguishable peak. Dynes broadening introduces subgap spectral weight in both electrodes and smears the threshold.
 
         Fits to measured \textit{I--V} or \textit{dI--dV} curves can provide estimates of $\Delta_0$, $T$, and $\gamma$. However, correlations among these parameters, voltage noise, and spatial gap variations can produce similar line shapes. Reliable extraction therefore requires independent calibration or comparison across multiple spectra.
 
