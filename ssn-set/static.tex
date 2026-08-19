@@ -10,7 +10,7 @@
             Static transport of SET1 before opening the break junction. The panels show the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses together with the SIN BCS Dynes fit. The fit describes the quasiparticle onset and the conductance above the gap.
         }{fig:ssn1-set:sin}
 
-        I first characterized SET1 with the mechanically controlled break junction in its unbroken state. The closed metallic constriction had a much lower resistance than the oxide tunnel barrier, so the measured voltage dropped predominantly across the Al--AlO\textsubscript{x}--Cu junction. The device therefore provided an SIN tunnel junction reference before the superconducting island was formed.
+        I first characterized SET1 with the mechanically controlled break junction in its unbroken state. The closed metallic constriction had a much lower resistance than the oxide tunnel barrier, so the measured voltage dropped predominantly across the Al--AlO\textsubscript{x}--Cu junction. The device therefore provided an SIN tunnel junction reference before I opened the break junction to form the superconducting island.
 
         In the superconducting state, the current was suppressed below the quasiparticle threshold and increased sharply near $eV=\Delta_0$, as expected for an SIN junction. I fitted the complete \textit{I--V} characteristic with the BCS density of states including Dynes broadening. The fit yielded the normal-state resistance and conductance
         \begin{align}
@@ -29,7 +29,7 @@
 
         The fitted temperature was higher than the measured bath temperature, $T_\mathrm{bath}=\qty{52(1)}{\milli\kelvin}$. Such a difference is expected because the bath thermometer does not directly measure the electronic temperature of the junction, and residual electrical noise or imperfect thermalization can broaden the transport response. I therefore treat $T_\mathrm{fit}$ as an effective electronic temperature.
 
-        The fit reproduced both the quasiparticle onset and the conductance peak in Fig.~\ref{fig:ssn1-set:sin}. The extracted gap provides the superconducting energy scale used below, while $R_\mathrm{TB}$ characterizes the fixed oxide barrier before the device was converted into an SET.
+        The fit reproduced both the quasiparticle onset and the conductance peak in Fig.~\ref{fig:ssn1-set:sin}. The extracted gap provides the superconducting energy scale used below, while $R_\mathrm{TB}$ characterizes the fixed oxide barrier before I opened the break junction to convert the device into an SET.
 
         In addition, I measured the device after suppressing superconductivity. The normal-state \textit{I--V} characteristic showed no resolvable zero bias anomaly. I therefore found no evidence for appreciable dynamical Coulomb blockade in the unbroken device.
 
@@ -43,7 +43,7 @@
                 Normal-state transport of SET1 after opening the break junction at $V_\mathrm{gate}=\qty{0}{\milli\volt}$. The measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses are compared with the orthodox SET fit. The suppressed low bias conductance is the local signature of Coulomb blockade.
             }{fig:ssn1-set:ssn1-nset-iv0}
 
-            Sweeping the gate voltage revealed that this suppression was periodic and bounded by diagonal conductance onsets, as shown in Fig.~\ref{fig:ssn1-set:ssn1-nset:exp}. The two families of Coulomb diamond edges had different absolute slopes in the gate--bias plane, as expected for unequal junction capacitances. Above $V_\mathrm{gate}\approx\qty{1.7}{\milli\volt}$, the measured pattern changed abruptly, as seen more clearly in Fig.~\ref{fig:ssn1-nset:dGdiff}. This discontinuity was consistent with an atomic rearrangement of the mechanically formed break junction during the sweep, although the conductance did not provide an independent signature of such a change. The normal-state data therefore established gate controlled Coulomb blockade and an asymmetric SET geometry before superconducting transport was considered, but the complete map did not represent a single unchanged configuration.
+            Sweeping the gate voltage revealed that this suppression was periodic and bounded by diagonal conductance onsets, as shown in Fig.~\ref{fig:ssn1-set:ssn1-nset:exp}. The two families of Coulomb diamond edges had different absolute slopes in the gate--bias plane, as expected for unequal junction capacitances. Above $V_\mathrm{gate}\approx\qty{1.7}{\milli\volt}$, the measured pattern changed abruptly, as seen more clearly in Fig.~\ref{fig:ssn1-nset:dGdiff}. This discontinuity was consistent with an atomic rearrangement of the mechanically formed break junction during the sweep, although the conductance did not provide an independent signature of such a change. The normal-state data therefore established gate controlled Coulomb blockade and an asymmetric SET geometry before I considered superconducting transport, but the complete map did not represent a single unchanged configuration.
 
             \begin{figure}[p]
                 \centering
@@ -62,7 +62,7 @@
                 \label{fig:ssn1-set:ssn1-nset:fit}
             \end{figure}
 
-            I fitted the measured \textit{I--V} gate map below the discontinuity with the orthodox sequential tunneling model introduced in the theory chapter. All bias and gate points at $V_\mathrm{gate}<\qty{1.7}{\milli\volt}$ were fitted simultaneously with a common set of circuit parameters rather than by fitting individual gate traces separately. The island energy and normal-state tunneling rates follow Eqs.~\eqref{eq:stochastic:set-electrostatic-energy} and \eqref{eq:stochastic:set-normal-rate}. At each bias and gate voltage, I solved the stationary master equation in Eq.~\eqref{eq:stochastic:set-master-equation} and evaluated the current from Eq.~\eqref{eq:stochastic:set-current}. I optimized the circuit parameters with the nonlinear least squares implementation in SciPy using a soft L1 loss to reduce the influence of isolated outliers.
+            I fitted the measured \textit{I--V} gate map below the discontinuity with the orthodox sequential tunneling model introduced in the theory chapter. I fitted all bias and gate points at $V_\mathrm{gate}<\qty{1.7}{\milli\volt}$ simultaneously with a common set of circuit parameters rather than by fitting individual gate traces separately. The island energy and normal-state tunneling rates follow Eqs.~\eqref{eq:stochastic:set-electrostatic-energy} and \eqref{eq:stochastic:set-normal-rate}. At each bias and gate voltage, I solved the stationary master equation in Eq.~\eqref{eq:stochastic:set-master-equation} and evaluated the current from Eq.~\eqref{eq:stochastic:set-current}. I optimized the circuit parameters with the nonlinear least squares implementation in SciPy using a soft L1 loss to reduce the influence of isolated outliers.
 
             \begin{figure}[t]
                 \centering
@@ -122,7 +122,7 @@
 
             Overall, the calculated maps in Fig.~\ref{fig:ssn1-set:ssn1-nset:fit} reproduced the dominant gate period, asymmetric blockade boundaries, and normal-state current scale of the stable break junction configuration.
 
-            Within the fitted region, the residual in Fig.~\ref{fig:ssn1-nset:dGdiff} is structured rather than uniformly distributed. Its diagonal features follow approximately the same directions as the measured conductance onsets. The data above the fit boundary are shown only as a visual reference and are not interpreted as fit residuals. I report the structures in the fitted region without assigning a microscopic origin here.
+            Within the fitted region, the residual in Fig.~\ref{fig:ssn1-nset:dGdiff} is structured rather than uniformly distributed. Its diagonal features follow approximately the same directions as the measured conductance onsets. I show the data above the fit boundary only as a visual reference and do not interpret them as fit residuals. I report the structures in the fitted region without assigning a microscopic origin here.
 
             I used the orthodox model as a minimal electrostatic description. Its validity in the tunnel limit was marginal because $R_\mathrm{BJ}=\qty{24.15(4)}{\kilo\ohm}$ was slightly below the resistance quantum $R_\mathrm{K}=h/e^2$. The normal-state resistance alone did not determine the individual channel transmissions of the break junction, and the present data did not provide its mesoscopic pincode. Higher-order and transmission dependent processes could therefore have contributed to the structured residuals. I consequently used the fit to quantify the dominant charging scale, gate coupling, and junction asymmetry, but I did not interpret the remaining structures microscopically.
 

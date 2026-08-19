@@ -41,7 +41,7 @@
             Z(\omega,R_\mathrm{eff},C_\mathrm{eff}) = \frac{R_\mathrm{eff}}{1+ \ima\omega R_\mathrm{eff}C_\mathrm{eff}}\,.
             \label{eq:ac:photon-assisted-transport:impedance}
         \end{equation}
-        After selecting this circuit form, I reverse the calculation for the quantitative fit. For each trial, I calculate $P_{2e}(E)$ from the assumed impedance and substitute it into Eq.~\eqref{eq:stochastic:icpt:current}. This gives the forward model, which I fit directly to the measured zero-bias \textit{I--V} curve. Thus, the inversion motivates the parallel-$RC$ model, while the fitted parameters are obtained from the forward calculation.
+        After selecting this circuit form, I reverse the calculation for the quantitative fit. For each trial, I calculate $P_{2e}(E)$ from the assumed impedance and substitute it into Eq.~\eqref{eq:stochastic:icpt:current}. This gives the forward model, which I fit directly to the measured zero-bias \textit{I--V} curve. Thus, the inversion motivates the parallel-$RC$ model, while I obtain the fitted parameters from the forward calculation.
 
         This forward fit gives
         \begin{align}
@@ -61,7 +61,7 @@
 
         For all microwave amplitude sweeps on the atomic contacts, I recorded a series of \textit{I--V} curves while stepping the source power uniformly in dBm. Conversion to the nominal voltage amplitude $A_\mathrm{out}\propto\sqrt{P_\mathrm{out}}$ therefore gives logarithmically spaced rather than equally spaced amplitude values. I acquired the unirradiated curve at $A_\mathrm{out}=0$ separately. In the corresponding amplitude maps, bias and calibrated amplitude form the two coordinates, while current or differential response is encoded by color. The maps retain the measured amplitude coordinates after calibration.
 
-        The measured unirradiated conductance is then used as the undriven characteristic in the Tien-Gordon transformation from Eq.~\eqref{eq:micro:pat-iv}. This construction is self-contained because it does not require a separate microscopic fit of the static or irradiated curves. It preserves the measured line shape and asks which value of $\eta$ best reproduces its photon assisted replicas over the complete amplitude sweep. I perform the comparison in \textit{dI--dV}, which suppresses the approximately voltage independent excess current and emphasizes the replicated spectral features. The map is dominated by quasiparticle PAT, so I use the transferred charge $q=e$. A trial coupling $\eta$ therefore gives
+        I then used the measured unirradiated conductance as the undriven characteristic in the Tien-Gordon transformation from Eq.~\eqref{eq:micro:pat-iv}. This construction is self-contained because it does not require a separate microscopic fit of the static or irradiated curves. It preserves the measured line shape and asks which value of $\eta$ best reproduces its photon assisted replicas over the complete amplitude sweep. I perform the comparison in \textit{dI--dV}, which suppresses the approximately voltage independent excess current and emphasizes the replicated spectral features. The map is dominated by quasiparticle PAT, so I use the transferred charge $q=e$. A trial coupling $\eta$ therefore gives
         \begin{align}
             \tfrac{\mathrm{d}I}{\mathrm{d}V}\left(\eta, A_\mathrm{out}, V\right)
             &= \sum_{n=-\infty}^{\infty}
@@ -117,7 +117,7 @@
             \tilde{w}_m(V)=\exp\!\left(-\left(\frac{2\Delta_0/|eV|-m}{2}\right)^2\right)\,,
             \label{eq:ac:pamar:weights}
         \end{align}
-        I merge the contribution $w_0$ into $w_1$ because quasiparticle transport dominates above $e|V|=2\Delta_0$. For practical reasons, I use a maximum order $M$ that combines order $M$ and all higher orders. Typically i would use $M=10$. The normalization factor $w_\mathcal{N}(V)$ is chosen so that the individual weights $w_m(V)$ sum to unity at every voltage. Figure~\ref{fig:ac:pamar-weights} shows that the same smooth partition appears unequally spaced on the voltage axis but equally spaced on the inverse-voltage coordinate.
+        I merge the contribution $w_0$ into $w_1$ because quasiparticle transport dominates above $e|V|=2\Delta_0$. For practical reasons, I use a maximum order $M$ that combines order $M$ and all higher orders. Typically i would use $M=10$. I choose the normalization factor $w_\mathcal{N}(V)$ so that the individual weights $w_m(V)$ sum to unity at every voltage. Figure~\ref{fig:ac:pamar-weights} shows that the same smooth partition appears unequally spaced on the voltage axis but equally spaced on the inverse-voltage coordinate.
 
         \begin{figure}[t]
             \centering
@@ -191,7 +191,7 @@
     \subsubsection*{Comparison of Experiment and Simulation}
     %=========================================================
 
-        I finally combine the threshold weighted PAMAR and PAICPT contributions. The calculation uses the static pincode, the effective ICPT environment, and the microwave coupling determined above. No additional adjustment is made for the comparison in Fig.~\ref{fig:ac:contact1:comparison}.
+        I finally combine the threshold weighted PAMAR and PAICPT contributions. The calculation uses the static pincode, the effective ICPT environment, and the microwave coupling determined above. I made no additional adjustment for the comparison in Fig.~\ref{fig:ac:contact1:comparison}.
 
         \begin{figure}[t]
             \centering
