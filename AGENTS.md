@@ -88,6 +88,7 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
 - Prefer concise sentences over long nested constructions.
 - Remove repetition unless it materially improves clarity.
 - Avoid double-dash or em-dash punctuation.
+- Avoid colons as sentence-internal punctuation. Prefer a comma appositive or a new sentence instead of a colon introducing a clause.
 - Minimize parentheses. Prefer short full-stop sentences.
 - Avoid semicolons. Prefer commas and short full-stop sentences.
 - Use footnotes for short side explanations and rough order-of-magnitude estimates of physical quantities.
