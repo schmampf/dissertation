@@ -31,7 +31,7 @@
 
         The static transport response initially supported this expectation. TB2 showed a clear quasiparticle onset and no resolved supercurrent, and its \textit{I--V} curve could be described by the same SIS model used for TB1. Under microwave irradiation, however, the transport became strongly bias asymmetric within a narrow frequency range. The purpose of this section is therefore to characterize this unexpected rectification, establish its dependence on microwave amplitude and frequency, and test whether it correlates with microwave coupling or sample heating. The available measurements constrain possible explanations but do not identify a unique microscopic mechanism.
 
-        I used the representative \textit{I--V} curve in Fig.~\ref{fig:tb:asym:irradiation:single-iv} to determine the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$. The fit also returned the trace dependent fitted temperature $T_\mathrm{fit}$ and effective microwave amplitude $A_\mathrm{fit}$ for this curve. The corresponding values and measurement conditions are listed in Table~\ref{table:tunnelbarrier:asym}. I did not apply the additional offset-correction algorithm discussed in Sec.~\ref{subsec:methods:digital:analysis} to these data. This algorithm asumes symmetric \textit{I--V} and we will see, that this asumption is not true for this measurement.
+        I used the representative \textit{I--V} curve in Fig.~\ref{fig:tb:asym:irradiation:single-iv} to determine the static junction parameters $G_\mathrm{N}$, $\Delta_0$, $\gamma$, and $\sigma_V$. The fit also returned the trace dependent fitted temperature $T_\mathrm{fit}$ and effective microwave amplitude $A_\mathrm{fit}$ for this curve. The corresponding values and measurement conditions are listed in Table~\ref{table:tunnelbarrier:asym}. I did not apply the additional offset-correction algorithm discussed in Sec.~\ref{subsec:methods:digital:analysis} to these data. This algorithm assumes a symmetric \textit{I--V} response, which is not the case for this measurement.
 
         \singlefitfigure{tunnelbarrier/asym/irradiation/single-fit}{
             Representative transport trace of TB2. The panels show the measured \textit{I--V} curve and the numerically derived \textit{dI--dV} and \textit{dV--dI} responses. The \textit{I--V} curve is fitted with the SIS BCS model, with the extracted parameters listed in Table~\ref{table:tunnelbarrier:asym}.
@@ -214,6 +214,8 @@
             \label{eq:tb:asym:amplitude-averaged-rectification}
         \end{equation}
         where $X$ denotes $I$, $\mathrm{d}I/\mathrm{d}V$, or $\mathrm{d}V/\mathrm{d}I$. Panels (a)\,-\,(c) of Fig.~\ref{fig:tb:asym:frequency} show the resulting averages.
+
+        This frequency and amplitude dependent map is the central experimental characterization of the rectification effect. It shows a drive threshold, an increase in magnitude with amplitude, and a sign reversal within a narrow frequency interval, consistently across all three transport representations. The next section tests whether this frequency dependence traces back to microwave coupling or to sample heating.
 
     %=========================================================
     \subsubsection*{Coupling and Heating Controls}
