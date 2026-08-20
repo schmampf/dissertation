@@ -61,7 +61,7 @@ This repository is a modular LaTeX dissertation project. Use these rules when ed
 
 - Use US English.
 - Use present tense and `we` in theory chapters.
-- Use past tense and `I` in methods, results, and other experiment-facing chapters.
+- Use present tense and `I` in methods, results, and other experiment-facing chapters (changed 2026-08-20; previously past tense for the author's actions in these chapters).
 - Use active voice (`we`/`I`, per the tense convention above) whenever the author is the agent of the sentence, for example a derivation step, an analysis or fitting choice, a data exclusion, or a fabrication or measurement action. Reserve passive voice for standing physical facts, data level descriptive statements, and general system description that is not specifically the author's action. Figure captions may keep the conventional impersonal passive for describing what a panel shows.
 - Keep the theory organized by regime and model level: basics, microscopic, macroscopic, mesoscopic, stochastic.
 - Build a clear regime-based story across the thesis: tunnel, finite transmission, single-electron, and stochastic transport.
