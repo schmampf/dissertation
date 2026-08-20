@@ -141,6 +141,13 @@
 
 %%% basic settings %%%
 
+    % Prevent single opening or closing lines of a paragraph from being
+    % stranded at a page break. Include the corresponding case after a
+    % displayed equation.
+    \clubpenalty=10000
+    \widowpenalty=10000
+    \displaywidowpenalty=10000
+
     % Kopf und Fusszeile  
     % nr. 9 original         
     % uneven means in header
