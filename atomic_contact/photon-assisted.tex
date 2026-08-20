@@ -104,12 +104,26 @@
             \centering
             \thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{exp-pamar}
             \caption{
-                Test of the photon assisted MAR construction for C1 at $\nu=\qty{15.0}{\giga\hertz}$. The left panel shows the measured \textit{dI--dV} map on the logarithmically sampled amplitude grid described in Sec.~\ref{subsec:ac:photon-assisted-transport}. The center panel applies charge dependent Tien-Gordon dressing directly to the dc FCS components. This approach does not reproduce the measured sideband pattern because positive and neighboring negative conductance contributions are replicated with the same effective charge. The right panel instead dresses components localized around the MAR thresholds and recovers the principal measured sideband trajectories. All calculations use the calibrated drive amplitude.
+                Test of the photon assisted MAR construction for C1 at \qty{15.0}{\giga\hertz}. The left panel shows the measured \textit{dI--dV} map on the logarithmically sampled amplitude grid described in Sec.~\ref{subsec:ac:photon-assisted-transport}. The center panel applies charge dependent Tien-Gordon dressing directly to the dc FCS components. This approach does not reproduce the measured sideband pattern because positive and neighboring negative conductance contributions are replicated with the same effective charge. The right panel instead dresses components localized around the MAR thresholds and recovers the principal measured sideband trajectories. All calculations use the calibrated drive amplitude.
             }
             \label{fig:ac:contact1:exp-pamar}
         \end{figure}
 
         The difficulty is not the charge dependence of the Tien-Gordon transformation, but the choice of its input currents. The FCS contributions are charge resolved, but they are not localized exclusively around the corresponding MAR thresholds. Their differential conductance can contain both the dominant positive MAR feature and neighboring negative structure over the same voltage range, as discussed in Sec.~\ref{subsec:meso:mar}. Direct photon dressing consequently replicates both contributions with the same effective charge, producing additional features that are absent or substantially weaker in the measurement. The component maps in Fig.~\ref{fig:ac:contact1:pamarm}(a) make this mixing visible.
+
+        \begin{figure}[t]
+            \centering
+            \subfigure[
+                FCS charge components
+                ]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{fcsm}}
+            \subfigure[
+                Threshold weighted components
+                ]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{pamarm}}
+            \caption{
+                Charge resolved contributions to the photon assisted MAR model of C1. Each row shows the summed response and the components assigned to effective charge orders $m=1$ to $4$. (a) Direct dressing of the dc FCS components replicates positive and neighboring negative \textit{dI--dV} contributions with the same effective charge. (b) Decomposing the simulated static MAR \textit{dI--dV} around the thresholds before applying the charge dependent dressing suppresses this mixing and isolates the sidebands associated with each threshold. All panels use the calibrated drive amplitude at $\qty{15.0}{\giga\hertz}$.
+            }
+            \label{fig:ac:contact1:pamarm}
+        \end{figure}
 
         I therefore retain the charge dependent Tien-Gordon transformation but replace the dc FCS currents with phenomenological currents localized around the MAR thresholds in Eq.~\eqref{eq:meso:mar-sgs}. Carrad \textit{et al.}~used a related charge dependent sideband spacing to identify high-order MAR processes in individual traces \cite{carrad_photon-assisted_2022}. Here I instead build explicit threshold localized input currents, so that the same decomposition predicts the full amplitude resolved response. I construct these currents from the simulated static MAR current calculated with the pincode in Eq.~\eqref{eq:ac:contact1:pincode}. The natural coordinate for the decomposition is $2\Delta_0/|eV|$, on which the thresholds occur at integer $m$. I define normalized Gaussian weights
         \begin{align}
@@ -150,20 +164,6 @@
 
         I then use the effective currents from Eq.~\eqref{eq:ac:pamar:effective-current} in the unified Tien-Gordon expression. Figure~\ref{fig:ac:contact1:pamarm}(b) shows the resulting contributions by threshold. Their sum gives the right panel of Fig.~\ref{fig:ac:contact1:exp-pamar} and reproduces the principal quasiparticle and MAR sideband trajectories without the mixing produced by direct FCS dressing.
 
-        \begin{figure}[t]
-            \centering
-            \subfigure[
-                FCS charge components
-                ]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{fcsm}}
-            \subfigure[
-                Threshold weighted components
-                ]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{pamarm}}
-            \caption{
-                Charge resolved contributions to the photon assisted MAR model of C1. Each row shows the summed response and the components assigned to effective charge orders $m=1$ to $4$. (a) Direct dressing of the dc FCS components replicates positive and neighboring negative \textit{dI--dV} contributions with the same effective charge. (b) Decomposing the simulated static MAR \textit{dI--dV} around the thresholds before applying the charge dependent dressing suppresses this mixing and isolates the sidebands associated with each threshold. All panels use the calibrated drive amplitude at $\qty{15.0}{\giga\hertz}$.
-            }
-            \label{fig:ac:contact1:pamarm}
-        \end{figure}
-
         This threshold weighted PAMAR construction is a phenomenological stationary replica model. It assigns the simulated static MAR structure near each threshold to its nominal effective charge order, but it does not replace a microscopic Floquet calculation of irradiated MAR. In particular, it neglects coherent interference between driven MAR paths, irradiation induced changes of the contact occupations, and nonequilibrium redistribution at high drive. Within these limits, it provides a transparent description of the principal finite-bias replicas. A detailed voltage cut decomposition into the individual charge orders is provided in Appendix Fig.~\ref{fig:ac:contact1:voltage-cuts}. The narrow replicas originating from the zero-bias feature require the separate Cooper pair contribution considered next.
 
     %=========================================================
@@ -180,7 +180,7 @@
             \centering
             \thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{amplitude-cuts}
             \caption{
-                Amplitude dependence of the features originating from zero bias in C1 at $\nu=\qty{15.0}{\giga\hertz}$. The four panels follow the central feature and the first three replica pairs, $n=0,\pm1,\pm2,\pm3$. The measured positive- and negative-bias branches are compared with the squared-Bessel PAICPT calculation and an ideal coherent Shapiro response on a PAMAR background. The observed redistribution among the replica orders is described more consistently by PAICPT.
+                Amplitude dependence of the features originating from zero bias in C1 at \qty{15.0}{\giga\hertz}. The four panels follow the central feature and the first three replica pairs, $n=0,\pm1,\pm2,\pm3$. The measured positive- and negative-bias branches are compared with the squared-Bessel PAICPT calculation and an ideal coherent Shapiro response on a PAMAR background. The observed redistribution among the replica orders is described more consistently by PAICPT.
             }
             \label{fig:ac:contact1:didv-cuts}
         \end{figure}
@@ -203,7 +203,7 @@
                 \textit{dV--dI}
                 ]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRcomp}}
             \caption{
-                Comparison of the measured and simulated microwave response of C1 at $\nu=\qty{15.0}{\giga\hertz}$. (a) The combined PAMAR and PAICPT model reproduces the quasiparticle and MAR sideband trajectories in \textit{dI--dV}, together with the narrow replicas originating from the zero-bias feature. (b) The corresponding \textit{dV--dI} maps emphasize the same agreement in the strongly nonlinear subgap region. Experiment and simulation use the calibrated drive amplitude and the independently determined static parameters.
+                Comparison of the measured and simulated microwave response of C1 at \qty{15.0}{\giga\hertz}. (a) The combined PAMAR and PAICPT model reproduces the quasiparticle and MAR sideband trajectories in \textit{dI--dV}, together with the narrow replicas originating from the zero-bias feature. (b) The corresponding \textit{dV--dI} maps emphasize the same agreement in the strongly nonlinear subgap region. Experiment and simulation use the calibrated drive amplitude and the independently determined static parameters.
             }
             \label{fig:ac:contact1:comparison}
         \end{figure}
@@ -240,7 +240,7 @@
                 \textit{dV--dI}
                 ]{\thesisplot{atomic_contact/2.4G0/15.0GHz_stripline/didv-img}{dRcomp}}
             \caption{
-                PAMAR validation for the high-transmission C2 at $\nu=\qty{15.0}{\giga\hertz}$. (a) Measured and simulated \textit{dI--dV} maps. (b) The corresponding \textit{dV--dI} maps emphasize the strong subgap response generated by the nearly ballistic leading channel. Threshold weighted PAMAR reproduces the overall trajectories and amplitude evolution without an additional PAICPT contribution. Tilted lines parallel to the main simulated features are numerical artifacts. Vertical structures in the measured \textit{dI--dV} map and structures perpendicular to the main measured \textit{dV--dI} ridges indicate a contribution missing from the PAMAR-only calculation.
+                PAMAR validation for the high-transmission C2 at \qty{15.0}{\giga\hertz}. (a) Measured and simulated \textit{dI--dV} maps. (b) The corresponding \textit{dV--dI} maps emphasize the strong subgap response generated by the nearly ballistic leading channel. Threshold weighted PAMAR reproduces the overall trajectories and amplitude evolution without an additional PAICPT contribution. Tilted lines parallel to the main simulated features are numerical artifacts. Vertical structures in the measured \textit{dI--dV} map and structures perpendicular to the main measured \textit{dV--dI} ridges indicate a contribution missing from the PAMAR-only calculation.
             }
             \label{fig:ac:contact2:comparison}
         \end{figure}
