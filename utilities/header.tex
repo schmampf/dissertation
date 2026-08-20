@@ -76,6 +76,7 @@
     \RequirePackage{etex}
     \usepackage[
         backend=biber,
+        style=numeric-comp,
         sorting=none,
         sortcites=true,
         maxbibnames=20,
@@ -86,6 +87,17 @@
         eprint=false
     ]{biblatex}
     \usepackage{csquotes} % Bibtex and language stuff
+
+    % Compress consecutive citations and format all bibliography-related
+    % ranges with a thin-spaced text hyphen, for example [1\,-\,5]. Define
+    % this in the language extras because biblatex reapplies them when the
+    % document language changes.
+    \DefineBibliographyExtras{english}{%
+        \protected\def\bibrangedash{\,-\,}%
+    }
+    \DefineBibliographyExtras{ngerman}{%
+        \protected\def\bibrangedash{\,-\,}%
+    }
 
     % Use the same font size as the main body for all bibliography entries.
     \renewcommand*{\bibfont}{\normalsize}
