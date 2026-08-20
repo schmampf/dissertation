@@ -134,7 +134,7 @@
                 \simeq 2\,R_\mathrm{ref} + R_\mathrm{filters} + R_\mathrm{leads} + \ldots\,.
                 \label{eq:setup:series-resistance}
             \end{equation}
-            In the limit $\eta \ll 1$, most of the applied voltage drops across the sample and the circuit approaches voltage bias. In the opposite limit, $\eta \gg 1$, the series resistance dominates and the circuit approaches current bias. The circuit moves between these limits as the MCBJ is tuned. A closed junction can have a resistance of order \qty{100}{\ohm}, a single atom contact has a resistance of order \qty{12.9}{\kilo\ohm}, and the tunnel regime is characterized by resistances in the range \qtyrange{100}{500}{\kilo\ohm}. Because the standard filtered circuit contains about \qty{200}{\kilo\ohm} from the two cold reference resistors, its effective bias condition changes with the junction state.
+            In the limit $\eta \sll 1$, most of the applied voltage drops across the sample and the circuit approaches voltage bias. In the opposite limit, $\eta \sgg 1$, the series resistance dominates and the circuit approaches current bias. The circuit moves between these limits as the MCBJ is tuned. A closed junction can have a resistance of order \qty{100}{\ohm}, a single atom contact has a resistance of order \qty{12.9}{\kilo\ohm}, and the tunnel regime is characterized by resistances in the range \qtyrange{100}{500}{\kilo\ohm}. Because the standard filtered circuit contains about \qty{200}{\kilo\ohm} from the two cold reference resistors, its effective bias condition changes with the junction state.
 
             For low sample resistances, the standard configuration directs most of the programmed bias across the cold reference resistors. The accessible sample voltage range can then become too small to leave the zero-voltage supercurrent branch or reach spectroscopic features such as the superconducting gap. This regime requires a lower series resistance rather than a different reconstruction principle.
 
@@ -239,7 +239,7 @@
 
             Because the thermal conductance between the sample holder and the mixing chamber increases with temperature, equally spaced power setpoints do not produce equally spaced temperatures. I therefore select the heater setpoints from the empirical relation
             \begin{equation}
-                P_\mathrm{heater} \approx \qty{0.11}{\micro\watt\per\kelvin\tothe{5/2}} \cdot T_\mathrm{bath}^{2.5}\,.
+                P_\mathrm{heater} \sapprox \qty{0.11}{\micro\watt\per\kelvin\tothe{5/2}} \cdot T_\mathrm{bath}^{2.5}\,.
                 \label{eq:methods:setup:heater-power-scaling}
             \end{equation}
             This choice produces an approximately uniform temperature axis for repeated \textit{I--V} sweeps. Equation~\eqref{eq:methods:setup:heater-power-scaling} is a calibration of the applied setpoints for this assembly, not a microscopic model of its thermal conductance. It can change after remounting the sample holder or modifying the thermal links and must then be measured again.

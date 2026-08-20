@@ -36,17 +36,17 @@
     \subsection*{Phase Coherent Diffusive Transport}
     %=========================================================
 
-        In the diffusive mesoscopic regime, the elastic mean free path remains much shorter than the system size, $\ell_\mathrm{qp} \ll L$. Quasiparticles undergo many scattering events that randomize momentum while traversing the conductor. If $L \lesssim \ell_\phi$, phase coherence persists over many such events and interference between multiple paths becomes observable.
+        In the diffusive mesoscopic regime, the elastic mean free path remains much shorter than the system size, $\ell_\mathrm{qp} \sll L$. Quasiparticles undergo many scattering events that randomize momentum while traversing the conductor. If $L \slesssim \ell_\phi$, phase coherence persists over many such events and interference between multiple paths becomes observable.
 
         For diffusive motion, the phase coherence length is conveniently expressed in terms of the diffusion constant $D$ and a dephasing time $t_\phi$,
         \begin{equation}
             \ell_\phi = \sqrt{D t_\phi}\,.
         \end{equation}
-        At finite temperature, thermal averaging over an energy window $\sim k_\mathrm{B}T$ further reduces interference. A common characteristic thermal length is
+        At finite temperature, thermal averaging over an energy window $\ssim k_\mathrm{B}T$ further reduces interference. A common characteristic thermal length is
         \begin{equation}
             \ell_T = \sqrt{\hbar D / k_\mathrm{B}T}\,,
         \end{equation}
-        such that coherent effects are most pronounced when $L \lesssim \min(\ell_\phi,\,\ell_T)$. Numerical prefactors in the definition of $\ell_T$ depend on the geometry and convention. \cite{bergmann_weak_1984,lee_disordered_1985}
+        such that coherent effects are most pronounced when $L \slesssim \min(\ell_\phi,\,\ell_T)$. Numerical prefactors in the definition of $\ell_T$ depend on the geometry and convention. \cite{bergmann_weak_1984,lee_disordered_1985}
 
         On average, transport still follows the bulk drift-diffusion picture with the conductivity and diffusion constant introduced above. Quantum mechanically, coherent superposition of scattering amplitudes adds corrections, most prominently weak localization and universal conductance fluctuations. In low-dimensional or strongly disordered systems, these effects can become strong and may lead to Anderson localization. \cite{bergmann_weak_1984,lee_universal_1985,lee_disordered_1985,anderson_absence_1958,schertel_magnetic-field_2019}
 
@@ -56,14 +56,14 @@
     \subsection*{Superconducting Length Scales in Aluminum}
     %=========================================================
 
-        The short-junction approximation requires the weak-link length $L$ to remain much smaller than the relevant superconducting coherence length, $L\ll\xi$. The clean-limit BCS coherence length of aluminum is
+        The short-junction approximation requires the weak-link length $L$ to remain much smaller than the relevant superconducting coherence length, $L\sll\xi$. The clean-limit BCS coherence length of aluminum is
         \begin{equation}
-            \xi_{\mathrm{clean}, 0} = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\approx \qty{2.4}{\micro\meter}\,.
+            \xi_{\mathrm{clean}, 0} = \frac{\hbar v_\mathrm{F}}{\pi\Delta_0}\sapprox \qty{2.4}{\micro\meter}\,.
         \end{equation}
         For a diffusive aluminum film, the corresponding zero-temperature decay length is
         \begin{equation}
             \xi_{\mathrm{dirty},0}
-            = \sqrt{\frac{\hbar D}{\Delta_0}}\approx \qtyrange{67}{111}{\nano\meter}\,.
+            = \sqrt{\frac{\hbar D}{\Delta_0}}\sapprox \qtyrange{67}{111}{\nano\meter}\,.
         \end{equation}
         The dirty-limit estimate is film dependent. Steinberg \textit{et al.}~reported \(\ell_\mathrm{qp}=\qtyrange{1.8}{5.0}{\nano\meter}\) for several thin aluminum films, yielding the range above \cite{steinberg_quasi-particle_2008}.
 

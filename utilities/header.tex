@@ -273,6 +273,30 @@
     \DeclareRobustCommand{\mathhbar}{\ensuremath{{\mathchar'26\mkern-9muh}}}
     \let\texthbar\hbar
     \let\hbar\mathhbar
+    % Compact comparison symbols. The thesis sans math font renders \ll,
+    % \gg, and \lesssim substantially taller than an equals sign. Scale the
+    % glyphs while retaining relation spacing and the active math style.
+    \newcommand{\scaledmathrel}[2]{%
+        \mathrel{\mathchoice
+            {\vcenter{\hbox{\scalebox{#1}{$\displaystyle#2$}}}}%
+            {\vcenter{\hbox{\scalebox{#1}{$\textstyle#2$}}}}%
+            {\vcenter{\hbox{\scalebox{#1}{$\scriptstyle#2$}}}}%
+            {\vcenter{\hbox{\scalebox{#1}{$\scriptscriptstyle#2$}}}}}%
+    }
+    \newcommand{\compactmathrel}[1]{\scaledmathrel{0.78}{#1}}
+    \newcommand{\mediummathrel}[1]{\scaledmathrel{0.85}{#1}}
+    \newcommand{\sll}{\compactmathrel{\ll}}
+    \newcommand{\sgg}{\compactmathrel{\gg}}
+    \newcommand{\slesssim}{\compactmathrel{\lesssim}}
+    \newcommand{\sgtrsim}{\compactmathrel{\gtrsim}}
+    \newcommand{\slt}{\compactmathrel{<}}
+    \newcommand{\sgt}{\compactmathrel{>}}
+    \newcommand{\sleq}{\compactmathrel{\leq}}
+    \newcommand{\sgeq}{\compactmathrel{\geq}}
+    \newcommand{\ssim}{\mediummathrel{\sim}}
+    \newcommand{\spropto}{\mediummathrel{\propto}}
+    \newcommand{\sapprox}{\mediummathrel{\approx}}
+    \newcommand{\sequiv}{\mediummathrel{\equiv}}
     \usepackage{textcomp}  % \textmu
     \usepackage{upgreek} % \upmu
     \newfontfamily\thesissanssymbolfamily{lmsans9-regular.otf}

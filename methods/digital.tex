@@ -277,7 +277,7 @@
                 \exp\!\left[-\frac{(\delta V)^2}{2\sigma_V^2}\right]
                 I_0(V+\delta V)\,,
                 &&
-                \delta V\sim\mathcal{N}(0,\sigma_V^2)\,.
+                \delta V\ssim\mathcal{N}(0,\sigma_V^2)\,.
                 \label{eq:methods:digital:bcs:voltage-broadening}
             \end{align}
             Here $\sigma_V$ is the standard deviation of the voltage offset distribution, not its full width at half maximum. The corresponding full width is $2\sqrt{2\ln 2}\,\sigma_V$. The implementation evaluates $I_0$ on a voltage grid extended by six standard deviations on either side, performs the normalized Gaussian convolution, and interpolates the broadened current back to the requested bias points. Numerical derivatives used for the simulated \textit{dI--dV} and \textit{dV--dI} curves are obtained from this broadened \textit{I--V} curve.
@@ -325,7 +325,7 @@
                 \right)^2\,,
                 \label{eq:methods:digital:mar:chi2}
             \end{align}
-            where $\mathcal K$ denotes the retained voltage samples. The weights can be chosen to balance different parts of the spectrum. For example, $w_k\propto1/|V_k|$ reduces the influence of the larger absolute currents at high bias while retaining sensitivity to the subgap MAR structure. In this case, the zero-voltage point is assigned zero weight, while any finite central interval not described by the dc model is excluded through $\mathcal K$. 
+            where $\mathcal K$ denotes the retained voltage samples. The weights can be chosen to balance different parts of the spectrum. For example, $w_k\spropto1/|V_k|$ reduces the influence of the larger absolute currents at high bias while retaining sensitivity to the subgap MAR structure. In this case, the zero-voltage point is assigned zero weight, while any finite central interval not described by the dc model is excluded through $\mathcal K$.
             
             An exhaustive global search is not computationally feasible beyond three channels, even on a sparse transmission grid, because the number of possible pincodes grows combinatorially with the number of channels. The search therefore starts from initial parameter guesses and tests all valid states reached by moving one free parameter by one grid point. It accepts the neighboring state with the largest reduction in $\chi^2$ and repeats this procedure until no tested move improves the fit. In addition to single-channel steps, paired exchange moves increase one transmission and decrease another. These moves allow the channel decomposition to change even when a narrow constraint on $G_\mathrm{N}$ prohibits an isolated transmission step. Independent random restarts within the parameter bounds reduce the sensitivity to the initial pincode. For a sequence of contact configurations, the result of one spectrum can be used as the starting point for the next spectrum.
 

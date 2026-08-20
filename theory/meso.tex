@@ -14,7 +14,7 @@
     \label{subsec:quasi:meso}
     %=========================================================
 
-        The transport description of a finite conductor is selected by comparing its length $L$ with the elastic mean free path $\ell_\mathrm{qp}$ and the phase-coherence length $\ell_\phi$. Elastic scattering randomizes momentum, while inelastic and dephasing processes limit phase coherence. A conductor is diffusive when $\ell_\mathrm{qp}\ll L$ and ballistic when $L\ll\ell_\mathrm{qp}$. In either case, transport remains phase coherent across the conductor when $L\lesssim\ell_\phi$. Figure~\ref{fig:quasi:meso} summarizes these regimes. \cite{gross_festkorperphysik_2014,beenakker_random-matrix_1997}
+        The transport description of a finite conductor is selected by comparing its length $L$ with the elastic mean free path $\ell_\mathrm{qp}$ and the phase-coherence length $\ell_\phi$. Elastic scattering randomizes momentum, while inelastic and dephasing processes limit phase coherence. A conductor is diffusive when $\ell_\mathrm{qp}\sll L$ and ballistic when $L\sll\ell_\mathrm{qp}$. In either case, transport remains phase coherent across the conductor when $L\slesssim\ell_\phi$. Figure~\ref{fig:quasi:meso} summarizes these regimes. \cite{gross_festkorperphysik_2014,beenakker_random-matrix_1997}
 
         The atomic-scale constrictions considered in this thesis are much shorter than both $\ell_\mathrm{qp}$ and $\ell_\phi$. They therefore lie in the ballistic and phase-coherent regime. Diffusive mesoscopic transport serves only as a reference, while the following discussion develops the transmission-channel description required for atomic contacts.
 
@@ -32,7 +32,7 @@
                 Ballistic
                 ]{\import{theory/schema/scattering}{ballistic.pdf_tex}}
             \caption{
-            Sketch of the transport regime hierarchy selected by conductor length $L$, elastic mean free path $\ell_{\mathrm{qp}}$, and phase coherence length $\ell_{\phi}$. (a)~Incoherent diffusive transport follows a local conductivity when $L \gg \ell_{\mathrm{qp}},\ell_{\phi}$. (b)~Elastic scattering remains frequent for $\ell_{\mathrm{qp}} \ll L \lesssim \ell_{\phi}$, but coherent path interference can modify the average diffusive response. (c)~For $L \ll \ell_{\mathrm{qp}}$ and $L \lesssim \ell_{\phi}$, the constriction is ballistic and is described by transmission channels.
+            Sketch of the transport regime hierarchy selected by conductor length $L$, elastic mean free path $\ell_{\mathrm{qp}}$, and phase coherence length $\ell_{\phi}$. (a)~Incoherent diffusive transport follows a local conductivity when $L \sgg \ell_{\mathrm{qp}},\ell_{\phi}$. (b)~Elastic scattering remains frequent for $\ell_{\mathrm{qp}} \sll L \slesssim \ell_{\phi}$, but coherent path interference can modify the average diffusive response. (c)~For $L \sll \ell_{\mathrm{qp}}$ and $L \slesssim \ell_{\phi}$, the constriction is ballistic and is described by transmission channels.
             }
             \label{fig:quasi:meso}
         \end{figure}
@@ -85,7 +85,7 @@
                 \label{eq:meso:landauer}
             \end{equation}
             where $\tau_i$ are the transmission eigenvalues and $G_0$ is the conductance quantum\footnote{
-                Throughout this thesis the conductance quantum is defined as $G_0 \equiv 2e^2/h = \qty{77.48}{\micro\siemens}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = \qty{12.9}{\kilo\ohm}$.
+                Throughout this thesis the conductance quantum is defined as $G_0 \sequiv 2e^2/h = \qty{77.48}{\micro\siemens}$. This value includes spin degeneracy and corresponds to the conductance of a fully transmitting normal-state channel. The corresponding resistance quantum is $R_0 = h/(2e^2) = \qty{12.9}{\kilo\ohm}$.
             } \cite{landauer_electrical_1970,buttiker_four-terminal_1986}.
 
             The normal-state conductance determines only the total transmission $\sum_i\tau_i$. Different channel sets can therefore produce the same $G_\mathrm{N}$. The set $\{\tau_i\}$ is referred to throughout this thesis as the mesoscopic pincode. In a superconducting contact, different pincodes produce distinct multiple Andreev reflection characteristics, which allows the individual transmissions to be extracted from measured \textit{I--V} and \textit{dI--dV} curves. \cite{scheer_conduction_1997,beenakker_random-matrix_1997}
@@ -140,7 +140,7 @@
     \label{subsec:meso:ar}
     %=========================================================
 
-        At a normal--superconductor (NS) interface, no propagating quasiparticle states are available in the superconducting continuum for $|E|<\Delta$. An electron incident from the normal side therefore cannot enter the superconductor as a single quasiparticle at these energies. Instead, it can be reflected into the normal electrode as a hole while a Cooper pair with charge $2e$ enters the superconducting condensate. This coherent electron--hole conversion is Andreev reflection \cite{andreev_thermal_1964}.
+        At a normal--superconductor (NS) interface, no propagating quasiparticle states are available in the superconducting continuum for $|E|\slt{}\Delta$. An electron incident from the normal side therefore cannot enter the superconductor as a single quasiparticle at these energies. Instead, it can be reflected into the normal electrode as a hole while a Cooper pair with charge $2e$ enters the superconducting condensate. This coherent electron--hole conversion is Andreev reflection \cite{andreev_thermal_1964}.
 
         Figure~\ref{fig:meso:btk}(a) shows single-particle transmission into the superconducting quasiparticle continuum above the gap, while Fig.~\ref{fig:meso:btk}(b) shows subgap Andreev reflection. These panels are energy-space schematics rather than real-space trajectories. At a nonideal interface, normal reflection competes with Andreev reflection, and their relative probabilities depend on the normal-state transmission.
 
@@ -223,7 +223,7 @@
                 \end{aligned}
                 \label{eq:meso:btk-iv}
             \end{equation}
-            In the tunneling limit, $\tau\ll1$, Eq.~\eqref{eq:meso:btk-iv} reduces to the conventional quasiparticle tunneling expression. As $\tau$ approaches unity, Andreev reflection dominates the subgap response and charge is transferred predominantly in units of $2e$ \cite{blonder_transition_1982}.
+            In the tunneling limit, $\tau\sll1$, Eq.~\eqref{eq:meso:btk-iv} reduces to the conventional quasiparticle tunneling expression. As $\tau$ approaches unity, Andreev reflection dominates the subgap response and charge is transferred predominantly in units of $2e$ \cite{blonder_transition_1982}.
 
             Figure~\ref{fig:meso:btk} summarizes this evolution across the transmission range. Panels (c) and (d) show the transport kernels $\rho_{\mathrm{1e}}(E)$ and $\rho_{\mathrm{2e}}(E)$ from Eq.~\eqref{eq:meso:btk-dos}. At low transmission, the single-particle contribution dominates and produces a quasiparticle peak near $|E|=\Delta$. Increasing $\tau$ transfers spectral weight to the Andreev contribution, which enhances the subgap conductance in \textit{I--V} and \textit{dI--dV}.
 
@@ -245,7 +245,7 @@
                 }
             \label{fig:meso:abs-schematics}
         \end{wrapfigure}
-        Andreev reflection becomes phase-coherent and spectrally quantized when two superconductors are connected by a mesoscopic weak link. In an SNS geometry, a subgap quasiparticle ($|E|<\Delta$) cannot escape into the superconducting continua and instead undergoes successive Andreev reflections at both interfaces, alternating between electron- and hole-like character as shown in Fig.~\ref{fig:meso:abs-schematics}. One cycle acquires the phase difference
+        Andreev reflection becomes phase-coherent and spectrally quantized when two superconductors are connected by a mesoscopic weak link. In an SNS geometry, a subgap quasiparticle ($|E|\slt{}\Delta$) cannot escape into the superconducting continua and instead undergoes successive Andreev reflections at both interfaces, alternating between electron- and hole-like character as shown in Fig.~\ref{fig:meso:abs-schematics}. One cycle acquires the phase difference
         \begin{equation}
             \phi = \phi_1 - \phi_2\,.
         \end{equation}
@@ -259,24 +259,24 @@
 
             A transparent route from BdG to ABS is to treat Andreev reflection as an energy dependent boundary condition at the superconducting leads, while representing the weak link by its normal-state scattering properties.
 
-            In the Andreev approximation, $|E|,\Delta\ll E_\mathrm{F}$, only quasiparticles in a narrow shell around the Fermi surface contribute. For an isotropic parabolic band, the dispersion can be linearized in the radial direction,
+            In the Andreev approximation, $|E|,\Delta\sll E_\mathrm{F}$, only quasiparticles in a narrow shell around the Fermi surface contribute. For an isotropic parabolic band, the dispersion can be linearized in the radial direction,
             \begin{equation}
-                \varepsilon(\vec{k})-\mu \approx \frac{\hbar^2}{m}\,\vec{k}_\mathrm{F}\cdot\left(\vec{k}-\vec{k}_\mathrm{F}\right)\,,
+                \varepsilon(\vec{k})-\mu \sapprox \frac{\hbar^2}{m}\,\vec{k}_\mathrm{F}\cdot\left(\vec{k}-\vec{k}_\mathrm{F}\right)\,,
             \end{equation}
             so electron-like and hole-like components have nearly equal momentum magnitudes. For an excitation at energy $E$, the corresponding wave numbers satisfy
             \begin{equation}
-                \delta k = \frac{k_\mathrm{e} - k_\mathrm{h}}{2} \approx \frac{k_\mathrm{F}}{2}\frac{E}{E_\mathrm{F}}\,,
+                \delta k = \frac{k_\mathrm{e} - k_\mathrm{h}}{2} \sapprox \frac{k_\mathrm{F}}{2}\frac{E}{E_\mathrm{F}}\,,
             \end{equation}
             implying that the Andreev-reflected hole retraces the incoming trajectory up to corrections of order $E/E_\mathrm{F}$ \cite{andreev_thermal_1964,de_gennes_superconductivity_1966}.
 
             In the Andreev limit of a clean, specular, and highly transparent NS interface with negligible normal reflection, subgap Andreev reflection occurs with approximately unit probability. The corresponding electron-to-hole reflection amplitude can then be written as a pure phase factor,
             \begin{equation}
                 r_\mathrm{A}(E) = e^{-\ima\phi_\mathrm{A}(E)}\,e^{-\ima\phi}\,,\qquad
-                \phi_\mathrm{A}(E)\equiv\arccos\!\left(E/\Delta\right)\,.
+                \phi_\mathrm{A}(E)\sequiv\arccos\!\left(E/\Delta\right)\,.
             \end{equation}
             Here $\phi_\mathrm{A}(E)$ is the energy dependent Andreev phase, while $\phi$ denotes the condensate phase of the electrode. For nonideal interfaces, finite backscattering reintroduces normal reflection and reduces the Andreev amplitude below unit \cite{andreev_thermal_1964,beenakker_quantum_1992}.
 
-            The second assumption is the short-junction limit, $L\ll\xi$, where $\xi$ is the relevant superconducting length in the electrodes. The aluminum films can be diffusive even though the atomic constriction is a short coherent scatterer. Representative clean and dirty aluminum length estimates are collected in Appendix~\ref{app:theory:diffusive-transport}. These superconducting lengths remain much larger than the atomic scattering region \cite{steinberg_quasi-particle_2008,scheer_conduction_1997}.
+            The second assumption is the short-junction limit, $L\sll\xi$, where $\xi$ is the relevant superconducting length in the electrodes. The aluminum films can be diffusive even though the atomic constriction is a short coherent scatterer. Representative clean and dirty aluminum length estimates are collected in Appendix~\ref{app:theory:diffusive-transport}. These superconducting lengths remain much larger than the atomic scattering region \cite{steinberg_quasi-particle_2008,scheer_conduction_1997}.
 
             In this limit, the propagation phase acquired across the weak link varies negligibly over the superconducting gap. Its normal-state scattering matrix can therefore be treated as energy independent in the relevant energy window. Each channel is characterized by one transmission eigenvalue $\tau_i$, and its ABS spectrum depends only on $\tau_i$, $\Delta$, and the phase difference $\phi$. These assumptions lead to the universal short-junction spectrum introduced next.
 
@@ -320,7 +320,7 @@
             \begin{equation}
                 I(\phi)=-2\pi \frac{G_0}{e} \frac{\partial E(\phi)}{\partial \phi}\,\tanh\!\left(\frac{E(\phi)}{2k_\mathrm{B}T}\right)\,.
             \end{equation}
-            Here $E(\phi)>0$ denotes the positive-energy ABS spectrum, and the hyperbolic tangent accounts for thermal occupation \cite{beenakker_josephson_1991,beenakker_quantum_1992}.
+            Here $E(\phi)\sgt{}0$ denotes the positive-energy ABS spectrum, and the hyperbolic tangent accounts for thermal occupation \cite{beenakker_josephson_1991,beenakker_quantum_1992}.
 
             Inserting Eq.~\eqref{eq:meso:abs-spectrum} yields
             \begin{equation}
@@ -331,7 +331,7 @@
             \end{equation}
             In the zero-temperature limit, $\tanh\!\left(E/2k_\mathrm{B}T\right)\to 1$ and the current is set solely by the phase dispersion of the occupied negative-energy branch \cite{beenakker_josephson_1991}. Figure~\ref{fig:meso:abs}(b) shows that increasing $\tau$ drives the current--phase relation away from a sinusoidal form and shifts its maximum towards $\phi=\pi$.
 
-            In the tunneling limit ($\tau\ll 1$), the current--phase relation becomes sinusoidal and reduces to the standard Josephson form discussed in Sec.~\ref{sec:macro}. In the same limit, the critical current is consistent with the Ambegaokar-Baratoff result when expressed in terms of the normal-state resistance.
+            In the tunneling limit ($\tau\sll 1$), the current--phase relation becomes sinusoidal and reduces to the standard Josephson form discussed in Sec.~\ref{sec:macro}. In the same limit, the critical current is consistent with the Ambegaokar-Baratoff result when expressed in terms of the normal-state resistance.
 
             In the opposite ballistic limit ($\tau\to 1$), the bound-state spectrum becomes particularly simple,
             \begin{equation}
@@ -344,7 +344,7 @@
             \end{equation}
             At perfect transmission, the positive and negative equilibrium energies in Eq.~\eqref{eq:meso:abs-ballistic} meet in cusps at $\phi=\pi$. The underlying parity resolved dispersions, proportional to $\pm\Delta\cos(\phi/2)$, cross at this phase. Any finite normal reflection opens a gap between these dispersions. The minimum positive ABS energy is
             \begin{equation}
-                E_\mathrm{min}\equiv E_+(\pi)=\Delta\sqrt{1-\tau}\,.
+                E_\mathrm{min}\sequiv E_+(\pi)=\Delta\sqrt{1-\tau}\,.
             \end{equation}
             Deviations from perfect transmission therefore remove the zero-energy crossing, while finite temperature rounds the equilibrium current through the occupation factor.
 
@@ -394,7 +394,7 @@
             \end{wrapfigure}
             In the metallic diffusive limit, the transmission eigenvalues of a quasi-one-dimensional wire follow the bimodal Dorokhov-Mello-Pereyra-Kumar (DMPK) distribution \cite{dorokhov_transmission_1982,beenakker_random-matrix_1997},
             \begin{equation}
-                \rho(\tau) = \frac{G_\mathrm{N}}{G_0} \frac{1}{2\tau \sqrt{1-\tau}}\,,\quad 0<\tau<1\,,
+                \rho(\tau) = \frac{G_\mathrm{N}}{G_0} \frac{1}{2\tau \sqrt{1-\tau}}\,,\quad 0\slt{}\tau\slt{}1\,,
                 \label{eq:meso:dmpk}
             \end{equation}
             as shown in Fig.~\ref{fig:meso:ko-rho}. Its bimodal form represents a large population of almost-closed channels together with almost-open channels that contribute strongly to transport.
@@ -412,7 +412,7 @@
                 I_\mathrm{KO2}(\phi, T) = \pi\,\frac{G_\mathrm{N}}{e}\,\Delta(T)\,\sin\!\left(\frac{\phi}{2}\right)\,
                     \tanh\!\left(\frac{\Delta(T)\cos\!\left(\phi/2\right)}{2k_\mathrm{B}T}\right)\,.
             \end{equation}
-            This clean ballistic result is the KO2 reference limit \cite{kulik_contribution_1975,golubov_current-phase_2004}. Channels with finite normal reflection, $\tau_i<1$, are instead described by the general sum in Eq.~\eqref{eq:meso:cpr-multichannel}. KO1 and KO2 therefore provide many-channel reference limits rather than generic models of an individual atomic contact, whose discrete channel set $\{\tau_i\}$ should normally be retained.
+            This clean ballistic result is the KO2 reference limit \cite{kulik_contribution_1975,golubov_current-phase_2004}. Channels with finite normal reflection, $\tau_i\slt{}1$, are instead described by the general sum in Eq.~\eqref{eq:meso:cpr-multichannel}. KO1 and KO2 therefore provide many-channel reference limits rather than generic models of an individual atomic contact, whose discrete channel set $\{\tau_i\}$ should normally be retained.
 
             Figure~\ref{fig:meso:abs-ko} compares the current--phase relations and critical currents for the Ambegaokar-Baratoff, KO1, and KO2 limits. In each case, $I_\mathrm{c}(T)$ is found by maximizing $I(\phi,T)$ over phase with a BCS-like gap $\Delta(T)$. The channel set or its continuum density determines the observable current--phase relation and critical current, connecting microscopic transmission eigenvalues to equilibrium measurements.
 
@@ -425,11 +425,11 @@
                 I(\phi)=\sum_{p=1}^{\infty} I_p\sin(p\phi)\,.
                 \label{eq:meso:cpr-harmonics}
             \end{equation}
-            In the tunnel limit, the first harmonic $I_1$ dominates and the current is approximately sinusoidal. Highly transmitting channels produce the skewed current--phase relations shown in Figs.~\ref{fig:meso:abs}(b) and \ref{fig:meso:abs-ko}(a), which contain appreciable higher harmonics $I_{p>1}$.
+            In the tunnel limit, the first harmonic $I_1$ dominates and the current is approximately sinusoidal. Highly transmitting channels produce the skewed current--phase relations shown in Figs.~\ref{fig:meso:abs}(b) and \ref{fig:meso:abs-ko}(a), which contain appreciable higher harmonics $I_{p\sgt{}1}$.
 
             Under microwave irradiation, these harmonics introduce phase locking conditions beyond the integer Shapiro steps discussed in Sec.~\ref{subsec:macro:shapiro}. We use the driven phase of Eq.~\eqref{eq:macro:shapiro-phase}, with Josephson frequency $\nu_\mathrm{J}=2eV/h$ and drive amplitude $\alpha_{\nu,2e}=2eA/(h\nu)$. Inserting this phase into Eq.~\eqref{eq:meso:cpr-harmonics} and applying the Jacobi-Anger expansion gives
             \begin{equation}
-                I(t)=\sum_{p\geq1}\sum_{n\in\mathbb{Z}} I_pJ_n(p\alpha_{\nu,2e})
+                I(t)=\sum_{p\sgeq{}1}\sum_{n\in\mathbb{Z}} I_pJ_n(p\alpha_{\nu,2e})
                 \sin\!\left[p\phi_0+2\pi\left(p\nu_\mathrm{J}+n\nu\right)t\right]\,.
             \end{equation}
             The $p$-th CPR harmonic experiences the enlarged modulation $p\alpha_{\nu,2e}$, and its $n$-photon locking contribution is weighted by $I_pJ_n(p\alpha_{\nu,2e})$ rather than by a squared Bessel function. A dc contribution appears when $p\nu_\mathrm{J}+n\nu=0$. Relabeling the sideband index gives the rational locking voltages
@@ -478,7 +478,7 @@
             \label{fig:meso:mar-schematic}
         \end{figure}
 
-        Multiple Andreev reflection (MAR) is the microscopic mechanism of subgap transport in voltage biased SNS weak links and short superconducting point contacts. Figure~\ref{fig:meso:mar-schematic} shows the corresponding energy ladder for several MAR orders. For $|eV|<2\Delta$, a quasiparticle cannot directly enter the continuum of the opposite electrode. Successive Andreev reflections instead alternate its electron- and hole-like character, while each traversal changes its energy by $eV$. In the trajectory picture of Klapwijk, Blonder, and Tinkham (KBT), a process that reaches the opposite continuum after $m$ energy increments has the threshold
+        Multiple Andreev reflection (MAR) is the microscopic mechanism of subgap transport in voltage biased SNS weak links and short superconducting point contacts. Figure~\ref{fig:meso:mar-schematic} shows the corresponding energy ladder for several MAR orders. For $|eV|\slt{}2\Delta$, a quasiparticle cannot directly enter the continuum of the opposite electrode. Successive Andreev reflections instead alternate its electron- and hole-like character, while each traversal changes its energy by $eV$. In the trajectory picture of Klapwijk, Blonder, and Tinkham (KBT), a process that reaches the opposite continuum after $m$ energy increments has the threshold
         \begin{equation}
             eV_m=\frac{2\Delta}{m}\,,\qquad m\in\mathbb{N}^+\,.
             \label{eq:meso:mar-sgs}

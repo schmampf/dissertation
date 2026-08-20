@@ -78,7 +78,7 @@
 
         For a passive linear environment in thermal equilibrium, this probability density is nonnegative, normalized, and obeys detailed balance,
         \begin{align}
-            P_q(E)\geq0\,, && 
+            P_q(E)\sgeq{}0\,, && 
             \int_{-\infty}^{\infty}P_q(E)\,\mathrm{d}E=1\,, &&
             P_q(-E)=\exp\!\left(-\frac{E}{k_\mathrm{B}T}\right)P_q(E)\,.
             \label{eq:stochastic:pe-equilibrium}
@@ -105,8 +105,8 @@
         %=========================================================
             The elastic limit is the weak-coupling limit $\alpha_q\to0$ of the Ohmic family. When the impedance is much smaller than the relevant resistance quantum over the frequencies involved in tunneling, voltage and phase fluctuations are weak and the environment exchanges little energy with the transferred charge. The energy exchange probability approaches a delta function,
             \begin{align}
-                P_\mathrm{low}(E) \approx \delta(E)\,, &&
-                \mathrm{Re}\,Z(\omega) \ll \frac{h}{q^2}\,.
+                P_\mathrm{low}(E) \sapprox \delta(E)\,, &&
+                \mathrm{Re}\,Z(\omega) \sll \frac{h}{q^2}\,.
             \end{align}
             In the limit $P_q(E)=\delta(E)$, Eq.~\eqref{eq:stochastic:pe-tunnel-rate} reduces to
             \begin{equation}
@@ -126,13 +126,13 @@
                 \left(\frac{E}{E_\mathrm{c}}\right)^{\alpha_q-1}
                 \exp\!\left(-\frac{E}{E_\mathrm{c}}\right)\,,&&
                 \alpha_q=\frac{2q^2R}{h}\,, &&
-                E>0\,.
+                E\sgt{}0\,.
                 \label{eq:stochastic:pe-ohmic}
             \end{align}
 
             The cutoff energy is $E_\mathrm{c}=\hbar\omega_\mathrm{c}$. The Euler Gamma function $\Gamma(\alpha_q)$ normalizes the distribution. The power law describes the universal Ohmic low-energy behavior, while the exponential factor regularizes the high-energy tail of an environment with finite bandwidth. Equation~\eqref{eq:stochastic:pe-ohmic} is therefore a convenient cutoff model and not the exact kernel of every Ohmic circuit \cite{ingold_charge_1992}.
 
-            At zero temperature this form has support only for $E>0$, because the environment can absorb energy but cannot emit energy from its ground state. At finite temperature, thermal modes add a negative-energy tail to $P(E)$, corresponding to energy emitted by the environment into the tunneling process. The full finite-temperature kernel is usually evaluated from Eq.~\eqref{eq:stochastic:pe-definition}. The low-energy suppression of $P(E)$ underlies dynamical Coulomb blockade and also sets the scale for incoherent Cooper pair tunneling.
+            At zero temperature this form has support only for $E\sgt{}0$, because the environment can absorb energy but cannot emit energy from its ground state. At finite temperature, thermal modes add a negative-energy tail to $P(E)$, corresponding to energy emitted by the environment into the tunneling process. The full finite-temperature kernel is usually evaluated from Eq.~\eqref{eq:stochastic:pe-definition}. The low-energy suppression of $P(E)$ underlies dynamical Coulomb blockade and also sets the scale for incoherent Cooper pair tunneling.
 
         %=========================================================
         \subsubsection*{Resonant Environment}
@@ -148,7 +148,7 @@
 
         Figure~\ref{fig:stochastic:pe} summarizes the three environmental limits introduced above. Weak coupling concentrates the probability near zero exchanged energy. Ohmic coupling broadens this contribution and suppresses low-energy tunneling, while a resonant mode produces discrete inelastic contributions. After convolution with the electronic kernel, these structures appear in measured transport as zero-bias suppression, broadened thresholds, and resonant satellites.
 
-        The transferred charge selects the environmental kernel because $J_q(t)\propto q^2$. Dynamical Coulomb blockade uses $P_e(E)$ for single-electron tunneling, whereas incoherent Cooper pair tunneling uses the more strongly coupled $P_{2e}(E)$. In a superconducting single-electron transistor, a master equation combines these charge specific rates with the stationary charge state occupations.
+        The transferred charge selects the environmental kernel because $J_q(t)\spropto q^2$. Dynamical Coulomb blockade uses $P_e(E)$ for single-electron tunneling, whereas incoherent Cooper pair tunneling uses the more strongly coupled $P_{2e}(E)$. In a superconducting single-electron transistor, a master equation combines these charge specific rates with the stationary charge state occupations.
 
         \newpage
     %=========================================================
@@ -378,7 +378,7 @@
 
             At finite bias, the junction capacitances determine how strongly the applied voltage changes the island energy for each tunneling step. A transport onset occurs when the initial and final free energies become degenerate. The gate and bias dependence of this condition produces lines in a gate--bias map, with slopes fixed by capacitance ratios. The transition rates and stationary occupations determine the intensity along these lines.
 
-            Charge quantization requires weak thermal activation and weak quantum charge fluctuations. Thus $E_\mathrm{C}\gg k_\mathrm{B}T$, and in the tunnel limit each normal-state junction resistance must be large compared with $R_\mathrm{K}=h/e^2$. The island can then be described by an integer excess electron number $n$. A gate voltage induces the offset charge $n_\mathrm{G}=C_\mathrm{G}V_\mathrm{G}/e$ and changes the electrostatic energy according to
+            Charge quantization requires weak thermal activation and weak quantum charge fluctuations. Thus $E_\mathrm{C}\sgg k_\mathrm{B}T$, and in the tunnel limit each normal-state junction resistance must be large compared with $R_\mathrm{K}=h/e^2$. The island can then be described by an integer excess electron number $n$. A gate voltage induces the offset charge $n_\mathrm{G}=C_\mathrm{G}V_\mathrm{G}/e$ and changes the electrostatic energy according to
             \begin{equation}
                 E_n(V_\mathrm{G}) = E_\mathrm{C}\left(n-n_\mathrm{G}\right)^2\,.
                 \label{eq:stochastic:set-electrostatic-energy}
@@ -411,7 +411,7 @@
 
             The Josephson-quasiparticle (JQP) cycle combines quasiparticle and Cooper pair transport. In the first step, a Cooper pair tunnels coherently onto the island through one junction while a quasiparticle simultaneously leaves through the other junction. The island charge therefore increases by one elementary charge rather than two. This correlated step avoids the electrostatic cost of an isolated Cooper pair addition. A second quasiparticle subsequently leaves the island and restores the initial charge state. The complete cycle transfers charge through both junctions and produces a localized feature in bias and gate voltage \cite{lorenz_sset_mar_2018,lorenz_wechselspiel_2018,sprenger_interplay_2019}.
 
-            Describing the JQP cycle with a population master equation replaces the coherent Josephson dynamics by an effective transition rate. This approximation is valid when coherence between the coupled charge states decays much faster than the Josephson evolution, $\Gamma_\mathrm{deph}\gg E_\mathrm{J}/\hbar$. Otherwise, the off-diagonal density matrix elements must be retained in a generalized master equation.
+            Describing the JQP cycle with a population master equation replaces the coherent Josephson dynamics by an effective transition rate. This approximation is valid when coherence between the coupled charge states decays much faster than the Josephson evolution, $\Gamma_\mathrm{deph}\sgg E_\mathrm{J}/\hbar$. Otherwise, the off-diagonal density matrix elements must be retained in a generalized master equation.
 
             Orthodox theory describes the island by classical charge state probabilities and independent junction transitions. This population only description assumes well-defined charge states, Markovian events, and negligible off-diagonal coherences. Each junction and direction contributes a rate set by the corresponding free energy difference and microscopic junction properties. In an SSET, these rates include the superconducting DOS and incoherent Cooper pair transfer \cite{ingold_charge_1992,grabert_single_2013}.
 

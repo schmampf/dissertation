@@ -72,7 +72,7 @@
     \subsection*{Superconducting Crossover}
     %=========================================================
 
-    Directly after the normal-state measurement, I restore superconductivity and measure the device again at $T_\mathrm{bath}=\qty{81(1)}{\milli\kelvin}$ without mechanically adjusting the MCBJ. The two measurements therefore probe the same nominal contact configuration back to back. In the superconducting state, however, a single SIN BCS Dynes model does not reproduce the complete voltage range, as shown in Fig.~\ref{fig:ssn2-set:sin-dcb}. I consequently analyze a low bias region (LB), $\lvert V\rvert<\qty{0.50}{\milli\volt}$, and a high bias region (HB), $\lvert V\rvert>\qty{0.55}{\milli\volt}$, separately.
+    Directly after the normal-state measurement, I restore superconductivity and measure the device again at $T_\mathrm{bath}=\qty{81(1)}{\milli\kelvin}$ without mechanically adjusting the MCBJ. The two measurements therefore probe the same nominal contact configuration back to back. In the superconducting state, however, a single SIN BCS Dynes model does not reproduce the complete voltage range, as shown in Fig.~\ref{fig:ssn2-set:sin-dcb}. I consequently analyze a low bias region (LB), $\lvert V\rvert\slt{}\qty{0.50}{\milli\volt}$, and a high bias region (HB), $\lvert V\rvert\sgt{}\qty{0.55}{\milli\volt}$, separately.
 
     \singlefitfigure{ssn-set/ssn2-sin-dcb}{
         Superconducting transport of the partially opened SET2 configuration measured directly after the normal-state response in Fig.~\ref{fig:ssn2-set:dcb}. The panels compare the measured \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} responses with the LB Dynes fit and the HB reference calculated with the same superconducting parameters. The derivative responses resolve the crossover from the LB conductance scale toward the HB scale.
@@ -102,7 +102,7 @@
         \left|R_\mathrm{N}^\mathrm{HB}-R_\mathrm{TB}\right| = \qty{0.25(2)}{\kilo\ohm}\,,
         \label{eq:ssn-set:dynamic:hb-barrier-difference}
     \end{align}
-    corresponding to a relative difference of $< 1\%$. Thus, the HB resistance closely matches the independently measured tunnel barrier resistance.
+    corresponding to a relative difference of $\slt{} 1\%$. Thus, the HB resistance closely matches the independently measured tunnel barrier resistance.
 
     The derivative panels resolve the crossover between the LB and HB responses at
     \begin{align}
@@ -125,7 +125,7 @@
         \Delta R_\mathrm{N} = R_\mathrm{N}^\mathrm{LB}-R_\mathrm{N}^\mathrm{HB} = \qty{6.21(3)}{\kilo\ohm}\,.
         \label{eq:ssn-set:dynamic:resistance-difference}
     \end{align}
-    This value is approximately \qty{4}{\percent} below $h/(4e^2)\approx\qty{6.45}{\kilo\ohm}$. This scale can be written as the resistance quantum for charge-$2e$ transfer, but it also equals the resistance of two parallel spin-degenerate unit-transmission electron channels. The present treatment within \textit{P(E)} Theory does not predict an additive resistance of this magnitude, so I retain the proximity as a numerical observation without assigning either interpretation.
+    This value is approximately \qty{4}{\percent} below $h/(4e^2)\sapprox\qty{6.45}{\kilo\ohm}$. This scale can be written as the resistance quantum for charge-$2e$ transfer, but it also equals the resistance of two parallel spin-degenerate unit-transmission electron channels. The present treatment within \textit{P(E)} Theory does not predict an additive resistance of this magnitude, so I retain the proximity as a numerical observation without assigning either interpretation.
 
     SET2 thus shows a gate independent zero-bias anomaly rather than the static gate controlled blockade observed for SET1. The normal-state response is consistent with DCB in an effective RC environment. In the superconducting state, the HB resistance agrees with the independently measured tunnel barrier resistance, while the LB Dynes fit yields a larger effective resistance. The crossover energy agrees with $\Delta_0+E_\mathrm{RC}$ within its estimated width, while the difference between the fitted resistance scales is close to $R_\mathrm{Q}^{2e}$. The first correspondence is consistent with environmental modification of the quasiparticle response. The second does not follow directly from the model used here. I therefore report both without assigning a microscopic mechanism to the LB--HB crossover.
 

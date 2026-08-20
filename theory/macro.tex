@@ -158,7 +158,7 @@
                 + I_\mathrm{qp}\!\left(V(t)\right)\,.
                 \label{eq:macro:rsj-current-balance}
             \end{equation}
-            We denote the inverse of the BCS quasiparticle characteristic by $V_\mathrm{qp}(I)$. This construction assumes that the quasiparticle branch follows the instantaneous voltage and that its \textit{I--V} characteristic can be inverted on the branch considered. Together with the ac Josephson relation, Eq.~\eqref{eq:macro:rsj-current-balance} determines the time evolution of the phase and voltage. For $|I_\mathrm{bias}|\leq I_\mathrm{c}$, a stationary phase can carry the applied current and the voltage remains zero. Above this range, the phase runs through successive $2\pi$ periods. Its velocity changes during each rotation because the current available for quasiparticle tunneling depends on $\phi$.
+            We denote the inverse of the BCS quasiparticle characteristic by $V_\mathrm{qp}(I)$. This construction assumes that the quasiparticle branch follows the instantaneous voltage and that its \textit{I--V} characteristic can be inverted on the branch considered. Together with the ac Josephson relation, Eq.~\eqref{eq:macro:rsj-current-balance} determines the time evolution of the phase and voltage. For $|I_\mathrm{bias}|\sleq{} I_\mathrm{c}$, a stationary phase can carry the applied current and the voltage remains zero. Above this range, the phase runs through successive $2\pi$ periods. Its velocity changes during each rotation because the current available for quasiparticle tunneling depends on $\phi$.
             
             Consequently, the phase does not sample all values for equal durations. Although the unweighted phase average of $\sin\phi$ vanishes over one rotation, its time average need not vanish under current bias. This differs from ideal voltage bias, where the phase advances uniformly and the supercurrent averages to zero. The measured dc voltage is the time average over the nonuniform phase motion. For one complete phase rotation, it is
             \begin{equation}
@@ -251,7 +251,7 @@
             \end{equation}
             quantifies the damping of the phase dynamics \cite{mccumber_effect_1968}.
 
-            The single parameter $Q$ distinguishes underdamped ($Q\gg 1$) from overdamped ($Q\ll 1$) junctions and sets the stage for the dynamical behavior discussed next.
+            The single parameter $Q$ distinguishes underdamped ($Q\sgg 1$) from overdamped ($Q\sll 1$) junctions and sets the stage for the dynamical behavior discussed next.
 
         %=========================================================
         \subsubsection*{Tilted Washboard Potential}
@@ -266,7 +266,7 @@
             \end{equation}
             The Josephson coupling produces the periodic cosine landscape, while the normalized bias current $i$ produces its linear tilt. The corresponding dimensional phase potential is $U(\phi)=E_\mathrm{J}u(\phi)$. In the untilted case ($i=0$), adjacent minima are separated by a barrier $\Delta U=2E_\mathrm{J}$. Figure~\ref{fig:macro:rcsj-u-phi} shows how this tilted washboard potential evolves with increasing bias current \cite{stewart_currentvoltage_1968,tinkham_introduction_2004}.
 
-            For $i=0$, the periodic potential has equivalent stable minima. A finite subcritical bias, $0<i<1$, tilts the potential and turns them into metastable minima separated by finite barriers. While the phase remains localized in one well, its average velocity and therefore the junction voltage are zero. Small oscillations about a minimum are governed by the plasma-frequency scale introduced in Eq.~\eqref{eq:macro:rcsj-plasma-frequency}.
+            For $i=0$, the periodic potential has equivalent stable minima. A finite subcritical bias, $0\slt{}i\slt{}1$, tilts the potential and turns them into metastable minima separated by finite barriers. While the phase remains localized in one well, its average velocity and therefore the junction voltage are zero. Small oscillations about a minimum are governed by the plasma-frequency scale introduced in Eq.~\eqref{eq:macro:rcsj-plasma-frequency}.
 
             \begin{wrapfigure}[18]{r}{2in}
                 \captionsetup{format=plain}%
@@ -280,7 +280,7 @@
                 \label{fig:macro:rcsj-u-phi}
             \end{wrapfigure}
             
-            As the bias approaches $i=1$, the barrier in the direction of the tilt decreases and vanishes at the deterministic critical current. For $i>1$, no local minima remain and the phase runs continuously, corresponding to a finite-voltage state. Thermal and environmental fluctuations can induce escape already below this threshold and thereby cause premature switching. When the bias is subsequently reduced below $i=1$, local minima reappear. The return from the running state to a localized minimum is called retrapping.
+            As the bias approaches $i=1$, the barrier in the direction of the tilt decreases and vanishes at the deterministic critical current. For $i\sgt{}1$, no local minima remain and the phase runs continuously, corresponding to a finite-voltage state. Thermal and environmental fluctuations can induce escape already below this threshold and thereby cause premature switching. When the bias is subsequently reduced below $i=1$, local minima reappear. The return from the running state to a localized minimum is called retrapping.
 
             Not every escape leads to a sustained running state. If the phase is captured in an adjacent minimum, it has undergone a phase slip of approximately $2\pi$. Through the Josephson voltage--phase relation, each slip produces a voltage pulse with time integral $h/(2e)$. Forward and backward slips balance at zero bias, whereas a directional imbalance produces a finite average phase velocity. Repeated slips interrupted by retrapping constitute phase diffusion.
 

@@ -27,9 +27,9 @@
     
     A typical \textit{I--V} curve is shown in Fig.~\ref{fig:tb:highres:single-iv}. The quasiparticle onset appears at approximately $2\Delta/e$, as expected for an SIS junction (Sec.~\ref{subsec:micro:tunnel-current}). I do not observe a supercurrent, even though both electrodes are superconducting. A finite Josephson coupling may nevertheless remain below the experimental resolution. Using the Ambegaokar-Baratoff estimate (Eqs.~\ref{eq:macro:critical-current} and \ref{eq:macro:josephson-energy}) with parameters from the first column of Table~\ref{table:tunnelbarrier:highres} gives
     \begin{align}
-        I_\mathrm{c} &\approx \qty{4.5}{\nano\ampere}\,, &
-        E_\mathrm{J} &\approx \qty{9.3}{\micro\electronvolt}\,, &
-        E_\mathrm{T} &\approx \qty{18.5}{\micro\electronvolt}\,.
+        I_\mathrm{c} &\sapprox \qty{4.5}{\nano\ampere}\,, &
+        E_\mathrm{J} &\sapprox \qty{9.3}{\micro\electronvolt}\,, &
+        E_\mathrm{T} &\sapprox \qty{18.5}{\micro\electronvolt}\,.
         \label{eq:tb:highres:josephson-estimate}
     \end{align}
     The estimated critical current is large enough to be observable in principle, but the thermal energy $E_\mathrm{T}$ is of the same order and already about twice as large as $E_\mathrm{J}$.
@@ -39,9 +39,9 @@
     Representative static transport trace of TB1 at $T_\mathrm{bath}=\qty{33}{\milli\kelvin}$. The panels show the measured \textit{I--V} curve and the numerically derived \textit{dI--dV} and \textit{dV--dI} responses. The \textit{I--V} curve is fitted with the SIS BCS model, with the extracted parameters listed for M1 in Table~\ref{table:tunnelbarrier:highres}.
     }{fig:tb:highres:single-iv}
 
-    The capacitance of TB1 is not measured independently. Using the same geometric parallel-plate approximation as Lorenz \textit{et al.}~gives an estimated range of $C_\mathrm{TB}\approx\qtyrange{0.2}{0.4}{\femto\farad}$ \cite{lorenz_sset_mar_2018,lorenz_wechselspiel_2018}. This range is consistent with related MCBJ SET estimates by Susanne Sprenger, who found junction capacitances of about $\qty{0.1}{\femto\farad}$ \cite{sprenger_interplay_2019}, and Laura Sobral Rey, who found total island capacitances of about $\qty{1.2}{\femto\farad}$ \cite{sobral_rey_interplay_2022,sobral_rey_hybrid_sset_2024}.
+    The capacitance of TB1 is not measured independently. Using the same geometric parallel-plate approximation as Lorenz \textit{et al.}~gives an estimated range of $C_\mathrm{TB}\sapprox\qtyrange{0.2}{0.4}{\femto\farad}$ \cite{lorenz_sset_mar_2018,lorenz_wechselspiel_2018}. This range is consistent with related MCBJ SET estimates by Susanne Sprenger, who found junction capacitances of about $\qty{0.1}{\femto\farad}$ \cite{sprenger_interplay_2019}, and Laura Sobral Rey, who found total island capacitances of about $\qty{1.2}{\femto\farad}$ \cite{sobral_rey_interplay_2022,sobral_rey_hybrid_sset_2024}.
 
-    The corresponding charging energy for $C_\mathrm{TB}\sim\qtyrange{0.2}{0.4}{\femto\farad}$ is $E_\mathrm{c}=e^2/2C_\mathrm{TB}\sim\qtyrange{200}{400}{\micro\electronvolt}$. Even allowing for stray capacitance that increases the effective capacitance to several fF, this scale remains comparable to or larger than the Josephson energy. I therefore interpret the missing zero-voltage branch as consistent with a junction whose dc phase relation is strongly affected by thermal fluctuations, charge fluctuations, voltage noise, and the unengineered microwave environment. The electrodes remain superconducting, but the phase difference across the barrier is not stiff enough to produce a resolvable zero-voltage branch \cite{ambegaokar_tunneling_1963,tinkham_introduction_2004,grabert_single_2013}.
+    The corresponding charging energy for $C_\mathrm{TB}\ssim\qtyrange{0.2}{0.4}{\femto\farad}$ is $E_\mathrm{c}=e^2/2C_\mathrm{TB}\ssim\qtyrange{200}{400}{\micro\electronvolt}$. Even allowing for stray capacitance that increases the effective capacitance to several fF, this scale remains comparable to or larger than the Josephson energy. I therefore interpret the missing zero-voltage branch as consistent with a junction whose dc phase relation is strongly affected by thermal fluctuations, charge fluctuations, voltage noise, and the unengineered microwave environment. The electrodes remain superconducting, but the phase difference across the barrier is not stiff enough to produce a resolvable zero-voltage branch \cite{ambegaokar_tunneling_1963,tinkham_introduction_2004,grabert_single_2013}.
 
     Because no dc Josephson branch is resolved, I attribute the expected microwave response primarily to quasiparticle photon assisted tunneling rather than to Shapiro steps from coherent Cooper pair transport. The sharp superconducting gap edge provides a well-defined spectral reference, and microwave irradiation should generate replicas displaced from it by integer multiples of the single-photon energy.
 
@@ -72,7 +72,7 @@
         \label{table:tunnelbarrier:highres}
     \end{table}
     
-    The fitted gaps cluster near $\Delta_0\approx\qty{195}{\micro\electronvolt}$, slightly larger than the literature value for bulk aluminum of about $\qty{180}{\micro\electronvolt}$ used in Sec.~\ref{subsubsec:micro:bdg-eigenproblem}. This difference is typical for thin-film aluminum. The weak-coupling estimate from $\Delta_0$ gives $T_\mathrm{c}\approx\qty{1.274}{\kelvin}$, consistent with the temperature calibration in Sec.~\ref{subsec:tb:highres:temperature-calibration} \cite{giaever_study_1961,tinkham_introduction_2004}. The normal-state conductance remains near $G_\mathrm{N}\simeq0.19\,G_0$ in all reference fits, which places TB1 in the tunnel limit. BCS quasiparticle tunneling and Tien-Gordon photon assisted tunneling are therefore the appropriate minimal models for the measurement blocks in this section.
+    The fitted gaps cluster near $\Delta_0\sapprox\qty{195}{\micro\electronvolt}$, slightly larger than the literature value for bulk aluminum of about $\qty{180}{\micro\electronvolt}$ used in Sec.~\ref{subsubsec:micro:bdg-eigenproblem}. This difference is typical for thin-film aluminum. The weak-coupling estimate from $\Delta_0$ gives $T_\mathrm{c}\sapprox\qty{1.274}{\kelvin}$, consistent with the temperature calibration in Sec.~\ref{subsec:tb:highres:temperature-calibration} \cite{giaever_study_1961,tinkham_introduction_2004}. The normal-state conductance remains near $G_\mathrm{N}\simeq0.19\,G_0$ in all reference fits, which places TB1 in the tunnel limit. BCS quasiparticle tunneling and Tien-Gordon photon assisted tunneling are therefore the appropriate minimal models for the measurement blocks in this section.
 
     The fitted electronic temperature $T_\mathrm{fit}$ is difficult to estimate from an SIS junction far below the critical temperature because the spectrum changes only weakly in that temperature range. Although the static fit gives $T_\mathrm{fit}=\qty{215(13)}{\milli\kelvin}$, the controlled temperature sweep in Sec.~\ref{subsec:tb:highres:temperature-calibration} shows a low-temperature fit plateau near $T_\mathrm{base}=\qty{282(2)}{\milli\kelvin}$. I therefore treat the single-trace value as a weakly constrained model parameter rather than as a direct temperature measurement.
 
@@ -189,10 +189,10 @@
         
         Over the indicated parameter range of the sweep, this comparison fit gives
         \begin{equation}
-            A = \eta A_\mathrm{out}\,,\qquad \eta\approx8.38(3)\times10^{-4}\,.
+            A = \eta A_\mathrm{out}\,,\qquad \eta\sapprox8.38(3)\times10^{-4}\,.
             \label{eq:tb:highres:amp18.3GHz:eta}
         \end{equation}
-        The abrupt feature around $A_\mathrm{out}\approx\qty{300}{\milli\volt}$ is not a change of junction physics. It is consistent with a change in the internal source amplification state of the network analyzer. At the largest source settings the fitted amplitudes also deviate from a linear relation, which I treat as a limit of using the VNA output as a microwave power coordinate.
+        The abrupt feature around $A_\mathrm{out}\sapprox\qty{300}{\milli\volt}$ is not a change of junction physics. It is consistent with a change in the internal source amplification state of the network analyzer. At the largest source settings the fitted amplitudes also deviate from a linear relation, which I treat as a limit of using the VNA output as a microwave power coordinate.
 
         Using the pointwise fitted amplitudes, I remap the measured sweep from nominal VNA output to the reduced PAT coordinate. Figures~\ref{fig:tb:highres:amp18.3GHz:cal} and \ref{fig:tb:highres:amp18.3GHz:sim} compare the remapped $\qty{18.3}{\giga\hertz}$ amplitude sweep with the corresponding simulation. Their agreement validates the calibration procedure because I replace the hardware dependent source setting with the dimensionless drive coordinate that controls the expected PAT structure.
 
@@ -240,7 +240,7 @@
 
         I again use the fitted amplitude values in Fig.~\ref{fig:tb:highres:amp13.6GHz:fit} directly for the remapped axis. A secondary linear fit to these values gives the comparison slope
         \begin{equation}
-            \eta\approx21.50(1)\times10^{-4}\,.
+            \eta\sapprox21.50(1)\times10^{-4}\,.
             \label{eq:tb:highres:amp13.6GHz:eta}
         \end{equation}
 

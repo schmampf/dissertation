@@ -33,7 +33,7 @@
             In a homogeneous system, the effective band introduced above is approximated as parabolic,
             \begin{align}
                 \varepsilon(\vec{k})
-                \approx \frac{\hbar^2 \lvert\vec{k}\rvert^2}{2m^\ast}\,,
+                \sapprox \frac{\hbar^2 \lvert\vec{k}\rvert^2}{2m^\ast}\,,
                 &&
                 E_\mathrm{F}
                 = \frac{\hbar^2 k_\mathrm{F}^2}{2m^\ast}\,,
@@ -52,12 +52,12 @@
             \end{equation}
             Here, $\varepsilon$ is measured from the band edge. Superconductivity involves only a narrow energy shell around $E_\mathrm{F}$. We therefore use
             \begin{equation}
-                N(\varepsilon) \approx N_0 \equiv N(E_\mathrm{F})\,.
+                N(\varepsilon) \sapprox N_0 \sequiv N(E_\mathrm{F})\,.
                 \label{eq:micro:constant-normal-dos}
             \end{equation}
             In the superconducting description below, $\xi$ and $E$ are instead measured relative to the chemical potential, which satisfies $\mu\simeq E_\mathrm{F}$ for a conventional metal.
 
-            Within the free-electron approximation with three conduction electrons per atom, bulk aluminum has $m^\ast\approx m$, $E_\mathrm{F}\approx\qty{11.7}{\electronvolt}$, $v_\mathrm{F}\approx2.0\cdot10^6\,\unit{\meter\per\second}$, and $\lambda_\mathrm{F}=\qty{0.36}{\nano\meter}$. We use these as representative material scales, not as parameters extracted from the devices studied in this thesis. \cite{ashcroft_solid_1976}
+            Within the free-electron approximation with three conduction electrons per atom, bulk aluminum has $m^\ast\sapprox m$, $E_\mathrm{F}\sapprox\qty{11.7}{\electronvolt}$, $v_\mathrm{F}\sapprox2.0\cdot10^6\,\unit{\meter\per\second}$, and $\lambda_\mathrm{F}=\qty{0.36}{\nano\meter}$. We use these as representative material scales, not as parameters extracted from the devices studied in this thesis. \cite{ashcroft_solid_1976}
 
             The normal-state electron and hole excitations are independent. BCS pairing couples these sectors and reorganizes them into Bogoliubov quasiparticles.
 
@@ -78,7 +78,7 @@
                 \Delta(\vec r):=|\widetilde{\Delta}(\vec r)|\,.
                 \label{eq:micro:complex-delta}
             \end{align}
-            In the homogeneous bulk system considered below, the nonnegative magnitude $\Delta$ equals the excitation gap, while $\phi$ describes condensate coherence. The attractive coupling $V<0$ acts within the weak-coupling pairing shell. The pair potential must be determined self-consistently from the quasiparticle spectrum derived below. \cite{bardeen_theory_1957}
+            In the homogeneous bulk system considered below, the nonnegative magnitude $\Delta$ equals the excitation gap, while $\phi$ describes condensate coherence. The attractive coupling $V\slt{}0$ acts within the weak-coupling pairing shell. The pair potential must be determined self-consistently from the quasiparticle spectrum derived below. \cite{bardeen_theory_1957}
 
         %=========================================================
         \subsubsection*{Bogoliubov-de~Gennes Eigenproblem}
@@ -147,17 +147,17 @@
                 \,\mathrm d\xi\,.
                 \label{eq:micro:gap-self-consistency}
             \end{equation}
-            Here, $N_0/2$ is the normal-state DOS per spin and $\omega_\mathrm{D}$ is the Debye frequency, so $\hbar\omega_\mathrm{D}$ bounds the phonon mediated pairing shell. At each temperature, Eq.~\eqref{eq:micro:gap-self-consistency} implicitly determines $\Delta(T)$. Its zero-temperature solution defines $\Delta_0\equiv\Delta(0)$, while $T_\mathrm{c}$ is the temperature at which the nonzero solution vanishes. Comparing these limits gives the weak-coupling relation
+            Here, $N_0/2$ is the normal-state DOS per spin and $\omega_\mathrm{D}$ is the Debye frequency, so $\hbar\omega_\mathrm{D}$ bounds the phonon mediated pairing shell. At each temperature, Eq.~\eqref{eq:micro:gap-self-consistency} implicitly determines $\Delta(T)$. Its zero-temperature solution defines $\Delta_0\sequiv\Delta(0)$, while $T_\mathrm{c}$ is the temperature at which the nonzero solution vanishes. Comparing these limits gives the weak-coupling relation
             \begin{equation}
                 \Delta_0
-                \approx 1.764\, k_\mathrm{B} T_\mathrm{c}\,.
+                \sapprox 1.764\, k_\mathrm{B} T_\mathrm{c}\,.
                 \label{eq:micro:gap-zero-temperature}
             \end{equation}
             Thus, $\Delta_0$ or $T_\mathrm{c}$ sets the material scale, while the self-consistency equation fixes the normalized temperature dependence $\Delta(T)/\Delta_0$. \cite{bardeen_theory_1957,tinkham_introduction_2004}
             Representative bulk aluminum values are
             \begin{align}
-                \Delta_0 \approx \qty{180}{\micro\electronvolt}\,, &&
-                T_\mathrm{c} \approx \qty{1.2}{\kelvin}\,.
+                \Delta_0 \sapprox \qty{180}{\micro\electronvolt}\,, &&
+                T_\mathrm{c} \sapprox \qty{1.2}{\kelvin}\,.
                 \label{eq:micro:aluminum-scales}
             \end{align}
             Thin-film disorder, thickness, and fabrication can shift both values. Unless stated otherwise, the following figures use these representative scales. \cite{giaever_study_1961,tinkham_introduction_2004}
@@ -175,7 +175,7 @@
             Rather than solving Eq.~\eqref{eq:micro:gap-self-consistency} numerically at every temperature, we use the convenient interpolation
             \begin{equation}
                 \frac{\Delta(T)}{\Delta_0}
-                    \approx \tanh\!\left(
+                    \sapprox \tanh\!\left(
                         1.74\,\sqrt{\frac{T_\mathrm{c}}{T} - 1}
                     \right).
                 \label{eq:micro:gap-temperature}
@@ -192,10 +192,10 @@
                 \frac{N_\mathrm{S}(E)}{N_0}
                 = \left|\frac{\mathrm d\xi}{\mathrm dE}\right|
                 = \frac{E}{\sqrt{E^2-\Delta^2}}
-                \qquad (E\geq\Delta)\,.
+                \qquad (E\sgeq{}\Delta)\,.
                 \label{eq:micro:dos-bcs}
             \end{equation}
-            No real $\xi$ exists for $0\leq E<\Delta$, so the DOS vanishes inside the gap. Particle--hole symmetry extends the result to negative energies through $N_\mathrm{S}(-E)=N_\mathrm{S}(E)$. The Jacobian diverges at the gap edges. \cite{bardeen_theory_1957,tinkham_introduction_2004}
+            No real $\xi$ exists for $0\sleq{} E\slt{}\Delta$, so the DOS vanishes inside the gap. Particle--hole symmetry extends the result to negative energies through $N_\mathrm{S}(-E)=N_\mathrm{S}(E)$. The Jacobian diverges at the gap edges. \cite{bardeen_theory_1957,tinkham_introduction_2004}
 
             Nonideal spectra are commonly described by Dynes broadening,
             \begin{equation}
@@ -408,7 +408,7 @@
         \begin{equation}
             E_n = E_0 + n h\nu \qquad (n\in\mathbb{Z})\,,
         \end{equation}
-        where $n>0$ corresponds to absorption and $n<0$ to emission. These energy exchanges shift static tunnel features by integer multiples of $h\nu/e$. Figure~\ref{fig:micro:pat-schematic} illustrates this process for an SIS junction, whose sharp quasiparticle threshold makes the shifts particularly clear. To determine the sideband weights, we represent the harmonic voltage by a time dependent phase factor in the tunneling amplitude. Its Fourier expansion then leads to the Tien-Gordon Eq.~\eqref{eq:micro:pat-iv} \cite{tien_multiphoton_1963}.
+        where $n\sgt{}0$ corresponds to absorption and $n\slt{}0$ to emission. These energy exchanges shift static tunnel features by integer multiples of $h\nu/e$. Figure~\ref{fig:micro:pat-schematic} illustrates this process for an SIS junction, whose sharp quasiparticle threshold makes the shifts particularly clear. To determine the sideband weights, we represent the harmonic voltage by a time dependent phase factor in the tunneling amplitude. Its Fourier expansion then leads to the Tien-Gordon Eq.~\eqref{eq:micro:pat-iv} \cite{tien_multiphoton_1963}.
 
         %=========================================================
         \subsubsection*{Harmonic Drive and Sideband Formation}
@@ -426,7 +426,7 @@
             \phi_q(t)
             = \frac{q}{\hbar}\int_0^t V(t')\,\mathrm{d}t'\,, &&
             U_q(t)
-            \equiv \exp\!\left[-\ima\phi_q(t)\right]\,.
+            \sequiv \exp\!\left[-\ima\phi_q(t)\right]\,.
             \label{eq:micro:pat-phase}
         \end{align}
         Here, $q=e$ applies to quasiparticle tunneling.
@@ -478,7 +478,7 @@
         \begin{equation}
             h\nu_\mathrm{pb} = 2\Delta_0\,.
         \end{equation}
-        Using the representative gap in Eq.~\eqref{eq:micro:aluminum-scales} gives $\nu_\mathrm{pb}\approx\qty{87}{\giga\hertz}$ \cite{bardeen_theory_1957,tinkham_introduction_2004}. The installed microwave paths transmitted frequencies up to approximately $\qty{20}{\giga\hertz}$, as established from microwave induced changes in measured \textit{dI--dV} spectra \cite{raif_electronic_2024}. This experimental upper frequency is below the single-photon pair breaking threshold. Direct single-photon pair breaking is therefore excluded within this estimate, although heating, multiphoton absorption, and nonequilibrium quasiparticle generation may still occur.
+        Using the representative gap in Eq.~\eqref{eq:micro:aluminum-scales} gives $\nu_\mathrm{pb}\sapprox\qty{87}{\giga\hertz}$ \cite{bardeen_theory_1957,tinkham_introduction_2004}. The installed microwave paths transmitted frequencies up to approximately $\qty{20}{\giga\hertz}$, as established from microwave induced changes in measured \textit{dI--dV} spectra \cite{raif_electronic_2024}. This experimental upper frequency is below the single-photon pair breaking threshold. Direct single-photon pair breaking is therefore excluded within this estimate, although heating, multiphoton absorption, and nonequilibrium quasiparticle generation may still occur.
 
         %=========================================================
         \subsubsection*{Tien-Gordon Quasiparticle Tunneling}
