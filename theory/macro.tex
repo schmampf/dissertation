@@ -5,11 +5,14 @@
 \label{sec:macro}
 %=========================================================
 
+    The microscopic section introduced the complex pair potential $\widetilde{\Delta}(\vec r)$ in Eq.~\eqref{eq:micro:complex-delta}, whose magnitude characterizes the local pairing strength and whose phase describes condensate coherence. When two superconductors are separated by a sufficiently thin weak link, superconducting pair correlations extend into the link from both sides and retain a finite overlap. The two condensates are therefore no longer independent. 
+     
     \begin{wrapfigure}[11]{r}{0.4\textwidth}
         \captionsetup{format=plain}%
         \centering
-        \vspace{-1.0em}
+        \vspace{-1.25em}
         \import{theory/schema/semiconductor}{sis-cp.pdf_tex}
+        \vspace{-.5em}
         \caption{Schematic Cooper pair tunneling in an SIS junction.}
         \label{fig:macro:schematic}
         % \vspace{.5em}
@@ -21,7 +24,7 @@
         % \label{fig:macro:delta-r}
     \end{wrapfigure}
     
-    The microscopic section introduced the complex pair potential $\widetilde{\Delta}(\vec r)$ in Eq.~\eqref{eq:micro:complex-delta}, whose magnitude characterizes the local pairing strength and whose phase describes condensate coherence. When two superconductors are separated by a sufficiently thin weak link, superconducting pair correlations extend into the link from both sides and retain a finite overlap. The two condensates are therefore no longer independent. Since their magnitudes remain fixed by the bulk electrodes, their coherent coupling is governed by the phase difference
+    Since their magnitudes remain fixed by the bulk electrodes, their coherent coupling is governed by the phase difference
     \begin{equation}
         \phi = \phi_1 - \phi_2\,,
         \label{eq:macro:phase-difference}
@@ -104,6 +107,7 @@
 
             Together with the sinusoidal current--phase relation in Eq.~\eqref{eq:macro:josephson-current-phase}, the AB result determines the complete equilibrium supercurrent for the junction considered here.
 
+        \newpage
         \subsubsection*{Josephson Coupling Energy}
 
             The strength of the coherent phase coupling is quantified by the Josephson energy
@@ -137,19 +141,19 @@
                 \label{fig:macro:Irsj}
             \end{figure}
 
-            Under current bias, the voltage is no longer fixed externally and instead becomes the dynamical response of the junction. We describe this response with a generalized RSJ model. Coherent Cooper pair transfer and dissipative quasiparticle tunneling occur in parallel and experience the same time dependent voltage, as shown in Fig.~\ref{fig:macro:rsj}. In contrast to the conventional linear shunt $V/R$, the generalized model retains the microscopic nonlinear quasiparticle characteristic $I_\mathrm{qp}(V)$. 
-
-            \begin{wrapfigure}[16]{r}{35mm}
+            \begin{wrapfigure}[15]{r}{32mm}
                 \captionsetup{format=plain}%
                 \centering
-                \vspace{-1.5em}
+                \vspace{-0.5em}
                 \import{theory/schema/rcsj}{rsj-model.pdf_tex}
                 % \vspace{-0.5em}
                 \caption{
-                    Parallel-channel representation of the generalized RSJ model. The bias current divides between the coherent Josephson current $I_\mathrm{J}$ and the dissipative quasiparticle current $I_\mathrm{qp}$.
+                    Generalized RSJ circuit with a Josephson current $I_\mathrm{J}$ and a quasiparticle current $I_\mathrm{qp}$ in parallel.
                 }
                 \label{fig:macro:rsj}
             \end{wrapfigure}
+
+            Under current bias, the voltage is no longer fixed externally and instead becomes the dynamical response of the junction. We describe this response with a generalized RSJ model. Coherent Cooper pair transfer and dissipative quasiparticle tunneling occur in parallel and experience the same time dependent voltage, as shown in Fig.~\ref{fig:macro:rsj}. In contrast to the conventional linear shunt $V/R$, the generalized model retains the microscopic nonlinear quasiparticle characteristic $I_\mathrm{qp}(V)$. 
 
             The applied current therefore divides according to
             \begin{equation}
@@ -182,12 +186,13 @@
 
         We assume the Josephson energy far exceeds the charging energy, such that quantum fluctuations of the phase can be neglected. Thermal fluctuations may nevertheless perturb the classical dynamics and are discussed phenomenologically below without introducing an explicit fluctuating current source.
 
-        \begin{wrapfigure}[14]{r}{35mm}
+        \begin{wrapfigure}[14]{r}{32mm}
             \captionsetup{format=plain}%
             \centering
+            \vspace{-.75em}
             \import{theory/schema/rcsj}{rcsj-model.pdf_tex}
             \caption{
-                Parallel Josephson, resistive, and capacitive branches of the RCSJ model.
+                Circuit diagram of the RCSJ model. Josephson, resistive, and capacitive current paths are connected in parallel.
             }
             \label{fig:macro:rcsj}
         \end{wrapfigure}

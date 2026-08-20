@@ -27,25 +27,6 @@
     \label{subsec:stochastic:pe-theory}
     %=========================================================
 
-        \begin{figure}[t]
-            \centering
-            \subfigure[
-                Ohmic environment
-                ]{\thesisplot{theory/stochastic}{pe-ohm}}
-            \hfill
-            \subfigure[
-                Resonant environment
-                ]{\thesisplot{theory/stochastic}{pe-res}}
-            \hfill
-            \subfigure[
-                Mode weights
-                ]{\thesisplot{theory/stochastic}{pe-res-w}}
-            \caption{
-                Energy exchange probability for Ohmic and resonant electromagnetic environments. (a) The Ohmic kernel evolves from nearly elastic tunneling at small $\alpha_q$ to a broad distribution with suppressed low-energy weight as the environmental resistance increases. (b) Coupling to a harmonic mode redistributes this kernel into replicas separated by the mode energy $\hbar\omega_0$. (c) The replica amplitudes follow the Poisson weights, so increasing the mode coupling $\alpha_{0,q}$ transfers weight from the elastic contribution to higher-order mode excitations. Unless indicated by the legend, $\alpha_q=\alpha_{0,q}=1$.
-                }
-            \label{fig:stochastic:pe}
-        \end{figure}
-
         The circuit impedance determines the voltage fluctuations seen by the junction. These fluctuations produce the phase correlator and the energy exchange probability that dresses the tunneling rate. The label $q$ denotes the net charge transferred in one tunneling event, for example $q=e$ for quasiparticle tunneling and $q=2e$ for Cooper pair transfer. Because the phase acquired from a voltage fluctuation is proportional to $q$, the environmental coupling in the phase correlator scales as $q^2$. We use the environmental tunneling formulation of Falci \textit{et al.}~and the conventions summarized by Ingold and Nazarov \cite{falci_quasiparticle_1991,ingold_charge_1992}.
 
         The relevant impedance is the effective impedance $Z(\omega)$ seen by the junction rather than the impedance of an isolated circuit element. For a junction capacitance $C$ in parallel with an environmental impedance $Z_\mathrm{env}(\omega)$, it is
@@ -148,9 +129,27 @@
 
         Figure~\ref{fig:stochastic:pe} summarizes the three environmental limits introduced above. Weak coupling concentrates the probability near zero exchanged energy. Ohmic coupling broadens this contribution and suppresses low-energy tunneling, while a resonant mode produces discrete inelastic contributions. After convolution with the electronic kernel, these structures appear in measured transport as zero-bias suppression, broadened thresholds, and resonant satellites.
 
+        \begin{figure}[t]
+            \centering
+            \subfigure[
+                Ohmic environment
+                ]{\thesisplot{theory/stochastic}{pe-ohm}}
+            \hfill
+            \subfigure[
+                Resonant environment
+                ]{\thesisplot{theory/stochastic}{pe-res}}
+            \hfill
+            \subfigure[
+                Mode weights
+                ]{\thesisplot{theory/stochastic}{pe-res-w}}
+            \caption{
+                Energy exchange probability for Ohmic and resonant electromagnetic environments. (a) The Ohmic kernel evolves from nearly elastic tunneling at small $\alpha_q$ to a broad distribution with suppressed low-energy weight as the environmental resistance increases. (b) Coupling to a harmonic mode redistributes this kernel into replicas separated by the mode energy $\hbar\omega_0$. (c) The replica amplitudes follow the Poisson weights, so increasing the mode coupling $\alpha_{0,q}$ transfers weight from the elastic contribution to higher-order mode excitations. Unless indicated by the legend, $\alpha_q=\alpha_{0,q}=1$.
+                }
+            \label{fig:stochastic:pe}
+        \end{figure}
+
         The transferred charge selects the environmental kernel because $J_q(t)\spropto q^2$. Dynamical Coulomb blockade uses $P_e(E)$ for single-electron tunneling, whereas incoherent Cooper pair tunneling uses the more strongly coupled $P_{2e}(E)$. In a superconducting single-electron transistor, a master equation combines these charge specific rates with the stationary charge state occupations.
 
-        \newpage
     %=========================================================
     \subsection{Dynamical Coulomb Blockade}
     \label{subsec:stochastic:dcb}
@@ -400,7 +399,6 @@
 
             If either step is inaccessible, the sequential current is blocked, as in Fig.~\ref{fig:stochastic:set}(c). Conductance is largest near charge degeneracy and periodic in gate induced charge. Far from degeneracy, weaker cotunneling can bypass the intermediate charge state \cite{ingold_charge_1992,grabert_single_2013}.
         
-        \newpage
         %=========================================================
         \subsubsection*{Superconducting SET}
         %=========================================================

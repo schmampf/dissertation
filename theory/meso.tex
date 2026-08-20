@@ -376,11 +376,6 @@
                 I(\phi,T)=\sum_i I(\tau_i,\phi,T)\,.
                 \label{eq:meso:cpr-multichannel}
             \end{equation}
-            For a conductor with many modes, the discrete channel sum may instead be represented by a continuous density of transmission eigenvalues $\rho(\tau)$,
-            \begin{equation}
-                I(\phi,T)\simeq \int_0^1 \rho(\tau)\, I(\tau,\phi,T)\,\mathrm d\tau\,.
-            \end{equation}
-            Here $\rho(\tau)\,\mathrm d\tau$ gives the number of channels with transmissions in the interval $[\tau,\tau+\mathrm d\tau]$. It is therefore a channel density rather than a normalized probability distribution. Its conductance normalization is $G_\mathrm N=G_0\int_0^1 \rho(\tau)\,\tau\,\mathrm d\tau$ \cite{beenakker_josephson_1991,beenakker_quantum_1992}.
 
             \begin{wrapfigure}[11]{r}{1.3in}
                 \captionsetup{format=plain}%
@@ -392,6 +387,13 @@
                     }
                 \label{fig:meso:ko-rho}
             \end{wrapfigure}
+
+            For a conductor with many modes, the discrete channel sum may instead be represented by a continuous density of transmission eigenvalues $\rho(\tau)$,
+            \begin{equation}
+                I(\phi,T)\simeq \int_0^1 \rho(\tau)\, I(\tau,\phi,T)\,\mathrm d\tau\,.
+            \end{equation}
+            Here $\rho(\tau)\,\mathrm d\tau$ gives the number of channels with transmissions in the interval $[\tau,\tau+\mathrm d\tau]$. It is therefore a channel density rather than a normalized probability distribution. Its conductance normalization is $G_\mathrm N=G_0\int_0^1 \rho(\tau)\,\tau\,\mathrm d\tau$ \cite{beenakker_josephson_1991,beenakker_quantum_1992}.
+
             In the metallic diffusive limit, the transmission eigenvalues of a quasi-one-dimensional wire follow the bimodal Dorokhov-Mello-Pereyra-Kumar (DMPK) distribution \cite{dorokhov_transmission_1982,beenakker_random-matrix_1997},
             \begin{equation}
                 \rho(\tau) = \frac{G_\mathrm{N}}{G_0} \frac{1}{2\tau \sqrt{1-\tau}}\,,\quad 0\slt{}\tau\slt{}1\,,
@@ -451,11 +453,17 @@
 
         A finite dc voltage changes this regime by driving the superconducting phase continuously in time. Repeated Andreev reflection then produces nonequilibrium charge transport rather than stationary bound-state supercurrent, leading to multiple Andreev reflection.
 
-    \newpage
     %=========================================================
     \subsection{Multiple Andreev Reflection}
     \label{subsec:meso:mar}
     %=========================================================
+
+        Multiple Andreev reflection (MAR) is the microscopic mechanism of subgap transport in voltage biased SNS weak links and short superconducting point contacts. Figure~\ref{fig:meso:mar-schematic} shows the corresponding energy ladder for several MAR orders. For $|eV|\slt{}2\Delta$, a quasiparticle cannot directly enter the continuum of the opposite electrode. Successive Andreev reflections instead alternate its electron- and hole-like character, while each traversal changes its energy by $eV$. In the trajectory picture of Klapwijk, Blonder, and Tinkham (KBT), a process that reaches the opposite continuum after $m$ energy increments has the threshold
+        \begin{equation}
+            eV_m=\frac{2\Delta}{m}\,,\qquad m\in\mathbb{N}^+\,.
+            \label{eq:meso:mar-sgs}
+        \end{equation}
+        We refer to these voltages as MAR thresholds. Here $m$ labels the MAR order. In the energy-ladder picture, it counts the energy increments required to connect the continua. In the charge resolved description, the corresponding process transfers the effective charge $q_m=me$. The MAR thresholds generate the subharmonic-gap structure observed as slope changes in \textit{I--V} and peaks or kinks in \textit{dI--dV} \cite{klapwijk_explanation_1982,octavio_subharmonic_1983}.
 
         \begin{figure}[t]
             \centering
@@ -477,13 +485,6 @@
                 }
             \label{fig:meso:mar-schematic}
         \end{figure}
-
-        Multiple Andreev reflection (MAR) is the microscopic mechanism of subgap transport in voltage biased SNS weak links and short superconducting point contacts. Figure~\ref{fig:meso:mar-schematic} shows the corresponding energy ladder for several MAR orders. For $|eV|\slt{}2\Delta$, a quasiparticle cannot directly enter the continuum of the opposite electrode. Successive Andreev reflections instead alternate its electron- and hole-like character, while each traversal changes its energy by $eV$. In the trajectory picture of Klapwijk, Blonder, and Tinkham (KBT), a process that reaches the opposite continuum after $m$ energy increments has the threshold
-        \begin{equation}
-            eV_m=\frac{2\Delta}{m}\,,\qquad m\in\mathbb{N}^+\,.
-            \label{eq:meso:mar-sgs}
-        \end{equation}
-        We refer to these voltages as MAR thresholds. Here $m$ labels the MAR order. In the energy-ladder picture, it counts the energy increments required to connect the continua. In the charge resolved description, the corresponding process transfers the effective charge $q_m=me$. The MAR thresholds generate the subharmonic-gap structure observed as slope changes in \textit{I--V} and peaks or kinks in \textit{dI--dV} \cite{klapwijk_explanation_1982,octavio_subharmonic_1983}.
 
         The semiclassical OTBK model provides an important historical realization of this ladder picture and explains the origin of the subharmonic gap structure \cite{octavio_subharmonic_1983}. It neglects phase coherence and therefore does not provide the quantitative description required for short atomic contacts. For these contacts, we use the channel resolved Hamiltonian approach of Cuevas \textit{et al.}~which treats coherent transport across the full transmission range.
 

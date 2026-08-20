@@ -18,12 +18,12 @@
     \label{subsec:setup:mcbj}
     %=========================================================
 
-        \begin{wrapfigure}[32]{r}{0.35\textwidth}
+        \begin{wrapfigure}[34]{r}{0.35\textwidth}
             \captionsetup{format=plain}%
             \centering
-            \vspace{-1.3em}
+            \vspace{-.8em}
             \import{methods/setup/mcbj}{bruchmechanik.pdf_tex}
-            \vspace{-.3em}
+            % \vspace{-.3em}
             \caption{Rendering of the differential screw, central pushing element, counter supports, and sample holder used for the cryogenic MCBJ mechanics.}
             \label{fig:setup:bruchmechanik}
         \end{wrapfigure}
@@ -210,7 +210,8 @@
             Patrick Raif and I show that both paths act in practice like antennas for the device~\cite{raif_electronic_2024}. Part of the microwave power is launched near the pin headers. From the perspective of the sample, the two paths therefore behave more like two different antennas than like two sharply separated drive mechanisms. The coupling is not impedance matched, and the break junction architecture is not designed as a calibrated microwave transmission structure. Reflections, standing waves, and antenna coupling consequently produce an unknown transfer function between the source setting and the local voltage at the junction. This transfer function depends on frequency, coupling path, and device configuration and cannot be determined once as a fixed setup calibration. A matched calibration would require a substantially different architecture, closer to the dedicated microwave design used by Bretheau \textit{et al.}~\cite{bretheau_localized_2013}.
 
             I therefore use the applied source power only as a reproducible control coordinate. Whenever the local amplitude is required quantitatively, I determine an effective microwave voltage from an internal reference in the transport data, in particular from photon assisted tunneling as described in Sec.~\ref{subsec:micro:pat}. I perform this calibration separately for the corresponding device, frequency, and coupling path in the results sections. It incorporates the complete unknown microwave coupling chain into a data derived effective amplitude rather than assuming a universal conversion from source power to junction voltage.
-
+        
+        \newpage
         %=========================================================
         \subsubsection*{Thermometry and Heating}
         %=========================================================
@@ -228,7 +229,7 @@
             \begin{wrapfigure}[15]{r}{1.5in}
                 \captionsetup{format=plain}%
                 \centering
-                % \vspace{-.5em}
+                \vspace{1.5em}
                 \thesisplot{tunnelbarrier/highres/temperature}{heater}
                 % \vspace{-.5em}
                 \caption{
@@ -247,7 +248,6 @@
             The calibrated thermometer reading estimates the local bath temperature, while controlled heating and temperature dependent \textit{I--V} curves provide consistency checks on the electronic response. Together, the cold reference resistors, thermalized wiring, and microwave lines define the current readout, limit noise and heating, and provide reproducible irradiation without an absolute calibration.
 
     %=========================================================
-    \newpage
     \subsection{Instrumentation and Grounding}
     \label{subsec:setup:instrumentation-grounding}
     %=========================================================

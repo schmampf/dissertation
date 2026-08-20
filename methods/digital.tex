@@ -116,6 +116,7 @@
 
             \begin{figure}[t]
                 \centering
+                \small
                     \begin{tabular}{r|l|l|l}
                         driver & parameters & values & state \\\hline
                         ADwin & $V_0$, $T_0$, $f_0$ & $V_1$, $V_2$, $i_0$ & Output, Sweeping \\
@@ -176,7 +177,7 @@
 
             Parameter dependent measurements are built by repeating this elementary \textit{I--V} trace. The script \texttt{iv\_script.py} steps through an external parameter axis, for example microwave amplitude, frequency, sample temperature, break junction displacement, magnetic field, or gate voltage. At each point, it starts one \texttt{single\_iv.py} measurement and stores the result in the corresponding measurement path. This structure makes the resulting series reproducible because each \textit{I--V} trace is linked to the raw voltage traces and to the status of the surrounding setup at the time of acquisition.
 
-
+    \newpage
     %=========================================================
     \subsection{Data Analysis with \texttt{superconductivity}}
     \label{subsec:methods:digital:analysis}
