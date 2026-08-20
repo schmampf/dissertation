@@ -71,6 +71,7 @@
     \usepackage[
         backend=biber,
         sorting=none,
+        sortcites=true,
         maxbibnames=20,
         minbibnames=20,
         doi=false,
@@ -130,6 +131,19 @@
     % uneven means in header
     % \headFoot{9} % for analog version
     \headFoot{11} % for digital version
+
+    % Page style for a chapter's opening page: the chapter title is already
+    % set as the large heading on this page, so the running header would
+    % otherwise repeat it right above; drop the chapter mark here but keep
+    % the page number in its usual place. Apply with \thispagestyle right
+    % after \chapter{...} where wanted (used for the 5 main-body chapters;
+    % appendix chapters keep the standard header).
+    \fancypagestyle{chapterstart}{%
+        \fancyhf{}%
+        \fancyhead[L]{\small\hfill\thepage}%
+        \renewcommand{\headrulewidth}{0pt}%
+        \renewcommand{\footrulewidth}{0pt}%
+    }
 
     % Preserve the capitalization supplied by chapter and section titles in
     % running headers instead of converting marks to uppercase.
@@ -217,7 +231,10 @@
     % \usepackage{multicol}
     % \setlength{\columnsep}{30pt}
     % \usepackage{pdflscape}
-    % \interfootnotelinepenalty=10000
+
+    % Keep multi-line footnotes intact on one page instead of splitting them
+    % across a page break. Matters most for the digital reading experience.
+    \interfootnotelinepenalty=10000
 
 %%% math stuff %%%
     \usepackage{amsmath}
