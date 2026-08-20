@@ -95,7 +95,7 @@
 
         Figure~\ref{fig:tb:highres:temperature:fit} compares $T_\mathrm{fit}$ with $T_\mathrm{bath}$. The calibration curve has three regimes: a base plateau, an almost linear middle region, and saturation at high bath temperature. I describe all three regimes with a clipped affine calibration,
         \begin{equation}
-            T_\mathrm{cal}(T_\mathrm{bath}) = \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_\mathrm{bath}^{(\mathrm{fit})} T_\mathrm{bath}+T_\mathrm{off}\right)\right]\,.
+            T_\mathrm{fit}(T_\mathrm{bath}) = \min\!\left[T_\mathrm{c},\,\max\!\left(T_\mathrm{base},\,\eta_{T_\mathrm{bath}}^{(T_\mathrm{fit})} T_\mathrm{bath}+T_\mathrm{off}\right)\right]\,.
             \label{eq:tb:highres:temperature:calibration}
         \end{equation}
 
@@ -104,19 +104,20 @@
             \centering
             \vspace{-0.5em}
             \thesisplot{tunnelbarrier/highres/temperature}{fit}
+            \vspace{-1.5em}
             \caption{
-                    Temperature calibration of TB1. Three guides to the eye (GTE) indicate the low-temperature plateau, the linear intermediate regime, and the high-temperature saturation.
+                    Measured TB1 temperature. Guides mark the low-temperature plateau and high-temperature saturation. Within these limits, the relation is linear.
                 }
             \label{fig:tb:highres:temperature:fit}
         \end{wrapfigure}
 
-        Here $T_\mathrm{base}$ is the effective temperature floor, $T_\mathrm{c}$ is the upper saturation temperature, $\eta_\mathrm{bath}^{(\mathrm{fit})}$ is the slope relating the thermometer reading and fitted temperature in the intermediate regime, and $T_\mathrm{off}$ is the extrapolated temperature offset between the two axes. This procedure avoids manually excluding the plateau and saturation points. The full sweep is described with the same mapping, while the lower and upper bounds encode the weak temperature sensitivity far below and near $T_\mathrm{c}$. This procedure gives
+        Here $T_\mathrm{base}$ is the effective temperature floor, $T_\mathrm{c}$ is the upper saturation temperature, $\eta_{T_\mathrm{bath}}^{(T_\mathrm{fit})}$ is the slope relating the thermometer reading and fitted temperature in the intermediate regime, and $T_\mathrm{off}$ is the extrapolated temperature offset between the two axes. This procedure avoids manually excluding the plateau and saturation points. The full sweep is described with the same mapping, while the lower and upper bounds encode the weak temperature sensitivity far below and near $T_\mathrm{c}$. This procedure gives
         \begin{equation}
             \begin{aligned}
                 T_\mathrm{c} &= \qty{1.256(26)}{\kelvin}\,,\\
                 T_\mathrm{base} &= \qty{0.2819(17)}{\kelvin}\,,\\
                 T_\mathrm{off} &= \qty{-0.0929(36)}{\kelvin}\,,\\
-                \eta_\mathrm{bath}^{(\mathrm{fit})} &= 1.0023(40)\,.
+                \eta_{T_\mathrm{bath}}^{(T_\mathrm{fit})} &= 1.0023(40)\,.
             \end{aligned}
             \label{eq:tb:highres:temperature:parameters}
         \end{equation}
@@ -153,32 +154,26 @@
     \label{subsec:tb:highres:amplitude-calibration}
     %=========================================================
 
-        Next, I use TB1 to calibrate the microwave amplitude axis, to test the dynamic range of the PAT measurement. The two drive frequencies emphasize complementary aspects of the response. At $\qty{18.3}{\giga\hertz}$, the larger single-photon energy produces a wider voltage separation between adjacent replicas, while the weaker microwave coupling limits the maximum reduced amplitude reached in the sweep. The resulting uncluttered maps make the sideband evolution and amplitude calibration particularly clear. I therefore use this measurement first to introduce the analysis. At $\qty{13.6}{\giga\hertz}$, the smaller photon energy and stronger coupling provide access to a much wider range of reduced amplitudes and photon orders. I use this second measurement to test how far the sidebands remain resolvable in the multiphoton regime. For both sweeps, I fit the effective junction amplitude point by point.
+        Next, I use TB1 to calibrate the microwave amplitude axis, to test the dynamic range of the PAT measurement. The two drive frequencies emphasize complementary aspects of the response. At \qty{18.3}{\giga\hertz}, the larger single-photon energy produces a wider voltage separation between adjacent replicas, while the weaker microwave coupling limits the maximum reduced amplitude reached in the sweep. The resulting uncluttered maps make the sideband evolution and amplitude calibration particularly clear. I therefore use this measurement first to introduce the analysis. At \qty{13.6}{\giga\hertz}, the smaller photon energy and stronger coupling provide access to a much wider range of reduced amplitudes and photon orders. I use this second measurement to test how far the sidebands remain resolvable in the multiphoton regime. For both sweeps, I fit the effective junction amplitude point by point.
 
         In this quasiparticle PAT regime the relevant charge is $q=e$, so I use the reduced drive amplitude $\alpha_e=eA/h\nu$ and the voltage equivalent of the single-photon energy, $V_\nu=h\nu/e$.
 
         TB1 is the cleanest reference system for this purpose. The static data show sharp quasiparticle onsets, the normal-state conductance places the device in the tunnel limit, and I do not resolve a supercurrent. I therefore do not have to separate quasiparticle photon assisted tunneling from Shapiro steps or coherent Cooper pair transport. The expected microwave response is the quasiparticle PAT process introduced in Sec.~\ref{subsec:micro:pat}. For both microwave amplitude sweeps (M3 and M4), I use the corresponding static reference parameters from the matching column of Table~\ref{table:tunnelbarrier:highres}.
 
-        Figure~\ref{fig:tb:highres:amp18.3GHz:exp} shows the raw $\qty{18.3}{\giga\hertz}$ amplitude sweep as a function of nominal VNA output. This hardware setting does not specify the ac voltage across the junction because the microwave path contains attenuation, impedance mismatch, antenna coupling, and standing waves. The effective transfer to the junction can therefore depend strongly on frequency. It may also depend on the exact contact configuration through its local impedance and electromagnetic environment. All measurements in this section are taken on the same unchanged TB1 contact, so these data cannot determine or exclude such a contact dependence. The resulting calibration is consequently an empirical conversion for this contact and each measured frequency, not a transferable property of the microwave line. The transport landscape figure nevertheless already identifies the mechanism because the main SIS quasiparticle peaks are accompanied by replicas shifted by integer multiples of the single-photon energy.
-
         \landscapefigure{tunnelbarrier/highres/amp_18.3GHz}{exp}{
-            Raw microwave amplitude sweep of TB1 at $\nu=\qty{18.3}{\giga\hertz}$. The vertical axis is the nominal VNA output amplitude for a $\qty{50}{\ohm}$ load. Photon assisted replicas of the $2\Delta_0$ peaks appear at spacings set by the single-photon energy, but the amplitude axis is still a hardware setting rather than the effective drive at the junction.
+            Raw microwave amplitude sweep of TB1 at \qty{18.3}{\giga\hertz}. The vertical axis is the nominal VNA output amplitude for a \qty{50}{\ohm} load. Photon assisted replicas of the $2\Delta_0$ peaks appear at spacings set by the single-photon energy, but the amplitude axis is still a hardware setting rather than the effective drive at the junction.
         }{fig:tb:highres:amp18.3GHz:exp}
+
+        Figure~\ref{fig:tb:highres:amp18.3GHz:exp} shows the raw \qty{18.3}{\giga\hertz} amplitude sweep as a function of nominal VNA output. This hardware setting does not specify the ac voltage across the junction because the microwave path contains attenuation, impedance mismatch, antenna coupling, and standing waves. The effective transfer to the junction can therefore depend strongly on frequency. It may also depend on the exact contact configuration through its local impedance and electromagnetic environment. All measurements in this section are taken on the same unchanged TB1 contact, so these data cannot determine or exclude such a contact dependence. The resulting calibration is consequently an empirical conversion for this contact and each measured frequency, not a transferable property of the microwave line. The transport landscape figure nevertheless already identifies the mechanism because the main SIS quasiparticle peaks are accompanied by replicas shifted by integer multiples of the single-photon energy.
 
         I convert the nominal output setting into an effective junction amplitude by fitting the driven spectra with the Tien-Gordon model. The only fitted microwave parameter at each nominal output setting is the effective ac amplitude $A$ at the junction. This strongly narrows the fit because it cannot improve the agreement by moving the gap edge, changing the normal-state conductance, or broadening the spectrum.
 
         The single-trace fit in Fig.~\ref{fig:tb:highres:amp18.3GHz:single-iv} is the most direct check that the calibration is quantitative rather than only qualitative. The same reduced amplitude controls all sideband weights at once, so agreement over the main quasiparticle peaks, satellite peaks, and spectral weight tests the full PAT redistribution.
 
-        \singlefitfigure{tunnelbarrier/highres/amp_18.3GHz/single-fit}{
-            Representative photon assisted tunneling fit at $\nu=\qty{18.3}{\giga\hertz}$ and $A_\mathrm{out}=\qty{150}{\milli\volt}$. The \textit{I--V} curve is measured at $T_\mathrm{bath}=\qty{63(1)}{\milli\kelvin}$. This fit provides the static reference parameters and microwave coupling listed for this measurement block in Table~\ref{table:tunnelbarrier:highres}.
-        }{fig:tb:highres:amp18.3GHz:single-iv}
-
-        Figure~\ref{fig:tb:highres:amp18.3GHz:fit} shows the pointwise fitted amplitudes as a function of nominal VNA output. These fitted amplitudes are the values I use to remap the sweep to the reduced PAT coordinate. I fit them again with a linear relation only to compare the effective coupling between measurement blocks. 
-
-        \begin{wrapfigure}[14]{r}{0.4\textwidth}
+        \begin{wrapfigure}[15]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
-            \vspace{-1.0em}
+            \vspace{-0.5em}
             \thesisplot{tunnelbarrier/highres/amp_18.3GHz}{fit}
             \vspace{-0.5em}
             \caption{
@@ -186,6 +181,8 @@
                 }
             \label{fig:tb:highres:amp18.3GHz:fit}
         \end{wrapfigure}
+
+        Figure~\ref{fig:tb:highres:amp18.3GHz:fit} shows the pointwise fitted amplitudes as a function of nominal VNA output. These fitted amplitudes are the values I use to remap the sweep to the reduced PAT coordinate. I fit them again with a linear relation only to compare the effective coupling between measurement blocks. 
         
         Over the indicated parameter range of the sweep, this comparison fit gives
         \begin{equation}
@@ -194,14 +191,18 @@
         \end{equation}
         The abrupt feature around $A_\mathrm{out}\sapprox\qty{300}{\milli\volt}$ is not a change of junction physics. It is consistent with a change in the internal source amplification state of the network analyzer. At the largest source settings the fitted amplitudes also deviate from a linear relation, which I treat as a limit of using the VNA output as a microwave power coordinate.
 
-        Using the pointwise fitted amplitudes, I remap the measured sweep from nominal VNA output to the reduced PAT coordinate. Figures~\ref{fig:tb:highres:amp18.3GHz:cal} and \ref{fig:tb:highres:amp18.3GHz:sim} compare the remapped $\qty{18.3}{\giga\hertz}$ amplitude sweep with the corresponding simulation. Their agreement validates the calibration procedure because I replace the hardware dependent source setting with the dimensionless drive coordinate that controls the expected PAT structure.
+        Using the pointwise fitted amplitudes, I remap the measured sweep from nominal VNA output to the reduced PAT coordinate. Figures~\ref{fig:tb:highres:amp18.3GHz:cal} and \ref{fig:tb:highres:amp18.3GHz:sim} compare the remapped \qty{18.3}{\giga\hertz} amplitude sweep with the corresponding simulation. Their agreement validates the calibration procedure because I replace the hardware dependent source setting with the dimensionless drive coordinate that controls the expected PAT structure.
+
+        \singlefitfigure{tunnelbarrier/highres/amp_18.3GHz/single-fit}{
+            Representative photon assisted tunneling fit at \qty{18.3}{\giga\hertz} and $A_\mathrm{out}=\qty{150}{\milli\volt}$. The \textit{I--V} curve is measured at $T_\mathrm{bath}=\qty{63(1)}{\milli\kelvin}$. This fit provides the static reference parameters and microwave coupling listed for this measurement block in Table~\ref{table:tunnelbarrier:highres}.
+        }{fig:tb:highres:amp18.3GHz:single-iv}
 
         \begin{figure}[p]
             \centering
 
             \landscapepanels{tunnelbarrier/highres/amp_18.3GHz}{cal}
             \caption{
-                Remapped amplitude sweep of TB1 at $\nu=\qty{18.3}{\giga\hertz}$. The same data as in Fig.~\ref{fig:tb:highres:amp18.3GHz:exp} are plotted on the reduced amplitude axis obtained from the pointwise amplitude fits shown in Fig.~\ref{fig:tb:highres:amp18.3GHz:fit}, so the sideband evolution can be compared directly with the Tien-Gordon model.
+                Remapped amplitude sweep of TB1 at \qty{18.3}{\giga\hertz}. The same data as in Fig.~\ref{fig:tb:highres:amp18.3GHz:exp} are plotted on the reduced amplitude axis obtained from the pointwise amplitude fits shown in Fig.~\ref{fig:tb:highres:amp18.3GHz:fit}, so the sideband evolution can be compared directly with the Tien-Gordon model.
             }
             \label{fig:tb:highres:amp18.3GHz:cal}
 
@@ -209,31 +210,30 @@
 
             \landscapepanels{tunnelbarrier/highres/amp_18.3GHz}{sim}
             \caption{
-                Tien-Gordon simulation of the amplitude sweep at $\nu=\qty{18.3}{\giga\hertz}$. The static reference parameters are taken from the matching column of Table~\ref{table:tunnelbarrier:highres}, and the vertical axis is the same reduced drive amplitude as in Fig.~\ref{fig:tb:highres:amp18.3GHz:cal}. The simulation reproduces the sideband spacing and the redistribution of spectral weight with increasing drive.
+                Tien-Gordon simulation of the amplitude sweep at \qty{18.3}{\giga\hertz}. The static reference parameters are taken from the matching column of Table~\ref{table:tunnelbarrier:highres}, and the vertical axis is the same reduced drive amplitude as in Fig.~\ref{fig:tb:highres:amp18.3GHz:cal}. The simulation reproduces the sideband spacing and the redistribution of spectral weight with increasing drive.
             }
             \label{fig:tb:highres:amp18.3GHz:sim}
         \end{figure}
     
-    \clearpage
     %=========================================================
     \subsubsection*{High Dynamic Range}
     \label{subsec:tb:highres:high-dynamic-range}
     %=========================================================
 
-        I then use the $\qty{13.6}{\giga\hertz}$ amplitude sweep (M4) as a dynamic-range test of the same remapped-axis picture. This frequency is favorable for high-order sidebands because the microwave coupling to TB1 is stronger and the photon energy is smaller than at $\qty{18.3}{\giga\hertz}$. For a comparable nominal source range, both effects increase the reduced amplitude and push spectral weight into higher Bessel sidebands. A representative \textit{I--V} curve is shown in Fig.~\ref{fig:tb:highres:amp13.6GHz:single-iv}.
+        I then use the \qty{13.6}{\giga\hertz} amplitude sweep (M4) as a dynamic-range test of the same remapped-axis picture. This frequency is favorable for high-order sidebands because the microwave coupling to TB1 is stronger and the photon energy is smaller than at \qty{18.3}{\giga\hertz}. For a comparable nominal source range, both effects increase the reduced amplitude and push spectral weight into higher Bessel sidebands. A representative \textit{I--V} curve is shown in Fig.~\ref{fig:tb:highres:amp13.6GHz:single-iv}.
 
         \singlefitfigure{tunnelbarrier/highres/amp_13.6GHz/single-fit}{
-            Representative photon assisted tunneling fit at $\nu=\qty{13.6}{\giga\hertz}$ and $A_\mathrm{out}=\qty{150}{\milli\volt}$. The \textit{I--V} curve is measured at $T_\mathrm{bath}=\qty{187(1)}{\milli\kelvin}$. This fit provides the static reference parameters for this measurement block and the microwave coupling used for the remapped $\qty{13.6}{\giga\hertz}$ amplitude sweep.
+            Representative photon assisted tunneling fit at $\nu=\qty{13.6}{\giga\hertz}$ and $A_\mathrm{out}=\qty{150}{\milli\volt}$. The \textit{I--V} curve is measured at $T_\mathrm{bath}=\qty{187(1)}{\milli\kelvin}$. This fit provides the static reference parameters for this measurement block and the microwave coupling used for the remapped \qty{13.6}{\giga\hertz} amplitude sweep.
         }{fig:tb:highres:amp13.6GHz:single-iv}
 
-        \begin{wrapfigure}[15]{r}{0.4\textwidth}
+        \begin{wrapfigure}[16]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
-            \vspace{-1.0em}
+            \vspace{-0.5em}
             \thesisplot{tunnelbarrier/highres/amp_13.6GHz}{fit}
             \vspace{-0.5em}
             \caption{
-                Microwave amplitude calibration at $\nu=\qty{13.6}{\giga\hertz}$. The points give the fitted ac voltage used for remapping, while the slope summarizes the effective coupling for comparison.
+                Microwave amplitude calibration at \qty{13.6}{\giga\hertz}. The points give the fitted ac voltage used for remapping, while the slope summarizes the effective coupling for comparison.
                 }
             \label{fig:tb:highres:amp13.6GHz:fit}
         \end{wrapfigure}
@@ -244,16 +244,16 @@
             \label{eq:tb:highres:amp13.6GHz:eta}
         \end{equation}
 
-        At the highest source settings, Fig.~\ref{fig:tb:highres:amp13.6GHz:fit} shows a plateau because the VNA reaches its maximum available output power. For this fixed contact, the coupling is about $2.6$ times as large as the fitted coupling at $\qty{18.3}{\giga\hertz}$. This comparison demonstrates a strong frequency dependence, but it does not establish a universal frequency response because the coupling may change when the contact configuration changes. The $\eta$ values listed in Table~\ref{table:tunnelbarrier:highres} are therefore summary slopes from these secondary fits, not the calibration inputs used to remap the transport landscapes. Together with the lower photon energy, the larger slope makes the $\qty{13.6}{\giga\hertz}$ amplitude sweep the high-amplitude benchmark of the section.
+        At the highest source settings, Fig.~\ref{fig:tb:highres:amp13.6GHz:fit} shows a plateau because the VNA reaches its maximum available output power. For this fixed contact, the coupling is about 2.6 times as large as the fitted coupling at \qty{18.3}{\giga\hertz}. This comparison demonstrates a strong frequency dependence, but it does not establish a universal frequency response because the coupling may change when the contact configuration changes. The $\eta$ values listed in Table~\ref{table:tunnelbarrier:highres} are therefore summary slopes from these secondary fits, not the calibration inputs used to remap the transport landscapes. Together with the lower photon energy, the larger slope makes the \qty{13.6}{\giga\hertz} amplitude sweep the high-amplitude benchmark of the section.
 
-        Figures~\ref{fig:tb:highres:amp13.6GHz:cal} and \ref{fig:tb:highres:amp13.6GHz:sim} show the remapped $\qty{13.6}{\giga\hertz}$ amplitude sweep (M4) and the corresponding simulation. The $2\Delta$ peak acts as a sharp energy marker, and the microwave drive creates many photon shifted copies of this marker. Individual replicas remain visually resolved to at least order $n=25$.
+        Figures~\ref{fig:tb:highres:amp13.6GHz:cal} and \ref{fig:tb:highres:amp13.6GHz:sim} show the remapped \qty{13.6}{\giga\hertz} amplitude sweep (M4) and the corresponding simulation. The $2\Delta$ peak acts as a sharp energy marker, and the microwave drive creates many photon shifted copies of this marker. Individual replicas remain visually resolved to at least order 25.
 
         \begin{figure}[p]
             \centering
 
             \landscapepanels{tunnelbarrier/highres/amp_13.6GHz}{cal}
             \caption{
-                Remapped amplitude sweep of TB1 at $\nu=\qty{13.6}{\giga\hertz}$. The vertical axis is the fitted reduced drive amplitude from Fig.~\ref{fig:tb:highres:amp13.6GHz:fit} rather than the nominal VNA output. The microwave coupling is stronger than at $\nu=\qty{18.3}{\giga\hertz}$, and the lower photon energy increases the reduced drive amplitude for the same ac voltage. The false-color map resolves individual photon assisted replicas to at least order $n=25$. The parameters are listed in Table~\ref{table:tunnelbarrier:highres}.
+                Remapped amplitude sweep of TB1 at \qty{13.6}{\giga\hertz}. The vertical axis is the fitted reduced drive amplitude from Fig.~\ref{fig:tb:highres:amp13.6GHz:fit} rather than the nominal VNA output. The microwave coupling is stronger than at \qty{18.3}{\giga\hertz}, and the lower photon energy increases the reduced drive amplitude for the same ac voltage. The false-color map resolves individual photon assisted replicas to at least order 25. The parameters are listed in Table~\ref{table:tunnelbarrier:highres}.
             }
             \label{fig:tb:highres:amp13.6GHz:cal}
 
@@ -261,17 +261,17 @@
 
             \landscapepanels{tunnelbarrier/highres/amp_13.6GHz}{sim}
             \caption{
-                Tien-Gordon simulation of the remapped $\qty{13.6}{\giga\hertz}$ amplitude sweep. The static reference parameters are taken from the matching column of Table~\ref{table:tunnelbarrier:highres}. The calculated multiphoton sidebands provide the model reference for the high-order structures visible in Fig.~\ref{fig:tb:highres:amp13.6GHz:cal}, without assigning a deterministic photon count history to individual tunneling events.
+                Tien-Gordon simulation of the remapped \qty{13.6}{\giga\hertz} amplitude sweep. The static reference parameters are taken from the matching column of Table~\ref{table:tunnelbarrier:highres}. The calculated multiphoton sidebands provide the model reference for the high-order structures visible in Fig.~\ref{fig:tb:highres:amp13.6GHz:cal}, without assigning a deterministic photon count history to individual tunneling events.
             }
             \label{fig:tb:highres:amp13.6GHz:sim}
         \end{figure}
 
         This high-order sideband resolution is the strongest result of the section because it requires four things at once: strong microwave coupling at the junction, enough voltage resolution to separate closely spaced photon replicas, a stable contact geometry throughout the sweep, and enough spectral stability that the underlying SIS feature remains identifiable after its weight has been redistributed over many sidebands. Here, I call a replica visually resolved when it appears at the expected displacement, remains distinguishable from neighboring features, and can be followed continuously through the full microwave amplitude map. The experiment therefore resolves a well-organized Tien-Gordon response over a sideband ladder that is much wider than $2\Delta$.
 
-        The remapped amplitude axis is essential for this claim. In nominal VNA units, the high-order structure would only show that the source setting is large. For each trace, I instead infer the effective ac voltage at the junction by fitting the complete \textit{I--V} curve. On the resulting reduced-amplitude axis, the structure can be read as a PAT redistribution over many Bessel weighted channels. The high photon order therefore does not mean that every tunneling event absorbs exactly $25$ photons. It means that photon shifted tunneling channels with order numbers up to at least $25$ remain visually distinguishable in the measured quasiparticle spectrum.
+        The remapped amplitude axis is essential for this claim. In nominal VNA units, the high-order structure would only show that the source setting is large. For each trace, I instead infer the effective ac voltage at the junction by fitting the complete \textit{I--V} curve. On the resulting reduced-amplitude axis, the structure can be read as a PAT redistribution over many Bessel weighted channels. The high photon order therefore does not mean that every tunneling event absorbs exactly 25 photons. It means that photon shifted tunneling channels with order numbers up to at least 25 remain visually distinguishable in the measured quasiparticle spectrum.
 
         This interpretation also sets the limits of the result. I do not use the photon order to infer a quasiparticle tunneling time or traversal time. The PAT order labels energy shifted contributions in a driven tunneling probability, not a directly timed sequence of absorption events. The calibration is also local to this device, frequency, and antenna configuration. Heating and nonequilibrium quasiparticle generation may still contribute at high drive, even though the dominant visible structure remains organized by the Tien-Gordon sideband pattern.
 
-        To my knowledge, no previous amplitude map of quasiparticle photon assisted tunneling in an SIS junction resolves and continuously tracks individual replicas to a higher order under this definition. The amplitude map reported by Kot \textit{et al.}~shows approximately $13$ visually distinguishable replica orders \cite{kot_microwave-assisted_2020}. The stable full amplitude map presented here follows the individual branches to at least order $n=25$. This comparison concerns visually resolved quasiparticle replicas, not the reduced drive reached in a single spectrum, high-order Shapiro response, or photon assisted subgap transport in finite-transmission weak links.
+        To my knowledge, no previous amplitude map of quasiparticle photon assisted tunneling in an SIS junction resolves and continuously tracks individual replicas to a higher order under this definition. The amplitude map reported by Kot \textit{et al.}~shows approximately 13 visually distinguishable replica orders \cite{kot_microwave-assisted_2020}. The stable full amplitude map presented here follows the individual branches to at least order 25. This comparison concerns visually resolved quasiparticle replicas, not the reduced drive reached in a single spectrum, high-order Shapiro response, or photon assisted subgap transport in finite-transmission weak links.
 
-        The amplitude calibration data therefore serve two purposes. They establish a quantitative conversion from nominal microwave output to the reduced drive amplitude used on the y-axis, and they demonstrate that the setup resolves photon assisted structure deep into the multiphoton regime. With this reference established, the next step is to study a related tunnel barrier experiment where the plain BCS plus Tien-Gordon description is no longer sufficient.
+        The amplitude calibration data therefore serve two purposes. They establish a quantitative conversion from nominal microwave output to the reduced drive amplitude used on the \textit{y}-axis, and they demonstrate that the setup resolves photon assisted structure deep into the multiphoton regime. With this reference established, the next step is to study a related tunnel barrier experiment where the plain BCS plus Tien-Gordon description is no longer sufficient.
