@@ -53,6 +53,12 @@
     \usepackage{utilities/themeKonstanz} % Muss immer verwendet werden (Standardpaket)
     % modified so no geometry is used
 
+    % Adds \bookmarksetupnext, used to nest the appendix chapters one level
+    % below the "Appendices" umbrella entry in the PDF outline (see
+    % miscellaneous/references.tex). themeKonstanz.sty already loads
+    % hyperref, so this only adds the bookmark package on top of it.
+    \usepackage{bookmark}
+
     % \usepackage{utilities/themeKonstanzStyleAddOn}
     % Style Add-On für andere Überschriften, NACH dem Standardpaket importieren
     % doesn't show any difference

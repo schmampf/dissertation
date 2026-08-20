@@ -12,11 +12,18 @@
 % Insert the umbrella entry immediately before the first appendix chapter's
 % own ToC entry. Doing this at \addchaptertocentry keeps the ordering stable
 % across \include files and gives both entries the same page target.
+%
+% \bookmarksetupnext{level=part} promotes just this one PDF bookmark to the
+% level above "chapter", so every appendix chapter that follows (still at
+% its normal chapter level) nests one level below it in the PDF outline
+% (bookmarks pane), as their children. This only affects the outline; the
+% printed ToC keeps its own separate handling via \useappendixtocstyle.
 \newif\ifappendixtocpending
 \appendixtocpendingtrue
 \let\standardaddchaptertocentry\addchaptertocentry
 \renewcommand*{\addchaptertocentry}[2]{%
     \ifappendixtocpending
+        \bookmarksetupnext{level=part}%
         \addcontentsline{toc}{chapter}{Appendices}%
         \useappendixtocstyle
         \global\appendixtocpendingfalse
