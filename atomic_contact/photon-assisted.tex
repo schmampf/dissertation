@@ -117,7 +117,7 @@
             \tilde{w}_m(V)=\exp\!\left(-\left(\frac{2\Delta_0/|eV|-m}{2}\right)^2\right)\,,
             \label{eq:ac:pamar:weights}
         \end{align}
-        I merge the contribution $w_0$ into $w_1$ because quasiparticle transport dominates above $e|V|=2\Delta_0$. For practical reasons, I use a maximum order $M$ that combines order $M$ and all higher orders. Typically i would use $M=10$. I choose the normalization factor $w_\mathcal{N}(V)$ so that the individual weights $w_m(V)$ sum to unity at every voltage. Figure~\ref{fig:ac:pamar-weights} shows that the same smooth partition appears unequally spaced on the voltage axis but equally spaced on the inverse-voltage coordinate.
+        I merge the contribution $w_0$ into $w_1$ because quasiparticle transport dominates above $e|V|=2\Delta_0$. For practical reasons, I use a maximum order $M$ that combines order $M$ and all higher orders, typically $M=10$. I choose the normalization factor $w_\mathcal{N}(V)$ so that the individual weights $w_m(V)$ sum to unity at every voltage. Figure~\ref{fig:ac:pamar-weights} shows that the same smooth partition appears unequally spaced on the voltage axis but equally spaced on the inverse-voltage coordinate.
 
         \begin{figure}[t]
             \centering
@@ -129,7 +129,7 @@
                 Inverse-voltage representation
             ]{\thesisplot{atomic_contact/pamar-weights}{1_V}}
             \caption{
-                Phenomenological weights used to decompose the simulated static MAR \textit{dI--dV} by threshold. (a) On the voltage axis, each $w_m(V)$ selects the vicinity of $e|V|=2\Delta_0/m$, while $w_1$ contains the quasiparticle region above $2\Delta_0$ and the terminal weight $w_M$ collects all remaining higher orders near zero bias. (b) On the inverse-voltage axis, the explicitly resolved weights form equally spaced Gaussians centered at i    nteger $m$. The weights are normalized to unity at every voltage before constructing the effective currents $I_m(V)$. The only free parameter used in these plots is $M=6$.
+                Phenomenological weights used to decompose the simulated static MAR \textit{dI--dV} by threshold. (a) On the voltage axis, each $w_m(V)$ selects the vicinity of $e|V|=2\Delta_0/m$, while $w_1$ contains the quasiparticle region above $2\Delta_0$ and the terminal weight $w_M$ collects all remaining higher orders near zero bias. (b) On the inverse-voltage axis, the explicitly resolved weights form equally spaced Gaussians centered at integer $m$. The weights are normalized to unity at every voltage before constructing the effective currents $I_m(V)$. $M=6$ is the only free parameter, chosen for visual clarity.
             }
             \label{fig:ac:pamar-weights}
         \end{figure}
