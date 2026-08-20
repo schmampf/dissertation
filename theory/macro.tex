@@ -308,7 +308,7 @@
             \end{wrapfigure}
             Once a sustained running state is established, the junction develops a finite average voltage. On a downward current sweep, metastable minima reappear below $I_\mathrm{c}$, but the moving phase is not necessarily captured immediately. The bias at which it is eventually recaptured in a minimum defines the retrapping current $I_\mathrm{rt}$.
 
-            The relation between $I_\mathrm{sw}$ and $I_\mathrm{rt}$ is controlled primarily by the damping. In the deterministic overdamped limit, the phase loses energy rapidly and retraps when stable minima reappear, so switching and retrapping occur at similar currents. In the underdamped limit, the phase retains sufficient kinetic energy to remain in the running state below $I_\mathrm{c}$. It then retraps only at a lower bias, producing hysteresis in the \textit{I--V} characteristic. For $Q\gg1$, the retrapping current approaches zero relative to $I_\mathrm{c}$ \cite{stewart_currentvoltage_1968,mccumber_effect_1968,tinkham_introduction_2004}.
+            The relation between $I_\mathrm{sw}$ and $I_\mathrm{rt}$ is controlled primarily by the damping. In the overdamped limit, the phase loses energy rapidly, so it retraps as soon as stable minima reappear and switching and retrapping occur at similar currents. In the underdamped limit, the phase retains enough kinetic energy to remain in the running state well below $I_\mathrm{c}$, so it retraps only at a much lower bias, producing pronounced hysteresis in the \textit{I--V} characteristic; in the strongly underdamped limit, the retrapping current approaches zero relative to $I_\mathrm{c}$ \cite{stewart_currentvoltage_1968,mccumber_effect_1968,tinkham_introduction_2004}.
 
             Figure~\ref{fig:macro:rcsj-iv} shows a representative phenomenological \textit{I--V} trace with a finite phase diffusion slope, switching at $I_\mathrm{sw}$, and retrapping at $I_\mathrm{rt}$. These currents are prescribed observables in the plotted characteristic rather than outputs of the deterministic equation. Thermal fluctuations, frequency dependent environmental damping, and heating can shift and broaden both transitions. For the atomic aluminum contact considered here, we use the overdamped limit.
 
@@ -316,9 +316,9 @@
         \subsubsection*{Macroscopic Quantum Dynamics}
         %=========================================================
 
-            The phase particle analogy provides the starting point for a quantum mechanical description of the junction. Quantizing the conservative junction degree of freedom while treating the dissipative environment separately promotes the phase difference and junction charge to conjugate observables. The capacitive energy supplies the kinetic term, while the current tilted Josephson potential supplies the potential term. This Hamiltonian supports discrete energy levels associated with quantized phase oscillations within each metastable minimum. Their observation demonstrated energy quantization of the collective phase difference across a current biased Josephson junction \cite{martinis_energy-level_1985}.
+            The phase particle analogy provides the starting point for a quantum mechanical description of the junction. Quantizing the conservative junction degree of freedom while treating the dissipative environment separately promotes the phase difference and junction charge to conjugate observables. The capacitive energy supplies the kinetic term of the resulting Hamiltonian, while the tilted Josephson potential of Eq.~\eqref{eq:macro:washboard-potential} supplies its potential term. This Hamiltonian supports discrete energy levels associated with quantized phase oscillations within each metastable minimum. Their observation demonstrated energy quantization of the collective phase difference across a current biased Josephson junction \cite{martinis_energy-level_1985}.
 
-            Escape from a metastable minimum need not occur by thermal activation. At sufficiently low temperature, the phase can tunnel through the potential barrier and escape from the minimum. In an underdamped junction, this escape can initiate the running state. The process is known as macroscopic quantum tunneling because the tunneling coordinate is the collective phase difference across the junction. Its experimental observation, together with the quantized phase particle levels, established that an electrical circuit can exhibit quantum behavior in a collective macroscopic degree of freedom \cite{devoret_measurements_1985}. These quantum effects lie outside the classical RCSJ treatment used throughout this section.
+            At sufficiently low temperature, the phase can escape a metastable minimum by tunneling through the potential barrier rather than by thermal activation. In an underdamped junction, this escape can initiate the running state. The process is known as macroscopic quantum tunneling because the tunneling coordinate is the collective phase difference across the junction. Its experimental observation, together with the quantized phase particle levels, established that an electrical circuit can exhibit quantum behavior in a collective macroscopic degree of freedom \cite{devoret_measurements_1985}. These quantum effects lie outside the classical RCSJ treatment used throughout this section.
 
     %=========================================================
     \subsection{Shapiro Effect}
@@ -331,10 +331,10 @@
         \subsubsection*{Driven Phase and Ideal Locking}
         %=========================================================
 
-            We begin with the harmonic voltage in Eq.~\eqref{eq:micro:pat-drive-voltage}. Integrating the ac Josephson relation in Eq.~\eqref{eq:macro:josephson-voltage-phase} gives
+            To obtain the driven phase evolution, we integrate the ac Josephson relation of Eq.~\eqref{eq:macro:josephson-voltage-phase} using the harmonic voltage of Eq.~\eqref{eq:micro:pat-drive-voltage}, which gives
             \begin{align}
-                \phi(t)=\phi_0+2\pi\nu_\mathrm{J}t+\alpha_{\nu,2e}\sin(2\pi\nu t)\,, &&
-                \nu_\mathrm{J}=\frac{2eV_0}{h}\,, &&
+                \phi(t)=\phi_0+2\pi\nu_0t+\alpha_{\nu,2e}\sin(2\pi\nu t)\,, &&
+                \nu_0=\frac{2eV_0}{h}\,, &&
                 \alpha_{\nu,2e}=\frac{2eA}{h\nu}\,.
                 \label{eq:macro:shapiro-phase}
             \end{align}
@@ -358,12 +358,12 @@
                 \vspace{-1em} % fine-tune vertical position
                 \thesisplot{theory/macro}{shapiro-ideal}
                 \caption{
-                    Under voltage bias, SIS curves show PAT and vertical bars mark coherent phase locking.
+                    Under voltage bias, SIS curves show PAT. Vertical bars mark coherent phase locking.
                 }
                 \label{fig:macro:shapiro-iv}
             \end{wrapfigure}
 
-            A harmonic becomes stationary whenever $\nu_\mathrm{J}$ is an integer multiple of $\nu$. The corresponding locking voltages and full current intervals are
+            A harmonic becomes stationary whenever $\nu_0$ is an integer multiple of $\nu$. The corresponding locking voltages and full current intervals are
             \begin{equation}
                 \begin{aligned}
                     V_n&=nh\nu/2e\,, \\
