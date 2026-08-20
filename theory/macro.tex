@@ -30,14 +30,14 @@
 
     A Josephson junction denotes such a weak link between two superconductors. It can be formed by an insulating barrier, a metallic constriction, or a short normal region. In the low-transmission limit considered here, the overlap and resulting Josephson coupling are weak, but remain sufficient for coherent Cooper pair transfer. Finite-transmission weak links require the mesoscopic description of Sec.~\ref{sec:meso}. \cite{josephson_possible_1962,likharev_superconducting_1979}
 
-    We first introduce the Josephson relations, the Ambegaokar-Baratoff critical current, and the coupling energy. We then connect the ideal voltage biased SIS spectrum to current bias using a generalized RSJ model that retains the nonlinear quasiparticle branch. The RCSJ model changes the modeling goal by replacing this spectrum with a linear shunt and adding capacitance to describe phase dynamics. Finally, we discuss the distinct voltage and current biased manifestations of microwave phase locking in the Shapiro effect.
+    We first introduce the Josephson relations, the Ambegaokar-Baratoff critical current, and the coupling energy. We then connect the ideal voltage biased SIS spectrum to current bias using a generalized resistively shunted junction (RSJ) model that retains the nonlinear quasiparticle branch. The resistively and capacitively shunted junction (RCSJ) model changes the modeling goal by replacing this spectrum with a linear shunt and adding capacitance to describe phase dynamics. Finally, we discuss the distinct voltage and current biased manifestations of microwave phase locking in the Shapiro effect.
 
     %=========================================================
     \subsection{Josephson Effect}
     \label{subsec:macro:josephson}
     %=========================================================
 
-        The phase difference $\phi$ defined in Eq.~\eqref{eq:macro:phase-difference} is the collective variable that describes the coherent coupling between the two superconductors. A static phase difference permits a supercurrent without a voltage drop, while its temporal evolution is linked directly to the voltage across the weak link. These two consequences are expressed by the Josephson relations and connect condensate coherence to the measurable current and voltage \cite{josephson_possible_1962}.
+        The phase difference $\phi$ defined in Eq.~\eqref{eq:macro:phase-difference} is the collective variable that describes the coherent coupling between the two superconductors. Its static and time-dependent behavior are expressed by the Josephson relations, which connect condensate coherence to the measurable current and voltage \cite{josephson_possible_1962}.
 
         \subsubsection*{AC Josephson Relation}
 
@@ -137,7 +137,7 @@
                 \label{fig:macro:Irsj}
             \end{figure}
 
-            Under current bias, the voltage is no longer fixed externally and instead becomes the dynamical response of the junction. We describe this response with a generalized resistively shunted junction (RSJ) model. Coherent Cooper pair transfer and dissipative quasiparticle tunneling occur in parallel and experience the same time dependent voltage, as shown in Fig.~\ref{fig:macro:rsj}. In contrast to the conventional linear shunt $V/R$, the generalized model retains the microscopic nonlinear quasiparticle characteristic $I_\mathrm{qp}(V)$. 
+            Under current bias, the voltage is no longer fixed externally and instead becomes the dynamical response of the junction. We describe this response with a generalized RSJ model. Coherent Cooper pair transfer and dissipative quasiparticle tunneling occur in parallel and experience the same time dependent voltage, as shown in Fig.~\ref{fig:macro:rsj}. In contrast to the conventional linear shunt $V/R$, the generalized model retains the microscopic nonlinear quasiparticle characteristic $I_\mathrm{qp}(V)$. 
 
             \begin{wrapfigure}[16]{r}{35mm}
                 \captionsetup{format=plain}%
@@ -178,9 +178,9 @@
     \label{subsec:macro:rcsj}
     %=========================================================
 
-        The generalized RSJ model above retains the nonlinear quasiparticle characteristic to describe dc spectroscopy. We now change the modeling goal from reconstructing this spectrum to describing the classical phase dynamics. For this purpose, the resistively and capacitively shunted junction (RCSJ) model approximates the dissipative branch by a linear shunt resistance $R$ and adds a capacitance $C$ in parallel with the Josephson element. The resistance accounts for damping, while the capacitance stores electrostatic energy and introduces phase inertia.
+        The generalized RSJ model above retains the nonlinear quasiparticle characteristic to describe dc spectroscopy. We now change the modeling goal from reconstructing this spectrum to describing the classical phase dynamics. For this purpose, the RCSJ model approximates the dissipative branch by a linear shunt resistance $R$ and adds a capacitance $C$ in parallel with the Josephson element. The resistance accounts for damping, while the capacitance stores electrostatic energy and introduces phase inertia.
 
-        We assume $E_\mathrm{J}\gg E_\mathrm{c}$, such that quantum fluctuations of the phase can be neglected. Thermal fluctuations may nevertheless perturb the classical dynamics and are discussed phenomenologically below without introducing an explicit fluctuating current source.
+        We assume the Josephson energy far exceeds the charging energy, such that quantum fluctuations of the phase can be neglected. Thermal fluctuations may nevertheless perturb the classical dynamics and are discussed phenomenologically below without introducing an explicit fluctuating current source.
 
         \begin{wrapfigure}[14]{r}{35mm}
             \captionsetup{format=plain}%
@@ -257,7 +257,7 @@
         \subsubsection*{Tilted Washboard Potential}
         %=========================================================
 
-            The normalized RCSJ equation~\eqref{eq:macro:rcsj-cpr-norm} has the form of Newton's equation for a unit mass phase particle subject to viscous damping. The phase difference $\phi$ acts as the particle coordinate, while $1/Q$ sets the normalized damping. The remaining terms define the force acting on the phase particle. Identifying this force with the negative gradient of a dimensionless potential and integrating over $\phi$ gives
+            The normalized RCSJ equation~\eqref{eq:macro:rcsj-cpr-norm} has the form of Newton's equation for a unit mass phase particle subject to viscous damping. The phase difference $\phi$ acts as the particle coordinate, while $1/Q$ sets the normalized damping. The bias current $i$ and the Josephson term $\sin\phi$ define the force acting on the phase particle. Identifying this force with the negative gradient of a dimensionless potential and integrating over $\phi$ gives
             \begin{equation}
                 -\tfrac{\mathrm{d}}{\mathrm{d}\phi}u=i-\sin\phi\,,
                 \qquad
@@ -265,7 +265,6 @@
                 \label{eq:macro:washboard-potential}
             \end{equation}
             The Josephson coupling produces the periodic cosine landscape, while the normalized bias current $i$ produces its linear tilt. The corresponding dimensional phase potential is $U(\phi)=E_\mathrm{J}u(\phi)$. In the untilted case ($i=0$), adjacent minima are separated by a barrier $\Delta U=2E_\mathrm{J}$. Figure~\ref{fig:macro:rcsj-u-phi} shows how this tilted washboard potential evolves with increasing bias current \cite{stewart_currentvoltage_1968,tinkham_introduction_2004}.
-
 
             For $i=0$, the periodic potential has equivalent stable minima. A finite subcritical bias, $0<i<1$, tilts the potential and turns them into metastable minima separated by finite barriers. While the phase remains localized in one well, its average velocity and therefore the junction voltage are zero. Small oscillations about a minimum are governed by the plasma-frequency scale introduced in Eq.~\eqref{eq:macro:rcsj-plasma-frequency}.
 
@@ -307,7 +306,7 @@
                 }
                 \label{fig:macro:rcsj-iv}
             \end{wrapfigure}
-            Once a sustained running state is established, the junction develops a finite average voltage. On a downward current sweep, metastable minima reappear below $I_\mathrm{c}$, but the moving phase is not necessarily captured immediately. It retraps only after damping has removed enough kinetic energy for localization in a minimum. The bias at which this occurs is the retrapping current $I_\mathrm{rt}$.
+            Once a sustained running state is established, the junction develops a finite average voltage. On a downward current sweep, metastable minima reappear below $I_\mathrm{c}$, but the moving phase is not necessarily captured immediately. The bias at which it is eventually recaptured in a minimum defines the retrapping current $I_\mathrm{rt}$.
 
             The relation between $I_\mathrm{sw}$ and $I_\mathrm{rt}$ is controlled primarily by the damping. In the deterministic overdamped limit, the phase loses energy rapidly and retraps when stable minima reappear, so switching and retrapping occur at similar currents. In the underdamped limit, the phase retains sufficient kinetic energy to remain in the running state below $I_\mathrm{c}$. It then retraps only at a lower bias, producing hysteresis in the \textit{I--V} characteristic. For $Q\gg1$, the retrapping current approaches zero relative to $I_\mathrm{c}$ \cite{stewart_currentvoltage_1968,mccumber_effect_1968,tinkham_introduction_2004}.
 
