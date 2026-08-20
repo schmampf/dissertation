@@ -1,16 +1,21 @@
 % input the Reference stuff
 \clearpage 
 % \pagenumbering{roman}
-\addcontentsline{toc}{chapter}{References}
 \begingroup
 \setlength{\emergencystretch}{3em}
-\printbibliography[title={References}]
+\renewcommand*{\bibrangedash}{\addthinspace\text{-}\addthinspace}
+\AtNextBibliography{%
+    \thispagestyle{chapterstart}%
+    \markboth{References}{References}%
+}
+\printbibliography[heading=bibintoc,title={References}]
 \endgroup
 
 % configure the appendix stuff
 \appendix
 \useappendixchapterstyle
 \useappendixsectionstyle
+\renewcommand*{\chapterpagestyle}{chapterstart}
 
 % Insert the umbrella entry immediately before the first appendix chapter's
 % own ToC entry. Doing this at \addchaptertocentry keeps the ordering stable
