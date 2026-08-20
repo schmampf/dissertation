@@ -65,16 +65,8 @@
     \subsection*{Reactive Ion Etching (RIE)}
     %=========================================================
 
-        \begin{wrapfigure}[14]{r}{0.4\textwidth}
-            \captionsetup{format=plain}%
-            \centering
-            \vspace{-1em}
-            \thesisplot{methods/sample}{rie}
-            \caption{Recorded laser intensity $I_{\mathrm{Laser}}(t)$ during plasma etching. The process is terminated after approximately 2.8 periods, corresponding to the target etch depth.}
-            \label{fig:methods:rie}
-        \end{wrapfigure}
-
         For the penultimate fabrication step, I use the \texttt{PlasmaPro 80} ICP RIE system from Oxford Instruments. Although this tool is not designed specifically for highly isotropic etching, I operate it in a regime that gives sufficiently isotropic results by combining low table RF power with elevated pressure. I first use an ignition step to stabilize the plasma before switching to the less stable regime that favors isotropic etching. The sample temperature is particularly important for obtaining the desired undercut. A table temperature of \qty{100}{\degreeCelsius} proves to be a good compromise because it produces a sufficient undercut while keeping the etch slow enough to control the depth reliably. The process parameters that give the best results are listed in Table~\ref{tab:methods:rie_parameter}.
+
         \begin{table}
             \centering
             \small
@@ -108,10 +100,20 @@
                 
             \end{tabular}
         \end{table}
+
+        \begin{wrapfigure}[15]{r}{0.4\textwidth}
+            \captionsetup{format=plain}%
+            \centering
+            % \vspace{-1.0em}
+            \thesisplot{methods/sample}{rie}
+            \vspace{-0.5em}
+            \caption{
+                Laser intensity recorded during plasma etching. I terminate the process after about 2.8 periods at the target etch depth.
+                }
+            \label{fig:methods:rie}
+        \end{wrapfigure}
         
-        I use a laser interferometer to monitor the etched depth. For this purpose, I choose a spot on the sample without metal structures where the reflected intensity is as large as possible without reaching saturation.
-        
-        During the etch, the signal follows an approximately cosine-like oscillation that can be used to estimate the removed thickness. The required number of periods $m$ depends on the laser wavelength $\lambda=\qty{632.8}{\nano\meter}$, the target depth $d=\qty{500}{\nano\meter}$, and the refractive index\footnote{Fujifilm Electronic Materials U.S.A., Inc., \texttt{Polyamic Acid Durimide 100}} $n=1.81$. For the present process, the target number of periods is
+        I use a laser interferometer to monitor the etched depth. For this purpose, I choose a spot on the sample without metal structures where the reflected intensity is as large as possible without reaching saturation. During the etch, the signal follows an approximately cosine-like oscillation that can be used to estimate the removed thickness. The required number of periods $m$ depends on the laser wavelength $\lambda=\qty{632.8}{\nano\meter}$, the target depth $d=\qty{500}{\nano\meter}$, and the refractive index\footnote{Fujifilm Electronic Materials U.S.A., Inc., \texttt{Polyamic Acid Durimide 100}} $n=1.81$. For the present process, the target number of periods is
         \begin{align}
             m = \frac{2 \cdot n \cdot d}{\lambda} = \frac{2 \cdot 1.81 \cdot \qty{500}{\nano\meter}}{\qty{632.8}{\nano\meter}} = 2.86\,.
         \end{align}
@@ -129,7 +131,7 @@
 
         To fix the sample, I use adhesive strips\footnote{Tesa, tesafilm standard.} on a copper plate. This arrangement keeps the sample in place while still allowing me to reposition the plate. I prepare \qty{90}{\micro\meter} insulated copper wires soldered to post connectors in advance. I strip the wire ends and twist the bias line wires. I keep the wires as short as practical, typically \qtyrange{4}{5}{\centi\meter}, and insulate the rear part of each post connector with varnish\footnote{Oxford Instruments, \texttt{C5-101}, GE Low Temperature Varnish.}.
 
-        \begin{wrapfigure}[15]{r}{0.4\textwidth}
+        \begin{wrapfigure}[16]{r}{0.4\textwidth}
             \captionsetup{format=plain}%
             \centering
             \vspace{-.5em}
@@ -137,6 +139,7 @@
             \caption{Example of a contacted sample, before adding strain relief.}
             \label{fig:methods:contacting}
         \end{wrapfigure}
+
         I position the wire ends on the sample pads with the help of modeling clay, as shown in Fig.~\ref{fig:methods:contacting}. Then, using a sharpened toothpick, I apply a small amount of silver paste to connect each wire to its pad. The viscosity of the silver paste is critical. If it is too fluid, shorts could form. If it is too viscous, it tends to remain on the toothpick instead of wetting the pad properly. In practice, paste collected from the lid after shaking the bottle works well. I transfer only enough paste to wet the pad. Afterward, I apply two-component epoxy as strain relief for the wires. Again, the viscosity is important. If I use the epoxy too soon after mixing, it continues to flow and could spread into unwanted areas. Because the interaction between epoxy and silver paste is not fully understood, I keep the two materials separate as much as possible. I test the epoxy on small trial dots and wait until it reaches a suitable consistency before applying it to the sample. I glue the two sides of the sample separately because the useful working window is fairly short.
         
         After mounting the sample in the cryostat, I scratch the shorting bridge with an engraving tool. I ensure proper grounding during this step and while closing the radiation shields by wearing a grounding bracelet. In dry conditions, I also increase the ambient humidity to reduce the risk of electrostatic discharge.
