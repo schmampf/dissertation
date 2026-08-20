@@ -7,14 +7,14 @@
 
     We develop the minimal weak-coupling Bardeen-Cooper-Schrieffer (BCS) description needed for superconducting transport. We first define the normal-state spectrum on which pairing acts. BCS mean field theory then introduces the pair potential and gives the Bogoliubov quasiparticles whose spectrum determines the superconducting density of states (DOS). We use this spectrum and its occupation to formulate the static tunnel current in the low-transmission limit. Finally, we extend this description to photon assisted tunneling (PAT) under harmonic driving. Phase dynamics and finite-transmission transport are treated in later sections. \cite{bardeen_theory_1957,tinkham_introduction_2004}
 
-    We consider a spin singlet \textit{s}-wave superconductor with one effective isotropic band. This provides the low-energy description used for the aluminum electrodes in this thesis but does not reproduce their detailed band structure. It excludes anisotropic, strongly correlated, and quantitative multiband superconductors.
+    We consider a spin singlet \textit{s}-wave superconductor with one effective isotropic band. This provides the low-energy description used for the aluminum electrodes in this thesis but does not reproduce their detailed band structure. It excludes anisotropic, strongly correlated, and multiband superconductors.
 
     %=========================================================
     \subsection{BCS Mean Field and Bogoliubov Quasiparticles}
     \label{subsec:micro:bcs-bdg}
     %=========================================================
 
-        The normal-state problem supplies the reference DOS and the diagonal part of the BdG Hamiltonian. Pairing then couples its electron and hole sectors.
+        The normal-state problem supplies the reference DOS and the diagonal part of the Bogoliubov-de~Gennes (BdG) Hamiltonian. Pairing then couples its electron and hole sectors.
 
         %=========================================================
         \subsubsection*{Normal-State Reference}
@@ -28,7 +28,7 @@
                 + U(\vec{r})-\mu\,.
                 \label{eq:quasi:normal-hamiltonian}
             \end{equation}
-            Here $m^\ast$ describes the band curvature, while $U(\vec r)$ includes the effective lattice background, confinement, barriers, and disorder. Energies are measured relative to the chemical potential $\mu$. This normal-state operator later forms the diagonal part of the Bogoliubov-de~Gennes Hamiltonian. \cite{gross_festkorperphysik_2014}
+            Here $m^\ast$ describes the band curvature, while $U(\vec r)$ includes the effective lattice background, confinement, barriers, and disorder. Energies are measured relative to the chemical potential $\mu$. This normal-state operator later forms the diagonal part of the BdG Hamiltonian. \cite{gross_festkorperphysik_2014}
 
             In a homogeneous system, the effective band introduced above is approximated as parabolic,
             \begin{align}
@@ -57,12 +57,12 @@
             \end{equation}
             In the superconducting description below, $\xi$ and $E$ are instead measured relative to the chemical potential, which satisfies $\mu\simeq E_\mathrm{F}$ for a conventional metal.
 
-            Within the free-electron approximation with three conduction electrons per atom, bulk aluminum has $m^\ast\approx m$, $E_\mathrm{F}\approx\qty{11.7}{\electronvolt}$, $v_\mathrm{F}\approx2.0\cdot10^6\,\unit{\meter\per\second}$, and a Fermi wavelength of approximately $\qty{0.36}{\nano\meter}$. We use these as representative material scales, not as parameters extracted from the devices studied in this thesis. \cite{ashcroft_solid_1976}
+            Within the free-electron approximation with three conduction electrons per atom, bulk aluminum has $m^\ast\approx m$, $E_\mathrm{F}\approx\qty{11.7}{\electronvolt}$, $v_\mathrm{F}\approx2.0\cdot10^6\,\unit{\meter\per\second}$, and $\lambda_\mathrm{F}=\qty{0.36}{\nano\meter}$. We use these as representative material scales, not as parameters extracted from the devices studied in this thesis. \cite{ashcroft_solid_1976}
 
             The normal-state electron and hole excitations are independent. BCS pairing couples these sectors and reorganizes them into Bogoliubov quasiparticles.
 
         %=========================================================
-        \subsubsection*{BCS Mean Field}
+        \subsubsection*{BCS Mean Field Approximation}
         \label{subsubsec:micro:bcs-mean-field}
         %=========================================================
 
@@ -85,7 +85,7 @@
         \label{subsubsec:micro:bdg-eigenproblem}
         %=========================================================
 
-            For spin singlet pairing without spin dependent fields, the mean field problem separates into two equivalent $2\times2$ electron--hole blocks. We define the reduced Nambu spinor and Bogoliubov-de~Gennes (BdG) Hamiltonian as
+            For spin singlet pairing without spin dependent fields, the mean field problem separates into two equivalent $2\times2$ electron--hole blocks. We define the reduced Nambu spinor and BdG Hamiltonian as
             \begin{align}
                 \Psi_k(\vec r)
                 =
@@ -102,7 +102,7 @@
                 \end{pmatrix}\,.
                 \label{eq:micro:bdg-definitions}
             \end{align}
-            The amplitudes $u_k$ and $v_k$ describe the electron and hole components of one quasiparticle mode. The diagonal blocks propagate both components according to the normal-state problem, while the off-diagonal pair potential converts an electron into its time reversed hole partner and vice versa. A superconducting excitation is therefore generally a coherent mixture of both components.
+            The amplitudes $u_k$ and $v_k$ describe the electron and hole components of one quasiparticle mode. The diagonal blocks carries both components according to the normal-state problem, while the off-diagonal pair potential converts an electron into its time reversed hole partner and vice versa. A superconducting excitation is therefore generally a coherent mixture of both components.
 
             The allowed quasiparticle modes follow from the eigenvalue problem
             \begin{equation}
@@ -117,7 +117,7 @@
         \label{subsubsec:micro:homogeneous-limit}
         %=========================================================
 
-            For uniform $\widetilde{\Delta}=\Delta e^{\ima\phi}$, the normal-state energy $\xi_{\vec q}=\hbar^2q^2/(2m^\ast)-\mu$ gives
+            Above, $k$ is just a generic mode index, not necessarily a momentum. A uniform system restores translational invariance, and the eigenmodes become plane waves. We then switch to $\vec q$ to mark that the label is now an actual momentum. For uniform $\widetilde{\Delta}=\Delta e^{\ima\phi}$, the normal-state energy $\xi_{\vec q}=\hbar^2q^2/(2m^\ast)-\mu$ gives
             \begin{align}
                 \begin{pmatrix}
                     \xi_{\vec q} & \widetilde{\Delta}\\
@@ -245,13 +245,13 @@
             The DOS and occupation function provide the spectral and statistical inputs for the tunnel current model that follows.
 
     %=========================================================
-    \subsection{Tunnel Current}
+    \subsection{Quasiparticle Tunneling}
     \label{subsec:micro:tunnel-current}
     %=========================================================
 
         We consider two electrodes separated by a thin tunnel barrier. Although the barrier classically forbids transfer, an electronic wavefunction decays rather than vanishes inside it, leaving a small overlap with states in the opposite electrode. A quasiparticle can therefore tunnel from an occupied state in one electrode into an available state in the other, with the applied bias controlling their relative energies. In the low-transmission limit, we describe this incoherent single-particle process by a momentum averaged tunneling matrix element. \cite{bardeen_tunnelling_1961,giaever_electron_1960,giaever_study_1961}
 
-        In the expressions below, $N_i(E)$ is the DOS normalized to the constant normal-state value of electrode $i$. Thus, a normal electrode has $N_i(E)=1$. This normalization, the junction geometry, and tunneling matrix element are absorbed into the normal-state conductance $G_\mathrm{N}$.
+        In the expressions below, $N_i(E)$ is the DOS normalized to the constant normal-state value of electrode $i$. Thus, a normal electrode has $N_i(E)=1$. This normalization, the junction geometry, and tunneling matrix element are incorporated into the normal-state conductance $G_\mathrm{N}$.
 
         We define the bias by $eV=\mu_1-\mu_2$. An energy $E$ relative to the chemical potential of electrode 1 therefore corresponds to $E+eV$ relative to that of electrode 2.
 
