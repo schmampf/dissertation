@@ -147,7 +147,7 @@
     % define new chapter
         \titleformat{\chapter}%
         {\selectfontsize{16pt}\sffamily\gdef\chapterlabel{}} 
-        {\gdef\chapterlabel{}}
+        {\gdef\chapterlabel{\thechapter}}
         {0pt}
         {%
             \ifx\chapterlabel\empty\seeblauunderline{\textbf{#1}}\else\seeblauunderline{\textbf{\chapterlabel~{#1}}}\fi%
