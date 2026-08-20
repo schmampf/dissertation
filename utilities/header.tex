@@ -139,8 +139,8 @@
     % set as the large heading on this page, so the running header would
     % otherwise repeat it right above; drop the chapter mark here but keep
     % the page number in its usual place. Apply with \thispagestyle right
-    % after \chapter{...} where wanted (used for the 5 main-body chapters;
-    % appendix chapters keep the standard header).
+    % after \chapter{...} where wanted. The appendix setup applies it as the
+    % default opening-page style for appendix chapters.
     \fancypagestyle{chapterstart}{%
         \fancyhf{}%
         \fancyhead[L]{\small\hfill\thepage}%
@@ -169,7 +169,7 @@
         {\ifx\chapterlabel\empty
             \seeblauunderline{\textbf{##1}}%
         \else
-            \seeblauunderline{\textbf{\chapterlabel:\space ##1}}%
+            \seeblauunderline{\textbf{\chapterlabel.~##1}}%
         \fi}%
         \titlespacing*{\chapter}{0pt}{25pt}{12.5pt}%
     }
