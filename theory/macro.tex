@@ -352,17 +352,6 @@
                     \right)\,.
             \end{align}
 
-            \begin{wrapfigure}[12]{r}{1.8in}
-                \captionsetup{format=plain}%
-                \centering
-                \vspace{-1em} % fine-tune vertical position
-                \thesisplot{theory/macro}{shapiro-ideal}
-                \caption{
-                    Under voltage bias, SIS curves show PAT. Vertical bars mark coherent phase locking.
-                }
-                \label{fig:macro:shapiro-iv}
-            \end{wrapfigure}
-
             A harmonic becomes stationary whenever $\nu_0$ is an integer multiple of $\nu$. The corresponding locking voltages and full current intervals are
             \begin{equation}
                 \begin{aligned}
@@ -375,6 +364,27 @@
             The full interval follows by allowing the stationary phase offset to vary between the two extrema of the sinusoidal CPR. The integer locking voltages are independent of the critical current and damping. The ideal width instead depends on $I_\mathrm{c}$ and on the local microwave voltage amplitude \cite{shapiro_josephson_1963}.
 
             The Josephson intervals and the PAT background in Fig.~\ref{fig:macro:shapiro-iv} arise from different physics. The unsquared Bessel function in $\Delta I_n$ reflects coherent phase evolution and Cooper pair transfer. Quasiparticle PAT is incoherent. Averaging over one drive period removes cross terms between photon channels and produces the squared Bessel weights in Eq.~\eqref{eq:micro:pat-iv}. The two contributions share only the prescribed junction voltage in this construction, with quasiparticles coupling through charge $e$ and Cooper pairs through charge $2e$.
+
+            \begin{figure}
+                \captionsetup{format=plain}%
+                \begin{minipage}{2.0in}
+                    \centering
+                    \thesisplot{theory/macro}{shapiro-ideal}
+                    \caption{
+                        Under voltage bias, SIS curves show PAT. Vertical bars mark coherent phase locking.
+                    }
+                    \label{fig:macro:shapiro-iv}
+                \end{minipage}
+                \hfill%
+                \begin{minipage}{2.0in}
+                    \centering
+                    \thesisplot{theory/macro}{shapiro-rsj}
+                    \caption{
+                        Overdamped current biased RCSJ response with $C=0$ and linear $R$. The voltage $\overline V$ is time averaged.
+                    }
+                \label{fig:macro:shapiro-rsj}
+                \end{minipage}
+            \end{figure}
             
             Under voltage bias, Eq.~\eqref{eq:micro:pat-iv} gives the continuous time averaged quasiparticle background. At each $V_n$, the stationary Josephson contribution adds a current interval of width $\Delta I_n$ centered on $I_\mathrm{PAT}(V_n)$. Figure~\ref{fig:macro:shapiro-iv} visualizes this superposition.
 
@@ -396,17 +406,6 @@
                 =-\cos\phi-\left(i+a'\sin(\nu't')\right)\phi\,.
                 \label{eq:macro:shapiro-washboard}
             \end{equation}
-
-            \begin{wrapfigure}[14]{r}{1.8in}
-                \captionsetup{format=plain}%
-                \centering
-                \vspace{-1em} % fine-tune vertical position
-                \thesisplot{theory/macro}{shapiro-rsj}
-                \caption{
-                    Overdamped current biased RCSJ response with $C=0$ and linear $R$. The voltage $\overline V$ is time averaged.
-                }
-                \label{fig:macro:shapiro-rsj}
-            \end{wrapfigure}
 
             The ac current periodically raises and lowers the barriers of the tilted potential. In an underdamped junction, the capacitive term gives the phase particle sufficient inertia to continue moving after the instantaneous tilt has decreased. Locked trajectories can then compete with trapped and running states. Their stability depends on the initial condition and sweep history, and switching or retrapping can interrupt a locked branch. Underdamped Shapiro steps can therefore be less robust and protocol dependent, which makes them substantially more difficult to calculate as a unique stationary \textit{I--V} characteristic.
 
