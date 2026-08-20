@@ -117,7 +117,7 @@
             \centering
             \landscapepanels{atomic_contact/0.05G0/15.0GHz_stripline}{cal}
             \caption{
-                Calibrated microwave amplitude map of C0 under stripline irradiation at $\nu=\qty{15.0}{\giga\hertz}$. Photon assisted replicas emerge from the quasiparticle onset and redistribute spectral weight as $eA/h\nu$ increases. A weaker subgap feature near $\lvert eV\rvert=\Delta$ indicates the onset of Andreev reflection.
+                Calibrated microwave amplitude map of C0 under stripline irradiation at \qty{15.0}{\giga\hertz}. Photon assisted replicas emerge from the quasiparticle onset and redistribute spectral weight as $eA/h\nu$ increases. A weaker subgap feature near $\lvert eV\rvert=\Delta$ indicates the onset of Andreev reflection.
                 }
             \label{fig:ac:0.05G0:15.0GHz_stripline:cal}
 
@@ -125,7 +125,7 @@
 
             \landscapepanels{atomic_contact/0.05G0/15.0GHz_stripline}{sim}
             \caption{
-                Simulated microwave amplitude map of C0 under stripline irradiation at $\nu=\qty{15.0}{\giga\hertz}$ according to PAT. The calculation reproduces the dominant quasiparticle sidebands in Fig.~\ref{fig:ac:0.05G0:15.0GHz_stripline:cal}, but it does not contain the weak Andreev contribution visible in the measured subgap response.
+                Simulated microwave amplitude map of C0 under stripline irradiation at \qty{15.0}{\giga\hertz} according to PAT. The calculation reproduces the dominant quasiparticle sidebands in Fig.~\ref{fig:ac:0.05G0:15.0GHz_stripline:cal}, but it does not contain the weak Andreev contribution visible in the measured subgap response.
                 }
             \label{fig:ac:0.05G0:15.0GHz_stripline:sim}
         \end{figure}
@@ -180,17 +180,26 @@
     \label{appendix:ac:pincode}
     %=========================================================
 
-        \landscapefigure{atomic_contact/breaking}{cal}{
-            Measured transport map during contact opening. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations show the evolving MAR structure as a function of the approximate relative displacement $x$. Abrupt spectral changes separate successive contact configurations.
-        }{fig:ac:pincode:cal}
-
-        \landscapefigure{atomic_contact/breaking}{sim}{
-            Transport map reconstructed from the fitted pincodes. The calculation uses the position dependent transmissions, $T=\gamma=0$, and the common parameters in Eq.~\eqref{eq:ac:pincode:parameter}. It reproduces the principal displacement dependent structures of Fig.~\ref{fig:ac:pincode:cal}.
-        }{fig:ac:pincode:sim}
-
         This section collects representative channel resolved MAR fits and the complete measured and reconstructed transport maps supporting the mesoscopic pincode analysis in Sec.~\ref{subsec:ac:pincode}. Figure~\ref{fig:ac:pincode:fits} illustrates the fit quality for selected contact states, while Figs.~\ref{fig:ac:pincode:cal} and \ref{fig:ac:pincode:sim} provide the global comparison across the complete opening trace.
 
-        \begin{figure}
+        \begin{figure}[p]
+            \centering
+            \landscapepanels{atomic_contact/breaking}{cal}
+            \caption{
+                Measured transport map during contact opening. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations show the evolving MAR structure as a function of the approximate relative displacement $x$. Abrupt spectral changes separate successive contact configurations.
+                }
+            \label{fig:ac:pincode:cal}
+
+            % \vspace{1em}
+
+            \landscapepanels{atomic_contact/breaking}{sim}
+            \caption{
+                Transport map reconstructed from the fitted pincodes. The calculation uses the position dependent transmissions, $T=\gamma=0$, and the common parameters in Eq.~\eqref{eq:ac:pincode:parameter}. It reproduces the principal displacement dependent structures of Fig.~\ref{fig:ac:pincode:cal}.
+                }
+            \label{fig:ac:pincode:sim}
+        \end{figure}
+
+        \begin{figure}[t]
             \centering
             \subfigure[
                 \textit{I--V}
@@ -216,7 +225,7 @@
 
         This section documents the full set of atomic contacts included in the photon assisted transport analysis and provides the detailed model decompositions and transport maps supporting Sec.~\ref{subsec:ac:photon-assisted-transport}. Tables~\ref{table:ac:pincodes} and \ref{table:ac:coupling-parameter} summarize the static MAR parameters and microwave coupling values used across this set, including C0, C0$'$, and C3 from Secs.~\ref{appendix:ac:tunneling} and \ref{subsec:ac:subharmonic}.
 
-        \begin{table}[t]
+        \begin{table}[p]
             \centering
             \footnotesize
             \caption{Static MAR parameters and mesoscopic pincodes of the atomic contacts included in the photon assisted transport analysis.}
@@ -224,51 +233,49 @@
             \vspace{1em}
             \begin{tabular}{l|l|l|l|l}
                 C & $G_\mathrm{N}\,(G_0)$ & $\Delta_0\,(\unit{\micro\electronvolt})$ & $\sigma_V\,(\unit{\micro\volt})$ & $\{\tau_i\}$ \\\hline
-                C0  & $0.050$ & $192.0$ & $19.5$ & $\{0.045, 0.001, 0.001, 0.001, 0.001, 0.001\}$ \\ % 0.05 G0
-                C0$'$ & $0.133$ & $189.0$ & $25.5$ & $\{0.118, 0.008, 0.004, 0.001, 0.001, 0.001\}$ \\ % 0.05 G0 temperature
-                    & $0.794$ & $190.5$ & $12.5$ & $\{0.682, 0.112\}$\\ % 0.8 G0
-                    & $0.926$ & $190.5$ &  $9.0$ & $\{0.767, 0.159\}$\\ % 0.9 G0
-                C1  & $1.757$ & $189.5$ &  $8.0$ & $\{0.517, 0.399, 0.332, 0.305, 0.204\}$\\ % 1.8 G0
-                C2  & $1.987$ & $191.0$ & $11.5$ & $\{0.997, 0.440, 0.184, 0.184, 0.182\}$ \\ % 2.4 G0
-                    & $1.992$ & $190.5$ & $10.5$ & $\{0.780, 0.672, 0.266, 0.263, 0.011\}$ \\ % 2.1 G0
-                    & $2.035$ & $189.5$ &  $4.5$ & $\{0.988, 0.655, 0.272, 0.120\}$\\ % 1.9 G0
-                    & $2.819$ & $190.5$ &  $8.0$ & $\{0.834, 0.747, 0.444, 0.383, 0.269, 0.142\}$ \\ % 4.3 G0
-                    & $2.822$ & $190.5$ &  $8.0$ & $\{0.846, 0.735, 0.504, 0.289, 0.284, 0.164\}$ \\ % 3.6 G0
+                C0  & 0.050 & 192.0 & 19.5 & $\{$0.045, 0.001, 0.001, 0.001, 0.001, 0.001$\}$ \\ % 0.05 G0
+                C0$'$ & 0.133 & 189.0 & 25.5 & $\{$0.118, 0.008, 0.004, 0.001, 0.001, 0.001$\}$ \\ % 0.05 G0 temperature
+                    & 0.794 & 190.5 & 12.5 & $\{$0.682, 0.112$\}$\\ % 0.8 G0
+                    & 0.926 & 190.5 &  9.0 & $\{$0.767, 0.159$\}$\\ % 0.9 G0
+                C1  & 1.757 & 189.5 &  8.0 & $\{$0.517, 0.399, 0.332, 0.305, 0.204$\}$\\ % 1.8 G0
+                C2  & 1.987 & 191.0 & 11.5 & $\{$0.997, 0.440, 0.184, 0.184, 0.182$\}$ \\ % 2.4 G0
+                    & 1.992 & 190.5 & 10.5 & $\{$0.780, 0.672, 0.266, 0.263, 0.011$\}$ \\ % 2.1 G0
+                    & 2.035 & 189.5 &  4.5 & $\{$0.988, 0.655, 0.272, 0.120$\}$\\ % 1.9 G0
+                    & 2.819 & 190.5 &  8.0 & $\{$0.834, 0.747, 0.444, 0.383, 0.269, 0.142$\}$ \\ % 4.3 G0
+                    & 2.822 & 190.5 &  8.0 & $\{$0.846, 0.735, 0.504, 0.289, 0.284, 0.164$\}$ \\ % 3.6 G0
             \end{tabular}
-        \end{table}
 
-        \begin{table}[t]
-            \centering
-            \footnotesize
+            \vspace{5em}
+            
             \caption{Microwave coupling parameters of the atomic contact measurements included in the photon assisted transport analysis.}
             \label{table:ac:coupling-parameter}
             \vspace{1em}
             \begin{tabular}{l|l|l|l|l}
                 C & $G_\mathrm{N}\,(G_0)$ & $\nu\,(\unit{\giga\hertz})$ & $\eta_\mathrm{antenna}\ (10^{-3})$ & $\eta_\mathrm{stripline}\ (10^{-3})$ \\\hline
-                C0 & $0.050$ & $15.0$ &  -           &  $5.803(1) $ \\
-                   & $0.794$ & $ 7.8$ &  $9.680(19)$ &  $8.403(9) $ \\
-                   &         & $15.0$ &  $6.556(13)$ &  $7.085(13)$ \\
-                   &         & $19.3$ &  $5.677(15)$ &  $7.763(18)$ \\
-                   & $0.926$ & $15.0$ &  -           &  $7.785(12)$ \\
-                C1 & $1.757$ & $15.0$ &  $6.643(17)$ &  $6.179(16)$ \\
-                C2 & $1.987$ & $ 7.8$ &  -           &  $6.079(7) $ \\
-                   &         & $15.0$ &  -           &  $5.230(12)$ \\
-                   &         & $19.3$ &  -           &  $5.421(15)$ \\
-                   & $1.992$ & $ 7.8$ & $10.580(10)$ &  $7.120(7) $ \\
-                   &         & $15.0$ & $ 6.465(11)$ &  $6.939(11)$ \\
-                   &         & $19.3$ & $ 5.758(19)$ &  $7.521(22)$ \\
-                   & $2.035$ & $ 7.8$ & $ 9.188(11)$ &  $6.148(6) $ \\
-                   &         & $15.0$ & $ 5.146(7) $ &  $5.293(6) $ \\
-                   &         & $19.3$ & $ 3.633(16)$ &  $4.924(14)$ \\
-                   & $2.819$ & $ 7.8$ &  -           &  $7.645(11)$ \\
-                   &         & $15.0$ &  -           &  $7.345(16)$ \\
-                   &         & $19.3$ &  -           &  $7.472(17)$ \\
-                   & $2.822$ & $ 7.8$ &  -           &  $5.409(3) $ \\
-                   &         & $15.0$ &  -           &  $5.081(6) $ \\
-                   &         & $19.3$ &  -           &  $5.100(7) $ \\
-                C3 & $29.00$ & $ 7.8$ &  $8.108(4)$  &  $6.566(3) $ \\
-                   &         & $15.0$ &  $4.365(3)$  &  $4.384(3) $ \\
-                   &         & $19.3$ &  $4.200(9)$  &  $5.682(10)$
+                C0 & 0.050 & 15.0 & -          &  5.803(1)  \\
+                   & 0.794 &  7.8 & 9.680(19)  &  8.403(9)  \\
+                   &       & 15.0 & 6.556(13)  &  7.085(13) \\
+                   &       & 19.3 & 5.677(15)  &  7.763(18) \\
+                   & 0.926 & 15.0 & -          &  7.785(12) \\
+                C1 & 1.757 & 15.0 & 6.643(17)  &  6.179(16) \\
+                C2 & 1.987 &  7.8 & -          &  6.079(7)  \\
+                   &       & 15.0 & -          &  5.230(12) \\
+                   &       & 19.3 & -          &  5.421(15) \\
+                   & 1.992 &  7.8 & 10.580(10) &  7.120(7)  \\
+                   &       & 15.0 &  6.465(11) &  6.939(11) \\
+                   &       & 19.3 &  5.758(19) &  7.521(22) \\
+                   & 2.035 &  7.8 &  9.188(11) &  6.148(6)  \\
+                   &       & 15.0 &  5.146(7)  &  5.293(6)  \\
+                   &       & 19.3 &  3.633(16) &  4.924(14) \\
+                   & 2.819 &  7.8 & -          &  7.645(11) \\
+                   &       & 15.0 & -          &  7.345(16) \\
+                   &       & 19.3 & -          &  7.472(17) \\
+                   & 2.822 &  7.8 & -          &  5.409(3)  \\
+                   &       & 15.0 & -          &  5.081(6)  \\
+                   &       & 19.3 & -          &  5.100(7)  \\
+                C3 & 29.00 &  7.8 & 8.108(4)   &  6.566(3)  \\
+                   &       & 15.0 & 4.365(3)   &  4.384(3)  \\
+                   &       & 19.3 & 4.200(9)   &  5.682(10)
             \end{tabular}
         \end{table}
 
@@ -291,7 +298,7 @@
         \begin{figure}[t]
             \centering
             \thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-cuts}{voltage-cuts-m}
-            \caption{Charge order decomposition of voltage cuts through the microwave driven \textit{dI--dV} of C1 at $\nu=\qty{15.0}{\giga\hertz}$. The six panels show increasing reduced drive amplitude from $eA/h\nu=0$ to $5$. The measured positive- and negative-bias branches are compared with the composite simulation, its PAICPT contribution, the summed threshold weighted PAMAR response, and the individual PAMAR components $m=1$ to $5$. The dominant charge order shifts toward larger $m$ as the relevant subgap threshold approaches zero bias.}
+            \caption{Charge order decomposition of voltage cuts through the microwave driven \textit{dI--dV} of C1 at \qty{15.0}{\giga\hertz}. The six panels show increasing reduced drive amplitude from $eA/h\nu=0$ to $5$. The measured positive- and negative-bias branches are compared with the composite simulation, its PAICPT contribution, the summed threshold weighted PAMAR response, and the individual PAMAR components $m=1$ to $5$. The dominant charge order shifts toward larger $m$ as the relevant subgap threshold approaches zero bias.}
             \label{fig:ac:contact1:voltage-cuts}
         \end{figure}
 
@@ -304,7 +311,7 @@
             \subfigure[\textit{dI--dV} residual]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dGdiff}}%
             \hfill
             \subfigure[\textit{dV--dI} residual]{\thesisplot{atomic_contact/1.8G0/15.0GHz_stripline/didv-img}{dRdiff}}%
-            \caption{Comparison of four photon assisted models for C1 at $\nu=\qty{15.0}{\giga\hertz}$. The calculated (a) \textit{dI--dV} and (b) \textit{dV--dI} maps combine either PAICPT or an ideal coherent Shapiro response with either threshold weighted PAMAR or direct dressing of the FCS components. Panels (c) and (d) show the corresponding residuals relative to the measurement. The combination of PAICPT and threshold weighted PAMAR gives the least structured residual in both representations. Direct FCS dressing leaves pronounced deviations along the MAR sidebands, while the coherent Shapiro model does not reproduce the amplitude evolution of the replicas originating from zero bias. All four calculations use the same calibrated drive amplitude and static contact parameters.}
+            \caption{Comparison of four photon assisted models for C1 at \qty{15.0}{\giga\hertz}. The calculated (a) \textit{dI--dV} and (b) \textit{dV--dI} maps combine either PAICPT or an ideal coherent Shapiro response with either threshold weighted PAMAR or direct dressing of the FCS components. Panels (c) and (d) show the corresponding residuals relative to the measurement. The combination of PAICPT and threshold weighted PAMAR gives the least structured residual in both representations. Direct FCS dressing leaves pronounced deviations along the MAR sidebands, while the coherent Shapiro model does not reproduce the amplitude evolution of the replicas originating from zero bias. All four calculations use the same calibrated drive amplitude and static contact parameters.}
             \label{fig:ac:contact1:model-comparison}
         \end{figure}
 
@@ -314,7 +321,7 @@
             \centering
             \landscapepanels{atomic_contact/1.8G0/15.0GHz_stripline}{cal}
             \caption{
-                Calibrated microwave amplitude map of C1 under stripline irradiation at $\nu=\qty{15.0}{\giga\hertz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns display the same measurement as heat maps, surfaces, and representative waterfall cuts. Photon assisted replicas emerge from the quasiparticle and MAR thresholds, while narrow features originating from the zero-bias peak disperse across the reduced amplitude axis $eA/h\nu$.
+                Calibrated microwave amplitude map of C1 under stripline irradiation at \qty{15.0}{\giga\hertz}. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns display the same measurement as heat maps, surfaces, and representative waterfall cuts. Photon assisted replicas emerge from the quasiparticle and MAR thresholds, while narrow features originating from the zero-bias peak disperse across the reduced amplitude axis $eA/h\nu$.
                 }
             \label{fig:ac:contact1:cal}
 
@@ -322,7 +329,7 @@
 
             \landscapepanels{atomic_contact/1.8G0/15.0GHz_stripline}{sim}
             \caption{
-                Simulated microwave amplitude map of C1 at $\nu=\qty{15.0}{\giga\hertz}$. The calculation combines threshold weighted PAMAR with PAICPT using the calibrated drive amplitude and the static transport parameters of C1. The three representations reproduce the principal sideband trajectories and spectral weight redistribution observed in Fig.~\ref{fig:ac:contact1:cal}, while smaller line shape differences remain at high drive.
+                Simulated microwave amplitude map of C1 at \qty{15.0}{\giga\hertz}. The calculation combines threshold weighted PAMAR with PAICPT using the calibrated drive amplitude and the static transport parameters of C1. The three representations reproduce the principal sideband trajectories and spectral weight redistribution observed in Fig.~\ref{fig:ac:contact1:cal}, while smaller line shape differences remain at high drive.
                 }
             \label{fig:ac:contact1:sim}
         \end{figure}
@@ -331,7 +338,7 @@
             \centering
             \landscapepanels{atomic_contact/2.4G0/15.0GHz_stripline}{cal}
             \caption{
-                Calibrated microwave amplitude map of C2 under stripline irradiation at $\nu=\qty{15.0}{\giga\hertz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations show the strong subgap response of the nearly ballistic leading channel. The measured low-voltage features exhibit an amplitude dependence that is not fully captured by the PAMAR-only simulation in Fig.~\ref{fig:ac:contact2:sim}.
+                Calibrated microwave amplitude map of C2 under stripline irradiation at \qty{15.0}{\giga\hertz}. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} representations show the strong subgap response of the nearly ballistic leading channel. The measured low-voltage features exhibit an amplitude dependence that is not fully captured by the PAMAR-only simulation in Fig.~\ref{fig:ac:contact2:sim}.
                 }
             \label{fig:ac:contact2:cal}
 
@@ -339,7 +346,7 @@
 
             \landscapepanels{atomic_contact/2.4G0/15.0GHz_stripline}{sim}
             \caption{
-                PAMAR-only microwave amplitude map of C2 at $\nu=\qty{15.0}{\giga\hertz}$. The calculation uses the calibrated drive amplitude and the simulated static MAR current calculated with the pincode in Eq.~\eqref{eq:ac:contact2:pincode}. It reproduces the dominant quasiparticle and MAR structure over the full bias and amplitude range but assigns too much of the zero-voltage response to MAR and therefore misses the measured low-voltage amplitude evolution in Fig.~\ref{fig:ac:contact2:cal}.
+                PAMAR-only microwave amplitude map of C2 at \qty{15.0}{\giga\hertz}. The calculation uses the calibrated drive amplitude and the simulated static MAR current calculated with the pincode in Eq.~\eqref{eq:ac:contact2:pincode}. It reproduces the dominant quasiparticle and MAR structure over the full bias and amplitude range but assigns too much of the zero-voltage response to MAR and therefore misses the measured low-voltage amplitude evolution in Fig.~\ref{fig:ac:contact2:cal}.
                 }
             \label{fig:ac:contact2:sim}
         \end{figure}
@@ -349,13 +356,13 @@
     \label{appendix:ac:subharmonic}
     %=========================================================
 
-        Figures~\ref{fig:ac:contact3:cal} and~\ref{fig:ac:contact3:sim} provide the full transport maps for C3 discussed in Sec.~\ref{subsec:ac:subharmonic}.
+        Figures~\ref{fig:ac:contact3:cal} and~\ref{fig:ac:contact3:sim} show the full transport maps for C3. I discuss these data in Sec.~\ref{subsec:ac:subharmonic}.
 
         \begin{figure}[p]
             \centering
             \landscapepanels{atomic_contact/43.0G0/19.3GHz_antenna}{cal}
             \caption{
-                Calibrated microwave amplitude map of C3 under antenna irradiation at $\nu=\qty{19.3}{\giga\hertz}$. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns show the measured response as waterfall cuts, surfaces, and heat maps. Increasing the drive produces replicas of the quasiparticle branch and the static subgap structure, together with additional closely spaced features originating near zero voltage.
+                Calibrated microwave amplitude map of C3 under antenna irradiation at \qty{19.3}{\giga\hertz}. The \textit{I--V}, \textit{dI--dV}, and \textit{dV--dI} columns show the measured response as waterfall cuts, surfaces, and heat maps. Increasing the drive produces replicas of the quasiparticle branch and the static subgap structure, together with additional closely spaced features originating near zero voltage.
                 }
             \label{fig:ac:contact3:cal}
 
@@ -363,7 +370,7 @@
 
             \landscapepanels{atomic_contact/43.0G0/19.3GHz_antenna}{sim}
             \caption{
-                Phenomenological microwave amplitude map of C3 at $\nu=\qty{19.3}{\giga\hertz}$. The calculation reproduces the principal replica trajectories and their amplitude evolution, while differences remain in the sharpness and spectral weight of the low-voltage features observed in Fig.~\ref{fig:ac:contact3:cal}.
+                Phenomenological microwave amplitude map of C3 at \qty{19.3}{\giga\hertz}. The calculation reproduces the principal replica trajectories and their amplitude evolution, while differences remain in the sharpness and spectral weight of the low-voltage features observed in Fig.~\ref{fig:ac:contact3:cal}.
                 }
             \label{fig:ac:contact3:sim}
         \end{figure}
