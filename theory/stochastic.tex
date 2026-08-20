@@ -122,15 +122,15 @@
             As the Ohmic coupling increases, phase fluctuations broaden the elastic peak into a continuous energy exchange spectrum. A simple zero-temperature cutoff model gives the normalized form
             \begin{align}
                 P_\mathrm{Ohmic}(E)
-                = \frac{1}{E_\mathrm{c}\Gamma(\alpha_q)}
-                \left(\frac{E}{E_\mathrm{c}}\right)^{\alpha_q-1}
-                \exp\!\left(-\frac{E}{E_\mathrm{c}}\right)\,,&&
+                = \frac{1}{E_\mathrm{cut}\Gamma(\alpha_q)}
+                \left(\frac{E}{E_\mathrm{cut}}\right)^{\alpha_q-1}
+                \exp\!\left(-\frac{E}{E_\mathrm{cut}}\right)\,,&&
                 \alpha_q=\frac{2q^2R}{h}\,, &&
                 E\sgt{}0\,.
                 \label{eq:stochastic:pe-ohmic}
             \end{align}
 
-            The cutoff energy is $E_\mathrm{c}=\hbar\omega_\mathrm{c}$. The Euler Gamma function $\Gamma(\alpha_q)$ normalizes the distribution. The power law describes the universal Ohmic low-energy behavior, while the exponential factor regularizes the high-energy tail of an environment with finite bandwidth. Equation~\eqref{eq:stochastic:pe-ohmic} is therefore a convenient cutoff model and not the exact kernel of every Ohmic circuit \cite{ingold_charge_1992}.
+            The cutoff energy is $E_\mathrm{cut}=\hbar\omega_\mathrm{cut}$. The Euler Gamma function $\Gamma(\alpha_q)$ normalizes the distribution. The power law describes the universal Ohmic low-energy behavior, while the exponential factor regularizes the high-energy tail of an environment with finite bandwidth. Equation~\eqref{eq:stochastic:pe-ohmic} is therefore a convenient cutoff model and not the exact kernel of every Ohmic circuit \cite{ingold_charge_1992}.
 
             At zero temperature this form has support only for $E\sgt{}0$, because the environment can absorb energy but cannot emit energy from its ground state. At finite temperature, thermal modes add a negative-energy tail to $P(E)$, corresponding to energy emitted by the environment into the tunneling process. The full finite-temperature kernel is usually evaluated from Eq.~\eqref{eq:stochastic:pe-definition}. The low-energy suppression of $P(E)$ underlies dynamical Coulomb blockade and also sets the scale for incoherent Cooper pair tunneling.
 
@@ -206,7 +206,7 @@
                 ]{\thesisplot{theory/stochastic}{dcb-ohm-didv-sis}}
             \caption{
                 DCB dressing of tunnel \textit{I--V} and \textit{dI--dV} curves for NIN, NIS, and SIS junctions.
-                The calculation uses the Ohmic kernel from Eq.~\eqref{eq:stochastic:pe-ohmic} with cutoff energy $E_\mathrm{c}=\Delta_0$.
+                The calculation uses the Ohmic kernel from Eq.~\eqref{eq:stochastic:pe-ohmic} with cutoff energy $E_\mathrm{cut}=\Delta_0$.
                 Increasing the environmental coupling deepens the NIN zero-bias conductance dip, broadens the NIS threshold, and redistributes spectral weight near the SIS pair breaking onset.
                 }
             \label{fig:stochastic:dcb}
