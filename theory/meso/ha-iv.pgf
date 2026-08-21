@@ -27,7 +27,7 @@
 %%     \renewcommand{\normalsize}{\fontsize{9.000000}{10.800000}\selectfont}
 %%     \normalsize
 %%   }
-%%   
+%%   \usepackage{siunitx}
 %%   \ifdefined\pdftexversion\else  % non-pdftex case.
 %%     \usepackage{fontspec}
 %%     \setmainfont{DejaVuSerif.ttf}[Path=\detokenize{/Users/oliver/Documents/cryolab/.venv/lib/python3.13/site-packages/matplotlib/mpl-data/fonts/ttf/}]
@@ -670,7 +670,7 @@
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.669832in,y=1.132686in,left,base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\tau = $}}%
+\pgftext[x=0.723586in,y=1.048686in,left,base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$\tau$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -679,16 +679,16 @@
 \definecolor{currentstroke}{rgb}{0.800000,0.933333,0.976471}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.412000in}{1.068705in}}%
-\pgfpathlineto{\pgfqpoint{0.453667in}{1.068705in}}%
-\pgfpathlineto{\pgfqpoint{0.495333in}{1.068705in}}%
+\pgfpathmoveto{\pgfqpoint{0.412000in}{0.984705in}}%
+\pgfpathlineto{\pgfqpoint{0.453667in}{0.984705in}}%
+\pgfpathlineto{\pgfqpoint{0.495333in}{0.984705in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.537000in,y=1.039538in,left,base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$0.10$}}%
+\pgftext[x=0.537000in,y=0.955538in,left,base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$0.10$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -697,16 +697,16 @@
 \definecolor{currentstroke}{rgb}{0.650980,0.882353,0.956863}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.412000in}{0.975557in}}%
-\pgfpathlineto{\pgfqpoint{0.453667in}{0.975557in}}%
-\pgfpathlineto{\pgfqpoint{0.495333in}{0.975557in}}%
+\pgfpathmoveto{\pgfqpoint{0.412000in}{0.891558in}}%
+\pgfpathlineto{\pgfqpoint{0.453667in}{0.891558in}}%
+\pgfpathlineto{\pgfqpoint{0.495333in}{0.891558in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.537000in,y=0.946391in,left,base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$0.33$}}%
+\pgftext[x=0.537000in,y=0.862391in,left,base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$0.33$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -715,16 +715,16 @@
 \definecolor{currentstroke}{rgb}{0.349020,0.780392,0.921569}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.412000in}{0.882410in}}%
-\pgfpathlineto{\pgfqpoint{0.453667in}{0.882410in}}%
-\pgfpathlineto{\pgfqpoint{0.495333in}{0.882410in}}%
+\pgfpathmoveto{\pgfqpoint{0.412000in}{0.798410in}}%
+\pgfpathlineto{\pgfqpoint{0.453667in}{0.798410in}}%
+\pgfpathlineto{\pgfqpoint{0.495333in}{0.798410in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.537000in,y=0.853243in,left,base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$0.66$}}%
+\pgftext[x=0.537000in,y=0.769243in,left,base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$0.66$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -733,16 +733,16 @@
 \definecolor{currentstroke}{rgb}{0.180392,0.725490,0.901961}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.783911in}{1.068705in}}%
-\pgfpathlineto{\pgfqpoint{0.825578in}{1.068705in}}%
-\pgfpathlineto{\pgfqpoint{0.867244in}{1.068705in}}%
+\pgfpathmoveto{\pgfqpoint{0.783911in}{0.984705in}}%
+\pgfpathlineto{\pgfqpoint{0.825578in}{0.984705in}}%
+\pgfpathlineto{\pgfqpoint{0.867244in}{0.984705in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.908911in,y=1.039538in,left,base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$0.90$}}%
+\pgftext[x=0.908911in,y=0.955538in,left,base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$0.90$}}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \pgfsetrectcap%
@@ -751,16 +751,16 @@
 \definecolor{currentstroke}{rgb}{0.000000,0.556863,0.807843}%
 \pgfsetstrokecolor{currentstroke}%
 \pgfsetdash{}{0pt}%
-\pgfpathmoveto{\pgfqpoint{0.783911in}{0.975557in}}%
-\pgfpathlineto{\pgfqpoint{0.825578in}{0.975557in}}%
-\pgfpathlineto{\pgfqpoint{0.867244in}{0.975557in}}%
+\pgfpathmoveto{\pgfqpoint{0.783911in}{0.891558in}}%
+\pgfpathlineto{\pgfqpoint{0.825578in}{0.891558in}}%
+\pgfpathlineto{\pgfqpoint{0.867244in}{0.891558in}}%
 \pgfusepath{stroke}%
 \end{pgfscope}%
 \begin{pgfscope}%
 \definecolor{textcolor}{rgb}{0.000000,0.000000,0.000000}%
 \pgfsetstrokecolor{textcolor}%
 \pgfsetfillcolor{textcolor}%
-\pgftext[x=0.908911in,y=0.946391in,left,base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$1.00$}}%
+\pgftext[x=0.908911in,y=0.862391in,left,base]{\color{textcolor}{\sffamily\fontsize{6.000000}{7.200000}\selectfont\catcode`\^=\active\def^{\ifmmode\sp\else\^{}\fi}\catcode`\%=\active\def%{\%}$1.00$}}%
 \end{pgfscope}%
 \end{pgfpicture}%
 \makeatother%
