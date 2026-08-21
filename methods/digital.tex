@@ -151,11 +151,11 @@
                 \hfill
                 \subfigure[
                     Settings of measurement sequences
-                ]{
-                \fontsize{7}{9}\selectfont
+                ]{%
+                \fontsize{7}{9}\selectfont%
                     \begin{minipage}[t][1.5in]{2.2in}
-                        \centering
-                        \vspace{0pt}
+                        \centering%
+                        \vspace{0pt}%
                         \begin{tabular}{rl}
                             \texttt{single\_iv.py}  &  \\
                             $(V_0, T_0)$: & sweep (amplitude, period)\\
@@ -170,7 +170,7 @@
                             $V_\mathrm{gate}$: & gate voltage  \\
                         \end{tabular}
                     \end{minipage}
-                }
+                }%
                 \caption{Protocol for quasi-dc \textit{I--V} spectroscopy. (a) One \textit{I--V} trace consists of an offset interval followed by a controlled bias sweep. (b) \texttt{single\_iv.py} defines the sweep settings, gains, and sampling rate. \texttt{iv\_script.py} repeats this trace over an external parameter axis.}
                 \label{fig:methods:digital:ivscript}
             \end{figure}
