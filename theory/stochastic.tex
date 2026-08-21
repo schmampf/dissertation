@@ -367,22 +367,22 @@
                 \label{fig:stochastic:set}
             \end{figure}
 
-            Adding one electron to an isolated metallic island requires electrostatic energy. For junction capacitances $C_1$ and $C_2$ and gate capacitance $C_\mathrm{G}$, the charging energy is
+            Adding one electron to an isolated metallic island requires electrostatic energy. For junction capacitances $C_1$ and $C_2$ and gate capacitance $C_\mathrm{gate}$, the charging energy is
             \begin{align}
                 E_\mathrm{C} = \frac{e^2}{2C_\Sigma}\,, &&
-                 C_\Sigma = C_1 + C_2 + C_\mathrm{G}\,.
+                 C_\Sigma = C_1 + C_2 + C_\mathrm{gate}\,.
                 \label{eq:stochastic:charging-energy}
             \end{align}
             This is the orthodox charging scale for the lumped capacitance island model \cite{ingold_charge_1992,grabert_single_2013}.
 
             At finite bias, the junction capacitances determine how strongly the applied voltage changes the island energy for each tunneling step. A transport onset occurs when the initial and final free energies become degenerate. The gate and bias dependence of this condition produces lines in a gate--bias map, with slopes fixed by capacitance ratios. The transition rates and stationary occupations determine the intensity along these lines.
 
-            Charge quantization requires weak thermal activation and weak quantum charge fluctuations. Thus $E_\mathrm{C}\sgg k_\mathrm{B}T$, and in the tunnel limit each normal-state junction resistance must be large compared with $R_\mathrm{K}=h/e^2$. The island can then be described by an integer excess electron number $n$. A gate voltage induces the offset charge $n_\mathrm{G}=C_\mathrm{G}V_\mathrm{G}/e$ and changes the electrostatic energy according to
+            Charge quantization requires weak thermal activation and weak quantum charge fluctuations. Thus $E_\mathrm{C}\sgg k_\mathrm{B}T$, and in the tunnel limit each normal-state junction resistance must be large compared with $R_\mathrm{K}=h/e^2$. The island can then be described by an integer excess electron number $n$. A gate voltage induces the offset charge $n_\mathrm{gate}=C_\mathrm{gate}V_\mathrm{gate}/e$ and changes the electrostatic energy according to
             \begin{equation}
-                E_n(V_\mathrm{G}) = E_\mathrm{C}\left(n-n_\mathrm{G}\right)^2\,.
+                E_n(V_\mathrm{gate}) = E_\mathrm{C}\left(n-n_\mathrm{gate}\right)^2\,.
                 \label{eq:stochastic:set-electrostatic-energy}
             \end{equation}
-            The expression omits a charge independent constant and assumes that other induced charges are absorbed into $n_\mathrm{G}$ \cite{ingold_charge_1992,grabert_single_2013}.
+            The expression omits a charge independent constant and assumes that other induced charges are absorbed into $n_\mathrm{gate}$ \cite{ingold_charge_1992,grabert_single_2013}.
 
             For a normal tunnel junction with resistance $R_i$, the sequential tunneling rate for a transition whose final free energy exceeds the initial free energy by $\Delta E$ is
             \begin{equation}
