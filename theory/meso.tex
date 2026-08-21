@@ -429,12 +429,12 @@
             \end{equation}
             In the tunnel limit, the first harmonic $I_1$ dominates and the current is approximately sinusoidal. Highly transmitting channels produce the skewed current--phase relations shown in Figs.~\ref{fig:meso:abs}(b) and \ref{fig:meso:abs-ko}(a), which contain appreciable higher harmonics $I_{p\sgt{}1}$.
 
-            Under microwave irradiation, these harmonics introduce phase locking conditions beyond the integer Shapiro steps discussed in Sec.~\ref{subsec:macro:shapiro}. We use the driven phase of Eq.~\eqref{eq:macro:shapiro-phase}, with Josephson frequency $\nu_\mathrm{J}=2eV/h$ and drive amplitude $\alpha_{\nu,2e}=2eA/(h\nu)$. Inserting this phase into Eq.~\eqref{eq:meso:cpr-harmonics} and applying the Jacobi-Anger expansion gives
+            Under microwave irradiation, these harmonics introduce phase locking conditions beyond the integer Shapiro steps discussed in Sec.~\ref{subsec:macro:shapiro}. We use the driven phase of Eq.~\eqref{eq:macro:shapiro-phase}, with Josephson frequency $\nu_0=2eV/h$ and drive amplitude $\alpha_{\nu,2e}=2eA/(h\nu)$. Inserting this phase into Eq.~\eqref{eq:meso:cpr-harmonics} and applying the Jacobi-Anger expansion gives
             \begin{equation}
                 I(t)=\sum_{p\sgeq{}1}\sum_{n\in\mathbb{Z}} I_pJ_n(p\alpha_{\nu,2e})
-                \sin\!\left[p\phi_0+2\pi\left(p\nu_\mathrm{J}+n\nu\right)t\right]\,.
+                \sin\!\left[p\phi_0+2\pi\left(p\nu_0+n\nu\right)t\right]\,.
             \end{equation}
-            The $p$-th CPR harmonic experiences the enlarged modulation $p\alpha_{\nu,2e}$, and its $n$-photon locking contribution is weighted by $I_pJ_n(p\alpha_{\nu,2e})$ rather than by a squared Bessel function. A dc contribution appears when $p\nu_\mathrm{J}+n\nu=0$. Relabeling the sideband index gives the rational locking voltages
+            The $p$-th CPR harmonic experiences the enlarged modulation $p\alpha_{\nu,2e}$, and its $n$-photon locking contribution is weighted by $I_pJ_n(p\alpha_{\nu,2e})$ rather than by a squared Bessel function. A dc contribution appears when $p\nu_0+n\nu=0$. Relabeling the sideband index gives the rational locking voltages
             \begin{equation}
                 V_{n/p}=\frac{n}{p}\frac{h\nu}{2e}\,,\qquad n\in\mathbb{Z},\quad p\in\mathbb{N}^+\,.
             \end{equation}
@@ -642,7 +642,7 @@
         \subsubsection*{Photon Assisted Multiple Andreev Reflection}
         %=========================================================
 
-            Irradiated MAR is more complex than dc MAR because a voltage biased superconducting contact already contains the Josephson frequency $\nu_J=2eV/h$. A microwave drive at frequency $\nu$ adds a second time scale. A useful phenomenological description is the unified charge dependent Tien-Gordon expression. Soerensen \textit{et al.}~introduced this viewpoint for microwave modified subgap structure, and Carrad \textit{et al.}~used the charge dependent sideband spacing to identify high-order MAR processes \cite{soerensen_microwave_1974,carrad_photon-assisted_2022}. If the dc current is decomposed as $I(V)=\sum_m I_m(V)$ and each component is assigned the effective charge $q_m=me$, the expression reads
+            Irradiated MAR is more complex than dc MAR because a voltage biased superconducting contact already contains the Josephson frequency $\nu_0=2eV/h$. A microwave drive at frequency $\nu$ adds a second time scale. A useful phenomenological description is the unified charge dependent Tien-Gordon expression. Soerensen \textit{et al.}~introduced this viewpoint for microwave modified subgap structure, and Carrad \textit{et al.}~used the charge dependent sideband spacing to identify high-order MAR processes \cite{soerensen_microwave_1974,carrad_photon-assisted_2022}. If the dc current is decomposed as $I(V)=\sum_m I_m(V)$ and each component is assigned the effective charge $q_m=me$, the expression reads
             \begin{equation}
                 I_\mathrm{PAMAR}(V,A)
                 =
