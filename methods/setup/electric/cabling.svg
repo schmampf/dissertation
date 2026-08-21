@@ -1363,7 +1363,7 @@
        transform="rotate(-90,-139.32067,248.92933)"><tspan
          x="22.677734"
          y="427.93438"
-         id="tspan13">\textit{T}\textsubscript{bath}</tspan></text><text
+         id="tspan13">$T_\mathrm{bath}$</tspan></text><text
        xml:space="preserve"
        id="text2-0"
        style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;text-align:start;white-space:pre;shape-inside:url(#rect3-7);display:inline;fill:#000000;stroke:none;stroke-width:0.981952;stroke-dasharray:none;stroke-dashoffset:0"
@@ -1372,7 +1372,7 @@
        transform="rotate(-90,-158.21831,267.82697)"><tspan
          x="22.677734"
          y="427.93438"
-         id="tspan14">\textit{P}\textsubscript{heater}</tspan></text><text
+         id="tspan14">$P_\mathrm{heater}$</tspan></text><text
        xml:space="preserve"
        id="text2-2"
        style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;text-align:start;white-space:pre;shape-inside:url(#rect3-1);display:inline;fill:#000000;stroke:none;stroke-width:0.981952;stroke-dasharray:none;stroke-dashoffset:0"
@@ -1381,7 +1381,7 @@
        transform="rotate(-90,-120.42303,230.03169)"><tspan
          x="22.677734"
          y="427.93438"
-         id="tspan15">\textit{V}\textsubscript{sample}</tspan></text><text
+         id="tspan15">$V_\mathrm{sample}$</tspan></text><text
        xml:space="preserve"
        id="text2-2-5"
        style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;text-align:start;white-space:pre;shape-inside:url(#rect3-1-3);display:inline;fill:#000000;stroke:none;stroke-width:0.981952;stroke-dasharray:none;stroke-dashoffset:0"
@@ -1390,7 +1390,7 @@
        transform="rotate(-90,-101.5254,211.13405)"><tspan
          x="22.677734"
          y="427.93438"
-         id="tspan16">\textit{V}\textsubscript{bias}</tspan></text><text
+         id="tspan16">$V_\mathrm{bias}$</tspan></text><text
        xml:space="preserve"
        id="text2-2-3"
        style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;text-align:start;white-space:pre;shape-inside:url(#rect3-1-0);display:inline;fill:#000000;stroke:none;stroke-width:0.981952;stroke-dasharray:none;stroke-dashoffset:0"
@@ -1399,7 +1399,7 @@
        transform="rotate(-90,-82.627765,192.23641)"><tspan
          x="22.677734"
          y="427.93438"
-         id="tspan17">\textit{V}\textsubscript{ref}</tspan></text><g
+         id="tspan17">$V_\mathrm{ref}$</tspan></text><g
        id="g1"
        transform="translate(111.49539,-15.116327)"><text
          xml:space="preserve"
@@ -1410,7 +1410,7 @@
          transform="rotate(-90,-111.91966,236.64464)"><tspan
            x="22.677734"
            y="427.93438"
-           id="tspan18">\textit{V}\textsubscript{gate}</tspan></text><text
+           id="tspan18">$V_\mathrm{gate}$</tspan></text><text
          xml:space="preserve"
          id="text2-2-30-1"
          style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;text-align:start;white-space:pre;shape-inside:url(#rect3-1-4-6);display:inline;fill:#000000;stroke:none;stroke-width:0.981952;stroke-dasharray:none;stroke-dashoffset:0"
@@ -1419,7 +1419,7 @@
          transform="rotate(-90,-93.022021,217.747)"><tspan
            x="22.677734"
            y="427.93438"
-           id="tspan19">\textit{A}\textsubscript{gate}</tspan></text><text
+           id="tspan19">$A_\mathrm{gate}$</tspan></text><text
          xml:space="preserve"
          id="text2-2-30-1-8"
          style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;text-align:start;white-space:pre;shape-inside:url(#rect3-1-4-6-6);display:inline;fill:#000000;stroke:none;stroke-width:0.981952;stroke-dasharray:none;stroke-dashoffset:0"
@@ -1428,7 +1428,7 @@
          transform="rotate(-90,-74.124383,198.84936)"><tspan
            x="22.677734"
            y="427.93438"
-           id="tspan20">\textit{A}\textsubscript{antenna}</tspan></text></g></g><g
+           id="tspan20">$A_\mathrm{antenna}$</tspan></text></g></g><g
      inkscape:groupmode="layer"
      id="layer12"
      inkscape:label="bonds"
@@ -1605,13 +1605,13 @@
        y="0"><tspan
          x="185.19727"
          y="189.82501"
-         id="tspan32">\textit{R}</tspan><tspan
+         id="tspan32">$R_\mathrm{ref}$</tspan><tspan
          x="185.19727"
          y="201.49166"
-         id="tspan33">\textsubscript</tspan><tspan
+         id="tspan33"></tspan><tspan
          x="185.19727"
          y="213.15832"
-         id="tspan34">{ref}</tspan></text><text
+         id="tspan34"></tspan></text><text
        xml:space="preserve"
        id="text78-97"
        style="font-size:9.33333px;font-family:arial;-inkscape-font-specification:arial;text-align:center;writing-mode:lr-tb;direction:ltr;white-space:pre;shape-inside:url(#rect79-04);display:inline;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1.13386;stroke-dasharray:none;stroke-opacity:1"

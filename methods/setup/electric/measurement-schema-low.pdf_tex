@@ -58,9 +58,9 @@
     \put(0,0){\includegraphics[width=\unitlength,page=2]{measurement-schema-low.pdf}}%
     \put(0.63064026,0.2241465){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}100\,k\textohm\end{tabular}}}}%
     \put(0,0){\includegraphics[width=\unitlength,page=3]{measurement-schema-low.pdf}}%
-    \put(0.86841047,0.18456342){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{sample}\end{tabular}}}}%
-    \put(0.3421053,0.01361893){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{ref}\end{tabular}}}}%
-    \put(0.01599676,0.18456342){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}\textit{V}\textsubscript{bias}\end{tabular}}}}%
+    \put(0.86841047,0.18456342){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V_\mathrm{sample}$\end{tabular}}}}%
+    \put(0.3421053,0.01361893){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V_\mathrm{ref}$\end{tabular}}}}%
+    \put(0.01599676,0.18456342){\color[rgb]{0,0,0}\makebox(0,0)[lt]{\lineheight{1.25}\smash{\begin{tabular}[t]{l}$V_\mathrm{bias}$\end{tabular}}}}%
     \put(0.27096733,0.45221667){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}100\,\textohm\end{tabular}}}}%
     \put(0.27096734,0.22414657){\color[rgb]{0,0,0}\makebox(0,0)[t]{\lineheight{1.25}\smash{\begin{tabular}[t]{c}100\,\textohm\end{tabular}}}}%
   \end{picture}%
