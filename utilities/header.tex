@@ -59,6 +59,14 @@
     % hyperref, so this only adds the bookmark package on top of it.
     \usepackage{bookmark}
 
+    \hypersetup{
+        hypertexnames=false,
+        pdftitle={Microwave Driven Transport in Mesoscopic Superconducting Junctions from Tunnel Barriers to Atomic Contacts},
+        pdfauthor={Oliver Aschenbrenner},
+        pdfsubject={Doctoral thesis in experimental condensed matter physics},
+        pdfkeywords={superconducting junctions, microwave driven transport, photon assisted tunneling, multiple Andreev reflection, atomic contacts, Josephson effect}
+    }
+
     % \usepackage{utilities/themeKonstanzStyleAddOn}
     % Style Add-On für andere Überschriften, NACH dem Standardpaket importieren
     % doesn't show any difference
@@ -102,9 +110,11 @@
     % Use the same font size as the main body for all bibliography entries.
     \renewcommand*{\bibfont}{\normalsize}
 
-    % Abbreviate given names in journal articles. Retain full given names in
-    % books, theses, and other entry types when the bibliography data provides them.
-    \ExecuteBibliographyOptions[article]{giveninits=true}
+    % Abbreviate given names to initials across every entry type, so the
+    % numbered reference list uses one consistent author-name format
+    % regardless of whether an entry is an article, book, thesis, or
+    % proceedings contribution.
+    \ExecuteBibliographyOptions{giveninits=true}
 
     % Print URLs for online and software entries, followed by their access dates.
     % Keep URLs hidden for the other entry types unless enabled separately.
@@ -225,6 +235,7 @@
         \usepackage{afterpage}
         \newcommand\blankpage{
             \null
+            \thispdfpagelabel{Front-blank}
             \thispagestyle{empty}
             \addtocounter{page}{-1}
             \newpage
