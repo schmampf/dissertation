@@ -1,0 +1,60 @@
+% Print wrapper for the A5 thesis interior.
+% Each 148 mm x 210 mm source page is centered on a 154 mm x 216 mm
+% sheet, which supplies the printer's required 3 mm bleed on every edge.
+% Compile from the repository root with: latexmk content-print.tex
+\documentclass[twoside]{article}
+
+\usepackage[
+    paperwidth=154mm,
+    paperheight=216mm,
+    margin=0mm,
+    noheadfoot
+]{geometry}
+\usepackage{pdfpages}
+\usepackage{tikz}
+\usepackage{xcolor}
+
+\pagestyle{empty}
+
+% Enable this only for proofing. Disable it before sending the PDF to print.
+\newif\ifshowcontentguides
+\showcontentguidesfalse
+
+\newcommand{\contentguides}{%
+    \ifshowcontentguides
+        \begin{tikzpicture}[remember picture,overlay,x=1mm,y=1mm]
+            \begin{scope}[shift={(current page.south west)}]
+                % Final 148 mm x 210 mm trim boundary.
+                \draw[magenta,line width=0.35mm,dashed] (3,3) rectangle (151,213);
+                % Five millimeter safety area inside the trimmed page.
+                \draw[cyan,line width=0.25mm,dashed] (8,8) rectangle (146,208);
+                % Five millimeter region nearest the bound spine.
+                \ifodd\value{page}
+                    \fill[red,opacity=0.16] (3,3) rectangle (8,213);
+                    \draw[red,line width=0.25mm] (8,3) -- (8,213);
+                \else
+                    \fill[red,opacity=0.16] (146,3) rectangle (151,213);
+                    \draw[red,line width=0.25mm] (146,3) -- (146,213);
+                \fi
+                \node[anchor=south west,fill=white,font=\sffamily\scriptsize] at (3.5,3.5) {Proof guides only};
+            \end{scope}
+        \end{tikzpicture}%
+    \fi
+}
+
+\begin{document}
+    % Pages 1 and 2 are represented by U1 and U2 in cover.pdf.
+    % Page 237 is the online back cover and is represented by U4.
+    % Two final blank pages keep the interior page count even and ensure
+    % that the last bound page is empty.
+    \includepdf[
+        pages={3-236,{},{}},
+        pagecommand={\thispagestyle{empty}\contentguides},
+        width=148mm,
+        height=210mm,
+        keepaspectratio,
+        % In a two-sided document, pdfpages mirrors this offset so that
+        % recto pages move right and verso pages move left, away from the spine.
+        offset=2.5mm 0mm
+    ]{thesis-a5-online-publication.pdf}
+\end{document}

@@ -1,0 +1,21 @@
+% Legacy LaTeX wrapper retained for reference only.
+% pdfpages re-embeds the pages and can change transparency rendering.
+% For an unchanged, page-object-level join, run: ./build-print-package.sh
+\documentclass{article}
+
+\usepackage{pdfpages}
+\pagestyle{empty}
+
+\begin{document}
+    \includepdf[
+        pages=-,
+        fitpaper=true,
+        pagecommand={}
+    ]{cover.pdf}
+
+    \includepdf[
+        pages=-,
+        fitpaper=true,
+        pagecommand={}
+    ]{content-print.pdf}
+\end{document}
